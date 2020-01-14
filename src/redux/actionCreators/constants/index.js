@@ -1,4 +1,4 @@
-export const domain = "https://kwitter-api.herokuapp.com";
+export const domain = "https://socialapp-api.herokuapp.com";
 
 export const jsonHeaders = {
   "Content-Type": "application/json",

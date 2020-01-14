@@ -1,7 +1,6 @@
 {
-  "name": "kwitter",
+  "name": "SocialApp",
   "version": "0.1.0",
-  "homepage": "https://kenzie-academy.gitlab.io/se/fe/final-projects/assessment---kwitter-frontend",
   "private": true,
   "dependencies": {
     "connected-react-router": "^6.5.2",
