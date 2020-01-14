@@ -24,7 +24,7 @@ You will also be following the SCRUM process and although everyone will be a dev
 
 We will specify the API you will be using to build your project, but the design, layout, and component architecture will be up to you
 
-1. Familiarize yourself with the API
+1. Familiarize yourself with the [SocialApp API](https://socialapp-api.herokuapp.com)
 2. Mock out possible screens
 3. Break screens out into possible component names
 4. Discuss at what point will you hit the API, use local state, how components will get the props they need to render
@@ -34,6 +34,8 @@ We will specify the API you will be using to build your project, but the design,
 7. Begin creating/using components to establish a general foundation of your app
 
 A starter scaffolding is provided here: [SocialApp-starter](https://github.com/erics273/socialapp-starter)
+
+The API you will communicate with is the [SocialApp API](https://socialapp-api.herokuapp.com)
 
 ## Submission
 
