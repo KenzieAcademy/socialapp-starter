@@ -33,7 +33,7 @@ We will specify the API you will be using to build your project, but the design,
 
 7. Begin creating/using components to establish a general foundation of your app
 
-A starter scaffolding is provided here: [SocialApp-starter](https://github.com/erics273/socialapp-starter)
+A starter scaffolding is provided here: [SocialApp-starter](https://github.com/KenzieAcademy/socialapp-starter)
 
 The API you will communicate with is the [SocialApp API](https://socialapp-api.herokuapp.com)
 
