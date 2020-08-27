@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Menu.css";
-import { withAsyncAction } from "../HOCs";
+import { withAsyncAction } from "../../HOCs";
 
 class Menu extends React.Component {
   handleLogout = event => {

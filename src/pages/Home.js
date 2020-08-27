@@ -1,6 +1,6 @@
 import React from "react";
-import LoginForm from "../components/LoginForm";
-import Menu from "../components/Menu";
+import LoginForm from "../components/loginForm/LoginForm";
+import Menu from "../components/menu/Menu";
 import { userIsNotAuthenticated } from "../HOCs";
 
 class Home extends React.Component {
