@@ -18,7 +18,7 @@ class LoginForm extends React.Component {
   render() {
     const { loading, error } = this.props;
     return (
-      <React.Fragment>
+      <div className="LoginForm">
         <form id="login-form" onSubmit={this.handleLogin}>
           <label htmlFor="username">Username</label>
           <input
@@ -41,7 +41,7 @@ class LoginForm extends React.Component {
         </form>
         {loading && <Spinner name="circle" color="blue" />}
         {error && <p style={{ color: "red" }}>{error.message}</p>}
-      </React.Fragment>
+      </div>
     );
   }
 }
