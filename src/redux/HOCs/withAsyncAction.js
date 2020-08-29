@@ -1,5 +1,5 @@
 import { connect } from ".";
-import * as actionCreators from "../redux";
+import * as actionCreators from "..";
 
 const withAsyncAction = (reducerName, actionCreatorName) => component => {
   const makeError = message =>

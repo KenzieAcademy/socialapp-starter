@@ -1,6 +1,6 @@
 import React from "react";
 import Menu from "../components/menu/Menu";
-import { userIsAuthenticated } from "../HOCs";
+import { userIsAuthenticated } from "../redux/HOCs";
 
 class Profile extends React.Component {
   render() {
