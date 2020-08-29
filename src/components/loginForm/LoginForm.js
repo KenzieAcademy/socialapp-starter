@@ -4,7 +4,13 @@ import { withAsyncAction } from "../../HOCs";
 import "./LoginForm.css";
 
 class LoginForm extends React.Component {
-  state = { username: "", password: "" };
+  constructor(props) {
+    super(props)
+    this.state = {
+      username: "",
+      password: ""
+    };
+  }
 
   handleLogin = e => {
     e.preventDefault();
