@@ -5,9 +5,9 @@ import { userIsAuthenticated } from "../redux/HOCs";
 class Profile extends React.Component {
   render() {
     return (
-      <div className="Message">
+      <div className="Profile">
         <Menu isAuthenticated={this.props.isAuthenticated} />
-        <h2>Profile</h2>
+        <h2>Messages</h2>
       </div>
     );
   }
