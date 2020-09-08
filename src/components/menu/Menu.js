@@ -10,6 +10,8 @@ class Menu extends React.Component {
   };
 
   render() {
+
+
     return (
       <div className="Menu">
         <h1>Kwitter</h1>
@@ -21,6 +23,9 @@ class Menu extends React.Component {
             </Link>
           </div>
         )}
+
+
+
       </div>
     );
   }

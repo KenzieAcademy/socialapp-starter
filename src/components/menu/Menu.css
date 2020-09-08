@@ -18,3 +18,11 @@
   text-decoration: underline;
   cursor: pointer;
 }
+
+.button{
+  display:inline-block;
+  background:none;
+  width: 50px;
+  height: 20px;
+  }
+ 

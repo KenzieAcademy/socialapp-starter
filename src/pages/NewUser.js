@@ -14,7 +14,7 @@ class NewUser extends React.Component {
     render() {
         return(
             <div>
-                <form>
+                <form className="Form">
                     <div>username</div>
                     <input className="username"></input>
 
