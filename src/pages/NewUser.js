@@ -1,12 +1,14 @@
 import React from "react"
 
+import { Link } from "react-router-dom";
+
 class NewUser extends React.Component {
     constructor(props){
         super(props)
         this.state = {
             username: "",
             displayName: "",
-            password: ""
+            password: "",
         }
 
     }
@@ -27,6 +29,8 @@ class NewUser extends React.Component {
                 <button>
                     Submit
                 </button>
+                <br/>
+                <Link to="/">Go Home</Link>
             </div>
         )
     }
