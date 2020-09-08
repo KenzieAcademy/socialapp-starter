@@ -14,10 +14,10 @@ class Menu extends React.Component {
 
     return (
       <div className="Menu">
-        <h1>Kwitter</h1>
+        <h1>The QuestBoard</h1>
         {this.props.isAuthenticated && (
           <div id="menu-links">
-            <Link to="/messagefeed">Message Feed</Link>
+            <Link to="/MessageFeed">Message Feed</Link>
             <Link to="/" onClick={this.handleLogout}>
               Logout
             </Link>
