@@ -1,13 +1,13 @@
 import axios from 'axios';
 
 class QuestboardService {
-    constructor(url = 'https://socialapp-api.herokuapp.com/', client = axios.create()){
+    constructor(url = 'https://socialapp-api.herokuapp.com', client = axios.create()){
         this.url = url;
         this.client = client;
-        const loginData = JSON.parse(localStorage.getItem("login"));
-        return this.client.patch(this.url + "/users/" + loginData.result.username, userObject, {
-            headers: { Authorization: `Bearer ${loginData.result.token}` }
-        });
+        // const loginData = JSON.parse(localStorage.getItem("login"));
+        // return this.client.patch(this.url + "/users/" + loginData.result.username, userObject, {
+        //     headers: { Authorization: `Bearer ${loginData.result.token}` }
+        // });
     }
     Register(userData){
         return this.client.post(this.url + "/users", userData);

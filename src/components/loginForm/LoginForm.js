@@ -45,7 +45,6 @@ class LoginForm extends React.Component {
           <button type="submit" disabled={loading}>
             Login
           </button>
-          <Link to="/NewUser">New User</Link>
         </form>
         {loading && <Spinner name="circle" color="blue" />}
         {error && <p style={{ color: "red" }}>{error.message}</p>}

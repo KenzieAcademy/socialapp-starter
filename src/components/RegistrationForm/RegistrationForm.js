@@ -2,6 +2,7 @@ import React from "react";
 import Spinner from "react-spinkit";
 import { Link } from "react-router-dom";
 import "./RegistrationForm.css";
+import QuestboardService from "../../pages/ServicePage"
 
 class RegistrationForm extends React.Component {
   constructor(props) {
@@ -11,10 +12,14 @@ class RegistrationForm extends React.Component {
       password: "",
       displayName: "",
     };
+    this.client = new QuestboardService();
   }
 
   handleRegistration = e => {
     e.preventDefault();
+    this.client.Register(this.state).then(result => {
+      alert(JSON.stringify(result.data))
+    })
   };
 
   handleChange = e => {
