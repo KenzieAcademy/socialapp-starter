@@ -1,10 +1,13 @@
 import React from "react"
 import Spinner from "react-spinkit";
 import "./RegisterForm.css";
+import Service from "../../Service"
 
 class RegisterForm extends React.Component {
     constructor(props) {
       super(props)
+
+      this.client = new Service()
       this.state = {
         username: "",
         password: "",
@@ -12,9 +15,9 @@ class RegisterForm extends React.Component {
       };
     }
   
-    handleLogin = e => {
+    handleRegister = e => {
       e.preventDefault();
-      this.props.login(this.state);
+      this.client.registerUser(this.state);
     };
   
     handleChange = e => {
@@ -25,7 +28,7 @@ class RegisterForm extends React.Component {
       const { loading, error } = this.props;
       return (
         <div className="RegisterForm">
-          <form id="register-form" onSubmit={this.handleLogin}>
+          <form id="register-form" onSubmit={this.handleRegister}>
             <label htmlFor="username">Username</label>
             <input
               type="text"

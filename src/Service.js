@@ -1,18 +1,18 @@
 
-class Service extends React.Component {
+class Service  {
     constructor() {
-        this.domain = "https://socialapp-api.herokuapp.com/"
+        this.domain = "https://socialapp-api.herokuapp.com"
     }
 
 
     registerUser(userData) {
-        let goalDomain = "/users"
-        let domain = this.domain + goalDomain
+        let endpoint = "/users"
+        let URL = this.domain + endpoint
         fetch(URL, {
             method: "Post",
-            header: {
-                "content-type": "application/json",
-                "accept": "application/json"
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
             },
             body: JSON.stringify(userData)
 
