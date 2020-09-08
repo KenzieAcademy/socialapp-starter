@@ -1,8 +1,8 @@
 import React from "react";
 import Spinner from "react-spinkit";
-import { withAsyncAction } from "../../redux/HOCs";
+//import { withAsyncAction } from "../../redux/HOCs";
 import "./RegistrationForm.css";
-import AlmostTwitterService from "../../almostTwitterService"
+import AlmostTwitterService from "../../almostTwitterService";
 
 class RegistrationForm extends React.Component {
   constructor(props) {
@@ -17,8 +17,9 @@ class RegistrationForm extends React.Component {
 
   handleRegistration = e => {
     e.preventDefault();
-    this.client.registerUser(this.state).then (result => {
-      alert ("you tried to register a user")(JSON.stringify(result.data))
+    this.client.registerUser(this.state).then(result => {
+      alert(result.data)
+
     })
   };
 
@@ -46,12 +47,12 @@ class RegistrationForm extends React.Component {
             required
             onChange={this.handleChange}
           />
-          <label htmlFor="displayName">Display Name</label>
+          <label htmlFor="displayName">Display Name </label>
           <input
-            type="text"
-            name="displayName"
-            required
-            onChange={this.handleChange}
+          type="text"
+          name="displayName"
+          required
+          onChange={this.handleChange}
           />
           <button type="submit" disabled={loading}>
             Register

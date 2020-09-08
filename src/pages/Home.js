@@ -12,7 +12,7 @@ class Home extends React.Component {
         <h2>Social Distancing Style Blogging</h2>
         <LoginForm />
         <hr/>
-        <RegistrationForm/>
+        <RegistrationForm />
     
       </div>
     );
