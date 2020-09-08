@@ -7,7 +7,12 @@ import NotFound from "./pages/NotFound";
 
 class App extends React.Component {
   render() {
+    
     return (
+     // <div>
+      //  <h2>Javamaniacs</h2>
+      //  <img src="/images/logo.png" alt=""/>
+     // </div>
       <Switch>
         <Route
           exact
