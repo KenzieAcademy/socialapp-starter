@@ -4,6 +4,8 @@ import { Switch, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
+import Clock from "./pages/clock/Clock";
+import SideBar from "./components/sideBar/SideBar"
 
 class App extends React.Component {
   render() {
@@ -24,6 +26,14 @@ class App extends React.Component {
           path="*"
           component={NotFound}
         />
+         <Route
+          path="/"
+          component={Clock}
+        />
+        <Route
+          path="/"
+          component={SideBar}
+          />
       </Switch>
     );
   }
