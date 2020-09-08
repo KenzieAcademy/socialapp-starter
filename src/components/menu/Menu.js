@@ -13,6 +13,7 @@ class Menu extends React.Component {
     return (
       <div className="Menu">
         <h1>Kwitter</h1>
+
         {this.props.isAuthenticated && (
           <div id="menu-links">
             <Link to="/messagefeed">Message Feed</Link>
@@ -27,3 +28,8 @@ class Menu extends React.Component {
 }
 
 export default withAsyncAction("auth", "logout")(Menu);
+
+            
+              
+           
+

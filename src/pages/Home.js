@@ -3,49 +3,53 @@ import LoginForm from "../components/loginForm/LoginForm";
 import Menu from "../components/menu/Menu";
 import { userIsNotAuthenticated } from "../redux/HOCs";
 import Register from './Register'
-import { useHistory } from 'react-router-dom';
+
 
 class Home extends React.Component {
   constructor(props){
     super(props)
+    
+    this.state={
+      isClicked:false
+
+      }
+    }
 
 
+  
 
-
+registerButton =(event) => {
+  this.setState(
+    {isClicked:true}
+  )
+    
   }
-
-registerButton(){
-  return {Register}
-}
 
 
 
   
-  
+  render(){
+     let content = (
+        <> 
+           <LoginForm />
+           <hr />
+           <h4>'Not a Member?</h4>
+           <button onClick={this.registerButton}> Register </button>
+        </>
+           )
 
-
-
-  render() {
-    return (
-      <div className="Home">
-        <Menu />
-        <h2>Your favorite microblogging platform</h2>
-        <LoginForm />
-        <hr/>
-        <h4><em>
-        Not a member?
-        Register below!
-        <div>
-          
-        <button  onClick={this.registerButton} >Register</button> 
-       
-        </div>
-        </em>
-        </h4>
-        
-      </div>
-    );
+      if ( this.state.isClicked ) {
+           content = ( <Register/> )
+       }
+     return (
+           <div className="Home">
+               <Menu />
+               {content}
+           </div>
+          )
   }
+   
+
 }
 
 export default userIsNotAuthenticated(Home);
