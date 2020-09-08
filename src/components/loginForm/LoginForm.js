@@ -1,6 +1,8 @@
 import React from "react";
 import Spinner from "react-spinkit";
 import { withAsyncAction } from "../../redux/HOCs";
+import { Link } from "react-router-dom";
+import { NewUser } from "../../pages/NewUser"
 import "./LoginForm.css";
 
 class LoginForm extends React.Component {
@@ -44,6 +46,7 @@ class LoginForm extends React.Component {
           <button type="submit" disabled={loading}>
             Login
           </button>
+          <Link to="/NewUser">New User</Link>
         </form>
         {loading && <Spinner name="circle" color="blue" />}
         {error && <p style={{ color: "red" }}>{error.message}</p>}
