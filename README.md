@@ -1,3 +1,3 @@
-## Overview
+# Social Application Project
 
-Starter code for the Social App capstone project. See my.kenzie for details.
+Uses Evergreen and Axios, test-driven development, and mobile-first design.
