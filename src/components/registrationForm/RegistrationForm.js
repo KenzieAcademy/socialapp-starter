@@ -19,7 +19,7 @@ class RegistrationForm extends React.Component {
 
   handleRegistration = e => {
     e.preventDefault();
-    this.client.registrationUser(this.state).then(result =>{
+    this.client.registerUser(this.state).then(result =>{
       alert(JSON.stringify(result.data))
     });
   };
@@ -38,6 +38,13 @@ class RegistrationForm extends React.Component {
             type="text"
             name="username"
             autoFocus
+            required
+            onChange={this.handleChange}
+          />
+          <label htmlFor="displayName">Display Name</label>
+          <input
+            type="text"
+            name="displayName"
             required
             onChange={this.handleChange}
           />
