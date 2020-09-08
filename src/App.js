@@ -1,11 +1,21 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-
+import axios from "axios"
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
 
 class App extends React.Component {
+  componentDidMount() {
+    axios.get("https://socialapp-api.herokuapp.com/docs/")
+    .then(response => {
+      console.log(response.data)
+    })
+    .catch(error => {
+      console.log(error)
+    })
+  }
+
   render() {
     return (
       <Switch>
