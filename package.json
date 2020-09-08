@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.20.0",
     "connected-react-router": "^6.8.0",
     "history": "^4.10.1",
     "react": "^16.13.1",
@@ -34,6 +35,6 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "dependency-cruiser": "^5.5.0"
+    "dependency-cruiser": "^9.12.0"
   }
 }
