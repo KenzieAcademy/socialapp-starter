@@ -1,9 +1,10 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 
-import Home from "./pages/Home";
-import Profile from "./pages/Profile";
-import NotFound from "./pages/NotFound";
+import Home from "./pages/home/Home";
+import Profile from "./pages/profile/Profile";
+import NotFound from "./pages/notFound/NotFound";
+import About from "./pages/about/About"
 
 class App extends React.Component {
   render() {
@@ -18,6 +19,11 @@ class App extends React.Component {
           exact
           path="/profile/:username"
           component={Profile}
+        />
+        <Route
+          exact
+          path="/about"
+          component={About}
         />
         <Route
           exact
