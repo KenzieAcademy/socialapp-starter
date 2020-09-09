@@ -9,9 +9,12 @@ class Home extends React.Component {
     return (
       <div className="Home">
         <Menu />
-        <h2>Your favorite microblogging platform</h2>
+        <h2>Join us for Blast Off!</h2>
+        <h5>sign in</h5>
         <LoginForm />
         <hr/>
+        <h2>Reserve Your Seat for the Adventure!</h2>
+        <h5>register</h5>
         <RegistrationForm />
       </div>
     );
