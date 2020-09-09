@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React from 'react'
+
 
 
 
@@ -9,8 +9,7 @@ class DataService {
         this.client = client;
     }
     registerUser(userData){
-        return this.client.post(this.url/users,
-            userData )
+        return this.client.post(this.url + "/users", userData)
          
     }
 
