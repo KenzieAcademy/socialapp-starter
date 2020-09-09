@@ -2,7 +2,7 @@ import React from "react";
 import Spinner from "react-spinkit";
 //import { withAsyncAction } from "../../redux/HOCs";
 import "./RegistrationForm.css";
-import AlmostTwitterService from "../../almostTwitterService";
+import AlmostTwitterService from "../../AlmostTwitterService";
 
 class RegistrationForm extends React.Component {
   constructor(props) {
