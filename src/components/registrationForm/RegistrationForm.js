@@ -18,9 +18,7 @@ class RegistrationForm extends React.Component {
 
   handleRegistration = e => {
     e.preventDefault();
-    this.client.registerUser(this.state).then(result => {
-      alert(JSON.stringify(result.data))
-    })
+    this.client.registerUser(this.state).then(result => {})
   };
 
   handleChange = e => {
