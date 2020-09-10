@@ -4,7 +4,12 @@ import { Switch, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
+
 import UpdateProfile from "./pages/UpdateProfile";
+
+
+
+
 class App extends React.Component {
   render() {
     return (
