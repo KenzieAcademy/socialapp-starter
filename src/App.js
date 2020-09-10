@@ -5,13 +5,19 @@ import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
 import NewUser from "./pages/NewUser";
-import Menu from "./components/menu/Menu";
+import Menu from "./components/menu/menu";
 import MessageFeed from "./components/feed/MessageFeed";
+
+
 
 class App extends React.Component {
   render() {
     return (
       <div>
+
+
+
+      
       <Menu />
       <Switch>
         <Route
