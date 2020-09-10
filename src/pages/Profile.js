@@ -8,6 +8,7 @@ class Profile extends React.Component {
       <div className="Profile">
         <Menu isAuthenticated={this.props.isAuthenticated} />
         <h2>Profile</h2>
+        <h3>name</h3>
       </div>
     );
   }
