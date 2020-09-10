@@ -11,7 +11,7 @@ class Home extends React.Component {
         <h2>Your favorite microblogging platform</h2>
         <LoginForm />
         <RegistrationForm/>
-        test etst
+      
       </div>
     );
   }
