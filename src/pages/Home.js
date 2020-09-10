@@ -1,6 +1,7 @@
 import React from "react";
 import LoginForm from "../components/loginForm/LoginForm";
 import Menu from "../components/menu/Menu";
+import RegistrationForm from "../components/registration form/RegistrationForm"
 import { userIsNotAuthenticated } from "../redux/HOCs";
 
 class Home extends React.Component {
@@ -10,7 +11,10 @@ class Home extends React.Component {
         <Menu />
         <h2>Your favorite microblogging platform</h2>
         <LoginForm />
-      </div>
+        <hr />
+        <h2>Reigster Below</h2>
+        <RegistrationForm />
+              </div>
     );
   }
 }
