@@ -2,7 +2,7 @@ import React from "react";
 import Spinner from "react-spinkit";
 import { withAsyncAction } from "../../redux/HOCs";
 import "./RegistrationForm.css";
-import DataService from "./DataService"
+import DataService from "../../DataService"
 
 class RegistrationForm extends React.Component {
   constructor(props) {
@@ -10,13 +10,14 @@ class RegistrationForm extends React.Component {
     this.state = {
       username: "",
         password: "",
-      displayname: ""
+      displayName: ""
     };
+    this.client = new DataService();
   }
 
   handleRegistration = e => {
     e.preventDefault();
-    console.log('Tried to register')
+    this.client.registerUser(this.state).then(result => {console.log(result.data)})
     
   };
 
@@ -28,7 +29,7 @@ class RegistrationForm extends React.Component {
     const { loading, error } = this.props;
     return (
       <div className="RegistrationForm">
-        <form id="registration-form" onSubmit={this.handleLogin}>
+        <form id="registration-form" onSubmit={this.handleRegistration}>
           <label htmlFor="username">Username</label>
           <input
             type="text"
@@ -53,7 +54,7 @@ class RegistrationForm extends React.Component {
             onChange={this.handleChange}
           />
           <button type="submit" disabled={loading}>
-            Login
+            Registor
           </button>
         </form>
         {loading && <Spinner name="circle" color="blue" />}
