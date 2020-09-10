@@ -3,30 +3,42 @@ import Spinner from "react-spinkit";
 import { withAsyncAction } from "../../redux/HOCs";
 import "./RegistrationForm.css";
 import DataService from "../../DataService"
+import { Link } from "react-router-dom"
 
 class RegistrationForm extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      username: "",
+      userData: {
+        username: "",
         password: "",
-      displayName: ""
+        displayName: ""
+      },
+        submitted: false
     };
     this.client = new DataService();
   }
 
   handleRegistration = e => {
     e.preventDefault();
-    this.client.registerUser(this.state).then(result => {console.log(result.data)})
+    this.client.registerUser(this.state.userData).then(result => {this.setState({submitted: true})})
+    
     
   };
 
   handleChange = e => {
-    this.setState({ [e.target.name]: e.target.value });
+    let userData = this.state.userData
+    userData[e.target.name]= e.target.value
+    this.setState({ userData });
   };
 
   render() {
     const { loading, error } = this.props;
+    if(this.state.submitted) {
+      return(<Link to='/'>Thank you for registering</Link>)
+      
+    }
+    else {
     return (
       <div className="RegistrationForm">
         <form id="registration-form" onSubmit={this.handleRegistration}>
@@ -57,10 +69,11 @@ class RegistrationForm extends React.Component {
             Registor
           </button>
         </form>
+        <a href='./'>Log in!</a>
         {loading && <Spinner name="circle" color="blue" />}
         {error && <p style={{ color: "red" }}>{error.message}</p>}
       </div>
-    );
+    );}
   }
 }
 
