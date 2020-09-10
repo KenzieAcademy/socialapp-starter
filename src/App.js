@@ -5,6 +5,10 @@ import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
 
+import UpdateProfile from "./pages/UpdateProfile";
+
+
+
 
 class App extends React.Component {
   render() {
@@ -20,12 +24,19 @@ class App extends React.Component {
           path="/profile/:username"
           component={Profile}
         />
+        
+         <Route
+          exact
+          path="/UpdateProfile/:username"
+          component={UpdateProfile}
+        />
         <Route
           exact
           path="*"
           component={NotFound}
         />
       </Switch>
+
     );
   }
 }

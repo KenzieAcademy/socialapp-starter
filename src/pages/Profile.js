@@ -3,6 +3,7 @@ import React from "react";
 import Menu from "../components/menu/Menu";
 import { Segment } from 'semantic-ui-react'
 import { Button } from 'semantic-ui-react'
+import {Link} from 'react-router-dom'
 import { userIsAuthenticated } from "../redux/HOCs";
 
 class Profile extends React.Component {
@@ -19,9 +20,15 @@ class Profile extends React.Component {
           /> 
         </Segment>
         <p> Display Name: </p>
-        <Button content='Change Photo' primary /> 
+        <Button content='Change Photo' primary
         
+        /> 
+        <Link to ={"/UpdateProfile/" + this.props.match.params.username}> 
         <Button content='Update My Info' primary />
+
+        </Link>
+        
+        
 
         </div>
     );
