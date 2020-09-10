@@ -8,8 +8,9 @@ class DataService {
     this.url = url;
     this.client = client;
   }
-  //GetQuestion() {
-  //return this.client.get(this.url);
-  //}
+
+  registerUser(userData) {
+    return this.client.post(this.url + "/users", userData);
+  }
 }
 export default DataService;
