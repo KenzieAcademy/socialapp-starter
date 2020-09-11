@@ -3,7 +3,9 @@ import Spinner from "react-spinkit";
 // import { withAsyncAction } from "../../redux/HOCs";
 import "./RegisttrationForm.css";
 import DataService from "../../dataService"
+
 class RegistrationForm extends React.Component {
+
   constructor(props) {
     super(props)
     this.state = {
@@ -11,7 +13,7 @@ class RegistrationForm extends React.Component {
       password: "",
       displayName: ""
     };
-    this.client= new DataService();
+    this.client = new DataService();
   }
 
   handleRegistration = e => {
@@ -26,6 +28,7 @@ class RegistrationForm extends React.Component {
 
   render() {
     const { loading, error } = this.props;
+
     return (
       <div className="RegistrationForm">
         <form id="registration-form" onSubmit={this.handleRegistration}>
@@ -46,7 +49,7 @@ class RegistrationForm extends React.Component {
             required
             onChange={this.handleChange}
           />
-           <label htmlFor="displayName">Display Name</label>
+          <label htmlFor="displayName">Display Name</label>
           <input
             type="text"
             name="displayName"
@@ -60,12 +63,9 @@ class RegistrationForm extends React.Component {
         </form>
         {loading && <Spinner name="circle" color="blue" />}
         {error && <p style={{ color: "red" }}>{error.message}</p>}
-     
-      <div>
-        
+
       </div>
-     
-      </div>
+
     );
   }
 }
