@@ -1,6 +1,7 @@
 import React from 'react'
 import Menu from "../components/menu/Menu";
 import { userIsAuthenticated } from "../redux/HOCs"
+import PostMessageForm from "../components/postMessageForm/PostMessageForm"
 
 class MainHub extends React.Component {
     constructor(props) {
@@ -9,9 +10,10 @@ class MainHub extends React.Component {
 
     render() {
         return (
-            <div id="mainHub">
+            <div className = "mainHub">
                 <Menu isAuthenticated={this.props.isAuthenticated} />
                 <h1>Everything will be here</h1>
+                <PostMessageForm />
             </div>
         )
     }
