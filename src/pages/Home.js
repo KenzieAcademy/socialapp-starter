@@ -8,7 +8,6 @@ import LogoutButton from "../components/logoutButton/LogoutButton";
 import DeleteMessage from "../components/deleteMessage/DeleteMessage";
 import UploadPhoto from "../components/uploadPhoto/UploadPhoto";
 
-
 class Home extends React.Component {
   render() {
     return (
@@ -21,7 +20,6 @@ class Home extends React.Component {
         <DeleteMessage />
         <UploadPhoto />
         <MessageButton />
-
       </div>
     );
   }
