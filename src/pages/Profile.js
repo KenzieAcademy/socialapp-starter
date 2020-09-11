@@ -1,7 +1,7 @@
 import React from "react";
 import Menu from "../components/menu/Menu";
 import { userIsAuthenticated } from "../redux/HOCs";
-import DataService from "../../DataService";
+import DataService from "../DataService";
 
 class Profile extends React.Component {
   constructor(props) {
@@ -24,7 +24,7 @@ class Profile extends React.Component {
       <div className="Profile">
         <Menu isAuthenticated={this.props.isAuthenticated} />
         <h2>Profile</h2>
-        <button onClick={this.handleDelete}></button>
+        <button onClick={this.handleDelete}>Delete Profile</button>
       </div>
     );
   }
