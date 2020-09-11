@@ -5,16 +5,21 @@ import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
 import SaveButton from "./components/saveButton/SaveButton";
+import Navigation from "./components/navigation/Navigation";
+
 
 class App extends React.Component {
   render() {
     return (
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/profile/:username" component={Profile} />
-        <Route exact path="*" component={NotFound} />
-        <SaveButton />
-      </Switch>
+      <div className="Navigation">
+        <Navigation />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/profile/:username" component={Profile} />
+          <Route exact path="*" component={NotFound} />
+        </Switch>
+      </div>
+
     );
   }
 }
