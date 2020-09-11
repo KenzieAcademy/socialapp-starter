@@ -2,6 +2,7 @@ import React from "react";
 import Spinner from "react-spinkit";
 import { withAsyncAction } from "../../redux/HOCs";
 import "./LoginForm.css";
+import Button from "antd/lib/button";
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -41,9 +42,12 @@ class LoginForm extends React.Component {
             required
             onChange={this.handleChange}
           />
-          <button type="submit" disabled={loading}>
+          <Button type="primary" disabled={loading}>
             Login
-          </button>
+          </Button>
+          {/* <button type="submit" disabled={loading}>
+            Login
+          </button> */}
         </form>
         {loading && <Spinner name="circle" color="blue" />}
         {error && <p style={{ color: "red" }}>{error.message}</p>}

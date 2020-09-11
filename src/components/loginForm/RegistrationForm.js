@@ -1,6 +1,5 @@
 import React from "react";
 import Spinner from "react-spinkit";
-import { withAsyncAction } from "../../redux/HOCs";
 import "./RegistrationForm.css";
 import DataService from "../../dataService";
 
@@ -15,7 +14,7 @@ class RegistrationForm extends React.Component {
     this.client = new DataService();
   }
 
-  handleRegistation = (e) => {
+  handleRegistration = (e) => {
     e.preventDefault();
     this.client.registerUser(this.state).then((result) => {
       console.log(result.data);
