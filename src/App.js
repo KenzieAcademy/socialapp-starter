@@ -4,6 +4,7 @@ import { Switch, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
+import Messages from "./pages/Messages";
 
 class App extends React.Component {
   render() {
@@ -19,6 +20,10 @@ class App extends React.Component {
           path="/profile/:username"
           component={Profile}
         />
+        <Route
+        exact
+        path="/messages"
+        component={Messages} />
         <Route
           exact
           path="*"
