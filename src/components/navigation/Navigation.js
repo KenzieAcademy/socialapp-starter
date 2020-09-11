@@ -14,7 +14,7 @@ function Navigation(props) {
         <Link to="/profile">Profile</Link>
       </li>
       <li>
-        <Link to="/newsfeed">News Feed</Link>
+        <Link to="/messagelist">News Feed</Link>
       </li>
     </ul>
   );

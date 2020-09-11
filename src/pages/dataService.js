@@ -10,5 +10,8 @@ class DataService {
   getLoginForm() {
     return this.client.post(this.url + " login");
   }
+  getMessageList() {
+    return this.client.get(this.url + "/messages");
+  }
 }
 export default DataService;
