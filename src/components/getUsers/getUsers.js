@@ -17,10 +17,11 @@ class userData extends Component {
         })
         console.log(this.state.data)
 
-this.state.people.forEach(myFunction);
+this.state.people.forEach(getPeople);
 
-function myFunction(item) {
-  document.getElementById("test").innerHTML += 'Username ' +item.displayName  + "<br>"
+function getPeople(item) {
+  console.log(item.username)
+  document.getElementById("test").innerHTML += 'Username:     ' +item.username + "<br>"
 }
 
 
