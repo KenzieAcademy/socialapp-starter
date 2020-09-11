@@ -7,6 +7,9 @@ class DataService {
     this.url = url;
     this.client = client;
   }
+  createnewuser() {
+    return this.client.post(this.url + "users");
+  }
   getLoginForm() {
     return this.client.post(this.url + " login");
   }
