@@ -2,7 +2,11 @@ import React from "react";
 import Spinner from "react-spinkit";
 import { withAsyncAction } from "../../redux/HOCs";
 import "./LoginForm.css";
+<<<<<<< Updated upstream
 import Button from "antd/lib/button";
+=======
+import { Button } from 'antd';
+>>>>>>> Stashed changes
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -51,6 +55,7 @@ class LoginForm extends React.Component {
         </form>
         {loading && <Spinner name="circle" color="blue" />}
         {error && <p style={{ color: "red" }}>{error.message}</p>}
+
       </div>
     );
   }
