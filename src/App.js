@@ -1,6 +1,6 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-
+import MainPage from "./pages/MainPage"
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
@@ -18,6 +18,10 @@ class App extends React.Component {
           exact
           path="/profile/:username"
           component={Profile}
+        />
+        <Route exact
+          path="/mainHub"
+          component={MainPage}
         />
         <Route
           exact
