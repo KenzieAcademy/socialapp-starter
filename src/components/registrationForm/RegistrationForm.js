@@ -2,6 +2,7 @@ import React from "react";
 import Spinner from "react-spinkit";
 import { withAsyncAction } from "../../redux/HOCs";
 import "./RegistrationForm.css";
+import Dataservice from "../../pages/dataService";
 
 class RegistrationForm extends React.Component {
   constructor(props) {
@@ -11,11 +12,20 @@ class RegistrationForm extends React.Component {
       password: "",
       displayName: "",
     };
+
+    this.client = new Dataservice();
   }
 
   handleRegistration = (e) => {
     e.preventDefault();
-
+    this.client
+      .createnewuser(this.state)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   handleChange = (e) => {
@@ -55,7 +65,7 @@ class RegistrationForm extends React.Component {
         </form>
         {loading && <Spinner name="circle" color="blue" />}
         {error && <p style={{ color: "red" }}>{error.message}</p>}
-      </div >
+      </div>
     );
   }
 }
