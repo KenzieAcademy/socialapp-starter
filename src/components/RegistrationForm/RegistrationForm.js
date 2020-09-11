@@ -2,25 +2,26 @@ import React from "react";
 import Spinner from "react-spinkit";
 import { withAsyncAction } from "../../redux/HOCs";
 import "./RegisttrationForm.css";
-import DataService from "../../dataService"
+import DataService from "../../dataService";
 class RegistrationForm extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       username: "",
       password: "",
-      displayName: ""
+      displayName: "",
     };
-    this.client= new DataService();
+    this.client = new DataService();
   }
 
-  handleRegistration = e => {
+  handleRegistration = (e) => {
     e.preventDefault();
-    this.client.registerUser(this.state).then(result =>
-      console.log(result.data))
+    this.client
+      .registerUser(this.state)
+      .then((result) => console.log(result.data));
   };
 
-  handleChange = e => {
+  handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };
 
@@ -46,7 +47,7 @@ class RegistrationForm extends React.Component {
             required
             onChange={this.handleChange}
           />
-           <label htmlFor="displayName">Display Name</label>
+          <label htmlFor="displayName">Display Name</label>
           <input
             type="text"
             name="displayName"
@@ -60,9 +61,10 @@ class RegistrationForm extends React.Component {
         </form>
         {loading && <Spinner name="circle" color="blue" />}
         {error && <p style={{ color: "red" }}>{error.message}</p>}
+        <div>{this.client.getMessages}</div>
       </div>
     );
   }
 }
 
-export default RegistrationForm
+export default RegistrationForm;
