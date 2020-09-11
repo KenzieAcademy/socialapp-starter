@@ -7,14 +7,9 @@ class DataService {
     this.url = url;
     this.client = client;
   }
-<<<<<<< HEAD
 
   registerUser(regisrationData){
-    return this.client.post(this.url + "/users", regisrationData)
-=======
-  registerUser(registrationData) {
-    return this.client.post(this.url + "users", registrationData);
->>>>>>> origin/sulaimon
+    return this.client.post(this.url + "users", regisrationData)
   }
 }
 export default DataService;
