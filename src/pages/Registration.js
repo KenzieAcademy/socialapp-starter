@@ -1,20 +1,21 @@
 import React from "react";
-import LoginForm from "../components/loginForm/LoginForm";
 import Menu from "../components/menu/Menu";
 import RegistrationForm from "../components/registration form/RegistrationForm"
 import { userIsNotAuthenticated } from "../redux/HOCs";
 
-class Home extends React.Component {
+
+class Registration extends React.Component {
   render() {
     return (
-      <div className="Home">
+      <div className="Registration">
         <Menu />
-        <h2>Log into Jargah</h2>
-        <LoginForm />
-      <a href='./Registration'>Register Here</a>
+        
+        <h2>Register Here</h2>
+        <RegistrationForm />
+        
               </div>
     );
   }
 }
 
-export default userIsNotAuthenticated(Home);
+export default userIsNotAuthenticated(Registration);
