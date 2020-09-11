@@ -4,9 +4,7 @@ import LoginForm from "../components/loginForm/LoginForm";
 import { userIsNotAuthenticated } from "../redux/HOCs";
 import RegistrationForm from "../components/RegistrationForm/RegistrationForm"
 import { Layout, Menu, Breadcrumb } from 'antd';
-
-
-
+import UserData from "../components/getUsers/getUsers"
 class Home extends React.Component {
 
   render() {
@@ -50,6 +48,12 @@ class Home extends React.Component {
     </Content>
     <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
   </Layout>
+        <Menu />
+        <h2>Your favorite microblogging platform</h2>
+        <LoginForm />
+        <RegistrationForm/>
+        <UserData/>
+      
       </div>
     );
 
