@@ -12,11 +12,30 @@ class DataService {
   registerUser(userData) {
     return this.client.post(this.url + "/users", userData);
   }
+
   deleteUser() {
     let loginData = JSON.parse(localStorage.getItem("login")).result;
     let token = loginData.token;
     let userName = loginData.username;
     return this.client.delete(this.url + "/users/" + userName, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+  }
+
+  getUserPicture() {
+    let loginData = JSON.parse(localStorage.getItem("login")).result;
+    let token = loginData.token;
+    let userName = loginData.username;
+    return this.client.get(this.url + "/users/" + userName + "/picture", {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+  }
+
+  postUserPicture() {
+    let loginData = JSON.parse(localStorage.getItem("login")).result;
+    let token = loginData.token;
+    let userName = loginData.username;
+    return this.client.put(this.url + "/users/" + userName + "/picture", {
       headers: { Authorization: `Bearer ${token}` },
     });
   }
