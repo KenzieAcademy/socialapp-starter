@@ -1,8 +1,8 @@
 import React from "react";
 import LoginForm from "../components/loginForm/LoginForm";
 import Menu from "../components/menu/Menu";
-import RegistrationForm from "../components/registrationForm/RegistrationForm";
 import { userIsNotAuthenticated } from "../redux/HOCs";
+import RegistrationForm from "../components/registraionForm/RegistrationForm";
 
 class Home extends React.Component {
   render() {
