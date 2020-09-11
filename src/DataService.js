@@ -7,5 +7,8 @@ class DataService {
     this.url = url;
     this.client = client;
   }
+  registerUser(registrationData) {
+    return this.client.post(this.url + "users", registrationData);
+  }
 }
 export default DataService;
