@@ -8,33 +8,16 @@ class App extends React.Component {
   render() {
     return (
       <Switch>
-<<<<<<< HEAD
         <Route exact path="/" component={Home} />
         <Route exact path="/profile/:username" component={Profile} />
         <Route exact path="*" component={NotFound} />
-=======
-        <Route
-          exact
-          path="/"
-          component={Home}
-        />
-        <Route
-          exact
-          path="/profile/:username"
-          component={Profile}
-        />
-        <Route
-          exact
-          path="*"
-          component={NotFound}
-        />
 
->>>>>>> 25104437bb3f423c9152cbd8f121bdf3bff7dddc
+        <Route exact path="/" component={Home} />
+        <Route exact path="/profile/:username" component={Profile} />
+        <Route exact path="*" component={NotFound} />
       </Switch>
     );
   }
 }
-
-
 
 export default App;

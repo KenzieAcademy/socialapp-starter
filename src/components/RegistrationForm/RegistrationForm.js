@@ -2,14 +2,12 @@ import React from "react";
 import Spinner from "react-spinkit";
 // import { withAsyncAction } from "../../redux/HOCs";
 import "./RegisttrationForm.css";
-<<<<<<< HEAD
+
 import DataService from "../../dataService";
-=======
-import DataService from "../../dataService"
 
->>>>>>> 25104437bb3f423c9152cbd8f121bdf3bff7dddc
+import DataService from "../../dataService";
+
 class RegistrationForm extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -68,21 +66,9 @@ class RegistrationForm extends React.Component {
         </form>
         {loading && <Spinner name="circle" color="blue" />}
         {error && <p style={{ color: "red" }}>{error.message}</p>}
-<<<<<<< HEAD
-<<<<<<< HEAD
-        <div>{this.client.getMessages}</div>
-=======
-     
-      <div>
-        
-      </div>
-     
->>>>>>> 1d9a066aa5e0488283dc14f7b378615881a23b2a
-=======
 
->>>>>>> 25104437bb3f423c9152cbd8f121bdf3bff7dddc
+        <div></div>
       </div>
-
     );
   }
 }
