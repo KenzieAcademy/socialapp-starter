@@ -3,10 +3,14 @@ import LoginForm from "../components/loginForm/LoginForm";
 // import Menu from "../components/menu/Menu";
 import { userIsNotAuthenticated } from "../redux/HOCs";
 import RegistrationForm from "../components/RegistrationForm/RegistrationForm"
+<<<<<<< HEAD
 import { Layout, Menu, Breadcrumb } from 'antd';
 
 
 
+=======
+import UserData from "../components/getUsers/getUsers"
+>>>>>>> 1d9a066aa5e0488283dc14f7b378615881a23b2a
 class Home extends React.Component {
 
   render() {
@@ -15,6 +19,7 @@ class Home extends React.Component {
 
     return (
       <div className="Home">
+<<<<<<< HEAD
         {/* <Menu /> */}
         {/* <h2>Your favorite microblogging platform</h2> */}
         {/* <LoginForm /> */}
@@ -50,6 +55,14 @@ class Home extends React.Component {
     </Content>
     <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
   </Layout>
+=======
+        <Menu />
+        <h2>Your favorite microblogging platform</h2>
+        <LoginForm />
+        <RegistrationForm/>
+        <UserData/>
+      
+>>>>>>> 1d9a066aa5e0488283dc14f7b378615881a23b2a
       </div>
     );
 
