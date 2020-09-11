@@ -4,7 +4,7 @@ import Menu from "../components/menu/Menu";
 import { userIsNotAuthenticated } from "../redux/HOCs";
 import SaveButton from "../components/saveButton/SaveButton";
 import LogoutButton from "../components/logoutbutton/Logout";
-
+import NameInput from "../components/namechange/NameChgInp";
 class Home extends React.Component {
   render() {
     return (
@@ -14,6 +14,7 @@ class Home extends React.Component {
         <LoginForm />
         <SaveButton />
         <LogoutButton />
+        <NameInput />
       </div>
     );
   }
