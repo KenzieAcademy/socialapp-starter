@@ -1,0 +1,14 @@
+import React from "react";
+import DeleteAccountButton from "../deleteAccountButton";
+
+class DeleteAccountButton extends React.Component {
+  render() {
+    return (
+      <div className="DeleteAccountButton">
+        <button>Delete Account</button>
+      </div>
+    );
+  }
+}
+
+export default DeleteAccountButton;
