@@ -33,7 +33,7 @@ class RegistrationForm extends React.Component {
           <input
             type="text"
             name="username"
-            minlength="3"
+            minLength="3"
             autoFocus
             required
             onChange={this.handleChange}
@@ -42,7 +42,7 @@ class RegistrationForm extends React.Component {
           <input
             type="password"
             name="password"
-            minlength="3"
+            minLength="3"
             required
             onChange={this.handleChange}
           />
@@ -50,7 +50,7 @@ class RegistrationForm extends React.Component {
           <input
             type="text"
             name="displayName"
-            minlength="3"
+            minLength="3"
             required
             onChange={this.handleChange}
           />
