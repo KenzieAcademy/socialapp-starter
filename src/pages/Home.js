@@ -1,6 +1,7 @@
 import React from "react";
 import LoginForm from "../components/loginForm/LoginForm";
 import Menu from "../components/menu/Menu";
+import MessageButton from "../components/messageButton/MessageButton";
 import { userIsNotAuthenticated } from "../redux/HOCs";
 import LogoutButton from "../components/logoutButton/LogoutButton";
 import DeleteMessage from "../components/deleteMessage/DeleteMessage";
@@ -13,9 +14,13 @@ class Home extends React.Component {
         <Menu />
         <h2>Your favorite microblogging platform</h2>
         <LoginForm />
+
         <LogoutButton />
         <DeleteMessage />
         <UploadPhoto />
+
+        <MessageButton />
+
       </div>
     );
   }
