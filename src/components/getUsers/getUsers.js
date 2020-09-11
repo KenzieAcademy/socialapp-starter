@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import DataService from "../../dataService"
-import UsersDisplay from "./usersDisplay"
 class userData extends Component {
     //set our initial state and set up our service as this.client on this component
     constructor(props){
@@ -8,7 +7,6 @@ class userData extends Component {
       this.client = new DataService();
       this.state = {
         data: {},
-        hello:[0,2,3]
       }
     }
     //get a new random question from the API and add it to the data object in state
@@ -18,11 +16,12 @@ class userData extends Component {
           data: result.data,
           people:result.data.users
         })
+        console.log(this.state.data)
 
 this.state.people.forEach(myFunction);
 
-function myFunction(item, index) {
-  document.getElementById("test").innerHTML += 'Username ' + item.username + "<br>";
+function myFunction(item) {
+  document.getElementById("test").innerHTML += 'Username ' +'<strong>'+item.displayName+'</strong>'  + "<br>";
 }
 
 
@@ -38,11 +37,9 @@ function myFunction(item, index) {
 
       
     }
-    //when the component mounts, get a the first question
     componentDidMount() {
       this.getAllUsers();
     }
-    //display the results on the screen
     render() {
       if(this.state.data === {})
       return(
@@ -52,15 +49,11 @@ function myFunction(item, index) {
         <div>
          <div>
            <h1>
-             {this.state.hello}
-          <UsersDisplay
-          users={this.state.people}
-          />
+          
            </h1>
          </div>
          <div id='test'></div>
-         <h3>What/Who is <input id='answer'></input> ?</h3><button onClick={this.SubmitQuestion}>Submit</button>
-        </div>
+       </div>
       );
     }
   }
