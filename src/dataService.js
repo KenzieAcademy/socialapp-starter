@@ -8,6 +8,9 @@ class DataService {
         return this.client.post(this.url+"/users",registrationData);
         // get messages +/messages
     }
+    userPhoto(username) {
+        return this.client.get(this.url+"/users/" + username + "/picture")
+    }
     // below not complete just thoughts from eric
     // postMessage(message){
     //     let authData=JSON.parse(localStorage.getItem("login.token"))
