@@ -3,6 +3,7 @@ import LoginForm from "../components/loginForm/LoginForm";
 import Menu from "../components/menu/Menu";
 import { userIsNotAuthenticated } from "../redux/HOCs";
 import SaveButton from "../components/saveButton/SaveButton";
+import LogoutButton from "../components/logoutbutton/Logout";
 
 class Home extends React.Component {
   render() {
@@ -12,6 +13,7 @@ class Home extends React.Component {
         <h2>Your favorite microblogging platform</h2>
         <LoginForm />
         <SaveButton />
+        <LogoutButton />
       </div>
     );
   }
