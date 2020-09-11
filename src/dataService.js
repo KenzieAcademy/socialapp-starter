@@ -13,7 +13,7 @@ class DataService {
     // get messages +/messages
   }
   getMessages() {
-    return this.client.post(this.url + "/messages?limit=10");
+    return this.client.get(this.url + "/messages?limit=10");
   }
 
   postMessage(message) {

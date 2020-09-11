@@ -6,23 +6,30 @@ class GetMessage extends Component {
     super(props);
     this.client = new DataService();
     this.state = {
-      data: {},
+      data: 0,
     };
   }
 
   getAllMessages() {
+    console.log(this.state.data);
     return this.client.getMessages().then((result) => {
       this.setState({
-        data: result.data,
+        data: result,
       });
-      console.log("Hello");
     });
+  }
+  forMessages(item) {
+    document.getElementById("test").innerHTML +=
+      "Username says " + item.text + "<br>";
   }
   componentDidMount() {
     this.getAllMessages();
   }
+
   render() {
-    if (this.state.data === {})
+    console.log(this.state.data);
+
+    if (this.state.data === 0)
       return (
         <div>
           <h1>loading</h1>
@@ -31,7 +38,7 @@ class GetMessage extends Component {
     return (
       <div>
         <div>
-          <h1></h1>
+          <h1>fu</h1>
         </div>
         <div id="test"></div>
       </div>
