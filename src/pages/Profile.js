@@ -7,7 +7,12 @@ class Profile extends React.Component {
     return (
       <div className="Profile">
         <Menu isAuthenticated={this.props.isAuthenticated} />
-        <h2>Profile</h2>
+        <div>
+          <img src="" alt="profile-pic" />
+          <button>change photo</button>
+        </div>
+        <div>update user</div>
+        <div>delete user</div>
       </div>
     );
   }
