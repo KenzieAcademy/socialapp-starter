@@ -3,8 +3,9 @@ import LoginForm from "../components/loginForm/LoginForm";
 import Menu from "../components/menu/Menu";
 import MessageButton from "../components/messageButton/MessageButton";
 import { userIsNotAuthenticated } from "../redux/HOCs";
-
 import SaveButton from "../components/saveButton/SaveButton";
+import LogoutButton from "../components/logoutbutton/Logout";
+import NameInput from "../components/namechange/NameChgInp";
 import LogoutButton from "../components/logoutButton/LogoutButton";
 import DeleteMessage from "../components/deleteMessage/DeleteMessage";
 import UploadPhoto from "../components/uploadPhoto/UploadPhoto";
@@ -18,9 +19,11 @@ class Home extends React.Component {
         <LoginForm />
         <SaveButton />
         <LogoutButton />
+        <NameInput />
         <DeleteMessage />
         <UploadPhoto />
         <MessageButton />
+
       </div>
     );
   }
