@@ -1,6 +1,6 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import MainPage from "./pages/MainPage"
+import Main from "./pages/Main"
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
@@ -20,8 +20,8 @@ class App extends React.Component {
           component={Profile}
         />
         <Route exact
-          path="/mainHub"
-          component={MainPage}
+          path="/main"
+          component={Main}
         />
         <Route
           exact
