@@ -1,4 +1,5 @@
 import React from "react";
+import './Profile.css';
 import Menu from "../../components/menu/Menu";
 import { userIsAuthenticated } from "../../redux/HOCs";
 

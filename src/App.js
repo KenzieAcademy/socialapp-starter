@@ -6,6 +6,10 @@ import Profile from "./pages/profile/Profile";
 import NotFound from "./pages/notFound/NotFound";
 import About from "./pages/about/About"
 import Visit from "./pages/visit/Visit";
+import Style from "./pages/style/Style";
+import Play from "./pages/play/Play";
+import Meet from "./pages/meet/Meet"
+import Logoff from "./pages/logoff/Logoff";
 
 class App extends React.Component {
   render() {
@@ -30,6 +34,26 @@ class App extends React.Component {
           exact
           path="/visit"
           component={Visit}
+        />
+        <Route
+          exact
+          path="/style"
+          component={Style}
+        />
+        <Route
+          exact
+          path="/play"
+          component={Play}
+        />
+        <Route
+          exact
+          path="/meet"
+          component={Meet}
+        />
+        <Route
+          exact
+          path="/logoff"
+          component={Logoff}
         />
         <Route
           exact

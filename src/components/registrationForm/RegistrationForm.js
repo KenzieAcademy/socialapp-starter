@@ -1,7 +1,7 @@
 import React from "react";
+import "./RegistrationForm.css";
 import Spinner from "react-spinkit";
 
-import "./RegistrationForm.css";
 import socialAppService from "../../socialAppService";
 
 class RegistrationForm extends React.Component {

@@ -1,6 +1,7 @@
 .Visit {
-    background-image: url("../../components/assets/images/backgrounds/Milky_Way.jpg");
+    background-image: url("../../components/assets/images/backgrounds/Milky_Way_2.jpg");
     height: 100vh;
     width: 100vw;
     color: white;
+    font-family: Kufam;
 }
