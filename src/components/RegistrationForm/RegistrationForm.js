@@ -1,6 +1,6 @@
 import React from "react";
 import Spinner from "react-spinkit";
-import { withAsyncAction } from "../../redux/HOCs";
+// import { withAsyncAction } from "../../redux/HOCs";
 import "./RegisttrationForm.css";
 import DataService from "../../dataService"
 class RegistrationForm extends React.Component {
@@ -33,7 +33,7 @@ class RegistrationForm extends React.Component {
           <input
             type="text"
             name="username"
-            minlength="3"
+            minLength="3"
             autoFocus
             required
             onChange={this.handleChange}
@@ -42,7 +42,7 @@ class RegistrationForm extends React.Component {
           <input
             type="password"
             name="password"
-            minlength="3"
+            minLength="3"
             required
             onChange={this.handleChange}
           />
@@ -50,7 +50,7 @@ class RegistrationForm extends React.Component {
           <input
             type="text"
             name="displayName"
-            minlength="3"
+            minLength="3"
             required
             onChange={this.handleChange}
           />
@@ -60,6 +60,11 @@ class RegistrationForm extends React.Component {
         </form>
         {loading && <Spinner name="circle" color="blue" />}
         {error && <p style={{ color: "red" }}>{error.message}</p>}
+     
+      <div>
+        
+      </div>
+     
       </div>
     );
   }

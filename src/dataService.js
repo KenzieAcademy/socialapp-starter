@@ -7,6 +7,9 @@ class DataService {
     registerUser(registrationData){
         return this.client.post(this.url+"/users",registrationData);
         // get messages +/messages
+    }   
+    getUsers(){
+        return this.client.get(this.url+'/users?limit=10')
     }
     // below not complete just thoughts from eric
 //     postMessage(message){
