@@ -15,9 +15,16 @@ class Menu extends React.Component {
         <h1>World Music App</h1>
         {this.props.isAuthenticated && (
           <div id="menu-links">
+
+            <Link to="/registration">Registration</Link>
+            <Link to="/profile">My Profile</Link>
+            <Link to="/myposts">My Posts</Link>
             <Link to="/messagefeed"> My Postes</Link>
-            <Link to="/messagefeed">Message Feed</Link>
-            <Link to="/messagefeed"></Link>
+
+            <Link to="/list-of-users">List of users</Link>
+
+            {/* <Link to="/messagefeed">Message Feed</Link>
+            <Link to="/messagefeed"></Link> */}
 
             <Link to="/" onClick={this.handleLogout}>
               Logout

@@ -5,6 +5,8 @@ import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
 
+import Registration from "./pages/Registration";
+
 import UpdateProfile from "./pages/UpdateProfile";
 
 
@@ -19,13 +21,22 @@ class App extends React.Component {
           path="/"
           component={Home}
         />
+
+        <Route
+          exact
+          path="/registration"
+          component={Registration}
+        />
+
+
+
         <Route
           exact
           path="/profile/:username"
           component={Profile}
         />
-        
-         <Route
+
+        <Route
           exact
           path="/UpdateProfile/:username"
           component={UpdateProfile}
