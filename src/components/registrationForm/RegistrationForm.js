@@ -1,7 +1,7 @@
 import React from "react";
 import Spinner from "react-spinkit";
 import "./RegistrationForm.css";
-import DataService from ""
+import DataService from "../../DataService";
 
 class RegistrationForm extends React.Component {
   constructor(props) {
@@ -16,7 +16,9 @@ class RegistrationForm extends React.Component {
 
   handleRegistration = e => {
     e.preventDefault();
-    this.client.registerUser(this.state).then(result =>{console.log(result.data)})
+    this.client.registerUser(this.state).then(result =>{
+        console.log(result.data)
+    })
   };
 
   handleChange = e => {
