@@ -9,7 +9,6 @@ class userData extends Component {
         data: {},
       }
     }
-    //get a new random question from the API and add it to the data object in state
     getAllUsers() {
       return this.client.getUsers().then(result => {
         this.setState({
@@ -21,18 +20,11 @@ class userData extends Component {
 this.state.people.forEach(myFunction);
 
 function myFunction(item) {
-  document.getElementById("test").innerHTML += 'Username ' +'<strong>'+item.displayName+'</strong>'  + "<br>";
+  document.getElementById("test").innerHTML += 'Username ' +item.displayName  + "<br>"
 }
 
 
-        console.log(this.state.data.users[0])
-      
-      //  let newArray= people.forEach((element, index, array) => {
-      //     console.log(element.username); // 100, 200, 300
-      // });
-        console.log(this.state.people.forEach((element) => {
-          console.log(element.username); // 100, 200, 300
-      }))
+        console.log(this.state.data.users)
       })
 
       
