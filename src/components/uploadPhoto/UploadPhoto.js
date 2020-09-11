@@ -1,13 +1,13 @@
 import React from "react";
 
-class UploadMessage extends React.Component {
+class UploadPhoto extends React.Component {
   render() {
     return (
-      <div className="UploadMessage">
-        <button>UploadMessage</button>
+      <div className="UploadPhoto">
+        <button>Upload Photo</button>
       </div>
     );
   }
 }
 
-export default UploadMessage;
+export default UploadPhoto;
