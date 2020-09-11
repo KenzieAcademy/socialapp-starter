@@ -4,7 +4,7 @@ class DeleteMessage extends React.Component {
   render() {
     return (
       <div className="DeleteMessage">
-        <button>DeleteMessage</button>
+        <button>Delete Message</button>
       </div>
     );
   }
