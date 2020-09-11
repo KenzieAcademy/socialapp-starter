@@ -1,14 +1,15 @@
 import axios from "axios";
 class DataService {
   constructor(
-    url = "https://socialapp-api.herokuapp.com/docs/",
+    url = "https://socialapp-api.herokuapp.com",
     client = axios.create()
   ) {
     this.url = url;
     this.client = client;
   }
-  createnewuser() {
-    return this.client.post(this.url + "users");
+  createnewuser(userdata) {
+    console.log(userdata);
+    return this.client.post(this.url + "/users", userdata);
   }
   getLoginForm() {
     return this.client.post(this.url + " login");
