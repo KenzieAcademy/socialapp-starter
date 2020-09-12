@@ -4,6 +4,7 @@ import axios from "axios"
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
+import 'semantic-ui-css/semantic.min.css';
 
 class App extends React.Component {
   componentDidMount() {
