@@ -20,5 +20,12 @@ class DataService {
       headers: { Authorization: `Bearer ${token}` },
     });
   }
+
+  addLikes(userLikes){
+    return this.client.post(this.url + "/likes", userLikes)
+  }
+  deleteLikes(){
+    return this.client.delete(this.url + "/likes/" + {likeId})
+  }
 }
 export default DataService;
