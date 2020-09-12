@@ -2,6 +2,7 @@ import React from "react";
 import Spinner from "react-spinkit";
 import "./RegistrationForm.css";
 import DataService from "../../services/DataService";
+
 class RegistrationForm extends React.Component {
   constructor(props) {
     super(props)
@@ -17,7 +18,7 @@ class RegistrationForm extends React.Component {
   handleRegistration = e => {
     e.preventDefault();
     this.client.registerUser(this.state).then(result => {
-      console.log(result.date)
+      console.log(result.data)
     })
   };
 

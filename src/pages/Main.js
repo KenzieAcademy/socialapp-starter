@@ -12,7 +12,7 @@ class Main extends React.Component {
         return (
             <div className="main">
                 <Menu isAuthenticated={this.props.isAuthenticated} />
-                <h1>Put Stuff here</h1>
+                <h3>Post Stuff here</h3>
                 <PostMessageForm />
             </div>
         )
