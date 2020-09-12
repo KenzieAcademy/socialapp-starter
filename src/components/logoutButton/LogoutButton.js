@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from 'antd';
 
 class LogoutButton extends React.Component {
   render() {
