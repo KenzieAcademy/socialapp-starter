@@ -1,12 +1,12 @@
 import React from "react";
 import Spinner from "react-spinkit";
 
-import "./registrationForm.css";
+import "../registrationForm/RegistrationForm.css";
 import socialAppService from "../../socialAppService";
 
 class RegistrationForm extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       username: "",
@@ -16,14 +16,14 @@ class RegistrationForm extends React.Component {
     this.client = new socialAppService();
   }
 
-  handleRegistration = e => {
+  handleRegistration = (e) => {
     e.preventDefault();
-    this.client.registerUser(this.state).then(result => {
-      alert(result.data)
-    })
+    this.client.registerUser(this.state).then((result) => {
+      alert("login created, you can now login!");
+    });
   };
 
-  handleChange = e => {
+  handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };
 
@@ -31,8 +31,12 @@ class RegistrationForm extends React.Component {
     const { loading, error } = this.props;
     return (
       <div className="RegistrationForm">
+        <div>
+          <strong>New user? Register here!</strong>
+        </div>
         <form id="registration-form" onSubmit={this.handleRegistration}>
           <label htmlFor="username">Username</label>
+
           <input
             type="text"
             name="username"
@@ -40,7 +44,9 @@ class RegistrationForm extends React.Component {
             required
             onChange={this.handleChange}
           />
-          <label htmlFor="displayName">Username</label>
+
+          <label htmlFor="displayName">Display name</label>
+
           <input
             type="text"
             name="displayName"
@@ -48,13 +54,16 @@ class RegistrationForm extends React.Component {
             required
             onChange={this.handleChange}
           />
+
           <label htmlFor="password">Password</label>
+
           <input
             type="password"
             name="password"
             required
             onChange={this.handleChange}
           />
+
           <button type="submit" disabled={loading}>
             Register
           </button>
