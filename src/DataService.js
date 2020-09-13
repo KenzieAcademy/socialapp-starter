@@ -21,11 +21,18 @@ class DataService {
     });
   }
 
-  addLikes(userLikes){
-    return this.client.post(this.url + "/likes", userLikes)
+  addLikes(userLikes) {
+    let loginData = JSON.parse(localStorage.getItem("login"));
+    return this.client.post(this.url + "/likes", userLikes, {
+      headers: { Authorization: `Bearer ${loginData.result.token}` },
+    });
   }
-  deleteLikes(){
-    return this.client.delete(this.url + "/likes/" + {likeId})
+
+  deleteLikes(likeId) {
+    let loginData = JSON.parse(localStorage.getItem("login"));
+    return this.client.delete(this.url + "/likes/" + { likeId }, {
+      headers: { Authorization: `Bearer ${loginData.result.token}` },
+    });
   }
 }
 export default DataService;
