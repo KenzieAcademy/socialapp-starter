@@ -6,7 +6,7 @@ import Menu from "../../components/menu/Menu";
 class Logoff extends React.Component {
     render() {
         return (
-            <div className="Logoff">>
+            <div className="Logoff">
 
                 <Menu />
                 {/* <Menu isNotAuthenticated={this.props.isNotAuthenticated} /> */}
