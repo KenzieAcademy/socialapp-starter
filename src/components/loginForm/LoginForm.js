@@ -1,5 +1,5 @@
 import React from "react";
-import Spinner from "react-spinkit";
+// import Spinner from "react-spinkit";
 import { withAsyncAction } from "../../redux/HOCs";
 import "./LoginForm.css";
 import { Button, Divider, Form, Grid, Segment } from 'semantic-ui-react'
@@ -46,12 +46,12 @@ class LoginForm extends React.Component {
                 onChange={this.handleChange}
               />
 
-              <Button onClick={this.handleLogin} content='Login' primary />
+              <Button onClick={this.handleLogin} content='Login' color="green"  />
             </Form>
           </Grid.Column>
 
           <Grid.Column verticalAlign='middle'>
-            <Button content='Sign up' icon='signup' size='big' />
+            <Button color="green" content='Sign up' icon='signup' size='big' />
           </Grid.Column>
         </Grid>
 
