@@ -8,8 +8,8 @@ class Play extends React.Component {
         return (
             <div>
                 <div className="Play">
-                <Menu isAuthenticated={this.props.isAuthenticated} />
-                <h1>This is the "Let's Play SpaceBallz!" page.</h1>;
+                    <Menu isAuthenticated={this.props.isAuthenticated} />
+                    <h1>This is the "Let's Play SpaceBallz!" page.</h1>;
                 </div>
             </div>
         )

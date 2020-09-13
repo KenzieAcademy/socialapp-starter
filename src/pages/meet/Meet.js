@@ -18,15 +18,15 @@ class Meet extends React.Component {
                 <Menu isAuthenticated={this.props.isAuthenticated} />
 
                 <div>
-                <h1>This is the "Meet the Squirrels" Page</h1>
-                <h3>Arjun</h3>
-                <div className="Arjun">Hi, Arjun!</div>
-                <h3>Ashleigh</h3>
-                <div className="Ashleigh">Hi, Ashleigh!</div>
-                <h3>Cynthia</h3>
-                <div className="Cynthia">Hi, Cynthia!</div>
-                <h3>Joseph</h3>
-                <div className="Joseph">Hi, Joseph!</div>
+                    <h1>This is the "Meet the Squirrels" Page</h1>
+                    <h3>Arjun</h3>
+                    <div className="Arjun">Hi, Arjun!</div>
+                    <h3>Ashleigh</h3>
+                    <div className="Ashleigh">Hi, Ashleigh!</div>
+                    <h3>Cynthia</h3>
+                    <div className="Cynthia">Hi, Cynthia!</div>
+                    <h3>Joseph</h3>
+                    <div className="Joseph">Hi, Joseph!</div>
                 </div>
             </div>
         );

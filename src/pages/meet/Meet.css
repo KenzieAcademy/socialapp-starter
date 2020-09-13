@@ -1,42 +1,42 @@
 .Meet {
-    background-image: url("../../components/assets/images/backgrounds/Upside_down.jpg");
-    height: 100vh;
-    width: 100vw;
-    color: white;
-    font-family: Kufam;
+  background-image: url("../../components/assets/images/backgrounds/Upside_down.jpg");
+  height: 200vh;
+  width: 100vw;
+  color: white;
+  font-family: Kufam;
 }
 
 .Arjun {
-    height: 50px;
-    width: 50px;
-    border: 3px, solid, black;
-    inset: url=("../../components/assets/images/Squirrels/Arjun.jpg");
+  height: 50px;
+  width: 50px;
+  border: 3px, solid, black;
+  inset: url=("../../components/assets/images/Squirrels/Arjun.jpg");
 }
 
 .Ashleigh {
-    height: 50px;
-    width: 50px;
-    border: 3px, solid, black;
-    inset: url=("../../components/assets/images/Squirrels/Ashleigh.jpg");
+  height: 50px;
+  width: 50px;
+  border: 3px, solid, black;
+  inset: url=("../../components/assets/images/Squirrels/Ashleigh.jpg");
 }
 
 .Cynthia {
-    height: 50px;
-    width: 50px;
-    border: 3px, solid, black;
-    inset: url=("../../components/assets/images/Squirrels/Cynthia.jpg");
+  height: 50px;
+  width: 50px;
+  border: 3px, solid, black;
+  inset: url=("../../components/assets/images/Squirrels/Cynthia.jpg");
 }
 
 .Joseph {
-    height: 50px;
-    width: 50px;
-    border: 3px, solid, black;
-    inset: url=("../../components/assets/images/Squirrels/Joseph.jpg");
+  height: 50px;
+  width: 50px;
+  border: 3px, solid, black;
+  inset: url=("../../components/assets/images/Squirrels/Joseph.jpg");
 }
 
 .Jon {
-    height: 50px;
-    width: 50px;
-    border: 3px, solid, black;
-    inset: url=("../../components/assets/images/Squirrels/Jon.jpg");
+  height: 50px;
+  width: 50px;
+  border: 3px, solid, black;
+  inset: url=("../../components/assets/images/Squirrels/Jon.jpg");
 }

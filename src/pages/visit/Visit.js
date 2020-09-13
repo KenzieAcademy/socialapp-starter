@@ -8,8 +8,8 @@ class Visit extends React.Component {
         return (
             <div>
                 <div className="Visit">
-                <Menu isAuthenticated={this.props.isAuthenticated} />
-                <h1>This is the "Visit the Planets" page.</h1>;
+                    <Menu isAuthenticated={this.props.isAuthenticated} />
+                    <h1>This is the "Visit the Planets" page.</h1>;
                 </div>
             </div>
         )

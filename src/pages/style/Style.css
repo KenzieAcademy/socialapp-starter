@@ -1,7 +1,7 @@
 .Style {
-    background-image: url("../../components/assets/images/backgrounds/Twin_Jet_nebula.jpg");
-    height: 100vh;
-    width: 100vw;
-    color: white;
-    font-family: Kufam;
+  background-image: url("../../components/assets/images/backgrounds/Twin_Jet_nebula.jpg");
+  height: 200vh;
+  width: 100vw;
+  color: white;
+  font-family: Kufam;
 }

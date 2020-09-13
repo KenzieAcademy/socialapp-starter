@@ -8,8 +8,8 @@ class Style extends React.Component {
         return (
             <div>
                 <div className="Style">
-                <Menu isAuthenticated={this.props.isAuthenticated} />
-                <h1>This is the "Show us Your Style" page.</h1>;
+                    <Menu isAuthenticated={this.props.isAuthenticated} />
+                    <h1>This is the "Show us Your Style" page.</h1>;
                 </div>
             </div>
         )
