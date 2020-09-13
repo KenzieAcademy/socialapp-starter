@@ -11,7 +11,7 @@ class FootNavBar extends React.Component {
           <div id="footer-links">
             {/* trying to figure out how to write this to make it link. */}
             <a href={"https://www.nasa.gov"}>NASA</a>
-            <Link to="/">Sci-Fi Movies</Link>
+            <a href={"https://www.imdb.com/list/ls021424736/"}>Sci-Fi Movies</a>
             <Link to="/">Advertising</Link>
             <Link to="/">Like us on FB</Link>
           </div>
