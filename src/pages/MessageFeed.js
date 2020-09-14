@@ -1,5 +1,5 @@
 import React from "react";
-import Menu from "../components/menu/Menu";
+import Menu from "../components/menu/MenuAuthenticated";
 import { userIsAuthenticated } from "../redux/HOCs";
 import Feed from "../components/feed/Feed";
 

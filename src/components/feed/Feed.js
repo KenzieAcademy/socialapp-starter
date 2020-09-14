@@ -1,4 +1,5 @@
 import React from "react";
+import { Layout } from 'antd';
 import QuestboardService from "../../pages/ServicePage"
 
 
@@ -40,14 +41,19 @@ class Feed extends React.Component {
   }
 
   render() {
+
+    const { Header, Content, Footer} = Layout;
     return (
-      <div className="MessageFeed">
-        <h1>Message Feed</h1>
-        <div>
-
+      <Layout className="site-layout" style={{ marginLeft: 190 }}>
+      <Header className="site-layout-background" style={{ padding: 0 }} />
+      <Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>
+        <div className="site-layout-background" style={{ padding: 24, textAlign: 'center' }}>
+        <h2>Message Feed</h2>
+        Test Feed Test Test
         </div>
-      </div>
-
+      </Content>
+      <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
+    </Layout>
     );
   }
 }

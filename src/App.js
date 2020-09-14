@@ -5,7 +5,6 @@ import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
 import NewUser from "./pages/NewUser";
-import Menu from "./components/menu/Menu";
 import MessageFeed from "./pages/MessageFeed";
 import ContactUs from "./pages/ContactUs";
 
