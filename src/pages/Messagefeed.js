@@ -4,7 +4,13 @@ class Messagefeed extends Component {
     render() {
         return (
             <div className="Messages">
-                <p>hi</p>
+                <form class="feed">
+                    <label>Create a Post</label>
+                    <input type="text" placeholder="Post here"></input>
+                    <buttton type="submit">Submit</buttton>
+                    <input id="addPost"></input>
+
+                </form>
             </div>
         );
     }
