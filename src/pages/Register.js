@@ -2,31 +2,34 @@ import React,{Component} from 'react'
 import { render } from 'react-dom'
 import DataService from '../components/DataService'
 
+
+
+
 class Register extends Component {
     constructor(props) {
         super(props)
         this.state = {
             
-                username: '',
-                password: '',
-                displayName:''
+            username: '',
+            password: '',
+            displayName:''
             
         }
         this.client = new DataService()
     }
-
+    
     handleRegistration = e =>{
         e.preventDefault()
         this.client.registerUser(this.state).then(result =>{
-            alert(result.data)
+            alert(JSON.stringify(result.data))
         })
     }
-
+    
     handleChange = (event) => {
-        this.setState({[event.target.name]:event.target.value})
-
-       
-    }
+        let registerName = event.target.name
+        let registerValue = event.target.value
+        this.setState({[registerName]:registerValue})
+}
 
     
     

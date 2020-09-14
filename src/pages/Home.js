@@ -33,7 +33,11 @@ registerButton =(event) => {
         <> 
            <LoginForm />
            <hr />
-           <h4>'Not a Member?</h4>
+           <h4>
+             Not a Member? 
+             Register by clicking below!
+
+           </h4>
            <button onClick={this.registerButton}> Register </button>
         </>
            )
