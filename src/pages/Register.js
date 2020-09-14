@@ -26,9 +26,7 @@ class Register extends Component {
     }
         
     handleChange = (event) => {
-        let registerName = event.target.name
-        let registerValue = event.target.value
-        this.setState({[registerName]:event.target.value})
+        this.setState({[event.target.name]:event.target.value})
 }
 
     
