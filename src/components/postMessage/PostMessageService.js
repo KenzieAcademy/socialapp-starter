@@ -7,9 +7,8 @@ class PostMessageService {
     }
     
     postMessage = (messageBody) => {
-        fetch(this.url + "/messages", {
+        fetch(this.url + "messages", {
             method: "POST",
-            headers: jsonHeaders,
             body: JSON.stringify(messageBody)
         })
         .then(res => res.json())
