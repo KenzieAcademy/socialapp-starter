@@ -16,7 +16,9 @@
     "redux": "^4.0.5",
     "redux-auth-wrapper": "^2.1.0",
     "redux-devtools-extension": "^2.13.8",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^1.2.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -35,6 +37,6 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "dependency-cruiser": "^5.5.0"
+    "dependency-cruiser": "^9.13.1"
   }
 }
