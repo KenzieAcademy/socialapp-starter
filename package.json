@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "axios": "^0.20.0",
+    "buefy": "^0.9.3",
     "connected-react-router": "^6.8.0",
     "history": "^4.10.1",
     "react": "^16.13.1",
