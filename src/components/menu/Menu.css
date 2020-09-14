@@ -1,5 +1,6 @@
 .Menu {
-  background-color: lightskyblue;
+  background-color: #908870;
+  color: #1C1506;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -14,7 +15,7 @@
 
 #menu-links a {
   padding-right: 0.5em;
-  color: darkblue;
+  color: #6b5c3e;
   text-decoration: underline;
   cursor: pointer;
 }
