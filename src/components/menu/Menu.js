@@ -15,7 +15,7 @@ class Menu extends React.Component {
     return (
       <div className="Menu">
         <h1>Super-Book</h1>
-        <Link className="Home" to="/Home">Home</Link>
+        <Link className="Home" to="/">Home</Link>
         <Link className="signUp" to="/Registration">sign up</Link>
         <Link className="login" to="/login">login</Link>
        
