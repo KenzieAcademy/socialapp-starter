@@ -1,6 +1,6 @@
-//import the axios HTTP client to communicate with the API
 import axios from "axios";
-class DataService {
+
+class DeleteUserService {
   constructor(
     url = "https://socialapp-api.herokuapp.com",
     client = axios.create()
@@ -9,18 +9,16 @@ class DataService {
     this.client = client;
   }
 
-  registerUser(registrationData) {
-    return this.client.post(this.url + "/users", registrationData);
-  }
-
-  postMessage(message) {
+  deleteUser() {
     let loginData = JSON.parse(localStorage.getItem("login"));
+    let username = loginData.result.username;
 
-    return this.client.post(this.url + "/messages", message, {
+    return this.client.delete(this.url + "/users/" + username, {
       headers: {
         Authorization: `Bearer ${loginData.result.token}`,
       },
     });
   }
 }
-export default DataService;
+
+export default DeleteUserService;
