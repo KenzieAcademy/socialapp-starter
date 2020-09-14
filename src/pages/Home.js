@@ -9,7 +9,15 @@ class Home extends React.Component {
     return (
       <div className="Home">
         <Menu />
+<<<<<<< HEAD
+<<<<<<< HEAD
+        <h2>Your Favorite Microblogging Platform!</h2>
+=======
         <h2>The hottest microblogging platform on the web</h2>
+>>>>>>> master
+=======
+        <h2>The hottest microblogging platform on the web</h2>
+>>>>>>> master
         <LoginForm />
         <br />New user?<br />
         <Link to="/registration">Register an account here!</Link>
