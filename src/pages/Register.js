@@ -10,25 +10,25 @@ class Register extends Component {
         super(props)
         this.state = {
             
-            username: '',
-            password: '',
-            displayName:''
+                username: '',
+                password: '',
+                displayName:''
             
         }
         this.client = new DataService()
     }
-    
+
     handleRegistration = e =>{
         e.preventDefault()
         this.client.registerUser(this.state).then(result =>{
             alert(JSON.stringify(result.data))
         })
     }
-    
+        
     handleChange = (event) => {
         let registerName = event.target.name
         let registerValue = event.target.value
-        this.setState({[registerName]:registerValue})
+        this.setState({[registerName]:event.target.value})
 }
 
     
