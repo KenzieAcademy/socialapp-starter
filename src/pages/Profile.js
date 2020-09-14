@@ -1,6 +1,5 @@
 import React from "react";
 import Menu from "../components/menu/Menu";
-import Message from "../pages/Messagefeed";
 import { userIsAuthenticated } from "../redux/HOCs";
 
 class Profile extends React.Component {
