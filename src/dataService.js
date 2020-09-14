@@ -9,7 +9,7 @@ class DataService {
     }
 
     registerUser(userData) {
-        return this.client.post(this.url + "/users, userData");
+        return this.client.post(this.url + "/users", userData);
     }
     getUsers() {
         return this.client.get(this.url + "/users");

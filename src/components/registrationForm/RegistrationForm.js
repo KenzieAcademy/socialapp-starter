@@ -17,21 +17,31 @@ class RegistrationForm extends React.Component {
 
     handleRegistration = e => {
         e.preventDefault();
-        this.props.login(this.state);
         this.client.registerUser(this.state).then(result => {
-            alert(result.data)
+            alert(JSON.stringify(result.data))
         })
     };
 
     handleChange = e => {
         this.setState({ [e.target.name]: e.target.value });
+
+
     };
+    resetForm = (event) => {
+        this.setState({
+            username: "",
+            password: "",
+            displayName: ""
+        })
+    }
+
+
 
     render() {
         const { loading, error } = this.props;
         return (
             <div className="RegistrationForm">
-                <form id="registration-form" onSubmit={this.handleLogin}>
+                <form id="registration-form" onSubmit={this.handleRegistration}>
                     <label htmlFor="username">Username</label>
                     <input
                         type="text"
