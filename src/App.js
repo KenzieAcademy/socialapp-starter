@@ -8,6 +8,8 @@ import NotFound from "./pages/NotFound";
 class App extends React.Component {
   render() {
     return (
+    
+      
       <Switch>
         <Route
           exact
@@ -25,6 +27,7 @@ class App extends React.Component {
           component={NotFound}
         />
       </Switch>
+      
     );
   }
 }
