@@ -1,8 +1,9 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 import axios from "axios"
-import Home from "./pages/Home";
-import Profile from "./pages/Profile";
+import RegistrationForm from "./components/registrationForm/RegistrationForm"
+import Home from "../src/components/Home/Home";
+import Profile from "../src/components/profile/Profile";
 import NotFound from "./pages/NotFound";
 import 'semantic-ui-css/semantic.min.css';
 
@@ -25,6 +26,7 @@ class App extends React.Component {
           path="/"
           component={Home}
         />
+       
         <Route
           exact
           path="/profile/:username"
@@ -35,6 +37,7 @@ class App extends React.Component {
           path="*"
           component={NotFound}
         />
+        
       </Switch>
     );
   }

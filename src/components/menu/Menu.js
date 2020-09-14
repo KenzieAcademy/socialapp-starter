@@ -1,29 +1,38 @@
-import React from "react";
+
 import { Link } from "react-router-dom";
 import "./Menu.css";
 import { withAsyncAction } from "../../redux/HOCs";
+import React, { Component } from 'react'
+import { Menu } from 'semantic-ui-react'
 
-class Menu extends React.Component {
-  handleLogout = event => {
-    event.preventDefault();
-    this.props.logout();
-  };
+export default class MenuExampleBasic extends Component {
+  state = {}
+
+  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
   render() {
+    const { activeItem } = this.state
+
     return (
-      <div className="Menu">
-        <h1>Almost Twitter</h1>
-        {this.props.isAuthenticated && (
-          <div id="menu-links">
-            <Link to="/messagefeed">Message Feed</Link>
-            <Link to="/" onClick={this.handleLogout}>
-              Logout
-            </Link>
-          </div>
-        )}
-      </div>
-    );
+      <Menu>
+        <Menu.Item
+          name='Sign Up'
+          active={activeItem === 'signUp'}
+          onClick={this.handleItemClick}
+        >
+          Sign Up
+        </Menu.Item>
+
+        <Menu.Item
+          name='Login'
+          active={activeItem === 'Login'}
+          onClick={this.handleItemClick}
+        >
+          Login
+        </Menu.Item>
+
+        
+      </Menu>
+    )
   }
 }
-
-export default withAsyncAction("auth", "logout")(Menu);
