@@ -1,22 +1,27 @@
 import React from "react";
 import Spinner from "react-spinkit";
-import { withAsyncAction } from "../../redux/HOCs";
-import "./LoginForm.css";
+import "./RegistrationForm.css";
+import DataService from "../../dataService"
 import { TextInput } from "evergreen-ui"
 import { Button } from "evergreen-ui"
 
-class LoginForm extends React.Component {
+class RegistrationForm extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       username: "",
-      password: ""
+      password: "",
+      displayName: ""
     };
+    this.client = new DataService();
   }
 
-  handleLogin = e => {
+  handleRegistration = e => {
     e.preventDefault();
-    this.props.login(this.state);
+    this.client.registerUser(this.state).then(result => {
+      alert(result.data)
+    })
+    
   };
 
   handleChange = e => {
@@ -26,10 +31,9 @@ class LoginForm extends React.Component {
   render() {
     const { loading, error } = this.props;
     return (
-      <div className="LoginForm">
-        <form id="login-form" onSubmit={this.handleLogin}>
-          
-          <TextInput
+      <div className="RegistrationForm">
+        <form id="registration-form" onSubmit={this.handleRegistration}>
+        <TextInput
             name="username"
             placeholder="Username"
             autoFocus
@@ -44,7 +48,14 @@ class LoginForm extends React.Component {
             required
             onChange={this.handleChange}
           />
-          <Button marginRight={255} appearance="primary" intent="none">Login</Button>
+           <TextInput
+            name="disply name"
+            placeholder="Display Name"
+            autoFocus
+            required
+            onChange={this.handleChange}
+          />
+          <Button marginRight={210} appearance="primary" intent="none">Create Profile</Button>
         </form>
         {loading && <Spinner name="circle" color="blue" />}
         {error && <p style={{ color: "red" }}>{error.message}</p>}
@@ -53,4 +64,4 @@ class LoginForm extends React.Component {
   }
 }
 
-export default withAsyncAction("auth", "login")(LoginForm);
+export default RegistrationForm;
