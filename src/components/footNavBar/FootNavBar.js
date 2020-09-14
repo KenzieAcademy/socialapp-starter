@@ -10,10 +10,18 @@ class FootNavBar extends React.Component {
         {this.props.isAuthenticated && (
           <div id="footer-links">
             {/* trying to figure out how to write this to make it link. */}
-            <a href={"https://www.nasa.gov"}>NASA</a>
-            <a href={"https://www.imdb.com/list/ls021424736/"}>Sci-Fi Movies</a>
-            <Link to="/">Advertising</Link>
-            <Link to="/">Like us on FB</Link>
+            <a href={"https://www.nasa.gov"} target="blank">
+              NASA
+            </a>
+            <a href={"https://www.imdb.com/list/ls021424736/"} target="blank">
+              Sci-Fi Movies
+            </a>
+            <a href="/notfound" target="blank">
+              Advertising
+            </a>
+            <a href="/notfound" target="blank">
+              Like us on FB
+            </a>
           </div>
         )}
       </div>
