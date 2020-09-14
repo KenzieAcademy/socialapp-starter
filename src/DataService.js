@@ -1,22 +1,73 @@
 import axios from 'axios'
-import { message } from 'antd';
 class DataService {
     constructor(url = 'http://socialapp-api.herokuapp.com', client = axios.create()) {
         this.url = url;
         this.client = client;
     }
-    submitMessage(message) {
-        return this.client.post(this.url + "/messages", message);
+
+    registerUser(userData) {
+        return this.client.post(this.url + "/users", userData);
     }
-    getMessage() {
-        return this.client.get(this.url + "/messages")
+
+    updateUser(userData) {
+        const loginData = JSON.parse(localStorage.getItem('login')).result
+        let token = loginData.token
+        let username = loginData.username
+        let url = this.url + "/users/" + username
+        return this.client.patch(url, userData,
+            {
+                headers: { Authorization: `Bearer ${token}` }
+            }
+        )
     }
-    getOneMessage() {
-        return this.client.get(this.url.com + "/messages/{messageID}")
+
+    deleteUser(userData) {
+        const loginData = JSON.parse(localStorage.getItem('login')).result
+        let token = loginData.token
+        let username = loginData.username
+        let url = this.url + "/users/" + username
+        return this.client.delete(url, userData,
+            {
+                headers: { Authorization: `Bearer ${token}` }
+            }
+        )
     }
-    deleteMessage() {
-        return this.client.delete(this.url.com + "/messages/{messageID}")
+
+    postMessages(message) {
+        const loginData = JSON.parse(localStorage.getItem('login')).result
+        let token = loginData.token
+        let url = this.url + "/messages"
+        return this.client.post(url, message,
+            {
+                headers: { Authorization: `Bearer ${token}` }
+            }
+        )
     }
+
+    getMessages() {
+        return this.client.get(this.url + "/messages?limit=100")  //Limit 100 messages
+    }
+
+    deleteMessage(messageID) {
+        const loginData = JSON.parse(localStorage.getItem('login')).result
+        let token = loginData.token
+        let url = this.url + "/messages/" + messageID
+        return this.client.delete(url, messageID,
+            {
+                headers: { Authorization: `Bearer ${token}` }
+            }
+        )
+    }
+
+    likePost(messageID) {
+        // Insert API call here
+    }
+
+    setUserPicture(userPicture) {
+        // Insert API call here
+    }
+
+
 }
 
 export default DataService
