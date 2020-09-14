@@ -1,20 +1,23 @@
 .Menu {
-  background-color: lightskyblue;
+  background-color: orange;
   display: flex;
+  background-color: rgb(134, 3, 3);
+  display: flex-box;
   justify-content: space-between;
   align-items: center;
-  padding: 0 1em;
-  border-radius: 1em;
+  padding: 0 2em;
+  border-radius: 2em;
 }
 
 #menu-links {
-  display: flex;
-  padding-left: 1em;
+  display: flex-box;
+  padding-left: 2em;
 }
 
 #menu-links a {
   padding-right: 0.5em;
-  color: darkblue;
+  color: rgb(20, 20, 20);
   text-decoration: underline;
   cursor: pointer;
 }
+
