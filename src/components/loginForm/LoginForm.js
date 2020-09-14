@@ -2,6 +2,8 @@ import React from "react";
 import Spinner from "react-spinkit";
 import { withAsyncAction } from "../../redux/HOCs";
 import "./LoginForm.css";
+import { TextInput } from "evergreen-ui"
+import { Button } from "evergreen-ui"
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -26,24 +28,23 @@ class LoginForm extends React.Component {
     return (
       <div className="LoginForm">
         <form id="login-form" onSubmit={this.handleLogin}>
-          <label htmlFor="username">Username</label>
-          <input
-            type="text"
+          
+          <TextInput
             name="username"
+            placeholder="Username"
             autoFocus
             required
             onChange={this.handleChange}
           />
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
+          
+          <TextInput
             name="password"
+            placeholder="Password"
+            autoFocus
             required
             onChange={this.handleChange}
           />
-          <button type="submit" disabled={loading}>
-            Login
-          </button>
+          <Button marginRight={255} appearance="primary" intent="none">Login</Button>
         </form>
         {loading && <Spinner name="circle" color="blue" />}
         {error && <p style={{ color: "red" }}>{error.message}</p>}
