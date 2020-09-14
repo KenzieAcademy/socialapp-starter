@@ -12,7 +12,7 @@ class DataService {
         return this.client.get(this.url + "/messages")
     }
     getOneMessage() {
-        return this.client.get(this.url.com + "/messaages/{messageID}")
+        return this.client.get(this.url.com + "/messages/{messageID}")
     }
     deleteMessage() {
         return this.client.delete(this.url.com + "/messages/{messageID}")
