@@ -1,4 +1,6 @@
 .Menu {
+  background-color: orange;
+  display: flex;
   background-color: rgb(134, 3, 3);
   display: flex-box;
   justify-content: space-between;
