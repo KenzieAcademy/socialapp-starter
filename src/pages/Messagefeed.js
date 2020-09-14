@@ -4,7 +4,7 @@ class Messagefeed extends Component {
     render() {
         return (
             <div className="Messages">
-                <form class="feed">
+                <form className='feed'>
                     <label>Create a Post</label>
                     <input type="text" placeholder="Post here"></input>
                     <buttton type="submit">Submit</buttton>
