@@ -2,12 +2,18 @@
     display: flex;
     justify-content: center;
 }
+
 h1 {
-    display:flex;
+    display: flex;
     justify-content: center;
-    
+
 }
+
+body {
+    background-color: lightcoral;
+}
+
 #signUp {
-  display:flex;
+    display: flex;
     position: right;
 }

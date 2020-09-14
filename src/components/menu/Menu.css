@@ -1,16 +1,23 @@
 .Menu {
-  background-color: #043123;
+  background-color: darkgoldenrod;
   display: flex;
+
   justify-content: space-between;
   align-items: center;
   padding: 0 1em;
   border-radius: 1em;
-  
+
 
 }
+
+body {
+  background-color: lightcoral;
+}
+
 h1 {
   color: darkred;
 }
+
 #menu-links {
   display: flex;
   padding-left: 1em;
