@@ -1,4 +1,6 @@
 body {
+  background-color: #e0d8c0;
+  color: #47170e;
   margin: 0.5em;
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -11,4 +13,21 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+#components-layout-demo-fixed-sider .logo {
+  height: 32px;
+  background:#908870;
+  margin: 16px;
+}
+
+.logo {
+  background-color: #e0d8c0;
+  padding: 5px;
+  color: rgb(255, 255, 255);
+  font-size: 25px;
+}
+
+.site-layout .site-layout-background {
+  background: #e0d8c0;
 }
