@@ -1,7 +1,8 @@
-import React from "./node_modules/react";
-import Spinner from "./node_modules/react-spinkit";
+import React from "react";
+import Spinner from "react-spinkit";
 import "./NewMessage.css";
 import DataService from "../../DataService"
+import { withAsyncAction } from "../../redux/HOCs";
 
 class NewMessage extends React.Component {
   constructor(props) {
@@ -9,12 +10,12 @@ class NewMessage extends React.Component {
     this.state = {
       message: ""
     };
-    this.client = new DataService
+    this.client = new DataService()
   }
 
   handleMessage = e => {
     e.preventDefault();
-    this.client.message(this.state).then(result => {
+    this.client.postMessages({ text: this.state.message }).then(result => {
       alert(result.data)
     });
   };
@@ -49,4 +50,4 @@ class NewMessage extends React.Component {
   }
 }
 
-export default withAsyncAction("auth", "message")(NewMessage);
+export default NewMessage;
