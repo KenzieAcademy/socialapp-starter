@@ -1,5 +1,5 @@
 .Menu {
-  background: linear-gradient(110deg, red 60%, orange 60%);
+  background-color: orange;
   display: flex;
   background-color: rgb(134, 3, 3);
   display: flex-box;
