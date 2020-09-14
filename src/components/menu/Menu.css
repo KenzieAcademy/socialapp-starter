@@ -1,5 +1,5 @@
 .Menu {
-  background-color: lightskyblue;
+  background: linear-gradient(110deg, red 60%, orange 60%);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -18,3 +18,4 @@
   text-decoration: underline;
   cursor: pointer;
 }
+
