@@ -4,6 +4,10 @@ import "./Menu.css";
 import { withAsyncAction } from "../../redux/HOCs";
 import MenuIcon from '@material-ui/icons/Menu';
 
+
+
+
+
 class Menu extends React.Component {
   handleLogout = event => {
     event.preventDefault();
@@ -12,12 +16,13 @@ class Menu extends React.Component {
 
   render() {
     return (
-      <div className="Menu">
+      <div className="">
         <MenuIcon/>
         <h1>Kwitter</h1>
         {this.props.isAuthenticated && (
           <div id="menu-links">
-            <Link to="/messagefeed">Message Feed</Link>
+            <Link to="/messagefeed"></Link>
+            
             <Link to="/" onClick={this.handleLogout}>
               Logout
             </Link>
