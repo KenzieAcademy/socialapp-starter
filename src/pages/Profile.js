@@ -1,8 +1,7 @@
 import React from "react";
 //import React, { Component } from 'react'
 import Menu from "../components/menu/Menu";
-import { Segment } from 'semantic-ui-react'
-import { Button } from 'semantic-ui-react'
+import { Button, Divider, Form, Grid, Segment } from 'semantic-ui-react'
 import {Link} from 'react-router-dom'
 import { userIsAuthenticated } from "../redux/HOCs";
 
@@ -19,7 +18,7 @@ class Profile extends React.Component {
           width='200 px'
           /> 
         </Segment>
-        <p> Display Name: </p>
+        <h2> Display Name: </h2>
         <Button content='Change Photo' primary
         
         /> 
