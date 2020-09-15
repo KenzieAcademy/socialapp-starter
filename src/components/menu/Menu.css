@@ -22,7 +22,13 @@
   color: darkblue;
   text-decoration: underline;
   cursor: pointer;
-  
-  
 
+  
 }
+
+.Menu .logo {
+  width: 100%;
+  margin: auto;
+  height: 120px;
+}
+
