@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Spinner from "react-spinkit";
-import { withAsyncAction } from "../../redux/HOCs";
+// import { withAsyncAction } from "../../redux/HOCs";
 import "./RegistrationForm.css";
 import DataService from "../../dataService";
+import { Button } from "@material-ui/core";
+
 
 class RegistrationForm extends React.Component {
     constructor(props) {
@@ -38,6 +40,7 @@ class RegistrationForm extends React.Component {
             password: "",
             displayName: "",
             submitted: true
+
         })
     }
 

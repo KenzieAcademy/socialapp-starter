@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import MessageBox from "../messages/MessageBox";
 import Post from "../post/Post";
-import "../feeds/Feed.css";
-// import db from "./firebase";
-import FlipMove from "react-flip-move";
+// import "../feeds/Feed.css";
+import FlipMove from 'react-flip-move';
 
 function Feed() {
   const [posts, setPosts] = useState([]);
