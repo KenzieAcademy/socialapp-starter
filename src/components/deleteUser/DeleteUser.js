@@ -1,25 +1,20 @@
 import React from "react";
 import Spinner from "react-spinkit";
-import "./deletionForm.css";
-import DataService from "../../dataService/dataService";
+import "./DeletionForm.css";
+import DataService from "../../DataService";
 
 class DeleteUser extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {
-            "username": "string",
-            "statusCode": 0
-        };
         this.client = new DataService();
     }
 
 
-    handleDeletion = e => {
-        this.setState({ [e.target.name]: e.target.value });
-    }
 
     //Check for error with deletion process
-    deleteUser = () => {
+    deleteUser = (e) => {
+        e.preventDefault()
+        console.log("click")
         this.client.deleteUser()
             .then(data => {
                 console.log(data)
@@ -32,18 +27,10 @@ class DeleteUser extends React.Component {
 
         return (
             <div className="DeletionForm">
-                <form id="deletion-form" onSubmit={this.handleDeletion}>
-                    <label htmlFor="username">Username</label>
-                    <input
-                        type="text"
-                        name="username"
-                        autoFocus
-                        required
-                        onChange={this.handleChange}
-                    />
+                <form id="deletion-form" onSubmit={this.deleteUser}>
                     <button type="danger" disabled={loading}>
                         Are you sure you want to DELETE ?
-          </button>
+                    </button>
                 </form>
                 {loading && <Spinner name="circle" color="blue" />}
                 {error && <p style={{ color: "red" }}>{error.message}</p>}

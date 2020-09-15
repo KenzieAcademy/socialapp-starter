@@ -1,7 +1,7 @@
 import React from "react";
 import Spinner from "react-spinkit";
-import "./registrationForm.css";
-import DataService from "../../dataService/dataService";
+import "./RegistrationForm.css";
+import DataService from "../../DataService";
 
 class RegistrationForm extends React.Component {
   constructor(props) {
