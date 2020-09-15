@@ -9,14 +9,17 @@ import "./home.css"
 class Home extends React.Component {
     render() {
         return (
-            <div>
+            
             <div className="Home">
-                <Menu ></div>
-                <div className="homepagestuff"></div>
-                    <div className="content">
-                    </div>
+            <Menu />
+            <div className="homepagestuff">
+                <div className="content">
                 </div>
-           </div>
+            </div>
+       
+       </div>
+                
+           
            
             
         );

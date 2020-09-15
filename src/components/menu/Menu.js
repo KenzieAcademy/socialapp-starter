@@ -4,10 +4,6 @@ import "./Menu.css";
 import { withAsyncAction } from "../../redux/HOCs";
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 0ba5a32b19835e59b06d006676446e9e9d38b252
 class Menu extends React.Component {
   handleLogout = event => {
     event.preventDefault();

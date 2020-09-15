@@ -1,9 +1,5 @@
 .Menu {
-<<<<<<< HEAD
   background-color: rgb(5, 196, 27);
-=======
-  background-color:lightblue;
->>>>>>> 0ba5a32b19835e59b06d006676446e9e9d38b252
   display: flex;
 
   justify-content: space-between;

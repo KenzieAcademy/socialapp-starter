@@ -3,10 +3,6 @@ import Spinner from "react-spinkit";
 //import { withAsyncAction } from "../../redux/HOCs";
 import "./RegistrationForm.css";
 import AlmostTwitterService from "../../almostTwitterService";
-<<<<<<< HEAD
-=======
-import Menu from "../menu/Menu";
->>>>>>> 0ba5a32b19835e59b06d006676446e9e9d38b252
 
 class RegistrationForm extends React.Component {
   constructor(props) {
@@ -34,8 +30,7 @@ class RegistrationForm extends React.Component {
   render() {
     const { loading, error } = this.props;
     return (
-      <div className="menu">
-        <Menu />
+     
      <div className="RegistrationForm">
         <form id="registration-form" onSubmit={this.handleRegistration}>
           <label htmlFor="username">Username</label>
@@ -67,7 +62,7 @@ class RegistrationForm extends React.Component {
         {loading && <Spinner name="circle" color="blue" />}
         {error && <p style={{ color: "red" }}>{error.message}</p>}
       </div>
-      </div>
+      
     );
   }
 }
