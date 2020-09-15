@@ -17,19 +17,24 @@ class DeleteUser extends Component {
         this.client = new DataService();
     }
 };
-deleteCurrentUser(username, password, statusCode) {
-    let userDataToDelete = { ...this.state.USERJSONTOKEN };
-    let i = userDataToDelete[username].findIndex(userDataToDelete
-        => userDataToDelete.SparePartsID === passoword);
 
-    userDataToDelete(username).splice([i], 1);
 
-    if (userDataToDelete[username].length === 0) {
-        delete userDataToDelete[username]
+const token = JSON.parse(localStorage.getItem("login"));
+
+// const loginData = JSON.parse(localStorage.getItem("login"));
+// loginData.result.token
+// Line 2 will give you the token value
+// const token = getState().auth.login.result.token;
+
+deleteCurrentUser(username, password, token) {
+    if (token.length >= 1) {
+        delete (token, username, password);
     }
     return deleteCurrentUser(username).then(result => {
         this.setState({
-            data: result.data[0]
+            token = [0],
+            username = "",
+            password = ""
         })
     })
 };
