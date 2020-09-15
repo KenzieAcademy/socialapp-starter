@@ -12,7 +12,8 @@ class RegistrationForm extends React.Component {
       password: "",
       displayName: ""
     };
-    this.client = new DataService();
+
+    this.client = new DataService()
   }
 
   handleRegistration = e => {
