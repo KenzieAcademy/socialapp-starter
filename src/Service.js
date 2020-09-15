@@ -8,7 +8,7 @@ class Service  {
     registerUser(userData) {
         let endpoint = "/users"
         let URL = this.domain + endpoint
-        fetch(URL, {
+        return fetch(URL, {
             method: "POST",
             header: {
                 "Content-Type": "application/json",
@@ -22,13 +22,14 @@ class Service  {
             .then(response => response.json())
             .then(resData => console.log(resData))
     }
+    // https://socialapp-api.herokuapp.com/messages?limit=100
 
     userMessage() {
         let endpoint = "/messages"
-        let URL = this.domain + endpoint
-        fetch(URL)
+        let messageCount = 100
+        let URL = this.domain + endpoint + "?limit=" + messageCount
+        return fetch(URL)
             .then(response => response.json())
-            .then(resData => console.log(resData))
     }
 
 }
