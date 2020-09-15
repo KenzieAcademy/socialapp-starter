@@ -1,4 +1,5 @@
 import React from "react";
+import 'antd/dist/antd.css';
 import LoginForm from "../components/loginForm/LoginForm";
 import Menu from "../components/menu/Menu";
 import { userIsNotAuthenticated } from "../redux/HOCs";
