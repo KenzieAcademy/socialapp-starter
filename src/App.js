@@ -4,6 +4,7 @@ import { Switch, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
+import RegistrationForm from "./components/registrationForm/RegistrationForm";
 
 class App extends React.Component {
   render() {
@@ -24,9 +25,16 @@ class App extends React.Component {
           path="*"
           component={NotFound}
         />
+        <Route 
+          exact
+          path="/registrationForm/RegistrationForm"
+          component={RegistrationForm}
+        />
       </Switch>
     );
   }
 }
+
+
 
 export default App;
