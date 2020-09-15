@@ -1,7 +1,7 @@
-import React from "react";
+//import React from "react";
 
-import React, { Component } from "react"
-import SocialApp from "../SocialApp/socialApp";
+import React , { Component } from "react"
+import SocialApp from "../socialapp/SocialApp";
 
 class UpdateUser extends Component {
     constructor(props) {
