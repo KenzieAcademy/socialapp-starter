@@ -4,7 +4,7 @@ import PostMessageService from "./PostMessageService"
 class PostMessage extends Component {
     constructor(props) {
         super(props)
-        this.client = new PostMessageService
+        this.client = new PostMessageService()
         this.state = {
             text: ""
         }

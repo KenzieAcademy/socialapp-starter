@@ -4,7 +4,7 @@ import GetMessagesServices from './GetMessagesService'
 class GetMessages extends Component {
     constructor(props) {
         super(props)
-        this.client = new GetMessagesServices
+        this.client = new GetMessagesServices()
         this.state = {
             messages: [],
             mounted: false

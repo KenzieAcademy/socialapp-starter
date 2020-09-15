@@ -3,10 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-<<<<<<< HEAD
-=======
-
->>>>>>> 9bf9f1cde1a998d3cc4ec0ac1b7baba152c42564
     "axios": "^0.20.0",
     "connected-react-router": "^6.8.0",
     "history": "^4.10.1",
