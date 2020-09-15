@@ -24,10 +24,11 @@ class Register extends Component {
 
     handleRegistration = e =>{
         e.preventDefault()
-        this.props.history.push('/profile/:username')
+        
         this.client.registerUser(this.state).then(result =>{
             console.log(JSON.stringify(result.data))
         })
+        this.props.history.push('/profile/:username')
     }
         
     handleChange = (event) => {
@@ -50,7 +51,7 @@ class Register extends Component {
                         <input 
                         type='text' 
                         name='username' 
-                        
+                        required
                         onChange={this.handleChange}
                         />
                     
@@ -61,7 +62,7 @@ class Register extends Component {
                         <input 
                         type='password' 
                         name='password' 
-                        
+                        required
                         onChange={this.handleChange}
                         />
                     
@@ -72,7 +73,7 @@ class Register extends Component {
                     <input 
                         type='text' 
                         name='displayName' 
-                        
+                        required
                         onChange={this.handleChange}
                         />
                     

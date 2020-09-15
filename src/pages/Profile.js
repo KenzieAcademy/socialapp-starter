@@ -1,6 +1,9 @@
 import React from "react";
 import Menu from "../components/menu/Menu";
 import { userIsAuthenticated } from "../redux/HOCs";
+import DataService from '../components/DataService'
+import { withRouter } from 'react-router-dom'
+import { Input } from 'semantic-ui-react'
 
 //Experimental Code Start
 
@@ -9,141 +12,155 @@ class Profile extends React.Component {
     super(props);
 
     this.state = {
+      username: "",
+      
       firstname: "",
       middlename: "",
       lastname: "",
-      dob: "",
+      DateOFBirth: "",
+      profilePhoto:"",
       creamername: "",
       favoritepet: "",
+      
     };
+    this.client = new DataService()
   }
+  
+  
+  
+  
+  handleChange = (event) => {
+    this.setState({[event.target.name]:event.target.value})
+    
+   
+    
+}
 
-  handleFirstnameChange = (event) => {
-    this.setState({
-      firstname: event.target.value,
-    });
-  };
 
-  handlemiddlenameChange = (event) => {
-    this.setState({
-      middlename: event.target.value,
-    });
-  };
 
-  handlelastnameChange = (event) => {
-    this.setState({
-      lastname: event.target.value,
-    });
-  };
 
-  handledobChange = (event) => {
-    this.setState({
-      dob: event.target.value,
-    });
-  };
 
-  handlecreamernameChange = (event) => {
-    this.setState({
-      creamername: event.target.value,
-    });
-  };
 
-  handlefavoritepetChange = (event) => {
-    this.setState({
-      favoritepet: event.target.value,
-    });
-  };
+
 
   handleSubmit = (event) => {
-    alert(
-      `${this.state.firstname} ${this.state.middlename} ${this.state.lastname} ${this.state.dob} ${this.state.creamername} ${this.state.firstname}`
-    );
+   event.preventDefault();
+   console.log(this.state)
+   alert(JSON.stringify(this.state))
 
-    event.preventDefault();
+   this.client.updateUser(this.state, this.state.username ).then(result =>{
+    console.log(JSON.stringify(result.data))
+  })
   };
-  render() {
-    const {
-      firstname,
-      middlename,
-      lastname,
-      dob,
-      creamername,
-      favoritepet,
-    } = this.state;
 
+
+
+
+
+  
+  render() {
+   
+    
     return (
+
+
+      
+      
       <div className="Message">
         <Menu isAuthenticated={this.props.isAuthenticated} />
         <h2>Profile</h2>
 
         <form onSubmit={this.handleSubmit}>
           <div>
-            <button types="submit">Edit Profile</button>
-
-            <div>
-              <input
+          
+           
+          <div>
+            <label htmlFor="name">  Enter user name</label>
+              <Input
                 type="text"
-                name="firstName"
-                value={firstname}
-                onChange={this.handleFirstnameChange}
+                name="username"
+                required
+                onChange={this.handleChange}
               />
-              <label htmlFor="name"> : First Name </label>
+            </div>
+          <div>
+            <label htmlFor="name">  First Name </label>
+              <Input
+                type="text"
+                name="firstname"
+                
+                
+                onChange={this.handleChange}
+              />
             </div>
 
             <div>
-              <input
+              <label htmlFor="name">  Middle Name </label>
+              <Input
                 type="text"
-                name="middleName"
-                value={middlename}
-                onChange={this.handlemiddlenameChange}
+                name="middlename"
+             
+                onChange={this.handleChange}
               />
-              <label htmlFor="name"> : Middle Name </label>
+            </div>
+
+              <label htmlFor="name">  Last Name </label>
+            <div>
+              <Input
+                type="text"
+                name="lastname"
+                
+                onChange={this.handleChange}
+              />
             </div>
 
             <div>
-              <input
+              <label htmlFor="DOB">  DateOFBirth </label>
+              <Input
                 type="text"
-                name="LastName"
-                value={lastname}
-                onChange={this.handlelastnameChange}
+                name="DateOFBirth"
+                
+                onChange={this.handleChange}
               />
-              <label htmlFor="name"> : Last Name </label>
+            </div>
+            <div>
+              <label htmlFor="profilePhoto">  Profile Photo </label>
+              <Input
+                type="text"
+                name="profilePhoto"
+                
+                onChange={this.handleChange}
+              />
             </div>
 
             <div>
-              <input
-                type="text"
-                name="DOB"
-                value={dob}
-                onChange={this.handledobChange}
-              />
-              <label htmlFor="DOB"> : DOB </label>
-            </div>
-
-            <div>
-              <input
+              <label htmlFor="CreamerName">  Creamer Name </label>
+              <Input
                 type="text"
                 name="CreamerName"
-                value={creamername}
-                onChange={this.handlecreamernameChange}
+                
+                onChange={this.handleChange}
               />
-              <label htmlFor="alias"> : Creamer Name </label>
             </div>
 
             <div>
-              <input
+              <label htmlFor="petname">  Favorite Pet </label>
+              <Input
                 type="text"
-                name="Favorite Pet"
-                value={favoritepet}
-                onChange={this.handlefavoritepetChange}
+                name="favoritepet"
+                
+                onChange={this.handleChange}
               />
-              <label htmlFor="petname"> : Favorite Pet </label>
             </div>
+            <br/>
+            <button types="submit">Save</button>
           </div>
         </form>
       </div>
     );
+    
   }
+  
 }
 
 //End Of New Code for Editing Profile
