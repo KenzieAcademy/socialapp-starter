@@ -1,6 +1,7 @@
 import React,{Component} from 'react'
 import { render } from 'react-dom'
 import DataService from '../components/DataService'
+import { withRouter } from 'react-router-dom'
 
 
 
@@ -20,8 +21,9 @@ class Register extends Component {
 
     handleRegistration = e =>{
         e.preventDefault()
+        this.props.history.push('/profile/:username')
         this.client.registerUser(this.state).then(result =>{
-            alert(JSON.stringify(result.data))
+            console.log(JSON.stringify(result.data))
         })
     }
         
@@ -32,7 +34,7 @@ class Register extends Component {
     
     
     render(){
-    const { loading, error} = this.props
+    
     return(
         
             <div className='Register'>
@@ -81,4 +83,4 @@ class Register extends Component {
     }
 }
 
-export default Register
+export default withRouter(Register)
