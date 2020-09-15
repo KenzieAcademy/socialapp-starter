@@ -13,7 +13,7 @@ class Home extends React.Component {
         <h2>Your favorite travel microblogging platform</h2>
         <LoginForm />
         <br />
-        <h3>New user?</h3> <Link to="/registrationForm/RegistrationForm">Register here</Link>
+        <h3></h3> <Link to="/registrationForm/RegistrationForm">New user? Register here</Link>
       </div>
     );
   }

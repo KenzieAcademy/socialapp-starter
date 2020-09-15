@@ -1,7 +1,7 @@
 import React from "react";
 import Menu from "../components/menu/Menu";
 import { userIsAuthenticated } from "../redux/HOCs";
-import UserList from "./registrationForm/userList/UserList";
+import UserList from "../components/userList/UserList";
 
 class Profile extends React.Component {
   render() {

@@ -6,7 +6,7 @@ import { withRouter } from 'react-router-dom'
 import "./RegistrationForm.css";
 import DataService from "../../dataService"
 // import LoginForm from "../components/loginForm/LoginForm";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class RegistrationForm extends React.Component {
   constructor(props) {
@@ -22,16 +22,8 @@ class RegistrationForm extends React.Component {
   handleRegistration = e => {
     e.preventDefault();
     this.client.registerUser(this.state).then(result => {
-      // alert(JSON.stringify(result.data));
-      alert('Success! Please login');
       this.props.history.push('/')
 
-      // this.props.login(this.state)
-      // this.setState({
-      //   username: "",
-      //   password: "",
-      //   displayName: ""
-      // })
     })
 
   };
