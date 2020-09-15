@@ -11,13 +11,8 @@ class Menu extends React.Component {
 
   render() {
     return (
-      <div className="Menu" />
-<<<<<<< HEAD
-<<<<<<< HEAD
-        <h1>The Dragon's Den</h1>
->>>>>>> master
-
->>>>>>> master
+      <div className="Menu">
+        <h1><span>The Dragon's Den</span></h1>
         {this.props.isAuthenticated && (
           <div id="menu-links">
             <Link to="/messagefeed">Message Feed</Link>
