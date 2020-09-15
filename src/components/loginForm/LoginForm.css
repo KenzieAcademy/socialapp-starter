@@ -1,8 +1,19 @@
 #login-form {
   display: flex;
   flex-direction: column;
-  max-width: 20em;
+  background-color: rgb(223, 215, 205);
+  width: 300px;
+  height: 150px;
 }
-body {
-  background-color: lightcoral;
+
+.LoginForm {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  height: 1000px;
+  width: auto;
+  margin: 150px;
+}
+.loginButton {
+  margin:30px;
 }

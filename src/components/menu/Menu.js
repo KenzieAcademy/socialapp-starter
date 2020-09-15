@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Menu.css";
 import { withAsyncAction } from "../../redux/HOCs";
-import RegistrationForm from "../registrationForm/RegistrationForm"
+
 
 
 class Menu extends React.Component {
@@ -15,9 +15,12 @@ class Menu extends React.Component {
     return (
       <div className="Menu">
         <h1>Super-Book</h1>
-        <Link className="Home" to="/">Home</Link>
-        <Link className="signUp" to="/Registration">sign up</Link>
-        <Link className="login" to="/login">login</Link>
+        <button><Link className="Home" to="/">Home</Link></button>
+        <div className="login-signup">
+          <button><Link className="login" to="/login">login</Link></button>
+        <button><Link className="signUp" to="/Registration">sign up</Link></button>
+        
+          </div>
        
         {this.props.isAuthenticated && (
           <div id="menu-links">
