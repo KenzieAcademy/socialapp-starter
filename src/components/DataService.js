@@ -12,6 +12,12 @@ class DataService {
         return this.client.post(this.url + "/users", userData)
          
     }
+    updateUser( userData, userName){
+        return this.client.patch(this.url + `${"/users"}${"/"}${userName}`, userData  )
+         
+    }
+
+
 
    
 }
