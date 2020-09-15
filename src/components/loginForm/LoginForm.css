@@ -2,4 +2,8 @@
   display: flex;
   flex-direction: column;
   max-width: 20em;
+  color:slateblue;
+  font-weight: bold;
+  cursor: pointer;
 }
+

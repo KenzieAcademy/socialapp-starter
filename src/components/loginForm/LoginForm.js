@@ -40,9 +40,10 @@ class LoginForm extends React.Component {
             name="password"
             required
             onChange={this.handleChange}
-          />
+          /> 
+          
           <button type="submit" disabled={loading}>
-            Login
+            <h3>Login</h3>
           </button>
         </form>
         {loading && <Spinner name="circle" color="blue" />}

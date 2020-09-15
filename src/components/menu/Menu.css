@@ -1,5 +1,5 @@
 .Menu {
-  background-color:lightseagreen;
+  background-color:slateblue;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -8,6 +8,7 @@
   font-family: cursive;
   font-size: calc(10px + 2vmin)
 }
+.Menu {color: white}
 
 #menu-links {
   display: flex;
