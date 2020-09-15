@@ -4,6 +4,7 @@ import { Layout, Menu } from 'antd';
 import { Link } from "react-router-dom";
 import "./Menu.css";
 import { withAsyncAction } from "../../redux/HOCs";
+import theQuestBoard from './theQuestBoardIcon.png'
 
 class MenuAuthenticated extends React.Component {
   handleLogout = event => {
@@ -24,7 +25,7 @@ class MenuAuthenticated extends React.Component {
         left: 0,
       }}
     >
-      <div className="logo"> <h1>The QuestBoard</h1> </div>
+      <div className="logo"> <img src={theQuestBoard} />  </div>
       <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
         <Menu.Item key="1" >
         <Link to="/">Home</Link>
