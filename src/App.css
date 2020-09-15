@@ -1,0 +1,25 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+#root {
+    height: 100%;
+    width: 100%;
+}
+
+
+#Home {
+    height: 100%;
+    width: 100%;
+}
+
+.container {
+    height: 100%;
+    background-image: url(./images/heros.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}

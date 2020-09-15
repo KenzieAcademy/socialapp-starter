@@ -1,20 +1,32 @@
 .Menu {
+<<<<<<< HEAD
   background-color: rgb(5, 196, 27);
+=======
+  background-color:lightblue;
+>>>>>>> 0ba5a32b19835e59b06d006676446e9e9d38b252
   display: flex;
+
   justify-content: space-between;
   align-items: center;
   padding: 0 1em;
   border-radius: 1em;
+
+
 }
+
 
 #menu-links {
   display: flex;
   padding-left: 1em;
+  position: relative;
+  padding: 10px;
+  margin: 0;
+  
 }
 
 #menu-links a {
   padding-right: 0.5em;
-  color: darkblue;
+  color: darkred;
   text-decoration: underline;
   cursor: pointer;
 }
