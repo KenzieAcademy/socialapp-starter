@@ -6,6 +6,9 @@ import RegisterForm from "../components/registerForm/RegisterForm";
 import Service from "../Service"
 
 
+import homelogo from "../images/logo.png"
+import { ItemGroup } from "semantic-ui-react";
+
 class Home extends React.Component {
   constructor (props) {
     super (props) 
@@ -20,6 +23,9 @@ class Home extends React.Component {
       <div className="Home">
         <Menu />
         <h2>Your favorite microblogging platform</h2>
+
+         <img src = {homelogo}/>
+    
         <LoginForm />
 
         <RegisterForm />
