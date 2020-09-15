@@ -12,7 +12,7 @@ class RegisterForm extends React.Component {
         username: "",
         password: "",
         displayName: ""
-      };
+      }
     }
   
     handleRegister = e => {
