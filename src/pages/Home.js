@@ -1,9 +1,10 @@
 import React from "react";
-import LoginForm from "../components/LoginForm/LoginForm";
-import Menu from "../components/Menu/Menu";
+import LoginForm from "../components/loginForm/LoginForm";
+import Menu from "../components/menu/Menu";
 import Layout from '../components/Layout'
 import { userIsNotAuthenticated } from "../redux/HOCs";
-import RegistrationForm from "../components/RegistrationForm/RegistrationForm";
+import RegistrationForm from "../components/registrationForm/RegistrationForm";
+import SendPost from "../components/sendPost/SendPost"
 
 class Home extends React.Component {
   render() {
@@ -16,7 +17,9 @@ class Home extends React.Component {
           <hr/>
           <RegistrationForm />
         </div>
+        <SendPost></SendPost>
       </Layout>
+      
     );
   }
 }

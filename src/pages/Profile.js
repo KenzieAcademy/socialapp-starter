@@ -1,5 +1,5 @@
 import React from "react";
-import Menu from "../components/Menu/Menu";
+import Menu from "../components/menu/Menu.js";
 import { userIsAuthenticated } from "../redux/HOCs";
 
 

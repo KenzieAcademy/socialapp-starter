@@ -17,6 +17,10 @@ class DataService {
     getUsers() {
         return this.client.get(this.url + "/users");
     }
+
+    handleMessage(){
+        return this.client.post(this.url + "/messages");
+    }
 }
 
 export default DataService;
