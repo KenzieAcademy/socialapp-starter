@@ -13,5 +13,8 @@ class DataService {
     getUsers() {
         return this.client.get(this.url + "/users");
     }
+    getMessages() {
+        return this.client.get(this.url + "/messages");
+    }
 }
 export default DataService
