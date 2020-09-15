@@ -1,61 +1,62 @@
-import React from "react";
-import { Layout } from 'antd';
-import QuestboardService from "../../pages/ServicePage"
-
+import React from "react"
+import "../feed/feed.css"
+import TextInput from "../TextInput/TextInput"
 
 class Feed extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      messages: {
-        "id": null,
-        "text": "",
-        "username": "",
-        "createdAt": "",
-        "likes": [
-          {
-            "id": null,
-            "username": "",
-            "messageId": null,
-            "createdAt": ""
-          }
-        ]
-      }
+    constructor(props) {
+        super(props);
+        this.state = {
+            items: [],
+            isLoaded: false
+        }
     }
-
-    this.client = new QuestboardService();
-  }
-
-  getMessages() {
-    return this.client.GetMessageList().then(result => {
-      this.setState({
-        messages: result.data
-      // alert(JSON.stringify(result.data))
-      })
-    })
-  }
-
-  componentDidMount() {
-    this.getMessages();
-
-  }
-
-  render() {
-
-    const { Header, Content, Footer} = Layout;
-    return (
-      <Layout className="site-layout" style={{ marginLeft: 190 }}>
-      <Header className="site-layout-background" style={{ padding: 0 }} />
-      <Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>
-        <div className="site-layout-background" style={{ padding: 24, textAlign: 'center' }}>
-        <h2>Message Feed</h2>
-        is it working?
-        </div>
-      </Content>
-      <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
-    </Layout>
-    );
-  }
+    toHTML(){
+        // document.querySelector("body").innerHTML += "<div ID='appendToThis'/>"
+        // document.getElementById("appendToThis").innerHTML += "<div ID='messagesAndInput'/>" 
+        document.getElementById("messagesAndInput").innerHTML += "<div ID='messagesBlock'/>"
+        for (let i = 0; i < this.state.items.messages.length; i +=1) {
+            let JSONMessage = JSON.stringify(this.state.items.messages[i].text)
+            let JSONUser = JSON.stringify(this.state.items.messages[i].username)
+            let JSONDate = JSON.stringify(this.state.items.messages[i].createdAt)
+            let JSONLikes = JSON.stringify(this.state.items.messages[i].likes.length)
+            
+            document.getElementById("messagesBlock").innerHTML += 
+            "<div class='messageBubble'><h2>" + JSONUser + "</h2> <h3>" + JSONMessage + "</h3><p> Date Created " + JSONDate + "</p><span> Likes " + JSONLikes + "</span><button>Like</button></div>"
+            
+            
+            
+        }
+    }
+    
+    componentDidMount() {
+        fetch("https://socialapp-api.herokuapp.com/messages")
+        .then(res => res.json())
+        .then(json => {
+            this.setState({
+                isLoaded: true,
+                items: json,
+            })
+        })
+    }
+    
+    render() {
+        
+        var { isLoaded, items, test } = this.state;
+        console.log("Test =" + this.state.test)
+        
+        if (!isLoaded) {
+            return <div></div>
+        } else {
+            let toHTML = this.toHTML()
+            console.log(items.text)
+            return (
+                
+                <div>
+                    <br/>
+                    {toHTML}
+                </div>
+            );
+        }
+    }
 }
-
-export default Feed;
+export default Feed

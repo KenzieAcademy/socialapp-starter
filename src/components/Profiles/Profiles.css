@@ -1,0 +1,13 @@
+#profileBubble{
+    border: gray 5px solid;
+    
+}
+
+#appendToThis {
+    display: flex;
+}
+
+#ProfileSection {
+    position: relative;
+    bottom: 75px;
+}
