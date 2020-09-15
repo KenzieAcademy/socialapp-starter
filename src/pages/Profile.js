@@ -9,7 +9,6 @@ class Profile extends React.Component {
     this.state = {
       username: this.props.match.params.username,
       user: {},
-      loading: true,
     };
 
     this.client = new DataService();
@@ -18,14 +17,13 @@ class Profile extends React.Component {
   componentDidMount() {
     return this.client.getUser(this.state.username).then((result) =>
       this.setState({
-        loading: false,
         user: result.data.user,
       })
     );
   }
 
   render() {
-    if (this.state.loading === true) {
+    if (this.state.user.displayName === undefined) {
       return (
         <div className="loading">
           <Menu isAuthenticated={this.props.isAuthenticated} />

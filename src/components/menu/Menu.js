@@ -4,6 +4,18 @@ import "./Menu.css";
 import { withAsyncAction } from "../../redux/HOCs";
 
 class Menu extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      username: "",
+    };
+  }
+  // componentDidMount() {
+  //   let userData = localStorage.getItem("login");
+  //   this.setState({
+  //     username: userData.result.username,
+  //   });
+
   handleLogout = (event) => {
     event.preventDefault();
     this.props.logout();
