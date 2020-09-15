@@ -19,7 +19,8 @@ class RegistrationForm extends React.Component {
   handleRegistration = e => {
     e.preventDefault();
     this.client.registerUser(this.state).then(result => {
-      alert(result.data)
+      console.log(result)
+      alert(`User ${result.data.user.username} was registered!`)
     })
     
   };
@@ -44,12 +45,13 @@ class RegistrationForm extends React.Component {
           <TextInput
             name="password"
             placeholder="Password"
+            type="password"
             autoFocus
             required
             onChange={this.handleChange}
           />
            <TextInput
-            name="disply name"
+            name="displayName"
             placeholder="Display Name"
             autoFocus
             required
