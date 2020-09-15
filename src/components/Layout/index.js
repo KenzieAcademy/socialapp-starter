@@ -1,6 +1,6 @@
 import React from "react";
 import Navigation from '../Navigation'
-import { Pane, Card } from 'evergreen-ui'
+import { Pane } from 'evergreen-ui'
 
 // Generates site layout on each page
 // location prop should ALWAYS equal this.constructor.name
@@ -21,6 +21,7 @@ const Layout = ({ children, location }) => {
                 background="tint1"
                 display='flex'
                 flexDirection='column'
+                padding="1em"
             >
                 {children}
             </Pane>
