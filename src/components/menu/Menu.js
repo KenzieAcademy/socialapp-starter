@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Button,} from 'semantic-ui-react'
+import { Button, } from 'semantic-ui-react'
 import "./Menu.css";
 import { withAsyncAction } from "../../redux/HOCs";
 import { userIsAuthenticated } from "../../redux/HOCs";
@@ -22,7 +22,7 @@ class Menu extends React.Component {
           {/* $('.GlobeLogo')
                 .transition('jiggle')
             ; */}
-            
+
         </div>
 
         <h1>World Music Coalition</h1>
@@ -38,33 +38,32 @@ class Menu extends React.Component {
 
             <Link to="/list-of-users">List of users</Link>
 
-            
+
 
             <Link to="/" onClick={this.handleLogout}>
               Logout
             </Link>
 
 
-          <div>
-            <Button.Group widths='5'>
-              <Button color='yellow'>Home</Button>
-              <Button color='orange'>Messages</Button>
-              <Button color='green'>Profile</Button>
-              <Button color='red'>UpDate Profile</Button>
+            <div>
+              <Button.Group widths='5'>
+                <Button color='yellow'>Home</Button>
+                <Button color='orange'>Messages</Button>
+                <Button color='green'>Profile</Button>
+                <Button color='red'>UpDate Profile</Button>
 
-              <Button color='violet' text="white"><Link to="/Logout/" onClick={this.handleLogout}>Logout</Link></Button>
+                <Button color='violet' text="white"><Link to="/Logout/" onClick={this.handleLogout}>Logout</Link></Button>
 
-            </Button.Group>
+              </Button.Group>
 
+
+            </div>
 
           </div>
-        )
-
-        }
+        )}
       </div>
 
-    );
+    )
   }
 }
-
 export default withAsyncAction("auth", "logout")(Menu);
