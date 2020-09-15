@@ -1,0 +1,32 @@
+Team Jerries
+
+- Jerry-based multiverse social media app
+
+-Giovanni - PO
+-Mike W - Scrum Lord
+-Garret - QA
+-Mike B - Style Master
+-Jessica - Style Master
+
+_________________
+API Endpoints:
+1. Login
+2. Logout
+3. Create Users
+4. Update User
+5. Delete User
+6. Get Messages
+7. Create Message
+8. Delete Message
+9. Like
+10. Remove/Unlike
+
+11? Update/Edit Message
+12? Comment
+13? Add Photo (Rick & Morty API for Jerry Photos)
+14? Prioritize messages from <users>
+
+__________________
+FOR TUESDAY:
+-Mockup layout for site to determine components
+-
