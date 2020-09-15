@@ -2,6 +2,8 @@ import React from "react";
 import Menu from "../components/Menu/Menu";
 import { userIsAuthenticated } from "../redux/HOCs";
 
+
+
 class Profile extends React.Component {
   render() {
     return (
