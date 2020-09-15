@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+
 import { withAsyncAction } from "../../redux/HOCs";
 import "./FootNavBar.css";
 
@@ -9,17 +9,16 @@ class FootNavBar extends React.Component {
       <div className="footer-menu">
         {this.props.isAuthenticated && (
           <div id="footer-links">
-            {/* trying to figure out how to write this to make it link. */}
             <a href={"https://www.nasa.gov"} target="blank">
               NASA
             </a>
             <a href={"https://www.imdb.com/list/ls021424736/"} target="blank">
               Sci-Fi Movies
             </a>
-            <a href="/notfound" target="blank">
-              Advertising
+            <a href={"https://www.funbrainfree.com/math-games/"} target="blank">
+              Sponsered By FUNBRAIN
             </a>
-            <a href="/notfound" target="blank">
+            <a href={"https://www.facebook.com/ashley.storer.9"} target="blank">
               Like us on FB
             </a>
           </div>
