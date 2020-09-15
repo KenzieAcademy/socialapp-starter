@@ -11,12 +11,8 @@ class Home extends React.Component {
         <Menu />
         <h2>Welcome to Space Squrrels</h2>
         <LoginForm />
-<<<<<<< HEAD
-        <SideBar />
-=======
         <hr/>
         <RegistrationForm />
->>>>>>> c1ce5671ed7e57f59bf0f171fecae4faf95a73c3
       </div>
     );
   }

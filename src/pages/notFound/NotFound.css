@@ -1,0 +1,12 @@
+.NotFound {
+  background-image: url("../../components/assets/images/backgrounds/Moon_horizon.jpg");
+  height: 200vh;
+  width: 100vw;
+  color: white;
+  font-family: Kufam;
+}
+
+#Link {
+  color: white;
+  font-family: Kufam;
+}

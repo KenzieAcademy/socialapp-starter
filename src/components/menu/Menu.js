@@ -12,11 +12,13 @@ class Menu extends React.Component {
   render() {
     return (
       <div className="Menu">
-        <h1>SPACE SQURRELS</h1>
+        <Link to="/"><h1>SPACE SQUIRRELS</h1></Link>
         {this.props.isAuthenticated && (
           <div id="menu-links">
-            <Link to="/messagefeed">Message Feed</Link>
-            <Link to="/" onClick={this.handleLogout}>
+            <Link to="/about">About the Universe</Link>
+            <Link to="/play">Let's Play SpaceBallz!</Link>
+            <Link to="/meet">Meet the Squirrels</Link>
+            <Link to="/logoff" onClick={this.handleLogout}>
               Logout
             </Link>
           </div>
@@ -27,3 +29,6 @@ class Menu extends React.Component {
 }
 
 export default withAsyncAction("auth", "logout")(Menu);
+
+
+{/* <a href={"https://www.nasa.gov"}>NASA</a> */ }

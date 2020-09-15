@@ -1,7 +1,7 @@
 import React from "react";
+import "./RegistrationForm.css";
 import Spinner from "react-spinkit";
 
-import "./registrationForm.css";
 import socialAppService from "../../socialAppService";
 
 class RegistrationForm extends React.Component {
@@ -18,9 +18,7 @@ class RegistrationForm extends React.Component {
 
   handleRegistration = e => {
     e.preventDefault();
-    this.client.registerUser(this.state).then(result => {
-      alert(result.data)
-    })
+    this.client.registerUser(this.state).then(result => {})
   };
 
   handleChange = e => {
@@ -40,7 +38,7 @@ class RegistrationForm extends React.Component {
             required
             onChange={this.handleChange}
           />
-          <label htmlFor="displayName">Username</label>
+          <label htmlFor="displayName">Display Name</label>
           <input
             type="text"
             name="displayName"
@@ -66,4 +64,4 @@ class RegistrationForm extends React.Component {
   }
 }
 
-export default RegistrationForm;
+export default RegistrationForm
