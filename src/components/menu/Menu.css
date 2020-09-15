@@ -1,20 +1,32 @@
 .Menu {
-  background-color: lightskyblue;
-  display: flex;
-  justify-content: space-between;
+  background: linear-gradient(to bottom, white 55%, lightgray 100%);
+  display: flex-inline;
+  justify-content: center;
   align-items: center;
-  padding: 0 1em;
-  border-radius: 1em;
+  padding: 0 0em;
+  height: 210px;
+  border-radius: .5em;
 }
 
-#menu-links {
+.Menu h1 {font-family: 'Ranchers', cursive;
+}
+
+.logo, .Menu h1 {
+  text-align: center;
+}
+
+button a {
+  color: white
+}
+
+/* #menu-links {
   display: flex;
   padding-left: 1em;
-}
+} */
 
-#menu-links a {
+/* #menu-links a {
   padding-right: 0.5em;
-  color: darkblue;
+  color: white;
   text-decoration: underline;
   cursor: pointer;
-}
+} */
