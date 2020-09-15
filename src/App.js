@@ -7,25 +7,12 @@ import 'semantic-ui-css/semantic.min.css';
 
 
 class App extends React.Component {
-
-  constructor(props) {
-    super(props)
-    this.state = {
-      name: null,
-      email: null
-    }
-  }
-
   render() {
     return (
       <Switch>
-      {/* <div>
-      <span>{this.state.user}</span>
-    </div> */}
-
         <Route
           exact
-          path="/"
+          path="/Home"
           component={Home}
         />
         <Route
