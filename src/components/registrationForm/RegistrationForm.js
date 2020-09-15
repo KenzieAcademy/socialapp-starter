@@ -1,7 +1,8 @@
 import React from "react";
 import Spinner from "react-spinkit";
 import "./RegistrationForm.css";
-import DataService from "../../dataService";
+import DataService from "../../dataService"
+import {Input, Button} from 'antd'
 
 class RegistrationForm extends React.Component {
   constructor(props) {
@@ -9,16 +10,19 @@ class RegistrationForm extends React.Component {
     this.state = {
       username: "",
       password: "",
-      displayName: "",
+      displayName: ""
     };
+
     this.client = new DataService()
   }
 
   handleRegistration = e => {
     e.preventDefault();
     this.client.registerUser(this.state).then(result => {
-      alert(result.data)
+      console.log(result)
+      alert(`User ${result.data.user.username} was registered!`)
     })
+    
   };
 
   handleChange = e => {
@@ -30,31 +34,29 @@ class RegistrationForm extends React.Component {
     return (
       <div className="RegistrationForm">
         <form id="registration-form" onSubmit={this.handleRegistration}>
-          <label htmlFor="username">Username</label>
-          <input
-            type="text"
+        <Input
             name="username"
+            placeholder="Username"
             autoFocus
             required
             onChange={this.handleChange}
           />
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
+          
+          <Input.Password
             name="password"
+            placeholder="Password"
+            autoFocus
             required
             onChange={this.handleChange}
           />
-          <label htmlFor="displayName">Display Name</label>
-          <input
-            type="text"
+           <Input
             name="displayName"
+            placeholder="Display Name"
+            autoFocus
             required
             onChange={this.handleChange}
           />
-          <button type="submit" disabled={loading}>
-            Register
-          </button>
+          <input type='submit' name='Submit' />
         </form>
         {loading && <Spinner name="circle" color="blue" />}
         {error && <p style={{ color: "red" }}>{error.message}</p>}
@@ -64,5 +66,3 @@ class RegistrationForm extends React.Component {
 }
 
 export default RegistrationForm;
-
-// RDR Registration contributors: Colin, Kylie, Elisua, Janet
