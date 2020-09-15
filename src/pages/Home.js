@@ -3,7 +3,10 @@ import LoginForm from "../components/loginForm/LoginForm";
 import Menu from "../components/menu/Menu";
 import { userIsNotAuthenticated } from "../redux/HOCs";
 import RegisterForm from "../components/registerForm/RegisterForm";
+
+
 import homelogo from "../images/logo.png"
+import { ItemGroup } from "semantic-ui-react";
 
 class Home extends React.Component {
   render() {
@@ -11,7 +14,9 @@ class Home extends React.Component {
       <div className="Home">
         <Menu />
         <h2>Your favorite microblogging platform</h2>
-    <img src = {homelogo}/>
+
+         <img src = {homelogo}/>
+    
         <LoginForm />
 
         <RegisterForm />
