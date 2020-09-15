@@ -2,8 +2,8 @@ import React from "react";
 import Spinner from "react-spinkit";
 import { withAsyncAction } from "../../redux/HOCs";
 import "./LoginForm.css";
-import { TextInput } from "evergreen-ui"
-import { Button } from "evergreen-ui"
+import { TextInput, Button, EditIcon } from "evergreen-ui"
+
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -31,11 +31,12 @@ class LoginForm extends React.Component {
           
           <TextInput
             name="username"
-            placeholder="Username"
+            placeholder= "Username"
             autoFocus
             required
             onChange={this.handleChange}
           />
+          <EditIcon color="selected" marginRight={16} />
           
           <TextInput
             name="password"
