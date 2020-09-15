@@ -7,21 +7,16 @@ import DataService from "../DataService";
 class Profile extends React.Component {
   constructor(props) {
     super(props)
-
-    this.state = {
-      user: {},
-      displayName: '',
-      about: ''
-    }
-    
     this.client = new DataService()
+    this.state = {
+      data: {}
+    }
   }
 
-  // Working on displaying the logged in user's data on the profile page.
   getUserData() {
     return this.client.getUser().then(result => {
       this.setState({
-        user: result.user[0]
+        data: result.data
       })
     })
   }
@@ -32,12 +27,22 @@ class Profile extends React.Component {
 
   render() {
     const loginData = JSON.parse(localStorage.getItem('login')).result
+    let displayName = 'loading'
+    let about = 'loading'
+
+    if (this.state.data.user) {
+      displayName = this.state.data.user.displayName
+      about = this.state.data.user.about
+    }
+
     return (
       <div className="Profile">
         <Menu isAuthenticated={this.props.isAuthenticated} />
         <h2>Profile</h2>
+        <h4>Profile Photo: </h4>
         <h4>Username: {loginData.username}</h4>
-        <h4>Display Name: {this.state.user.displayName}</h4>
+        <h4>Display Name: {displayName}</h4>
+        <h4>About: {about}</h4>
         <hr />
         <UpdateUserForm />
       </div>
