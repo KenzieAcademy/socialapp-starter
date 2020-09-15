@@ -29,7 +29,6 @@ class App extends React.Component {
         />
 
 
-
         <Route
           exact
           path="/profile/:username"
@@ -38,7 +37,7 @@ class App extends React.Component {
 
         <Route
           exact
-          path="/UpdateProfile/:username"
+          path="/profile/updateprofile/:username"
           component={UpdateProfile}
         />
         <Route

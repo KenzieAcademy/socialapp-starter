@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Menu.css";
 import { withAsyncAction } from "../../redux/HOCs";
+import { userIsAuthenticated } from "../../redux/HOCs";
 
 class Menu extends React.Component {
   handleLogout = event => {
@@ -16,8 +17,10 @@ class Menu extends React.Component {
         {this.props.isAuthenticated && (
           <div id="menu-links">
 
-            <Link to="/registration">Registration</Link>
-            <Link to="/profile">My Profile</Link>
+            {/* <Link to="/registration">Registration</Link> */}
+
+            {/* <Link to={"/profile/"+ this.props.match.params.username}>My Profile</Link> */}
+            <Link to="/profile/">My Profile</Link>
             <Link to="/myposts">My Posts</Link>
             <Link to="/messagefeed"> My Postes</Link>
 
