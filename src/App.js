@@ -3,7 +3,7 @@ import { Switch, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
-import MessageFeed from "./pages/MessageFeed";
+import MessageFeed from "./pages/Message";
 import NotFound from "./pages/NotFound";
 
 class App extends React.Component {
