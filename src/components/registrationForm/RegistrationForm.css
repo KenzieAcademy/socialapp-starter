@@ -1,9 +1,17 @@
+.RegistrationForm{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  height: 1000px;
+  width: auto;
+  margin: 150px;
+
+}
 #registration-form {
   display: flex;
   flex-direction: column;
-  max-width: 20em;
-}
-
-body {
-  background-color: lightcoral;
+  background-color: rgb(223, 215, 205);
+ width: 300px;
+  height: 150px;
+ 
 }

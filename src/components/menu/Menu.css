@@ -1,5 +1,5 @@
 .Menu {
-  background-color: darkgoldenrod;
+  background-color:lightblue;
   display: flex;
 
   justify-content: space-between;
@@ -10,17 +10,14 @@
 
 }
 
-body {
-  background-color: lightcoral;
-}
-
-h1 {
-  color: darkred;
-}
 
 #menu-links {
   display: flex;
   padding-left: 1em;
+  position: relative;
+  padding: 10px;
+  margin: 0;
+  
 }
 
 #menu-links a {
