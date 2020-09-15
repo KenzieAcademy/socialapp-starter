@@ -2,7 +2,6 @@ import React from "react";
 import Menu from "../components/menu/MenuAuthenticated";
 import { userIsAuthenticated } from "../redux/HOCs";
 import LoginForm from "../components/loginForm/LoginForm"
-import Feed from "./Feed";
 
 class Profile extends React.Component {
   super(props) {
