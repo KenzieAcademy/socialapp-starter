@@ -64,4 +64,9 @@ class RegisterForm extends React.Component {
     }
   }
   
+<<<<<<< HEAD
   export default (RegisterForm);
+=======
+  export default (RegisterForm);
+  
+>>>>>>> f79184a138a438041445699fdaedbc7b19ca52ee
