@@ -3,7 +3,10 @@ import Spinner from "react-spinkit";
 //import { withAsyncAction } from "../../redux/HOCs";
 import "./RegistrationForm.css";
 import AlmostTwitterService from "../../almostTwitterService";
+<<<<<<< HEAD
+=======
 import Menu from "../menu/Menu";
+>>>>>>> 0ba5a32b19835e59b06d006676446e9e9d38b252
 
 class RegistrationForm extends React.Component {
   constructor(props) {

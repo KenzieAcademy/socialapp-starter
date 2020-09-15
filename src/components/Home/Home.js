@@ -1,8 +1,8 @@
 import React from "react";
-import LoginForm from "../loginForm/LoginForm";
+
 import Menu from "../menu/Menu";
 import { userIsNotAuthenticated } from "../../redux/HOCs";
-import RegistrationForm from "../registrationForm/RegistrationForm";
+
 import "./home.css"
 
 
@@ -11,8 +11,14 @@ class Home extends React.Component {
         return (
             <div>
             <div className="Home">
-                <Menu />
-            </div>
+                <Menu ></div>
+                <div className="homepagestuff"></div>
+                    <div className="content">
+                    </div>
+                </div>
+           </div>
+           
+            
         );
     }
 }
