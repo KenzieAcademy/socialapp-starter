@@ -49,7 +49,7 @@ class Feed extends React.Component {
       <Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>
         <div className="site-layout-background" style={{ padding: 24, textAlign: 'center' }}>
         <h2>Message Feed</h2>
-        Test Feed Test Test
+        is it working?
         </div>
       </Content>
       <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
