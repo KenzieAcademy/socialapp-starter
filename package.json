@@ -37,10 +37,6 @@
     "not op_mini all"
   ],
   "devDependencies": {
-<<<<<<< HEAD
-    "dependency-cruiser": "^9.13.1"
-=======
     "dependency-cruiser": "^9.12.0"
->>>>>>> dev-branch
   }
 }
