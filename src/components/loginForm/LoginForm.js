@@ -2,7 +2,8 @@ import React from "react";
 // import Spinner from "react-spinkit";
 import { withAsyncAction } from "../../redux/HOCs";
 import "./LoginForm.css";
-import { Button, Divider, Form, Grid, Segment } from 'semantic-ui-react'
+import { Button, Divider, Form, Grid, Segment } from 'semantic-ui-react';
+import { Link } from "react-router-dom";
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -32,8 +33,10 @@ class LoginForm extends React.Component {
                 icon='user'
                 iconPosition='left'
                 label='Username'
-                placeholder='Username' 
+                placeholder='Username'
                 name='username'
+                autoFocus
+                required
                 onChange={this.handleChange}
               />
               <Form.Input
@@ -42,6 +45,7 @@ class LoginForm extends React.Component {
                 label='Password'
                 type='password'
                 name='password'
+                required
                 onChange={this.handleChange}
               />
 
@@ -50,13 +54,18 @@ class LoginForm extends React.Component {
           </Grid.Column>
 
           <Grid.Column verticalAlign='middle'>
+
+            <Link to={"/registration"}>
             <Button color="green" content='Sign up' icon='signup' size='big' />
+            </Link>
+
+
           </Grid.Column>
         </Grid>
 
         <Divider vertical>Or</Divider>
       </Segment>
-      
+
     );
   }
 }

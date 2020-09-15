@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 import { Button,} from 'semantic-ui-react'
 import "./Menu.css";
 import { withAsyncAction } from "../../redux/HOCs";
+import { userIsAuthenticated } from "../../redux/HOCs";
 import GlobeLogo from "./assets/Globe01sm.png"
+
 
 class Menu extends React.Component {
   handleLogout = event => {
@@ -25,18 +27,24 @@ class Menu extends React.Component {
 
         <h1>World Music Coalition</h1>
         {this.props.isAuthenticated && (
+          <div id="menu-links">
 
-          // <div id="menu-links">
-          //   <Link to="/home">Home</Link>
-          //   <Link to="/messagefeed">Message Feed</Link>
-          //   <Link to="/updateprofile">Update Profile</Link>
-          // <Link to="/" onClick={this.handleLogout}>
-          //   Logout
-          // </Link>
-          // </div>
+            {/* <Link to="/registration">Registration</Link> */}
 
-          // let ButtonExampleGroupFloated = () => 
-          // (
+            {/* <Link to={"/profile/"+ this.props.match.params.username}>My Profile</Link> */}
+            <Link to="/profile/">My Profile</Link>
+            <Link to="/myposts">My Posts</Link>
+            <Link to="/messagefeed"> My Postes</Link>
+
+            <Link to="/list-of-users">List of users</Link>
+
+            
+
+            <Link to="/" onClick={this.handleLogout}>
+              Logout
+            </Link>
+
+
           <div>
             <Button.Group widths='5'>
               <Button color='yellow'>Home</Button>
