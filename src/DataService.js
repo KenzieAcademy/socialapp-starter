@@ -1,5 +1,4 @@
 import axios from 'axios'
-
 class DataService {
     constructor(url = 'http://socialapp-api.herokuapp.com', client = axios.create()) {
         this.url = url;
