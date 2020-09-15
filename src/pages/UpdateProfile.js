@@ -124,8 +124,6 @@ class UpdateProfile extends React.Component {
 
                 <form id="profile-form">
 
-
-
                     <label htmlFor="displayname">Display Name</label>
                     <input
                         type="text"
