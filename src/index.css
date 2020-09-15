@@ -6,9 +6,24 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 30px;
+
+  display: flex;
+  height: 100vh;
+  align-items: top-center;
+  justify-content: center;
+
+  background-image: linear-gradient(to top, #a33b1b 30%, #d36f48 50%);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+img {
+  display: flex;
+  width: 500px;
+  position: absolute;
+  flex-direction: column;
 }
