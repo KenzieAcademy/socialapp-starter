@@ -7,7 +7,7 @@ class PostMessageService {
         this.client = client;
     }
 
-    postMessage(messageBody, getState) {
+    postMessage(messageBody) {
         const loginData = JSON.parse(localStorage.getItem("login"));
 
         fetch(this.url, {
