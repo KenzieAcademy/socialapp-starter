@@ -6,7 +6,7 @@ class PostMessageService {
         this.client = client;
     }
     
-    postMessage = (messageBody) => {
+    postMessage(messageBody) {
         fetch(this.url, {
             method: "POST",
             body: JSON.stringify(messageBody)

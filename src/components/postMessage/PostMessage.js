@@ -6,17 +6,17 @@ class PostMessage extends Component {
         super(props)
         this.client = new PostMessageService
         this.state = {
-            message: ""
+            text: ""
         }
     }
 
     handleSubmit = e => {
-        this.client.postMessage(this.state.message)
+        this.client.postMessage(this.state)
     }
 
     handleChange = e => {
-        this.setState({ message: e.target.value });
-        console.log(this.state.message)
+        this.setState({ text: e.target.value });
+        console.log(JSON.stringify(this.state))
       };
 
     render() {
