@@ -1,8 +1,25 @@
 import React from "react"
 import { Avatar, Textarea, Button } from "evergreen-ui"
+import DataService from "../../dataService"
 
 
 class SendPost extends React.Component {
+  constructor(props) {
+  super(props)
+  this.state = {value:""}
+  this.client = new DataService();
+    
+  
+  }
+
+  handleMessage = e => {
+    e.preventDefault();
+    this.client.handleMessage(this.state.value)
+    this.setState({value:""}) 
+
+    }
+  
+
 
 render() {
     return (
@@ -11,14 +28,14 @@ render() {
 
 <Avatar isSolid name="Tyler Ammons" size={40} />
 
-<form id="PostMessage" onSubmit={messagePost}>
+<form id="PostMessage" onSubmit={this.handleMessage}>
 
 <Textarea
   name="textarea-1"
   placeholder="Textarea placeholder..."
   label="Feed Post"
-  value={state.value}
-  onChange={e => setState({ value: e.target.value })}
+  value={this.state.value}
+  onChange={e => this.setState({ value: e.target.value })}
 />
 
 
@@ -31,6 +48,7 @@ render() {
 </div>
     )
 }}
+
 
 
 

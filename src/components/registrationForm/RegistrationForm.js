@@ -2,6 +2,8 @@ import React from "react";
 import Spinner from "react-spinkit";
 import "./RegistrationForm.css";
 import DataService from "../../dataService"
+import { TextInput } from "evergreen-ui"
+import { Button } from "evergreen-ui"
 
 class RegistrationForm extends React.Component {
   constructor(props) {
@@ -9,16 +11,18 @@ class RegistrationForm extends React.Component {
     this.state = {
       username: "",
       password: "",
-      displayName:""
+      displayName: ""
     };
-    this.client = new DataService()
+    this.client = new DataService();
   }
 
   handleRegistration = e => {
     e.preventDefault();
     this.client.registerUser(this.state).then(result => {
-      alert(JSON.stringify(result.data))
+      console.log(result)
+      alert(`User ${result.data.user.username} was registered!`)
     })
+    
   };
 
   handleChange = e => {
@@ -30,31 +34,30 @@ class RegistrationForm extends React.Component {
     return (
       <div className="RegistrationForm">
         <form id="registration-form" onSubmit={this.handleRegistration}>
-          <label htmlFor="username">Username</label>
-          <input
-            type="text"
+        <TextInput
             name="username"
+            placeholder="Username"
             autoFocus
             required
             onChange={this.handleChange}
           />
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
+          
+          <TextInput
             name="password"
+            placeholder="Password"
+            type="password"
+            autoFocus
             required
             onChange={this.handleChange}
           />
-          <label htmlFor="displayName">Display Name</label>
-          <input
-            type="text"
+           <TextInput
             name="displayName"
+            placeholder="Display Name"
+            autoFocus
             required
             onChange={this.handleChange}
           />
-          <button type="submit" disabled={loading}>
-            Register
-          </button>
+          <Button marginRight={210} appearance="primary" intent="none">Create Profile</Button>
         </form>
         {loading && <Spinner name="circle" color="blue" />}
         {error && <p style={{ color: "red" }}>{error.message}</p>}
