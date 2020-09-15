@@ -1,9 +1,10 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
+import 'semantic-ui-css/semantic.min.css';
+
 
 class App extends React.Component {
   render() {
@@ -11,7 +12,7 @@ class App extends React.Component {
       <Switch>
         <Route
           exact
-          path="/"
+          path="/Home"
           component={Home}
         />
         <Route
