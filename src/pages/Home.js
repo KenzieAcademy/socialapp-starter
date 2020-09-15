@@ -1,12 +1,22 @@
 import React from "react";
-import LoginForm from "../components/LoginForm/LoginForm";
-import Menu from "../components/Menu/Menu";
+import LoginForm from "../components/loginForm/LoginForm";
+import Menu from "../components/menu/Menu";
 import Layout from '../components/Layout'
 import { userIsNotAuthenticated } from "../redux/HOCs";
-import RegistrationForm from "../components/RegistrationForm/RegistrationForm";
+import RegistrationForm from "../components/registrationForm/RegistrationForm";
+import { Button } from "evergreen-ui"
 
 class Home extends React.Component {
-  
+  constructor(props) {
+    super(props);
+    this.state = { showPopup: false };
+  }
+
+  togglePopup() {
+    this.setState({
+      showPopup: !this.state.showPopup
+    });
+  }
   render() {
     return (
       <Layout>
@@ -14,8 +24,17 @@ class Home extends React.Component {
           <Menu />
           <h2>Your favorite microblogging platform</h2>
           <LoginForm />
-          <hr/>
-          <RegistrationForm />
+          <hr />
+          
+          <Button onClick={this.togglePopup.bind(this)}>Create Profile</Button>
+
+          {this.state.showPopup ?
+            <RegistrationForm
+              text='Click "Close Button" to hide popup'
+              closePopup={this.togglePopup.bind(this)}
+            />
+            : null
+          }
         </div>
       </Layout>
     );

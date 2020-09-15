@@ -33,7 +33,9 @@ class RegistrationForm extends React.Component {
     const { loading, error } = this.props;
     return (
       <div className="RegistrationForm">
-        <form id="registration-form" onSubmit={this.handleRegistration}>
+      <div className="popup">
+        <form class="formPopup" id="registration-form" onSubmit={this.handleRegistration}>
+        <label htmlFor="username"><b>Username</b></label>
         <TextInput
             name="username"
             placeholder="Username"
@@ -41,7 +43,7 @@ class RegistrationForm extends React.Component {
             required
             onChange={this.handleChange}
           />
-          
+          <label htmlFor="password"><b>Password</b></label>
           <TextInput
             name="password"
             placeholder="Password"
@@ -50,6 +52,7 @@ class RegistrationForm extends React.Component {
             required
             onChange={this.handleChange}
           />
+          <label htmlFor="displayname"><b>Display Name</b></label>
            <TextInput
             name="displayName"
             placeholder="Display Name"
@@ -57,11 +60,12 @@ class RegistrationForm extends React.Component {
             required
             onChange={this.handleChange}
           />
-          <Button marginRight={210} appearance="primary" intent="none">Create Profile</Button>
-          <Button onClick={this.props.closePopup}>close me</Button>
+          <Button marginRight={190} appearance="primary" intent="none">Create Profile</Button>
+          <Button marginRight={230} appearance="minimal" intent="danger" onClick={this.props.closePopup}>Close</Button>
         </form>
         {loading && <Spinner name="circle" color="blue" />}
         {error && <p style={{ color: "red" }}>{error.message}</p>}
+      </div>
       </div>
     );
   }

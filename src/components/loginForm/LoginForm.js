@@ -28,7 +28,7 @@ class LoginForm extends React.Component {
     return (
       <div className="LoginForm">
         <form id="login-form" onSubmit={this.handleLogin}>
-          
+        <label htmlFor="username"><b>Username</b></label>
           <TextInput
             name="username"
             placeholder= "Username"
@@ -36,8 +36,8 @@ class LoginForm extends React.Component {
             required
             onChange={this.handleChange}
           />
-          <EditIcon color="selected" marginRight={16} />
           
+          <label htmlFor="password"><b>Password</b></label>
           <TextInput
             name="password"
             placeholder="Password"
