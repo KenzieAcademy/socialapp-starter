@@ -10,11 +10,14 @@ class Menu extends React.Component {
       username: "",
     };
   }
-  // componentDidMount() {
-  //   let userData = localStorage.getItem("login");
-  //   this.setState({
-  //     username: userData.result.username,
-  //   });
+  componentDidMount() {
+    let userData = JSON.parse(localStorage.getItem("login"));
+    if (userData.result !== null) {
+      this.setState({
+        username: userData.result.username,
+      });
+    }
+  }
 
   handleLogout = (event) => {
     event.preventDefault();
@@ -22,12 +25,13 @@ class Menu extends React.Component {
   };
 
   render() {
+    let profileLink = "/profile/" + this.state.username;
     return (
       <div className="Menu">
         <h1>Kwitter</h1>
         {this.props.isAuthenticated && (
           <div id="menu-links">
-            <Link to="/profile/:username">Profile</Link>
+            <Link to={profileLink}>Profile</Link>
             <Link to="/messagefeed">Message Feed</Link>
             <Link to="/" onClick={this.handleLogout}>
               Logout
