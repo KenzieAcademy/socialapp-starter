@@ -5,6 +5,7 @@ import "./LoginForm.css";
 import Button from '@material-ui/core/Button';
 
 
+
 class LoginForm extends React.Component {
   constructor(props) {
     super(props)
@@ -48,6 +49,7 @@ class LoginForm extends React.Component {
           <Button type="submit" disabled={loading} variant="contained" color="primary">
             Login
           </Button >
+        
         </form>
         {loading && <Spinner name="circle" color="blue" />}
         {error && <p style={{ color: "red" }}>{error.message}</p>}
