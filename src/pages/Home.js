@@ -14,7 +14,6 @@ class Home extends React.Component {
         <LoginForm />
         <hr/>
         <RegistrationForm />
-
       </div>
     );
   }
