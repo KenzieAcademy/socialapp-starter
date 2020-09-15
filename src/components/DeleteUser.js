@@ -1,114 +1,68 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-
+import { userIsAuthenticated } from "../redux/HOCs";
 
 class DeleteUser extends Component {
-
-    // constructor(url = 'http://jservice.io/api/random', client = axios.create()){
-    //     this.url = url;
-    //     this.client = client;
-    // }
-
     // constructor(url = 'https://socialapp-api.herokuapp.com', client = axios.create()){
-
-
     constructor(props) {
         super(props);
         this.state = {
-        showMessage: false,
-          username: "",
-          password: "",
-          displayName: "",
-          about: "",
-          statusCode: 0
-
+            showMessage: false,
+            username: "",
+            password: "",
+            displayName: "",
+            about: "",
+            statusCode: 0
         };
         this.client = new DataService();
-      }    
-  }
-
-  deleteCurrentUser() {
-    return this.user.DeleteUser().then(result => {
-      this.setState({
-        data: result.data[0]
-      })
-    })
-  };
-
-handleChange = (event) => {
-  const formData = {...this.state.formData}
-  formData[event.target.name] = event.target.value
-    this.setState({formData: {User: event.target.value}});
-
-}
-
-
-
-getSubmit = (event) => {
-    event.preventDefault();
-    let userData = this.state.user.statusCode
-      if (this.state.formData.user === this.state.data.user){
-        this.setState({userData -= this.state.user.statusCode})
-      }
-      this.registerNewUser()
-  
     }
+};
+deleteCurrentUser(username, password, statusCode) {
+    let userDataToDelete = { ...this.state.USERJSONTOKEN };
+    let i = userDataToDelete[username].findIndex(userDataToDelete
+        => userDataToDelete.SparePartsID === passoword);
 
-// getSubmit = (event) => {
-//   event.preventDefault();
-//   let userData = this.state.user
-//     if (this.state.formData.user === this.state.data.user){
-//       this.setState({userData += this.state.data.user})
-//     } else {
-//       this.setState ({userData -= this.state.data.user})
+    userDataToDelete(username).splice([i], 1);
 
-
-//     }
-//     this.registerNewUser()
-
-
+    if (userDataToDelete[username].length === 0) {
+        delete userDataToDelete[username]
+    }
+    return deleteCurrentUser(username).then(result => {
+        this.setState({
+            data: result.data[0]
+        })
+    })
+};
+handleChange = (event) => {
+    const formData = { ...this.state.formData }
+    formData[event.target.name] = event.target.value
+    this.setState({ formData: { User: event.target.value } });
 }
-showMessage = (bool) => {
-  this.setState({
-    showMessage: bool
-  });
-}
-  //when the component mounts, get a the first question
-  componentDidMount() {
-    this.registerUser();
-  }
-
-
-
-  
-  render() {
+render() {
     return (
-      <div>
-        {/* {JSON.stringify(this.state.data)} */}
+        <div>
+            {/* {JSON.stringify(this.state.data)} */}
 
-<SubmitForm handleChange = {this.handleChange}
-    getSubmit = {this.getSubmit}/>
-        <br />
-        <Display 
-        user = {this.state.data.user}
-        age = {this.state.age}
-        location = {this.state.location}
-        displayName = {this.state.data.displayName} />
-        {/* <input type="text" 
-        name="answer" 
-        placeholder="Place Answer Here..."
-        onChange={this.inputData}/> */}
-        <br />
-        <div id="deleteUserDiv"></div>
-        <strong>Click the button to delete user- </strong><br/>
-        <button id="" onClick={this.showMessage.bind(null, true)}>Do Not Delete</button>
-        <br />
-        <button className="deleteUserButton" id="" onClick={this.showMessage.bind(null, false)}>Delete</button>
-        { this.state.showMessage && (<div>{this.state.data.answer}</div>) }
-        <div id=""></div>
-
-      </div>
+            <SubmitForm handleChange={this.handleChange}
+                getSubmit={this.getSubmit} />
+            <br />
+            <Display
+                user={this.state.data.user}
+                age={this.state.age}
+                location={this.state.location}
+                displayName={this.state.data.displayName} />
+            <br />
+            <div id="deleteUserDiv">
+                <strong>Click the button to delete user- </strong><br />
+                <button id="" onClick={this.showMessage.bind(null, true)}>Do Not Delete</button>
+                <br />
+                <button className="deleteUserButton" id="" onClick={this.showMessage.bind(null, false)}>Delete</button>
+                {this.state.showMessage && (<div>{'User has been Deleted.'}</div>)}
+            </div>
+        </div>
     );
-  }
 }
-export default DeleteUser;
+
+export default userIsAuthenticated(DeleteUser);
+
+///--END OF LINE
