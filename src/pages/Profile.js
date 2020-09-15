@@ -1,12 +1,9 @@
 import React from "react";
-<<<<<<< HEAD
-import {Avatar, Button, Image, Upload} from 'antd'
-
-import Menu from "../components/menu/Menu";
-=======
+import {Image, Upload, Button } from 'antd';
+import "antd/dist/antd.css"
 import Menu from "../components/menu/MenuAuthenticated";
->>>>>>> 5baf8692f60877519aac4dafccc19ae814db47cc
 import { userIsAuthenticated } from "../redux/HOCs";
+import Icon from "@ant-design/icons/lib/components/Icon";
 
 class Profile extends React.Component {
   super(props) {
@@ -14,15 +11,8 @@ class Profile extends React.Component {
       username: [],
       picture: "",
     }
-<<<<<<< HEAD
-  }
-=======
-
-
-    
   }
 
->>>>>>> 5baf8692f60877519aac4dafccc19ae814db47cc
   render() {
     return (
       <div className="Profile">
@@ -30,8 +20,8 @@ class Profile extends React.Component {
         <h2>Your Profile Page</h2>
         <Image></Image>
         <Upload
-
-        ><Button>Upload Profile picture here!</Button></Upload>
+         name="file" customRequest={this.dummyRequest} accept=".png"
+        ><Button Icon type="Upload">Upload Profile picture here!</Button></Upload>
         <button>Save picture</button>
       </div>
     );
