@@ -4,7 +4,7 @@ import "./Menu.css";
 import { withAsyncAction } from "../../redux/HOCs";
 
 class Menu extends React.Component {
-  handleLogout = event => {
+  handleLogout = (event) => {
     event.preventDefault();
     this.props.logout();
   };
@@ -13,6 +13,7 @@ class Menu extends React.Component {
     return (
       <div className="Menu">
         <h1>Kwitter</h1>
+
         {this.props.isAuthenticated && (
           <div id="menu-links">
             <Link to="/messagefeed">Message Feed</Link>
@@ -27,3 +28,8 @@ class Menu extends React.Component {
 }
 
 export default withAsyncAction("auth", "logout")(Menu);
+
+            
+              
+           
+
