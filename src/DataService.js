@@ -68,6 +68,11 @@ class DataService {
         // Insert API call here
     }
 
+    getUser() {
+        const loginData = JSON.parse(localStorage.getItem('login')).result
+        const username = loginData.username
+        return this.client.get(this.url + "/users/" + username)
+    }
     
 }
 
