@@ -4,18 +4,19 @@ import PostMessageService from "./PostMessageService"
 class PostMessage extends Component {
     constructor(props) {
         super(props)
-        this.client = new PostMessageService
+        this.client = new PostMessageService()
         this.state = {
-            message: {
-                text: ""
-            }
+            text: ""
         }
     }
 
-    handleSubmit = 
+    handleSubmit = e => {
+        this.client.postMessage(this.state)
+    }
 
     handleChange = e => {
-        this.setState({ [e.target.name.text]: e.target.value });
+        this.setState({ text: e.target.value });
+        console.log(JSON.stringify(this.state))
       };
 
     render() {
@@ -29,7 +30,7 @@ class PostMessage extends Component {
                         required
                         onChange={this.handleChange}
                     />
-                    <button type="submit" disabled={loading}>
+                    <button type="submit">
                         Submit
                     </button>
                 </form>

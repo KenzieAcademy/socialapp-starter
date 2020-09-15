@@ -1,21 +1,26 @@
+import { jsonHeaders, handleJsonResponse } from "../../redux/actionCreators/constants";
 import axios from "axios"
 
 class PostMessageService {
     constructor(url = 'https://socialapp-api.herokuapp.com/', client = axios.create()){
-        this.url = url;
+        this.url = url + "messages";
         this.client = client;
     }
-    
-    postMessage = (messageBody) => {
-        fetch(this.url + "messages", {
+
+    postMessage(messageBody, getState) {
+        const loginData = JSON.parse(localStorage.getItem("login"));
+
+        fetch(this.url, {
             method: "POST",
+            headers: { Authorization: `Bearer ${loginData.result.token}`, ...jsonHeaders },
             body: JSON.stringify(messageBody)
         })
-        .then(res => res.json())
-        .then(data => {
-            return data
+        .then(handleJsonResponse)
+        .then(result => {
+            return result
         })
     }
 };
 
 export default PostMessageService;
+
