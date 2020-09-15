@@ -5,14 +5,13 @@ import { userIsNotAuthenticated } from "../../redux/HOCs";
 import RegistrationForm from "../registrationForm/RegistrationForm";
 import "./home.css"
 
+
 class Home extends React.Component {
     render() {
         return (
+            <div>
             <div className="Home">
                 <Menu />
-                <h1>Super-Book</h1>
-                
-
             </div>
         );
     }
