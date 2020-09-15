@@ -30,8 +30,9 @@ class App extends React.Component {
           component={NotFound}
         />
       </Switch>
-    );
-  }
+
+    )
+  };
 }
 
 export default App;
