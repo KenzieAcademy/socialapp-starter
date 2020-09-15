@@ -2,6 +2,7 @@ import React from "react";
 import Spinner from "react-spinkit";
 import { withAsyncAction } from "../../redux/HOCs";
 import "./RegistrationForm.css";
+import DataService from '../../dataService';
 
 class RegistrationForm extends React.Component {
   constructor(props) {
@@ -11,12 +12,25 @@ class RegistrationForm extends React.Component {
       password: "",
       displayName: ""
     };
+    this.client = new DataService();
   }
 
   handleRegistration = e => {
     e.preventDefault();
-    alert('you tried to register a user.')
+    this.client.registerUser(this.state).then(result => {
+      // alert(JSON.stringify(result.data))
+      this.props.login(
+        {
+          "username": this.state.username,
+          "password": this.state.password
+        }
+        );
+    
+    })
+    
   };
+
+
 
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });

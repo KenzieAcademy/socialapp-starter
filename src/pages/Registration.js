@@ -1,22 +1,22 @@
 import React from "react";
-import LoginForm from "../components/loginForm/LoginForm";
 import Menu from "../components/menu/Menu";
 import { userIsNotAuthenticated } from "../redux/HOCs";
+import RegistrationForm from "../components/registrationForm/RegistrationForm";
 import { Link } from "react-router-dom";
 
-
-class Home extends React.Component {
+class Registration extends React.Component {
   render() {
     return (
-      <div className="Home">
+      <div className="Registration">
         <Menu />
         <h2>Your One Stop Shop For All your traveling Needs</h2>
-        <LoginForm />
-        <Link to='/registration'>New user? Register Here</Link>
+      
+        <RegistrationForm />
+        <Link to='/'>Back to Login</Link>
         
       </div>
     );
   }
 }
 
-export default userIsNotAuthenticated(Home);
+export default userIsNotAuthenticated(Registration);
