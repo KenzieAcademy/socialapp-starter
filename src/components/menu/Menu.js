@@ -4,6 +4,12 @@ import "./Menu.css";
 import { withAsyncAction } from "../../redux/HOCs";
 
 class Menu extends React.Component {
+  constructor(props) {
+    super(props)
+    if( JSON.parse(localStorage.getItem("login")).result){
+      this.username = JSON.parse(localStorage.getItem("login")).result.username
+    }
+  }
   handleLogout = event => {
     event.preventDefault();
     this.props.logout();
@@ -35,6 +41,9 @@ class Menu extends React.Component {
             <Link to="/" onClick={this.handleLogout}>
               Logout
             </Link>
+            <Link to={"/profile" + this.username}>
+              Profile
+              </Link>
           </div>
         )}
       </div>
