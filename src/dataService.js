@@ -18,6 +18,10 @@ class dataService {
     getUsers() {
         return this.client.get(this.url + '/users')
     }
+
+    deleteUser(userData) {
+        return this.client.delete(this.url + '/users/' + userData, userData)
+    }
 }
 
 export default dataService;
