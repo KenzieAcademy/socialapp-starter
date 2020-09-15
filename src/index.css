@@ -12,7 +12,6 @@ body {
   height: 100vh;
   align-items: top-center;
   justify-content: center;
-
   background-image: linear-gradient(to top, #7a2c15 30%, #d36f48 50%);
 }
 
@@ -21,9 +20,35 @@ code {
     monospace;
 }
 
-img {
-  display: flex;
+.cowboy1 {
+  width: 600px;
+  position: absolute;
+  top: 390px;
+  left: -520px;
+}
+
+.cowboy2 {
   width: 500px;
   position: absolute;
-  flex-direction: column;
+  top: -100px;
+  left: 400px;
+}
+
+.cowboy4 {
+  position: absolute;
+  top: 90px;
+  left: 50px;
+}
+
+.cowboy3 {
+  width: 500px;
+  position: absolute;
+  top: 190px;
+  left: 1420px;
+}
+
+.cowgirl1 {
+  width: 300px;
+  position: absolute;
+  top: 700px;
 }
