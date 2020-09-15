@@ -1,13 +1,14 @@
 import React from 'react'
-import NewMessage from './NewMessage/NewMessages'
 import './MessageList.css'
+import Message from "../message/Message"
 
 
 function MessageList(props) {
-    // const listItems = props.message.map((NewMessage, i) => <NewMessage key={i} NewMessage={NewMessage} />)
+    const listItems = props.messages.map((message, i) => <Message key={i} message={message} />)
     return (
         <div>
             <h1>Message List</h1>
+            {listItems}
         </div>
     )
     //    <li key={i}>{NewMessage.received}</li>
@@ -24,7 +25,7 @@ function MessageList(props) {
     // this.setState((state, props) => ({
 
 
-}))
+}
 
 
 export default MessageList
