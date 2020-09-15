@@ -6,7 +6,18 @@ import RegisterForm from "../components/registerForm/RegisterForm";
 import Logo from "../images/logo.png"
 
 
+import homelogo from "../images/logo.png"
+import { ItemGroup } from "semantic-ui-react";
+
 class Home extends React.Component {
+  constructor (props) {
+    super (props) 
+    this.client = new Service()
+  }
+  componentDidMount(){
+    this.client.userMessage() 
+  }
+
   render() {
     return (
       <div className="Home">
@@ -16,6 +27,8 @@ class Home extends React.Component {
         <LoginForm />
 
         <RegisterForm />
+
+        
 
       </div>
     );

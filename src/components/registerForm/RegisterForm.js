@@ -1,67 +1,126 @@
 import React from "react"
-import Spinner from "react-spinkit";
+// import Spinner from "react-spinkit";
 import "./RegisterForm.css";
-import Service from "../../Service"
+import FetchService from "../../FetchService"
 
 class RegisterForm extends React.Component {
-    constructor(props) {
-      super(props)
+  constructor(props) {
+    super(props)
 
-      this.client = new Service()
-      this.state = {
-        username: "",
-        password: "",
-        displayName: ""
-      }
-    }
-  
-    handleRegister = e => {
-      e.preventDefault();
-      this.client.registerUser(this.state);
+    this.client = new FetchService()
+    this.state = {
+      formData: {
+      username: "",
+      password: "",
+      displayName: ""
+      }, 
+      error: "",
+      submitted: false
     };
-  
-    handleChange = e => {
-      this.setState({ [e.target.name]: e.target.value });
-    };
-  
-    render() {
-      const { loading, error } = this.props;
-      return (
-        <div className="RegisterForm">
-          <form id="register-form" onSubmit={this.handleRegister}>
-            <label htmlFor="username">Username</label>
-            <input
-              type="text"
-              name="username"
-              autoFocus
-              required
-              onChange={this.handleChange}
-            />
-            <label htmlFor="displayName">Display Name</label>
-            <input
-              type="text"
-              name="displayName"
-              autoFocus
-              required
-              onChange={this.handleChange}
-            />
-
-            <label htmlFor="password">Password</label>
-            <input
-              type="password"
-              name="password"
-              required
-              onChange={this.handleChange}
-            />
-            <button type="submit" disabled={loading}>
-              Register
-            </button>
-          </form>
-          {loading && <Spinner name="circle" color="blue" />}
-          {error && <p style={{ color: "red" }}>{error.message}</p>}
-        </div>
-      );
-    }
   }
+
+  handleRegister = event => {
+    event.preventDefault();
+    this.client.registerUser(this.state.formData)
+        .then(error => {
+          console.log(error)
+          this.setState({
+              error: error.message
+          })
+        })
+
+      this.setState({
+        submitted: true
+      })  
+  };
+
+  handleChange = event => {
+    const newformData = { ...this.state.formData };
+    newformData[event.target.name] = event.target.value;
+
+    this.setState({ formData: newformData });
+  }
+
+  render() {
+    let formElement = ""
+    if(!this.state.submitted){
+       formElement = (<form id="register-form"> 
+         else {
+           formElement = <div>Thank you for registering</div>
+
+      }         
+       <label htmlFor="username">Username</label>
+       <input
+         type="text"
+         name="username"
+         autoFocus
+         required
+         onChange={this.handleChange}
+       />
+       <label htmlFor="displayName">Display Name</label>
+       <input
+         type="text"
+         name="displayName"
+         autoFocus
+         required
+         onChange={this.handleChange}
+       />
+
+       <label htmlFor="password">Password</label>
+       <input
+         type="password"
+         name="password"
+         required
+         onChange={this.handleChange}
+       />
+       <button type="submit" onClick={this.handleChange}>
+         Register
+         </button>
+     </form>)
+    }
+    // const { loading, error } = this.props;
+    return (
+      <div className="RegisterForm">
+          {formElement}
+        {/* <form id="register-form" onSubmit={this.handleRegister}>          
+          <label htmlFor="username">Username</label>
+          <input
+            type="text"
+            name="username"
+            autoFocus
+            required
+            onChange={this.handleChange}
+          />
+          <label htmlFor="displayName">Display Name</label>
+          <input
+            type="text"
+            name="displayName"
+            autoFocus
+            required
+            onChange={this.handleChange}
+          />
+
+          <label htmlFor="password">Password</label>
+          <input
+            type="password"
+            name="password"
+            required
+            onChange={this.handleChange}
+          />
+          <button type="submit" onClick={this.handleChange}>
+            Register
+            </button>
+        </form> */}
+        
+        {this.state.error !== "" && <p style={{ color: "red" }}>{this.state.error}</p>}
+      </div>
+    );
+  }
+<<<<<<< HEAD
   
   export default (RegisterForm);
+=======
+}
+
+export default (RegisterForm);
+>>>>>>> master
