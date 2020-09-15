@@ -1,8 +1,10 @@
 import React from "react";
 import Spinner from "react-spinkit";
-import { withAsyncAction } from "../../redux/HOCs";
+// import { withAsyncAction } from "../../redux/HOCs";
 import "./RegistrationForm.css";
 import DataService from "../../dataService";
+import { Button } from "@material-ui/core";
+
 
 class RegistrationForm extends React.Component {
     constructor(props) {
@@ -29,9 +31,9 @@ class RegistrationForm extends React.Component {
     };
     resetForm = (event) => {
         this.setState({
-            username: "",
-            password: "",
-            displayName: ""
+            username: "mulu",
+            password: "hhhhh",
+            displayName: "hhhyh"
         })
     }
 
@@ -64,9 +66,9 @@ class RegistrationForm extends React.Component {
                         required
                         onChange={this.handleChange}
                     />
-                    <button type="submit" disabled={loading}>
+                    <Button variant="contained" color="primary" type="submit" disabled={loading}>
                         Register
-          </button>
+          </Button>
                 </form>
                 {loading && <Spinner name="circle" color="blue" />}
                 {error && <p style={{ color: "red" }}>{error.message}</p>}

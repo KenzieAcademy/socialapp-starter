@@ -1,5 +1,5 @@
 import React from "react";
-import Menu from "../components/menu/Menu";
+// import Menu from "../components/menu/Menu";
 import './Profile.css'
 import { userIsAuthenticated } from "../redux/HOCs";
 // import { Avatar } from "@material-ui/core";
@@ -15,12 +15,12 @@ class Profile extends React.Component {
   render() {
     return (
       <div className="profile">
-        <Menu isAuthenticated={this.props.isAuthenticated} />
-        <Sidebar/>
+        <Sidebar isAuthenticated={this.props.isAuthenticated} />
+        {/* <Feed/> */}
         <Widgets/>
         <Post/>
         <MessageBox/>
-        {/* <Feed/> */}
+       
 
        
       </div>
