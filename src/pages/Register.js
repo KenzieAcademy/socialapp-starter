@@ -5,6 +5,7 @@ import React,{Component} from 'react'
 import { render } from 'react-dom'
 import DataService from '../components/DataService'
 import { withRouter } from 'react-router-dom'
+import { Input, Button } from 'semantic-ui-react'
 
 
 
@@ -48,7 +49,7 @@ class Register extends Component {
                    
                         <label htmlFor='name'> User Name: </label>
     
-                        <input 
+                        <Input 
                         type='text' 
                         name='username' 
                         required
@@ -59,7 +60,7 @@ class Register extends Component {
                         
                          <label htmlFor='password'> Password: </label>
 
-                        <input 
+                        <Input 
                         type='password' 
                         name='password' 
                         required
@@ -70,7 +71,7 @@ class Register extends Component {
                      
                         <label htmlFor='displayName'> Display Name: </label>
     
-                    <input 
+                    <Input 
                         type='text' 
                         name='displayName' 
                         required
@@ -78,7 +79,7 @@ class Register extends Component {
                         />
                     
 
-                    <button type='submit'>Register </button>
+                    <Button type='submit'>Register </Button>
     
                      
                 </form>
