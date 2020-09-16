@@ -18,8 +18,12 @@ class DataService {
         return this.client.get(this.url + "/users");
     }
 
-    handleMessage(){
-        return this.client.post(this.url + "/messages");
+    handleMessage(message) {
+        let ls = JSON.parse(localStorage.login)
+        return this.client.post(this.url + "/messages", message,
+            {headers: {Authorization: `Bearer ${ls.result.token}`}})
+            .then(response => console.log(response))
+            .catch(error => console.log(error))
     }
 }
 

@@ -14,38 +14,30 @@ class SendPost extends React.Component {
 
   handleMessage = e => {
     e.preventDefault();
-    this.client.handleMessage(this.state.value)
-    this.setState({value:""}) 
-
+    const message = {
+      text: this.state.value
     }
-  
+    this.client.handleMessage(message)
+    }
 
 
 render() {
     return (
-        <div>
+        <div className='flex'>
+          <Avatar isSolid name="Tyler Ammons" size={40} />
 
+          <form id="PostMessage" onSubmit={this.handleMessage}>
 
-<Avatar isSolid name="Tyler Ammons" size={40} />
-
-<form id="PostMessage" onSubmit={this.handleMessage}>
-
-<Textarea
-  name="textarea-1"
-  placeholder="Textarea placeholder..."
-  label="Feed Post"
-  value={this.state.value}
-  onChange={e => this.setState({ value: e.target.value })}
-/>
-
-
-
-
-<Button marginRight={16}>Post</Button>
-
-</form>
-
-</div>
+          <Textarea
+            name="textarea-1"
+            placeholder="Textarea placeholder..."
+            label="Feed Post"
+            value={this.state.value}
+            onChange={e => this.setState({ value: e.target.value })}
+          />
+          <Button marginRight={16}>Post</Button>
+          </form>
+        </div>
     )
 }}
 
