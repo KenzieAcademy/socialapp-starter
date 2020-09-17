@@ -1,10 +1,14 @@
 .Menu {
-  background-color: lightskyblue;
+  background-color: yellow;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 1em;
   border-radius: 1em;
+}
+h1 {
+  color: orangered;
+  font-weight: 1000;
 }
 
 #menu-links {
