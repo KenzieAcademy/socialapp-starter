@@ -1,12 +1,19 @@
+@import '~antd/dist/antd.css';
 .Menu {
-  background-color: lightskyblue;
+  text-align: center;
+  /* background-color: lightskyblue; */
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 1em;
   border-radius: 1em;
 }
-
+.Menu-Avatar {
+  float: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 #menu-links {
   display: flex;
   padding-left: 1em;

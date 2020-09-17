@@ -3,7 +3,7 @@ import Spinner from "react-spinkit";
 import { withAsyncAction } from "../../redux/HOCs";
 import "./LoginForm.css";
 import Button from "antd/lib/button";
-import { Button } from 'antd';
+// import { Button } from 'antd';
 
 
 class LoginForm extends React.Component {
@@ -28,7 +28,7 @@ class LoginForm extends React.Component {
     const { loading, error } = this.props;
     return (
       <div className="LoginForm">
-        <form id="login-form" onSubmit={this.handleLogin}>
+        <form id="login-form">
           <label htmlFor="username">Username</label>
           <input
             type="text"
@@ -44,7 +44,7 @@ class LoginForm extends React.Component {
             required
             onChange={this.handleChange}
           />
-          <Button type="primary" disabled={loading}>
+          <Button type="primary" onClick={this.handleLogin} disabled={loading}>
             Login
           </Button>
           {/* <button type="submit" disabled={loading}>
