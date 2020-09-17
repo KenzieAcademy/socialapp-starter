@@ -25,14 +25,14 @@ class Menu extends React.Component {
 
         </div>
 
-        <h1>World Music Coalition</h1>
+        <h1>W o r l d . M u s i c . C o a l i t i o n</h1>
         {this.props.isAuthenticated && (
           <div id="menu-links">
 
             {/* <Link to="/registration">Registration</Link> */}
 
             {/* <Link to={"/profile/"+ this.props.match.params.username}>My Profile</Link> */}
-            <Link to="/profile/">My Profile</Link>
+            {/* <Link to="/profile/">My Profile</Link>
             <Link to="/myposts">My Posts</Link>
             <Link to="/messagefeed"> My Postes</Link>
 
@@ -42,14 +42,14 @@ class Menu extends React.Component {
 
             <Link to="/" onClick={this.handleLogout}>
               Logout
-            </Link>
+            </Link> */}
 
 
             <div>
               <Button.Group widths='5'>
-                <Button color='yellow'>Home</Button>
-                <Button color='orange'>Messages</Button>
-                <Button color='green'>Profile</Button>
+                <Button color='yellow'>MyProfile</Button>
+                <Button color='orange'>MyPosts</Button>
+                <Button color='green'>Covversations</Button>
                 <Button color='red'>UpDate Profile</Button>
 
                 <Button color='violet' text="white"><Link to="/Logout/" onClick={this.handleLogout}>Logout</Link></Button>
