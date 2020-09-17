@@ -5,6 +5,7 @@ import DataService from "../DataService";
 import { Button } from "antd";
 import { Avatar } from "antd";
 import { UserOutlined } from "@ant-design/icons";
+import UpdateUser from "../components/updateUser/UpdateUser";
 
 class Profile extends React.Component {
   constructor(props) {
@@ -34,6 +35,7 @@ class Profile extends React.Component {
         <Button type="primary" danger onClick={this.handleDelete}>
           Delete User
         </Button>
+        <UpdateUser />
       </div>
     );
   }
