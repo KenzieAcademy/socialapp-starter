@@ -75,13 +75,12 @@ class GetMessages extends React.Component {
 
   render() {
     return (
-      <GetMessageDisplay
-        datamessages={this.state.datamessages}
-        messagesBy10={this.state.messagesBy10}
-        value={this.state.value}
-        // pullUser={this.pullUser}
-        // pullMessage={this.pullMessage}
-      />
+      <div>
+        {props.messagesBy10[0]} Outside
+        {/* {props.pullUser()} */}
+        <br />
+        {/* <div>{props.messagesBy10[(props.value, 1)]}</div> */}
+      </div>
     );
   }
 }

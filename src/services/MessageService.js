@@ -13,10 +13,5 @@ class MessageService {
   obtainMessages() {
     return this.client.get(this.url + "/messages");
   }
-
-  //Gets only a specific message data that matches the message ID
-  obtainIDMessage(messageRequest) {
-    return this.client.get(this.url + "/messages/" + messageRequest);
-  }
 }
 export default MessageService;
