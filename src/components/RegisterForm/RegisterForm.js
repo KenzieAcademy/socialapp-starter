@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import Spinner from 'react-spinkit'
 import CreateUser from '../../APIService'
-import './RegisterForm.css'
 import { withAsyncAction } from "../../redux/HOCs";
+import './RegisterForm.css'
 
 
 
-class RegistorForm extends Component {
+class RegisterForm extends Component {
     constructor(props) {
         super(props)
 
@@ -23,11 +23,16 @@ class RegistorForm extends Component {
         this.setState({ [event.target.name]: event.target.value });
     };
 
-    // On Submit, Create A New User And Show New User Info In The Console. Then Log User In.
+    // On Submit, Register And Log In New User
     handleRegister = event => {
         event.preventDefault()
         this.client.registerUser(this.state)
-        this.props.login(this.state.username && this.state.password)
+        .then(response => {
+            this.props.login({
+                username: this.state.username,
+                password: this.state.password
+            })
+        })
     };
 
     render() {
@@ -68,4 +73,4 @@ class RegistorForm extends Component {
         );
     }
 }
-export default withAsyncAction("auth", "login")(RegistorForm);
+export default withAsyncAction("auth", "login")(RegisterForm);
