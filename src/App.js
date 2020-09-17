@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
 import Register from "./pages/Register";
+import MessageList from "./pages/MessageList";
 
 class App extends React.Component {
   render() {
@@ -11,6 +12,7 @@ class App extends React.Component {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/profile/:username" component={Profile} />
+        <Route exact path="/messagefeed" component={MessageList} />
         <Route exact path="/register" component={Register} />
         <Route exact path="*" component={NotFound} />
       </Switch>
