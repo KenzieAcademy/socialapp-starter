@@ -12,10 +12,10 @@ class DataService {
     return this.client.post(this.url + "/users", userdata);
   }
   getLoginForm() {
-    return this.client.post(this.url + "login");
+    return this.client.post(this.url + "/login");
   }
-  getMessageList() {
-    return this.client.get(this.url + "messages");
+  getMessageList(limit = 20) {
+    return this.client.get(this.url + "/messages?limit=" + limit);
   }
 }
 export default DataService;
