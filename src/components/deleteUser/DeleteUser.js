@@ -7,14 +7,11 @@ class DeleteUser extends React.Component {
     this.client = new DeleteUserService();
   }
 
-  // handleLogout = (event) => {
-  //   event.preventDefault();
-  //   this.props.logout();
-  // };
-
   handleDelete = (e) => {
     this.client.deleteUser().then((result) => {
       console.log(result);
+      localStorage.clear();
+      window.location.reload();
     });
   };
 
