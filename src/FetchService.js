@@ -42,7 +42,13 @@ class FetchService {
         })
         .then(response => response.json()) 
     }
-
+    userMessage() {
+        let endpoint = "/messages"
+        let messageCount = 100
+        let URL = this.domain + endpoint + "?limit=" + messageCount
+        return fetch(URL)
+            .then(response => response.json())
+    }
     
 }
 

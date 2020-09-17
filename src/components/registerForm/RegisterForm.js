@@ -75,7 +75,7 @@ class RegisterForm extends React.Component {
          required
          onChange={this.handleChange}
        />
-       <Button type="submit" onClick={this.handleChange}>
+       <Button type="submit" onClick={this.handleRegister}>
          Register
          </Button>
      </form>)
@@ -118,11 +118,6 @@ class RegisterForm extends React.Component {
       </div>
     );
   }
-<<<<<<< HEAD
-  
-  export default (RegisterForm);
-=======
 }
 
 export default (RegisterForm);
->>>>>>> master

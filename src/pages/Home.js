@@ -4,7 +4,7 @@ import Menu from "../components/menu/Menu";
 import { userIsNotAuthenticated } from "../redux/HOCs";
 import RegisterForm from "../components/registerForm/RegisterForm";
 import Logo from "../images/logo.png"
-
+import FetchService from "../FetchService"
 
 import homelogo from "../images/logo.png"
 import { ItemGroup } from "semantic-ui-react";
@@ -12,7 +12,7 @@ import { ItemGroup } from "semantic-ui-react";
 class Home extends React.Component {
   constructor (props) {
     super (props) 
-    this.client = new Service()
+    this.client = new FetchService()
   }
   componentDidMount(){
     this.client.userMessage() 

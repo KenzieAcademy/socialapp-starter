@@ -2,12 +2,12 @@ import React from "react"
 import Menu from "../components/menu/Menu"
 import { userIsAuthenticated } from "../redux/HOCs";
 import MessageList from "../components/messagelist/MessageList"
-import Service from "../Service"
+import FetchService from "../FetchService"
 
 class MessageFeed extends React.Component {
     constructor(props){
         super(props)
-        this.client = new Service()
+        this.client = new FetchService()
         this.state = {
             messages: []
         }
