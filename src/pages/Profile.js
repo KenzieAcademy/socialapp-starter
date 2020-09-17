@@ -18,7 +18,6 @@ class Profile extends React.Component {
         <Menu isAuthenticated={this.props.isAuthenticated} />
         <Header as='h2'>Welcome, {this.props.name}</Header>
         <UpdateUserInfoForm />
-        <h2>Profile</h2>
       </div>
     );
   }
