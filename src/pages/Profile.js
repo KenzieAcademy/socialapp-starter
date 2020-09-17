@@ -2,6 +2,7 @@ import React from "react";
 import Menu from "../components/menu/Menu";
 import { userIsAuthenticated } from "../redux/HOCs";
 import DeleteUser from "../components/deleteUser/DeleteUser";
+import deleteUserService from "../services/DeleteUserService";
 
 class Profile extends React.Component {
   render() {

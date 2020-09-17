@@ -4,11 +4,18 @@ import DeleteUserService from "../../services/DeleteUserService";
 class DeleteUser extends React.Component {
   constructor(props) {
     super(props);
-    this.client = new DeleteUserService(props);
+    this.client = new DeleteUserService();
   }
 
-  handleDelete = (event) => {
-    console.log("hello");
+  // handleLogout = (event) => {
+  //   event.preventDefault();
+  //   this.props.logout();
+  // };
+
+  handleDelete = (e) => {
+    this.client.deleteUser().then((result) => {
+      console.log(result);
+    });
   };
 
   render() {
