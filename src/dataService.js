@@ -13,7 +13,8 @@ class DataService {
     }
 
     GetAUser(username){
-        return this.client.get(this.url+'/'+username)
+        
+        return this.client.get(this.url+'/users/'+username)
     }
     // below not complete just thoughts from eric
     // postMessage(message){
