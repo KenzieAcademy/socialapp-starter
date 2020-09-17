@@ -72,7 +72,7 @@ class Profile extends React.Component {
 
           <Card.Content extra>
             <a>
-              <Icon name='user' />
+              <Icon name= "user"/>
             </a>
           </Card.Content>
         </Card>
