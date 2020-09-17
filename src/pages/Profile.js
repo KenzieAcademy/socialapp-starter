@@ -5,7 +5,7 @@ import DisplayLoggedInPicture from "../components/displayLoggedInPicture/Display
 import UploadProfilePicture from "../components/uploadProfilePicture/UploadProfilePicture"
 import UpdateUserInfoForm from "../components/updateUserInfoForm/UpdateUserInfoForm"
 import { userIsAuthenticated } from "../redux/HOCs";
-import UploadProfilePictureService from "../services/UploadProfilePictureService";
+
 
 class Profile extends React.Component {
   constructor(props) {
@@ -13,13 +13,15 @@ class Profile extends React.Component {
     this.state = {
       username: this.props.name
     }
+
+    this.loginData = JSON.parse(localStorage.getItem("login"))
   }
   
   render() {
     return (
       <div className="Profile">
         <Menu isAuthenticated={this.props.isAuthenticated} />
-        <Header as='h2'>Welcome, {this.props.name}</Header>
+        <Header as='h2'>Welcome, {this.loginData.result.username}</Header>
         <DisplayLoggedInPicture />
         <UploadProfilePicture />
         <UpdateUserInfoForm />

@@ -4,6 +4,8 @@ import "./Menu.css";
 import { withAsyncAction } from "../../redux/HOCs";
 
 class Menu extends React.Component {
+
+  
   handleLogout = event => {
     event.preventDefault();
     this.props.logout();
@@ -16,7 +18,7 @@ class Menu extends React.Component {
         {this.props.isAuthenticated && (
           <div id="menu-links">
             <Link to="/mainHub">Main Hub</Link>
-            <Link to = "/profile/:username">Profile</Link>
+            <Link to = {`/profile/:username`}>Profile</Link>
             <Link to="/" onClick={this.handleLogout}>
               Logout
             </Link>
