@@ -2,6 +2,7 @@ import React from "react";
 import Spinner from "react-spinkit";
 import "./RegistrationForm.css";
 import dataService from "../../services/DataService";
+import { Form, Button } from "semantic-ui-react";
 
 class RegistrationForm extends React.Component {
   constructor(props) {
@@ -15,7 +16,7 @@ class RegistrationForm extends React.Component {
     this.client = new dataService();
   }
 
-  handleRestration = (e) => {
+  handleRegistration = (e) => {
     e.preventDefault();
     this.client.registerUser(this.state).then((result) => {
       console.log(result.data);
@@ -30,34 +31,40 @@ class RegistrationForm extends React.Component {
     const { loading, error } = this.props;
     return (
       <div className="RegistrationForm">
-        <form id="registration-form" onSubmit={this.handleRestration}>
-          <label htmlFor="username">Username</label>
-          <input
-            type="text"
-            name="username"
-            autoFocus
-            required
-            onChange={this.handleChange}
-          />
+        <Form id="registration-form" onSubmit={this.handleRegistration}>
+          <Form.Field>
+            <label htmlFor="username">Username</label>
+            <input
+              type="text"
+              name="username"
+              autoFocus
+              required
+              onChange={this.handleChange}
+            />
+          </Form.Field>
           {/* Inserted Display Name */}
-          <label htmlFor="displayName">Display Name</label>
-          <input
-            type="text"
-            name="displayName"
-            required
-            onChange={this.handleChange}
-          />
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            name="password"
-            required
-            onChange={this.handleChange}
-          />
-          <button type="submit" disabled={loading}>
+          <Form.Field>
+            <label htmlFor="displayName">Display Name</label>
+            <input
+              type="text"
+              name="displayName"
+              required
+              onChange={this.handleChange}
+            />
+          </Form.Field>
+          <Form.Field>
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              name="password"
+              required
+              onChange={this.handleChange}
+            />
+          </Form.Field>
+          <Button type="submit" disabled={loading}>
             Register
-          </button>
-        </form>
+          </Button>
+        </Form>
         {loading && <Spinner name="circle" color="blue" />}
         {error && <p style={{ color: "red" }}>{error.message}</p>}
       </div>

@@ -3,6 +3,7 @@ import Menu from "../components/menu/Menu";
 import { userIsAuthenticated } from "../redux/HOCs"
 import PostMessageForm from "../components/postMessageForm/PostMessageForm"
 
+
 class MainHub extends React.Component {
     constructor(props) {
         super(props)
