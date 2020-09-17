@@ -43,8 +43,6 @@ class UpdateProfileForm extends React.Component {
     render() {
 
 
-
-
         return (
             <div className="UpdateProfile">
 
