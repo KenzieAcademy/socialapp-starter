@@ -17,6 +17,13 @@ class Menu extends React.Component {
           <div id="menu-links">
             <Link to="/">Home</Link>
             <Link to="/profile">Profile</Link>
+            <Link
+              to={`/profile/${
+                JSON.parse(localStorage.getItem("login")).result.username
+              }`}
+            >
+              Profile
+            </Link>
             <Link to="/" onClick={this.handleLogout}>
               Logout
             </Link>

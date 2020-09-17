@@ -2,6 +2,9 @@ import React from "react";
 import Menu from "../components/menu/Menu";
 import { userIsAuthenticated } from "../redux/HOCs";
 import DataService from "../DataService";
+import { Button } from "antd";
+import { Avatar } from "antd";
+import { UserOutlined } from "@ant-design/icons";
 
 class Profile extends React.Component {
   constructor(props) {
