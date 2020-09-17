@@ -24,7 +24,9 @@ class LoginForm extends React.Component {
   render() {
     const { loading, error } = this.props;
     return (
+      
       <div className="LoginForm">
+        <h2>Log into Jargah</h2>
         <form id="login-form" onSubmit={this.handleLogin}>
           <label htmlFor="username">Username</label>
           <input
@@ -41,10 +43,12 @@ class LoginForm extends React.Component {
             required
             onChange={this.handleChange}
           />
-          <button type="submit" disabled={loading}>
+          <button className="login-btn" type="submit" disabled={loading}>
             Login
           </button>
+
         </form>
+        <a href='./Registration'>Register Here</a>
         {loading && <Spinner name="circle" color="blue" />}
         {error && <p style={{ color: "red" }}>{error.message}</p>}
       </div>

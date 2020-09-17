@@ -1,20 +1,27 @@
 .Menu {
-  background-color: lightskyblue;
+  background:url(https://ae01.alicdn.com/kf/HTB13gIDQpXXXXajapXXq6xXFXXXW/Dark-Blue-Solid-Color-Vinyl-Photography-Backdrop-Spray-Painted-Computer-Backgrounds-Digtal-Printing-Cloth-background-Backdrop.jpg);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 1em;
   border-radius: 1em;
 }
+h1 {
+  color: white;
+}
+
 
 #menu-links {
   display: flex;
   padding-left: 1em;
+  
 }
 
 #menu-links a {
   padding-right: 0.5em;
-  color: darkblue;
+  color: rgb(236, 236, 236);
   text-decoration: underline;
   cursor: pointer;
+  font-size: 20px;
+  font-family: 'Times New Roman', Times, serif;
 }

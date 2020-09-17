@@ -3,3 +3,79 @@
   flex-direction: column;
   max-width: 20em;
 }
+body{
+  margin: 0;
+  padding: 0;
+  background:white;
+  background-size: cover;
+}
+h2 {
+  color: #fff;
+  font-size: 30px;
+}
+a {
+
+    color: #fff;
+    font-size: 20px;
+  
+}
+
+.LoginForm {
+  width: 300px;
+  padding: 20px;
+  text-align: center;
+  background:url(https://ae01.alicdn.com/kf/HTB13gIDQpXXXXajapXXq6xXFXXXW/Dark-Blue-Solid-Color-Vinyl-Photography-Backdrop-Spray-Painted-Computer-Backgrounds-Digtal-Printing-Cloth-background-Backdrop.jpg);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  overflow: hidden;
+}
+#login-form {
+  margin-top: 100px;
+  font-family: 'Permanent Marker', cursive;
+  color: rgb(8, 4, 4);
+  font-size: 25px;
+}
+#login-form input{
+  display: block;
+  width: 100%;
+  padding: 0 16px;
+  height: 44px;
+  text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  font-family: "montserrat",sans-serif;
+}
+#login-form{
+  margin: 20px 0;
+  background: rgba(255,255,255,.5);
+  border-radius: 6px;
+}
+.login-btn{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background: url(https://ae01.alicdn.com/kf/HTB13gIDQpXXXXajapXXq6xXFXXXW/Dark-Blue-Solid-Color-Vinyl-Photography-Backdrop-Spray-Painted-Computer-Backgrounds-Digtal-Printing-Cloth-background-Backdrop.jpg);
+  color: #fff;
+  border-radius: 44px;
+  cursor: pointer;
+  transition: 0.8s;
+}
+.login-btn:hover{
+  transform: scale(0.96);
+}
+#login-form input{
+  text-decoration: none;
+  color: #fff;
+  font-family: "montserrat",sans-serif;
+  font-size: 14px;
+  padding: 10px;
+  transition: 0.8s;
+  display: block;
+}
+#login-form input:hover{
+  background:url(https://ae01.alicdn.com/kf/HTB13gIDQpXXXXajapXXq6xXFXXXW/Dark-Blue-Solid-Color-Vinyl-Photography-Backdrop-Spray-Painted-Computer-Backgrounds-Digtal-Printing-Cloth-background-Backdrop.jpg);
+}
+

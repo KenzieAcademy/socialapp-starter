@@ -65,7 +65,7 @@ class RegistrationForm extends React.Component {
             required
             onChange={this.handleChange}
           />
-          <button type="submit" disabled={loading}>
+          <button className="registerbtn" type="submit" disabled={loading}>
             Registor
           </button>
         </form>

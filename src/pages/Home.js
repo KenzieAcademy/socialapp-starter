@@ -64,9 +64,9 @@ class Home extends React.Component {
     return (
       <div className="Home">
         <Menu />
-        <h2>Log into Jargah</h2>
+        
         <LoginForm />
-      <a href='./Registration'>Register Here</a>
+      
       {/* <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
 

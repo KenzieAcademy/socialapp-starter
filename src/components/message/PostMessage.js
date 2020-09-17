@@ -20,6 +20,7 @@ class PostMessage extends React.Component {
     let message = this.state.text
     console.log(message)
     this.client.postMessage(this.state.text)
+    this.setState({text:''})
     
     
   };
@@ -27,6 +28,7 @@ class PostMessage extends React.Component {
   handleChange = e => {
    
     this.setState({ [e.target.name]: e.target.value });
+  
   };
 
   render() {
@@ -39,6 +41,7 @@ class PostMessage extends React.Component {
         
         
         <TextArea rows={4} 
+         value={this.state.text}
          type="text"
          name="text"
          autoFocus
