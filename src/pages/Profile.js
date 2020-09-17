@@ -2,6 +2,7 @@ import React from "react";
 // import Navigation from "../components/Navigation/Navigation"
 import { userIsAuthenticated } from "../redux/HOCs";
 import DataService from "../services/DataService";
+import Menu from "../components/menu/Menu"
 
 
 class Profile extends React.Component {
