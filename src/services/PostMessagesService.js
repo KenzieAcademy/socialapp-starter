@@ -1,16 +1,12 @@
-//import the axios HTTP client to communicate with the API
 import axios from "axios";
-class DataService {
+
+class PostMessageService {
   constructor(
     url = "https://socialapp-api.herokuapp.com",
     client = axios.create()
   ) {
     this.url = url;
     this.client = client;
-  }
-
-  registerUser(registrationData) {
-    return this.client.post(this.url + "/users", registrationData);
   }
 
   postMessage(message) {
@@ -23,4 +19,5 @@ class DataService {
     });
   }
 }
-export default DataService;
+
+export default PostMessageService
