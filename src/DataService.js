@@ -11,7 +11,12 @@ class DataService {
     registerUser(registrationData){
         return this.client.post(this.url +"/users", registrationData);
     }
-
+    editProfile(createBioData){
+      return this.client.patch(this.url +"/users",createBioData);
+ }
+    getMessages(limit = 20){
+        return this.client.get(`/messages?limit=${limit}`)
+    }
 }
 
 
