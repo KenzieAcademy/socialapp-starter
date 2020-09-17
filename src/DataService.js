@@ -22,25 +22,18 @@ class DataService {
     });
   }
 
-<<<<<<< HEAD
-  addLikes(userLikes) {
-    let loginData = JSON.parse(localStorage.getItem("login"));
-    return this.client.post(this.url + "/likes", userLikes, {
-      headers: { Authorization: `Bearer ${loginData.result.token}` },
-    });
-  }
+  // addLikes(userLikes) {
+  //   let loginData = JSON.parse(localStorage.getItem("login"));
+  //   return this.client.post(this.url + "/likes", userLikes, {
+  //     headers: { Authorization: `Bearer ${loginData.result.token}` },
+  //   });
+  // }
 
-  deleteLikes(likeId) {
-    let loginData = JSON.parse(localStorage.getItem("login"));
-    return this.client.delete(this.url + "/likes/" + { likeId }, {
-      headers: { Authorization: `Bearer ${loginData.result.token}` },
-=======
-  postMessage(message) {
-    let loginData = JSON.parse(localStorage.getItem("login"));
-    return this.client.post(this.url + "/messages", message, {
-      headers: { Authorization: `Bearer ${loginData.result.token} ` },
->>>>>>> master
-    });
-  }
+  // deleteLikes(likeId) {
+  //   let loginData = JSON.parse(localStorage.getItem("login"));
+  //   return this.client.delete(this.url + "/likes/" + { likeId }, {
+  //     headers: { Authorization: `Bearer ${loginData.result.token}` },
+  //   });
+  // }
 }
 export default DataService;
