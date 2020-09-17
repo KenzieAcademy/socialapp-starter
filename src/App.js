@@ -4,6 +4,8 @@ import { Switch, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
+import RegistrationPage from "./pages/RegistrationPage";
+import ProfileOptions from "./pages/ProfileOptions";
 
 class App extends React.Component {
   render() {
@@ -11,6 +13,8 @@ class App extends React.Component {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/profile/:username" component={Profile} />
+        <Route exact path="/registerUser" component={RegistrationPage} />
+        <Route exact path="/profileoptions" component={ProfileOptions} />
         <Route exact path="*" component={NotFound} />
       </Switch>
     );
