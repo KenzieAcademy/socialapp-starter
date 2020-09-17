@@ -11,3 +11,4 @@ class MessageFeed extends React.Component {
   }
 }
 export default userIsAuthenticated(MessageFeed);
+

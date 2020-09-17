@@ -2,15 +2,14 @@ import React from "react"
 import { Switch, Route } from "react-router-dom";
 /*/import Navigation from "./components/Navigation";*/
 
-//import { withAsyncAction } from "./redux/HOCs"
-//import { userIsAuthenticated } from "./redux/HOCs";
 
-import Main from "./pages/Main"
+import Navigation from "./components/Navigation/Navigation"
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
-import PostMessageForm from "./components/postMessagesForm/PostMessageForm";
-//import MessageFeed from "./pages/MessageFeed"
+import Register from "./pages/Register"
+import MessageFeed from "./pages/MessageFeed"
+
 class App extends React.Component {
 
   handleLogout = event => {
@@ -18,39 +17,43 @@ class App extends React.Component {
     this.props.logout();
 }
 
-
   render() {
-
-    return (
+    
+    return (  
       <div className="root" >
-        
-      <Switch>
-        <Route
-          exact
-          path="/"
-          component={Home}
-        />
-        <Route
-          exact
-          path="/profile/:username"
-          component={Profile}
-        />
-        <Route exact
-          path="/main"
-          component={Main}
-        />
-        <Route exact
-          path="/messagefeed"
-          component={PostMessageForm} />
-        <Route
-          exact
-          path="*"
-          component={NotFound}
-        />
-      </Switch>
+        <Navigation  />
+        <Switch>
+          <Route
+            exact
+            path="/"
+            component={Home}
+          />
+          <Route
+            exact
+            path="/profile/:username"
+            component={Profile}
+          />
+          <Route
+            exact
+            path="/messagefeed"
+            component={MessageFeed}
+          />
+          <Route
+            exact
+            path="/signup"            // A New Route To SignUp Page (Register Page)
+            component={Register}
+          />
+          <Route
+            exact
+            path="*"
+            component={NotFound}
+          />
+        </Switch>
       </div>
-    );
+      
+    )
+  
   }
 }
 
-export default App;
+export default App
