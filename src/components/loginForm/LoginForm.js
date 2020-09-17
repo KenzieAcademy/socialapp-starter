@@ -2,6 +2,9 @@ import React from "react";
 import Spinner from "react-spinkit";
 import { withAsyncAction } from "../../redux/HOCs";
 import "./LoginForm.css";
+import Button from '@material-ui/core/Button';
+
+
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -32,6 +35,7 @@ class LoginForm extends React.Component {
             name="username"
             autoFocus
             required
+            placeholder="username"
             onChange={this.handleChange}
           />
           <label htmlFor="password">Password</label>
@@ -39,11 +43,13 @@ class LoginForm extends React.Component {
             type="password"
             name="password"
             required
+            placeholder= "password"
             onChange={this.handleChange}
           />
-          <button type="submit" disabled={loading}>
+          <Button type="submit" disabled={loading} variant="contained" color="primary">
             Login
-          </button>
+          </Button >
+        
         </form>
         {loading && <Spinner name="circle" color="blue" />}
         {error && <p style={{ color: "red" }}>{error.message}</p>}
