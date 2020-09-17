@@ -1,12 +1,55 @@
-import React from 'react';
+import React, { Component } from 'react';
+import DataService from "../../dataService"
 
-function UsersDisplay (props){
+// function UserDisplay(props) {
+  
+//   let userData=DataService.getAUser(props)
+//   console.log(userData)
+//   return <div className="Welcome"><h1>{props.name}</h1>
 
-    return (
-        <div>
-        <h1>Your Score: {props.people}</h1>
-        </div>
-      );
+
+//   <h2>testing? {props.username}</h2>
+    
+//   </div>;
+// }
+// export default UserDisplay;
+
+
+class UserDisplay extends Component {
+
+  //set our initial state and set up our service as this.client on this component
+  constructor(props)
+  {super(props)
+    this.client = new DataService();
+    this.state = {
+     data: {},
+    
+
+    }
+  }
+  gettheuser() {
+    return this.client.GetAUser(this.props.name).then(result => {
+      this.setState({
+        data: result.data.user
+      })
+    })
+  }
+componentDidMount(){
+  this.gettheuser() 
+ 
 }
-
-export default UsersDisplay
+    render() {
+    console.log(this.state)
+    return(
+      <div>
+        
+        <h1>{this.state.data.displayName}</h1>
+        <h3>About me: <br/>
+          {this.state.data.about}</h3>
+        </div>
+    )
+   
+    
+  }
+}
+export default UserDisplay 

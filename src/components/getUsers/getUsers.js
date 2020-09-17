@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 import DataService from "../../dataService"
+
 class userData extends Component {
 
     //set our initial state and set up our service as this.client on this component
@@ -27,9 +29,15 @@ class userData extends Component {
         <div>
         {this.state.users.map(user => 
         <h3 key={user.username}
-        >Here is  <button onClick={() => 
-        this.client.GetAUser(user.username).then(res => window.open(res.config.url))
-        }>{user.displayName}</button>
+        >Here is  <Link to={{
+          pathname: "/user/"+user.username,  
+          state: { fromDashboard: true }
+      }}
+        onClick={() => 
+        this.client.GetAUser(user.username).then(res =>{ console.log(res)})
+        }
+        >{user.displayName}
+        </Link>
         </h3>)}
        
          </div>
