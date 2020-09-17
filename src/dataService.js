@@ -13,5 +13,13 @@ class DataService {
   registerUser(registrationData) {
     return this.client.post(this.url + "/users", registrationData);
   }
+
+  getUsers() {
+    return this.client.get(this.url + "/users");
+  }
+
+  getMessage() {
+    return this.client.get(this.url + "/messages?limit=100");
+  }
 }
 export default DataService;
