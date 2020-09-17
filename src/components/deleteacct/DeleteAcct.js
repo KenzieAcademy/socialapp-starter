@@ -1,5 +1,6 @@
 import React from "react";
 import Dataservice from "../../pages/dataService";
+import { Button } from "antd";
 import "./deleteacct.css";
 class DeleteAcctButton extends React.Component {
   constructor(props) {
@@ -18,9 +19,9 @@ class DeleteAcctButton extends React.Component {
   render() {
     return (
       <div className="DeleteAcctButton">
-        <button id="del" onClick={this.handleDelete}>
+        <Button id="del" type="primary" onClick={this.handleDelete}>
           Delete Account
-        </button>
+        </Button>
       </div>
     );
   }
