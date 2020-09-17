@@ -1,7 +1,9 @@
 import React from "react"
 // import Spinner from "react-spinkit";
 import "./RegisterForm.css";
-import FetchService from "../../FetchService"
+import FetchService from "../../FetchService";
+import { Button } from 'semantic-ui-react'
+
 
 class RegisterForm extends React.Component {
   constructor(props) {
@@ -73,9 +75,9 @@ class RegisterForm extends React.Component {
          required
          onChange={this.handleChange}
        />
-       <button type="submit" onClick={this.handleChange}>
+       <Button type="submit" onClick={this.handleRegister}>
          Register
-         </button>
+         </Button>
      </form>)
     }
     // const { loading, error } = this.props;
@@ -107,9 +109,9 @@ class RegisterForm extends React.Component {
             required
             onChange={this.handleChange}
           />
-          <button type="submit" onClick={this.handleChange}>
+          <Button type="submit" onClick={this.handleChange}>
             Register
-            </button>
+            </Button>
         </form> */}
         
         {this.state.error !== "" && <p style={{ color: "red" }}>{this.state.error}</p>}
