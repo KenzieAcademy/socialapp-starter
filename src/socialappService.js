@@ -7,8 +7,11 @@ class SocialappService {
     this.url = url;
     this.client = client;
   }
-  getQuestion() {
-    return this.client.get(this.url);
+  registerUser(userData) {
+    return this.client.post(this.url + "users", userData);
+  }
+  getUsers() {
+    return this.client.get(this.url + "/users");
   }
 }
 export default SocialappService;
