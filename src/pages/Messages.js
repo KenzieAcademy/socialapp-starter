@@ -7,3 +7,5 @@ class Messages extends React.Component {
     return <div className="Messages">{}</div>;
   }
 }
+
+export default Messages;
