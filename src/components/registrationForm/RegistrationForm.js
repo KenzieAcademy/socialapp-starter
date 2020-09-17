@@ -5,24 +5,23 @@ import DataService from "../../services/DataService";
 
 class RegistrationForm extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       username: "",
       password: "",
-      displayName: ""
+      displayName: "",
     };
     this.client = new DataService();
-
   }
 
-  handleRegistration = e => {
+  handleRegistration = (e) => {
     e.preventDefault();
-    this.client.registerUser(this.state).then(result => {
-      console.log(result.date)
-    })
+    this.client.registerUser(this.state).then((result) => {
+      console.log(result.date);
+    });
   };
 
-  handleChange = e => {
+  handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };
 
