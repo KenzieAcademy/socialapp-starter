@@ -1,7 +1,6 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import { withAsyncAction } from "./redux/HOCs"
-import { userIsAuthenticated } from "./redux/HOCs";
+
 
 import Navigation from "./components/Navigation/Navigation"
 import Home from "./pages/Home";
@@ -23,7 +22,7 @@ class App extends React.Component {
     
     return (  
       <div className="root" >
-        <Navigation />
+        <Navigation  />
         <Switch>
           <Route
             exact
