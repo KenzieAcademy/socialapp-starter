@@ -12,6 +12,7 @@ class DataService {
   registerUser(userData) {
     return this.client.post(this.url + "/users", userData);
   }
+
   deleteUser() {
     let loginData = JSON.parse(localStorage.getItem("login")).result;
     let token = loginData.token;
@@ -21,6 +22,7 @@ class DataService {
     });
   }
 
+<<<<<<< HEAD
   addLikes(userLikes) {
     let loginData = JSON.parse(localStorage.getItem("login"));
     return this.client.post(this.url + "/likes", userLikes, {
@@ -32,6 +34,12 @@ class DataService {
     let loginData = JSON.parse(localStorage.getItem("login"));
     return this.client.delete(this.url + "/likes/" + { likeId }, {
       headers: { Authorization: `Bearer ${loginData.result.token}` },
+=======
+  postMessage(message) {
+    let loginData = JSON.parse(localStorage.getItem("login"));
+    return this.client.post(this.url + "/messages", message, {
+      headers: { Authorization: `Bearer ${loginData.result.token} ` },
+>>>>>>> master
     });
   }
 }
