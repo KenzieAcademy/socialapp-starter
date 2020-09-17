@@ -5,6 +5,10 @@ import { userIsNotAuthenticated } from "../redux/HOCs";
 import RegistrationForm from "../components/registraionForm/RegistrationForm";
 
 class Home extends React.Component {
+  onChange = (date, dateString) => {
+    console.log(date, dateString);
+  };
+
   render() {
     return (
       <div className="Home">
