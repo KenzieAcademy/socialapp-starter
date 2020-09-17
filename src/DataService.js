@@ -37,6 +37,10 @@ class DataService {
     let userName = loginData.username;
     return this.client.put(this.url + "/users/" + userName + "/picture", {
       headers: { Authorization: `Bearer ${token}` },
+  postMessage(message) {
+    let loginData = JSON.parse(localStorage.getItem("login"));
+    return this.client.post(this.url + "/messages", message, {
+      headers: { Authorization: `Bearer ${loginData.result.token} ` },
     });
   }
 }
