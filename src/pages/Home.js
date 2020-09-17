@@ -2,7 +2,7 @@ import React from "react";
 import LoginForm from "../components/loginForm/LoginForm";
 import Menu from "../components/menu/Menu";
 import { userIsNotAuthenticated } from "../redux/HOCs";
-import { Link } from "react-router-dom";
+import RegistrationForm from "../components/registraionForm/RegistrationForm";
 
 class Home extends React.Component {
   render() {
@@ -11,7 +11,9 @@ class Home extends React.Component {
         <Menu />
         <h2>Your favorite microblogging platform</h2>
         <LoginForm />
-        <Link to="/createUser">Create User</Link>
+        <hr />
+        <h2>Register below:</h2>
+        <RegistrationForm />
       </div>
     );
   }
