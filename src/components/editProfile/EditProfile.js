@@ -1,6 +1,6 @@
 import React from "react";
 import Spinner from "react-spinkit";
-import DataService from "../";
+import DataService from "";
 import "./EditProfile.css";
 import { Button } from 'antd';
 
