@@ -11,7 +11,7 @@ class MessageList extends React.Component {
   }
   componentDidMount() {
     this.client.getMessages().then((response) => {
-      console.log(response.data.messages);
+      this.setState({ messages: response.data.messages });
     });
   }
 
