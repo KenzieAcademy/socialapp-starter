@@ -16,7 +16,7 @@ class Menu extends React.Component {
         {this.props.isAuthenticated && (
           <div id="menu-links">
             <Link to="/">Home</Link>
-            <Link to="/profile">Profile</Link>
+
             <Link
               to={`/profile/${
                 JSON.parse(localStorage.getItem("login")).result.username

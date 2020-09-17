@@ -27,7 +27,13 @@ class Profile extends React.Component {
       <div className="Profile">
         <Menu isAuthenticated={this.props.isAuthenticated} />
         <h2>Profile</h2>
-        <button onClick={this.handleDelete}>Delete User</button>
+        <div>
+          <Avatar size={264} icon={<UserOutlined />} />
+        </div>
+        <Button type="primary">Change Picture</Button>
+        <Button type="primary" danger onClick={this.handleDelete}>
+          Delete User
+        </Button>
       </div>
     );
   }
