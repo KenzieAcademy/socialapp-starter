@@ -3,6 +3,7 @@ import Menu from "../components/menu/Menu";
 import { userIsAuthenticated } from "../redux/HOCs";
 import FetchService from "../FetchService"
 import { Card, CardContent, Icon, Image } from 'semantic-ui-react'
+import { withAsyncAction } from "../redux/HOCs";
 // import imageProfile from "../imageProfile/profile.jpg"
 
 
@@ -49,7 +50,18 @@ class Profile extends React.Component {
   handleUpdateUser = event => {
     event.preventDefault()
     this.client.updateUser(this.state.user.username, this.state.formData)
+      .then(updateUserData => {
+        this.setState({
+          user: updateUserData.user
+        })
+      })
+  }
 
+  handleDeleteUser = event => {
+    event.preventDefault()
+    this.props.logout() 
+    this.client.deleteUser(this.state.user.username)
+    
   }
 
   render() {
@@ -78,7 +90,7 @@ class Profile extends React.Component {
         </Card>
 
         <form id="Profile-form" onSubmit={this.handleUpdateUser}>
-          <label htmlFor="displayName">displayName</label>
+          <label htmlFor="displayName">Display Name</label>
           <input
             type="text"
             name="displayName"
@@ -86,6 +98,7 @@ class Profile extends React.Component {
             required
             onChange={this.handleChange}
           />
+          <br/>
           <label htmlFor="password">Password</label>
           <input
             type="password"
@@ -93,16 +106,20 @@ class Profile extends React.Component {
             required
             onChange={this.handleChange}
           />
-
+          <br/>
           <label htmlFor="about">About</label>
           <input
-            type="text"
+            type="textarea"
             name="about"
             required
             onChange={this.handleChange}
           />
-          <button type="submit">
-            Update User Info
+          <button type="primary"  onClick={this.handleUpdateUser}>
+            Update User
+          </button>
+
+          <button type="primary"  onClick={this.handleDeleteUser}>
+            Delete User
           </button>
         </form>
       </div>
@@ -111,4 +128,4 @@ class Profile extends React.Component {
 }
 
 
-export default userIsAuthenticated(Profile);
+export default withAsyncAction("auth", "logout")(userIsAuthenticated(Profile));

@@ -47,7 +47,7 @@ class RegisterForm extends React.Component {
     let formElement = ""
     if(!this.state.submitted){
        formElement = (<form id="register-form"> 
-         else {
+          {
            formElement = <div>Thank you for registering</div>
 
       }         

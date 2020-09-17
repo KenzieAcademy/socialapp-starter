@@ -42,6 +42,23 @@ class FetchService {
         })
         .then(response => response.json()) 
     }
+
+    deleteUser(userName) {
+        let endpoint = "/users/"
+        let URL = this.domain + endpoint + userName
+        let token = JSON.parse(localStorage.getItem('login')).result.token
+
+        return fetch(URL, {
+        method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+                "Authorization": "Bearer " + token
+            },
+       
+        })
+        .then(response => response.json()) 
+    }
     userMessage() {
         let endpoint = "/messages"
         let messageCount = 100
