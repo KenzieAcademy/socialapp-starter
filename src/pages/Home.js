@@ -4,7 +4,6 @@ import LoginForm from "../components/loginForm/LoginForm";
 import { userIsNotAuthenticated } from "../redux/HOCs";
 import RegistrationForm from "../components/RegistrationForm/RegistrationForm";
 import GetMessage from "../components/getMessages/GetMessages";
-import RegistrationForm from "../components/RegistrationForm/RegistrationForm";
 import { Layout, Menu, Breadcrumb } from "antd";
 import UserData from "../components/getUsers/getUsers";
 class Home extends React.Component {

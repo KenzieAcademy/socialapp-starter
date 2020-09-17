@@ -38,7 +38,7 @@ class GetMessage extends Component {
     return (
       <div>
         <div>
-          <h1></h1>
+          <h1>Messages</h1>
         </div>
         <div id="test"></div>
       </div>
