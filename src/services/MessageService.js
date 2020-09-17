@@ -8,12 +8,14 @@ class MessageService {
     this.url = url;
     this.client = client;
   }
+
   //Gets all Message Data
   obtainMessages() {
     return this.client.get(this.url + "/messages");
   }
+
   //Gets only a specific message data that matches the message ID
-  obtainDirectMessage(messageRequest) {
+  obtainIDMessage(messageRequest) {
     return this.client.get(this.url + "/messages/" + messageRequest);
   }
 }
