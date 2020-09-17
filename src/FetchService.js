@@ -19,7 +19,6 @@ class FetchService {
         })
             .then(response => response.json())
 
-
     }
     //=====GET USER===(profile)============================
     getUser(username) {
@@ -42,7 +41,7 @@ class FetchService {
         return fetch(URL, {
             method: 'PATCH',
             headers: {
-               
+
                 "accept": "application/json",
                 "Authorization": "Bearer " + token,
                 "Content-Type": "application/json"
@@ -55,6 +54,37 @@ class FetchService {
 
     }
 
+//========POST Message===========================
+postMessage(message) {
+    let endpoint = "/messages";
+    let URL = this.domain + endpoint;
+    let token = JSON.parse(localStorage.getItem('login')).result.token;
+
+console.log(message)
+
+    return fetch(URL, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            "Authorization": "Bearer " + token,
+            'Accept': 'application/json'
+        },
+
+        body: JSON.stringify(message)
+
+    })
+        .then(response => response.json())
+
+}
+
+
+    //=====GetMessages======================================
+    getMessages() {
+        let endpoint = "/messages";
+        let messagecount = 80;
+        let URL = this.domain + endpoint + "?limit=" + messagecount;
+        return fetch(URL).then(response => response.json())
+    }
 
 }
 

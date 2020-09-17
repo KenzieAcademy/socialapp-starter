@@ -105,7 +105,7 @@ class RegisterForm extends React.Component {
                     />
                     <Button secondary type="submit" onClick={this.handleRegister}>
                         Register
-          </Button >
+                    </Button >
                 </form>
 
 
