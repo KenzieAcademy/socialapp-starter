@@ -14,5 +14,12 @@ class DataService {
   getLoginForm() {
     return this.client.post(this.url + " login");
   }
+  deleteuser() {
+    const loginData = JSON.parse(localStorage.getItem("login")).result;
+
+    return this.client.delete(this.url + `/users/${loginData.username}`, {
+      headers: { Authorization: `Bearer ${loginData.token}` },
+    });
+  }
 }
 export default DataService;
