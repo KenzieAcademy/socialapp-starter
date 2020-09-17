@@ -1,15 +1,28 @@
 import React from "react";
-import LoginForm from "../components/loginForm/LoginForm";
+import LoginForm from "../components/loginForm/LoginForm"
 import Menu from "../components/menu/Menu";
 import { userIsNotAuthenticated } from "../redux/HOCs";
+import RegistrationForm from "../components/registrationForm/RegistrationForm";
+//import { Link } from "react-router-dom";
+
 
 class Home extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      showlogin: true
+
+    }
+  }
   render() {
     return (
       <div className="Home">
         <Menu />
         <h2>Your favorite microblogging platform</h2>
         <LoginForm />
+        <hr />
+        <h2> Register Here</h2>
+        <RegistrationForm />
       </div>
     );
   }
