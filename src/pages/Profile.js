@@ -3,6 +3,7 @@ import Menu from "../components/menu/Menu";
 import { userIsAuthenticated } from "../redux/HOCs";
 import FetchService from "../FetchService"
 import { Card, CardContent, Icon, Image } from 'semantic-ui-react'
+import { withAsyncAction } from "../redux/HOCs";
 // import imageProfile from "../imageProfile/profile.jpg"
 
 
@@ -54,6 +55,13 @@ class Profile extends React.Component {
           user: updateUserData.user
         })
       })
+  }
+
+  handleDeleteUser = event => {
+    event.preventDefault()
+    this.props.logout() 
+    this.client.deleteUser(this.state.user.username)
+    
   }
 
   render() {
@@ -109,6 +117,10 @@ class Profile extends React.Component {
           <button type="primary"  onClick={this.handleUpdateUser}>
             Update User
           </button>
+
+          <button type="primary"  onClick={this.handleDeleteUser}>
+            Delete User
+          </button>
         </form>
       </div>
     );
@@ -116,4 +128,4 @@ class Profile extends React.Component {
 }
 
 
-export default userIsAuthenticated(Profile);
+export default withAsyncAction("auth", "logout")(userIsAuthenticated(Profile));
