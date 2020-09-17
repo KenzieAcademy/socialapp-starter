@@ -17,5 +17,12 @@ class DataService {
   getMessageList(limit = 20) {
     return this.client.get(this.url + "/messages?limit=" + limit);
   }
+  deleteuser() {
+    const loginData = JSON.parse(localStorage.getItem("login")).result;
+
+    return this.client.delete(this.url + `/users/${loginData.username}`, {
+      headers: { Authorization: `Bearer ${loginData.token}` },
+    });
+  }
 }
 export default DataService;
