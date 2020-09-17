@@ -9,10 +9,6 @@ class LoginForm extends React.Component {
     this.state = {
       username: "",
       password: "",
-<<<<<<< HEAD
-      displayName: "",
-=======
->>>>>>> 9f2e848d2cad733081066edf4eef9316f94d1a6f
     };
   }
 

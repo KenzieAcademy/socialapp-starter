@@ -1,13 +1,20 @@
 import React from "react";
 import Menu from "../components/menu/Menu";
-import api from "../pages/dataService";
+import Api from "../pages/dataService";
 import Message from "../components/message/Message";
 
 class MessageList extends React.Component {
-  state = { messages: [] };
-  componentDidMount() {
-    api.getMessages().then((response) => console.log(response));
+  constructor(props) {
+    super(props);
+    this.client = new Api();
+    this.state = { messages: [] };
   }
+  componentDidMount() {
+    this.client.getMessages().then((response) => {
+      console.log(response.data.messages);
+    });
+  }
+
   render() {
     if (this.state.messages.length === 0) {
       return (

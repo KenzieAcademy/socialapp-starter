@@ -14,7 +14,7 @@ class DataService {
   getLoginForm() {
     return this.client.post(this.url + "/login");
   }
-  getMessageList(limit = 20) {
+  getMessages(limit = 20) {
     return this.client.get(this.url + "/messages?limit=" + limit);
   }
   deleteuser() {

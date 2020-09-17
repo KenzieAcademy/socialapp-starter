@@ -1,5 +1,5 @@
 import React from "react";
-import DeleteAcctButton from "../components/daleteacct/DeleteAcct";
+import DeleteAcctButton from "../components/deleteacct/DeleteAcct";
 import Menu from "../components/menu/Menu";
 import { userIsAuthenticated } from "../redux/HOCs";
 
