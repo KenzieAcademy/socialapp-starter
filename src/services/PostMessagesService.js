@@ -20,4 +20,4 @@ class PostMessageService {
   }
 }
 
-export default PostMessageServicesasa
+export default PostMessageService

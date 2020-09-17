@@ -4,15 +4,15 @@ import { userIsAuthenticated } from "../redux/HOCs"
 import PostMessageForm from "../components/postMessagesForm/PostMessageForm"
 
 class Main extends React.Component {
-    constructor(props) {
-        super(props)
-    }
+    //constructor(props) {
+        //super(props)
+    //}
 
     render() {
         return (
             <div className="main">
                 <Menu isAuthenticated={this.props.isAuthenticated} />
-                <h3>Post Stuff here</h3>
+                <h3>what to use this area for</h3>
                 <PostMessageForm />
             </div>
         )

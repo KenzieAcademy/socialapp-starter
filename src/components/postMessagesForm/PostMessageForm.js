@@ -35,7 +35,7 @@ class PostMessageForm extends React.Component {
                         required
                         onChange={this.handleChange}
                     />
-                    <button type="submit">Post Message!</button>
+                    <button type="submit">Locate Message?</button>
                 </form>
             </div>
         );
