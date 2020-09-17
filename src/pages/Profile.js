@@ -3,7 +3,8 @@ import Menu from "../components/menu/Menu";
 import { userIsAuthenticated } from "../redux/HOCs";
 import DeleteUser from '../components/deleteUser/DeleteUser'
 import PostMessage from "../components/message/PostMessage";
-import Feed from '../components/feed/Feed';
+
+import ProfileFeed from '../components/profileFeed/ProfileFeed'
 
 class Profile extends React.Component {
   render() {
@@ -18,7 +19,7 @@ class Profile extends React.Component {
 
         <PostMessage />
 
-        <Feed />
+        <ProfileFeed />
       </div>
     );
   }

@@ -17,24 +17,18 @@ class DataService {
             }
         });
     }
-    //     getFeed() {
-    //         let feedData = '?limit=100&username=ggg'
-    //         return this.client.get(this.url + "/messages", feedData);
-    // }
+    
 
 
-    getFeed(limit , offset) {
-        /* let authData = localStorage.getItem('login')*/
-         let messageFeed = this.url + "/messages"
-         let authData = JSON.parse(localStorage.getItem('login'))
+     getFeed(limit = 20) {
+        
+        return this.client.get(`${this.url}/messages?limit=${limit}`)
+    }
 
-         return this.client.get( messageFeed+ `?limit=${limit}&offset=${offset}`,{
-         headers: {
-            Authorization: `Bearer ${authData.result.token}`,
-            'Content-Type': 'application/json'
-        }
-    })
-     }
+    getProfileFeed(username, limit = 20) {
+        
+        return this.client.get(`${this.url}/messages?username=${username}&limit=${limit}`)
+    }
 
      
  
