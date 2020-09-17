@@ -1,15 +1,18 @@
 import React from "react";
+import "./logout.css";
 
 import { Button } from "antd";
 
-class LogoutButton extends React.Component {
+class Logout extends React.Component {
   render() {
     return (
       <div className="LogoutButton">
-        <Button type="primary">Logout</Button>
+        <Button id="log" type="primary">
+          Logout
+        </Button>
       </div>
     );
   }
 }
 
-export default LogoutButton;
+export default Logout;
