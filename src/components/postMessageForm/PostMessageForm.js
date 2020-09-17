@@ -1,5 +1,7 @@
 import React from "react";
-import PostMessageService from "../../services/PostMessagesService"
+import { Form, Button, TextArea } from "semantic-ui-react";
+import PostMessageService from "../../services/PostMessagesService";
+import "./PostMessageForm.css";
 
 class PostMessageForm extends React.Component {
   constructor(props) {
@@ -8,7 +10,7 @@ class PostMessageForm extends React.Component {
       text: "",
     };
 
-    this.PostMessageService = new PostMessageService()
+    this.PostMessageService = new PostMessageService();
   }
 
   handleChange = (event) => {
@@ -20,23 +22,26 @@ class PostMessageForm extends React.Component {
   handleMessagePost = (event) => {
     event.preventDefault();
     this.PostMessageService.postMessage(this.state).then((result) => {
-        console.log(result.data);
-      });
-    console.log("Post Button Pressed")
+      console.log(result.data);
+    });
+    console.log("Post Button Pressed");
   };
 
   render() {
     return (
-      <div className="postMessageForm">
-        <form className="postMessageFormForm" onSubmit={this.handleMessagePost}>
-          <input
-            type="text"
-            name="text"
-            required
-            onChange={this.handleChange}
-          />
-          <button type="submit">Post Message!</button>
-        </form>
+      <div className="PostMessageForm">
+        <Form className="postMessageFormForm" onSubmit={this.handleMessagePost}>
+          <Form.Field>
+            <TextArea
+              type="text"
+              name="text"
+              required
+              placeholder ="Type a Message Here!"
+              onChange={this.handleChange}
+            />
+          </Form.Field>
+          <Button type="submit">Post Message!</Button>
+        </Form>
       </div>
     );
   }
