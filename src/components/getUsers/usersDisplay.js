@@ -34,8 +34,17 @@ class UserDisplay extends Component {
       })
     })
   }
+  getthepicture(){
+    return this.client.GetUserPicture(this.props.name).then(result => {
+      this.setState({
+       picture:result
+      })
+    })
+  }
+  
 componentDidMount(){
-  this.gettheuser() 
+  this.gettheuser()
+  this.getthepicture()
  
 }
     render() {
@@ -45,6 +54,7 @@ componentDidMount(){
         
         <h1>{this.state.data.displayName}</h1>
         <h3>About me: <br/>
+        < img src={this.state.data.pictureLocation} alt='no picture'/>
           {this.state.data.about}</h3>
         </div>
     )

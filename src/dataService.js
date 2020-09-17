@@ -16,9 +16,14 @@ class DataService {
         
         return this.client.get(this.url+'/users/'+username)
     }
+
+    GetUserPicture(username){
+        return this.client.get(this.url+'/users/'+username+'/picture')
+    }
     // below not complete just thoughts from eric
     // postMessage(message){
-    // let authData=JSON.parse(localStorage.getItem("login.token"))
+    // let authData=JSON.parse(localStorage.login)
+    // let authToken=authData.result.token
     //     return this.client.post(this.url+"/users",registrationData,
     //     headers, {Authorization: Bearer ${authData.result.token}});
     // }
