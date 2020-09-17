@@ -1,20 +1,25 @@
 import React from "react";
 import Spinner from "react-spinkit";
-import { withAsyncAction } from "../../redux/HOCs";
-import "./LoginForm.css";
+import { userIsAuthenticated } from "../../redux/HOCs";
+import "./CreateMessage.css";
+import DataService from "../../dataService";
+import Emojis from "../emojis/Emojis";
 
-class LoginForm extends React.Component {
+class CreateMessage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: "",
-      password: "",
+      text: "",
     };
+    this.client = new DataService();
   }
 
-  handleLogin = (e) => {
+  handleMessage = (e) => {
     e.preventDefault();
-    this.props.login(this.state);
+    console.log(this.state.text);
+    this.client.makeMessage(this.state).then((result) => {
+      console.log(result.data);
+    });
   };
 
   handleChange = (e) => {
@@ -24,26 +29,20 @@ class LoginForm extends React.Component {
   render() {
     const { loading, error } = this.props;
     return (
-      <div className="LoginForm">
-        <form id="login-form" onSubmit={this.handleLogin}>
-          <label htmlFor="username">Username</label>
+      <div className="MessageForm">
+        <form id="message-form" onSubmit={this.handleMessage}>
+          <label htmlFor="message">Message</label>
           <input
             type="text"
-            name="username"
+            name="text"
             autoFocus
             required
             onChange={this.handleChange}
           />
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            name="password"
-            required
-            onChange={this.handleChange}
-          />
           <button type="submit" disabled={loading}>
-            Login
+            Submit
           </button>
+          <Emojis />
         </form>
         {loading && <Spinner name="circle" color="blue" />}
         {error && <p style={{ color: "red" }}>{error.message}</p>}
@@ -52,4 +51,4 @@ class LoginForm extends React.Component {
   }
 }
 
-export default withAsyncAction("auth", "login")(LoginForm);
+export default userIsAuthenticated(CreateMessage);
