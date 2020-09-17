@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Spinner from "react-spinkit";
 import DataService from "../../pages/dataService";
 
 class MessageFeed extends Component {
@@ -6,11 +7,7 @@ class MessageFeed extends Component {
     super(props);
     this.client = new DataService();
     this.state = {
-      data: {
-        messages: [],
-        count: null,
-        statusCode: null,
-      },
+      data: [],
       message: {
         id: null,
         text: "",
@@ -23,9 +20,19 @@ class MessageFeed extends Component {
   getMessages() {
     return this.client.getMessageList().then((result) => {
       this.setState({
-        data: result.data.messages[0],
+        data: result.data[0],
       });
     });
+  }
+  render() {
+    const { loading, error } = this.props;
+    return (
+      <div className="newsFeed">
+        {this.state.data}
+        {loading && <Spinner name="circle" color="blue" />}
+        {error && <p style={{ color: "red" }}>{error.message}</p>}
+      </div>
+    );
   }
 }
 
