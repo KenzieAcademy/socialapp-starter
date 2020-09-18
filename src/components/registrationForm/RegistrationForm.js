@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Spinner from "react-spinkit";
 import "./RegistrationForm.css";
 import SocialappService from "../../socialappService.js";
@@ -7,17 +7,16 @@ class RegistrationForm extends React.Component {
   constructor(props) {
     super(props);
     this.client = new SocialappService();
+
     this.state = {
       username: "",
       password: "",
       displayName: "",
-      submitted: false,
     };
   }
 
   handleRegistration = (e) => {
     e.preventDefault();
-    this.setState({ submitted: true });
     console.log("Tried to register.", this.state);
     this.client.registerUser(this.state);
   };
@@ -28,6 +27,7 @@ class RegistrationForm extends React.Component {
 
   render() {
     const { loading, error } = this.props;
+
     return (
       <div className="RegistrationForm">
         <form id="registration-form" onSubmit={this.handleRegistration}>
