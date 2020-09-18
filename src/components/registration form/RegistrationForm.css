@@ -8,9 +8,9 @@ h2 {
   color: #fff;
   font-size: 30px;
 }
-a {
+.back-link-msjfeed {
 
-    color: #fff;
+    color: blue ;
     font-size: 20px;
   
 }
@@ -73,4 +73,5 @@ a {
 #registration-form input:hover{
   background:url(https://ae01.alicdn.com/kf/HTB13gIDQpXXXXajapXXq6xXFXXXW/Dark-Blue-Solid-Color-Vinyl-Photography-Backdrop-Spray-Painted-Computer-Backgrounds-Digtal-Printing-Cloth-background-Backdrop.jpg);
 }
+
   

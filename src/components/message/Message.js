@@ -15,10 +15,9 @@ class Message extends React.Component {
                 {this.props.username} posted:</div>
                 <br />
                 <div className="message-text">{this.props.text}</div>
-                <div className="likes">&#128077;  : {this.props.likes.length}</div>
+                <div className="likes">Likes: {this.props.likes.length}</div>
 
-            </li>
-            </div>
+            </li></div>
             
         )
     }

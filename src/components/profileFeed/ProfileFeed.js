@@ -17,7 +17,7 @@ componentDidMount () {
     render () {
         return (
             <div className='profilefeed'>
-                <h2>My Feed</h2>
+                <h2 className='feedtitle'>My Feed</h2>
                 <ul>
                 {this.state.messages.map(messageObject => (
                         <Message key={messageObject.id} {...messageObject} />

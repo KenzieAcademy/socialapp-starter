@@ -40,10 +40,24 @@ TextArea {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+  
   }
-  h2 {
-      color:darkblue;
-      text-align: center;
+  .profilefeed{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    margin-top: -383px;
+    margin-right: 20px;
+  }
+  .feedtitle {
+    color:darkblue;
+     margin-top: -50px;
+    
+     display: flex;
+     flex-direction: column;
+     flex-grow: inherit;
+     align-items: flex-start;
+     margin-right: -300px;
   }
 
   .message-text ,.date{
@@ -63,6 +77,4 @@ TextArea {
    
 
   }
-  a {
-      color: blue;
-  }
+  

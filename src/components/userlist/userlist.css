@@ -1,0 +1,26 @@
+.users{
+    border: 1px solid black;
+    background: url(https://th.bing.com/th/id/OIP.xPMpyyJa3FtDZ8bMKzPK0QHaEo?w=267&h=180&c=7&o=5&dpr=1.25&pid=1.7) ;
+    background-size: cover;
+    color: white;
+    width: 170px;
+    
+    
+  
+}
+.users{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:flex-start;
+}
+/* h2 {
+    color:darkblue;
+    text-align: center;
+} */
+.usertitle {
+    color:darkblue;
+    
+   margin-left: 40px;
+
+}
+ 

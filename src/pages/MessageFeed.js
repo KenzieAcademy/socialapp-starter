@@ -3,7 +3,6 @@ import DataService from '../DataService'
 import Menu from '../components/menu/Menu'
 import Message from '../components/message/Message'
 import PostMessage from '../components/message/PostMessage'
-
 class MessageFeed extends React.Component {
 state = {messages: []}
 client = new DataService
@@ -20,11 +19,14 @@ componentDidMount () {
             
             <div className='messagefeed'>
                                
-
+                
                 <Menu />
+                                <br />
+
+                
                 <br />
                 <PostMessage />
-                <a href='/profile/:username'>back to profile</a>
+                <a className="back-link-msjfeed" href='/profile/:username'>back to profile</a>
                 <h2>Message Feed</h2>
                 
                 <ul>
@@ -32,6 +34,8 @@ componentDidMount () {
                         <Message key={messageObject.id} {...messageObject} />
                     ))}
                 </ul>
+                
+         
 
 
             </div>

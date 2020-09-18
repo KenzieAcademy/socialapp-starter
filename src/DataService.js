@@ -17,6 +17,7 @@ class DataService {
             }
         });
     }
+
     
 
 
@@ -28,6 +29,9 @@ class DataService {
     getProfileFeed(username, limit = 20) {
         
         return this.client.get(`${this.url}/messages?username=${username}&limit=${limit}`)
+    }
+    getuserlist (limit =15){
+        return this.client.get(`${this.url}/users?limit=${limit}`)
     }
 
      

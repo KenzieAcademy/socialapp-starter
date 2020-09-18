@@ -5,6 +5,7 @@ import DeleteUser from '../components/deleteUser/DeleteUser'
 import PostMessage from "../components/message/PostMessage";
 
 import ProfileFeed from '../components/profileFeed/ProfileFeed'
+import Userlist from "../components/userlist/Userslist";
 
 class Profile extends React.Component {
   render() {
@@ -18,6 +19,9 @@ class Profile extends React.Component {
         />
 
         <PostMessage />
+        <br/>
+        
+        <Userlist />
 
         <ProfileFeed />
       </div>
