@@ -3,7 +3,6 @@ import Menu from "../components/menu/Menu";
 import { userIsAuthenticated } from "../redux/HOCs";
 import DataService from "../DataService";
 import { Button, Avatar } from "antd";
-
 import { UserOutlined } from "@ant-design/icons";
 import UpdateUser from "../components/updateUser/UpdateUser";
 import { Redirect } from "react-router-dom";
