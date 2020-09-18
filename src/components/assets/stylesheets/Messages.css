@@ -3,7 +3,7 @@
 }
 body {
   background-color: black;
-  background-image: url("../images/chatbg.jpg");
+  /* background-image: url("../images/chatbg.jpg"); */
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

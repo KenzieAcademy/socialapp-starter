@@ -3,7 +3,7 @@
 }
 body {
   background-color: black;
-  background-image: url("../images/profilebg.png");
+  /* background-image: url("../images/profilebg.png"); */
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
