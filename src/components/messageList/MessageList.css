@@ -1,0 +1,16 @@
+.hide {
+  display: none;
+}
+.MessageWrap {
+  border: 1px solid yellow;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin: 5px 10px;
+}
+
+.LikeWrap {
+  border: 1px solid Red;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin: 5px 10px;
+}
