@@ -3,8 +3,9 @@ import CreateMessage from "../components/createMessage/CreateMessage";
 import Menu from "../components/menu/Menu";
 import NewsFeed from "../components/newsFeed/NewsFeed";
 import UserCard from "../components/userCard/UserCard";
+
 import { userIsAuthenticated } from "../redux/HOCs";
-import EditProfile from "../components/editProfile/EditProfile"
+
 
 class Profile extends React.Component {
   render() {
@@ -15,6 +16,7 @@ class Profile extends React.Component {
         <br />
         <UserCard />
         <br />
+        
         <CreateMessage />
         <NewsFeed />
       </div>
