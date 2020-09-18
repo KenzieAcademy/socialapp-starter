@@ -28,6 +28,7 @@ class MessageList extends React.Component {
         messages: [result.data.message, ...state.messages],
       }));
     });
+    e.target.reset();
   };
 
   handleChange = (e) => {
