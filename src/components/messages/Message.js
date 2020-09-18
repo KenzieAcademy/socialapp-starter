@@ -1,14 +1,37 @@
 import React from "react";
+import { displayName } from "react-spinkit";
+import {
+  Feed,
+  FeedContent,
+  FeedDate,
+  FeedExtra,
+  FeedLike,
+  FeedMeta,
+  FeedSummary,
+  FeedUser,
+  Icon,
+} from "semantic-ui-react";
+// import UserServices from "../../services/UserDataService";
 
 class Message extends React.Component {
   render() {
     return (
-      <li className="Message">
-        {this.props.username} at {new Date(this.props.createdAt).toDateString},
-        posted:
-        <div className="messageText">{this.props.text}</div>
-        <div className="likes">Likes: {this.props.likes.length}</div>
-      </li>
+      <Feed.Event>
+        <FeedContent>
+          <FeedSummary>
+            <FeedUser>{this.props.username}</FeedUser>
+            <FeedDate>
+              at {new Date(this.props.createdAt).toDateString()}
+            </FeedDate>
+          </FeedSummary>
+          <FeedExtra text>{this.props.text}</FeedExtra>
+          <FeedMeta>
+            <FeedLike>
+              <Icon name="like" /> {this.props.likes.length} Likes
+            </FeedLike>
+          </FeedMeta>
+        </FeedContent>
+      </Feed.Event>
     );
   }
 }
