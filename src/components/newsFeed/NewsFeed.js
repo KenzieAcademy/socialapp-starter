@@ -1,14 +1,10 @@
 import React from "react";
-import DataService from "../../DataService";
-import DeleteMessage from "../deleteMessage/DeleteMessage";
 import LikeButton from "../likeButton/LikeButton";
 import UnikeButton from "../unlikeButton/UnlikeButton";
-
 
 class NewsFeed extends React.Component {
   constructor(props) {
     super(props);
-    
   }
 
   render() {
@@ -20,20 +16,14 @@ class NewsFeed extends React.Component {
           <div>Some message</div>
           <div> Posted By:</div>
           <div> User DisplayName</div>
-          <LikeButton/>
-          <UnikeButton />
           <div>Message: </div>
           <div>Some message</div>
           <div> Posted By:</div>
           <div> User DisplayName</div>
-          <LikeButton/>
-          <UnikeButton />
           <div>Message: </div>
           <div>Some message</div>
           <div> Posted By:</div>
           <div> User DisplayName</div>
-          <LikeButton/>
-          <UnikeButton />
         </div>
         <br />
         <br />

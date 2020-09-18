@@ -11,8 +11,8 @@ class DataService {
     this.client = client;
   }
 
-  registerUser(regisrationData){
-    return this.client.post(this.url + "/users", regisrationData)
+  registerUser(regisrationData) {
+    return this.client.post(this.url + "/users", regisrationData);
   }
   getAllMessagesData() {
     return this.client.get(this.url + "/messages");
@@ -43,9 +43,9 @@ class DataService {
     });
   }
 
-  handleUnlike(messageId) {
+  handleUnlike(likeId) {
     let loginData = JSON.parse(localStorage.getItem("login"));
-    return this.client.delete(this.url + "/likes/" + messageId, {
+    return this.client.delete(this.url + "/likes/" + likeId, {
       headers: { Authorization: `Bearer ${loginData.result.token}` },
     });
   }
