@@ -26,6 +26,12 @@ class DataService {
     });
   }
 
+  getUser(username) {
+    console.log(username);
+    return this.client.get(this.url + "/users/" + username)
+  }
+
+
   getMessages() {
     return this.client.get(this.url + "/messages");
   }
@@ -41,5 +47,6 @@ class DataService {
   //headers: { Authorization: `Bearer ${messagedata.token}` },
   //});
   //}
+
 }
 export default DataService;
