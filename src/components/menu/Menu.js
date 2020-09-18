@@ -13,7 +13,7 @@ class Menu extends React.Component {
     return (
       <div className="Menu">
         <h1>Kwitter</h1>
-        {/* {this.props.isAuthenticated && ( */}
+
         <div id="menu-links">
 
           <Link to="/profile/:username">Profile</Link>
@@ -22,7 +22,7 @@ class Menu extends React.Component {
             Logout
             </Link>
         </div>
-        {/* )} */}
+
       </div>
     );
   }

@@ -1,15 +1,10 @@
 import React from "react"
 import { Switch, Route } from "react-router-dom";
-
-
-
-
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
-
 import MessageFeed from "./pages/MessageFeed"
-import RegistrationForm from "./components/RegisterForm/RegisterForm"
+import RegistrationForm from "./components/registrationForm/RegistrationForm"
 
 class App extends React.Component {
 
@@ -41,7 +36,7 @@ class App extends React.Component {
           />
           <Route
             exact
-            path="/signup"            // A New Route To SignUp Page (Register Page)
+            path="/signup"            
             component={RegistrationForm}
           />
           <Route
