@@ -1,6 +1,9 @@
 import React from "react";
 import Dataservice from "../../pages/dataService";
+import ConfirmProp from "../comfimPrompt/ConfirmProp";
+
 import "./deleteacct.css";
+
 class DeleteAcctButton extends React.Component {
   constructor(props) {
     super(props);
@@ -15,6 +18,7 @@ class DeleteAcctButton extends React.Component {
       console.log(response);
     });
   };
+
   render() {
     return (
       <div className="DeleteAcctButton">

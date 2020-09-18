@@ -21,5 +21,16 @@ class DataService {
       headers: { Authorization: `Bearer ${loginData.token}` },
     });
   }
+
+  getMessages() {
+    return this.client.get(this.url + "/messages");
+  }
+  // deletemessage() {
+  // const messagedata = JSON.parse(localStorage.getItem(messageId)).result;
+
+  //return this.client.delete(this.url + `/messages/${messagedata.messageId}`, {
+  //headers: { Authorization: `Bearer ${messagedata.token}` },
+  //});
+  //}
 }
 export default DataService;
