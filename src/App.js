@@ -10,10 +10,7 @@ class App extends React.Component {
     return (
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/" component={Home} />
         <Route exact path="/profile/:username" component={Profile} />
-        <Route exact path="/mainHub" component={MainHub} />
-        <Route exact path="*" component={NotFound} />
         <Route exact path="/mainHub" component={MainHub} />
         <Route exact path="*" component={NotFound} />
       </Switch>
