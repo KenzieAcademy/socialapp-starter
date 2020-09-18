@@ -1,21 +1,25 @@
 import React from "react";
 import Spinner from "react-spinkit";
 import "./RegistrationForm.css";
+import SocialappService from "../../socialappService.js";
 
 class RegistrationForm extends React.Component {
   constructor(props) {
     super(props);
+    this.client = new SocialappService();
     this.state = {
       username: "",
       password: "",
       displayName: "",
+      submitted: false,
     };
   }
 
   handleRegistration = (e) => {
     e.preventDefault();
+    this.setState({ submitted: true });
     console.log("Tried to register.", this.state);
-    // handleRegistration code here.
+    this.client.registerUser(this.state);
   };
 
   handleChange = (e) => {
