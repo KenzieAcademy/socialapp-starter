@@ -16,9 +16,7 @@ class Menu extends React.Component {
         {this.props.isAuthenticated && (
           <div id="menu-links">
             <Link to="/messagefeed">Message Feed</Link>
-            <Link to="/" onClick={this.handleLogout}>
-              Logout
-            </Link>
+            <Link to="/" onClick={this.handleLogout}>Logout</Link>
           </div>
         )}
       </div>
