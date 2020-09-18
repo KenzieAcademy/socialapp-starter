@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 //   console.log(userData)
 //   return <div className="Welcome"><h1>{props.name}</h1>
 
-
 //   <h2>testing? {props.username}</h2>
     
 //   </div>;

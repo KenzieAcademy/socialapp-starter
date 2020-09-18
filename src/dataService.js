@@ -32,6 +32,10 @@ class DataService {
     GetAUser(username){
         return this.client.get(this.url+'/users/'+username)
     }
+    userPhoto(username) {
+        this.client.get(this.url+"/users/" + username + "/picture")
+        console.log(this.userPhoto)
+    }
     // below not complete just thoughts from eric
     // postMessage(message){
     // let authData=JSON.parse(localStorage.getItem("login.token"))
