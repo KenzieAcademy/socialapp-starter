@@ -13,8 +13,9 @@ class App extends React.Component {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/profile/:username" component={Profile} />
+        <Route exact path="/messagefeed" component={MessageFeed} />
         <Route exact path="*" component={NotFound} />
-        <Route exact path="/profile/messagefeed" component={MessageList} />
+        <Route exact path="/profile/messagelist" component={MessageList} />
       </Switch>
     );
   }
