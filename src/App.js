@@ -5,7 +5,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
-import Messages from "./pages/MessageList";
+import MessageFeed from "./pages/MessageFeed";
+
 
 class App extends React.Component {
   render() {
@@ -13,6 +14,7 @@ class App extends React.Component {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/profile/:username" component={Profile} />
+        <Route exact path="/messagefeed" component={MessageFeed} />
         <Route exact path="*" component={NotFound} />
         <Route exact path="/profile/messagefeed" component={MessageList} />
       </Switch>
