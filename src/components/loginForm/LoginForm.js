@@ -26,7 +26,7 @@ class LoginForm extends React.Component {
     const { loading, error } = this.props;
     return (
       <div className="LoginForm">
-        <form id="login-form" onSubmit={this.handleLogin}>
+        <form id="login-form">
           <label htmlFor="username">Username</label>
           <input
             type="text"
@@ -42,7 +42,7 @@ class LoginForm extends React.Component {
             required
             onChange={this.handleChange}
           />
-          <Button type="primary" disabled={loading}>
+          <Button type="primary" disabled={loading} onClick={this.handleLogin}>
             Login
           </Button>
           {/* <button type="submit" disabled={loading}>

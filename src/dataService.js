@@ -1,3 +1,4 @@
+import { message } from "antd";
 import axios from "axios";
 import { register } from "./serviceWorker";
 
@@ -17,6 +18,24 @@ class DataService {
   getUser(username) {
     return this.client.get(this.url + "/users/" + username);
   }
+
+  getUsers(number) {
+    return this.client.get(this.url + "/users?limit=" + number);
+  }
+
+  postmessage() {
+    return this.client.post(this.url + "messages");
+  }
+
+  getMessages(limit = 20) {
+    return this.client.get(this.url + "/messages?limit=" + limit);
+  }
+
+  updateUser(username) {
+    return this.client.patch(this.url + "/users/" + username);
+  }
+
+  // get
   //pass a method into the end
 
   //   getMessages() {
