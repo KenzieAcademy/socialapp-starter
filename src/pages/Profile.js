@@ -1,5 +1,6 @@
 import React from "react";
 import Menu from "../components/menu/Menu";
+import { Link } from "react-router-dom";
 import { userIsAuthenticated } from "../redux/HOCs";
 import DataService from "../services/DataService/DataService";
 
@@ -43,6 +44,7 @@ class Profile extends React.Component {
             <p>{this.state.user.about}</p>
           </div>
         </div>
+        <Link to="/profileUpdate">Update Profile</Link>
       </div>
     );
   }

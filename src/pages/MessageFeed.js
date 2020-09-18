@@ -1,7 +1,7 @@
 import React from "react";
 import Menu from "../components/menu/Menu";
 import { userIsAuthenticated } from "../redux/HOCs";
-import "./messageFeed/MessageFeed.css";
+import MessageList from "../components/messageList/MessageList";
 import DataService from "../services/DataService/DataService";
 
 class MessageFeed extends React.Component {
@@ -20,6 +20,7 @@ class MessageFeed extends React.Component {
     return this.client.getMessages(10).then((result) =>
       this.setState({
         messages: result.data.messages,
+        messageSent: false,
       })
     );
   }
@@ -37,9 +38,27 @@ class MessageFeed extends React.Component {
       message: { text: "" },
       messageSent: true,
     });
-    console.log("Message Sent!");
-    return this.getMessages();
+    event.target.reset();
   };
+
+  handleLike = (event) => {
+    let userData = JSON.parse(localStorage.getItem("login")).result;
+    let likeTarget = { messageId: Number(event.target.id) };
+    let messagecheck = this.client.getSpecificMessage(Number(event.target.id));
+    console.log(messagecheck);
+    if (messagecheck.message === userData.username) {
+      return console.log("You Already Liked This");
+    }
+    return this.client.likeMessage(likeTarget);
+  };
+  // componentDidUpdate() {
+  //   if (this.state.messageSent === true) {
+  //     this.getMessages();
+  //     this.setState({
+  //       messageSent: false,
+  //     });
+  //   }
+  // }
 
   componentDidMount() {
     this.getMessages();
@@ -47,9 +66,9 @@ class MessageFeed extends React.Component {
 
   render() {
     if (this.state.messageSent === true) {
+      this.getMessages();
       return (
         <div>
-          <Menu isAuthenticated={this.props.isAuthenticated} />
           <h1>Message Sent!</h1>
         </div>
       );
@@ -60,12 +79,10 @@ class MessageFeed extends React.Component {
         <h1>Messages</h1>
         <div className="message-field">
           <div className="messages">
-            {this.state.messages.map((message) => (
-              <div key={message.id} className="message">
-                <h5>{message.username}</h5>
-                {message.text} {message.likes}
-              </div>
-            ))}
+            <MessageList
+              handleLike={this.handleLike}
+              messageArray={this.state.messages}
+            />
           </div>
           <div className="NewMessage">
             <form
