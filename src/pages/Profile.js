@@ -44,7 +44,8 @@ class Profile extends React.Component {
   render() {
     return (
       <div className="Profile">
-        {/* <Menu isAuthenticated={this.props.isAuthenticated} /> */}
+        {/* <Menu 
+        isAuthenticated={this.props.isAuthenticated} /> */}
         <h1>Profile</h1>
         <h2>Welcome {this.state.displayname}</h2>
         <img src={profilepic} alt="profile pic" height={100} width={100} />
