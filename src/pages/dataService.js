@@ -11,6 +11,7 @@ class DataService {
     console.log(userdata);
     return this.client.post(this.url + "/users", userdata);
   }
+
   getLoginForm() {
     return this.client.post(this.url + "/login");
   }
@@ -24,9 +25,28 @@ class DataService {
       headers: { Authorization: `Bearer ${loginData.token}` },
     });
   }
+
   getUser(username) {
     console.log(username);
     return this.client.get(this.url + "/users/" + username)
   }
+
+
+  getMessages() {
+    return this.client.get(this.url + "/messages");
+  }
+
+  setuserphoto(formdata) {
+    return this.client.put(this.url + "/users", formdata);
+  }
+
+  // deletemessage() {
+  // const messagedata = JSON.parse(localStorage.getItem(messageId)).result;
+
+  //return this.client.delete(this.url + `/messages/${messagedata.messageId}`, {
+  //headers: { Authorization: `Bearer ${messagedata.token}` },
+  //});
+  //}
+
 }
 export default DataService;
