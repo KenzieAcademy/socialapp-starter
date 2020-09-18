@@ -29,7 +29,9 @@ class Messagefeed extends Component {
 
 
     handleSubmit(event) {
-        alert('submit button was clicked' + this.state.text)
+        alert('submit button was clicked' + this.state.text);
+        event.preventDefault();
+
     }
 
     render() {
