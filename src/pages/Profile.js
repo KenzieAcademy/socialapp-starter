@@ -1,5 +1,4 @@
 import React from "react";
-// import Navigation from "../components/Navigation/Navigation"
 import { userIsAuthenticated } from "../redux/HOCs";
 import DataService from "../services/DataService";
 import Menu from "../components/menu/Menu"
@@ -26,7 +25,6 @@ class Profile extends React.Component {
   render() {
     return (
       <div className="Profile">
-        {/*<Navigation isAuthenticated={this.props.isAuthenticated} /> */}
         <Menu />
         <h2>Profile</h2>
         <button onClick={this.handleDelete}> Delete User</button>

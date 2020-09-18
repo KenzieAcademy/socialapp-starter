@@ -21,7 +21,6 @@ class App extends React.Component {
     
     return (  
       <div className="root" >
-        <Navigation  />
         <Switch>
           <Route
             exact

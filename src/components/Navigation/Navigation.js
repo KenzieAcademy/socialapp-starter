@@ -1,6 +1,5 @@
 import React from "react"
 import { withAsyncAction } from "../../redux/HOCs"
-import "bootstrap/dist/css/bootstrap.min.css"
 import * as ReactBootStrap from "react-bootstrap";
 
 class Navigation extends React.Component {
