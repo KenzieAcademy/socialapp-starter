@@ -4,6 +4,10 @@ import { withAsyncAction } from "../../redux/HOCs";
 import "./RegistrationForm.css";
 import RegistrationService from "./registrationService"
 
+
+
+
+
 class RegistrationForm extends React.Component {
   constructor(props) {
     super(props)
@@ -54,9 +58,11 @@ class RegistrationForm extends React.Component {
             required
             onChange={this.handleChange}
           />
-          <button type="submit" disabled={loading}>
+           <button type="submit" disabled={loading}>
             Register
           </button>
+          
+          
         </form>
         {loading && <Spinner name="circle" color="blue" />}
         {error && <p style={{ color: "red" }}>{error.message}</p>}
@@ -65,4 +71,5 @@ class RegistrationForm extends React.Component {
   }
 }
 
-export default RegistrationForm
+export default withAsyncAction("auth", "login")(RegistrationForm);
+
