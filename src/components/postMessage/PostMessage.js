@@ -1,5 +1,6 @@
 import React from "react";
 import DataService from "../../DataService";
+import { Input } from "antd";
 
 class PostMessage extends React.Component {
   constructor(props) {
@@ -32,7 +33,8 @@ class PostMessage extends React.Component {
       <div className="messageForm">
         <form id="message-form" onSubmit={this.handleSubmit}>
           <label htmlFor="text">Message</label>
-          <input
+          <Input
+            size="large"
             type="text"
             name="text"
             autoFocus
