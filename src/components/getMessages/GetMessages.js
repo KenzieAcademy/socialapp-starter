@@ -27,18 +27,27 @@ class GetMessage extends Component {
   }
 
   render() {
-    console.log(this.state.data);
-
     if (this.state.data === 0)
       return (
         <div>
           <h1>loading</h1>
         </div>
       );
+    // console.log(this.state.data.data.messages[0].text);
     return (
       <div>
         <div>
-          <h1>Messages</h1>
+          <ul>
+            {this.state.data.data.messages.map((messageObject) => (
+              <li key={messageObject.id}>
+                {" "}
+                <div className="messageContainer">
+                  <h1 className="username">{messageObject.username}</h1> <br />{" "}
+                  <p className="message">{messageObject.text}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
         </div>
         <div id="test"></div>
       </div>
