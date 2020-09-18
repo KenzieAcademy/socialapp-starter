@@ -1,13 +1,17 @@
 import React from "react";
 import Menu from "../components/menu/Menu";
 import { userIsAuthenticated } from "../redux/HOCs";
-import api from "../DataService.js";
+import DataService from "../DataService.js";
 import Message from "../components/message/Message";
 
 class Feed extends React.Component {
-  state = { messages: [] };
+  constructor(props) {
+    super(props);
+    this.state = { messages: [] };
+    this.client = new DataService();
+  }
   componentDidMount() {
-    api.getMessages().then((response) => {
+    this.client.getMessages().then((response) => {
       this.setState({ messages: response.data.messages });
       console.log(response.data.messages);
     });

@@ -13,6 +13,7 @@ class DataService {
   registerUser(userData) {
     return this.client.post(this.url + "/users", userData);
   }
+
   deleteUser() {
     let loginData = JSON.parse(localStorage.getItem("login")).result;
     let token = loginData.token;
@@ -21,8 +22,26 @@ class DataService {
       headers: { Authorization: `Bearer ${token}` },
     });
   }
+
   getMessages(limit = 20) {
     return this.client.get(this.url + `/messages?limit=${limit}`);
   }
+
+  postMessage(message) {
+    let loginData = JSON.parse(localStorage.getItem("login"));
+    return this.client.post(this.url + "/messages", message, {
+      headers: { Authorization: `Bearer ${loginData.result.token} ` },
+    });
+  }
+
+  updateUser(userData) {
+    let loginData = JSON.parse(localStorage.getItem("login")).result;
+    let token = loginData.token;
+    let userName = loginData.username;
+    return this.client.patch(this.url + "/users/" + userName, userData, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+  }
 }
-export default new DataService();
+
+export default DataService();
