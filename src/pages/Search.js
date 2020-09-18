@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
+
 
 class Search extends React.Component {
   constructor() {
@@ -16,7 +16,7 @@ class Search extends React.Component {
         <input
           type="text"
           placeholder="Search"
-          value={searchTerm}
+          name="searchTerm: "
           onChange={this.handleChange}
         />
         <ul>
@@ -26,5 +26,7 @@ class Search extends React.Component {
       </div>
     );
   }
-  S;
+
 }
+
+export default Search;
