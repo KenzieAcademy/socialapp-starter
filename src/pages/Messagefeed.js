@@ -10,7 +10,7 @@ const { Header, Sider, Content, Footer } = Layout;
 
 class Messagefeed extends Component {
     constructor(props) {
-
+        super(props)
         this.state = {
             author: '',
             comment: ''
