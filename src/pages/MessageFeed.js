@@ -56,14 +56,6 @@ class MessageFeed extends React.Component {
       this.getMessages();
     });
   };
-  // componentDidUpdate() {
-  //   if (this.state.messageSent === true) {
-  //     this.getMessages();
-  //     this.setState({
-  //       messageSent: false,
-  //     });
-  //   }
-  // }
 
   componentDidMount() {
     this.getMessages();
