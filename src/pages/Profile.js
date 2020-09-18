@@ -5,29 +5,24 @@ import { userIsAuthenticated } from "../redux/HOCs";
 import UploadPhoto from "../components/uploadPhoto/UploadPhoto";
 import DeleteMessage from "../components/deleteMessage/DeleteMessage";
 import DeleteAcctButton from "../components/deleteacct/DeleteAcct";
-import { Button } from 'antd';
-import UploadPhoto from "../components/uploadPhoto/UploadPhoto";
-import DataService from "./dataService"
-
-
+import DataService from "./dataService";
 
 //import ConfirmProp from "../components/comfimPrompt/ConfirmProp";
-
 
 class Profile extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      user: {}
+      user: {},
     };
 
     this.client = new DataService();
   }
   componentDidMount() {
-    this.client.getUser(this.props.username).then(res => {
-      this.setState({ user: res.data.user })
-      console.log(res)
-    })
+    this.client.getUser(this.props.username).then((res) => {
+      this.setState({ user: res.data.user });
+      console.log(res);
+    });
   }
   render() {
     return (
@@ -37,10 +32,8 @@ class Profile extends React.Component {
         <UploadPhoto />
         <LikeButton />
         <DeleteMessage />
-        <DeleteAcctButton />
         {this.state.user.username}
         <DeleteAcctButton />
-        <UploadPhoto />
       </div>
     );
   }
