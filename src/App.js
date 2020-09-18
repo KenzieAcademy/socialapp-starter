@@ -1,27 +1,28 @@
 import React from "react"
 import { Switch, Route } from "react-router-dom";
-/*/import Navigation from "./components/Navigation";*/
 
 
-import Navigation from "./components/Navigation/Navigation"
+
+
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
-import Register from "./pages/Register"
+
 import MessageFeed from "./pages/MessageFeed"
+import RegistrationForm from "./components/RegisterForm/RegisterForm"
 
 class App extends React.Component {
 
   handleLogout = event => {
     event.preventDefault();
     this.props.logout();
-}
+  }
 
   render() {
-    
-    return (  
+
+    return (
       <div className="root" >
-        <Navigation  />
+
         <Switch>
           <Route
             exact
@@ -41,7 +42,7 @@ class App extends React.Component {
           <Route
             exact
             path="/signup"            // A New Route To SignUp Page (Register Page)
-            component={Register}
+            component={RegistrationForm}
           />
           <Route
             exact
@@ -50,9 +51,9 @@ class App extends React.Component {
           />
         </Switch>
       </div>
-      
+
     )
-  
+
   }
 }
 
