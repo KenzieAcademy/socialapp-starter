@@ -30,7 +30,7 @@ class DataService {
   //     headers, {Authorization: Bearer ${authData.result.token}});
   // }
     GetAUser(username){
-        return this.client.get(this.url+'/'+username)
+        return this.client.get(this.url+'/users/'+username)
     }
     // below not complete just thoughts from eric
     // postMessage(message){
