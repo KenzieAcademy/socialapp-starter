@@ -17,4 +17,3 @@ class MessageFeed extends Component {
 }
 
 export default userIsAuthenticated(MessageFeed)
-

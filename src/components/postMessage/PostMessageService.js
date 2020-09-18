@@ -23,4 +23,3 @@ class PostMessageService {
 };
 
 export default PostMessageService;
-

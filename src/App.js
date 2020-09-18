@@ -1,5 +1,7 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
+import { Grommet } from 'grommet'
+
 
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
@@ -9,6 +11,7 @@ import NotFound from "./pages/NotFound";
 class App extends React.Component {
   render() {
     return (
+      <Grommet>
       <Switch>
         <Route
           exact
@@ -31,6 +34,7 @@ class App extends React.Component {
           component={NotFound}
         />
       </Switch>
+      </Grommet>
     );
   }
 }
