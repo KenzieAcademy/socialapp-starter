@@ -3,6 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
+import Messagefeed from "./pages/Messagefeed";
 import Registration from "./pages/Registration";
 
 class App extends React.Component {
@@ -26,9 +27,16 @@ class App extends React.Component {
         />
         <Route
           exact
+          path="/Messagefeed"
+          component={Messagefeed}
+        />
+        <Route
+          exact
           path="*"
           component={NotFound}
         />
+
+
       </Switch>
     );
   }
