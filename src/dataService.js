@@ -69,6 +69,9 @@ class DataService {
   getMessages() {
     return this.client.get(this.url + "/messages?limit=10");
   }
+  GetUserPicture(username){
+    return this.client.get(this.url+'/users/'+username+'/picture')
+}
   // below not complete just thoughts from eric
   // postMessage(message){
   // let authData=JSON.parse(localStorage.getItem("login.token"))
