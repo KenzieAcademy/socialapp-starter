@@ -1,12 +1,17 @@
-* {
-  box-sizing: border-box;
-}
-body {
-  background-color: black;
-  /* background-image: url("../images/chatbg.jpg"); */
+.messages-bg {
+  display: flex;
+  background-image: url("../images/chatbg.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  padding: 0;
   height: 100vh;
+}
+.MessagesDiv {
+  padding: 3em;
+}
+.MessageBoard {
+  background-color: rgba(90, 89, 89, 0.5);
+  padding: 3em;
+  flex-basis: 450px;
+  border-radius: 15px;
 }
