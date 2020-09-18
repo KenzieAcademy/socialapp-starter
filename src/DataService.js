@@ -17,6 +17,18 @@ class DataService {
             }
         });
     }
+    deleteMessages(Id){
+        let authData = JSON.parse(localStorage.getItem('login'))
+        return this.client.delete(this.url +"/messages/"+ Id,{
+            headers: {
+                Authorization: `Bearer ${authData.result.token}`,
+                'Content-Type': 'application/json'
+            }
+        });
+
+        
+           
+        }
 
     
 

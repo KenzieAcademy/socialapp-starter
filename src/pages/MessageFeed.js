@@ -23,6 +23,7 @@ componentDidMount () {
                 <Menu />
                                 <br />
 
+
                 
                 <br />
                 <PostMessage />
@@ -32,6 +33,7 @@ componentDidMount () {
                 <ul>
                     {this.state.messages.map(messageObject => (
                         <Message key={messageObject.id} {...messageObject} />
+                        
                     ))}
                 </ul>
                 
