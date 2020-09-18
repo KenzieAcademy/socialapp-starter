@@ -41,6 +41,7 @@ class RegistrationForm extends React.Component {
     else {
     return (
       <div className="RegistrationForm">
+        
         <form id="registration-form" onSubmit={this.handleRegistration}>
           <label htmlFor="username">Username</label>
           <input
