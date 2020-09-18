@@ -1,7 +1,7 @@
 import React from "react";
 import DataService from "../../dataService"
 
-class UserPicture extends React.Component {
+class UpdatePic extends React.Component {
      constructor(props) {
         super(props)
         this.state = {
@@ -9,11 +9,11 @@ class UserPicture extends React.Component {
         };
         this.client = new DataService();
     }
-    componentDidMount() {
-        this.getuserPicture();
-    }
+    // componentDidMount() {
+    //     this.getAPicture();
+    // }
     render() {
-        
+        // need to be able to take a pic and place as user photo
     }
 }
-export default UserPicture;
+export default UpdatePic;

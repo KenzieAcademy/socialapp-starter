@@ -16,7 +16,8 @@ class DataService {
         return this.client.get(this.url+'/'+username)
     }
     userPhoto(username) {
-        return this.client.get(this.url+"/users/" + username + "/picture")
+        this.client.get(this.url+"/users/" + username + "/picture")
+        console.log(this.userPhoto)
     }
     // below not complete just thoughts from eric
     // postMessage(message){
