@@ -1,13 +1,25 @@
-import React from "react";
-import "./updateuser.css";
-class UpdateUser extends React.Component {
+import DeleteMessage from "../deleteMessage/DeleteMessage";
+
+export default class TodoList extends Component {
+  removeItem(e) {
+    this.props.removeTodo(message);
+  }
   render() {
     return (
-      <div className="UpdateUser">
-        <button id="update">Update</button>
-      </div>
+      <ul>
+        {this.props.todos.map((todo) => {
+          return (
+            <li
+              onClick={() => {
+                this.removeItem(todo);
+              }}
+              key={todo}
+            >
+              {todo}
+            </li>
+          );
+        })}
+      </ul>
     );
   }
 }
-
-export default UpdateUser;
