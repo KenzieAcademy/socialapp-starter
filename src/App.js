@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
 import NewsFeed from "./pages/NewsFeed";
+import UserDisplay  from "./components/getUsers/usersDisplay"
 
 class App extends React.Component {
   render() {
@@ -13,6 +14,7 @@ class App extends React.Component {
         <Route exact path="/" component={Home} />
         <Route exact path="/profile/:username" component={Profile} />
         <Route exact path="/messagefeed" component={NewsFeed} />
+        <Route exact path="/user/:username" component={UserDisplay }/>
         <Route exact path="*" component={NotFound} />
       </Switch>
     );
