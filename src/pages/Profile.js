@@ -5,18 +5,20 @@ import DisplayLoggedInPicture from "../components/displayLoggedInPicture/Display
 import UploadProfilePicture from "../components/uploadProfilePicture/UploadProfilePicture"
 import UpdateUserInfoForm from "../components/updateUserInfoForm/UpdateUserInfoForm"
 import { userIsAuthenticated } from "../redux/HOCs";
+import DeleteUser from "../components/deleteUser/DeleteUser";
+import deleteUserService from "../services/DeleteUserService";
 
 
 class Profile extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       username: this.props.name
     }
 
     this.loginData = JSON.parse(localStorage.getItem("login"))
   }
-  
+
   render() {
     return (
       <div className="Profile">
@@ -26,6 +28,7 @@ class Profile extends React.Component {
         <UploadProfilePicture />
         <UpdateUserInfoForm />
         <h2>Profile</h2>
+        <DeleteUser />
       </div>
     );
   }

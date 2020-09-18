@@ -1,6 +1,6 @@
-//import the axios HTTP client to communicate with the API
 import axios from "axios";
-class DataService {
+
+class PostLikeService {
   constructor(
     url = "https://socialapp-api.herokuapp.com",
     client = axios.create()
@@ -9,18 +9,13 @@ class DataService {
     this.client = client;
   }
 
-  registerUser(registrationData) {
-    return this.client.post(this.url + "/users", registrationData);
-  }
-
-  postMessage(message) {
+  postLike = (messageId) => {
     let loginData = JSON.parse(localStorage.getItem("login"));
-
-    return this.client.post(this.url + "/messages", message, {
+    return this.client.post(`${this.url}/likes/`, messageId, {
       headers: {
         Authorization: `Bearer ${loginData.result.token}`,
       },
     });
-  }
+  };
 }
-export default DataService;
+export default new PostLikeService();
