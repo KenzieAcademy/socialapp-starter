@@ -1,5 +1,6 @@
 //import the axios HTTP client to communicate with the API
 import axios from "axios";
+
 class DataService {
   constructor(
     url = "https://socialapp-api.herokuapp.com",
@@ -20,5 +21,8 @@ class DataService {
       headers: { Authorization: `Bearer ${token}` },
     });
   }
+  getMessages(limit = 20) {
+    return this.client.get(this.url + `/messages?limit=${limit}`);
+  }
 }
-export default DataService;
+export default new DataService();
