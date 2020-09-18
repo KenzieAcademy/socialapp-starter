@@ -4,14 +4,15 @@ import axios from "axios";
 
 class DataService {
   constructor(
-    url = "https://socialapp-api.herokuapp.com/",
+    url = "https://socialapp-api.herokuapp.com",
     client = axios.create()
   ) {
     this.url = url;
     this.client = client;
   }
-  registerUser(registrationData) {
-    return this.client.post(this.url + "users", registrationData);
+
+  registerUser(regisrationData) {
+    return this.client.post(this.url + "/users", regisrationData);
   }
   getAllMessagesData() {
     return this.client.get(this.url + "/messages");
@@ -42,9 +43,9 @@ class DataService {
     });
   }
 
-  handleUnlike(messageId) {
+  handleUnlike(likeId) {
     let loginData = JSON.parse(localStorage.getItem("login"));
-    return this.client.delete(this.url + "/likes/" + messageId, {
+    return this.client.delete(this.url + "/likes/" + likeId, {
       headers: { Authorization: `Bearer ${loginData.result.token}` },
     });
   }
