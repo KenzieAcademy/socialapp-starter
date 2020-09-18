@@ -13,7 +13,12 @@ class DataService {
     }
 
     GetAUser(username){
-        return this.client.get(this.url+'/'+username)
+        
+        return this.client.get(this.url+'/users/'+username)
+    }
+
+    GetUserPicture(username){
+        return this.client.get(this.url+'/users/'+username+'/picture')
     }
     userPhoto(username) {
         this.client.get(this.url+"/users/" + username + "/picture")
@@ -21,7 +26,8 @@ class DataService {
     }
     // below not complete just thoughts from eric
     // postMessage(message){
-    // let authData=JSON.parse(localStorage.getItem("login.token"))
+    // let authData=JSON.parse(localStorage.login)
+    // let authToken=authData.result.token
     //     return this.client.post(this.url+"/users",registrationData,
     //     headers, {Authorization: Bearer ${authData.result.token}});
     // }
