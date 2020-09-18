@@ -7,6 +7,7 @@ import {
   DislikeFilled,
   LikeFilled,
 } from "@ant-design/icons";
+import DeleteMessage from "../deleteMessage/DeleteMessage";
 
 const Message = (props) => {
   let [likes, setLikes] = useState(props.likes.length);
@@ -49,7 +50,12 @@ const Message = (props) => {
         actions={actions}
         author={props.username}
         avatar={<Avatar src="" alt={props.username} />}
-        content={<div className="message-text">{props.text}</div>}
+        content={
+          <div className="message-text">
+            {props.text}
+            <DeleteMessage messageId={props.messageId} />
+          </div>
+        }
         datetime={
           <Tooltip
             title={moment(props.createdAt).format("YYYY-MM-DD HH:mm:ss")}

@@ -1,17 +1,18 @@
 import React from "react";
 import Dataservice from "../../pages/dataService";
+import "./deletemessage.css";
 
 class DeleteMessage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      message: "",
+      Id: "",
     };
     this.handleDelete = this.handleDelete.bind(this);
     this.client = new Dataservice();
   }
   handleDelete = () => {
-    this.client.deletemessage().then((response) => {
+    this.client.deleteMessage(this.props.messageId).then((response) => {
       console.log(response);
     });
   };

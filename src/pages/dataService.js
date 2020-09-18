@@ -1,4 +1,5 @@
 import axios from "axios";
+
 class DataService {
   constructor(
     url = "https://socialapp-api.herokuapp.com",
@@ -15,9 +16,6 @@ class DataService {
   getLoginForm() {
     return this.client.post(this.url + "/login");
   }
-  getMessages(limit = 20) {
-    return this.client.get(this.url + "/messages?limit=" + limit);
-  }
   deleteuser() {
     const loginData = JSON.parse(localStorage.getItem("login")).result;
 
@@ -26,27 +24,27 @@ class DataService {
     });
   }
 
+  getMessage() {
+    return this.client.get(this.url + "/messages");
+  }
+
+  deleteMessage(messageId) {
+    const loginData = JSON.parse(localStorage.getItem("login")).result;
+    return this.client.delete(this.url + "/messages/" + messageId, {
+      headers: { Authorization: `Bearer ${loginData.token}` },
+    });
+  }
   getUser(username) {
     console.log(username);
     return this.client.get(this.url + "/users/" + username)
   }
-
-
   getMessages() {
     return this.client.get(this.url + "/messages");
   }
-
   setuserphoto(formdata) {
     return this.client.put(this.url + "/users", formdata);
   }
 
-  // deletemessage() {
-  // const messagedata = JSON.parse(localStorage.getItem(messageId)).result;
-
-  //return this.client.delete(this.url + `/messages/${messagedata.messageId}`, {
-  //headers: { Authorization: `Bearer ${messagedata.token}` },
-  //});
-  //}
 
 }
 export default DataService;

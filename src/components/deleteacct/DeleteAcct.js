@@ -1,8 +1,7 @@
 import React from "react";
 import Dataservice from "../../pages/dataService";
-import ConfirmProp from "../comfimPrompt/ConfirmProp";
-import { Button } from "antd";
 import "./deleteacct.css";
+import { Button } from "antd";
 
 class DeleteAcctButton extends React.Component {
   constructor(props) {

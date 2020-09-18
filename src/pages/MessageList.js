@@ -32,7 +32,13 @@ class MessageList extends React.Component {
         <h1>Message Feed</h1>
         <ul>
           {this.state.messages.map((messageObject) => {
-            return <Message key={messageObject.id} {...messageObject} />;
+            return (
+              <Message
+                messageId={messageObject.id}
+                key={messageObject.id}
+                {...messageObject}
+              />
+            );
           })}
         </ul>
       </div>
