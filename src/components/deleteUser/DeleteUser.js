@@ -1,5 +1,6 @@
 import React from "react";
 import DeleteUserService from "../../services/DeleteUserService";
+import DeleteUserModal from "../deleteUserModal/DeleteUserModal";
 
 class DeleteUser extends React.Component {
   constructor(props) {
@@ -18,9 +19,7 @@ class DeleteUser extends React.Component {
   render() {
     return (
       <div>
-        <button className="delete-username" onClick={this.handleDelete}>
-          Delete
-        </button>
+        <DeleteUserModal handleDelete={this.handleDelete} />
       </div>
     );
   }
