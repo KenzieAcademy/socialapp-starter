@@ -32,7 +32,11 @@ class LikeButton extends React.Component {
   onClick = (event) => {
     if (this.state.isLiked) {
       DeleteLikeService.deleteLike(this.state.deleteRequestData.likeId)
-        .then((result) => console.log(result))
+        .then((result) => {
+            console.log(result)
+            let likesArrayCopy = [...this.state.likesArray]
+            likesArrayCopy.forEach((likeObject) => {} )
+        })
         .catch((error) => console.log(error));
       this.setState({ isLiked: false });
     } else {
