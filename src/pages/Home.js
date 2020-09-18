@@ -41,6 +41,8 @@ class Home extends React.Component {
       
       <h2>Your favorite microblogging platform</h2>
       <Menu />
+      <LoginForm /> 
+      <RegistrationForm />
 
       </div>
     </Content>
