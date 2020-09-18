@@ -44,6 +44,7 @@ class DataService {
     );
   }
   postMessage(message) {
+    console.log("posting", message);
     let loginData = JSON.parse(localStorage.getItem("login"));
     return this.client.post(this.url + "/messages", message, {
       headers: { Authorization: `Bearer ${loginData.result.token} ` },
