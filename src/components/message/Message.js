@@ -1,12 +1,13 @@
 import React from "react";
-
+import { Comment } from "antd";
 function Message(props) {
   return (
-    <li>
-      {props.username} posted:
-      <div>{props.text}</div>
-      <div>{props.likes.length}</div>
-    </li>
+    <Comment
+      avatar={props.pictureLocation}
+      author={props.username}
+      content={props.text}
+      datatime={props.timestamp}
+    />
   );
 }
 

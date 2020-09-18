@@ -1,6 +1,9 @@
 import React from "react";
 import Menu from "../components/menu/Menu";
 import { userIsAuthenticated } from "../redux/HOCs";
+// import GetUserPicture from "../components/getUserPi
+import InputFile from "../components/inputFileButton/InputFile";
+
 import DataService from "../DataService";
 import { Button, Avatar } from "antd";
 import { UserOutlined } from "@ant-design/icons";
@@ -38,9 +41,13 @@ class Profile extends React.Component {
         <Menu isAuthenticated={this.props.isAuthenticated} />
         <h2>Profile</h2>
         <div>
-          <Avatar size={264} icon={<UserOutlined />} />
+          <Avatar
+            size={264}
+            icon={<UserOutlined />}
+            // src={InputFile.props.state.imgUrl}
+          />
         </div>
-        <Button type="primary">Change Picture</Button>
+        <InputFile />
         <Button type="primary" danger onClick={this.handleDelete}>
           Delete User
         </Button>
