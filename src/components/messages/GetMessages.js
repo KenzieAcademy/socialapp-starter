@@ -5,6 +5,10 @@ import Message from "./Message";
 class GetMessages extends React.Component {
   state = { messages: [] };
 
+  rerenderMessages = () => {
+      this.forceUpdate()
+  }
+
   componentDidMount() {
     MessageService.obtainMessages().then((response) => {
       this.setState({ messages: response.data.messages });
@@ -26,7 +30,7 @@ class GetMessages extends React.Component {
         <h1>Message List</h1>
         <ul>
           {this.state.messages.map((messageObject) => (
-            <Message key={messageObject.id} {...messageObject} />
+            <Message rerenderMessages={this.rerenderMessages} key={messageObject.id} {...messageObject} />
           ))}
         </ul>
       </div>
