@@ -21,6 +21,7 @@ class Home extends React.Component {
         test etst
         <Layout className="layout">
 
+
           <Header>
             <div className="logo" />
             <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["2"]}>
@@ -36,7 +37,7 @@ class Home extends React.Component {
 //               <Breadcrumb.Item>Contact</Breadcrumb.Item>
 //             </Breadcrumb>
             <div className="site-layout-content">
-              <h2>Your favorite microblogging platform</h2>
+              <h2>Your favorite Hangout platform</h2>
               <Menu />
               <LoginForm />
               <RegistrationForm />

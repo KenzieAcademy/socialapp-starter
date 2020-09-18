@@ -4,8 +4,10 @@ import { Switch, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
+
 import NewsFeed from "./pages/NewsFeed";
 import UserDisplay from "./components/getUsers/usersDisplay";
+
 
 class App extends React.Component {
   render() {
@@ -19,8 +21,10 @@ class App extends React.Component {
             <UserDisplay {...props} name={props.match.params.name} />
           )}
         />
+
         <Route exact path="/profile/:username" component={Profile} />
         <Route exact path="*" component={NotFound} />
+
       </Switch>
     );
   }
