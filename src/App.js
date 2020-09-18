@@ -6,7 +6,8 @@ import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
 
 import NewsFeed from "./pages/NewsFeed";
-import UserDisplay from "./components/getUsers/usersDisplay";
+
+import UserDisplay  from "./components/getUsers/usersDisplay"
 
 import LoginForm from "./components/loginForm/LoginForm";
 
@@ -41,6 +42,10 @@ class App extends React.Component {
         />
 
         <Route exact path="/profile/:username" component={Profile} />
+
+        <Route exact path="/messagefeed" component={NewsFeed} />
+        <Route exact path="/user/:username" component={UserDisplay }/>
+
         <Route exact path="*" component={NotFound} />
 
       </Switch>
