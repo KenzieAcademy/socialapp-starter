@@ -1,9 +1,5 @@
 import React from "react"
 import { Switch, Route } from "react-router-dom";
-/*/import Navigation from "./components/Navigation";*/
-
-
-import Navigation from "./components/Navigation/Navigation"
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
@@ -21,7 +17,7 @@ class App extends React.Component {
     
     return (  
       <div className="root" >
-        <Navigation  />
+        
         <Switch>
           <Route
             exact
