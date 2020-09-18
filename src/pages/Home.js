@@ -12,13 +12,11 @@ class Home extends React.Component {
 
     return (
       <div className="Home">
-        <GetMessage />
-        <GetMessage />
         {/* <Menu /> */}
         {/* <h2>Your favorite microblogging platform</h2> */}
         {/* <LoginForm /> */}
         {/* <RegistrationForm /> */}
-        test etst
+       
         <Layout className="layout">
 
 
