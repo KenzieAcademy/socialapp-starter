@@ -1,3 +1,4 @@
+import { message } from "antd";
 import React from "react";
 import Dataservice from "../../pages/dataService";
 import "./deletemessage.css";
@@ -14,6 +15,7 @@ class DeleteMessage extends React.Component {
   handleDelete = () => {
     this.client.deleteMessage(this.props.messageId).then((response) => {
       console.log(response);
+      this.props.messageId = "";
     });
   };
   render() {
