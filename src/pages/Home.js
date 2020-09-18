@@ -31,7 +31,7 @@ class Home extends React.Component {
           <Content style={{ padding: "0 50px" }}>
 
             <div className="site-layout-content">
-              <h2>Your favorite Hangout platform</h2>
+              <h2>is this working now!!!!</h2>
               <Menu />
               <LoginForm />
               <RegistrationForm />
