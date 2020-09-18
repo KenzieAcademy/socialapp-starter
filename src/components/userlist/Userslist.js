@@ -5,7 +5,7 @@ import './userlist.css'
 
 class Userlist extends React.Component {
 state = {users: []}
-client = new DataService
+client = new DataService ();
 
 componentDidMount () {
     this.client.getuserlist().then(response => 

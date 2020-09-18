@@ -5,7 +5,7 @@ import Message from '../message/Message'
 
 class ProfileFeed extends React.Component {
 state = {messages: []}
-client = new DataService
+client = new DataService ()
 
 componentDidMount () {
     let authData = JSON.parse(localStorage.getItem('login'))

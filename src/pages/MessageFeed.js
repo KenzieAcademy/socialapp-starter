@@ -5,7 +5,7 @@ import Message from '../components/message/Message'
 import PostMessage from '../components/message/PostMessage'
 class MessageFeed extends React.Component {
 state = {messages: []}
-client = new DataService
+client = new DataService ()
 
 componentDidMount () {
     this.client.getFeed().then(response => 

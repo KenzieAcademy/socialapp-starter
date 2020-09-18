@@ -11,7 +11,7 @@ class PostMessage extends React.Component {
       this.state = {
        text:''
          }
-         this.client = new DataService;
+         this.client = new DataService ();
     }
 
     
