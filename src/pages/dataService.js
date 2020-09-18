@@ -28,6 +28,10 @@ class DataService {
   getMessages() {
     return this.client.get(this.url + "/messages");
   }
+
+  deleteMessage() {
+    return this.client.delete(this.url + "/messages/messageId");
+  }
   // deletemessage() {
   // const messagedata = JSON.parse(localStorage.getItem(messageId)).result;
 

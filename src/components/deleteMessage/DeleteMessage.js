@@ -11,7 +11,7 @@ class DeleteMessage extends React.Component {
     this.client = new Dataservice();
   }
   handleDelete = () => {
-    this.client.deletemessage().then((response) => {
+    this.client.deleteMessage().then((response) => {
       console.log(response);
     });
   };
