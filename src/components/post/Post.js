@@ -12,7 +12,7 @@ class Post extends React.Component {
     super(props);
     this.client = new SocialappService();
     this.state = {
-      message: "",
+      text: "",
     };
   }
 
@@ -32,11 +32,12 @@ class Post extends React.Component {
         <Card.Body>
           <Form>
             <Form.Control
-              type="post"
+              type="text"
+              name="text"
               as="textarea"
               rows="3"
               placeholder="Your amazing message"
-              onSubmit={this.handleChange}
+              onChange={this.handleChange}
             />
             <OverlayTrigger
               placement="right"
