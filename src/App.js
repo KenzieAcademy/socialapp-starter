@@ -4,7 +4,7 @@ import { Switch, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
-import Messages from "./pages/Messages";
+import MessageFeed from "./pages/MessageFeed";
 import Registration from "./pages/Registration";
 
 class App extends React.Component {
@@ -29,7 +29,7 @@ class App extends React.Component {
         <Route
         exact
         path="/messages"
-        component={Messages} />
+        component={MessageFeed} />
         <Route
           exact
           path="*"
