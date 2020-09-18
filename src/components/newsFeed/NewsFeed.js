@@ -27,13 +27,13 @@ class NewsFeed extends React.Component {
           <div> Posted By:</div>
           <div> User DisplayName</div>
           <LikeButton/>
-          <br/>
+          <UnikeButton />
           <div>Message: </div>
           <div>Some message</div>
           <div> Posted By:</div>
           <div> User DisplayName</div>
           <LikeButton/>
-          <br/>
+          <UnikeButton />
         </div>
         <br />
         <br />

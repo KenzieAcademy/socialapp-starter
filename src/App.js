@@ -6,8 +6,7 @@ import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
 import RegistrationPage from "./pages/RegistrationPage";
 import ProfileOptions from "./pages/ProfileOptions";
-
-import Search from "antd/lib/input/Search";
+import Search from "./pages/Search"
 
 class App extends React.Component {
   render() {
