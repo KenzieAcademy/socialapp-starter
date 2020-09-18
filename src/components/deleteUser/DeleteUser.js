@@ -1,6 +1,5 @@
 import React from "react";
 import DataService from "../../DataService"
-import LoginForm from '../loginForm/LoginForm'
 
 class DeleteUser extends React.Component {
     constructor(props) {
@@ -22,7 +21,7 @@ render () {
     return (
         <div className='DeleteUser'>
         
-                <button type="submit" onClick={this.handleDelete}>Delete User</button>
+                {/* <button type="submit" onClick={this.handleDelete}>Delete User</button> */}
             
         </div>
     )

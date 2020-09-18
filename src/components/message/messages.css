@@ -1,0 +1,67 @@
+.MessageForm {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+    
+}
+TextArea {
+    width: 300px;
+    font-size: 15px;
+    font-family: sans-serif;
+    
+
+}
+.post-msj-btn {
+    margin-top: 10px;
+  margin-bottom: 20px;
+  background: url(https://ae01.alicdn.com/kf/HTB13gIDQpXXXXajapXXq6xXFXXXW/Dark-Blue-Solid-Color-Vinyl-Photography-Backdrop-Spray-Painted-Computer-Backgrounds-Digtal-Printing-Cloth-background-Backdrop.jpg);
+  color: #fff;
+  border-radius: 44px;
+  cursor: pointer;
+  transition: 0.8s;
+  width: 300px;
+  height: 30px;
+  font-weight: bold;
+}
+.post-msj-btn:hover{
+    transform: scale(0.96);
+  }
+.messagesfeed {
+      border: 1px solid black;
+      background: url(https://th.bing.com/th/id/OIP.xPMpyyJa3FtDZ8bMKzPK0QHaEo?w=267&h=180&c=7&o=5&dpr=1.25&pid=1.7) ;
+      background-size: cover;
+      color: white;
+      width: 400px;
+      
+      
+    
+  }
+  .feedbox{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  h2 {
+      color:darkblue;
+      text-align: center;
+  }
+
+  .message-text ,.date{
+    
+    text-align: center;
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: 20px;
+
+  }
+  .likes {
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: 20px;
+    
+   
+
+  }
+  a {
+      color: blue;
+  }

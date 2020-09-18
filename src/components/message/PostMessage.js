@@ -3,7 +3,7 @@ import DataService from "../../DataService"
 import Spinner from "react-spinkit";
 import { withAsyncAction } from "../../redux/HOCs";
 import { Input } from 'antd';
-
+import './messages.css';
 
 class PostMessage extends React.Component {
     constructor(props) {
@@ -48,8 +48,8 @@ class PostMessage extends React.Component {
          required
          onChange={this.handleChange}/>
 
-          
-          <button type="submit" disabled={loading}>
+          <br />
+          <button className='post-msj-btn' type="submit" disabled={loading}>
             Post Message
           </button>
         </form>
