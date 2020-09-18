@@ -4,6 +4,8 @@ import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
 
+import LoginForm from "./components/loginForm/LoginForm";
+
 class App extends React.Component {
   render() {
     return (
@@ -18,6 +20,7 @@ class App extends React.Component {
           path="/profile/:username"
           component={Profile}
         />
+        
         <Route
           exact
           path="*"
