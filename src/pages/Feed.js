@@ -9,9 +9,6 @@ class Feed extends React.Component {
     return (
       <div className="Feed">
         <Menu isAuthenticated={this.props.isAuthenticated} />
-        <h2>Messages</h2>
-        <h2>Messages</h2>
-        <h2>Messages</h2>
         {/* <AddLikes /> */}
         <MessageList />
       </div>
