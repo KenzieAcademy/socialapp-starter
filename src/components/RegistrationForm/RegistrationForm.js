@@ -64,7 +64,16 @@ class RegistrationForm extends React.Component {
         {loading && <Spinner name="circle" color="blue" />}
         {error && <p style={{ color: "red" }}>{error.message}</p>}
 
+<<<<<<< HEAD
         <div></div>
+=======
+
+     
+      <div>
+        
+      </div>
+     
+>>>>>>> parent of ae09014... Revert "Kourtney"
       </div>
     );
   }

@@ -8,6 +8,7 @@ import NotFound from "./pages/NotFound";
 import NewsFeed from "./pages/NewsFeed";
 import UserDisplay from "./components/getUsers/usersDisplay";
 
+import LoginForm from "./components/loginForm/LoginForm";
 
 class App extends React.Component {
   render() {
@@ -20,6 +21,23 @@ class App extends React.Component {
           render={(props) => (
             <UserDisplay {...props} name={props.match.params.name} />
           )}
+          path="/"
+          component={Home}
+        />
+        <Route
+          exact
+          path="/profile/:username"
+          component={Profile}
+        />
+
+       <Route
+      exact path="/user/:name"
+        render={(props) => <UserDisplay {...props} name={props.match.params.name}/>}
+      />
+        <Route
+          exact
+          path="*"
+          component={NotFound}
         />
 
         <Route exact path="/profile/:username" component={Profile} />

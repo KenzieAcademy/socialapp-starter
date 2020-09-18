@@ -20,6 +20,8 @@ class Menu extends React.Component {
             <Link to="/" onClick={this.handleLogout}>
               Logout
             </Link>
+            <Link to="/messagefeed">Message Feed</Link>
+            <Link to="/" onClick={this.handleLogout}>Logout</Link>
           </div>
         )}
       </div>
