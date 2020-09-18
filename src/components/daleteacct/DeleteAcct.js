@@ -1,6 +1,5 @@
 import React from "react";
 import Dataservice from "../../pages/dataService";
-import ConfirmProp from "../comfimPrompt/ConfirmProp";
 
 import "./deleteacct.css";
 
