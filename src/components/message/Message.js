@@ -9,8 +9,8 @@ import {
 } from "@ant-design/icons";
 
 const Message = (props) => {
-  const [likes, setLikes] = useState(0);
-  const [dislikes, setDislikes] = useState(0);
+  let [likes, setLikes] = useState(props.likes.length);
+  let [dislikes, setDislikes] = useState(0);
   const [action, setAction] = useState(null);
 
   const like = () => {
