@@ -3,9 +3,10 @@ import LoginForm from "../components/loginForm/LoginForm";
 // import Menu from "../components/menu/Menu";
 import { userIsNotAuthenticated } from "../redux/HOCs";
 import RegistrationForm from "../components/RegistrationForm/RegistrationForm";
-import GetMessage from "../components/getMessages/GetMessages";
 import { Layout, Menu, Breadcrumb } from "antd";
 import UserData from "../components/getUsers/getUsers";
+import { Link } from "react-router-dom";
+
 class Home extends React.Component {
   render() {
     const { Header, Content, Footer } = Layout;
@@ -25,7 +26,7 @@ class Home extends React.Component {
             <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["2"]}>
               <Menu.Item key="1">News</Menu.Item>
               <Menu.Item key="2">Events</Menu.Item>
-              <Menu.Item key="3">Login</Menu.Item>
+              
             </Menu>
           </Header>
           <Content style={{ padding: "0 50px" }}>
@@ -34,7 +35,7 @@ class Home extends React.Component {
               <h2>is this working now!!!!</h2>
               <Menu />
               <LoginForm />
-              <RegistrationForm />
+              <Link to="/register"><p>Register</p></Link>
             </div>
           </Content>
           <Footer style={{ textAlign: "center" }}>
