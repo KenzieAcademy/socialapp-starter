@@ -1,7 +1,7 @@
 import React from "react";
 import Spinner from "react-spinkit";
 import { withAsyncAction } from "../../redux/HOCs";
-import { Form, Button } from "semantic-ui-react";
+import { Form, Button, Label, Input } from "semantic-ui-react";
 import "./LoginForm.css";
 
 class LoginForm extends React.Component {
@@ -15,7 +15,7 @@ class LoginForm extends React.Component {
 
   handleLogin = (e) => {
     e.preventDefault();
-    this.props.login(this.state);
+    this.props.login(this.state).catch((error) => console.log(error));
   };
 
   handleChange = (e) => {
@@ -28,8 +28,10 @@ class LoginForm extends React.Component {
       <div className="LoginForm">
         <Form id="login-form" onSubmit={this.handleLogin}>
           <Form.Field>
-            <label htmlFor="username">Username</label>
-            <input
+            <Label size="large" color="blue" htmlFor="username">
+              Username
+            </Label>
+            <Input
               type="text"
               name="username"
               autoFocus
@@ -38,8 +40,10 @@ class LoginForm extends React.Component {
             />
           </Form.Field>
           <Form.Field>
-            <label htmlFor="password">Password</label>
-            <input
+            <Label size="large" color="blue" htmlFor="password">
+              Password
+            </Label>
+            <Input
               type="password"
               name="password"
               required

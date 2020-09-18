@@ -2,15 +2,18 @@ import React from "react";
 import Spinner from "react-spinkit";
 import "./RegistrationForm.css";
 import dataService from "../../services/DataService";
-import { Form, Button } from "semantic-ui-react";
+import { Form, Button, Header, Label, Input } from "semantic-ui-react";
 
 class RegistrationForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: "",
-      displayName: "",
-      password: "",
+      formData: {
+        username: "string",
+        displayName: "string",
+        password: "string",
+      },
+      submitted: false,
     };
 
     this.client = new dataService();
@@ -18,43 +21,81 @@ class RegistrationForm extends React.Component {
 
   handleRegistration = (e) => {
     e.preventDefault();
-    this.client.registerUser(this.state).then((result) => {
-      console.log(result.data);
+    this.client
+      .registerUser(this.state.formData)
+      .then((result) => {
+        console.log(result.data);
+      })
+      .catch((error) => console.log(error));
+    this.setState({
+      formData: { username: "", displayName: "", password: "" },
+      submitted: true,
     });
   };
 
-  handleChange = (e) => {
-    this.setState({ [e.target.name]: e.target.value });
+  handleChange = (event) => {
+    const formData = { ...this.state.formData };
+    formData[event.target.name] = event.target.value;
+
+    this.setState({ formData: formData });
+  };
+
+  handleReset = (event) => {
+    this.setState({
+      formData: { username: "", displayName: "", password: "" },
+      submitted: false,
+    });
   };
 
   render() {
     const { loading, error } = this.props;
+
+    if (this.state.submitted) {
+      return (
+        <div className="RegistrationForm">
+          <Header as="h3">You have Created an Account Successfully!</Header>
+          <br />
+          <Button onClick={this.handleReset}>Reset Form</Button>
+        </div>
+      );
+    }
+
     return (
       <div className="RegistrationForm">
         <Form id="registration-form" onSubmit={this.handleRegistration}>
           <Form.Field>
-            <label htmlFor="username">Username</label>
-            <input
+            <Label size="large" color="blue" htmlFor="username">
+              Username
+            </Label>
+            <Input
               type="text"
               name="username"
               autoFocus
               required
+              minLength="3"
+              maxLength="20"
               onChange={this.handleChange}
             />
           </Form.Field>
           {/* Inserted Display Name */}
           <Form.Field>
-            <label htmlFor="displayName">Display Name</label>
-            <input
+            <Label size="large" color="blue" htmlFor="displayName">
+              Display Name
+            </Label>
+            <Input
               type="text"
               name="displayName"
               required
+              minLength="3"
+              maxLength="20"
               onChange={this.handleChange}
             />
           </Form.Field>
           <Form.Field>
-            <label htmlFor="password">Password</label>
-            <input
+            <Label size="large" color="blue" htmlFor="password">
+              Password
+            </Label>
+            <Input
               type="password"
               name="password"
               required
