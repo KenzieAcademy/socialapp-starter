@@ -1,15 +1,16 @@
 import React from "react";
 import Menu from "../components/menu/Menu";
 import { userIsAuthenticated } from "../redux/HOCs";
+import MessageList from "../components/messageList/MessageList";
+import PostMessage from "../components/postMessage/PostMessage";
 
 class Feed extends React.Component {
   render() {
     return (
       <div className="Feed">
         <Menu isAuthenticated={this.props.isAuthenticated} />
-        <h2>Messages</h2>
-        <h2>Messages</h2>
-        <h2>Messages</h2>
+        <PostMessage />
+        <MessageList />
       </div>
     );
   }

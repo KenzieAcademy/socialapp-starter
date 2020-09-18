@@ -49,5 +49,19 @@ class DataService {
       headers: { Authorization: `Bearer ${loginData.result.token} ` },
     });
   }
+
+  updateUser(userData) {
+    let loginData = JSON.parse(localStorage.getItem("login")).result;
+    let token = loginData.token;
+    let userName = loginData.username;
+    return this.client.patch(this.url + "/users/" + userName, userData, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+  }
+
+  getMessageList(limit = 20) {
+    return this.client.get(`${this.url}/messages?limit=${limit}`);
+  }
 }
+
 export default DataService;
