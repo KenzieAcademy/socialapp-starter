@@ -37,6 +37,10 @@ class DataService {
       headers: { Authorization: `Bearer ${token}` },
     });
   }
+
+  getMessageList(limit = 20) {
+    return this.client.get(`${this.url}/messages?limit=${limit}`);
+  }
 }
 
 export default DataService;

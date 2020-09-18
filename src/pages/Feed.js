@@ -2,6 +2,7 @@ import React from "react";
 // import AddLikes from "../components/addLikes/AddLikes";
 import Menu from "../components/menu/Menu";
 import { userIsAuthenticated } from "../redux/HOCs";
+import MessageList from "../components/messageList/MessageList";
 
 class Feed extends React.Component {
   render() {
@@ -12,6 +13,7 @@ class Feed extends React.Component {
         <h2>Messages</h2>
         <h2>Messages</h2>
         {/* <AddLikes /> */}
+        <MessageList />
       </div>
     );
   }
