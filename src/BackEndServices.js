@@ -11,6 +11,10 @@ class BackEndServices {
     getMessages(limit= 10){
         return this.client.get(`/messages?limit=${limit}`);
     }
+
+    postMessage() {
+        return this.client.post(`/messages`)
+    }
     
 }
 

@@ -1,6 +1,7 @@
 import React from "react";
 import BackEndServices from "../BackEndServices";
 import Message from "../components/messages/Messages";
+import PostMessage from "../components/messages/PostMessage";
 
 class MessageFeed extends React.Component {
   state = { messages: [] };
@@ -23,6 +24,7 @@ class MessageFeed extends React.Component {
     return (
       <div className="messageFeed">
         <h1>Our MessageFeed goes on this page</h1>
+        <PostMessage/>
         <ul>
        {this.state.messages.map(
          messageObject => (
