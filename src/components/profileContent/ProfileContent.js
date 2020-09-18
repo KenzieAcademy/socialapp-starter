@@ -1,15 +1,13 @@
 import React from "react";
-import Menu from "../components/menu/Menu";
-import { userIsAuthenticated } from "../redux/HOCs";
 import Button from "react-bootstrap/Button";
 import Image from 'react-bootstrap/Image'
 
-class Profile extends React.Component {
+
+class ProfileContent extends React.Component {
   render() {
     return (
-      <div className="Profile">
-        <Menu isAuthenticated={this.props.isAuthenticated} />
-        <h2>Profile</h2>
+      <div className="ProfileContent">
+        <Image>until</Image>
         <ListGroup>
           <ListGroup.Item>bio</ListGroup.Item>
           <ListGroup.Item>location</ListGroup.Item>
@@ -17,12 +15,12 @@ class Profile extends React.Component {
           <ListGroup.Item>preferred brands</ListGroup.Item>
           <ListGroup.Item>display name</ListGroup.Item>
       </ListGroup>
-        <Button>hi<Button/>
+        <Button>hi</Button>
       </div>
     );
   }
 }
 
 
-export default userIsAuthenticated(Profile);
+export default userIsAuthenticated(ProfileContent);
 
