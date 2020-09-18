@@ -9,6 +9,7 @@ import { Button } from 'antd';
 
 
 class Profile extends React.Component {
+  
   render() {
     const { Header, Content, Footer } = Layout;
     const { Search } = Input;
@@ -20,7 +21,7 @@ class Profile extends React.Component {
         }}
       />
     );
-
+    console.log(this.props)
     return (
       <div className="Profile">
         {/* <Menu isAuthenticated={this.props.isAuthenticated} /> */}
