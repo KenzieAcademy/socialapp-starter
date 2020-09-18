@@ -1,4 +1,10 @@
+* {
+  box-sizing: border-box;
+}
+
 #login-form {
+  position: relative;
+  margin: auto;
   display: flex;
   flex-direction: column;
   max-width: 20em;
