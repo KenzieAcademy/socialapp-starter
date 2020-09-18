@@ -63,6 +63,13 @@ class DataService {
   getMessageList(limit = 20) {
     return this.client.get(`${this.url}/messages?limit=${limit}`);
   }
+
+  addLikes(like) {
+    let loginData = JSON.parse(localStorage.getItem("login"));
+    return this.client.post(this.url + "/likes", like, {
+      headers: { Authorization: `Bearer ${loginData.result.token} ` },
+    });
+  }
 }
 
 export default DataService;

@@ -1,5 +1,6 @@
 import React from "react";
 
+
 function PostMessage(props) {
   return (
     <div className="messageForm">
@@ -10,6 +11,7 @@ function PostMessage(props) {
       </form>
     </div>
   );
+
 }
 
 export default PostMessage;

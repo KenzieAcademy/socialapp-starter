@@ -11,7 +11,7 @@ class addLikes extends React.Component {
   }
   handleAddLikes = (e) => {
     e.preventDefault();
-    this.client.addLikes().then((result) => {
+    this.client.addLikes(this.state).then((result) => {
       console.log(result.data);
     });
   };
