@@ -34,7 +34,6 @@ class PostMessage extends React.Component {
         <form id="message-form" onSubmit={this.handleSubmit}>
           <label htmlFor="text">Message</label>
           <Input
-            size="large"
             type="text"
             name="text"
             autoFocus
