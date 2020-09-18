@@ -12,14 +12,14 @@ class Home extends React.Component {
 
     return (
       <div className="Home">
-        <GetMessage />
-        <GetMessage />
         {/* <Menu /> */}
         {/* <h2>Your favorite microblogging platform</h2> */}
         {/* <LoginForm /> */}
         {/* <RegistrationForm /> */}
-        test etst
+       
         <Layout className="layout">
+
+
           <Header>
             <div className="logo" />
             <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["2"]}>
@@ -29,22 +29,23 @@ class Home extends React.Component {
             </Menu>
           </Header>
           <Content style={{ padding: "0 50px" }}>
-            <Breadcrumb style={{ margin: "16px 0" }}>
-              <Breadcrumb.Item> User</Breadcrumb.Item>
-              <Breadcrumb.Item>Register</Breadcrumb.Item>
-              <Breadcrumb.Item>Contact</Breadcrumb.Item>
-            </Breadcrumb>
+//             <Breadcrumb style={{ margin: "16px 0" }}>
+//               <Breadcrumb.Item> User</Breadcrumb.Item>
+//               <Breadcrumb.Item>Register</Breadcrumb.Item>
+//               <Breadcrumb.Item>Contact</Breadcrumb.Item>
+//             </Breadcrumb>
             <div className="site-layout-content">
-              <h2>Your favorite microblogging platform</h2>
+              <h2>Your favorite Hangout platform</h2>
               <Menu />
               <LoginForm />
               <RegistrationForm />
             </div>
           </Content>
           <Footer style={{ textAlign: "center" }}>
-            Ant Design ©2018 Created by Ant UED
+            Mix&Mingle
           </Footer>
         </Layout>
+
         <Menu />
         <h2>Your favorite microblogging platform</h2>
         <LoginForm />
