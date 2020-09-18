@@ -17,4 +17,4 @@ class UserDataService {
     return this.client.get(this.url + "/users/" + userName);
   }
 }
-export default UserDataService;
+export default new UserDataService();
