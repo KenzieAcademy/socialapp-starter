@@ -1,6 +1,10 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 
+// import { Buttons } from "./components/button/Button";
+// import { Containers } from "./Containers";
+// import { Lists } from "./Lists";
+
 import Home from "./pages/home/Home";
 // import Menu from "./components/menu/Menu";
 import Profile from "./pages/profile/Profile";

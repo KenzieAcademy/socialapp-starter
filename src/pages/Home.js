@@ -8,10 +8,11 @@ class Home extends React.Component {
   render() {
     return (
       <div className="Home">
+        <SideBar />
         <Menu />
         <h2>Welcome to Space Squrrels</h2>
         <LoginForm />
-        <hr/>
+        <hr />
         <RegistrationForm />
       </div>
     );
