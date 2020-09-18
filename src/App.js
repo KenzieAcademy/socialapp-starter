@@ -7,6 +7,7 @@ import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
 import MessageFeed from "./pages/MessageFeed";
 
+
 class App extends React.Component {
   render() {
     return (
@@ -15,6 +16,7 @@ class App extends React.Component {
         <Route exact path="/profile/:username" component={Profile} />
         <Route exact path="/messagefeed" component={MessageFeed} />
         <Route exact path="*" component={NotFound} />
+        <Route exact path="/profile/messagefeed" component={MessageList} />
       </Switch>
     );
   }

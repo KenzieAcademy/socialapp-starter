@@ -11,11 +11,13 @@ class RegistrationForm extends React.Component {
       username: "",
       password: "",
       displayName: "",
+      submitted: false,
     };
   }
 
   handleRegistration = (e) => {
     e.preventDefault();
+    this.setState({ submitted: true });
     console.log("Tried to register.", this.state);
     this.client.registerUser(this.state);
   };
