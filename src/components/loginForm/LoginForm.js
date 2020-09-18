@@ -1,6 +1,8 @@
 import React from "react";
 import Spinner from "react-spinkit";
 import "./LoginForm.css";
+import { withAsyncAction } from "../../redux/HOCs";
+
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -51,4 +53,5 @@ class LoginForm extends React.Component {
   }
 }
 
-export default LoginForm;
+export default withAsyncAction("auth", "login")(LoginForm);
+

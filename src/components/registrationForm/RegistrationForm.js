@@ -58,6 +58,9 @@ class RegistrationForm extends React.Component {
             required
             onChange={this.handleChange}
           />
+           <button type="submit" disabled={loading}>
+            Register
+          </button>
           
           
         </form>
@@ -68,4 +71,5 @@ class RegistrationForm extends React.Component {
   }
 }
 
-export default RegistrationForm
+export default withAsyncAction("auth", "login")(RegistrationForm);
+
