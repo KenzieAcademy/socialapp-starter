@@ -22,7 +22,7 @@ class PostMessageForm extends React.Component {
   handleMessagePost = (event) => {
     event.preventDefault();
     this.PostMessageService.postMessage(this.state).then((result) => {
-      console.log(result.data);
+      console.log(result.data).catch((error) => console.log(error));
     });
     console.log("Post Button Pressed");
   };
@@ -36,7 +36,7 @@ class PostMessageForm extends React.Component {
               type="text"
               name="text"
               required
-              placeholder ="Type a Message Here!"
+              placeholder="Type a Message Here!"
               onChange={this.handleChange}
             />
           </Form.Field>
