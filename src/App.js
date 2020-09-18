@@ -40,13 +40,14 @@ class App extends React.Component {
           path="*"
           component={NotFound}
         />
-
+        <Route exact path="/messagefeed" component={NewsFeed}/>
         <Route exact path="/profile/:username" component={Profile} />
 
         <Route exact path="/messagefeed" component={NewsFeed} />
         <Route exact path="/user/:username" component={UserDisplay }/>
 
         <Route exact path="*" component={NotFound} />
+        
 
       </Switch>
     );

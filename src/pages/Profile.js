@@ -6,20 +6,9 @@ import { Layout, Menu, Breadcrumb } from 'antd';
 import { Input } from 'antd';
 import { AudioOutlined } from '@ant-design/icons';
 import { Button } from 'antd';
-
-
+import userData from "../components/getUsers/getUsers"
 class Profile extends React.Component {
   render() {
-    const { Header, Content, Footer } = Layout;
-    const { Search } = Input;
-    const suffix = (
-      <AudioOutlined
-        style={{
-          fontSize: 16,
-          color: '#1890ff',
-        }}
-      />
-    );
     console.log(this.props)
     return (
       <div className="Profile">
@@ -46,6 +35,7 @@ class Profile extends React.Component {
           <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
         </Layout>
 
+        <userData/>
       </div>
 
 
@@ -57,4 +47,4 @@ class Profile extends React.Component {
   }
 }
 
-export default userIsAuthenticated(Profile);
+export default userIsAuthenticated(Profile)
