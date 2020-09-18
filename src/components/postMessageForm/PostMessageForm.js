@@ -25,7 +25,9 @@ class PostMessageForm extends React.Component {
       .then((result) => {
         console.log(result.data);
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        console.log(error)
+      });
       this.setState ({text: ""})
   };
 

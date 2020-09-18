@@ -37,7 +37,14 @@ class LikeButton extends React.Component {
       this.setState({ isLiked: false });
     } else {
       PostLikeService.postLike(this.state.postRequestData)
-        .then((result) => this.setState())
+        .then((result) => {
+            console.log(result)
+            let likesArrayCopy = [...this.state.likesArray]
+            let likeObject = result.data.like
+            likesArrayCopy.push(likeObject)
+            this.setState({likesArray: likesArrayCopy})
+            this.setState({deleteRequestData: {likeId: likeObject.id }})
+        })
         .catch((error) => console.log(error));
       this.setState({ isLiked: true });
     }
