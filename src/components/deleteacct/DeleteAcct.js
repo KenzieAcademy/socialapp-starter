@@ -22,7 +22,14 @@ class DeleteAcctButton extends React.Component {
   render() {
     return (
       <div className="DeleteAcctButton">
-        <Button id="del" type="primary" onClick={this.handleDelete}>
+        <Button
+          id="del"
+          type="primary"
+          onClick={() => {
+            if (window.confirm("Are you sure you wish to delete this account?"))
+              this.handleDelete(DeleteAcctButton);
+          }}
+        >
           Delete Account
         </Button>
       </div>
