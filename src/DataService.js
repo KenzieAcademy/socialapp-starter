@@ -60,7 +60,14 @@ class DataService {
   }
 
   getMessageList(limit = 20) {
-    return this.client.get(`${this.url}/messages?limit=${limit}`);
+    return this.client.get(`${this.url}/likes?limit=${limit}`);
+  }
+  deleteLike(likeId) {
+    let loginData = JSON.parse(localStorage.getItem("login")).result;
+    let token = loginData.token;
+    return this.client.delete(this.url + "/likes/" + likeId, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
   }
 }
 
