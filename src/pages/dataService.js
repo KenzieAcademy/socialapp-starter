@@ -11,6 +11,10 @@ class DataService {
     console.log(userdata);
     return this.client.post(this.url + "/users", userdata);
   }
+  // setuserphoto(userdata) {
+  //   console.log(userdata);
+  //   return this.client.get(this.url + "/users", userdata);
+  // }
   getLoginForm() {
     return this.client.post(this.url + "/login");
   }
