@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: black;
+  background-image: url("../images/welcome.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: white;
+  padding: 0;
+  height: 100vh;
+}
+
+.Container {
+  border: 2px solid white;
+  padding: 0;
+}
+.Home {
+  background-color: rgba(90, 89, 89, 0.5);
+  padding: 1em;
+}
