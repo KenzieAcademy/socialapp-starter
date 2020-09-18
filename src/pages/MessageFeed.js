@@ -10,7 +10,7 @@ class MessageFeed extends React.Component {
     this.state = {
       message: { text: "" },
       messages: [],
-      messageSent: false,
+      // messageSent: false,
     };
 
     this.client = new DataService();
@@ -20,7 +20,7 @@ class MessageFeed extends React.Component {
     return this.client.getMessages(10).then((result) =>
       this.setState({
         messages: result.data.messages,
-        messageSent: false,
+        // messageSent: false,
       })
     );
   }
@@ -39,7 +39,7 @@ class MessageFeed extends React.Component {
 
     this.setState({
       message: { text: "" },
-      messageSent: true,
+      // messageSent: true,
     });
     event.target.reset();
   };
@@ -62,14 +62,14 @@ class MessageFeed extends React.Component {
   }
 
   render() {
-    if (this.state.messageSent === true) {
-      this.getMessages();
-      return (
-        <div>
-          <h1>Message Sent!</h1>
-        </div>
-      );
-    }
+    // if (this.state.messageSent === true) {
+    //   this.getMessages();
+    //   return (
+    //     <div>
+    //       <h1>Message Sent!</h1>
+    //     </div>
+    //   );
+    // }
     return (
       <div className="MessageBlock">
         <Menu isAuthenticated={this.props.isAuthenticated} />
