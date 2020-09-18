@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 //Pages imported below
-import Menu from "../components/menu/Menu";
 import Profile from "../pages/Profile";
 
 import { userIsAuthenticated } from "../redux/HOCs";
@@ -11,7 +10,7 @@ const { Header, Sider, Content, Footer } = Layout;
 
 class Messagefeed extends Component {
     constructor(props) {
-        super(props);
+
         this.state = {
             author: '',
             comment: ''
@@ -39,7 +38,6 @@ class Messagefeed extends Component {
             <Layout>
 
                 <Header>
-
                 </Header>
 
 
