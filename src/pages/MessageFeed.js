@@ -33,7 +33,10 @@ class MessageFeed extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    this.client.createMessage(this.state.message);
+    this.client.createMessage(this.state.message).then((result) => {
+      this.getMessages();
+    });
+
     this.setState({
       message: { text: "" },
       messageSent: true,
@@ -49,7 +52,9 @@ class MessageFeed extends React.Component {
     if (messagecheck.message === userData.username) {
       return console.log("You Already Liked This");
     }
-    return this.client.likeMessage(likeTarget);
+    return this.client.likeMessage(likeTarget).then((result) => {
+      this.getMessages();
+    });
   };
   // componentDidUpdate() {
   //   if (this.state.messageSent === true) {
