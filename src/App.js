@@ -12,10 +12,30 @@ class App extends React.Component {
         <Route exact path="/" component={Home} />
         <Route
           exact
+<<<<<<< HEAD
           path="/profile/:username"
           render={(props) => (
             <Profile {...props} name={props.match.params.name} />
           )}
+=======
+          path="/" 
+          component={Home} 
+        />
+        <Route 
+          exact 
+          path="/profile/:username" 
+          component={Profile}
+        />
+        <Route 
+          exact 
+          path="/mainHub" 
+          component = {MainHub} 
+        />
+        <Route 
+          exact 
+          path="*" 
+          component={NotFound} 
+>>>>>>> 16ff154db3c00495a2ab511025d2db6dd0eeb06e
         />
         <Route exact path="/mainHub" component={MainHub} />
         <Route exact path="*" component={NotFound} />
