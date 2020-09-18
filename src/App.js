@@ -2,6 +2,7 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
+
 import NotFound from "./pages/NotFound";
 import Feed from "./pages/Feed";
 
@@ -15,6 +16,7 @@ class App extends React.Component {
           path="/profile/:username"
           render={(props) => <Profile {...props} />}
         />
+
         <Route exact path="/feed/:username" component={Feed} />
         <Route exact path="*" component={NotFound} />
       </Switch>

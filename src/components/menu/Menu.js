@@ -8,7 +8,6 @@ class Menu extends React.Component {
     event.preventDefault();
     this.props.logout();
   };
-
   render() {
     return (
       <div className="Menu">
@@ -16,6 +15,7 @@ class Menu extends React.Component {
         {this.props.isAuthenticated && (
           <div id="menu-links">
             <Link to="/">Home</Link>
+            <Link to="/message">Message Feed</Link>
 
             <Link
               to={`/profile/${
