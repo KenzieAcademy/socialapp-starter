@@ -1,9 +1,7 @@
 import React from "react";
-// import AddLikes from "../components/addLikes/AddLikes";
 import Menu from "../components/menu/Menu";
 import { userIsAuthenticated } from "../redux/HOCs";
 import MessageList from "../components/messageList/MessageList";
-import PostMessage from "../components/postMessage/PostMessage";
 
 class Feed extends React.Component {
   render() {
@@ -11,9 +9,6 @@ class Feed extends React.Component {
       <div className="Feed">
         <Menu isAuthenticated={this.props.isAuthenticated} />
 
-       
-
-        <PostMessage />
 
         <MessageList />
       </div>
