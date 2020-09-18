@@ -12,12 +12,11 @@ class Home extends React.Component {
 
     return (
       <div className="Home">
-        <GetMessage />
         {/* <Menu /> */}
         {/* <h2>Your favorite microblogging platform</h2> */}
         {/* <LoginForm /> */}
         {/* <RegistrationForm /> */}
-        test etst
+
         <Layout className="layout">
           <Header>
             <div className="logo" />
@@ -28,15 +27,8 @@ class Home extends React.Component {
             </Menu>
           </Header>
           <Content style={{ padding: "0 50px" }}>
-            //{" "}
-            <Breadcrumb style={{ margin: "16px 0" }}>
-              // <Breadcrumb.Item> User</Breadcrumb.Item>
-              // <Breadcrumb.Item>Register</Breadcrumb.Item>
-              // <Breadcrumb.Item>Contact</Breadcrumb.Item>
-              //{" "}
-            </Breadcrumb>
             <div className="site-layout-content">
-              <h2>Your favorite microblogging platform</h2>
+              <h2>Your favorite Hangout platform</h2>
               <Menu />
               <LoginForm />
               <RegistrationForm />
@@ -45,10 +37,7 @@ class Home extends React.Component {
           <Footer style={{ textAlign: "center" }}>Mix&Mingle</Footer>
         </Layout>
         <Menu />
-        <h2>Your favorite microblogging platform</h2>
-        <LoginForm />
-        <RegistrationForm />
-        <RegistrationForm />
+        <h2>Random list of users</h2>
         <UserData />
       </div>
     );
