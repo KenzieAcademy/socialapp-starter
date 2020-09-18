@@ -28,7 +28,11 @@ class Message extends React.Component {
           <FeedExtra text>{this.props.text}</FeedExtra>
           <FeedMeta>
             <FeedLike>
-              <Icon name="like" /> {this.props.likes.length} Likes
+              <LikeButton
+                className="likeButton"
+                likesArray={this.props.likes}
+                messageId={this.props.id}
+              />
             </FeedLike>
           </FeedMeta>
         </FeedContent>
