@@ -44,11 +44,11 @@ class Profile extends React.Component {
   render() {
     return (
       <div className="Profile">
-        <Menu isAuthenticated={this.props.isAuthenticated} />
-        <h2>Profile</h2>
+        {/* <Menu isAuthenticated={this.props.isAuthenticated} /> */}
+        <h1>Profile</h1>
+        <h2>Welcome {this.state.displayname}</h2>
         <img src={profilepic} alt="profile pic" height={100} width={100} />
         <input type="file" onChange={this.profilePicHandler} />
-        <h3>Welcome {this.state.displayname}</h3>
       </div>
     );
   }

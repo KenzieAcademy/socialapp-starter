@@ -3,7 +3,8 @@ import DataService from "../dataService";
 import Menu from "../components/menu/Menu";
 import { userIsAuthenticated } from "../redux/HOCs";
 // import Message from "";
-import { Result } from "antd";
+import { message, Result } from "antd";
+import Message from "../components/message/Message";
 
 class MessageFeed extends React.Component {
   constructor(props) {
@@ -16,11 +17,12 @@ class MessageFeed extends React.Component {
   //   state = { messages: [] };
 
   componentDidMount() {
-    const test = this.client.getMessages();
-    console.log(test);
-    //then((response) =>
-    //this.setState({ messages: response.data.messages })
-    //);
+    // const test = this.client.getMessages();
+    // console.log(test);
+
+    this.client
+      .getMessages()
+      .then((response) => this.setState({ messages: response.data.messages }));
   }
   render() {
     if (this.state.messages.length === 0) {
@@ -33,8 +35,12 @@ class MessageFeed extends React.Component {
     return (
       <div className="messagefeed">
         <Menu isAuthenticated={this.props.isAuthenticated} />
-        messages go here
-        <ul></ul>
+        messages go here test
+        <ul>
+          {this.state.messages.map((messageObject) => {
+            return <Message {...messageObject} />;
+          })}
+        </ul>
       </div>
     );
   }
