@@ -1,5 +1,7 @@
 body {
   background-color: #e0d8c0;
+  background-image: url(./media/33591.jpg);
+  background-size: cover;
   color: #47170e;
   margin: 0.5em;
   padding: 0;
@@ -17,17 +19,61 @@ code {
 
 #components-layout-demo-fixed-sider .logo {
   height: 32px;
-  background:#908870;
   margin: 16px;
 }
 
 .logo {
   background-color: #e0d8c0;
   padding: 5px;
-  color: rgb(255, 255, 255);
   font-size: 25px;
 }
 
-.site-layout .site-layout-background {
-  background: #e0d8c0;
+.site-layout-background {
+  background-color: #e0d8c0;
+}
+
+.site-layout {
+  background-color: #e0d8c0;
+}
+
+.avatar-uploader > .ant-upload {
+  width: 128px;
+  height: 128px;
+}
+
+.sider {
+  background-color: #e0d8c0;
+}
+
+.footer {
+  background-color: #11ffee00;
+}
+
+.ant-layout {
+  background-color: #11ffee00;
+}
+
+.ant-layout-footer {
+  background-color: #11ffee00;
+}
+
+Header {
+  width: 500px;
+  margin: auto;
+}
+
+.ant-menu {
+  background-color: #e0d8c0;
+}
+
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+  background-color: #47170e;
+}
+
+Link.ant-menu-item-selected a, .ant-menu-item-active a:hover {
+  color: #fff;
+}
+
+Menu.Item, .ant-menu-item-selected {
+  color: #000;
 }

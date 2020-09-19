@@ -11,7 +11,7 @@ class MenuUnauthenticated extends React.Component {
     const { Sider } = Layout;
     return (
       <Layout>
-    <Sider
+    <Sider className="sider"
       style={{
         overflow: 'auto',
         height: '100vh',
@@ -19,8 +19,8 @@ class MenuUnauthenticated extends React.Component {
         left: 0,
       }}
     >
-      <div className="logo"> <img src={theQuestBoard} />  </div>
-      <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
+      <div className="logo"> <img src={theQuestBoard} alt="QuestBoard Logo"/>  </div>
+      <Menu theme="light" mode="inline" defaultSelectedKeys={['1']}>
         <Menu.Item key="1" >
         <Link to="/">Home</Link>
         </Menu.Item>
