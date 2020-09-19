@@ -1,9 +1,6 @@
 import React from "react";
-import DataService from "../../DataService";
-import DeleteMessage from "../deleteMessage/DeleteMessage";
 import LikeButton from "../likeButton/LikeButton";
 import UnikeButton from "../unlikeButton/UnlikeButton";
-
 
 class NewsFeed extends React.Component {
   constructor(props) {
