@@ -1,6 +1,5 @@
 import React from "react";
-import LikeButton from "../likeButton/LikeButton";
-import UnikeButton from "../unlikeButton/UnlikeButton";
+import MessageCard from "../messageCard/MessageCard";
 
 class NewsFeed extends React.Component {
   constructor(props) {
@@ -12,18 +11,11 @@ class NewsFeed extends React.Component {
       <div className="NewsFeed">
         <h3>News Feed</h3>
         <div className="NewsFeed-Message">
-          <div>Message: </div>
-          <div>Some message</div>
-          <div> Posted By:</div>
-          <div> User DisplayName</div>
-          <div>Message: </div>
-          <div>Some message</div>
-          <div> Posted By:</div>
-          <div> User DisplayName</div>
-          <div>Message: </div>
-          <div>Some message</div>
-          <div> Posted By:</div>
-          <div> User DisplayName</div>
+          <MessageCard messageId={148} />
+          <MessageCard messageId={150} />
+          <MessageCard messageId={151} />
+          <MessageCard messageId={152} />
+          <MessageCard messageId={153} />
         </div>
         <br />
         <br />
