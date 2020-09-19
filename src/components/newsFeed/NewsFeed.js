@@ -1,10 +1,6 @@
 import React from "react";
 import LikeButton from "../likeButton/LikeButton";
 import UnikeButton from "../unlikeButton/UnlikeButton";
-<<<<<<< HEAD
-
-=======
->>>>>>> 86cd0263138da86a8919eb9949b53698e50d9c8e
 
 class NewsFeed extends React.Component {
   constructor(props) {

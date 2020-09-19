@@ -11,13 +11,8 @@ class DataService {
     this.client = client;
   }
 
-<<<<<<< HEAD
-  registerUser(regisrationData){
-    return this.client.post(this.url + "/users", regisrationData)
-=======
   registerUser(regisrationData) {
     return this.client.post(this.url + "/users", regisrationData);
->>>>>>> 86cd0263138da86a8919eb9949b53698e50d9c8e
   }
   getAllMessagesData() {
     return this.client.get(this.url + "/messages");
