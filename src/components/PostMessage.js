@@ -1,5 +1,5 @@
 import React from "react"
-import Menu from "./menu/Menu"
+
 import { userIsAuthenticated } from "../redux/HOCs"
 import PostMessageService from "../services/PostMessageService"
 
