@@ -6,7 +6,7 @@ class LikeButton extends React.Component {
     super(props);
 
     this.state = {
-      messageId: 206
+      messageId: 164
 
     };
 
@@ -22,13 +22,7 @@ class LikeButton extends React.Component {
     });
   };
 
-  // handleUnlike  = (e) => {
-  //   e.preventDefault();
-  //   console.log(this.state)
-  //   this.client.handleUnlike(this.state).then((result) => {
-  //     console.log(result.data);
-  //   });
-  // };
+  
 
   render() {
     return (

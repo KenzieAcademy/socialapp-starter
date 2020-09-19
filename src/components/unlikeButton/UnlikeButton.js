@@ -6,7 +6,7 @@ class UnlikeButton extends React.Component {
       super(props);
   
       this.state = {
-        messageId: 206
+        messageId: 164
       };
   
       this.client = new DataService();
@@ -16,8 +16,8 @@ class UnlikeButton extends React.Component {
   handleUnlike  = (e) => {
     e.preventDefault();
     console.log(this.state)
-    this.client.handleUnlike(this.state.messageId).then((result) => {
-      console.log(result.data);
+    this.client.handleUnlike(this.state).then((result) => {
+      console.log(result);
       return result
     });
   }
