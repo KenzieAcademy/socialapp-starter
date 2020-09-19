@@ -2,6 +2,7 @@ import React from "react";
 import Menu from "../components/menu/Menu"
 import api from "../services/BackendService"
 import Message from "../components/message/Message"
+import PostMessage from "../components/PostMessage"
 
 class MessageList extends React.Component {
     state = { messages: [] }
@@ -27,6 +28,7 @@ class MessageList extends React.Component {
             <div className="MessageList">
                 <Menu />
                 <h1>Message Feed</h1>
+                <PostMessage />
                 <ul>
                     {this.state.messages.map(messageObject => (
                         <Message key={messageObject.id} {...messageObject} />

@@ -1,10 +1,10 @@
 import React from "react"
-import Menu from "../components/menu/Menu"
+import Menu from "./menu/Menu"
 import { userIsAuthenticated } from "../redux/HOCs"
 import PostMessageService from "../services/PostMessageService"
 
 
-class MessageFeed extends React.Component {
+class PostMessage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -31,8 +31,8 @@ class MessageFeed extends React.Component {
     render() {
         return (
             <div className="Message">
-                < Menu />
-                <h3>MessageFeed</h3>
+                
+                
                 <div className="postMessageForm">
                     <form className="postMessageFormForm" onSubmit={this.handleMessagePost}>
                         <input
@@ -53,4 +53,4 @@ class MessageFeed extends React.Component {
 
 
 
-export default userIsAuthenticated(MessageFeed);
+export default userIsAuthenticated(PostMessage);

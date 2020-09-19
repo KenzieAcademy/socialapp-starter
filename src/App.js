@@ -6,7 +6,7 @@ import NotFound from "./pages/NotFound";
 // import PostMessage from "./services/PostMessageService"
 import RegistrationForm from "./components/registrationForm/RegistrationForm"
 import MessageList from "./pages/MessageList"
-import PostMessage from "./pages/PostMessage";
+import PostMessage from "./components/PostMessage";
 
 class App extends React.Component {
 
