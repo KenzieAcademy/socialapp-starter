@@ -31,7 +31,7 @@ class UserCard extends React.Component {
         }
     }
     componentDidMount() {
-        this.props.getUsers(this.props.username).then((userData) => {
+        this.client.getSingleUser(this.props.username).then((userData) => {
             this.setState(userData)
         })
     }
