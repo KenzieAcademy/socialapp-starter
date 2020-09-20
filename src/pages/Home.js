@@ -20,6 +20,7 @@ class Home extends React.Component {
   }
   render() {
     return (
+      <Layout>
         <div className="Home">
           <Menu />
           <h2>Your favorite microblogging platform</h2>
