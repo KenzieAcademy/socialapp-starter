@@ -8,7 +8,11 @@ class DataService {
         return this.client.post(this.url + "/users", userData)
     }
     getUsers(){
-        return this.client.get(this.url + "/user")
+        return this.client.get(this.url + "/users")
+    }
+
+    getSingleUser(username) {
+        return this.client.get(`${this.url}/users/${username}`)
     }
 }
 export default DataService;
