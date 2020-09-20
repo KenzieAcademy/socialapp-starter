@@ -28,15 +28,8 @@ class Profile extends React.Component {
         <Menu />
         <h2>Profile</h2>
         <button onClick={this.handleDelete}> Delete User</button>
-        <div className="container" style={{ width: "20rem" }} >
-          <div className="card" style={{ style: "18rem" }} >
-            <img className="card-img-top" src="https://media.geeksforgeeks.org/wp-content/uploads/20190506125816/avt.png" alt="" />
-            <div className="card-body" >
-              <h4 className="card-title" > Name </h4>
-              <p className="card-text" >About Me</p>
-            </div>
-          </div>
-        </div>
+
+
 
       </div>
     );
