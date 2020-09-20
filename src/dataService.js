@@ -8,20 +8,32 @@ class DataService {
         this.client = client;
 
     }
+
+    getToken() {
+        return JSON.parse(localStorage.login).result.token
+    }
+
     registerUser(userData) {
         
-        return this.client.post(this.url + "/users", userData);
+        return this.client.post(this.url + "/users", userData)
+        .then(response => console.log(response))
+        .catch(error => console.log(error))
 
     }
 
     getUsers() {
-        return this.client.get(this.url + "/users");
+        return this.client.get(this.url + "/users")
+        .then(response => console.log(response))
+        .catch(error => console.log(error))
     }
 
-    handleMessage(message) {
-        let ls = JSON.parse(localStorage.login)
+    // Authorization can be done by attaching a header to the Axios config
+    // axios.request(url, data, config)
+    // copy the line below and use it as the config parameter
+    // {headers: {Authorization: `Bearer ${this.getToken()}`}}
+    postMessage(message) {
         return this.client.post(this.url + "/messages", message,
-            {headers: {Authorization: `Bearer ${ls.result.token}`}})
+            {headers: {Authorization: `Bearer ${this.getToken()}`}})
             .then(response => console.log(response))
             .catch(error => console.log(error))
     }

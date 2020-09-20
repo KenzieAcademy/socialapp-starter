@@ -17,7 +17,7 @@ class SendPost extends React.Component {
     const message = {
       text: this.state.value
     }
-    this.client.handleMessage(message)
+    this.client.postMessage(message)
     }
 
 
