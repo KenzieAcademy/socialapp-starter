@@ -14,8 +14,16 @@ class DataService {
 
     }
 
-    getUsers() {
-        return this.client.get(this.url + "/users");
+    getUsers(userName) {
+        return this.client.get(this.url + "/users", userName);
+    }
+
+    getUsersPicture() {
+        return this.client.get(this.url + "/users/{props.username}/picture");
+    }
+
+    setUsersPicture(uploadPicture) {
+        return this.client.get(this.url + "/users/{props.username}/picture", uploadPicture);
     }
 
     handleMessage(message) {
