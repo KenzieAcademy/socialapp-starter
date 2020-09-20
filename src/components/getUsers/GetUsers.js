@@ -10,8 +10,11 @@ class GetUsers extends React.Component {
     this.client = new DataService();
   }
 
-  handleGetUsers = e => {
-    e.preventDefault();
+  componentDidMount() {
+    this.handleGetUsers()
+  }
+
+  handleGetUsers() {
     
       this.client.getUsers().then(response => {
         // alert(JSON.stringify(result.data))
@@ -25,11 +28,12 @@ class GetUsers extends React.Component {
 
   render() {
     const { loading, error } = this.props;
+    // let getUserURL = '/profile/' + this.state.data.username
+    // console.log(this.state.data.username)
     return (
       <div className="GetUsers">
-          <button onClick={this.handleGetUsers}>Get User</button>
           <ul>
-           {this.state.data.map(d => <li key={d.username}>{d.username}</li>)}
+    {this.state.data.map(d => <div><li key={d.displayName}>{d.displayName}</li><li key={d.about}>{d.about}</li></div>)}
            </ul>
          
          </div>

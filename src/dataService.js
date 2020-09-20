@@ -11,16 +11,28 @@ class dataService {
         return this.client.post(this.url + '/users', userData)
     }
 
-    loginUser(userData) {
-        return this.client.post(this.url + '/auth/login', userData)
+    loginUser(userData2) {
+        return this.client.post(this.url + '/auth/login', userData2)
     }
 
     getUsers() {
         return this.client.get(this.url + '/users')
     }
 
-    deleteUser(userData) {
-        return this.client.delete(this.url + '/users/' + userData, userData)
+    deleteUser(userData3) {
+        console.log(userData3.token)
+        return this.client.delete(this.url + '/users/' + userData3.username, {
+            headers: { Authorization: "Bearer " + userData3.token}
+          })
+    }
+
+    // deleteUser = (userData3) => {
+
+    // }
+
+
+    getProfile(userData4) {
+        return this.client.get(this.url + '/users/' + userData4, userData4)
     }
 }
 
