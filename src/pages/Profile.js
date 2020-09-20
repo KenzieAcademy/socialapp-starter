@@ -7,6 +7,7 @@ import { Avatar } from 'antd';
 import { userIsAuthenticated } from "../redux/HOCs";
 import { UserOutlined } from '@ant-design/icons';
 import { Layout } from 'antd';
+import DataService from "../dataService"
 
 
 class Profile extends React.Component {
@@ -16,9 +17,9 @@ class Profile extends React.Component {
   }
   render() {
 
-    const { Header, Content, Footer} = Layout;
+    const { Header, Content, Footer } = Layout;
 
-    const header= {
+    const header = {
       backgroundColor: '#73d13d',
       textAlign: 'center',
       margin: 'auto',
@@ -27,10 +28,10 @@ class Profile extends React.Component {
       padding: '30px',
       fontFamily: 'fantasy',
     }
-
       const footer = {
         backgroundColor: '#73d13d',
       }
+
 
 
     return (
@@ -40,8 +41,9 @@ class Profile extends React.Component {
             Rioters Reinvented
           </Header>
           <ProfileCard username={this.getUsername()}/>
+
           <Footer style={footer} className="footer">
-          <Menu isAuthenticated={this.props.isAuthenticated} />
+            <Menu isAuthenticated={this.props.isAuthenticated} />
             <p>Menu</p>
             <p>Profile Page</p>
             <p>Quiz</p>
