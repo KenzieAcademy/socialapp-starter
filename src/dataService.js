@@ -8,13 +8,38 @@ class DataService {
         this.client = client;
 
     }
-    registerUser(userData) {
-        
-        return this.client.post(this.url + "/users", userData);
 
+    getToken() {
+        return JSON.parse(localStorage.login).result.token
     }
 
-    getUsers(userName) {
+    registerUser(userData) {
+        
+        return this.client.post(this.url + "/users", userData)
+        .then(response => console.log(response))
+        .catch(error => console.log(error))
+
+    }
+  
+      // Authorization can be done by attaching a header to the Axios config
+    // axios.request(url, data, config)
+    // copy the line below and use it as the config parameter
+    // {headers: {Authorization: `Bearer ${this.getToken()}`}}
+    postMessage(message) {
+        return this.client.post(this.url + "/messages", message,
+            {headers: {Authorization: `Bearer ${this.getToken()}`}})
+            .then(response => console.log(response))
+            .catch(error => console.log(error))
+    }
+
+
+    getUsers() {
+        return this.client.get(this.url + "/users")
+        .then(response => console.log(response))
+        .catch(error => console.log(error))
+    }
+
+    getSingleUser(userName) {
         return this.client.get(this.url + "/users", userName);
     }
 
@@ -25,14 +50,7 @@ class DataService {
     setUsersPicture(uploadPicture) {
         return this.client.get(this.url + "/users/{props.username}/picture", uploadPicture);
     }
-
-    handleMessage(message) {
-        let ls = JSON.parse(localStorage.login)
-        return this.client.post(this.url + "/messages", message,
-            {headers: {Authorization: `Bearer ${ls.result.token}`}})
-            .then(response => console.log(response))
-            .catch(error => console.log(error))
-    }
+      
+      
 }
-
 export default DataService;
