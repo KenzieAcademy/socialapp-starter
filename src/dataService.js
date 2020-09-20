@@ -7,15 +7,22 @@ class DataService {
         this.client = client;
     }
 
-    registerUser(registrationData) {
-        return this.client.post(this.url + "/users", registrationData);
+    // registerUser(registrationData) {
+    //     return this.client.post(this.url + "/users", registrationData);
+    // }
+
+    registerUser(userData) {
+        return this.client.post(this.url + '/users', userData)
     }
 
-    listUsers() {
-        return this.client.get(this.url)
-      
+    getUsers() {
+        return this.client.get(this.url + '/users')
+    }
 
+    postMessage(messageData) {
+        return this.client.post(this.url + '/messages', messageData)
     }
 
 }
+
 export default DataService;

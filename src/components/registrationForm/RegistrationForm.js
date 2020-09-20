@@ -1,12 +1,10 @@
 import React from "react";
 import Spinner from "react-spinkit";
-import { withRouter } from 'react-router-dom'
-
-// import { withAsyncAction } from "../../redux/HOCs";
-import "./RegistrationForm.css";
+// import { withRouter } from 'react-router-dom'
+import { withAsyncAction } from "../../redux/HOCs";
 import DataService from "../../dataService"
-// import LoginForm from "../components/loginForm/LoginForm";
-import { Link } from "react-router-dom";
+
+
 
 class RegistrationForm extends React.Component {
   constructor(props) {
@@ -22,12 +20,15 @@ class RegistrationForm extends React.Component {
   handleRegistration = e => {
     e.preventDefault();
     this.client.registerUser(this.state).then(result => {
-      this.props.history.push('/')
-
+      // this.props.history.push('/')
+      this.props.login(
+        {
+          "username": this.state.username,
+          "password": this.state.password
+        }
+      )
     })
-
   };
-
 
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
@@ -71,5 +72,5 @@ class RegistrationForm extends React.Component {
   }
 }
 
-export default withRouter(RegistrationForm);
-// export default withAsyncAction("auth", "login")(LoginForm);
+// export default withRouter(RegistrationForm);
+export default withAsyncAction("auth", "login")(RegistrationForm);
