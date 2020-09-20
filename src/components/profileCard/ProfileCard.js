@@ -7,17 +7,17 @@ import { Layout } from 'antd';
 class ProfileCard extends React.Component {
     constructor(props) {
         super(props)
-        this.client = new DataService()
         this.state = {
-            about: '', 
-            username: '',
-            displayName: '',
-            createdAt: '',
-            updatedAt: '',
-            googleId: '',
-            pictureLocation: ''
-            
+          about: '', 
+          username: '',
+          displayName: '',
+          createdAt: '',
+          updatedAt: '',
+          googleId: '',
+          pictureLocation: ''   
         }
+        
+        this.client = new DataService()
     }
 
     componentDidMount() {
@@ -63,18 +63,6 @@ class ProfileCard extends React.Component {
           backgroundColor: '#e6f7ff',
           height: '110px'
           
-        }
-    
-        const user = {
-          username: 'Username',
-          displayName: 'Display Name',
-          about: 'Kenzie Student',
-          createdAt: 'Mar-09-2020',
-          updatedAt: 'Today',
-          pictureLocation: 'sample location',
-          googleId: 'google',
-         
-    
         }
     
         const button = {

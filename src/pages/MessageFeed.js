@@ -1,5 +1,6 @@
 import React from "react";
 import Menu from "../components/menu/Menu"
+import { userIsAuthenticated } from "../redux/HOCs"
 
 class MessageFeed extends React.Component{
     constructor(props){
@@ -16,4 +17,4 @@ class MessageFeed extends React.Component{
         )
     }
 }
-export default MessageFeed
+export default userIsAuthenticated(MessageFeed)
