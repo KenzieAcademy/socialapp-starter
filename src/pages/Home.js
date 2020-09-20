@@ -6,6 +6,7 @@ import { userIsNotAuthenticated } from "../redux/HOCs";
 import RegistrationForm from "../components/registrationForm/RegistrationForm";
 import { Button } from "evergreen-ui"
 
+
 class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -19,7 +20,6 @@ class Home extends React.Component {
   }
   render() {
     return (
-      <Layout>
         <div className="Home">
           <Menu />
           <h2>Your favorite microblogging platform</h2>

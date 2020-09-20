@@ -24,10 +24,6 @@ const Navigation = ({ location }) => {
 
     }
 
-    const active = {
-            borderBottom: '( rgba(0,0,0,0.5) 9.2em solid)'
-    }
-
     return (
         <Pane
             display='flex'
