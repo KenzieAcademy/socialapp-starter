@@ -14,7 +14,7 @@ class RegistrationForm extends React.Component {
       username: "",
       password: "",
       displayName: ""
-    };
+    }
   }
 
   handleRegistration = e => {

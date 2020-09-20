@@ -4,14 +4,14 @@ import { withRouter } from 'react-router-dom'
 
 
 class Messages extends React.Component {
-    constructor(props) {
+        constructor(props) {
         super(props)
+        this.client = new DataService()
         this.state = {
             message: {
                 text: ""
             }
         }
-        this.client = new DataService()
     }
 
 
