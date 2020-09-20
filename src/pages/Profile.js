@@ -22,8 +22,7 @@ class Profile extends React.Component {
   componentDidMount(){
     this.client.getUserPicture(this.state.username).then(result => {
     console.log(result) //if user has no picture then will set user Outlined as default
-
-    
+ 
   })
 
   }
