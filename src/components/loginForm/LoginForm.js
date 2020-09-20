@@ -27,26 +27,45 @@ class LoginForm extends React.Component {
     return (
       <div className="LoginForm">
         <form id="login-form" onSubmit={this.handleLogin}>
-          <label htmlFor="username">Username</label>
-          <input
-            type="text"
-            name="username"
-            autoFocus
-            required
-            onChange={this.handleChange}
-          />
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            name="password"
-            required
-            onChange={this.handleChange}
-          />
-          <button type="submit" disabled={loading}>
-            Login
-          </button>
+          <label htmlFor="username">USERNAME</label>
+          <div className="UsernameInput">
+            <input
+              type="text"
+              name="username"
+              autoFocus
+              required
+              onChange={this.handleChange}
+            />
+          </div>
+          <div>- - - - - - - - - - - - - - - - - - - -</div>
+          <label htmlFor="password">PASSWORD</label>
+          <div className="PasswordInput">
+            <input
+              type="password"
+              name="password"
+              required
+              onChange={this.handleChange}
+            />
+          </div>
+          <div>- - - - - - - - - - - - - - - - - - - -</div>
+          <div className="LoginButton">
+            <button type="submit" disabled={loading}>
+              <img
+                src="../../assets/images/Login_Button.png"
+                alt="Login Button"
+              />
+            </button>
+
+            {/* <button
+              type="submit"
+              src="../../assets/images/Login_Button.png"
+              alt={"Login Button"}
+              disabled={loading}
+            ></button> */}
+          </div>
+          <div className="JoinFooter">NOT A MEMBER YET? JOIN US!</div>
         </form>
-        {loading && <Spinner name="circle" color="blue" />}
+        {loading && <Spinner name="circle" color="red" />}
         {error && <p style={{ color: "red" }}>{error.message}</p>}
       </div>
     );

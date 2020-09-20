@@ -1,5 +1,9 @@
+* {
+  box-sizing: border-box;
+}
+
 .Menu {
-  background-color: lightskyblue;
+  /* background-color: lightskyblue; */
   display: flex;
   justify-content: space-between;
   align-items: center;

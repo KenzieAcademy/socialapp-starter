@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 
-#registration-form {
+.PostForm {
   /* background-color: white; */
   position: relative;
   margin: auto;
@@ -13,12 +13,4 @@
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: 25px;
   width: 400px;
-}
-
-.RegistrationForm {
-  background-color: white;
-  position: relative;
-  margin: auto;
-  width: 500px;
-  height: 400px;
 }

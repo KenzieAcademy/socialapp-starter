@@ -15,3 +15,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.HeaderLogo {
+  background-image: url(../src/assets/images/Header_Logo.png);
+  position: relative;
+  margin: auto;
+  width: 850px;
+  height: 275px;
+}

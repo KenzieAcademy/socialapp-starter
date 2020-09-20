@@ -31,7 +31,7 @@ class RegistrationForm extends React.Component {
     return (
       <div className="RegistrationForm">
         <form id="registration-form" onSubmit={this.handleRegistration}>
-          <label htmlFor="username">Username</label>
+          <label htmlFor="username">USERNAME</label>
           <input
             type="text"
             name="username"
@@ -39,22 +39,23 @@ class RegistrationForm extends React.Component {
             required
             onChange={this.handleChange}
           />
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password">PASSWORD</label>
           <input
             type="password"
             name="password"
             required
             onChange={this.handleChange}
           />
-          <label htmlFor="displayName">Display Name</label>
+          <label htmlFor="displayName">DISPLAY NAME</label>
           <input
             type="text"
             name="displayName"
             required
             onChange={this.handleChange}
           />
+
           <button type="submit" disabled={loading}>
-            Register
+            JOIN
           </button>
         </form>
         {loading && <Spinner name="circle" color="blue" />}

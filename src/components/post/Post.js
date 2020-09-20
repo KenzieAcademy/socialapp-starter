@@ -6,6 +6,7 @@ import Tooltip from "react-bootstrap/Tooltip";
 import SocialappService from "../../socialappService";
 import { userIsAuthenticated } from "../../redux/HOCs";
 import { OverlayTrigger } from "react-bootstrap";
+import "./Post.css";
 
 class Post extends React.Component {
   constructor(props) {
@@ -30,31 +31,33 @@ class Post extends React.Component {
       <Card>
         <Card.Title>Post New Message</Card.Title>
         <Card.Body>
-          <Form>
-            <Form.Control
-              type="text"
-              name="text"
-              as="textarea"
-              rows="3"
-              placeholder="Your amazing message"
-              onChange={this.handleChange}
-            />
-            <OverlayTrigger
-              placement="right"
-              overlay={
-                <Tooltip id="tooltip-proof-of-concept">
-                  This API cannot post images along with messages, however we
-                  wanted to include it as proof of concept for what the real
-                  site would be like.
-                </Tooltip>
-              }
-            >
-              <Form.File id="uploadImage" label="Upload Image" disabled />
-            </OverlayTrigger>
-          </Form>
-          <Button variant="info" onClick={this.handlePost}>
-            Post!
-          </Button>
+          <div className="PostForm">
+            <Form>
+              <Form.Control
+                type="text"
+                name="text"
+                as="textarea"
+                rows="3"
+                placeholder="Your amazing message"
+                onChange={this.handleChange}
+              />
+              <OverlayTrigger
+                placement="right"
+                overlay={
+                  <Tooltip id="tooltip-proof-of-concept">
+                    This API cannot post images along with messages, however we
+                    wanted to include it as proof of concept for what the real
+                    site would be like.
+                  </Tooltip>
+                }
+              >
+                <Form.File id="uploadImage" label="Upload Image" disabled />
+              </OverlayTrigger>
+            </Form>
+            <Button variant="info" onClick={this.handlePost}>
+              Post!
+            </Button>
+          </div>
         </Card.Body>
       </Card>
     );
