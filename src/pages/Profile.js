@@ -6,14 +6,34 @@ import { Avatar } from 'antd';
 import { userIsAuthenticated } from "../redux/HOCs";
 import { UserOutlined } from '@ant-design/icons';
 import { Layout } from 'antd';
+import DataService from "../dataService"
 
 
 class Profile extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state={username:""}
+    
+    this.client = new DataService();
+  
+  }
+
+// componentDidMount(){
+
+// }
+
+
+  handleUser() {
+    this.client.getUserName(this.state.username).then(result => {
+      console.log(result)
+    })
+  }
+
   render() {
 
-    const { Header, Content, Footer} = Layout;
+    const { Header, Content, Footer } = Layout;
 
-    const header= {
+    const header = {
       backgroundColor: '#73d13d',
       textAlign: 'center',
       margin: 'auto',
@@ -42,20 +62,15 @@ class Profile extends React.Component {
     const avatar = {
       backgroundColor: '#e6f7ff',
       height: '110px'
-      
-    }
-
-    const user = {
-      username: 'Username',
-      displayName: 'Display Name',
-      about: 'Kenzie Student',
-      createdAt: 'Mar-09-2020',
-      updatedAt: 'Today',
-      pictureLocation: 'sample location',
-      googleId: 'google',
-     
 
     }
+
+    
+
+
+    //The above returns an object that we can use to personlise the profile page for whoever logs in.//
+
+
 
     const button = {
       border: 'none',
@@ -71,9 +86,9 @@ class Profile extends React.Component {
       fontSize: '18px',
     }
 
-      const footer = {
-        backgroundColor: '#73d13d',
-      }
+    const footer = {
+      backgroundColor: '#73d13d',
+    }
 
     return (
       <>
@@ -85,17 +100,17 @@ class Profile extends React.Component {
             <div style={card} className="Profile">
               <div style={avatar} className="avatar">
                 <Avatar shape="square" size={130} icon={<UserOutlined />} />
-               </div>
-              <p>{user.username}</p>
+              </div>
+              {/* <p>{user.username}</p>
               <p>{user.about}</p>
-              <p>{user.createdAt}</p>
+              <p>{user.createdAt}</p> */}
               <div style={button} className="Button">
                 <button>Message</button>
               </div>
             </div>
           </Content>
           <Footer style={footer} className="footer">
-          <Menu isAuthenticated={this.props.isAuthenticated} />
+            <Menu isAuthenticated={this.props.isAuthenticated} />
             <p>Menu</p>
             <p>Profile Page</p>
             <p>Quiz</p>
