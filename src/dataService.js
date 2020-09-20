@@ -9,10 +9,10 @@ class DataService {
     }
     getUsers(){
         return this.client.get(this.url + "/users")
-    
+
     }
-    getUserName(userName){
-        return this.client.get(this.url+"/users/"+userName)
+    getSingleUser(username) {
+        return this.client.get(`${this.url}/users/${username}`)
     }
 
     patchUser(userName){
