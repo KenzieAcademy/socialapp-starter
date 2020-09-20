@@ -6,9 +6,30 @@ import { Avatar } from 'antd';
 import { userIsAuthenticated } from "../redux/HOCs";
 import { UserOutlined } from '@ant-design/icons';
 import { Layout } from 'antd';
-
+import DataService from "../dataService"
 
 class Profile extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      username: props.username,
+      userpicture: "",
+    };
+
+    this.client = new DataService()
+  }
+  
+  componentDidMount(){
+    this.client.getUserPicture(this.state.username).then(result => {
+    console.log(result) //if user has no picture then will set user Outlined as default
+
+    
+  })
+
+  }
+
+
+
   render() {
 
     const { Header, Content, Footer} = Layout;

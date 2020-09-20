@@ -7,6 +7,9 @@ class DataService {
     registerUser(userData){
         return this.client.post(this.url + "/users", userData)
     }
+    getUserPicture(username){
+        return this.client.get(this.url + `/users/${username}` + "/picture")
+    }
     getUsers(){
         return this.client.get(this.url + "/user")
     }
