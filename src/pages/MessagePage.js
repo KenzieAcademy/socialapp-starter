@@ -21,11 +21,8 @@ class MessagePage extends React.Component {
     return (
       <div className="MessagePage">
         <NewMessage isAuthenticated={this.props.isAuthenticated} />
-<<<<<<< HEAD
-=======
         <h2>New Message</h2>
         <MessageList messages={this.state.messages} />
->>>>>>> 29bdc8c7c6bad2da17e66b1acf03b0f10b432818
       </div>
     );
   }
