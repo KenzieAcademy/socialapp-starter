@@ -2,16 +2,21 @@ import React, { Component } from 'react'
 import DeleteUserService from "./DeleteUserService"
 import Menu from "../menu/Menu";
 import { Link } from "react-router-dom";
-
+import { Grommet } from 'grommet'
+// import { Home } from '../pages/Home'
 
 class DeleteNow extends Component {
     constructor(props) {
         super(props)
-        this.client = new DeleteUserService()
-
+        this.client = new DeleteUserService();
+        this.loginData = "";
         this.state = {
-            text: ""
+            text: "",
+            username: "",
+            password: ""
         }
+
+
         const loginData = JSON.parse(localStorage.getItem("login"));
 
     }
@@ -24,6 +29,7 @@ class DeleteNow extends Component {
 
         // loginData = [""];
         // console.log(JSON.stringify(this.state))
+
         console.log("login")
 
     };
@@ -31,17 +37,19 @@ class DeleteNow extends Component {
     render() {
         return (
             <div>
-                < br/>
+                            <Grommet>
+
+                < br />
                 <Menu isAuthenticated={this.props.isAuthenticated}
                 />
-                
-                <Link to="/deleteUser">Delete User</Link>
-            <Link to="/messagefeed">Message Feed</Link>
-            
-                
-            
-            
-          
+
+                <Link to="/deleteUser">Delete User </Link>
+                <Link to="/messagefeed">Message Feed</Link>
+                {/* <Home /> */}
+
+
+
+
 
 
 
@@ -53,13 +61,15 @@ class DeleteNow extends Component {
                         type="text"
                         name="delete"
                         required
-                        
+
                     /><br />
-                    <button type="submit" 
-                    onChange={this.handleChange}>
+                    <button type="submit"
+                        onChange={this.handleChange}>
                         Delete Forever!
                         </button>
                 </form>
+                </Grommet>
+
             </div>
         )
     }

@@ -11,7 +11,7 @@ class DeleteUserService {
         const loginData = JSON.parse(localStorage.getItem("login"));
 
         fetch(this.url, {
-            method: "POST",
+            method: "GET",
             headers: { Authorization: `Bearer ${loginData.result.token}`, ...jsonHeaders },
             body: JSON.stringify(userName)
         })
