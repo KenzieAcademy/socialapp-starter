@@ -36,6 +36,8 @@ class DeleteUser extends React.Component {
           )
         
     alert('User was deleted')
+    localStorage.clear()
+    window.location.reload()
   }
     
 

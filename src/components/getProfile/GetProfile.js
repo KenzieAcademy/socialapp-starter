@@ -5,10 +5,11 @@ import DataService from '../../dataService';
 
 class GetProfile extends React.Component {
     constructor(props) {
+      const loginData = JSON.parse(localStorage.getItem("login"));
         super(props)
         this.state = {
           data: [],
-          username: JSON.parse(localStorage.getItem('username'))
+          username: loginData.result.username
         };
         this.client = new DataService();
       }
@@ -20,9 +21,8 @@ class GetProfile extends React.Component {
     handleGetProfile(){
         
           this.client.getProfile(this.state.username).then(response => {
-            alert(JSON.stringify(response.data))
-            console.log(response)
-            this.setState({ data: response.data.users })
+  
+            this.setState({ data: response.data.user })
           });
             
         
@@ -30,15 +30,24 @@ class GetProfile extends React.Component {
 
 
 
-  render() {
-    return (
-      <div className="getProfile">
-          
-        {/* {this.state.data.map(d => <li key={d.username}>{d.username}</li>)} */}
-           
-      </div>
-    );
-  }
+      render() {
+        const { loading, error } = this.props;
+        // let getUserURL = '/profile/' + this.state.data.username
+        // console.log(this.state.data.username)
+        return (
+          <div className="GetProfile">
+            <p>
+              {this.state.data.displayName}
+             </p>
+             <p>
+               {this.state.data.about}
+             </p>
+             <p>
+               {this.state.data.pictureLocation}
+             </p>
+             </div>
+        );
+      }
 }
 
 export default userIsAuthenticated(GetProfile);

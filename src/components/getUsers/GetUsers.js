@@ -1,11 +1,14 @@
 import React from "react";
 import DataService from '../../dataService';
+import './GetUsers.css'
 
 class GetUsers extends React.Component {
   constructor(props) {
+    const loginData = JSON.parse(localStorage.getItem("login"));
     super(props)
     this.state = {
-      data: []
+      data: [],
+      token: loginData.result.token
     };
     this.client = new DataService();
   }
@@ -16,15 +19,15 @@ class GetUsers extends React.Component {
 
   handleGetUsers() {
     
-      this.client.getUsers().then(response => {
+      this.client.getUsers(this.state).then(response => {
         // alert(JSON.stringify(result.data))
-        console.log(response)
-        console.log(response.data.users)
+        
         this.setState({ data: response.data.users })
       });
         
     
   }
+
 
   render() {
     const { loading, error } = this.props;
@@ -33,7 +36,7 @@ class GetUsers extends React.Component {
     return (
       <div className="GetUsers">
           <ul>
-    {this.state.data.map(d => <div><li key={d.displayName}>{d.displayName}</li><li key={d.about}>{d.about}</li></div>)}
+    {this.state.data.map(d => <div><li key={d.displayName}>{d.displayName}</li></div>)}
            </ul>
          
          </div>

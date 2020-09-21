@@ -20,19 +20,28 @@ class dataService {
     }
 
     deleteUser(userData3) {
-        console.log(userData3.token)
+        
         return this.client.delete(this.url + '/users/' + userData3.username, {
             headers: { Authorization: "Bearer " + userData3.token}
           })
     }
 
-    // deleteUser = (userData3) => {
-
-    // }
-
-
     getProfile(userData4) {
-        return this.client.get(this.url + '/users/' + userData4, userData4)
+        
+        return this.client.get(this.url + '/users/' + userData4, {
+            headers: { Authorization: "Bearer " + userData4.token}
+          })
+    }
+   
+    updateUser(userData5) {
+        console.log(userData5)
+        return this.client.patch(this.url + '/users/' + userData5.username, {
+            password: userData5.password,
+            about: userData5.about,
+            displayName: userData5.displayName
+        }, {
+            headers: { Authorization: "Bearer " + userData5.token}
+          })
     }
 }
 
