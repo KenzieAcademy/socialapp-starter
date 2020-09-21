@@ -255,7 +255,11 @@ const style = {
                          <br />
                           <p>Email:<a href="mailto:someone@example.com">Send email</a></p>
                           {/* end of the devs profile */}
+                          
                         </Card>
+
+
+                        
                       </Col>
                     </Row>
                   </div>
