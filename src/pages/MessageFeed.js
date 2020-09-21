@@ -7,6 +7,7 @@ import Post from "../components/post/Post";
 import Button from "react-bootstrap/Button";
 import Popover from "react-bootstrap/Popover";
 import { OverlayTrigger } from "react-bootstrap";
+import "../pages/MessageFeed.css";
 
 class MessageFeed extends React.Component {
   constructor(props) {
@@ -15,7 +16,7 @@ class MessageFeed extends React.Component {
     this.api = new SocialappService();
     this.popover = (
       <Popover id="newPost">
-        <Popover.Title as="h2">New Post</Popover.Title>
+        {/* <Popover.Title as="h2">NEW POST</Popover.Title> */}
         <Popover.Content>
           <Post />
         </Popover.Content>
@@ -37,27 +38,30 @@ class MessageFeed extends React.Component {
     if (this.state.messages.length === 0) {
       return (
         <div className="MessageList">
-          <h1>MessageList</h1>
-          <h3>LOADING....</h3>
+          <h1>MESSAGE LIST IS LOADING.....</h1>
         </div>
       );
     }
     return (
       <div className="MessageList">
         <Menu isAuthenticated={this.props.isAuthenticated} />
-        <h1>Message Feed</h1>
+        <h1>MESSAGE FEED</h1>
         <OverlayTrigger
           trigger="click"
           placement="bottom"
           overlay={this.popover}
         >
-          <Button variant="primary">Make A New Post</Button>
+          <Button variant="dark" size="lg">
+            MAKE A POST
+          </Button>
         </OverlayTrigger>
-        <ul>
-          {this.state.messages.map((messageObject) => {
-            return <Message {...messageObject} />;
-          })}
-        </ul>
+        <div className="TheFeed">
+          <ul>
+            {this.state.messages.map((messageObject) => {
+              return <Message {...messageObject} />;
+            })}
+          </ul>
+        </div>
       </div>
     );
   }

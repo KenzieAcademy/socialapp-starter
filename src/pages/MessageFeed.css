@@ -2,29 +2,21 @@
   box-sizing: border-box;
 }
 
-#login-form {
+.MessageList {
   position: relative;
   margin: auto;
-  top: 30px;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  font-size: 25px;
-  width: 400px;
+  text-align: center;
   color: #b80c12;
 }
 
-.LoginButton {
+.TheFeed {
   position: relative;
   margin: auto;
-  font-size: 30px;
+  text-align: left;
 }
 
-.LoginForm {
-  background-color: white;
+#newPost {
   position: relative;
   margin: auto;
-  width: 475px;
-  height: 375px;
 }

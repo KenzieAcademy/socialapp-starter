@@ -1,0 +1,20 @@
+* {
+  box-sizing: border-box;
+}
+
+.Home {
+  position: relative;
+  margin: auto;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  text-align: center;
+}
+
+/* .Home #RegistrationButton {
+  position: relative;
+  margin: auto;
+}
+
+.Home #LoginButton {
+  position: relative;
+  margin: auto;
+} */

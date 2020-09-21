@@ -28,19 +28,22 @@ class Post extends React.Component {
 
   render() {
     return (
-      <Card>
-        <Card.Title>Post New Message</Card.Title>
-        <Card.Body>
-          <div className="PostForm">
+      <div className="PostForm">
+        <Card>
+          {/* <Card.Title>POST A MESSAGE</Card.Title> */}
+          <Card.Body>
             <Form>
               <Form.Control
                 type="text"
                 name="text"
                 as="textarea"
                 rows="3"
-                placeholder="Your amazing message"
+                placeholder="YOUR AMAZING MESSAGE HERE:"
                 onChange={this.handleChange}
               />
+              <div>
+                - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              </div>
               <OverlayTrigger
                 placement="right"
                 overlay={
@@ -51,15 +54,18 @@ class Post extends React.Component {
                   </Tooltip>
                 }
               >
-                <Form.File id="uploadImage" label="Upload Image" disabled />
+                <Form.File id="uploadImage" label="UPLOAD IMAGE:" disabled />
               </OverlayTrigger>
             </Form>
-            <Button variant="info" onClick={this.handlePost}>
-              Post!
+            <div>
+              - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+            </div>
+            <Button variant="dark" onClick={this.handlePost}>
+              POST AWAY!
             </Button>
-          </div>
-        </Card.Body>
-      </Card>
+          </Card.Body>
+        </Card>
+      </div>
     );
   }
 }

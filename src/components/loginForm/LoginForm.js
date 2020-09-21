@@ -37,7 +37,7 @@ class LoginForm extends React.Component {
               onChange={this.handleChange}
             />
           </div>
-          <div>- - - - - - - - - - - - - - - - - - - -</div>
+          <div>- - - - - - - - - - - - - - - - - - - - - - - - - - - - -</div>
           <label htmlFor="password">PASSWORD</label>
           <div className="PasswordInput">
             <input
@@ -47,23 +47,13 @@ class LoginForm extends React.Component {
               onChange={this.handleChange}
             />
           </div>
-          <div>- - - - - - - - - - - - - - - - - - - -</div>
+
+          <div>- - - - - - - - - - - - - - - - - - - - - - - - - - - - -</div>
           <div className="LoginButton">
             <button type="submit" disabled={loading}>
-              <img
-                src="../../assets/images/Login_Button.png"
-                alt="Login Button"
-              />
+              LOGIN
             </button>
-
-            {/* <button
-              type="submit"
-              src="../../assets/images/Login_Button.png"
-              alt={"Login Button"}
-              disabled={loading}
-            ></button> */}
           </div>
-          <div className="JoinFooter">NOT A MEMBER YET? JOIN US!</div>
         </form>
         {loading && <Spinner name="circle" color="red" />}
         {error && <p style={{ color: "red" }}>{error.message}</p>}

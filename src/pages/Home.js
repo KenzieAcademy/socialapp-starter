@@ -4,6 +4,7 @@ import RegistrationForm from "../components/registrationForm/RegistrationForm";
 import Menu from "../components/menu/Menu.js";
 import { userIsNotAuthenticated } from "../redux/HOCs";
 import Button from "react-bootstrap/Button";
+import "../pages/Home.css";
 
 class Home extends React.Component {
   constructor(props) {
@@ -43,22 +44,26 @@ class Home extends React.Component {
       <div className="Home">
         <Menu />
         <br></br>
-        <Button
-          variant={this.state.loginActive}
-          size="lg"
-          disabled={this.state.isRegistered}
-          onClick={() => this.loginButton()}
-        >
-          Login
-        </Button>
-        <Button
-          variant={this.state.registerActive}
-          size="lg"
-          disabled={!this.state.isRegistered}
-          onClick={() => this.registerButton()}
-        >
-          Register
-        </Button>
+        <div id="LoginButton">
+          <Button
+            variant={this.state.loginActive}
+            size="lg"
+            disabled={this.state.isRegistered}
+            onClick={() => this.loginButton()}
+          >
+            LOGIN
+          </Button>
+        </div>
+        <div id="RegisterButton">
+          <Button
+            variant={this.state.registerActive}
+            size="lg"
+            disabled={!this.state.isRegistered}
+            onClick={() => this.registerButton()}
+          >
+            REGISTER
+          </Button>
+        </div>
         {form}
       </div>
     );
