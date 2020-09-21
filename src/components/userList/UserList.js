@@ -1,5 +1,5 @@
 import React from 'react'
-import DataService from "../../../dataService"
+import DataService from "../dataService/DataService"
 
 class UserList extends React.Component {
     constructor(props) {
@@ -11,7 +11,7 @@ class UserList extends React.Component {
     }
     render() {
         return (
-            this.props.client.get(this.url)
+        <h1>user list here</h1>
 
 
         )
