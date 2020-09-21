@@ -49,7 +49,10 @@ class DataService {
     setUsersPicture(uploadPicture) {
         return this.client.get(this.url + "/users/{props.username}/picture", uploadPicture);
     }
-      
+    getMessages() {
+        return this.client.get(this.url + "/messages")
+    }
+   
       
 }
 export default DataService;
