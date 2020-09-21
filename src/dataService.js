@@ -3,7 +3,7 @@ import { store } from "./redux";
 
 class DataService {
 
-  constructor(url = 'https://socialapp-api.herokuapp.com', client = axios.create()) {  
+  constructor(url = 'https://socialapp-api.herokuapp.com', client = axios.create()) {
     this.url = url;
     this.client = client;
   }
@@ -22,11 +22,11 @@ class DataService {
     const username = loginData.username
     const url = this.url + "/users/" + username
     return this.client.patch(url, userData, {
-        headers: { Authorization: `Bearer ${token}` }, 
+      headers: { Authorization: `Bearer ${token}` },
     })
-    .then((error) => {
+      .then((error) => {
         console.log(error)
-    })
+      })
   }
 
 }
