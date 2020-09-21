@@ -36,12 +36,12 @@ class Feed extends Component {
             console.log(result.data.messages)
         })
     }
-   
+
     // getTime = () => {
     //     //get all message and filter
     //     const postTime = JSON.parse(userfeed.getItem("createdAt"))
     //     this.setState({ createdAt })
-   
+
     //when the component mounts, get the first message
     componentDidMount() {
         this.getMessages()
@@ -50,20 +50,16 @@ class Feed extends Component {
     }
 
     // Function to display data.text .username
-    //Alec WTF!!   #$%%^
-    //display the results on the screen BULLET POINT 2:       //Conditional Rendering//
+
     render() {
         return (
-            <div className='feed'>
+            <div >
                 <ul>
-                    {this.state.feed.map(message => <li><h3>{message.username}</h3>{message.text} {message.createdAt}</li>)}
-                    </div>
-                    <div>
+                    {this.state.feed.map(message => <li>
+                        <h3>{message.username}</h3>
+                        {message.text} {message.createdAt}</li>)}
 
-
-                        
-                    </div>
-                    {/* {this.state.feed.map(message => <li>{message.text}</li>)} */}
+                    {this.state.feed.map(message => <li>{message.text}</li>)}
                 </ul>
             </div>
 
