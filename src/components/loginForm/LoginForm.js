@@ -1,6 +1,6 @@
 import React from 'react';
 import Spinner from "react-spinkit";
-import { Checkbox, Button, Input } from "antd"
+import { Checkbox, Button, Input } from "antd";
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 
 import { withAsyncAction } from "../../redux/HOCs";
@@ -61,7 +61,7 @@ class LoginForm extends React.Component {
           <Checkbox
           color="white"
           name="remember" valuePropName="checked"
-          > Remember Me 
+          > <span className="remember-me">Remember Me </span>
           </Checkbox>  
           
           <a className="login-form-forgot" href="">
