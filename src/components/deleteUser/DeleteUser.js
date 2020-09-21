@@ -38,5 +38,7 @@ class DeleteNow extends Component {
         )
     }
 }
+// then take to blank page which says: 'Thank you. Now make a new user."
+//window.location = "https://www.example.com";(use where you would use an 'alert'.)
 
 export default DeleteNow;
