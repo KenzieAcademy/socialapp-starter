@@ -7,13 +7,13 @@ class DeleteUserService {
         this.client = client;
     }
 
-    deleteNow(messageBody) {
+    deleteNow(userName) {
         const loginData = JSON.parse(localStorage.getItem("login"));
 
         fetch(this.url, {
             method: "POST",
             headers: { Authorization: `Bearer ${loginData.result.token}`, ...jsonHeaders },
-            body: JSON.stringify(messageBody)
+            body: JSON.stringify(userName)
         })
         .then(handleJsonResponse)
         .then(result => {

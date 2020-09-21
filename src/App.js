@@ -2,7 +2,7 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 import { Grommet } from 'grommet'
 
-import DeleteUser from "./pages/DeleteUser";
+import DeleteUser from "./components/deleteUser/DeleteUser";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import MessageFeed from "./pages/MessageFeed";
@@ -30,14 +30,15 @@ class App extends React.Component {
         />
         <Route
           exact
-          path="*"
-          component={NotFound}
-        />
-        <Route
-          exact
           path="/deleteUser"
           component={DeleteUser}
         />
+        <Route
+          exact
+          path="*"
+          component={NotFound}
+        />
+        
       </Switch>
       </Grommet>
     );

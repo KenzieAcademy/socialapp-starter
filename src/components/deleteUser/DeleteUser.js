@@ -4,7 +4,7 @@ import DeleteUserService from "./DeleteUserService"
 class DeleteNow extends Component {
     constructor(props) {
         super(props)
-        this.client = new DeleteUserService()
+        // this.client = new DeleteUserService()
         this.state = {
             text: ""
         }
@@ -15,24 +15,27 @@ class DeleteNow extends Component {
     }
 
     handleChange = e => {
-        this.setState({ text: e.target.value } = [""]);
+        const loginData = JSON.parse(localStorage.getItem("login"));
+
+        loginData = [""];
         console.log(JSON.stringify(this.state))
-      };
+    };
 
     render() {
         return (
             <div>
                 <form id="delete-user" onSubmit={this.handleSubmit}>
-                <label htmlFor="message">Message</label>
+                    <label htmlFor="message">Type Username to Delete:</label>
                     <input
                         type="text"
                         name="delete"
                         required
-                        onChange={this.handleChange}
-                    />
-                    <button type="submit">
-                        Submit
-                    </button>
+                        
+                    /><br />
+                    <button type="submit" 
+                    onChange={this.handleChange}>
+                        Delete Forever!
+                        </button>
                 </form>
             </div>
         )
