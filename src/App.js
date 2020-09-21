@@ -22,14 +22,16 @@ class App extends React.Component {
         />
         <Route
           exact
-          path="*"
-          component={NotFound}
-        />
-        <Route
-          exact
           path="/messagefeed"
           component={MessageFeed}
         />
+
+        <Route
+          exact
+          path="*"
+          component={NotFound}
+        />
+       
       </Switch>
     );
   }
