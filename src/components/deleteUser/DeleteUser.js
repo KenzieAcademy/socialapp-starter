@@ -1,29 +1,37 @@
 import React, { Component } from 'react'
 import DeleteUserService from "./DeleteUserService"
+import Menu from "../menu/Menu";
 
 class DeleteNow extends Component {
     constructor(props) {
         super(props)
-        // this.client = new DeleteUserService()
+        this.client = new DeleteUserService()
+
         this.state = {
             text: ""
         }
+        const loginData = JSON.parse(localStorage.getItem("login"));
+
     }
 
     handleSubmit = e => {
-        this.client.deleteNow(this.state)
+        this.client.deleteNow('loginData')
     }
 
     handleChange = e => {
-        const loginData = JSON.parse(localStorage.getItem("login"));
 
-        loginData = [""];
-        console.log(JSON.stringify(this.state))
+        // loginData = [""];
+        // console.log(JSON.stringify(this.state))
+        console.log("login")
+
     };
 
     render() {
         return (
             <div>
+                < br/>
+                <Menu />
+                <br />
                 <form id="delete-user" onSubmit={this.handleSubmit}>
                     <label htmlFor="message">Type Username to Delete:</label>
                     <input
