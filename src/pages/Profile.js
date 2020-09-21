@@ -4,6 +4,7 @@ import UserCard from "../components/userCard/UserCard";
 import Layout from '../components/Layout'
 import { userIsAuthenticated } from "../redux/HOCs";
 import SendPost from '../components/sendPost/SendPost'
+import AvatarImage from '../components/Avatarimage/avatarImage'
 
 
 class Profile extends React.Component {
@@ -16,6 +17,7 @@ class Profile extends React.Component {
         <UserCard />
       </div>
       </Layout>
+
 
     );
   }
