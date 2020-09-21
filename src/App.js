@@ -1,11 +1,11 @@
 import React from "react";
-import { Switch, Route} from "react-router-dom";
-
+import { Switch, Route } from "react-router-dom";
+import 'antd/dist/antd.css';
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
-import RegistrationForm from "./components/registrationForm/RegistrationForm";
-import Messages from "./pages/Messages"
+import Registration from "./pages/Registration";
+import MessageList from "./pages/MessageList"
 
 class App extends React.Component {
   render() {
@@ -34,6 +34,11 @@ class App extends React.Component {
           component={Messages}
         />
 
+        <Route
+          exact
+          path="/messagefeed"
+          component={MessageList}
+        />
         <Route
           exact
           path="*"

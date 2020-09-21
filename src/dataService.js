@@ -1,4 +1,3 @@
-//import the axios HTTP client to communicate with the API
 import axios from 'axios';
 import { login } from './redux/stateReducers/auth';
 
