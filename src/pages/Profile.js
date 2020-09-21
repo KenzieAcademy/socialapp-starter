@@ -1,8 +1,7 @@
 import React from "react";
 
 import { userIsAuthenticated } from "../redux/HOCs";
-import Messages from './Message'
-import Menu from "../components/menu/Menu";
+
 import EditProfile from '../components/editprofile/EditProfile'
 import ProfilePageMain from "./ProfilePageMain";
 
@@ -45,7 +44,7 @@ class Profile extends React.Component {
    let content =(
      <>
      
-     <Menu isAuthenticated={this.props.isAuthenticated} />
+     
       <ProfilePageMain/>
       
 
