@@ -1,6 +1,9 @@
 import React from "react";
 import Menu from "../components/menu/Menu";
 import { userIsAuthenticated } from "../redux/HOCs";
+import cowboy3 from "../components/assets/images/cowboy3.png";
+import cowboy4 from "../components/assets/images/cowboy4.png";
+import cowgirl1 from "../components/assets/images/cowgirl1.png";
 import UpdateUserForm from "../components/updateUserForm/UpdateUserForm";
 import DataService from "../DataService";
 
@@ -38,7 +41,10 @@ class Profile extends React.Component {
     return (
       <div className="Profile">
         <Menu isAuthenticated={this.props.isAuthenticated} />
-        <h2>Profile</h2>
+      <img className="cowboy3" src={cowboy3} alt="cowboy3" />
+        <img className="cowboy4" src={cowboy4} alt="cowboy4" />
+        <img className="cowgirl1" src={cowgirl1} alt="cowgirl1" />  
+      <h2>Profile</h2>
         <h4>Profile Photo: </h4>
         <h4>Username: {loginData.username}</h4>
         <h4>Display Name: {displayName}</h4>
