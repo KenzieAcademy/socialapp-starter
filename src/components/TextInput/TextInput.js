@@ -50,7 +50,7 @@ class TextInput extends React.Component {
         render() {
             console.log(loginData)
             return (
-                    <div>
+                    <div id="inputTextBorderBox">
                         <div id="testing1">Your Text Here</div>
                     
                         <form>

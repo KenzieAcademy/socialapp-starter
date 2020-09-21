@@ -17,20 +17,26 @@ class MessageFeed2 extends React.Component {
     render () {
         if (this.state.messages.length === 0)
             return (
-                <div className="messageFeed">
-                    {/* <Menu /> */}
-                    <h1>Message Feed</h1>
-                    <h3>loading...</h3>
+                <div id="feedBackground">
+                    <div className="messageFeed">
+                        {/* <Menu /> */}
+                        <h1>Message Feed</h1>
+                        <h3>loading...</h3>
+                    </div>
+
                 </div>
             )
         return (
-            <div className="MessageFeed">
-                <menu />
-                <h1>Message Feed</h1>
-                <ul>
-                    {this.state.messages.map(msg => <Message key={msg.id} {...msg}/>)}
-                </ul>
-            </div>
+            <div id="feedBackground">
+                <div className="messageFeedTitle">
+                    <h1 className="messageFeedTitle2">Message Feed</h1>
+                    <div className="MessageFeed">
+                        <menu />
+                            {this.state.messages.map(msg => <Message key={msg.id} {...msg}/>)}
+                    </div>
+
+                    </div>
+                </div>
         )
     }
 }
