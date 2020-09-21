@@ -11,16 +11,6 @@ class Menu extends React.Component {
 
   render() {
     return (
-<<<<<<< HEAD
-      <div className="Menu" >
-        <h1>The Dragon's Den</h1>
-        {
-          this.props.isAuthenticated && (
-            <div id="menu-links">
-              <Link to="/Messagefeed">Message Feed</Link>
-              <Link to="/" onClick={this.handleLogout}>
-                Logout
-=======
       <div className="Menu">
         <h1><span>The Dragon's Den</span></h1>
 
@@ -29,7 +19,6 @@ class Menu extends React.Component {
             <Link to="/messagefeed">Message Feed</Link>
             <Link to="/" onClick={this.handleLogout}>
               Logout
->>>>>>> master
             </Link>
           </div>
         )
