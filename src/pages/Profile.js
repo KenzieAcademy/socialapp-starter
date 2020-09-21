@@ -1,5 +1,5 @@
 import React from "react";
-import "antd/dist/antd.css";
+// import "antd/dist/antd.css";
 import Menu from "../components/menu/Menu";
 import UpdateUser from "../components/updateUser/UpdateUser";
 import { userIsAuthenticated } from "../redux/HOCs";
