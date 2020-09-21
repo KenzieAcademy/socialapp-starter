@@ -5,6 +5,8 @@ import GetUsers from "../components/getUsers/GetUsers";
 import DeleteUser from "../components/deleteUser/DeleteUser";
 
 
+import GetUsers from "../components/getUsers/GetUsers";
+
 class Profile extends React.Component {
   
   render() {
@@ -13,7 +15,10 @@ class Profile extends React.Component {
         <Menu isAuthenticated={this.props.isAuthenticated} />
         <h2>Profile</h2>
         <GetUsers />
+<<<<<<< HEAD
         <DeleteUser />
+=======
+>>>>>>> lesa-branch
       </div>
     );
   }

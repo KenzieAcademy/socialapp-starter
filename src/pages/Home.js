@@ -10,10 +10,15 @@ class Home extends React.Component {
     return (
       <div className="Home">
         <Menu />
-        <h2>Your One Stop Shop For All your traveling Needs</h2>
+        <h2>Your favorite travel microblogging platform</h2>
         <LoginForm />
+<<<<<<< HEAD
         <Link to='/registration'>New user? Register Here</Link>
         
+=======
+        <br />
+        <Link to="/RegistrationForm">New user? Register here</Link>
+>>>>>>> lesa-branch
       </div>
     );
   }
