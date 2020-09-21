@@ -1,13 +1,13 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 import 'antd/dist/antd.css';
-import 'semantic-ui-css/semantic.min.css'
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
 import NewUser from "./pages/NewUser";
-import Menu from "./components/menu/Menu";
-import MessageFeed from "./components/feed/MessageFeed";
+import MessageFeed from "./pages/MessageFeed";
+import ContactUs from "./pages/ContactUs";
+import Registration from "./pages/Registration"
 
 
 
@@ -16,7 +16,6 @@ class App extends React.Component {
   render() {
     return (
       <div>
-      <Menu />
       <Switch>
         <Route
           exact
@@ -38,6 +37,16 @@ class App extends React.Component {
             path="/MessageFeed"
             component={MessageFeed}
           />
+          <Route
+          exact
+          path="/ContactUs"
+          component={ContactUs}
+        />
+        <Route
+          exact
+          path="/Registration"
+          component={Registration}
+        />
         <Route
           exact
           path="*"

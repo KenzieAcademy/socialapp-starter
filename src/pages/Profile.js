@@ -1,22 +1,15 @@
 import React from "react";
-// import Menu from "../components/menu/Menu";
 import { userIsAuthenticated } from "../redux/HOCs";
+import MenuUnauthenticated from "../components/menu/MenuUnauthenticated";
+import theQuestBoardHeader from '../media/theQuestBoardHeader.png'
 
  
 
-import { Layout, Carousel, Card,Menu, Col, Row, BackTop } from 'antd';
-import {
-  UpOutlined, 
-  AppstoreOutlined,
-  BarChartOutlined,
-  CloudOutlined,
-  ShopOutlined,
-  TeamOutlined,
-  UserOutlined,
-  UploadOutlined,
-  VideoCameraOutlined,
-  createFromIconfontCN,
-} from '@ant-design/icons';
+import { Layout,Menu, BackTop ,Header,Sider,Content, Footer} from 'antd';
+import {UpOutlined } from '@ant-design/icons';
+
+  
+  
 
 
 // comment section 
@@ -25,10 +18,10 @@ import {
 
 class Profile extends React.Component {
   super(props) {
-    this.state = {
-      user: [],
-      picture: "",
-    }
+    // this.state = {
+    //   user: [],
+    //   picture: "",
+    // }
 
 
 
@@ -42,21 +35,11 @@ class Profile extends React.Component {
 
   render() {
    
-
-    
-    // for the icons
-    const IconFont = createFromIconfontCN({
-      scriptUrl: '//at.alicdn.com/t/font_8d5l8fzk5b87iudi.js',
-    });
-
     const { Header, Content, Footer, Sider } = Layout;
-    const contentStyle = {
-      height: '200px',
-      color: '#fff',
-      lineHeight: '200px',
-      textAlign: 'center',
-      background: 'blue',
-    };
+    
+   
+
+
 // for backtop
 const style = {
   height: 40,
@@ -73,190 +56,30 @@ const style = {
       <div className="Profile" style={{ height: '600vh', padding: 8 }}>
         <Menu isAuthenticated={this.props.isAuthenticated} />
         
-
-      
-
-       
+        
         <Layout>
-          <Sider
-            style={{
-              overflow: 'auto',
-              height: '100vh',
-              position: 'fixed',
-              left: 0,
-            }}
-          >
-            <div className="logo" />
-            
-          </Sider>
-          <Layout className="site-layout" style={{ marginLeft: 200 }}>
-            <Header className="site-layout-background" style={{ padding: 0 }} />
-            <Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>
-              <div className="site-layout-background" style={{ padding: 24, textAlign: 'center' }}>
-
-
-              
-              
-              
-              
-                content
+    <MenuUnauthenticated />
+    <Layout className="site-layout" style={{ marginLeft: 190 }}>
+      <Header className="mainHeader" style={{ padding: 0, textAlign: 'center'}}> <img className="theQuestBoardHeader" src={theQuestBoardHeader} alt="QuestBoard Header" /> </Header>
+      <Header className="subHeader" ><h2>Quests will appear here!</h2> </Header>
+      <Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>
+        <div className="site-layout-background" style={{ padding: 24, textAlign: 'center' }}>
+       
+      
+        
         </div>
-            </Content>
-            <Footer style={{ textAlign: 'center' }} ><em><b> Designed Using Ant  ©2018 by Klinesettes</b></em>
-           
-
-                {/*  */}
-             
-              <Carousel  autoplay autoplaySpeed="15">
-                {/* start of the dev card  */}
-                <div>  
-                
-                  <h3 style={contentStyle}>
-
-                    <div className="site-card-wrapper">
-                      <Row gutter={25}>
-                        <Col span={5}>
-                          <Card style={{ width: 240 }}
-                            cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" height="200px" />}></Card>
-                        </Col>
-
-                        <Col span={8}>
-                          <Card title="Just a little About me ."
-                            bordered={false}>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</Card>
-
-
-                        </Col>
-                        <Col span={8}>
-                          <Card title="Card title"
-                            bordered={false}>Social Media: &nbsp;&nbsp;&nbsp;<a href="twitter.com"><IconFont type="icon-twitter" style={{ fontSize: '40px', color: '#067c89' }} /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a><a href="facebook.com"><IconFont type="icon-facebook" style={{ fontSize: '40px', color: 'blue' }} /></a>
-                            <br />
-                            Location:
-                           <br />
-                            <p>Email:<a href="mailto:someone@example.com">Send email</a></p>
-                            {/* end of the devs profile */}
-                          </Card>
-                        </Col>
-                      </Row>
-                    </div>
-
-                  </h3>
-
-
-                </div>
-                {/* end of the dev card */}
-                <div>
-                  <h3 style={contentStyle}> <div className="site-card-wrapper">
-                    <Row gutter={25}>
-                      <Col span={5}>
-                        <Card style={{ width: 240 }}
-                          cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" height="200px" />}
-                        >
-                        </Card>
-
-
-                      </Col>
-                      <Col span={8}>
-                        <Card title="Just a little About me ."
-                          bordered={false}>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</Card>
-
-
-                      </Col>
-                      <Col span={8}>
-                        <Card title="Card title"
-                          bordered={false}>Social Media: &nbsp;&nbsp;&nbsp;<a href="twitter.com"><IconFont type="icon-twitter" style={{ fontSize: '40px', color: '#067c89' }} /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a><a href="facebook.com"><IconFont type="icon-facebook" style={{ fontSize: '40px', color: 'blue' }} /></a>
-                          <br />
-                          Location:
-                          <br />
-                        </Card>
-                      </Col>
-                    </Row>
-                  </div>
-                  </h3>
-                </div>
-                
-                <div>  
-                
-                  <h3 style={contentStyle}>
-
-                    <div className="site-card-wrapper">
-                      <Row gutter={25}>
-                        <Col span={5}>
-                          <Card style={{ width: 240 }}
-                            cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" height="200px" />}></Card>
-                        </Col>
-
-                        <Col span={8}>
-                          <Card title="Just a little About me ."
-                            bordered={false}>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</Card>
-
-
-                        </Col>
-                        <Col span={8}>
-                          <Card title="Card title"
-                            bordered={false}>Social Media: &nbsp;&nbsp;&nbsp;<a href="twitter.com"><IconFont type="icon-twitter" style={{ fontSize: '40px', color: '#067c89' }} /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a><a href="facebook.com"><IconFont type="icon-facebook" style={{ fontSize: '40px', color: 'blue' }} /></a>
-                            <br />
-                            Location:
-                           <br />
-                            <p>Email:<a href="mailto:someone@example.com">Send email</a></p>
-                            {/* end of the devs profile */}
-                          </Card>
-                        </Col>
-                      </Row>
-                    </div>
-
-                  </h3>
-
-
-                </div>
-                <div>  
-                
-                <h3 style={contentStyle}>
-
-                  <div className="site-card-wrapper">
-                    <Row gutter={25}>
-                      <Col span={5}>
-                        <Card style={{ width: 240 }}
-                          cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" height="200px" />}></Card>
-                      </Col>
-
-                      <Col span={8}>
-                        <Card title="Just a little About me ."
-                          bordered={false}>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</Card>
-
-
-                      </Col>
-                      <Col span={8}>
-                        <Card title="Card title"
-                          bordered={false}>Social Media: &nbsp;&nbsp;&nbsp;<a href="twitter.com"><IconFont type="icon-twitter" style={{ fontSize: '40px', color: '#067c89' }} /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a><a href="facebook.com"><IconFont type="icon-facebook" style={{ fontSize: '40px', color: 'blue' }} /></a>
-                          <br />
-                          Location:
-                         <br />
-                          <p>Email:<a href="mailto:someone@example.com">Send email</a></p>
-                          {/* end of the devs profile */}
-                          
-                        </Card>
-
-
-                        
-                      </Col>
-                    </Row>
-                  </div>
-
-                </h3>
-
-
-              </div>
-              </Carousel>
-
-            </Footer>
-          </Layout>
-        </Layout>
+      </Content>
+      <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
+    </Layout>
+  </Layout>
+       
 
         <BackTop>
       <div style={style}><UpOutlined /></div>
     </BackTop>
 
 
+   
 
       </div>
     );
