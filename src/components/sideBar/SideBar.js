@@ -1,5 +1,5 @@
 import React from "react";
-import Clock from "../../pages/clock/Clock";
+import Clock from "../clock/Clock";
 
 
 class SideBar extends React.Component {
@@ -7,7 +7,7 @@ class SideBar extends React.Component {
 
 
         return (
-            <div>
+            <div className="SideBar">
                 What Time IS It?
                 <Clock />
             </div>

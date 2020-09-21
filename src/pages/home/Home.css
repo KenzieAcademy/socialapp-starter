@@ -1,6 +1,8 @@
 .Home {
   background-image: url("../../components/assets/images/backgrounds/Vortex_storm.jpg");
-  height: 200vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
   width: 100vw;
   color: white;
   font-family: Kufam;

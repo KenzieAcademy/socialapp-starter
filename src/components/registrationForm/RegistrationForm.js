@@ -4,8 +4,15 @@ import Spinner from "react-spinkit";
 import { withAsyncAction } from "../../redux/HOCs";
 
 import socialAppService from "../../socialAppService";
+// ^^^ Is this import from socialAppService needed? ^^^
 
 class RegistrationForm extends React.Component {
+
+  handleRegistration = event => {
+    event.preventDefault();
+    this.props.registerUser();
+  }
+
   constructor(props) {
     super(props)
 

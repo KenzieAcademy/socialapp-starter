@@ -1,4 +1,4 @@
-.Menu {
+.SideBar {
   font-family: Kufam;
   background-color: black;
   display: flex;
@@ -9,7 +9,7 @@
   border: 5em, solid, magenta;
 }
 
-#menu-links {
+/* #menu-links {
   font-family: Kufam;
   display: flex;
   padding-left: 1em;
@@ -21,4 +21,4 @@
   color: greenyellow;
   text-decoration: underline;
   cursor: pointer;
-}
+} */
