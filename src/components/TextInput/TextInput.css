@@ -1,16 +1,13 @@
-#messagesAndInput {
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: flex-end;
-}
-
-#MessageInput {
-    border: solid red 5px;
-}
-
-#appendToThis {
+#feedMessageInput {
+    background-color: white;
+    width: 40%;
     position: relative;
-    top: 191px;
-    left: 203px;
-    width: 84%;
+    left: 40%;    
+    
 }
+
+#TextSubmitButton {
+    position: relative;
+    left: 40%;   
+}
+
