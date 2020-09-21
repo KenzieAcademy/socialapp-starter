@@ -8,7 +8,12 @@ import "../components/updateUser/UpdateUser.css";
 class Profile extends React.Component {
   render() {
     return (
+<<<<<<< HEAD
+      <div className="Profile">
+
+=======
       <div className="Profile" id="profile">
+>>>>>>> master
         <Menu isAuthenticated={this.props.isAuthenticated} />
         <div id="left-column">
           <h2>Display Name</h2>
