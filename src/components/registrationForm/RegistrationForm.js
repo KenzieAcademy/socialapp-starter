@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Spinner from "react-spinkit";
-// import { withAsyncAction } from "../../redux/HOCs";
 import "./RegistrationForm.css";
 import DataService from "../../dataService";
 import { Button } from "@material-ui/core";
@@ -20,7 +19,6 @@ class RegistrationForm extends React.Component {
         };
         this.client = new DataService();
     }
-
     handleRegistration = e => {
         e.preventDefault();
         this.client.registerUser(this.state.formData).then(result => {
@@ -36,16 +34,10 @@ class RegistrationForm extends React.Component {
     };
     submittedForm() {
         this.setState({
-            username: "",
-            password: "",
-            displayName: "",
             submitted: true
 
         })
     }
-
-
-
     render() {
         const { loading, error } = this.props;
         if (this.state.submitted) {
@@ -53,7 +45,7 @@ class RegistrationForm extends React.Component {
                 <Link to="/">Return to Login</Link>
             )
         }
-        else{
+        else {
             return (
                 <div className="RegistrationForm">
                     <form id="registration-form" onSubmit={this.handleRegistration}>
@@ -81,7 +73,7 @@ class RegistrationForm extends React.Component {
                         />
                         <button type="submit" disabled={loading}>
                             Register
-            </button>
+                        </button>
                     </form>
                     {loading && <Spinner name="circle" color="blue" />}
                     {error && <p style={{ color: "red" }}>{error.message}</p>}

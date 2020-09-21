@@ -4,8 +4,9 @@ import axios from 'axios'
 class Api extends Component {
     constructor(props) {
         super(props);
-        this.state = {  }
+        this.state = { 
             person:[]
+        }
     }
     componentDidMount() {
         axios.get('https://github.com/EBIII1977/socialapp-starter.git/auth/login')
