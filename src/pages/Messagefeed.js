@@ -1,4 +1,8 @@
 import React, { Component } from "react";
+import "../components/menu/Menu.css";
+
+
+import CommentBox from "../components/Comments/CommentBox";
 //Pages imported below
 import Profile from "../pages/Profile";
 
@@ -11,10 +15,14 @@ const { Header, Sider, Content, Footer } = Layout;
 class Messagefeed extends Component {
     constructor(props) {
         super(props)
-        this.state = {
+        this.state =
+        {
             author: '',
-            comment: ''
+            children: ''
         }
+
+
+
     }
     //Below here, the(function), will reflect a change to the VALUE inside, or of an element
     //onChange attribute should contain this
@@ -27,17 +35,29 @@ class Messagefeed extends Component {
     }
 
 
-    handleSubmit(event) {
-        alert('submit button was clicked' + this.state.text);
+    handleSubmit = (event) => {
         event.preventDefault();
+        this.setState({
+            submitted: true
+        })
+    }
 
+
+    buttonHandler = (event) => {
+        console.log(event.value)
     }
 
     render() {
+
+
+
         return (
             <Layout>
 
                 <Header>
+                    <div className="">
+                        <h1><span>The Dragon's Den</span></h1>
+                    </div >
                 </Header>
 
 
@@ -48,12 +68,11 @@ class Messagefeed extends Component {
                     </Content>
 
                     <Sider>
-                        <form>
+                        <form  >
                             <label>Comment Section</label>
+                            <CommentBox />
                             <textarea row="1" cols="20"></textarea>
-                            <button type="submit" value='submit'></button>
-
-
+                            <input onClick={this.buttonHandler} id="submitComment" type="button" value="post" ></input>
                         </form>
                     </Sider>
                 </Layout>
