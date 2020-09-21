@@ -1,13 +1,13 @@
 import { jsonHeaders, handleJsonResponse } from "../../redux/actionCreators/constants";
 import axios from "axios"
 
-class PostMessageService {
+class DeleteUserService {
     constructor(url = 'https://socialapp-api.herokuapp.com/', client = axios.create()){
-        this.url = url + "messages";
+        this.url = url + "deleteUser";
         this.client = client;
     }
 
-    postMessage(messageBody) {
+    deleteNow(messageBody) {
         const loginData = JSON.parse(localStorage.getItem("login"));
 
         fetch(this.url, {
@@ -22,4 +22,4 @@ class PostMessageService {
     }
 };
 
-export default PostMessageService;
+export default DeleteUserService;
