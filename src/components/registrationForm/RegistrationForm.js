@@ -39,6 +39,7 @@ class RegistrationForm extends React.Component {
             required
             onChange={this.handleChange}
           />
+          <div>- - - - - - - - - - - - - - - - - - - - - - - - - - - - -</div>
           <label htmlFor="password">PASSWORD</label>
           <input
             type="password"
@@ -46,6 +47,7 @@ class RegistrationForm extends React.Component {
             required
             onChange={this.handleChange}
           />
+          <div>- - - - - - - - - - - - - - - - - - - - - - - - - - - - -</div>
           <label htmlFor="displayName">DISPLAY NAME</label>
           <input
             type="text"
@@ -53,6 +55,7 @@ class RegistrationForm extends React.Component {
             required
             onChange={this.handleChange}
           />
+          <div>- - - - - - - - - - - - - - - - - - - - - - - - - - - - -</div>
 
           <button type="submit" disabled={loading}>
             JOIN

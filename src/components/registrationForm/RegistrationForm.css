@@ -3,7 +3,6 @@
 }
 
 #registration-form {
-  /* background-color: white; */
   position: relative;
   margin: auto;
   top: 30px;
@@ -12,13 +11,14 @@
   text-align: center;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: 25px;
-  width: 400px;
+  color: #b80c12;
+  width: 340px;
 }
 
 .RegistrationForm {
-  background-color: white;
+  /* background-color: white; */
   position: relative;
   margin: auto;
-  width: 500px;
-  height: 400px;
+  width: 475px;
+  height: 490px;
 }
