@@ -1,9 +1,11 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-
+import 'antd/dist/antd.css';
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
+import Registration from "./pages/Registration";
+import MessageList from "./pages/MessageList"
 
 class App extends React.Component {
   render() {
@@ -18,6 +20,16 @@ class App extends React.Component {
           exact
           path="/profile/:username"
           component={Profile}
+        />
+        <Route
+          exact
+          path="/registration"
+          component={Registration}
+        />
+        <Route
+          exact
+          path="/messagefeed"
+          component={MessageList}
         />
         <Route
           exact
