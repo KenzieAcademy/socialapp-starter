@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import DeleteUserService from "./DeleteUserService"
 import Menu from "../menu/Menu";
+import { Link } from "react-router-dom";
+
 
 class DeleteNow extends Component {
     constructor(props) {
@@ -30,7 +32,20 @@ class DeleteNow extends Component {
         return (
             <div>
                 < br/>
-                <Menu />
+                <Menu isAuthenticated={this.props.isAuthenticated}
+                />
+                
+                <Link to="/deleteUser">Delete User</Link>
+            <Link to="/messagefeed">Message Feed</Link>
+            
+                
+            
+            
+          
+
+
+
+
                 <br />
                 <form id="delete-user" onSubmit={this.handleSubmit}>
                     <label htmlFor="message">Type Username to Delete:</label>
