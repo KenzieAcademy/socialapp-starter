@@ -1,5 +1,7 @@
 body {
   background-color: #e0d8c0;
+  background-image: url(./media/33591.jpg);
+  background-size: cover;
   color: #47170e;
   margin: 0.5em;
   padding: 0;
@@ -15,19 +17,99 @@ code {
     monospace;
 }
 
+a {
+  color: #47170e;
+}
+
+a:hover {
+  color: #fff;
+}
+
 #components-layout-demo-fixed-sider .logo {
   height: 32px;
-  background:#908870;
   margin: 16px;
 }
 
 .logo {
   background-color: #e0d8c0;
-  padding: 5px;
-  color: rgb(255, 255, 255);
   font-size: 25px;
 }
 
-.site-layout .site-layout-background {
-  background: #e0d8c0;
+.site-layout-background {
+  background-color: #e0d8c0;
+  border: #47170e solid 5px;
+}
+
+.site-layout {
+  background-color: #e0d8c0;
+}
+
+.avatar-uploader > .ant-upload {
+  width: 128px;
+  height: 128px;
+}
+
+.sider {
+  background-color: #e0d8c0;
+  border: #47170e solid 0px;
+}
+
+.ant-menu-item-selected a, .ant-menu-item-selected a:hover {
+  color: #e0d8c0;
+
+}
+
+.ant-menu-vertical .ant-menu-item::after, .ant-menu-vertical-left .ant-menu-item::after, .ant-menu-vertical-right .ant-menu-item::after, .ant-menu-inline .ant-menu-item::after {
+  border-right: 3px solid #000;
+}
+
+
+.footer {
+  background-color: #11ffee00;
+}
+
+.ant-layout {
+  background-color: #11ffee00;
+  margin-top: -6px;
+}
+
+.ant-layout-footer {
+  background-color: #11ffee00;
+}
+
+.ant-layout-header {
+  background-color: #11ffee00;
+  width: 640px;
+  height: 150px;
+  margin: auto;
+}
+
+.subHeader {
+  width: 640px;
+  margin: auto;
+  height: min-content;
+  position: relative;
+  top: 20px;
+  background-color: #e0d8c0;
+}
+
+.ant-menu {
+  background-color: #e0d8c0;
+}
+
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+  background-color: #47170e;
+}
+
+Link.ant-menu-item-selected a, .ant-menu-item-active a:hover {
+  color: #fff;
+}
+
+Menu.Item, .ant-menu-item-selected {
+  color: #000;
+}
+
+.ant-menu.ant-menu-light.ant-menu-root.ant-menu-inline {
+  width: 195px;
+  max-width: 195px;
 }

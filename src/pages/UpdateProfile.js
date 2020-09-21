@@ -31,7 +31,7 @@ class Profile extends React.Component {
     this.state = {
       loading:false,
       username: [],
-      picture: "",
+      picture: null,
     }
     this.client = new QuestboardService()
   }
@@ -51,16 +51,12 @@ class Profile extends React.Component {
     }
   };
 
-  handlePicture = e => {
-    e.preventDefault();
-    this.client.SetPicture(this.state)
-      
-    
-  };
+  
   handleSubmit = event => {
-    this.setState({[event.target.Avatar]: event.target})
-    alert('Picture set!')
     event.preventDefault();
+    this.client.SetPicture(this.state.picture).then(result =>
+      {console.log(result)})
+    
       }
 
   
@@ -81,17 +77,13 @@ class Profile extends React.Component {
         <div className="Profile">
       <Menu isAuthenticated={this.props.isAuthenticated} />
        <h2>Update your character sheet!</h2>
-       <div><Image
-       name="avatar"
-       width={200}
-       height={200}
-       src={this.handlePicture}>
-       </Image></div>
+       
        
       <Upload
         name="avatar"
+        size="large"
         listType="picture-card"
-        className="avatar-uploader"
+        className="avatarUpload"
         showUploadList={false}
         action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
         beforeUpload={beforeUpload}
@@ -102,7 +94,7 @@ class Profile extends React.Component {
       <Button 
          type="primary" 
          className="submitButton" 
-         onClick={this.handlePicture}> Save picture
+         onClick={this.handleSubmit}> Save picture
       </Button>
         </div>
         </div>
