@@ -12,7 +12,7 @@ class Menu extends React.Component {
   render() {
     return (
       <div className="Menu">
-        <h1>SpiderMan</h1>
+        <h1>Somthing</h1>
         {this.props.isAuthenticated && (
           <div id="menu-links">
             <Link to="/pages/Profile.js">My Profile</Link>

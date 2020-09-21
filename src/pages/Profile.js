@@ -1,12 +1,23 @@
 import React from "react";
 import Menu from "../components/menu/Menu";
 import { userIsAuthenticated } from "../redux/HOCs";
+import { displayName } from "react-spinkit";
+import DataService from "../components/DataService";
 
-//Experimental Code Start
+
 
 class Profile extends React.Component {
   constructor(props) {
     super(props);
+
+   // profileData(DataService, displayName){
+      //this.props.history.get('/users/{username}')
+     // this.client.profileData(this.state).then(result =>{
+       // console.log(JSON.stringify(result.username))
+   // })
+    //render() {
+     //const {"username"}
+  //};
 
     this.state = {
       firstname: "",

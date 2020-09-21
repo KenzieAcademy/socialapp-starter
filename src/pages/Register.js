@@ -28,6 +28,7 @@ class Register extends Component {
         this.client.registerUser(this.state).then(result =>{
             console.log(JSON.stringify(result.data))
         })
+        
     }
         
     handleChange = (event) => {
