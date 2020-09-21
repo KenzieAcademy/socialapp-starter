@@ -1,54 +1,75 @@
-// import React from 'react';
-// import { Header, Icon, Menu, Segment, Sidebar, Grid, } from 'semantic-ui-react';
-// import { Link } from "react-router-dom";
-// import Clock from "../../pages/clock/Clock";
+import React from 'react';
+import { Header, Icon, Menu, Segment, Sidebar, Grid, Input, Container } from 'semantic-ui-react';
+import "./SideBar.css"
+import { Link } from "react-router-dom";
+import Clock from "../../pages/clock/Clock";
 
-// import UploadImage from "../addPhoto/AddPhoto";
+import UploadImage from "../addPhoto/AddPhoto";
 
 
-// const SidebarVisible = () => (
-//     <Grid colums={1}>
-//         <Grid.Column>
-//             <Sidebar.Pushable as={Segment.Group} raised>
-//                 <Sidebar
-//                     as={Menu}
-//                     animation='push'
-//                     icon='labeled'
-//                     inverted
-//                     vertical
-//                     visible
-//                     width='thin'
-//                 >
+const SidebarVisible = () => (
+    <Grid colums={1}>
+        <Grid.Column>
+            <Sidebar.Pushable as={Segment.Group} raised>
+                <Sidebar
+                    as={Menu}
+                    animation='push'
+                    icon='labeled'
+                    inverted
+                    vertical
+                    visible
+                    width='thin'
+                >
 
-//                     <Clock />
+                    <Clock />
 
-//                     <Menu.Item as='a'>
-//                         <Icon name='space shuttle' />
+                    <Menu.Item as='a'>
+                        <Icon name='space shuttle' />
+                        Visit the Planets!
+                    </Menu.Item>
 
-//         Visit the Planets!
-//       </Menu.Item>
-//                     <Menu.Item as='a'>
-//                         <Icon name='rocket' />
-//                         <Link to="/Style">Create your style!</Link>
+                    <Menu.Item as='a'>
+                        <Icon name='rocket' />
+                        <Link to="/Style">Create your style!</Link>
+                    </Menu.Item>
 
-//                     </Menu.Item>
+                </Sidebar>
 
-//                 </Sidebar>
 
-//                 <Sidebar.Pusher>
-//                     <Segment basic>
+                <Sidebar.Pusher>
+                    <div class="ui left aligned container">
+                        <div className="profile-pic">
 
-//                         <Header as='h3'>User's Name</Header>
-//                         <UploadImage />
-//                     </Segment>
+                            <h3>User's Name</h3>
+                            <UploadImage />
+                        </div>
+                    </div>
+                    <div class="ui center aligned container">
+                        <div className="profile-content">
+                            <div className="edit-profile">
+                                <h3>About Me</h3>
+                                <button className="Edit">Edit Profile</button>
+                                <br></br>
+                                <input type="text" />
 
-//                 </Sidebar.Pusher>
-//             </Sidebar.Pushable>
-//         </Grid.Column>
-//     </Grid>
-// )
 
-// export default SidebarVisible
+                                <form className="interests-input">
+                                    <label htmlFor="interests-input">Interests</label>
+                                    <br></br>
+                                    <Input type="text"></Input>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </Sidebar.Pusher>
+            </Sidebar.Pushable>
+        </Grid.Column>
+
+    </Grid>
+)
+
+export default SidebarVisible
 
 
 
