@@ -16,22 +16,47 @@ class ProfileCard extends React.Component {
       updatedAt: '',
       pictureLocation: '',
       googleId: '',
+      formData: {}
     }
     this.setUserPicture = this.setUserPicture.bind(this)
     this.client = new DataService()
   }
 
+
   componentDidMount() {
     console.log(this.props.username)
     this.client.getSingleUser(this.props.username)
-      .then(response => this.setState(response.data.user))
+      .then(response => this.setState({
+        username: response.data.user.username, 
+        pictureLocation: "https://socialapp-api.herokuapp.com"+response.data.user.pictureLocation,
+        displayName: response.data.user.displayName
+      }))
     this.client.getUserPicture(this.props.username)
       .then(result => console.log(result))
   }
 
+  onChange = event => {
+    let pictureSet
+    if(event.target.files) {
+      pictureSet = event.target.files[0]
+    } 
+    this.setState({picture: pictureSet})
+
+  }
+  fileUpload(file) {
+    let formData = new FormData()
+    formData.append("picture", file)
+    return formData
+  } 
   setUserPicture() {
-    let picture = Funkyduck
-      this.client.putUserPicture(this.props.username, picture)
+    let formData = this.fileUpload(this.state.picture)
+    this.client.putUserPicture(this.state.username, formData).then(()=>{
+      this.client.getSingleUser(this.props.username)
+      .then(response => this.setState({
+        username: response.data.user.username, 
+        pictureLocation: "https://socialapp-api.herokuapp.com"+response.data.user.pictureLocation
+      }))
+    })
   }
 
   // build tool to prettify date
@@ -86,17 +111,23 @@ class ProfileCard extends React.Component {
       height: '60px',
       fontSize: '18px',
     }
-
-    return (
-      <Content style={content} className="content">
+    let userImage
+    if(this.state.pictureLocation==="https://socialapp-api.herokuapp.comnull") {
+      userImage = (<div style={avatar} className="avatar">
+      <Avatar shape="square" size={130} icon={<UserOutlined />} />
+    </div>)
+    }else{
+      userImage = (<img src={this.state.pictureLocation} />)
+    }
+      return (
+        <Content style={content} className="content">
         <div style={card} className="Profile">
-          <div style={avatar} className="avatar">
-            <Avatar shape="square" size={130} icon={<UserOutlined />} />
-          </div>
-          <img src={this.state.pictureLocation} />
+         {userImage} 
+          
           <p>{this.state.username}</p>
           <p>{this.state.about}</p>
           <p>{this.dateBuilder(this.state.createdAt)}</p>
+          <input onChange = {this.onChange} type="file" name="picture"/> 
           <div style={button} className="Button">
             <button onClick={this.setUserPicture}>Change Picture</button>
           </div>

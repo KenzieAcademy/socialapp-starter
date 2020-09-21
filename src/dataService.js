@@ -11,7 +11,10 @@ class DataService {
         return this.client.get(this.url + `/users/${username}` + "/picture")
     }
     putUserPicture(username, picture){
-        return this.client.put(`${this.url}/users/${username}/picture`, picture)
+        let token = JSON.parse(localStorage.getItem("login")).result.token
+        return this.client.put(`${this.url}/users/${username}/picture`, picture, { 
+            headers: {Authorization: "Bearer "+token}
+        })
     }
     getUsers(){
         return this.client.get(this.url + "/users")
