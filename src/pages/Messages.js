@@ -41,15 +41,6 @@ class Messages extends React.Component {
         this.setState({ [event.target.name]: event.target.value })
     }
 
-    // getAuthenticated() {
-    //     const loginData = JSON.parse(localStorage.getItem('login'))
-    //     console.log(loginData.result.token);
-    //     console.log(loginData.result.username);
-    // }
-
-
-
-
     render() {
 
         return (
