@@ -18,7 +18,17 @@ class UpdateUserForm extends React.Component {
 
   handleUpdateUser = e => {
     e.preventDefault();
-    this.client.updateUser(this.state).then(result => {
+    const updateData = {}
+    if (this.state.password.length > 7) {
+      updateData.password = this.state.password
+    }
+    if (this.state.about.length > 0) {
+      updateData.about = this.state.about
+    }
+    if (this.state.displayName.length > 2) {
+      updateData.displayName = this.state.displayName
+    }
+    this.client.updateUser(updateData).then(result => {
       alert(result.data)
     })
   };
@@ -38,8 +48,7 @@ class UpdateUserForm extends React.Component {
             type="password"
             name="password"
             autoFocus
-            required
-            minLength='3'
+            minLength='8'
             maxLength='20'
             onChange={this.handleChange}
           />
@@ -48,7 +57,6 @@ class UpdateUserForm extends React.Component {
           <input
             type="text"
             name="displayName"
-            required
             minLength='3'
             maxLength='20'
             onChange={this.handleChange}
