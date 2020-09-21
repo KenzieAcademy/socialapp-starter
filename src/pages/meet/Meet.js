@@ -3,7 +3,9 @@ import { userIsAuthenticated } from "../../redux/HOCs";
 import './Meet.css';
 import Menu from "../../components/menu/Menu";
 
-import Arjun from "../../components/assets/images/Squirrels/Arjun.jpg"
+import Arjun from "../../components/assets/images/Squirrels/Arjun.jpg";
+// import SideBar from "../../components/sideBar/SideBar";
+import FootNavBar from "../../components/footNavBar/FootNavBar";
 
 // export default class HelloArjun extends Component {
 //     render() {
@@ -16,6 +18,7 @@ class Meet extends React.Component {
         return (
             <div className="Meet">
                 <Menu isAuthenticated={this.props.isAuthenticated} />
+                {/* <SideBar isAuthenticated={this.props.isAuthenticated} /> */}
 
                 <div>
                     <h1>This is the "Meet the Squirrels" Page</h1>
@@ -28,6 +31,7 @@ class Meet extends React.Component {
                     <h3>Joseph</h3>
                     <div className="Joseph">Hi, Joseph!</div>
                 </div>
+                <FootNavBar isAuthenticated={this.props.isAuthenticated} />
             </div>
         );
     }

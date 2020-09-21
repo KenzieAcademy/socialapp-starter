@@ -1,7 +1,21 @@
-.Profile {
-  background-image: url("../../components/assets/images/backgrounds/Downside_up.jpg");
+body {
+  /* background-image: url("../../components/assets/images/backgrounds/Downside_up.jpg"); */
   height: 200vh;
   width: 100vw;
   color: white;
   font-family: Kufam;
+  padding: 15px;
 }
+.text {
+  color: white;
+}
+.ui {
+  background-image: url("../../components/assets/images/backgrounds/Downside_up.jpg");
+}
+/* .left-column {
+  width: 20%;
+}
+
+.right-column {
+  width: 80%;
+} */

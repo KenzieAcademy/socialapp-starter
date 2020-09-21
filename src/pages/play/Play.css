@@ -5,3 +5,12 @@
   color: white;
   font-family: Kufam;
 }
+
+.Gamebox {
+  display: flex;
+  flex-direction: row;
+  height: 50vh;
+  width: 50vw;
+  margin: auto;
+  
+}

@@ -16,6 +16,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/profile/:username" component={Profile} />
