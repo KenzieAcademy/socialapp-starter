@@ -36,10 +36,10 @@ class DeleteUser extends React.Component {
         return (
             <div className="DeletionForm">
                 <form id="deletion-form" onSubmit={this.deleteUser}>
-                    <Button type="primary" danger
-                        icon={WarningOutlined}>
+                    <button type="primary" danger>
                         DELETE your Profile?
-                    </Button>
+                    </button>
+                    <img className="warning" src={warning} alt="warning" />
                 </form>
                 {loading && <Spinner name="circle" color="blue" />}
                 {error && <p style={{ color: "red" }}>{error.message}</p>}
