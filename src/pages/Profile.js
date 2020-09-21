@@ -11,9 +11,7 @@ class Profile extends React.Component {
     return (
       <div className="Profile">
         <Menu isAuthenticated={this.props.isAuthenticated} />
-        <h2>Profile</h2>
-        <GetUsers />
-        <DeleteUser />
+        <h2>Kwitter-Profile</h2>
       </div>
     );
   }

@@ -10,9 +10,8 @@ class Registration extends React.Component {
       <div className="Registration">
         <Menu />
         <h2>Your One Stop Shop For All your traveling Needs</h2>
-      
         <RegistrationForm />
-        <Link to='/'>Back to Login</Link>
+        <Link to='/'> Back to Log In</Link>
         
       </div>
     );
