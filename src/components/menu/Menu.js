@@ -8,7 +8,9 @@ class Menu extends React.Component {
 
   handleLogout = event => {
     event.preventDefault()
-    this.props.logout();
+    this.props.logout().then(result=>{
+      console.log(result)
+    })
   };
 
   render() {
@@ -18,8 +20,8 @@ class Menu extends React.Component {
         {this.props.isAuthenticated && (
           <div id="menu-links">
             <Link to="/messagefeed">Message Feed</Link>
-            <Link to="/" onClick={this.handleLogout}>
-              Logout
+            <Link to="/logout" onClick={this.handleLogout}>
+              logout
             </Link>
           </div>
         )}

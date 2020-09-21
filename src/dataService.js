@@ -10,8 +10,47 @@ class DataService {
     getUserPicture(username){
         return this.client.get(this.url + `/users/${username}` + "/picture")
     }
-    getUsers(){
-        return this.client.get(this.url + "/user")
+    putUserPicture(username, picture){
+        return this.client.put(`${this.url}/users/${username}/picture`, picture)
     }
+    getUsers(){
+        return this.client.get(this.url + "/users")
+
+    }
+    getSingleUser(username) {
+        return this.client.get(`${this.url}/users/${username}`)
+    }
+
+    patchUser(userName){
+        return this.client.patch(this.url+"/users/"+userName)
+    }
+
+    deleteUser(userName){
+        return this.client.delete(this.url+"/users/"+userName)
+    }
+
+    postMessage(){
+        return this.client.post(this.url+"/messages")
+    }
+
+    getMessages(){
+        return this.client.get(this.url + "/messages/")
+    }
+
+    getSpecificMessage(messageID){
+        return this.client.get(this.url + "/messages/" + messageID)
+    }
+
+    deleteMessage(messageID){
+        return this.client.delete(this.url + "/messages/" + messageID)
+    }
+    postLike(){
+        return this.client.post(this.url+"/likes")
+    }
+
+    deleteLike(likeID){
+        return this.client.delete(this.url + "/likes/" + likeID)
+    }
+    
 }
 export default DataService;
