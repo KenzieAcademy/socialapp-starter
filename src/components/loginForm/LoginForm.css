@@ -3,17 +3,16 @@
 }
 
 #login-form {
-  /* background-image: url(../../assets/images/Login_Background.png); */
   position: relative;
   margin: auto;
-  top: 30px;
+  top: 34px;
   display: flex;
   flex-direction: column;
   text-align: center;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: 25px;
   width: 400px;
-  color: #b80c12;
+  color: #f8f13e;
 }
 
 .LoginButton {
@@ -23,7 +22,7 @@
 }
 
 .LoginForm {
-  background-color: white;
+  background-image: url(../../assets/images/Login_Background.png);
   position: relative;
   margin: auto;
   width: 475px;
