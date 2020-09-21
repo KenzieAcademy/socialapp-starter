@@ -1,16 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Error from "../assets/cat404.gif";
 
 
 class NotFound extends React.Component {
   render() {
     return (
+      <div>
       <div className="NotFound">
-        Feel Alone? {this.props.location.pathname}
-        <Link to="/">Go Home</Link>
+        <img src={Error} alt="404 page"/>
+       
+        <Link to="/">Find Home</Link>
+      
+      </div>
       </div>
     );
   }
 }
-//<a href='https://www.freepik.com/vectors/business'>Business vector created by pikisuperstar - www.freepik.com</a>
+
 export default NotFound;
+// {this.props.location.pathname}

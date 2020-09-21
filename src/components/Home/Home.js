@@ -9,16 +9,16 @@ import "./home.css"
 class Home extends React.Component {
     render() {
         return (
-            
+            <div className="hero">
             <div className="Home">
             <Menu />
             <div className="homepagestuff">
-                <div className="content">
+                <div className="hulk">
                 </div>
             </div>
        
-       </div>
-                
+            </div>
+            </div>
            
            
             

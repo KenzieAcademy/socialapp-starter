@@ -10,11 +10,18 @@
     height: 100%;
 }
 
-.content {
+.hulk {
     background-image: url(../../images/feed.jpeg);
     height: 600px;
     width: 500px;
     background-repeat: no-repeat;
     background-size: 90%;
     background-position: bottom;
+}
+
+.hero {
+    height: 100%;
+    background-image: url(../../images/heros.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
