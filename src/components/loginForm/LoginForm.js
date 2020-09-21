@@ -42,7 +42,9 @@ class LoginForm extends React.Component {
             required
             onChange={this.handleChange}
           />
-          <Button onClick= {this.handleLogin}type = "primary" disabled ={loading}>Login </Button>
+          <Button
+          className ="LoginButton" 
+           onClick= {this.handleLogin}type = "primary" disabled ={loading}>Login </Button>
         </form>
         {loading && <Spinner name="circle" color="blue" />}
         {error && <p style={{ color: "red" }}>{error.message}</p>}

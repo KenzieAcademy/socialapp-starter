@@ -2,17 +2,18 @@ import React from "react";
 import noDisplayPhoto from "../../assests/nodisplayphoto.png";
 import DataService from "../../DataService";
 import { displayName } from "react-spinkit";
+import { Card } from 'antd';
 
 class UserCard extends React.Component {
   constructor(props) {
     super(props);
     this.client = new DataService
     this.state = {
-      isSubmitted:false,
-      userData: {
-        username: "",
-    displayName: "",
-    about: "",
+     //isSubmitted:false,
+      data:{
+        "username": "",
+        "displayName": "",
+        "about": "",
     
       },
       statusCode: 0
@@ -28,42 +29,56 @@ class UserCard extends React.Component {
 
 // }
 
-handleSubmit = (event)=>{
-  event.preventDefault();
-  this.setState({
-    submitted : true
-  });
-}
+// handleSubmit = (event)=>{
+//   event.preventDefault();
+//   this.setState({
+//     submitted : false
+//   });
+// }
 componentDidMount(){
   let about ={}
   let loginData = JSON.parse(localStorage.getItem("login"))
-  this.client.updateAbout(loginData.result.username,about ).then(res => console.log(res.data.user.username))
+  this.client.getUser(loginData.result.username ).then(res => console.log(res))
 
-  this.setState({userData:{
-    userName:"",
-        displayName:"",
-     about:"",
 
-  }
+  this.setState({
+
+
+  
 });
+console.log(this.state)
+
 }
+
   render() {
     
 
     return (
     
+      
       <div className="UserCard">
-       
-       <h3></h3>
-    
-        
-        <br />
+
+            <br />
         <h5>Photo</h5>
         <img src="" atl="userPicture" />
+          <br/>
 
+        <Card title="All About Me!" extra={<a href="/ProfileOptions">Edit</a>} style={{ width: 300 }}>
+        <h3>User Name: 
+          {this.state.data.userName}</h3>
+        <br/>
         <h4>
-    About : <p></p>
+            About Me : <p>  
+              {this.state.data.about}</p>
         </h4>
+      
+      
+    </Card>
+        
+        
+      
+        
+        
       </div>
       
     );

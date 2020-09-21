@@ -7,6 +7,7 @@ import NotFound from "./pages/NotFound";
 import RegistrationPage from "./pages/RegistrationPage";
 import ProfileOptions from "./pages/ProfileOptions";
 
+
 class App extends React.Component {
   render() {
     return (

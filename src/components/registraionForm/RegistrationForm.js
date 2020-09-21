@@ -3,10 +3,18 @@ import Spinner from "react-spinkit";
 import "./RegistrationForm.css";
 import DataService from "../../DataService";
 
+
 class RegistrationForm extends React.Component {
+  state = {
+    ModalText: 'Content of the modal',
+    visible: false,
+    confirmLoading: false,
+  };
+
   constructor(props) {
     super(props);
     this.state = {
+      
       username: "",
       password: "",
       displayName: "",
