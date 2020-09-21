@@ -3,9 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@ant-design/colors": "^4.0.5",
+    "@ant-design/icons": "^4.2.2",
+    "antd": "^4.6.4",
     "axios": "^0.20.0",
     "connected-react-router": "^6.8.0",
     "history": "^4.10.1",
+    "i": "^0.3.6",
+    "npm": "^6.14.8",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.1",
@@ -35,6 +40,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "dependency-cruiser": "^5.5.0"
+    "dependency-cruiser": "^5.5.0",
+    "less": "^3.12.2"
   }
 }
