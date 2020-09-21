@@ -1,12 +1,16 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-
+import 'antd/dist/antd.css';
+import 'semantic-ui-css/semantic.min.css'
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
 import NewUser from "./pages/NewUser";
 import Menu from "./components/menu/Menu";
 import MessageFeed from "./components/feed/MessageFeed";
+
+
+
 
 class App extends React.Component {
   render() {
