@@ -21,17 +21,17 @@ code {
 }
 
 .cowboy1 {
-  width: 600px;
+  width: 500px;
   position: absolute;
-  top: 390px;
-  left: -520px;
+  top: 420px;
+  left: 100px;
 }
 
 .cowboy2 {
   width: 500px;
   position: absolute;
-  top: -100px;
-  left: 400px;
+  top: 400px;
+  left: 1200px;
 }
 
 .cowboy4 {
