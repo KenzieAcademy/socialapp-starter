@@ -11,24 +11,24 @@ class Home extends React.Component {
     super(props);
     this.state = {
       isRegistered: true,
-      loginActive: "secondary",
-      registerActive: "primary",
+      loginActive: "light",
+      registerActive: "dark",
     };
   }
 
   loginButton = () => {
     this.setState({
       isRegistered: true,
-      registerActive: "primary",
-      loginActive: "secondary",
+      registerActive: "dark",
+      loginActive: "light",
     });
   };
 
   registerButton = () => {
     this.setState({
       isRegistered: false,
-      registerActive: "secondary",
-      loginActive: "primary",
+      registerActive: "light",
+      loginActive: "dark",
     });
   };
 
@@ -61,7 +61,7 @@ class Home extends React.Component {
             disabled={!this.state.isRegistered}
             onClick={() => this.registerButton()}
           >
-            REGISTER
+            JOIN!
           </Button>
         </div>
         {form}
