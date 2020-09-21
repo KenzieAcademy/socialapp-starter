@@ -1,19 +1,19 @@
 import { jsonHeaders, handleJsonResponse } from "../../redux/actionCreators/constants";
 import axios from "axios"
 
-class PostMessageService {
+class DeleteUserService {
     constructor(url = 'https://socialapp-api.herokuapp.com/', client = axios.create()){
-        this.url = url + "messages";
+        this.url = url + "deleteUser";
         this.client = client;
     }
 
-    postMessage(messageBody) {
+    deleteNow(userName) {
         const loginData = JSON.parse(localStorage.getItem("login"));
 
         fetch(this.url, {
-            method: "POST",
+            method: "GET",
             headers: { Authorization: `Bearer ${loginData.result.token}`, ...jsonHeaders },
-            body: JSON.stringify(messageBody)
+            body: JSON.stringify(userName)
         })
         .then(handleJsonResponse)
         .then(result => {
@@ -22,4 +22,4 @@ class PostMessageService {
     }
 };
 
-export default PostMessageService;
+export default DeleteUserService;
