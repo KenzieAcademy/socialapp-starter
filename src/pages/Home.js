@@ -12,13 +12,8 @@ class Home extends React.Component {
         <Menu />
         <h2>Your favorite travel microblogging platform</h2>
         <LoginForm />
-<<<<<<< HEAD
-        <Link to='/registration'>New user? Register Here</Link>
-        
-=======
         <br />
         <Link to="/RegistrationForm">New user? Register here</Link>
->>>>>>> lesa-branch
       </div>
     );
   }

@@ -15,10 +15,7 @@ class Profile extends React.Component {
         <Menu isAuthenticated={this.props.isAuthenticated} />
         <h2>Profile</h2>
         <GetUsers />
-<<<<<<< HEAD
         <DeleteUser />
-=======
->>>>>>> lesa-branch
       </div>
     );
   }
