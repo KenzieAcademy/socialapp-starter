@@ -1,12 +1,13 @@
 import React from "react";
 import { Layout } from 'antd';
-import LoginForm from "../components/loginForm/LoginForm";
+import RegistrationForm from "../components/RegistrationForm/RegistrationForm"
 import MenuUnauthenticated from "../components/menu/MenuUnauthenticated";
 import { userIsNotAuthenticated } from "../redux/HOCs";
 import theQuestBoardHeader from '../media/theQuestBoardHeader.png'
 
 
-class Home extends React.Component {
+class Registration extends React.Component {
+  
   
 
   render() {
@@ -20,10 +21,9 @@ class Home extends React.Component {
       <Header className="subHeader" ><h2>Quests will appear here!</h2> </Header>
       <Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>
         <div className="site-layout-background" style={{ padding: 24, textAlign: 'center' }}>
-       
-        <LoginForm />
-        <hr />
-        
+      
+        <RegistrationForm />
+      
         </div>
       </Content>
       <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
@@ -33,5 +33,4 @@ class Home extends React.Component {
   }
 }
 
-
-export default userIsNotAuthenticated(Home);
+export default userIsNotAuthenticated(Registration);

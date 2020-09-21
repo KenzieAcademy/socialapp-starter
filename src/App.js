@@ -6,6 +6,7 @@ import NotFound from "./pages/NotFound";
 import NewUser from "./pages/NewUser";
 import MessageFeed from "./pages/MessageFeed";
 import ContactUs from "./pages/ContactUs";
+import Registration from "./pages/Registration"
 
 class App extends React.Component {
   render() {
@@ -36,6 +37,11 @@ class App extends React.Component {
           exact
           path="/ContactUs"
           component={ContactUs}
+        />
+        <Route
+          exact
+          path="/Registration"
+          component={Registration}
         />
         <Route
           exact
