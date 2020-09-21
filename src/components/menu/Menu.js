@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./Menu.css";
 import { withAsyncAction } from "../../redux/HOCs";
 
+
 class Menu extends React.Component {
   handleLogout = event => {
     event.preventDefault();

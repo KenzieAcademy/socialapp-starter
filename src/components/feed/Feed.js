@@ -11,10 +11,11 @@ class Feed extends Component {
         this.client = new DataService();
         this.state = {
             feed: [],
-            userfeed: []
+            userfeed: [],
+            createdAt: ""
         }
     }
-    // stateless component
+
 
 
     //get a new message from the API and add it to the data object in state
@@ -30,37 +31,38 @@ class Feed extends Component {
         const loginData = JSON.parse(localStorage.getItem("login"))
 
         this.client.getMessages().then(result => {
-            const userData = result.data.messages.filter(messages => loginData.result.username == messages.username)
+            const userData = result.data.messages.filter(messages => loginData.result.username === messages.username)
             this.setState({ userfeed: userData })
             console.log(result.data.messages)
         })
     }
-    //don't need??
-
-    // postMessages(){
-    //     this.feed.map(message =>{
-
-    //     })
-    //     const post
-    //     return {tex, username}
-    // }
-
-
+   
+    // getTime = () => {
+    //     //get all message and filter
+    //     const postTime = JSON.parse(userfeed.getItem("createdAt"))
+    //     this.setState({ createdAt })
+   
     //when the component mounts, get the first message
     componentDidMount() {
         this.getMessages()
         this.getUserMessages()
+        // this.getTime()
     }
-
 
     // Function to display data.text .username
     //Alec WTF!!   #$%%^
     //display the results on the screen BULLET POINT 2:       //Conditional Rendering//
     render() {
         return (
-            <div>
+            <div className='feed'>
                 <ul>
-                    {this.state.feed.map(message => <li><h3>{message.username}</h3>{message.text}</li>)}
+                    {this.state.feed.map(message => <li><h3>{message.username}</h3>{message.text} {message.createdAt}</li>)}
+                    </div>
+                    <div>
+
+
+                        
+                    </div>
                     {/* {this.state.feed.map(message => <li>{message.text}</li>)} */}
                 </ul>
             </div>

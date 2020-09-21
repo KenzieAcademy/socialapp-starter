@@ -2,8 +2,8 @@ import React from "react";
 import Spinner from "react-spinkit";
 import { withAsyncAction } from "../../redux/HOCs";
 import "./LoginForm.css";
-import { TextInput } from "evergreen-ui"
-import { Button } from "evergreen-ui"
+import { TextInput, Button, EditIcon } from "evergreen-ui"
+
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -16,7 +16,8 @@ class LoginForm extends React.Component {
 
   handleLogin = e => {
     e.preventDefault();
-    this.props.login(this.state);
+    this.props.login(this.state)
+    .then(response => console.log(response))
   };
 
   handleChange = e => {
@@ -28,15 +29,16 @@ class LoginForm extends React.Component {
     return (
       <div className="LoginForm">
         <form id="login-form" onSubmit={this.handleLogin}>
-          
+        <label htmlFor="username"><b>Username</b></label>
           <TextInput
             name="username"
-            placeholder="Username"
+            placeholder= "Username"
             autoFocus
             required
             onChange={this.handleChange}
           />
           
+          <label htmlFor="password"><b>Password</b></label>
           <TextInput
             name="password"
             placeholder="Password"
