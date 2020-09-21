@@ -21,7 +21,6 @@ class MessagePage extends React.Component {
     return (
       <div className="MessagePage">
         <NewMessage isAuthenticated={this.props.isAuthenticated} />
-        <h2>New Message</h2>
         <MessageList messages={this.state.messages} />
       </div>
     );
