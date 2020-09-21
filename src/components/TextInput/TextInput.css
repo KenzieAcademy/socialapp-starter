@@ -1,0 +1,16 @@
+#messagesAndInput {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+}
+
+#MessageInput {
+    border: solid red 5px;
+}
+
+#appendToThis {
+    position: relative;
+    top: 191px;
+    left: 203px;
+    width: 84%;
+}

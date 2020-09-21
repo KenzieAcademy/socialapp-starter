@@ -6,6 +6,7 @@ import { userIsAuthenticated } from "../redux/HOCs";
 
 import Icon from "@ant-design/icons/lib/components/Icon";
 
+
 class Profile extends React.Component {
   super(props) {
     this.state = {
