@@ -21,34 +21,35 @@ code {
 }
 
 .cowboy1 {
-  width: 500px;
-  position: absolute;
-  top: 420px;
-  left: 100px;
+  width: 400px;
+  position: relative;
+  top: 125px;
+  left: -300px;
 }
 
 .cowboy2 {
-  width: 500px;
-  position: absolute;
-  top: 400px;
-  left: 1200px;
+  width: 400px;
+  position: relative;
+  top: -150px;
+  left: 150px;
 }
 
 .cowboy4 {
-  position: absolute;
-  top: 90px;
-  left: 50px;
+  position: relative;
+  /* top: 50px; */
+  left: -600px;
 }
 
 .cowboy3 {
-  width: 500px;
-  position: absolute;
-  top: 190px;
-  left: 1420px;
+  width: 300px;
+  position: relative;
+  top: -100px;
+  left: 820px;
 }
 
 .cowgirl1 {
-  width: 300px;
-  position: absolute;
-  top: 700px;
+  width: 250px;
+  position: relative;
+  top: 500px;
+  left: -300px;
 }
