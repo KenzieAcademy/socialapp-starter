@@ -12,11 +12,11 @@ class Profile extends React.Component {
     return (
       <div className="Profile">
         <Menu isAuthenticated={this.props.isAuthenticated} />
-        <h2>Profile</h2>
+        <h2>Kwitter-Profile</h2>
         <UserList />
       </div>
     )
   }
 }
 
-export default Profile
+export default userIsAuthenticated(Profile);
