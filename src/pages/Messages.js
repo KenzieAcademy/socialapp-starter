@@ -1,16 +1,21 @@
 import React from "react";
 import DataService from "../dataService";
-import { withRouter } from 'react-router-dom'
-import Axios from "axios";
-// import { withAsyncAction } from "../../redux/HOCs";
+// import { withRouter } from 'react-router-dom'
+
+import { userIsAuthenticated } from "../redux/HOCs";
+
+
 
 
 class Messages extends React.Component {
     constructor(props) {
+        const loginData = JSON.parse(localStorage.getItem('login'))
         super(props)
         this.client = new DataService()
         this.state = {
             text: "",
+            token: loginData.result.token,
+            username: loginData.result.username
         }
     }
 
@@ -18,12 +23,15 @@ class Messages extends React.Component {
     handleMessage = event => {
         event.preventDefault()
 
-        this.client.postMessage(this.state)
+        this.client.postMessage({
+            text: this.state.text,
+            token: this.state.token
+        })
             .then(result => {
-                // this.props.history.push('/')
                 console.log(result.data.messages)
                 this.setState({
                     text: result.data.messages
+
                 })
             });
     }
@@ -33,12 +41,21 @@ class Messages extends React.Component {
         this.setState({ [event.target.name]: event.target.value })
     }
 
+    // getAuthenticated() {
+    //     const loginData = JSON.parse(localStorage.getItem('login'))
+    //     console.log(loginData.result.token);
+    //     console.log(loginData.result.username);
+    // }
+
+
+
+
     render() {
 
         return (
             <div className='Messages'>
                 {console.log(this.state.message)}
-                {/* <h4>What do you want to share with the world {this.state.username}?</h4> */}
+                <h4>What do you want to share with the world {this.state.username}?</h4>
                 <form onSubmit={this.handleMessage}>
                     <div>
                         <label htmlFor="text">Post a message </label>
@@ -57,4 +74,5 @@ class Messages extends React.Component {
     }
 }
 
-export default withRouter(Messages)
+export default userIsAuthenticated(Messages)
+

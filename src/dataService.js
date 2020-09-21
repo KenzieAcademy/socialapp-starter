@@ -1,5 +1,6 @@
 //import the axios HTTP client to communicate with the API
 import axios from 'axios';
+import { login } from './redux/stateReducers/auth';
 
 class DataService {
     constructor(url = 'https://socialapp-api.herokuapp.com', client = axios.create()) {
@@ -19,8 +20,12 @@ class DataService {
         return this.client.get(this.url + '/users')
     }
 
-    postMessage(messageData) {
-        return this.client.post(this.url + '/messages', messageData)
+    postMessage(messageData) { 
+        console.log(messageData.text);
+        return this.client.post(this.url + '/messages', {text: messageData.text}, {
+        headers: { Authorization: "Bearer " + messageData.token}
+          })
+
     }
 
 }
