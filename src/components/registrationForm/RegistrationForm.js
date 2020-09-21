@@ -2,6 +2,7 @@ import React from "react";
 import Spinner from "react-spinkit";
 import "./RegistrationForm.css";
 import DataService from "../../dataService";
+import { Link } from "react-router-dom";
 
 class RegistrationForm extends React.Component {
 
@@ -32,6 +33,7 @@ class RegistrationForm extends React.Component {
     return (
       <div className="RegistrationForm">
         <form id="registration-form" onSubmit={this.handleRegistration}>
+          <h2>Register a new account</h2>
           <label htmlFor="username">Username</label>
           <input
             type="text"
@@ -57,6 +59,8 @@ class RegistrationForm extends React.Component {
           <button type="submit" disabled={loading} onClick={this.handleRegistration}>
             Register
           </button>
+          <br />Already registered?<br />
+          <Link to="/">Login to your account here!</Link>
         </form>
         {loading && <Spinner name="circle" color="blue" />}
         {error && <p style={{ color: "red" }}>{error.message}</p>}

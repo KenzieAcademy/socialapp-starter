@@ -22,7 +22,8 @@ body {
   background-size: 1000px 500px;
   background-position: center bottom right;
   background-attachment: fixed;
-  background-image: url("https://cdn.statically.io/img/www.jakpost.travel/wimages/large/154-1548289_blue-eyes-white-dragon-wallpapers-d-d-young.jpg");
+  /*background-image: url("https://cdn.statically.io/img/www.jakpost.travel/wimages/large/154-1548289_blue-eyes-white-dragon-wallpapers-d-d-young.jpg");*/
+  background-image: url(./assets/images/dragon_background.png);
 }
 
 code {
