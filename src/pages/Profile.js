@@ -4,6 +4,7 @@ import { userIsAuthenticated } from "../redux/HOCs";
 import GetUsers  from "../components/getUsers/GetUsers";
 import DeleteUser from "../components/deleteUser/DeleteUser";
 import GetMessages from "../components/getMessages/GetMessages";
+import PostLikes from "../components/postLikes/PostLikes";
 
 class Profile extends React.Component {
   
@@ -15,6 +16,7 @@ class Profile extends React.Component {
         <GetUsers />
         <DeleteUser />
         <GetMessages />
+        <PostLikes />
       </div>
     );
   }

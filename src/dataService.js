@@ -21,6 +21,10 @@ class dataService {
     getMessages() {
         return this.client.get(this.url + '/messages')
     }
+
+    postLikes() {
+        return this.client.post(this.url + '/likes')
+    }
 }
 
 export default dataService;
