@@ -14,14 +14,17 @@ class DataService {
     }
 
     registerUser(userData) {
-        
         return this.client.post(this.url + "/users", userData)
         .then(response => console.log(response))
         .catch(error => console.log(error))
-
     }
-  
-      // Authorization can be done by attaching a header to the Axios config
+
+    getUsers() {
+        return this.client.get(this.url + "/users")
+        .catch(error => console.log(error))
+    }
+
+    // Authorization can be done by attaching a header to the Axios config
     // axios.request(url, data, config)
     // copy the line below and use it as the config parameter
     // {headers: {Authorization: `Bearer ${this.getToken()}`}}
@@ -32,10 +35,12 @@ class DataService {
             .catch(error => console.log(error))
     }
 
+    getMessages() {
+        return this.client.get(this.url + "/messages")
+    }
 
     getUsers() {
         return this.client.get(this.url + "/users")
-        .then(response => console.log(response))
         .catch(error => console.log(error))
     }
 
@@ -43,14 +48,14 @@ class DataService {
         return this.client.get(this.url + "/users", userName);
     }
 
-    getUsersPicture() {
-        return this.client.get(this.url + "/users/{props.username}/picture");
+    getUsersPicture(username) {
+        return this.client.get(this.url + `/users/${username}/picture`);
     }
 
-    setUsersPicture(uploadPicture) {
-        return this.client.get(this.url + "/users/{props.username}/picture", uploadPicture);
+    setUsersPicture(username, picture) {
+        return this.client.get(this.url + `/users/${username}/picture`, picture);
     }
       
-      
 }
+
 export default DataService;
