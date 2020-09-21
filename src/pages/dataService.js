@@ -15,6 +15,12 @@ class DataService {
   getLoginForm() {
     return this.client.post(this.url + "/login");
   }
+  getLogout() {
+    return this.client.post(`${this.url}/logout`);
+  }
+  postlike() {
+    return this.client.post(this.url + "/likes");
+  }
   getMessages(limit = 20) {
     return this.client.get(this.url + "/messages?limit=" + limit);
   }
@@ -35,13 +41,6 @@ class DataService {
     return this.client.delete(this.url + "/messages/" + messageId, {
       headers: { Authorization: `Bearer ${loginData.token}` },
     });
-    //deletemessage() {
-    //const messagedata = JSON.parse(localStorage.getItem("login")).result;
-
-    //return this.client.delete(this.url + `/messages/${messagedata.Id}`, {
-    // headers: { Authorization: `Bearer ${messagedata.token}` },
-    //});
-    //}
   }
 }
 export default DataService;
