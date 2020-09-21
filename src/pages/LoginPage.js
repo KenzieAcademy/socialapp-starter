@@ -8,7 +8,7 @@ class LoginPage extends React.Component {
   render() {
     return (
       <div className="Home">
-        <Menu />
+        <Menu loggedIn={false} />
         <h2>Thank you for registering, Jerry! Please log in below</h2>
         <LoginForm />
       </div>

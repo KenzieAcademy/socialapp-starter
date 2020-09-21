@@ -4,6 +4,7 @@ import { Switch, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import LoginPage from "./pages/LoginPage";
 import Profile from "./pages/Profile";
+import UserList from "./pages/UserList";
 import MessageFeed from "./pages/MessageFeed";
 import NotFound from "./pages/NotFound";
 
@@ -25,6 +26,11 @@ class App extends React.Component {
           exact
           path="/profile/:username"
           component={Profile}
+        />
+        <Route 
+          exact
+          path="/userlist"
+          component={UserList}
         />
         <Route
           exact

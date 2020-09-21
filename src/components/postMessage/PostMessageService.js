@@ -9,7 +9,6 @@ class PostMessageService {
 
     postMessage(messageBody) {
         const loginData = JSON.parse(localStorage.getItem("login"));
-        console.log(loginData)
 
         fetch(this.url, {
             method: "POST",
