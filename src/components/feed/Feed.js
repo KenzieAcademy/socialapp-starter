@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 //import our service
 import DataService from '../../dataService';
-
+import '../feed/Feed.css';
 
 class Feed extends Component {
     //set our initial state and set up our service as this.client on this component
@@ -53,16 +53,18 @@ class Feed extends Component {
 
     render() {
         return (
-            <div >
-                <ul>
-                    {this.state.feed.map(message => <li>
-                        <h3>{message.username}</h3>
-                        {message.text} {message.createdAt}</li>)}
+            <div className="feed">
+                
+                {this.state.feed.map(message =>
+                    <ul>
+                        <h3>{ message.username }</h3><p>{message.text}</p><h5>{message.createdAt}</h5>
+                    </ul>)}
+                
+   
+                {/* {this.state.feed.map(message =>
+                    <li></li>)} */}
 
-                    {this.state.feed.map(message => <li>{message.text}</li>)}
-                </ul>
             </div>
-
         )
     }
 }

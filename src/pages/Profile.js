@@ -5,7 +5,7 @@ import Layout from '../components/layout'
 import { userIsAuthenticated } from "../redux/HOCs";
 import SendPost from '../components/sendPost/SendPost'
 import Feed from '../components/feed/Feed'
-// import MessageFeed from '../components/feed/Messagefeed'
+
 
 class Profile extends React.Component {
   render() {
