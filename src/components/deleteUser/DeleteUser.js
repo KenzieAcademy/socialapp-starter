@@ -3,6 +3,8 @@ import DeleteUserService from "./DeleteUserService"
 import Menu from "../menu/Menu";
 import { Link } from "react-router-dom";
 import { Grommet } from 'grommet'
+// import Button from '@material-ui/core/Button';
+
 // import { Home } from '../pages/Home'
 
 class DeleteNow extends Component {
@@ -31,6 +33,7 @@ class DeleteNow extends Component {
         // console.log(JSON.stringify(this.state))
 
         console.log("login")
+        // window.location = "https://"
 
     };
 
@@ -56,7 +59,7 @@ class DeleteNow extends Component {
 
                 <br />
                 <form id="delete-user" onSubmit={this.handleSubmit}>
-                    <label htmlFor="message">Type Username to Delete:</label>
+                    <label htmlFor="delete">Type Username to Delete:</label>
                     <input
                         type="text"
                         name="delete"
