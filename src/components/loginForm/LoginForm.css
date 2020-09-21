@@ -2,18 +2,4 @@
   display: flex;
   flex-direction: column;
   max-width: 25em;
-  color:white;
-  font-weight: bold;
-  cursor: pointer;
-  font-family: cursive;
-}
-form {
-  background-color: slateblue;
-  border-radius: 1em;
-  color: white;
-  padding: 15px 32px;
-  text-align: left;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 18px;
 }
