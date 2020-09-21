@@ -5,7 +5,7 @@
 #registration-form {
   position: relative;
   margin: auto;
-  top: 30px;
+  top: 35px;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -16,7 +16,7 @@
 }
 
 .RegistrationForm {
-  /* background-color: white; */
+  background-image: url(../../assets/images/Register_Background.png);
   position: relative;
   margin: auto;
   width: 475px;
