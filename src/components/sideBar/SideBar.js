@@ -26,7 +26,8 @@ const SideBar = () => (
 
                     <Menu.Item as='a'>
                         <Icon name='space shuttle' />
-                        Visit the Planets!
+                        <Link to="/Visit">Visit the Planets!</Link>
+
                     </Menu.Item>
 
                     <Menu.Item as='a'>
