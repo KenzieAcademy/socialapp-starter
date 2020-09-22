@@ -1,12 +1,7 @@
 import React from "react";
 import Spinner from "react-spinkit";
-<<<<<<< HEAD
 import "./RegistrationForm.css";
 import DataService from "../../DataService"
-=======
-import "./registrationForm.css";
-import DataService from "../../dataService/dataService";
->>>>>>> adbranch
 
 class RegistrationForm extends React.Component {
   constructor(props) {
@@ -16,34 +11,18 @@ class RegistrationForm extends React.Component {
       password: "",
       displayName: ""
     };
-<<<<<<< HEAD
-    this.client = new DataService()
-  }
-
-=======
     this.client = new DataService();
   }
->>>>>>> adbranch
   handleRegistration = e => {
     e.preventDefault();
     this.client.registerUser(this.state).then(result => {
       alert(result.data)
-<<<<<<< HEAD
-    })
-  };
-
-  handleChange = e => {
-    this.setState({ [e.target.name]: e.target.value });
-  };
-
-=======
     }
     )
   }
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   }
->>>>>>> adbranch
   render() {
     const { loading, error } = this.props;
     return (
@@ -55,11 +34,8 @@ class RegistrationForm extends React.Component {
             name="username"
             autoFocus
             required
-<<<<<<< HEAD
             minLength='3'
             maxLength='20'
-=======
->>>>>>> adbranch
             onChange={this.handleChange}
           />
           <label htmlFor="password">Password</label>
@@ -67,26 +43,17 @@ class RegistrationForm extends React.Component {
             type="password"
             name="password"
             required
-<<<<<<< HEAD
             minLength='8'
             maxLength='20'
             onChange={this.handleChange}
           />
           <label htmlFor="displayName">Display Name</label>
-=======
-            onChange={this.handleChange}
-          />
-          <label htmlFor="displayName">Name</label>
->>>>>>> adbranch
           <input
             type="text"
             name="displayName"
             required
-<<<<<<< HEAD
             minLength='3'
             maxLength='20'
-=======
->>>>>>> adbranch
             onChange={this.handleChange}
           />
           <button type="submit" disabled={loading}>
@@ -100,8 +67,4 @@ class RegistrationForm extends React.Component {
   }
 }
 
-<<<<<<< HEAD
 export default RegistrationForm;
-=======
-export default RegistrationForm
->>>>>>> adbranch

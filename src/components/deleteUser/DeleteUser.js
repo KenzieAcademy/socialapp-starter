@@ -1,7 +1,7 @@
 import React from "react";
 import Spinner from "react-spinkit";
-import "./deletionForm.css";
-import DataService from "../../dataService/dataService";
+import "./DeletionForm.css";
+import DataService from "../../DataService";
 
 class DeleteUser extends React.Component {
     constructor(props) {
