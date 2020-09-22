@@ -1,10 +1,15 @@
+<<<<<<< HEAD
 import React from "react";
 import { Divider, Grid } from "semantic-ui-react";
 import './Home.css';
+=======
+import React from 'react';
+>>>>>>> master
 import LoginForm from "../../components/loginForm/LoginForm";
 import RegistrationForm from "../../components/registrationForm/RegistrationForm";
 import Menu from "../../components/menu/Menu";
 import { userIsNotAuthenticated } from "../../redux/HOCs";
+import './Home.css';
 
 class Home extends React.Component {
   render() {

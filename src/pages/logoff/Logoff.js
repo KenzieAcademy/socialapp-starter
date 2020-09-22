@@ -26,6 +26,4 @@ class Logoff extends React.Component {
     }
 }
 
-// export default Logout
-
 export default userIsNotAuthenticated(Logoff);

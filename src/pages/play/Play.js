@@ -11,6 +11,7 @@ class Play extends React.Component {
             <div>
                 <div className="Play">
                     <Menu isAuthenticated={this.props.isAuthenticated} />
+<<<<<<< HEAD
                     {/* <SideBar isAuthenticated={this.props.isAuthenticated} /> */}
                     <h1>This is the "Let's Play SpaceBallz!" page.</h1>;
                     <div className="Gamebox">
@@ -18,6 +19,9 @@ class Play extends React.Component {
                         ></iframe>
                     </div>
                     <FootNavBar isAuthenticated={this.props.isAuthenticated} />
+=======
+                    <h1>This is the "Let's Play SpaceBallz!" page.</h1>
+>>>>>>> master
                 </div>
             </div>
         )

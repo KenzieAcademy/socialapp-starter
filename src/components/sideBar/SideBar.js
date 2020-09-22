@@ -1,11 +1,21 @@
+<<<<<<< HEAD
 import React from 'react';
 import { Icon, Menu, Segment, Sidebar, Grid, Input, Column } from 'semantic-ui-react';
 import "./SideBar.css"
 import { Link } from "react-router-dom";
 import Clock from "../../pages/clock/Clock";
+=======
+import React from "react";
+import Clock from "../clock/Clock";
+>>>>>>> master
 
 import UploadImage from "../addPhoto/AddPhoto";
 
+<<<<<<< HEAD
+=======
+class SideBar extends React.Component {
+    render() {
+>>>>>>> master
 
 const SidebarVisible = () => (
     <Grid colums={1}>
@@ -21,7 +31,17 @@ const SidebarVisible = () => (
                     width='thin'
                 >
 
+<<<<<<< HEAD
                     <Clock />
+=======
+        return (
+            <div className="SideBar">
+                What Time IS It?
+                <Clock />
+            </div>
+        );
+    }
+>>>>>>> master
 
                     <Menu.Item as='a'>
                         <Icon name='space shuttle' />

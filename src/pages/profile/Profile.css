@@ -1,6 +1,12 @@
 body {
   /* background-image: url("../../components/assets/images/backgrounds/Downside_up.jpg"); */
   height: 200vh;
+}
+.Profile {
+  background-image: url("../../components/assets/images/backgrounds/Downside_up.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
   width: 100vw;
   color: white;
   font-family: Kufam;

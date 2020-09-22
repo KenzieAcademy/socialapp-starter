@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .segment {
     background-image: url("../../components/assets/images/backgrounds/Downside_up.jpg");
    padding-left: 10px;
@@ -9,3 +10,29 @@
 }
 
 
+=======
+.SideBar {
+  font-family: Kufam;
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 1em;
+  border-radius: 1em;
+  border: 5em, solid, magenta;
+}
+
+/* #menu-links {
+  font-family: Kufam;
+  display: flex;
+  padding-left: 1em;
+}
+
+#menu-links a {
+  font-family: Kufam;
+  padding-right: 5em;
+  color: greenyellow;
+  text-decoration: underline;
+  cursor: pointer;
+} */
+>>>>>>> master

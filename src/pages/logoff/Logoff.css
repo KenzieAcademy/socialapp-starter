@@ -1,7 +1,9 @@
 .Logoff {
-  background-image: url("../../components/assets/images/backgrounds/Upside_down.jpg");
+  background-image: url("../../components/assets/images/backgrounds/Andromeda_galaxy_stretched.jpg");
+  background-repeat: no-repeat;
+  background-size: stretch;
   height: 200vh;
-  width: 100vw;
+  width: 200vw;
   color: white;
   font-family: Kufam;
 }

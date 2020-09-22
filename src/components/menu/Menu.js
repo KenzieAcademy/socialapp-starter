@@ -31,7 +31,10 @@ class Menu extends React.Component {
 }
 
 export default withAsyncAction("auth", "logout")(Menu);
+<<<<<<< HEAD
 
 {
   /* <a href={"https://www.nasa.gov"}>NASA</a> */
 }
+=======
+>>>>>>> master

@@ -1,12 +1,12 @@
 import React from "react";
 import { userIsAuthenticated } from "../../redux/HOCs";
-import { Grid, PlaceholderParagraph, Segment, Input } from "semantic-ui-react";
-import "./Profile.css";
+// import { Grid, PlaceholderParagraph, Segment, Input } from "semantic-ui-react";
 import Menu from "../../components/menu/Menu";
 import FootNavBar from "../../components/footNavBar/FootNavBar";
 // import UploadImage from "../../components/addPhoto/AddPhoto";
-
 import SideBar from "../../components/sideBar/SideBar";
+import "./Profile.css";
+
 
 
 
@@ -35,6 +35,9 @@ class Profile extends React.Component {
 
 
         <FootNavBar isAuthenticated={this.props.isAuthenticated} />
+        {/* <h2>Profile</h2>
+        <SideBar /> */}
+
       </div>
 
     );
