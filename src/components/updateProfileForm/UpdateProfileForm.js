@@ -34,9 +34,8 @@ function UpdateProfileForm(props) {
 
 
         </form>
-
     )
-
 }
+    
 
 export default UpdateProfileForm;

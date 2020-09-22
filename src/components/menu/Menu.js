@@ -8,14 +8,14 @@ import GlobeLogo from "./assets/Globe01sm.png"
 
 
 class Menu extends React.Component {
-constructor (props) {
-  super(props);
+  constructor(props) {
+    super(props);
 
-  if(JSON.parse(localStorage.getItem('login')).result) {
-    this.username = JSON.parse(localStorage.getItem('login')).result.username;
+    if (JSON.parse(localStorage.getItem('login')).result) {
+      this.username = JSON.parse(localStorage.getItem('login')).result.username;
+    }
+
   }
-  
-}
 
   handleLogout = event => {
     event.preventDefault();
@@ -44,7 +44,12 @@ constructor (props) {
 
             <div>
               <Button.Group widths='6'>
-                <Button color='yellow'>Home</Button>
+                <Button color='yellow'>
+                  <Link to="/Homepage" >
+                    Homepage
+                     </Link>
+                </Button>
+
 
 
                 <Button color='orange'><Link to="/messagefeed"> Messages </Link></Button>
@@ -53,24 +58,24 @@ constructor (props) {
                 <Button color='green'><Link to={"/profile/" + this.username}>Profile</Link></Button>
 
 
-                <Button color='blue'> <Link to={"/profile/updateprofile/"+ this.username}> UpDate Profile </Link></Button>
+                <Button color='blue'> <Link to={"/profile/updateprofile/" + this.username}> UpDate Profile </Link></Button>
 
 
                 <Button color='red'><Link to="/list-of-users/">List of users</Link></Button>
-
-
-                <Button color='violet' text="white"><Link to="/Logout/" onClick={this.handleLogout}>Logout</Link></Button>
-
+                <Button color='violet' text="white">
+                  <Link to="/Logout/" onClick={this.handleLogout}>
+                    Logout</Link>
+                </Button>
               </Button.Group>
+
 
 
             </div>
 
           </div>
-        )}
-      </div>
 
-    )
+        )}
+      </div>)
   }
 }
 export default withAsyncAction("auth", "logout")(Menu);
