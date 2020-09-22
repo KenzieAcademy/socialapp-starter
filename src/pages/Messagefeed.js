@@ -26,74 +26,74 @@ class Messagefeed extends Component {
 
 
 
-}
-//Below here, the(function), will reflect a change to the VALUE inside, or of an element
-//onChange attribute should contain this
-commentHandler = (event) => {
-    this.setState({ comment: event.target.value });
-}
 
-authorHandler = (event) => {
-    this.setState({ author: event.target.value });
-}
+    //Below here, the(function), will reflect a change to the VALUE inside, or of an element
+    //onChange attribute should contain this
+    commentHandler = (event) => {
+        this.setState({ comment: event.target.value });
+    }
 
-
-submitHandler = (event) => {
-    event.preventDefault();
-    this.setState({
-        submitted: true
-    })
-}
+    authorHandler = (event) => {
+        this.setState({ author: event.target.value });
+    }
 
 
-buttonHandler = (event) => {
-    console.log(event.value)
-}
-
-render() {
-    return (
-        <Layout>
-
-            <Header>
-                <div>
-                    <h1><span>The Dragon's Den</span></h1>
-                </div >
-            </Header>
+    submitHandler = (event) => {
+        event.preventDefault();
+        this.setState({
+            submitted: true
+        })
+    }
 
 
+    buttonHandler = (event) => {
+        console.log(event.value)
+    }
+
+    render() {
+        return (
             <Layout>
 
-                <Content>
-                    <Profile />
-                    <div className="Home">
+                <Header>
+                    <div>
+                        <h1><span>The Dragon's Den</span></h1>
+                    </div >
+                </Header>
 
-                    </div>
-                </Content>
 
-                <Sider>
-                    <form  >
-                        <label>Comment Section</label>
-                        <CommentBox />
-                        <textarea row="1" cols="20"></textarea>
-                        <input onClick={this.buttonHandler} id="submitComment" type="button" value="post" ></input>
-                    </form>
-                </Sider>
+                <Layout>
+
+                    <Content>
+                        <Profile />
+                        <div className="Home">
+
+                        </div>
+                    </Content>
+
+                    <Sider>
+                        <form  >
+                            <label>Comment Section</label>
+                            <CommentBox />
+                            <textarea row="1" cols="20"></textarea>
+                            <input onClick={this.buttonHandler} id="submitComment" type="button" value="post" ></input>
+                        </form>
+                    </Sider>
+                </Layout>
+
+                <Footer>
+                    <p>Facebook</p>
+                    <p>Instagram</p>
+                    <p>Twitter</p>
+                </Footer>
+
+
+
             </Layout>
 
-            <Footer>
-                <p>Facebook</p>
-                <p>Instagram</p>
-                <p>Twitter</p>
-            </Footer>
+        );
+    }
 
-
-
-        </Layout>
-
-    );
 }
-
-
 
 
 export default userIsAuthenticated(Messagefeed);
