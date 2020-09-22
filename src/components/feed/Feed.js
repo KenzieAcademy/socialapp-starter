@@ -1,62 +1,58 @@
-import React from "react";
-import { Layout } from 'antd';
-import QuestboardService from "../../pages/ServicePage"
-import Message from "./Message"
-
+import React from "react"
+import "../feed/feed.css"
+import TextInput from "../TextInput/TextInput"
 
 class Feed extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      messages: [],
+    constructor(props) {
+        super(props);
+        this.state = {
+            items: [],
+            isLoaded: false
+        }
     }
-  }
-
-    
-      componentDidMount() {
-        new QuestboardService()
-        .GetMessageList()
-        .then(messages => {
-          this.setState({messages})
+    toHTML(){
+        // document.querySelector("body").innerHTML += "<div ID='appendToThis'/>"
+        // document.getElementById("appendToThis").innerHTML += "<div ID='messagesAndInput'/>" 
+        document.getElementById("messagesAndInput").innerHTML += "<div ID='messagesBlock'/>"
+        for (let i = 0; i < this.state.items.messages.length; i +=1) {
+            let JSONMessage = JSON.stringify(this.state.items.messages[i].text)
+            let JSONUser = JSON.stringify(this.state.items.messages[i].username)
+            let JSONDate = JSON.stringify(this.state.items.messages[i].createdAt)
+            let JSONLikes = JSON.stringify(this.state.items.messages[i].likes.length)
+            
+            document.getElementById("messagesBlock").innerHTML += 
+            "<div class='messageBubble'><h2>" + JSONUser + "</h2> <h3>" + JSONMessage + "</h3><p> Date Created " + JSONDate + "</p><span> Likes " + JSONLikes + "</span><button>Like</button></div>"
+        }
+    }
+    componentDidMount() {
+        fetch("https://socialapp-api.herokuapp.com/messages")
+        .then(res => res.json())
+        .then(json => {
+            this.setState({
+                isLoaded: true,
+                items: json,
+            })
         })
-      }
-
-  render() {
-
-    const { Header, Content, Footer} = Layout;
-    if (this.state.messages.length === 0){
-    return (
-      <Layout className="site-layout" style={{ marginLeft: 190 }}>
-      <Header className="site-layout-background" style={{ padding: 0 }} />
-      <Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>
-        <div className="site-layout-background" style={{ padding: 24, textAlign: 'center' }}>
-        <h2>Message Feed</h2>
-        Test Feed Test Test
-        </div>
-      </Content>
-      <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
-    </Layout>
-    );
     }
-    else {
-      return (
-        <Layout className="site-layout" style={{ marginLeft: 190 }}>
-      <Header className="mainHeader" style={{ padding: 0 }} />
-      <Header className="subHeader" ><h2>Message Feed</h2> </Header>
-      <Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>
-        <div className="site-layout-background" style={{ padding: 24, textAlign: 'center' }}>
-
-        <div><ul>
-    {this.state.messages.map (msg => <Message  key={msg.id} {...msg} />)}
-        </ul></div>
-        </div>
-      </Content>
-      <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
-    </Layout>
+    
+    render() {
         
-      )
+        var { isLoaded, items, test } = this.state;
+        console.log("Test =" + this.state.test)
+        
+        if (!isLoaded) {
+            return <div></div>
+        } else {
+            let toHTML = this.toHTML()
+            console.log(items.text)
+            return (
+                
+                <div>
+                    <br/>
+                    {toHTML}
+                </div>
+            );
+        }
     }
-  }
 }
-
-export default Feed;
+export default Feed

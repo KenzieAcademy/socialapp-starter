@@ -1,0 +1,20 @@
+#feedMessageInput {
+    background-color: white;
+    width: 85%;
+    margin: auto;
+    display: flex;   
+    
+}
+
+#TextSubmitButton {
+    position: relative;
+    left: 40%;   
+}
+
+#inputTextBorderBox {
+        width: 50%;
+        background-color: #e0d8c0;
+        margin: 10px auto;
+    
+}
+
