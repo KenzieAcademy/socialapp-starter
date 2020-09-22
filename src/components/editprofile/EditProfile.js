@@ -3,7 +3,7 @@ import Menu from "../menu/Menu";
 import { userIsAuthenticated } from "../../redux/HOCs";
 import DataService from '../DataService'
 import { withRouter } from 'react-router-dom'
-import { Input, Button  } from 'semantic-ui-react'
+import { Input, Button, TextArea  } from 'semantic-ui-react'
 
 
 
@@ -13,19 +13,15 @@ class Profile extends React.Component {
     super(props);
 
     this.state = {
-      username: "",
-      
-      firstname: "",
-      middlename: "",
-      lastname: "",
-      DateOFBirth: "",
-      profilePhoto:"",
-      creamername: "",
-      favoritepet: "",
-      
-      
+    
+      username: '',
+      password:'',
+      about:'',
+      displayName:'',      
+     
     };
     this.client = new DataService()
+    
   }
   
   
@@ -35,7 +31,6 @@ class Profile extends React.Component {
     this.setState({[event.target.name]:event.target.value})
     
    
-    
 }
 
 
@@ -47,10 +42,16 @@ class Profile extends React.Component {
 
   handleSubmit = (event) => {
    event.preventDefault();
-   console.log(this.state)
-   
+   console.log(this.state.user)
+   let userData = {
 
-   this.client.updateUser(this.state, this.state.username ).then(result =>{
+    password:this.state.password,
+      about:this.state.about,
+      displayName:this.state.displayName,
+
+   }
+
+   this.client.updateUser(userData, this.state.username ).then(result =>{
     console.log(JSON.stringify(result.data))
   })
   };
@@ -86,7 +87,7 @@ class Profile extends React.Component {
           
            
           <div>
-            <label htmlFor="name">  Enter user name</label>
+            <label htmlFor="username">  Enter user name</label>
               <Input
                 type="text"
                 name="username"
@@ -95,10 +96,10 @@ class Profile extends React.Component {
               />
             </div>
           <div>
-            <label htmlFor="name">  First Name </label>
+            <label htmlFor="password">  Password </label>
               <Input
                 type="text"
-                name="firstname"
+                name="password"
                 
                 
                 onChange={this.handleChange}
@@ -106,63 +107,26 @@ class Profile extends React.Component {
             </div>
 
             <div>
-              <label htmlFor="name">  Middle Name </label>
-              <Input
+              <h2>About Me</h2>
+              <TextArea
                 type="text"
-                name="middlename"
+                name="about"
              
                 onChange={this.handleChange}
               />
             </div>
 
-              <label htmlFor="name">  Last Name </label>
             <div>
+            <label htmlFor="displayName">  Display Name </label>
               <Input
                 type="text"
-                name="lastname"
-                
+                name="displayName"
+             
                 onChange={this.handleChange}
               />
             </div>
 
-            <div>
-              <label htmlFor="DOB">  DateOFBirth </label>
-              <Input
-                type="text"
-                name="DateOFBirth"
-                
-                onChange={this.handleChange}
-              />
-            </div>
-            <div>
-              <label htmlFor="profilePhoto">  Profile Photo </label>
-              <Input
-                type="text"
-                name="profilePhoto"
-                
-                onChange={this.handleChange}
-              />
-            </div>
-
-            <div>
-              <label htmlFor="CreamerName">  Creamer Name </label>
-              <Input
-                type="text"
-                name="CreamerName"
-                
-                onChange={this.handleChange}
-              />
-            </div>
-
-            <div>
-              <label htmlFor="petname">  Favorite Pet </label>
-              <Input
-                type="text"
-                name="favoritepet"
-                
-                onChange={this.handleChange}
-              />
-            </div>
+              
             <br/>
             <Button primary size='big' >Save</Button>
 

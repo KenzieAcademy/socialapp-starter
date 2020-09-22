@@ -17,7 +17,7 @@ class DataService {
 
     }
     updateUser(userData, userName) {
-        return this.client.patch(this.url + `${"/users"}${"/"}${userName}`, userData, {
+        return this.client.patch(this.url + `${"/users/"}${userName}` ,userData, {
             headers: {
                 
                 Authorization: "Bearer " + this.token.result.token
@@ -38,7 +38,16 @@ class DataService {
     //messages
 
     createMessage(message) {
-        return this.client.post(this.url + '/messages', message)
+        return this.client.post(this.url + '/messages', message, {
+            headers: {
+                
+                Authorization: "Bearer " + this.token.result.token
+            }
+        })
+
+    }
+    getMessage() {
+        return this.client.get(this.url + '/messages')
 
     }
 
