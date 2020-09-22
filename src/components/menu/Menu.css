@@ -16,7 +16,11 @@
 
 #menu-links a {
   padding-right: 0.5em;
-  color: darkblue;
+  color: rgb(229, 229, 229);
   text-decoration: underline;
   cursor: pointer;
+}
+
+a:hover {
+  background-color: lawngreen;
 }
