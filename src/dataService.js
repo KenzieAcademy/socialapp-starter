@@ -8,10 +8,6 @@ class DataService {
         this.client = client;
     }
 
-    // registerUser(registrationData) {
-    //     return this.client.post(this.url + "/users", registrationData);
-    // }
-
     registerUser(userData) {
         return this.client.post(this.url + '/users', userData)
     }
@@ -20,14 +16,19 @@ class DataService {
         return this.client.get(this.url + '/users')
     }
 
-    postMessage(messageData) { 
+    postMessage(messageData) {
         console.log(messageData.text);
-        return this.client.post(this.url + '/messages', {text: messageData.text}, {
-        headers: { Authorization: "Bearer " + messageData.token}
-          })
+        return this.client.post(this.url + '/messages', { text: messageData.text }, {
+            headers: { Authorization: "Bearer " + messageData.token }
+        })
+
     }
 
-    
+    deleteMessage() {
+        return this.client.delete(this.url + '/messages', )
+    }
+
+
 }
 
 export default DataService;

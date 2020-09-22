@@ -19,7 +19,7 @@ class PostMessage extends React.Component {
     }
 
 
-    handleMessage = event => {
+    handlePostMessage = event => {
         event.preventDefault()
 
         this.client.postMessage({
@@ -46,7 +46,7 @@ class PostMessage extends React.Component {
             <div className='PostMessage'>
                 {console.log(this.state.message)}
                 <h4>What do you want to share with the world {this.state.username}?</h4>
-                <form onSubmit={this.handleMessage}>
+                <form onSubmit={this.handlePostMessage}>
                     <div>
                         <label htmlFor="text">Post a message </label>
                         <input

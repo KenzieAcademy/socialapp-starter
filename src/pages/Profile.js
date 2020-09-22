@@ -1,7 +1,7 @@
 import React from "react";
 import Menu from "../components/menu/Menu";
 import { userIsAuthenticated } from "../redux/HOCs";
-
+import PostMessage from '../components/postMessage/PostMessage'
 import GetUsers from "../components/getUsers/GetUsers";
 import PostMessage from "../components/postMessage/PostMessage";
 import DeleteMessage from "../components/deleteMessage/DeleteMessage";
