@@ -36,6 +36,8 @@ class RegistrationForm extends React.Component {
             name="username"
             autoFocus
             required
+            minLength='3'
+            maxLength='20'
             onChange={this.handleChange}
           />
           <label htmlFor="password">Password</label>
@@ -43,6 +45,8 @@ class RegistrationForm extends React.Component {
             type="password"
             name="password"
             required
+            minLength='8'
+            maxLength='20'
             onChange={this.handleChange}
           />
           <label htmlFor="displayName">Display Name</label>
@@ -50,6 +54,8 @@ class RegistrationForm extends React.Component {
             type="text"
             name="displayName"
             required
+            minLength='3'
+            maxLength='20'
             onChange={this.handleChange}
           />
           <button type="submit" disabled={loading}>

@@ -11,14 +11,24 @@ class UpdateUserForm extends React.Component {
       about: "",
       displayName: ""
     };
-    
+
     this.client = new DataService()
 
   }
 
   handleUpdateUser = e => {
     e.preventDefault();
-    this.client.updateUser(this.state).then(result => {
+    const updateData = {}
+    if (this.state.password.length > 7) {
+      updateData.password = this.state.password
+    }
+    if (this.state.about.length > 0) {
+      updateData.about = this.state.about
+    }
+    if (this.state.displayName.length > 2) {
+      updateData.displayName = this.state.displayName
+    }
+    this.client.updateUser(updateData).then(result => {
       alert(result.data)
     })
   };
@@ -33,28 +43,32 @@ class UpdateUserForm extends React.Component {
       <div className="UpdateUserForm">
         <h1>Update Profile</h1>
         <form id="updateUser-form" onSubmit={this.handleUpdateUser}>
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password">Password </label>
           <input
             type="password"
             name="password"
             autoFocus
-            required
+            minLength='8'
+            maxLength='20'
             onChange={this.handleChange}
           />
-          <label htmlFor="about">About</label>
-          <input
-            type="text"
-            name="about"
-            required
-            onChange={this.handleChange}
-          />
-          <label htmlFor="displayName">Display Name</label>
+          <br />
+          <label htmlFor="displayName">Display Name </label>
           <input
             type="text"
             name="displayName"
-            required
+            minLength='3'
+            maxLength='20'
             onChange={this.handleChange}
           />
+          <br />
+          <label htmlFor="about">About </label>
+          <input
+            type="text"
+            name="about"
+            onChange={this.handleChange}
+          />
+
           <button type="submit" disabled={loading}>
             Update
           </button>
