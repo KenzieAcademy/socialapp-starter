@@ -1,4 +1,5 @@
 import React from "react";
+// import 'antd/dist/antd.css';
 import { Link } from "react-router-dom";
 import image from "../assets/images/404image2.jpg";
 import "./NotFound.css";
