@@ -1,13 +1,12 @@
 import React from "react";
-import DataService from "../dataService";
-// import { withRouter } from 'react-router-dom'
-
-import { userIsAuthenticated } from "../redux/HOCs";
+import DataService from "../../dataService";
 
 
+import { userIsAuthenticated } from "../../redux/HOCs";
 
 
-class Messages extends React.Component {
+
+class PostMessage extends React.Component {
     constructor(props) {
         const loginData = JSON.parse(localStorage.getItem('login'))
         super(props)
@@ -44,7 +43,7 @@ class Messages extends React.Component {
     render() {
 
         return (
-            <div className='Messages'>
+            <div className='PostMessage'>
                 {console.log(this.state.message)}
                 <h4>What do you want to share with the world {this.state.username}?</h4>
                 <form onSubmit={this.handleMessage}>
@@ -65,5 +64,5 @@ class Messages extends React.Component {
     }
 }
 
-export default userIsAuthenticated(Messages)
+export default userIsAuthenticated(PostMessage)
 
