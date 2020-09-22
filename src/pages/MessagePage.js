@@ -3,6 +3,7 @@ import NewMessage from "../components/NewMessage/NewMessage";
 import { userIsAuthenticated } from "../redux/HOCs";
 import MessageList from "../components/messageList/MessageList"
 import DataService from "../DataService"
+import Menu from "../components/menu/Menu"
 
 class MessagePage extends React.Component {
   constructor(props) {
@@ -20,6 +21,7 @@ class MessagePage extends React.Component {
   render() {
     return (
       <div className="MessagePage">
+        <Menu isAuthenticated={this.props.isAuthenticated} />
         <NewMessage isAuthenticated={this.props.isAuthenticated} />
         <MessageList messages={this.state.messages} />
       </div>
