@@ -37,7 +37,10 @@ class QuestboardService {
         return this.client.put(this.url + "/users/{username}/picture");
     }
     GetMessageList(){
-        return this.client.get(this.url + "/messages?limit=2" );
+        return this.client.get(this.url + "/messages?limit=5" )
+        .then(response => { 
+            return response.data.messages
+        });
     }
     PostMessages(){
         return this.client.post(this.url +"/messages");
