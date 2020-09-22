@@ -14,13 +14,23 @@ class RegistrationForm extends React.Component {
       displayName: "",
     };
     this.client = new QuestboardService();
+  
+    ;
   }
 
   handleRegistration = e => {
     e.preventDefault();
     this.client.Register(this.state).then(result => {
       window.location = "/";
-    }).catch(err => alert(err))
+      (notification.success({
+        message: 'Welcome to the Campaign!',
+        description:'Redirecting to Login Page.'
+      }))
+    })
+    .catch(err => notification.error({
+      message: 'You Lost Your Dice.',
+      description: JSON.stringify(err.message),
+    },))
   };
 
   handleChange = e => {
@@ -28,18 +38,7 @@ class RegistrationForm extends React.Component {
   };
 
   render() {
-    const openNotification = () => {
-      
-      notification.open({
-        message: 'Notification Title',
-        description:
-          'test',
-          onClick: () => {
-          console.log('Notification Clicked!');
-        },
-      });
-    ;
-  }
+    
 
     const { loading, error } = this.props;
 
@@ -70,7 +69,7 @@ class RegistrationForm extends React.Component {
             onChange={this.handleChange}
           />
           <br/>
-          <button type="submit" disabled={loading} onClick={openNotification}>
+          <button type="submit" disabled={loading}>
             Register
           </button>
         </form>
