@@ -5,11 +5,13 @@
   align-items: center;
   padding: 0 1em;
   border-radius: 1em;
+  text-shadow: 2px 2px 8px rgb(202, 198, 198);
 }
 
 #menu-links {
   display: flex;
   padding-left: 1em;
+  text-shadow: 2px 2px 8px black;
 }
 
 #menu-links a {

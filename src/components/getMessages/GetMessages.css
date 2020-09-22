@@ -23,4 +23,5 @@ div.jerry {
   margin: 4em;
   padding: 0.75em;
   background-color: #ABBAEA;
+  box-shadow: 5px 8px 3px rgb(255, 194, 140);
 }
