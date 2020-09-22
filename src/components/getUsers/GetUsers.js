@@ -38,9 +38,9 @@ class GetUsers extends Component {
                     profileImg.src = "https://i.postimg.cc/6QgJNjX8/default.png"
                 }
                 else {
-                    profileImg.src = userList[i].pictureLocation
+                    profileImg.src = "https://socialapp-api.herokuapp.com/users/" + userList[i].username + "/picture"
                 }
-                profileImg.alt = "./default.png"
+                profileImg.alt = "image not found"
                 profile.append(profileImg)
                 const profileName = document.createElement("h3")
                 profileName.innerText = userList[i].displayName
@@ -61,7 +61,7 @@ class GetUsers extends Component {
                     profileImg.src = "https://i.postimg.cc/6QgJNjX8/default.png"
                 }
                 else {
-                    profileImg.src = userList[i].pictureLocation
+                    profileImg.src = "https://socialapp-api.herokuapp.com/users/" + userList[i].username + "/picture"
                 }
                 profileImg.alt = "./default.png"
                 profile.append(profileImg)
