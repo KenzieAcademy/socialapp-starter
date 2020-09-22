@@ -18,7 +18,7 @@ class FootNavBar extends React.Component {
             <a href={"https://www.funbrainfree.com/math-games/"} target="blank">
               Sponsered By FUNBRAIN
             </a>
-            <a href={"https://www.facebook.com/ashley.storer.9"} target="blank">
+            <a href={"https://www.facebook.com/SquirrelsInSpace/"} target="blank">
               Like us on FB
             </a>
           </div>

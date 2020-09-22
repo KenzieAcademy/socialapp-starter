@@ -1,9 +1,11 @@
-
-.ui,.basic, .segment {
+.segment {
     background-image: url("../../components/assets/images/backgrounds/Downside_up.jpg");
+   padding-left: 10px;
+   
 }
 
 .h3 {
     color: white;
 }
+
 

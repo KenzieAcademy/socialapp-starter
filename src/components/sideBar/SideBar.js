@@ -1,5 +1,5 @@
 import React from 'react';
-import { Header, Icon, Menu, Segment, Sidebar, Grid, Input, Container } from 'semantic-ui-react';
+import { Icon, Menu, Segment, Sidebar, Grid, Input, Column } from 'semantic-ui-react';
 import "./SideBar.css"
 import { Link } from "react-router-dom";
 import Clock from "../../pages/clock/Clock";
@@ -37,18 +37,18 @@ const SidebarVisible = () => (
 
 
                 <Sidebar.Pusher>
-                    <div class="ui left aligned container">
-                        <div className="profile-pic">
-
-                            <h3>User's Name</h3>
-                            <UploadImage />
+                    <div class="ui horizontal segments">
+                        <div class="iu segment">
+                            <p>
+                                <h3>User's Name</h3>
+                                <UploadImage />
+                            </p>
                         </div>
-                    </div>
-                    <div class="ui center aligned container">
-                        <div className="profile-content">
-                            <div className="edit-profile">
-                                <h3>About Me</h3>
+
+                        <div class="iu segment">
+                            <p>
                                 <button className="Edit">Edit Profile</button>
+                                <h3>About Me</h3>
                                 <br></br>
                                 <input type="text" />
 
@@ -59,7 +59,8 @@ const SidebarVisible = () => (
                                     <Input type="text"></Input>
 
                                 </form>
-                            </div>
+                            </p>
+
                         </div>
                     </div>
                 </Sidebar.Pusher>

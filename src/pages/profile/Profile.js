@@ -19,19 +19,19 @@ class Profile extends React.Component {
       <div className="profile">
         <Menu isAuthenticated={this.props.isAuthenticated} />
 
-        <Segment placeholder>
+        {/* <Segment placeholder>
           <Grid columns={1} relaxed='very' stackable>
-            <Grid.Column >
+            <Grid.Column > */}
 
-              <SideBar isAuthenticated={this.props.isAuthenticated} />
-              {/* <h2>User's Name</h2> */}
-              {/* <UploadImage /> */}
+        <SideBar isAuthenticated={this.props.isAuthenticated} />
+        {/* <h2>User's Name</h2> */}
+        {/* <UploadImage /> */}
 
-            </Grid.Column>
+        {/* </Grid.Column> */}
 
 
-          </Grid>
-        </Segment>
+        {/* </Grid>
+        </Segment> */}
 
 
         <FootNavBar isAuthenticated={this.props.isAuthenticated} />

@@ -16,7 +16,9 @@ class socialAppService {
   getUsers() {
     return this.client.get(this.url + "/users");
   }
-
+  // updateUser(userData) {
+  //   return this.client.patch(this.url + "users", userData);
+  // }
   // postMessage() {
   //   return this.client.post(this.url + "/messages");
   // }
@@ -25,6 +27,12 @@ class socialAppService {
   //   return this.client.get("/messages").then(response =>{
   //     return response.data.messages
   //   })
+  // }
+
+  // deleteMessage() {
+  //   let loginData = JSON.parse(localStorage.getItem("login"))
+  //   return this.client.delete(this.url + `/messages/${loginData.result.messageId}/message`
+  //   { headers: { Authorization: `Bearer ${loginData.result.token}` } })
   // }
 
   putPhoto(picObject) {

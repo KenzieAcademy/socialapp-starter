@@ -54,7 +54,7 @@ class UploadImage extends React.Component {
         return (
             <div>
                 <form id="upload-image" onSubmit={this.handleUploadImage}>
-                    {/* <label htmlfor="userImage">Upload your photo!</label> */}
+
                     <input type="file"
                         onChange={this.onFileChange}
                     />
