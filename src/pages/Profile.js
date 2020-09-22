@@ -1,7 +1,7 @@
 import React from "react";
 import {Image, message, Upload, Button, Layout} from 'antd';
 import "antd/dist/antd.css"
-import Menu from "../components/menu/MenuAuthenticated";
+import Menu from "../Components/menu/MenuAuthenticated";
 import { userIsAuthenticated } from "../redux/HOCs";
 
 import Icon from "@ant-design/icons/lib/components/Icon";

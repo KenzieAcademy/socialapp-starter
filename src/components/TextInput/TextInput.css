@@ -1,16 +1,20 @@
-#messagesAndInput {
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: flex-end;
+#feedMessageInput {
+    background-color: white;
+    width: 85%;
+    margin: auto;
+    display: flex;   
+    
 }
 
-#MessageInput {
-    border: solid red 5px;
-}
-
-#appendToThis {
+#TextSubmitButton {
     position: relative;
-    top: 191px;
-    left: 203px;
-    width: 84%;
+    left: 40%;   
 }
+
+#inputTextBorderBox {
+        width: 50%;
+        background-color: #e0d8c0;
+        margin: 10px auto;
+    
+}
+
