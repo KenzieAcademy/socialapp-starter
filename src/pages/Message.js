@@ -1,26 +1,42 @@
  import React from "react";
 import Menu from "../components/menu/Menu";
 import { userIsAuthenticated } from "../redux/HOCs";
-import { Form,Feed, FeedEvent, Input, Button, TextArea } from 'semantic-ui-react'
+import { Form,Feed, Input, Button, TextArea } from 'semantic-ui-react'
 import DataService from '../components/DataService'
 
 class Messages extends React.Component {
-
   
-constructor(props){
-  super(props)
-
-  this.state = {
-    text:""
+  constructor(props){
+    super(props)
     
+    
+    
+    this.state = {
+      text:"",
+      messages:[],
       
+      
+      
+      
+      
+    }
+    this.client = new DataService()
     
-     
+    
+    
     
   }
-  this.client = new DataService()
-}
-
+  componentDidMount(){
+    this.client.getMessages().then(messages => {
+      
+      this.setState({messages:messages}
+        )
+        
+      })
+      
+      console.log(this.state)
+    }
+  
   
 handleChange = (event) => {
   
@@ -40,6 +56,13 @@ handleSubmit = (event) => {
  this.client.createMessage(this.state ).then(result =>{
   console.log(result.data)
 })
+
+
+
+
+this.client.getMessage().then(result =>{
+ console.log(result.data)
+})
 };
 
 
@@ -49,11 +72,11 @@ handleSubmit = (event) => {
 
 
 
-  
- 
 
-  render() {
-    
+
+
+render() {
+  
        
       
     return (
@@ -67,11 +90,14 @@ handleSubmit = (event) => {
     <Form onSubmit={this.handleSubmit}>
         <div>
 
+          
+
           <TextArea
             placeholer='Enter Message'
             style={{minHeight: 200, minWidth: 400}}
             type="text"
             name="text"
+            
             required
             onChange={this.handleChange}
           />
