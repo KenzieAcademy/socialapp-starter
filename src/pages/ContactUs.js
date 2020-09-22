@@ -1,5 +1,5 @@
 import React from "react";
-import MenuUnauthenticated from "../components/menu/MenuUnauthenticated";
+import MenuUnauthenticated from "../components/menu/MenuAuthenticated";
 
 
 class ContactUs extends React.Component {

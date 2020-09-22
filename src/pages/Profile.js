@@ -16,6 +16,7 @@ import {UpOutlined } from '@ant-design/icons';
 
 
 
+
 class Profile extends React.Component {
   super(props) {
     // this.state = {
@@ -64,8 +65,17 @@ const style = {
       <Header className="subHeader" ><h2>Quests will appear here!</h2> </Header>
       <Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>
         <div className="site-layout-background" style={{ padding: 24, textAlign: 'center' }}>
-       
-      
+
+        <div className="Profile">
+      <Menu isAuthenticated={this.props.isAuthenticated} />
+    <h2>Welcome, {this.username}</h2>
+        <hr/>
+      <Upload
+         name="avatar" listType="picture-card" className="avatar-uploader" 
+         accept=".png" >
+           <Button Icon type="Upload">Upload Profile picture here!</Button>
+           </Upload>
+
         
         </div>
       </Content>
