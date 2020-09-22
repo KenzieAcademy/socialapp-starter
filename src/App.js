@@ -2,15 +2,14 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 
 import Home from "./pages/home/Home";
-// import Menu from "./components/menu/Menu";
 import Profile from "./pages/profile/Profile";
-import NotFound from "./pages/notFound/NotFound";
-import About from "./pages/about/About"
+import About from "./pages/about/About";
 import Visit from "./pages/visit/Visit";
 import Style from "./pages/style/Style";
 import Play from "./pages/play/Play";
 import Meet from "./pages/meet/Meet"
 import Logoff from "./pages/logoff/Logoff";
+import NotFound from "./pages/notFound/NotFound";
 
 class App extends React.Component {
   render() {
@@ -55,7 +54,7 @@ class App extends React.Component {
           />
           <Route
             exact
-            path="/logout"
+            path="/logoff"
             component={Logoff}
           />
           <Route
@@ -71,3 +70,8 @@ class App extends React.Component {
 }
 
 export default App;
+
+// import Menu from "./components/menu/Menu";
+// import { Buttons } from "./components/button/Button";
+// import { Containers } from "./Containers";
+// import { Lists } from "./Lists";

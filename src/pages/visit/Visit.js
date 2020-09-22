@@ -1,7 +1,11 @@
 import React from 'react';
+import { Grid, Image } from 'semantic-ui-react'
 import { userIsAuthenticated } from "../../redux/HOCs";
-import './Visit.css';
 import Menu from "../../components/menu/Menu";
+import FlexContainer from "../../components/flexContainer/FlexContainer";
+import Scroll from "../../components/scroll/Scroll";
+import './Visit.css';
+// import FlexContainer from "../../components/flexContainer/FlexContainer";
 
 class Visit extends React.Component {
     render() {
@@ -9,11 +13,17 @@ class Visit extends React.Component {
             <div>
                 <div className="Visit">
                     <Menu isAuthenticated={this.props.isAuthenticated} />
-                    <h1>This is the "Visit the Planets" page.</h1>;
+                    <br />
+                    <Grid.Row className="VisitHeader">
+                        <h1>Visit the Planets</h1>
+                        {/* <Scroll /> */}
+                        <FlexContainer />
+                    </Grid.Row>
                 </div>
             </div>
         )
     }
 }
 
-export default userIsAuthenticated(Visit);
+export default userIsAuthenticated(Visit)
+

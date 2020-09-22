@@ -9,7 +9,7 @@ class Play extends React.Component {
             <div>
                 <div className="Play">
                     <Menu isAuthenticated={this.props.isAuthenticated} />
-                    <h1>This is the "Let's Play SpaceBallz!" page.</h1>;
+                    <h1>This is the "Let's Play SpaceBallz!" page.</h1>
                 </div>
             </div>
         )
