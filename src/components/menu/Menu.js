@@ -30,6 +30,7 @@ class Menu extends React.Component {
             <Link to={"/profile" + this.username}>
               Profile
               </Link>
+              <Link to="/userFeed">UserFeed</Link>
           </div>
         )}
       </div>
