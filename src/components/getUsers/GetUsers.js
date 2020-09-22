@@ -38,15 +38,25 @@ class GetUsers extends Component {
                     profileImg.src = "https://i.postimg.cc/6QgJNjX8/default.png"
                 }
                 else {
-                    profileImg.src = userList[i].pictureLocation
+                    profileImg.src = "https://socialapp-api.herokuapp.com/users/" + userList[i].username + "/picture"
                 }
-                profileImg.alt = "./default.png"
+                profileImg.alt = "image not found"
                 profile.append(profileImg)
-                const profileName = document.createElement("h3")
+
+                const profileName = document.createElement("h2")
                 profileName.innerText = userList[i].displayName
                 profile.append(profileName)
+                
+                const profileUserName = document.createElement("h3")
+                profileUserName.innerText = "Username: " + userList[i].username
+                profile.append(profileUserName)
+                
+                const profileEmail = document.createElement("h3")
+                profileEmail.innerText = "Email: " + userList[i].email
+                profile.append(profileEmail)
+                
                 const profileAbout = document.createElement("p")
-                profileAbout.innerText = userList[i].about
+                profileAbout.innerText = "About me: " + userList[i].about
                 profile.append(profileAbout)
             }
         }
@@ -61,7 +71,7 @@ class GetUsers extends Component {
                     profileImg.src = "https://i.postimg.cc/6QgJNjX8/default.png"
                 }
                 else {
-                    profileImg.src = userList[i].pictureLocation
+                    profileImg.src = "https://socialapp-api.herokuapp.com/users/" + userList[i].username + "/picture"
                 }
                 profileImg.alt = "./default.png"
                 profile.append(profileImg)
@@ -69,9 +79,6 @@ class GetUsers extends Component {
                 profileName.href = "http://localhost:3000/profile/" + userList[i].username
                 profileName.innerText = userList[i].displayName
                 profile.append(profileName)
-                const profileAbout = document.createElement("p")
-                profileAbout.innerText = userList[i].about
-                profile.append(profileAbout)
         }
     }
 
