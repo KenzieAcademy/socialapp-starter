@@ -25,9 +25,9 @@ class DataService {
         return this.client.post(this.url + '/messages', {text: messageData.text}, {
         headers: { Authorization: "Bearer " + messageData.token}
           })
-
     }
 
+    
 }
 
 export default DataService;

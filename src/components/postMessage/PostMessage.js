@@ -57,7 +57,7 @@ class PostMessage extends React.Component {
                             onChange={this.handleChange}
                         />
                     </div>
-                    <button type='submit'>Post</button>
+                    <button type='submit'>Post message</button>
                 </form>
             </div>
         )
