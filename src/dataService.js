@@ -35,6 +35,19 @@ class DataService {
             .catch(error => console.log(error))
     }
 
+    setUsersPicture(username, picture) {
+        console.log(`${username} ${picture}`)
+        const config= {
+            headers: {
+                     'Access-Control-Allow-Origin': 'https://socialapp-api.herokuapp.com/users/test15/picture',
+                     'content-type': 'multipart/form-data',
+                      Authorization: `Bearer ${this.getToken()}`}
+        }
+        return this.client.put(this.url + `/users/${username}/picture`, picture, config)
+                .then(response => console.log(response))
+                .catch(error => console.log(error))
+    }
+    
     getMessages() {
         return this.client.get(this.url + "/messages")
     }
