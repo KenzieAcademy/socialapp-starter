@@ -6,9 +6,50 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 30px;
+
+  display: flex;
+  height: 100vh;
+  align-items: top-center;
+  justify-content: center;
+  background-image: linear-gradient(to top, #7a2c15 30%, #d36f48 50%);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.cowboy1 {
+  width: 400px;
+  position: relative;
+  top: 125px;
+  left: -300px;
+}
+
+.cowboy2 {
+  width: 400px;
+  position: relative;
+  top: -150px;
+  left: 150px;
+}
+
+.cowboy4 {
+  position: relative;
+  /* top: 50px; */
+  left: -600px;
+}
+
+.cowboy3 {
+  width: 300px;
+  position: relative;
+  top: -100px;
+  left: 820px;
+}
+
+.cowgirl1 {
+  width: 250px;
+  position: relative;
+  top: 500px;
+  left: -300px;
 }
