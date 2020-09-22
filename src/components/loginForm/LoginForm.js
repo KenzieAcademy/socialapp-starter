@@ -4,8 +4,6 @@ import { withAsyncAction } from "../../redux/HOCs";
 import "./LoginForm.css";
 import Button from '@material-ui/core/Button';
 
-
-
 class LoginForm extends React.Component {
   constructor(props) {
     super(props)
