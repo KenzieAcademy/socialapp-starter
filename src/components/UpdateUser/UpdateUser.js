@@ -1,15 +1,16 @@
 //import React from "react";
 
-import React , { Component } from "react"
+import React, { Component } from "react"
+import ClientOptions from '../ClientOptions'
 import SocialApp from "../socialapp/SocialApp";
 
 class UpdateUser extends Component {
     constructor(props) {
         super(props)
-        this.client = new SocialApp()
+        this.client = new ClientOptions()
 
         this.state = {
-            data: [], 
+            data: [],
             submitted: false,
             formData: {
                 name: '',
@@ -17,52 +18,45 @@ class UpdateUser extends Component {
             }
         }
     }
-    updateProfile (){
-        return this.client.edituser().then(result => {
-            this.setState({
-                data: result.data
+    updateProfile() {
+        return this.client.UpdateClient()
 
-            })
-        })
+            
+        
     }
-    componentDidMount(){
+    componentDidMount() {
         this.updateProfile()
     }
     handleChange = (event) => {
-        const formData = {...this.state.formData}
+        const formData = { ...this.state.formData }
         formData[event.target.name] = event.target.value
 
-        this.setState({formData})
+        this.setState({ formData })
     }
     handleSubmit = (event) => {
         event.preventDefault()
-            this.setState({
-                submitted: true,
-                formData:{
-                    name: this.state.formData.name,
-                    email: this.state.formData.email,
+        this.setState({
+            submitted: true,
+            formData: {
+                name: this.state.formData.name,
+                email: this.state.formData.email,
 
-                }
+            }
 
 
-            })
+        })
     }
-    
-            
-    
 
-        
+
+
+
+
 
     render() {
         //may need a if statment for api data
-        if(this.state.submitted){
-            return(
-                <div className="UpdateUser">
-                 <p>Thank you, {this.state.formData.name}, for submitting the form. </p> 
-                   
-                </div>
-            )
-        }
+        const getData = this.state.data
+        console.log(getData)
+
 
 
         return (
@@ -92,11 +86,11 @@ class UpdateUser extends Component {
 
                     <button>Submit</button>
                 </form>
-                
+
                 <div>
-                    {this.state.formData.name}
-                    <br/>
-                    {this.state.formData.email}
+                    {this.state.data.username}
+                    <br />
+                    {this.state.data.email}
                 </div>
             </div>
         )
