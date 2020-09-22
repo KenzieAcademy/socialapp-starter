@@ -17,7 +17,7 @@ class Meet extends React.Component {
                 <br />
                 <br />
 
-                <Grid columns={3} divided>
+                <Grid columns={3} relaxed='very'>
                     <Grid.Row>
                         <Grid.Column>
                             <div className="Arjun">Arjun</div>
@@ -49,7 +49,7 @@ class Meet extends React.Component {
                         </Grid.Column>
                     </Grid.Row>
                 </Grid>
-            </div>
+            </div >
         );
     }
 }

@@ -54,7 +54,7 @@ class App extends React.Component {
           />
           <Route
             exact
-            path="/logout"
+            path="/logoff"
             component={Logoff}
           />
           <Route
