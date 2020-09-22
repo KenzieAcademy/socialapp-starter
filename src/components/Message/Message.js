@@ -1,7 +1,7 @@
 import React from "react"
 import "./message.css"
 import QuestboardService from "../../pages/ServicePage"
-// import Dice from "../../media/Dice.png"
+import Dice from "../../media/Dice.png"
 
 class Message extends React.Component {
 
@@ -26,9 +26,9 @@ class Message extends React.Component {
                 <br />
                 {this.props.text}
                 <div className="likecount">
-                    Likes: {this.state.likecount}
+                    Nat 20 "(likes)": {this.state.likecount}
                 </div>
-                <button onClick ={this.handleLike}><span role="img" aria-label="Like">"thumbs up"</span></button>
+                <button onClick ={this.handleLike}><img src = {Dice} alt= "Dice"/></button>
             </div>
         )
     }
