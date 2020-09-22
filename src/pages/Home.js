@@ -21,5 +21,7 @@ class Home extends React.Component {
     );
   }
 }
-
+//this is the welcome screen with the log-in/sign-up information
+//home in components is the css of it. 
+//
 export default userIsNotAuthenticated(Home);*/

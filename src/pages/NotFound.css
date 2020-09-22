@@ -1,0 +1,15 @@
+/*body {
+    display: flexbox;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}*/
+
+.ErrorPic {
+    background-image: url(../assets/cat404.gif);
+    background-size: 80%;
+    background-repeat: no-repeat;
+    height: 750px;
+    width: 750px;
+}
