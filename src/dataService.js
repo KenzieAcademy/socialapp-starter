@@ -26,7 +26,7 @@ class DataService {
     deleteUser(userData) {
         return this.client.delete(this.url + '/users/' + userData, userData)
     }
-}
+
 
 
 postMessage(messageData) {
@@ -34,7 +34,7 @@ postMessage(messageData) {
     return this.client.post(this.url + '/messages', { text: messageData.text }, {
         headers: { Authorization: "Bearer " + messageData.token }
     })
-
+}
 }
 
 
