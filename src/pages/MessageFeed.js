@@ -1,9 +1,9 @@
 import React from "react";
-import MenuAuthenticated from "../Components/menu/MenuAuthenticated";
+import MenuAuthenticated from "../components/menu/MenuAuthenticated";
 import { userIsAuthenticated } from "../redux/HOCs";
-import MessageFeed2 from "../Components/feed2/Feed2"
-import TextInput from "../Components/TextInput/TextInput"
-import "../Components/feed2/feed2.css"
+import MessageFeed2 from "../components/feed2/Feed2"
+import TextInput from "../components/TextInput/TextInput"
+import "../components/feed2/feed2.css"
 
 class MessageFeed extends React.Component {
   constructor(props) {

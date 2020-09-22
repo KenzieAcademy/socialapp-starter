@@ -1,7 +1,8 @@
 import axios from 'axios';
 
 class QuestboardService {
-    constructor(url = 'https://socialapp-api.herokuapp.com', client = axios.create()){
+    constructor(
+        url = 'https://socialapp-api.herokuapp.com', client = axios.create()){
         this.url = url;
         this.client = client;
         // const loginData = JSON.parse(localStorage.getItem("login"));
@@ -34,7 +35,7 @@ class QuestboardService {
         return this.client.get(this.url + "/users/{username}/picture");
     }
     SetPicture() {
-        return this.client.put(this.url + "/users/{username}/picture");
+        return this.client.put(this.url + "/users/{username}/picture").then(response => {return response.data.picture});
     }
     GetMessageList(){
         return this.client
@@ -47,7 +48,7 @@ class QuestboardService {
         return this.client.post(this.url +"/messages");
     }
     GetMessage(){
-        return this.client.get(this.url + "/messages/{messageId}");
+        return this.client.get(this.url + "/messages/{messageId}").then(response => {return response.data.messages});
     }
     DeleteMessage(){
         return this.client.delete(this.url + "/messages/{messageId}");
