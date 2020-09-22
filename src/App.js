@@ -9,6 +9,7 @@ import UpdateProfile from "./pages/UpdateProfile";
 import Homepage from "./components/homepage/Homepage";
 
 
+import MessageFeed from "./pages/MessageFeed";
 
 
 class App extends React.Component {
@@ -45,6 +46,13 @@ class App extends React.Component {
           path="/profile/updateprofile/:username"
           component={UpdateProfile}
         />
+        <Route
+          exact
+          path="/messagefeed"
+          component={MessageFeed}
+
+        />
+
         <Route
           exact
           path="*"

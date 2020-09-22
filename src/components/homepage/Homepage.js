@@ -6,6 +6,13 @@ import Team from "./assets/Team.png"
 
 
 class Homepage extends React.Component {
+    constructor(props) {
+
+        super(props);
+        this.username = JSON.parse(localStorage.getItem('login')).result.username;
+
+            }
+
     render() {
         return (
             <div className="Home">
@@ -37,7 +44,7 @@ class Homepage extends React.Component {
 
 
                 <Button color="blue" >
-                    <Link to="./profile/:username">back to profile</Link>
+                    <Link to={"./profile/" + this.username}>back to profile</Link>
                 </Button>
 
 

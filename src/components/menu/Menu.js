@@ -8,12 +8,24 @@ import GlobeLogo from "./assets/Globe01sm.png"
 
 
 class Menu extends React.Component {
+  constructor(props) {
+    super(props);
+
+    if (JSON.parse(localStorage.getItem('login')).result) {
+      this.username = JSON.parse(localStorage.getItem('login')).result.username;
+    }
+
+  }
+
   handleLogout = event => {
     event.preventDefault();
     this.props.logout();
   };
 
   render() {
+
+
+
     return (
       <div className="Menu">
 
@@ -26,61 +38,44 @@ class Menu extends React.Component {
         </div>
 
         <h1>World Music Coalition</h1>
+        {/* // conditional renderin : if isIdentificated, then show the links  */}
         {this.props.isAuthenticated && (
           <div id="menu-links">
 
-            {/* <Link to="/registration">Registration</Link> */}
-
-            {/* <Link to={"/profile/"+ this.props.match.params.username}>My Profile</Link> */}
-            {/* <Link to="/profile/">Home</Link>
-            <Link to="/myposts"></Link>
-        <Link to="/messagefeed"> </Link>*/}
-
-
-
-            <Link to="/list-of-users">List of users</Link>
-
-
-
-            <Link to="/" onClick={this.handleLogout}>
-              Logout
-            </Link>
-
-
-
-
             <div>
-              <Button.Group widths='5'>
+              <Button.Group widths='6'>
                 <Button color='yellow'>
                   <Link to="/Homepage" >
                     Homepage
                      </Link>
                 </Button>
 
-                <Button color='orange'> 
-                <Link to="/Messages">
-                Messages
-                </Link>
-                
-                </Button>
-                <Button color='green'>Profile</Button>
-                <Button color='red'>UpDate Profile</Button>
 
+
+                <Button color='orange'><Link to="/messagefeed"> Messages </Link></Button>
+
+
+                <Button color='green'><Link to={"/profile/" + this.username}>Profile</Link></Button>
+
+
+                <Button color='blue'> <Link to={"/profile/updateprofile/" + this.username}> UpDate Profile </Link></Button>
+
+
+                <Button color='red'><Link to="/list-of-users/">List of users</Link></Button>
                 <Button color='violet' text="white">
                   <Link to="/Logout/" onClick={this.handleLogout}>
                     Logout</Link>
                 </Button>
-
               </Button.Group>
+
 
 
             </div>
 
           </div>
-        )}
-      </div>
 
-    )
+        )}
+      </div>)
   }
 }
 export default withAsyncAction("auth", "logout")(Menu);
