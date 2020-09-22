@@ -5,6 +5,7 @@ import Layout from '../components/Layout'
 import { userIsAuthenticated } from "../redux/HOCs";
 
 
+
 class Profile extends React.Component {
   render() {
     return (
