@@ -22,12 +22,8 @@ class Feed extends React.Component {
             
             document.getElementById("messagesBlock").innerHTML += 
             "<div class='messageBubble'><h2>" + JSONUser + "</h2> <h3>" + JSONMessage + "</h3><p> Date Created " + JSONDate + "</p><span> Likes " + JSONLikes + "</span><button>Like</button></div>"
-            
-            
-            
         }
     }
-    
     componentDidMount() {
         fetch("https://socialapp-api.herokuapp.com/messages")
         .then(res => res.json())
