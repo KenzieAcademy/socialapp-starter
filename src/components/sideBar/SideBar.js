@@ -1,14 +1,21 @@
 import React from "react";
 import Clock from "../../pages/clock/Clock";
 
+import PlanetDropdown from "../../components/planetDropdown/PlanetDropdown";
+
 
  class SideBar extends React.Component {
     render() {
 
 
         return (
-        <Clock />
-        );
+        <div>
+
+            <Clock />
+            <PlanetDropdown />
+        </div>
+
+        )
     }
 
 }
