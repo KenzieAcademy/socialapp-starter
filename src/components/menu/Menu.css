@@ -28,6 +28,7 @@ span {
   align-items: center;
   padding: 0 2em;
   border-radius: 2em;
+  border-color: red;
   font-family: "Lucida Console", Courier, monospace;
   font-style: inherit;
   font-size: larger;
