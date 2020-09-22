@@ -55,7 +55,6 @@ class DataService {
     setUsersPicture(username, picture) {
         return this.client.get(this.url + `/users/${username}/picture`, picture);
     }
-      
 }
 
 export default DataService;
