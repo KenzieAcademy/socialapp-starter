@@ -15,7 +15,8 @@ class Menu extends React.Component {
       // const profileURL = "/profile/" + loginData.result.username
       return (
         <div className="Menu">
-          <h1>Kwitter</h1>
+          <h1>Jerry Book</h1>
+          <h3>: a site <strong>by</strong> Jerries, <strong>for</strong> Jerries.</h3>
           {this.props.isAuthenticated && (
             <div id="menu-links">
               <Link to="/">Profile</Link>
@@ -32,7 +33,9 @@ class Menu extends React.Component {
   else {
     return (
       <div className="Menu">
-        <h1>Kwitter</h1>
+          <h1>Jerry Book</h1>
+          <h3>A site <strong>by</strong> Jerries, <strong>for</strong> Jerries.</h3>
+
         {this.props.isAuthenticated && (
           <div id="menu-links">
             <Link to="/deleteUser">Delete User</Link>

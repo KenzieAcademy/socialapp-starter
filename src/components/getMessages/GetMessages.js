@@ -1,6 +1,6 @@
 import React , { Component } from 'react'
 import GetMessagesService from './GetMessagesService'
-
+import "./GetMessages.css"
 class GetMessages extends Component {
     constructor(props) {
         super(props)
@@ -26,7 +26,7 @@ class GetMessages extends Component {
         const messageArray = this.state.messages
         for (let i = 0; i < messageArray.length; i++) {
             let post = document.createElement("div")
-            post.className = "message"
+            post.className = "jerry"
             let postUser = document.createElement("h5")
             postUser.innerText = messageArray[i].username
             let postText = document.createElement("p")
