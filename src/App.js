@@ -1,12 +1,16 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
+import 'antd/dist/antd.css';
 import Home from "./pages/Home";
-import Profile from "./pages/Profile";
+import Profile from "./pages/UpdateProfile";
 import NotFound from "./pages/NotFound";
 import NewUser from "./pages/NewUser";
 import MessageFeed from "./pages/MessageFeed";
 import ContactUs from "./pages/ContactUs";
 import Registration from "./pages/Registration"
+
+
+
 
 class App extends React.Component {
   render() {
