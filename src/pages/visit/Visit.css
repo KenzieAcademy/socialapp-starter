@@ -4,6 +4,11 @@
   background-color: transparent;
 }
 
+html {
+  background: url("../../components/assets/images/backgrounds/Milky_Way.jpg")
+    no-repeat center center fixed;
+}
+
 .Visit {
   background-image: url("../../components/assets/images/backgrounds/Milky_Way.jpg");
   height: 200vh;
