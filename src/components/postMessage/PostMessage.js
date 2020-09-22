@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PostMessageService from "./PostMessageService"
-
+import "./PostMessages.css"
 class PostMessage extends Component {
     constructor(props) {
         super(props)
@@ -23,7 +23,7 @@ class PostMessage extends Component {
         return (
             <div>
                 <form id="new-message" onSubmit={this.handleSubmit}>
-                <label htmlFor="message">Message</label>
+                <label htmlFor="message">Type Message: </label>
                     <input
                         type="text"
                         name="message"

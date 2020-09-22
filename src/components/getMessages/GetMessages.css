@@ -26,3 +26,12 @@ div.jerry {
   box-shadow: 5px 8px 3px rgb(255, 194, 140);
   border-radius: 56px;
 }
+
+button.submit {
+  background-color: red;
+}
+
+/* a:hover, button{
+  background-color: red;
+
+} */
