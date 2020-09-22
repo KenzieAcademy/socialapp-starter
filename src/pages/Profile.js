@@ -73,7 +73,7 @@ class Profile extends React.Component {
           <Image src='https://images.pexels.com/photos/2846814/pexels-photo-2846814.jpeg?cs=srgb&dl=pexels-oziel-g%C3%B3mez-2846814.jpg&fm=jpg' wrapped ui={false} />
 
           <Card.Content>
-            <Card.Header> {this.state.user.username}</Card.Header>
+            <Card.Header> {this.state.user.displayName}</Card.Header>
             <Card.Description>{this.state.user.about}</Card.Description>
 
             {/* <h3>User Name: {this.state.user.username}</h3> */}
@@ -84,7 +84,7 @@ class Profile extends React.Component {
 
           <Card.Content extra>
             <a>
-              <Icon name='user' />
+              <Icon name= "user"/>
             </a>
           </Card.Content>
         </Card>
