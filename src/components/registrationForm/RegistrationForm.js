@@ -1,8 +1,8 @@
 import React from "react";
 import Spinner from "react-spinkit";
-import "./RegistrationForm.css";
 import DataService from "../../dataService";
 import { Link } from "react-router-dom";
+import "./RegistrationForm.css";
 
 class RegistrationForm extends React.Component {
 
@@ -35,6 +35,7 @@ class RegistrationForm extends React.Component {
         <form id="registration-form" onSubmit={this.handleRegistration}>
           <h2>Register a new account</h2>
           <label htmlFor="username">Username</label>
+          <h5>Username must be between 3-20 characters long.</h5>
           <input
             type="text"
             name="username"
@@ -43,6 +44,7 @@ class RegistrationForm extends React.Component {
             onChange={this.handleChange}
           />
           <label htmlFor="password">Password</label>
+          <h5>Password must be between 3-20 characters long.</h5>
           <input
             type="password"
             name="password"
@@ -50,6 +52,7 @@ class RegistrationForm extends React.Component {
             onChange={this.handleChange}
           />
           <label htmlFor="displayName">Display Name</label>
+          <h5>This is the name that users will see on your profile.</h5>
           <input
             type="text"
             name="displayName"

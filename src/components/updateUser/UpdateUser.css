@@ -37,19 +37,17 @@
     border: 1px solid black;
 }
 .button-link {
-    color: rgb(255, 2, 2);
+    color: red;
     background: none;
-    text-decoration: none;
     width: auto;
     height: auto;
     border: none;
     margin: unset;
     padding: 0px;
     border-radius: 0px;
-    text-shadow: none;
     font-size: unset;
-    outline-style: unset;
+    font-weight: unset;
 }
 .button-link:hover {
-    color: rgb(250, 110, 110);
+    color: rgb(255, 134, 64);
 }

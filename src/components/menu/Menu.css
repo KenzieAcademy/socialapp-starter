@@ -32,8 +32,12 @@ span{
 
 #menu-links a {
   padding-right: 0.5em;
-  color: rgb(20, 20, 20);
-  text-decoration: underline;
+  color: black;
+  text-decoration: none;
   cursor: pointer;
+}
+
+#menu-links a:hover {
+  color: darkred;
 }
 
