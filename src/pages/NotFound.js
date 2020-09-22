@@ -1,14 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./NotFound.css";
+import Error from "../assets/404.gif";
 
 
 class NotFound extends React.Component {
   render() {
     return (
       <div>
-      <div className="ErrorPic">
-        
+      <div className="NotFound">
+       <img src={Error} alt="404 page"/>
        
        <h1> <Link to="/">Home</Link></h1>
       
@@ -19,4 +19,4 @@ class NotFound extends React.Component {
 }
 
 export default NotFound;
-// {this.props.location.pathname}<img src={Error} alt="404 page"/>
+// {this.props.location.pathname}

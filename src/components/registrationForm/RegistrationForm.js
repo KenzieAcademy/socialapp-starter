@@ -2,7 +2,7 @@ import React from "react";
 import Spinner from "react-spinkit";
 //import { withAsyncAction } from "../../redux/HOCs";
 import "./RegistrationForm.css";
-import AlmostTwitterService from "../../AlmostTwitterService";
+import DataService from "../../services/DataService";
 import Menu from "../menu/Menu";
 
 class RegistrationForm extends React.Component {
@@ -13,7 +13,7 @@ class RegistrationForm extends React.Component {
       password: "",
       displayName: ""
     };
-    this.client = new AlmostTwitterService();
+    this.client = new DataService();
   }
 
   handleRegistration = e => {
