@@ -1,4 +1,5 @@
 import axios from 'axios'
+
 class DataService {
     constructor(url = 'http://socialapp-api.herokuapp.com', client = axios.create()) {
         this.url = url;
@@ -60,8 +61,16 @@ class DataService {
         )
     }
 
-    likePost(messageID) {
-        // Insert API call here
+    likePost(messageId) {
+        const requestBody = { messageId }
+        const loginData = JSON.parse(localStorage.getItem('login')).result
+        let token = loginData.token
+        let url = this.url + "/likes"
+        return this.client.post(url, requestBody,
+            {
+                headers: { Authorization: `Bearer ${token}` }
+            }
+        )
     }
 
     setUserPicture(userPicture) {
