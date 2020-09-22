@@ -54,36 +54,90 @@ class FetchService {
 
     }
 
-//========POST Message===========================
-postMessage(message) {
-    let endpoint = "/messages";
-    let URL = this.domain + endpoint;
-    let token = JSON.parse(localStorage.getItem('login')).result.token;
+    //========POST Message===========================
+    postMessage(message) {
+        let endpoint = "/messages";
+        let URL = this.domain + endpoint;
+        let token = JSON.parse(localStorage.getItem('login')).result.token;
 
-console.log(message)
+        console.log(message)
 
-    return fetch(URL, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            "Authorization": "Bearer " + token,
-            'Accept': 'application/json'
-        },
+        return fetch(URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                "Authorization": "Bearer " + token,
+                'Accept': 'application/json'
+            },
 
-        body: JSON.stringify(message)
+            body: JSON.stringify(message)
 
-    })
-        .then(response => response.json())
+        })
+            .then(response => response.json())
 
-}
+    }
 
 
-    //=====GetMessages======================================
+    //=====GetMessageS======================================
     getMessages() {
         let endpoint = "/messages";
         let messagecount = 80;
         let URL = this.domain + endpoint + "?limit=" + messagecount;
         return fetch(URL).then(response => response.json())
+    }
+
+    //=====GetMessage======================================
+
+    getMessage(messageId) {
+        let endpoint = "/messages/" + messageId;
+        let URL = this.domain + endpoint;
+
+        return fetch(URL)
+        .then(response => response.json())
+
+    }
+
+
+    //=====AddLike===========================================
+    addLike(messageId) {
+        let endpoint = "/likes";
+        let URL = this.domain + endpoint;
+        let token = JSON.parse(localStorage.getItem('login')).result.token;
+
+        return fetch(URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + token,
+                'Accept': 'application/json'
+            },
+            // body: JSON.stringify({"messageId": likeId})
+            // body: JSON.stringify(messageId)
+            body: JSON.stringify({ "messageId": messageId })
+        })
+            .then(response => response.json())
+
+    }
+
+
+    //=====DeleteLike==========================================
+    deleteLike(likeId) {
+        console.log("Hi from deleteLike")
+        let endpoint = "/likes/" + likeId;
+        let URL = this.domain + endpoint;
+        let token = JSON.parse(localStorage.getItem('login')).result.token;
+
+        return fetch(URL, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + token,
+                'Accept': 'application/json'
+            }
+
+        })
+            .then(response => response.json())
+
     }
 
 }
