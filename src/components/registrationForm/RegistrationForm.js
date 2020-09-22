@@ -26,20 +26,12 @@ class RegistrationForm extends React.Component {
   handleRegistration = (e) => {
     e.preventDefault();
     this.client.registerUser(this.state).then(result => {
-<<<<<<< HEAD
-      // alert(JSON.stringify(result.data))
-      this.props.login({
-        "username": this.state.username,
-        "password": this.state.password,
-      });
-=======
       this.props.login(
         {
           "username": this.state.username,
           "password": this.state.password
         }
       );
->>>>>>> master
     });
   };
 
@@ -106,8 +98,4 @@ class RegistrationForm extends React.Component {
   }
 }
 
-<<<<<<< HEAD
 export default withAsyncAction("auth", "login")(RegistrationForm)
-=======
-export default withAsyncAction("auth", "login")(RegistrationForm)
->>>>>>> master
