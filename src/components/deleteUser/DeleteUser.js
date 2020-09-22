@@ -4,7 +4,7 @@ import "./DeletionForm.css";
 import DataService from "../../DataService";
 import { DatePicker } from 'antd';
 import { Button } from 'antd';
-import { WarningOutlined } from '@ant-design/icons';
+//import { WarningOutlined } from '@ant-design/icons';
 //ReactDOM.render(<DatePicker />, mountNode);
 //import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
 //import DeletionForm from "../deleteUser/DeletionForm"
@@ -39,7 +39,7 @@ class DeleteUser extends React.Component {
                     <button type="primary" danger>
                         DELETE your Profile?
                     </button>
-                    {/* <img className="warningSign" src={warningSign} alt="warningSign" /> */}
+                    <img className="Warning-Sign" src={Warning - Sign} alt="Warning-Sign" />
                 </form>
                 {loading && <Spinner name="circle" color="blue" />}
                 {error && <p style={{ color: "red" }}>{error.message}</p>}

@@ -73,7 +73,7 @@ class DataService {
         const username = loginData.username
         return this.client.get(this.url + "/users/" + username)
     }
-    
+
 }
 
 export default DataService
