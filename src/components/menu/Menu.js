@@ -8,6 +8,12 @@ import GlobeLogo from "./assets/Globe01sm.png"
 
 
 class Menu extends React.Component {
+  constructor(props){
+    super(props)
+    this.username = JSON.parse(localStorage.getItem('login')).result.username
+  }
+
+
   handleLogout = event => {
     event.preventDefault();
     this.props.logout();
@@ -32,26 +38,21 @@ class Menu extends React.Component {
             {/* <Link to="/registration">Registration</Link> */}
 
             {/* <Link to={"/profile/"+ this.props.match.params.username}>My Profile</Link> */}
-            <Link to="/profile/">My Profile</Link>
-            <Link to="/myposts">My Posts</Link>
-            <Link to="/messagefeed"> My Postes</Link>
-
-            <Link to="/list-of-users">List of users</Link>
 
 
-
+            {/* <Link to="/userfeed">World Music Members</Link> */}
             <Link to="/" onClick={this.handleLogout}>
-              Logout
+              
             </Link>
 
 
             <div>
-              <Button.Group widths='5'>
+              <Button.Group widths='7'>
                 <Button color='yellow'>Home</Button>
                 <Button color='orange'>Messages</Button>
                 <Button color='green'>Profile</Button>
                 <Button color='red'>UpDate Profile</Button>
-
+                <Button color='grey'>World Music Members</Button>
                 <Button color='violet' text="white"><Link to="/Logout/" onClick={this.handleLogout}>Logout</Link></Button>
 
               </Button.Group>

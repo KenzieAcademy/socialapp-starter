@@ -1,16 +1,11 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
-
 import Registration from "./pages/Registration";
-
 import UpdateProfile from "./pages/UpdateProfile";
-
-
-
+import UserFeed from "./pages/UserFeed";
 
 class App extends React.Component {
   render() {
@@ -28,7 +23,6 @@ class App extends React.Component {
           component={Registration}
         />
 
-
         <Route
           exact
           path="/profile/:username"
@@ -39,6 +33,11 @@ class App extends React.Component {
           exact
           path="/profile/updateprofile/:username"
           component={UpdateProfile}
+        />
+        <Route
+          exact
+          path="/userfeed"
+          component={UserFeed}
         />
         <Route
           exact
