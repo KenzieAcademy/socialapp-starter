@@ -1,5 +1,6 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
+import 'antd/dist/antd.css';
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
@@ -8,6 +9,9 @@ import MessageFeed from "./pages/MessageFeed";
 import ContactUs from "./pages/ContactUs";
 import Registration from "./pages/Registration"
 import UpdateProfile from "./pages/UpdateProfile"
+
+
+
 
 class App extends React.Component {
   render() {
