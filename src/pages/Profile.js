@@ -1,8 +1,10 @@
 import React from "react";
+// import "antd/dist/antd.css";
 import Menu from "../components/menu/Menu";
 import UpdateUser from "../components/updateUser/UpdateUser";
 import { userIsAuthenticated } from "../redux/HOCs";
 import "../components/updateUser/UpdateUser.css";
+import DeleteAccount from "../components/deleteAccount/DeleteAccount";
 
 class Profile extends React.Component {
   render() {
@@ -23,6 +25,7 @@ class Profile extends React.Component {
             They should also be able to post a new message from here too.
           </p>
         </div>
+        <DeleteAccount />
       </div>
     );
   }
