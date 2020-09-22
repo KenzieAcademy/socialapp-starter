@@ -1,7 +1,10 @@
 import React from 'react';
 import './UpdateUser.css';
+import { Avatar, Badge } from 'antd';
+import { UserOutlined } from '@ant-design/icons';
 
-class UpdateBio extends React.Component {
+
+class UpdateAvatar extends React.Component {
     render() {
         return (
             <div className='popup'>
@@ -9,12 +12,9 @@ class UpdateBio extends React.Component {
                     <h2>{this.props.text}</h2>
                     <p>{this.props.description}</p>
                     <div className="popup-content">
-                        <textarea 
-                            cols="90" rows="8" 
-                            placeholder="No information given.">
-                        </textarea>
+                        <Avatar size={256} icon={<UserOutlined />} />
                     </div>
-                    <button>Submit Changes</button>
+                    <button>Upload a Photo</button>
                     <button onClick={this.props.closePopup}>Back to Profile</button>
                 </div>
             </div>
@@ -22,4 +22,4 @@ class UpdateBio extends React.Component {
     }
 }
 
-export default UpdateBio;
+export default UpdateAvatar;

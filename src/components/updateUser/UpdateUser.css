@@ -29,12 +29,27 @@
     position: absolute;  
     left: 25%;  
     right: 25%;  
-    top: 25%;  
-    bottom: 25%;  
+    top: 20%;  
+    bottom: 20%;  
     margin: auto;
-    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
     background: white;
     border: 1px solid black;
+    border-radius: 8px;
+}
+.popup-inner-small {  
+    position: absolute;  
+    left: 25%;  
+    right: 25%;  
+    top: 32%;  
+    bottom: 32%;  
+    margin: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    background: white;
+    border: 1px solid black;
+    border-radius: 8px;
 }
 .button-link {
     color: red;
@@ -47,7 +62,14 @@
     border-radius: 0px;
     font-size: unset;
     font-weight: unset;
+    outline-style: none;
 }
 .button-link:hover {
     color: rgb(255, 134, 64);
+}
+.popup-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }

@@ -46,13 +46,16 @@ h1 {
   font-weight: bolder;
 }
 
-#title {
+#h1-title {
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: orange;
+  font-size: 48px;
 }
 
 h2 {
   font-weight: bolder;
+  color: darkred;
+  text-shadow: 1px 1px 1px orangered;
 }
 
 a {

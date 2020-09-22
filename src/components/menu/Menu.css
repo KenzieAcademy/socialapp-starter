@@ -1,10 +1,10 @@
-span{
+span {
   display: block;
   background-image: url(https://cdn.pixabay.com/photo/2015/12/01/08/43/banner-1071790_960_720.jpg);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-animation: fire 10s linear infinite;
-  -webkit-backface-visibility:hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 @keyframes fire{
