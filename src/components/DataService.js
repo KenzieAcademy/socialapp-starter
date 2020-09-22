@@ -16,7 +16,21 @@ class DataService {
         return this.client.patch(this.url + `${"/users"}${"/"}${userName}`, userData  )
          
     }
+    getMessageFeed(messages){
+        return this.client.get(this.url + "messages", messages)
+    }
+    postMessage(messages){
+        return this.client.post(this.url + "messages", messages)
+    }
+    deletMessage(messages){
+        return this.client.delete(this.url + "messages/{messageID}", messages)
+    }
+    getPicther(){
 
+    }
+    putPitcher(){
+
+    }
 
 
    
