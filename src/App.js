@@ -10,8 +10,6 @@ import ContactUs from "./pages/ContactUs";
 import Registration from "./pages/Registration"
 
 
-
-
 class App extends React.Component {
   render() {
     return (

@@ -1,4 +1,5 @@
 import axios from 'axios';
+import {store} from '../redux'
 
 class QuestboardService {
     constructor(
@@ -10,6 +11,17 @@ class QuestboardService {
         //     headers: { Authorization: `Bearer ${loginData.result.token}` }
         // });
     }
+    
+    getUsername (){
+        const loginData = JSON.parse(localStorage.getItem("login"))
+        const { username } = loginData.result
+        return username
+    }
+    getToken (){
+        const { token } = store.getState().auth.login.result
+        return token
+    }
+
     Register(userData){
         return this.client.post(this.url + "/users", userData);
     }
@@ -53,8 +65,16 @@ class QuestboardService {
     DeleteMessage(){
         return this.client.delete(this.url + "/messages/{messageId}");
     }
-    Like(){
-        return this.client.post(this.url + "/likes")
+    Like(messageId){
+        const requestBody = { messageId }
+        const config = {
+            headers: {
+                Authorization: `Bearer ${this.getToken()}`
+            }
+        }
+       return this.client
+        .post(this.url + "/likes", requestBody, config)
+        .then(response => response.data.like)
     }
     Dislike(){
         return this.client.delete(this.url +"/likes/{likeId}")
