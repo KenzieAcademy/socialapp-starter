@@ -4,21 +4,49 @@ import axios from 'axios';
 
 
 class DataService {
-    constructor(url = 'https://socialapp-api.herokuapp.com', client = axios.create()){
+    constructor(url = 'https://socialapp-api.herokuapp.com', client = axios.create()) {
         this.url = url;
         this.client = client;
+        this.token = JSON.parse(localStorage.getItem('login'))
     }
-    registerUser(userData){
-        return this.client.post(this.url + "/users", userData)
-         
+
+    //users
+
+    registerUser(userData) {
+        return this.client.post(this.url + "/users/", userData)
+
     }
-    updateUser( userData, userName){
-        return this.client.patch(this.url + `${"/users"}${"/"}${userName}`, userData  )
-         
+    updateUser(userData, userName) {
+        return this.client.patch(this.url + `${"/users"}${"/"}${userName}`, userData, {
+            headers: {
+                
+                Authorization: "Bearer " + this.token.result.token
+            }
+        })
+
+    }
+    deleteUser(userName) {
+        return this.client.delete(this.url + '/users/' + userName, {
+            headers: {
+                
+                Authorization: "Bearer " + this.token.result.token
+            }
+        })
+
+    }
+
+    //messages
+
+    createMessage(message) {
+        return this.client.post(this.url + '/messages', message)
+
     }
 
 
 
-   
+
+
+
+
 }
 export default DataService;

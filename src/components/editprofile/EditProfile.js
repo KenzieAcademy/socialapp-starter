@@ -23,6 +23,7 @@ class Profile extends React.Component {
       creamername: "",
       favoritepet: "",
       
+      
     };
     this.client = new DataService()
   }
@@ -47,14 +48,23 @@ class Profile extends React.Component {
   handleSubmit = (event) => {
    event.preventDefault();
    console.log(this.state)
-   alert('Update Successful')
+   
 
    this.client.updateUser(this.state, this.state.username ).then(result =>{
     console.log(JSON.stringify(result.data))
   })
   };
 
+  
 
+    handleDelete = e =>{
+      e.preventDefault()
+      
+      this.client.deleteUser(this.state.username).then(result =>{
+          alert(result.data)
+      })
+      
+    }
 
 
 
@@ -155,9 +165,25 @@ class Profile extends React.Component {
             </div>
             <br/>
             <Button primary size='big' >Save</Button>
+
             
           </div>
         </form>
+        
+        <hr/>
+        <div>
+            <label htmlFor="name">  Enter user name</label>
+              <Input
+                type="text"
+                name="username"
+                required
+                onChange={this.handleChange}
+              />
+            </div>
+        
+        <h3><em>THIS CAN NOT BE UNDONE!</em></h3>
+        <Button  onClick={this.handleDelete} 
+        content='DELETE' inverted color="red"/>
       </div>
     );
     
