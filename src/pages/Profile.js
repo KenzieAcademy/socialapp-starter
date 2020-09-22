@@ -1,7 +1,7 @@
 import React from "react";
 import {Image, message, Upload, Button, Layout} from 'antd';
 import "antd/dist/antd.css"
-import Menu from "../Components/menu/MenuAuthenticated";
+import Menu from "../components/menu/MenuAuthenticated";
 import { userIsAuthenticated } from "../redux/HOCs";
 
 import Icon from "@ant-design/icons/lib/components/Icon";
@@ -24,7 +24,7 @@ class Profile extends React.Component {
         <div className="site-layout-background" style={{ padding: 24, textAlign: 'center' }}>
         <div className="Profile">
       <Menu isAuthenticated={this.props.isAuthenticated} />
-       <h2>Your Profile Page</h2>
+    <h2>Welcome, {this.username}</h2>
         <hr/>
       <Upload
          name="avatar" listType="picture-card" className="avatar-uploader" 

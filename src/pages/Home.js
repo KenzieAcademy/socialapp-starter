@@ -1,7 +1,7 @@
 import React from "react";
 import { Layout } from 'antd';
-import LoginForm from "../Components/loginForm/LoginForm";
-import MenuUnauthenticated from "../Components/menu/MenuAuthenticated";
+import LoginForm from "../components/loginForm/LoginForm";
+import MenuUnauthenticated from "../components/menu/MenuAuthenticated";
 import { userIsNotAuthenticated } from "../redux/HOCs";
 import theQuestBoardHeader from '../media/theQuestBoardHeader.png'
 
