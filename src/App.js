@@ -14,26 +14,6 @@ import NotFound from "./pages/notFound/NotFound";
 class App extends React.Component {
   render() {
     return (
-<<<<<<< .merge_file_2EjlCw
-      <Switch>
-        <Route
-          exact
-          path="/"
-          component={Home}
-        />
-        
-        <Route
-          exact
-          path="/profile/:username"
-          component={Profile}
-        />
-        <Route
-          exact
-          path="*"
-          component={NotFound}
-        />
-      </Switch>
-=======
       <div className="App">
 
         <Switch>
@@ -85,7 +65,6 @@ class App extends React.Component {
         </Switch>
 
       </div>
->>>>>>> .merge_file_wpy7dv
     );
   }
 }

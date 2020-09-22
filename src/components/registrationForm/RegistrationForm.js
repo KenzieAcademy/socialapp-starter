@@ -3,10 +3,6 @@ import "./RegistrationForm.css";
 import Spinner from "react-spinkit";
 import { withAsyncAction } from "../../redux/HOCs";
 
-<<<<<<< .merge_file_BUdceK
-import "./RegistrationForm.css";
-=======
->>>>>>> .merge_file_BFDyHF
 import socialAppService from "../../socialAppService";
 // ^^^ Is this import from socialAppService needed? ^^^
 
