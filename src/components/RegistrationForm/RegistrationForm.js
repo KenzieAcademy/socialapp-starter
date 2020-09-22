@@ -1,7 +1,7 @@
 import React from "react";
 import Spinner from "react-spinkit";
 import "./RegistrationForm.css";
-import QuestboardService from "../../pages/ServicePage"
+import QuestboardService from "../servicesPage/ServicePage"
 import { Link } from "react-router-dom";
 import { notification } from 'antd';
 

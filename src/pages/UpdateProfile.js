@@ -1,10 +1,11 @@
 import React from "react";
-import {Image, Avatar, message, Upload, Button, Layout, Form, InputNumber, Result} from 'antd';
+import {Image, Avatar, message, Upload, Button, Layout, Form, Input, Result, Textbox} from 'antd';
 import "antd/dist/antd.css"
 import {LoadingOutlined, PlusOutlined} from '@ant-design/icons'
 import Menu from "../components/menu/MenuAuthenticated";
-import QuestboardService from "../pages/ServicePage"
+import QuestboardService from "../components/servicesPage/ServicePage"
 import { userIsAuthenticated } from "../redux/HOCs";
+import ProfileForms from "../components/updatingProfile/ProfileForms"
 
 function getBase64(img, callback) {
   const reader = new FileReader();
@@ -53,15 +54,20 @@ class Profile extends React.Component {
 
   
   handleSubmit = event => {
+    const questboardService = new QuestboardService
+    const PictureUpload = questboardService.SetPicture()
     event.preventDefault();
-    this.client.SetPicture(this.state.picture).then(result =>
+    PictureUpload.then(result =>
+      
       {console.log(result)})
     
       }
 
   
   render() {
-    const { Header, Content, Footer} = Layout;
+    
+
+    const {  Content, Footer} = Layout;
     const { loading, imageUrl } = this.state;
     const uploadButton = (
       <div>
@@ -69,13 +75,14 @@ class Profile extends React.Component {
         <div style={{ marginTop: 8 }}>Upload</div>
       </div>
     );
+
     return (
       <Layout className="site-layout" style={{ marginLeft: 190 }}>
-      <Header className="site-layout-background" style={{ padding: 0 }} />
+      <Menu isAuthenticated={this.props.isAuthenticated} />
       <Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>
         <div className="site-layout-background" style={{ padding: 24, textAlign: 'center' }}>
         <div className="Profile">
-      <Menu isAuthenticated={this.props.isAuthenticated} />
+      
        <h2>Update your character sheet!</h2>
        
        
@@ -96,14 +103,13 @@ class Profile extends React.Component {
          className="submitButton" 
          onClick={this.handleSubmit}> Save picture
       </Button>
+      <hr/>
+      <ProfileForms />
         </div>
         </div>
-    
       </Content>
       <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
     </Layout>
-    
-   
     );
   }
 }

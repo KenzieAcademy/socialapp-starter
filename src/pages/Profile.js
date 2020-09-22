@@ -1,10 +1,13 @@
 import React from "react";
+import {Link} from "react-router-dom"
 import {Image, message, Upload, Button, Layout} from 'antd';
 import "antd/dist/antd.css"
 import Menu from "../components/menu/MenuAuthenticated";
 import { userIsAuthenticated } from "../redux/HOCs";
-
+import QuestboardService from "../components/servicesPage/ServicePage"
 import Icon from "@ant-design/icons/lib/components/Icon";
+import { Route } from "react-router";
+
 
 
 class Profile extends React.Component {
@@ -13,27 +16,25 @@ class Profile extends React.Component {
       username: [],
       picture: "",
     }
+    
   }
-
+    
   render() {
-    const { Header, Content, Footer} = Layout;
+    const questboardService = new QuestboardService
+    const username = questboardService.getUsername()
+    const {  Content, Footer} = Layout;
     return (
       <Layout className="site-layout" style={{ marginLeft: 190 }}>
-      <Header className="site-layout-background" style={{ padding: 0 }} />
+      <Menu isAuthenticated={this.props.isAuthenticated} />
       <Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>
         <div className="site-layout-background" style={{ padding: 24, textAlign: 'center' }}>
         <div className="Profile">
-      <Menu isAuthenticated={this.props.isAuthenticated} />
-    <h2>Welcome, {this.username}</h2>
+      
+    <h2>Welcome, {username} </h2>
         <hr/>
-      <Upload
-         name="avatar" listType="picture-card" className="avatar-uploader" 
-         accept=".png" >
-           <Button Icon type="Upload">Upload Profile picture here!</Button>
-           </Upload>
-        
-         <Button type="primary">Save picture</Button>
+      <Link to="/UpdateProfile">Update your Character Sheet!</Link>
     </div>
+    
         </div>
       </Content>
       <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>

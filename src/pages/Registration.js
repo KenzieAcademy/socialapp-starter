@@ -7,8 +7,6 @@ import theQuestBoardHeader from '../media/theQuestBoardHeader.png'
 
 
 class Registration extends React.Component {
-  
-  
 
   render() {
     const { Header, Content, Footer } = Layout;

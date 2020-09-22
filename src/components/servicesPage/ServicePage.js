@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+import {store} from "../../redux" ;
 class QuestboardService {
     constructor(
         url = 'https://socialapp-api.herokuapp.com', client = axios.create()){
@@ -10,6 +10,17 @@ class QuestboardService {
         //     headers: { Authorization: `Bearer ${loginData.result.token}` }
         // });
     }
+    
+    getUsername(){
+        const loginData = JSON.parse(localStorage.getItem("login"))
+        const {username} = loginData.result
+        return username
+    }
+    getToken(){
+        const {token} = store.getState().auth.login.result
+        return token
+    }
+
     Register(userData){
         return this.client.post(this.url + "/users", userData);
     }
@@ -20,6 +31,7 @@ class QuestboardService {
         return this.client.get(this.url + "/auth/logout");
     }
     Users(){
+       
         return this.client.get(this.url + "/users");
     }
     NameUser() {
@@ -34,8 +46,14 @@ class QuestboardService {
     GetPicture() {
         return this.client.get(this.url + "/users/{username}/picture");
     }
-    SetPicture() {
-        return this.client.put(this.url + "/users/{username}/picture").then(response => {return response.data.picture});
+    SetPicture(imageUrl) {
+        const RequestPicture = {imageUrl}
+        const config = {
+            headers: {
+                Authorization: `Bearer ${this.getToken()}`
+            }}
+        return this.client.put(this.url + "/users/" + this.getUsername() +"/picture", RequestPicture, config)
+        .then(response => {return response.data.picture});
     }
     GetMessageList(){
         return this.client
@@ -53,8 +71,16 @@ class QuestboardService {
     DeleteMessage(){
         return this.client.delete(this.url + "/messages/{messageId}");
     }
-    Like(){
-        return this.client.post(this.url + "/likes")
+    Like(messageId){
+        const requestBody = { messageId }
+        const config = {
+            headers: {
+                Authorization: `Bearer ${this.getToken()}`
+            }
+        }
+       return this.client
+        .post(this.url + "/likes", requestBody, config)
+        .then(response => response.data.like)
     }
     Dislike(){
         return this.client.delete(this.url +"/likes/{likeId}")
