@@ -66,7 +66,10 @@ class DataService {
         })
         .then(response => response.json()) 
     }
-      
+    getMessages() {
+        return this.client.get(this.url + "/messages")
+    }
+   
       
 }
 export default DataService;
