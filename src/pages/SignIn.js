@@ -4,10 +4,10 @@ import Menu from "../components/menu/Menu";
 import { userIsNotAuthenticated } from "../redux/HOCs";
 
 
-class Home extends React.Component {
+class SignIn extends React.Component {
   render() {
     return (
-      <div className="Home">
+      <div className="SignIn">
         <Menu />
         <h2>Your favorite microblogging platform for world music!</h2>
         <LoginForm />
@@ -17,4 +17,4 @@ class Home extends React.Component {
   }
 }
 
-export default userIsNotAuthenticated(Home);
+export default userIsNotAuthenticated(SignIn);

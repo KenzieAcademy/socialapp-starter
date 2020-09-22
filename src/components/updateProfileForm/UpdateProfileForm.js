@@ -64,8 +64,8 @@ class UpdateProfileForm extends React.Component {
                     <label htmlFor="about">About: </label>
                     <input
                         type="text"
-                        height='200 px'
-                        width='200 px'
+                        height='400 px'
+                        width='400 px'
                         name="about"
                         value={this.state.about}
                         // required
@@ -73,7 +73,7 @@ class UpdateProfileForm extends React.Component {
                     />
 
                     <Button secondary type="submit" onClick={this.handleRegister}>
-                        Update my Profile
+                         Save
                     </Button >
 
 

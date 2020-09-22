@@ -32,9 +32,11 @@ class Menu extends React.Component {
             {/* <Link to="/registration">Registration</Link> */}
 
             {/* <Link to={"/profile/"+ this.props.match.params.username}>My Profile</Link> */}
-            <Link to="/profile/">My Profile</Link>
-            <Link to="/myposts">My Posts</Link>
-            <Link to="/messagefeed"> My Postes</Link>
+            {/* <Link to="/profile/">Home</Link>
+            <Link to="/myposts"></Link>
+        <Link to="/messagefeed"> </Link>*/}
+
+
 
             <Link to="/list-of-users">List of users</Link>
 
@@ -45,14 +47,29 @@ class Menu extends React.Component {
             </Link>
 
 
+
+
             <div>
               <Button.Group widths='5'>
-                <Button color='yellow'>Home</Button>
-                <Button color='orange'>Messages</Button>
+                <Button color='yellow'>
+                  <Link to="/Homepage" >
+                    Homepage
+                     </Link>
+                </Button>
+
+                <Button color='orange'> 
+                <Link to="/Messages">
+                Messages
+                </Link>
+                
+                </Button>
                 <Button color='green'>Profile</Button>
                 <Button color='red'>UpDate Profile</Button>
 
-                <Button color='violet' text="white"><Link to="/Logout/" onClick={this.handleLogout}>Logout</Link></Button>
+                <Button color='violet' text="white">
+                  <Link to="/Logout/" onClick={this.handleLogout}>
+                    Logout</Link>
+                </Button>
 
               </Button.Group>
 
