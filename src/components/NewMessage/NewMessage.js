@@ -2,7 +2,7 @@ import React from "react";
 import Spinner from "react-spinkit";
 import "./NewMessage.css";
 import DataService from "../../DataService"
-import { withAsyncAction } from "../../redux/HOCs";
+// import { withAsyncAction } from "../../redux/HOCs";
 
 class NewMessage extends React.Component {
   constructor(props) {
