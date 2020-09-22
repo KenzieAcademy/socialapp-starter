@@ -1,10 +1,10 @@
 import React , { Component } from 'react'
-import GetMessagesServices from './GetMessagesService'
+import GetMessagesService from './GetMessagesService'
 
 class GetMessages extends Component {
     constructor(props) {
         super(props)
-        this.client = new GetMessagesServices()
+        this.client = new GetMessagesService()
         this.state = {
             messages: [],
             mounted: false
@@ -47,14 +47,7 @@ class GetMessages extends Component {
         else {
             return (
                 <div className="message-feed">
-                    {/* <div className="message">
-                        <div id="user">
-                            <h5>{this.state.messages[0].username}</h5>
-                        </div>
-                        <div id="message">
-                            <p>{this.state.messages[0].text}</p>
-                        </div>
-                    </div> */}
+                    
                 </div>
             )
         }
