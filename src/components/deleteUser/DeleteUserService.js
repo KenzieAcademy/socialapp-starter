@@ -1,10 +1,11 @@
 import { jsonHeaders, handleJsonResponse } from "../../redux/actionCreators/constants";
 import axios from "axios"
+import { store } from "../../redux"
 
 class DeleteUserService {
     constructor(url = 'https://socialapp-api.herokuapp.com/', client = axios.create()){
         this.url = url + "deleteUser";
-        this.client = client;
+        // this.client = client;
     }
 
     deleteNow(userName) {
@@ -17,9 +18,19 @@ class DeleteUserService {
         })
         .then(handleJsonResponse)
         .then(result => {
-            return result
+            return result = ""
         })
     }
+
+getToken() {
+    const {token, username } = store.getState().auth.login.result
+    return token
+}
+
+
+
+
+
 };
 
 export default DeleteUserService;

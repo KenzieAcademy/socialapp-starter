@@ -3,6 +3,7 @@ import DeleteUserService from "./DeleteUserService"
 import Menu from "../menu/Menu";
 import { Link } from "react-router-dom";
 import { Grommet } from 'grommet'
+import { Redirect } from 'react-router-dom';
 // import Button from '@material-ui/core/Button';
 
 // import { Home } from '../pages/Home'
@@ -12,6 +13,7 @@ class DeleteNow extends Component {
         super(props)
         this.client = new DeleteUserService();
         this.loginData = "";
+        // this.token = new DeleteUserService(getToken);
         this.state = {
             text: "",
             username: "",
@@ -19,20 +21,24 @@ class DeleteNow extends Component {
         }
 
 
-        const loginData = JSON.parse(localStorage.getItem("login"));
+        // const loginData = JSON.parse(localStorage.getItem("login"));
 
     }
 
     handleSubmit = e => {
         this.client.deleteNow('loginData')
+        // getToken = [""]
     }
 
     handleChange = e => {
+        let loginData = JSON.parse(localStorage.getItem("login"));
 
         // loginData = [""];
         // console.log(JSON.stringify(this.state))
-
+        loginData = ""
         console.log("login")
+        return <Redirect to="/Home" />
+        
         // window.location = "https://"
 
     };
@@ -46,17 +52,10 @@ class DeleteNow extends Component {
                 <Menu isAuthenticated={this.props.isAuthenticated}
                 />
 
-                <Link to="/deleteUser">Delete User </Link>
-                <Link to="/messagefeed">Message Feed</Link>
+                <Link to="/messagefeed">Message Feed </Link><br />
+                <Link to="/">Profile </Link><br />
+              <Link to="/userlist"> User List</Link><br />
                 {/* <Home /> */}
-
-
-
-
-
-
-
-
                 <br />
                 <form id="delete-user" onSubmit={this.handleSubmit}>
                     <label htmlFor="delete">Type Username to Delete:</label>
