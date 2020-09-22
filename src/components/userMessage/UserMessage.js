@@ -2,34 +2,63 @@ import React from 'react';
 import FetchService from '../../FetchService';
 import { Button, Form, Input, Segment } from 'semantic-ui-react'
 import "./UserMessage.css"
+import "../../pages/MessageFeed";
 
 class UserMessage extends React.Component {
     constructor() {
         super();
         this.client = new FetchService();
         this.state = {
+           
             formData: {
                 text: "",
-                // key: textMessage.key
-
-            }
-             
+            },
+            error: "",
+            submitted: false
+                       
         }
     }
     handleChange = (event) => {
-                  const newformData = {...this.state.message};
+                  const newformData = {...this.state.formData};
                   newformData[event.target.name] = event.target.value;
-        // this.setState({ message: newMessage });
-
+        
         this.setState({ formData: newformData });
+
     };
 
     handlePosMessage = (event) => {
         event.preventDefault();
 
         this.client.postMessage(this.state.formData)
+        .then((resData) =>{
+            console.log(resData);
+            if (resData.statusCode === 200) {
+                this.setState({
+                    submitted: true,
+                    error: ""
+                })
+            } else {
+
+                this.setState({
+                    error: resData.message
+                })
+            }
+
+
+         } )
+    };
+
+
+        componentDidUpdate() {
+            this.client.getMessages()
+        }
+
+     
+       
+       
         
-    }
+        
+    
 
     render() {
         return (

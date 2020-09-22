@@ -1,10 +1,26 @@
 
 import React from 'react';
-import MessageItem from '../messageItem/MessageItem'
 import { Image, List, Segment } from 'semantic-ui-react'
 import "./MessageList.css"
+import MessageItem from '../messageItem/MessageItem';
+import FetchService from "../../FetchService";
 
 class MessageList extends React.Component {
+
+    // constructor(props) {
+    //     super(props);
+
+    //     this.client = new FetchService()
+    // }
+
+    // handleLike = ((messageId, event) => {
+    //     // console.log("Hi from HandleLike")
+    //     this.client.addLike(messageId)
+    //         //get messageList again (refresh)
+    //         .then((data) => {
+    //             this.setState({ messages: messageData.messages })
+    //         })
+    // })
 
     render() {
 
@@ -15,36 +31,17 @@ class MessageList extends React.Component {
                 { this.props.messages.map((messageObj, i) => {
 
                     return (
-                        // <div className="MessageList">
-                        // <MessageItem
-                        // key={i}
-                        // text={messageObj.text}
-                        // username={messageObj.username} 
-                        // likes={messageObj.likes}
 
-                        <List relaxed>
-                            <List.Item>
-                                <Image avatar src='https://react.semantic-ui.com/images/avatar/small/daniel.jpg' />
-                                <List.Content>
-                                    <List.Header as='a'>{messageObj.username}</List.Header>
-                                    <List.Description>
-                                        Posted:{' '}
-                                        <a>
-                                            <b>{messageObj.text}</b>
-                                        </a>{' '}
-                                        ...
-                                        <a>
-                                            {/* <b>{messageObj.likes}</b> */}
-                                        </a>
+                        <MessageItem
+                            key={i}
+                            id={messageObj.id}
+                            text={messageObj.text}
+                            username={messageObj.username}
+                            likes={messageObj.likes}
+                            handleLike={this.props.handleLike}
+                            handleRemoveLike={this.props.handleRemoveLike}
+                        />
 
-                                    </List.Description>
-                                </List.Content>
-                            </List.Item>
-                        </List>
-
-                        // />
-
-                        // </div>
                     )
                 })}
 

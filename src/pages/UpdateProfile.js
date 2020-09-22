@@ -5,6 +5,7 @@ import { Button } from 'semantic-ui-react'
 import Menu from "../components/menu/Menu";
 import { userIsAuthenticated } from "../redux/HOCs";
 import { Link } from 'react-router-dom';
+import UpdateProfileForm from '../components/updateProfileForm/UpdateProfileForm'
 
 import FetchService from "../FetchService";
 
@@ -122,40 +123,16 @@ class UpdateProfile extends React.Component {
                 <h2>My Profile</h2>
                 <h3> {this.state.user.username + "  |  @" + this.state.user.displayName}</h3>
 
-                <form id="profile-form">
+                <UpdateProfileForm 
+                formData = {this.state.formData}
+                handleChange = {this.handleChange}
+                handleUpdateProfile = {this.handleUpdateProfile}
+                
+                />
+                
+                {result_message}
 
-                    <label htmlFor="displayname">Display Name</label>
-                    <input
-                        type="text"
-                        name="displayName"
-                        required
-                        value={this.state.formData.displayName}
-                        onChange={this.handleChange}
-                    />
-
-
-                    <label htmlFor="about">About: </label>
-                    <input
-                        type="text"
-                        height='200 px'
-                        width='200 px'
-                        name="about"
-                        value={this.state.formData.about}
-                        // required
-                        onChange={this.handleChange}
-                    />
-
-                    <Button secondary type="submit" onClick={this.handleUpdateProfile}>
-                        Update my Profile
-                    </Button >
-                    <br />
-
-                    {result_message}
-
-                    <br />
-                    <Link to={"/profile/" + this.props.match.params.username}>Go to My Profile</Link>
-
-                </form>
+                <Link to={"/profile/" + this.props.match.params.username}>Go to My Profile</Link>
 
             </div >
 
