@@ -1,7 +1,7 @@
 import React from "react";
 import { Layout } from 'antd';
-import RegistrationForm from "../components/RegistrationForm/RegistrationForm"
-import MenuUnauthenticated from "../components/menu/MenuUnauthenticated";
+import RegistrationForm from "../Components/RegistrationForm/RegistrationForm"
+import MenuUnauthenticated from "../Components/menu/MenuAuthenticated";
 import { userIsNotAuthenticated } from "../redux/HOCs";
 import theQuestBoardHeader from '../media/theQuestBoardHeader.png'
 

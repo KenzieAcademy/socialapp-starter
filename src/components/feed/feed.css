@@ -1,9 +1,0 @@
-.messageBubble {
-    border: 5px grey solid;
-    margin: 10px
-}
-
-#messagesBlock {
-    overflow: scroll;
-    height: 600px;
-}
