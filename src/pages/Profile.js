@@ -6,6 +6,7 @@ import { userIsAuthenticated } from "../redux/HOCs";
 import SendPost from '../components/sendPost/SendPost'
 
 
+
 class Profile extends React.Component {
   render() {
     return (
@@ -14,8 +15,10 @@ class Profile extends React.Component {
         <Menu isAuthenticated={this.props.isAuthenticated} />
         <h2>Profile</h2>
         <UserCard />
+        
       </div>
       </Layout>
+      
 
     );
   }

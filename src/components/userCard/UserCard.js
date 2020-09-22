@@ -19,12 +19,11 @@ class UserCard extends React.Component {
 
             "user": {
                 "pictureLocation": null,
-                "username": "null",
-                "displayName": "null",
-                "about": "null",
-                "googleId": null,
-                "createdAt": "null",
-                "updatedAt": "null",
+                "userName": null,
+                "displayName": null,
+                "about": null, 
+                "createdAt": null,
+                "updatedAt": null,
 
             },
             "statusCode": null
@@ -35,16 +34,21 @@ class UserCard extends React.Component {
             this.setState(userData)
         })
     }
-    handleChange = event => {
-        const newformData = { ...this.state.formData };
-        newformData[event.target.name] = event.target.value;
-
-        this.setState({ formData: newformData });
+    handleChange = (event) => {
+        this.setState({ [event.target.name]: event.target.value })
     };
 
-    handleUpdateUser = event => {
-        event.preventDefault()
+    handleUpdateUser = (event) => {
+        event.preventDefault();
+        console.log(this.state)
+        alert('Update Successful')
+
         this.client.updateUser(this.state.user.username, this.state.formData)
+            .then(updateUserData => {
+                this.setState({
+                    user: updateUserData.user
+                })
+            })
 
     }
 
@@ -81,9 +85,9 @@ class UserCard extends React.Component {
                         required
                         onChange={this.handleChange}
                     />
-                    <button type="submit">
-                        Update User Info
-          </button>
+                    <button type="primary"  onClick={this.handleUpdateUser}>
+                        Update User
+                    </button>
                 </form>
             </div>
         );
