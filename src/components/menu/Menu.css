@@ -1,20 +1,39 @@
+span{
+  display: block;
+  background-image: url(https://cdn.pixabay.com/photo/2015/12/01/08/43/banner-1071790_960_720.jpg);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: fire 10s linear infinite;
+  -webkit-backface-visibility:hidden;
+}
+
+@keyframes fire{
+  0% {background-position:0% -50%;}
+  0% {background-position:100% -50%;}
+}
+
 .Menu {
-  background-color: lightskyblue;
+  background: linear-gradient(110deg, rgb(109, 22, 22) 40%, rgba(201, 92, 19, 0.726) 60%);
   display: flex;
+  display: flex-box;
   justify-content: space-between;
   align-items: center;
-  padding: 0 1em;
-  border-radius: 1em;
+  padding: 0 2em;
+  border-radius: 2em;
+  font-style: inherit;
+  font-size: larger;
+  font-weight: bold;
 }
 
 #menu-links {
-  display: flex;
-  padding-left: 1em;
+  display: flex-box;
+  padding-left: 2em;
 }
 
 #menu-links a {
   padding-right: 0.5em;
-  color: darkblue;
+  color: rgb(20, 20, 20);
   text-decoration: underline;
   cursor: pointer;
 }
+

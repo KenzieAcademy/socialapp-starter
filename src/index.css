@@ -1,14 +1,47 @@
 body {
+  background-color: white;
+  background-size: cover;
+  background-image: url(https://lh3.googleusercontent.com/proxy/bjB18lW4whN3f-xKwsPE1eWn3yV44Aq2p-UWvDt8XmGoXk8g7Y0voCL24eC38ta1dpH6BuQM6-gwFEFDOITsRnrZQP8Nv9W2OpHaau50_bZJbzuJog);
+  background-size: 600px 550px;
+  image-rendering: inherit;
+  background-repeat: no-repeat, repeat;
+  background-position: right bottom;
+  background-attachment: fixed;
   margin: 0.5em;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  font-family: Helvetica, Arial, Sans-Serif;
+  outline-color: red sans-serif;
+  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+    sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: larger;
+  font-weight: bold;
+  background-repeat: no-repeat;
+  background-size: 1000px 500px;
+  background-position: center bottom right;
+  background-attachment: fixed;
+  background-image: url("https://cdn.statically.io/img/www.jakpost.travel/wimages/large/154-1548289_blue-eyes-white-dragon-wallpapers-d-d-young.jpg");
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  font-family: " source-code-pro, Menlo, Monaco, Consolas, " Courier New ","
     monospace;
+}
+
+
+button {
+  display: block;
+  margin-top: 2rem;
+  width: 100%;
+  padding: 0.5rem;
+  background: linear-gradient(110deg, rgb(109, 22, 22) 40%, rgba(201, 92, 19, 0.726) 60%);
+  border: 0;
+  font-style: inherit;
+  color: black;
+  text-shadow: 0 1px rgb(255, 2, 2), -1px 0 rgb(255, 2, 2),
+    2px 0 rgb(177, 36, 36), 0 -2px rgba(141, 17, 17, 0.993);
+  font-size: larger;
+  font-weight: bold;
 }
