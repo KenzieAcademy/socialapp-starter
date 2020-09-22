@@ -12,7 +12,7 @@ _________________
 API Endpoints:
 1. Login
 2. Logout
-3. Create Users
+3. Create Users*
 4. Update User
 5. Delete User
 6. Get Messages

@@ -8,7 +8,7 @@ class MessageFeed extends Component {
     render() {
         return (
             <div className="feed">
-                <Menu isAuthenticated={this.props.isAuthenticated} />
+                <Menu loggedIn={true} isAuthenticated={this.props.isAuthenticated} />
                 <PostMessage />
                 <GetMessages />
             </div>
