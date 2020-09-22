@@ -11,10 +11,14 @@ class DataService {
     registerUser(userData){
         return this.client.post(this.url + "/users", userData)
          
-    };
-    profileData(username){
-        return this.client.get(this.url + `/users/${username}`)
-      }
+    }
+    updateUser( userData, userName){
+        return this.client.patch(this.url + `${"/users"}${"/"}${userName}`, userData  )
+         
+    }
+
+
+
    
 }
 export default DataService;

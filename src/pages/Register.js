@@ -5,6 +5,7 @@ import React,{Component} from 'react'
 import { render } from 'react-dom'
 import DataService from '../components/DataService'
 import { withRouter } from 'react-router-dom'
+import { Input, Button } from 'semantic-ui-react'
 
 
 
@@ -24,11 +25,15 @@ class Register extends Component {
 
     handleRegistration = e =>{
         e.preventDefault()
-        this.props.history.push('/profile/:username')
+        
         this.client.registerUser(this.state).then(result =>{
             console.log(JSON.stringify(result.data))
         })
+<<<<<<< HEAD
         
+=======
+        this.props.history.push('/profile/:username')
+>>>>>>> master
     }
         
     handleChange = (event) => {
@@ -48,10 +53,10 @@ class Register extends Component {
                    
                         <label htmlFor='name'> User Name: </label>
     
-                        <input 
+                        <Input 
                         type='text' 
                         name='username' 
-                        
+                        required
                         onChange={this.handleChange}
                         />
                     
@@ -59,10 +64,10 @@ class Register extends Component {
                         
                          <label htmlFor='password'> Password: </label>
 
-                        <input 
+                        <Input 
                         type='password' 
                         name='password' 
-                        
+                        required
                         onChange={this.handleChange}
                         />
                     
@@ -70,15 +75,15 @@ class Register extends Component {
                      
                         <label htmlFor='displayName'> Display Name: </label>
     
-                    <input 
+                    <Input 
                         type='text' 
                         name='displayName' 
-                        
+                        required
                         onChange={this.handleChange}
                         />
                     
 
-                    <button type='submit'>Register </button>
+                    <Button type='submit'>Register </Button>
     
                      
                 </form>

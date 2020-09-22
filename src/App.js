@@ -1,10 +1,15 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 
+
 import Home from "./pages/Home";
-import Profile from "./pages/Profile";
+
 import NotFound from "./pages/NotFound";
-// import EditProfile from "./pages/EditProfile";
+import Messages from './pages/Message'
+import Profile from "./pages/Profile";
+
+
+
 
 class App extends React.Component {
   render() {
@@ -13,10 +18,12 @@ class App extends React.Component {
       
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/profile/:username" component={Profile} />
+        <Route exact path="/Profile/:username" component={Profile} />
+        <Route exact path="/Message" component={Messages} />
         <Route exact path="*" component={NotFound} />
-        {/* <Route exact path="/EditProfile/:edit-name" /> */}
-        {/* <EditProfile /> */}
+        
+        
+        
       </Switch>
       
     );

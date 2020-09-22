@@ -1,16 +1,93 @@
 import React from "react";
 import Menu from "../components/menu/Menu";
 import { userIsAuthenticated } from "../redux/HOCs";
+import { Form,Feed, FeedEvent, Input, Button, TextArea } from 'semantic-ui-react'
+import DataService from '../components/DataService'
 
-class Profile extends React.Component {
-  render() {
-    return (
-      <div className="Profile">
-        <Menu isAuthenticated={this.props.isAuthenticated} />
-        <h2>Messages</h2>
-      </div>
-    );
+class Messages extends React.Component {
+
+  
+constructor(props){
+  super(props)
+
+  this.state = {
+    messageContent:{text:""},
+    
+      
+    
+     
+    
   }
+  this.client = new DataService()
 }
 
-export default userIsAuthenticated(Profile);
+  
+handleChange = (event) => {
+  
+  this.setState({[event.target.name]:event.target.value})
+  
+ 
+  
+}
+
+handleSubmit = (event) => {
+ event.preventDefault();
+ console.log(this.state)
+ 
+ 
+
+
+ this.client.createMessage(this.state.messageContent ).then(result =>{
+  console.log(JSON.stringify(result.data))
+})
+};
+
+
+
+
+
+
+
+
+  
+ 
+
+  render() {
+    
+       
+      
+    return (
+ 
+  <div className="Messages">
+    <Menu isAuthenticated={this.props.isAuthenticated} />
+    
+    <h2>Messages</h2>
+    
+   
+    <Form onSubmit={this.handleSubmit}>
+        <div>
+
+          <TextArea
+            placeholer='Enter Message'
+            style={{minHeight: 200, minWidth: 400}}
+            type="text"
+            name="messageContent"
+            required
+            onChange={this.handleChange}
+          />
+          <br/>
+          <Button size="big" content="Post"/>
+         
+        </div>
+    
+    </Form>
+   
+    
+  </div>
+  
+     );
+    }
+  }
+
+
+export default userIsAuthenticated(Messages)
