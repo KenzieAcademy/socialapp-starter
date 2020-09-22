@@ -39,7 +39,7 @@ class DeleteUser extends React.Component {
                     <button type="primary" danger>
                         DELETE your Profile?
                     </button>
-                    <img className="warning" src={warning} alt="warning" />
+                    {/* <img className="warningSign" src={warningSign} alt="warningSign" /> */}
                 </form>
                 {loading && <Spinner name="circle" color="blue" />}
                 {error && <p style={{ color: "red" }}>{error.message}</p>}
