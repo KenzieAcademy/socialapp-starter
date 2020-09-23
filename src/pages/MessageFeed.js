@@ -1,6 +1,5 @@
-import React from "react";
-import Menu from "../components/menu/Menu"
-
+import { Menu } from 'antd'
+import React from 'react'
 
 class MessageFeed extends React.Component{
     constructor(props){
@@ -12,9 +11,11 @@ class MessageFeed extends React.Component{
         return(
             <div className="MessageFeed">
                 <Menu />
-                <p>sample text</p>
+                <h1>Message Feed</h1>
+                <h3>Loading...</h3>
             </div>
         )
     }
 }
+
 export default MessageFeed

@@ -1,3 +1,9 @@
 ## Overview
 
-Starter code for the Social App capstone project. See my.kenzie for details.
+Team Rubber Duckie Rioters (RDR)'s final project for Kenzie Academy's Front-End Dev course.
+
+# Members
+- Colin Stachelrodt
+- Elisua Hernandez
+- Janet Cook
+- Kylie Jo McCafferty
