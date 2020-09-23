@@ -1,20 +1,16 @@
-import React from "react";
-import Menu from "../components/menu/Menu"
-import { userIsAuthenticated } from "../redux/HOCs"
+import { Menu } from 'antd'
+import React from 'react'
 
-class MessageFeed extends React.Component{
-    constructor(props){
-        super(props)
-    }
-
-    render(){
-        // need to call the message list from the user's profile with a variable here for use in the render
-        return(
+class MessageFeed extends React.Component {
+    render() {
+        return (
             <div className="MessageFeed">
                 <Menu />
-                <p>sample text</p>
+                <h1>Message Feed</h1>
+                <h3>Loading...</h3>
             </div>
         )
     }
 }
-export default userIsAuthenticated(MessageFeed)
+
+export default MessageFeed
