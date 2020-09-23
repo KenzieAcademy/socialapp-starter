@@ -77,6 +77,17 @@ class DataService {
             return
             this.client.post(this.baseURL + "/likes", requestBody, config)
                 .then(response => response.data.like)
+            likePost(messageId) {
+                const requestBody = { messageId }
+                const loginData = JSON.parse(localStorage.getItem('login')).result
+                let token = loginData.token
+                let url = this.url + "/likes"
+                return this.client.post(url, requestBody,
+                    {
+                        headers: { Authorization: `Bearer ${token}` }
+                    }
+                )
+            }
 
 
         }
