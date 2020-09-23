@@ -1,5 +1,5 @@
 import React from 'react'
-import Menu from '../components/menu/Menu'
+import Menu from '../components/menu/Menu';
 import Message from '../components/message/Message';
 import GetMessages from '../components/getMessages/GetMessages';
 import DataService from '../dataService';
@@ -31,8 +31,9 @@ class MessageFeed extends React.Component {
             <div className="MessageFeed">
                 <h1>Message Feed</h1>
                 <ul>
-                    {this.state.messages.map(msg => 
-                    <Message key={msg.id} {...msg} />)}
+                    {this.state.messages.map(msg => (
+                    <Message key={msg.id} {...msg} />
+                    ))}
                 </ul>
 
             </div>

@@ -19,7 +19,11 @@ class dataService {
     }
 
     getMessages() {
-        return this.client.get(this.url + '/messages')
+        return this.client
+        .get(this.url + '/messages')
+        .then(response => {
+            return response.data.messages
+        })
     }
 
     postLike(userData3) {
