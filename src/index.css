@@ -118,3 +118,8 @@ Menu.Item, .ant-menu-item-selected {
   width: 195px;
   max-width: 195px;
 }
+
+.displayPicture {
+  width: 200px;
+  height: 200px;
+}

@@ -1,7 +1,6 @@
 import React from "react";
 import { Layout, Menu } from 'antd';
 import "./Menu.css";
-import { userIsNotAuthenticated } from "../../redux/HOCs";
 import { Link } from "react-router-dom";
 import theQuestBoard from './theQuestBoardIcon.png'
 
@@ -52,4 +51,4 @@ class MenuUnauthenticated extends React.Component {
   }
 }
 
-export default userIsNotAuthenticated(MenuUnauthenticated);
+export default MenuUnauthenticated;

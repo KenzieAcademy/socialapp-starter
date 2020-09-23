@@ -2,12 +2,31 @@ import React from "react";
 import MenuUnauthenticated from "../components/menu/MenuUnauthenticated";
 import { Layout } from 'antd';
 import theQuestBoardHeader from '../media/theQuestBoardHeader.png'
+import QuestboardService from "../pages/ServicePage"
 
 
 
 class ContactUs extends React.Component {
 
+  state = {
+    pictureUrl:"" }
+  
+  componentDidMount (){
+    const questboardService = new QuestboardService
+    const loggedInUsername = questboardService.getUsername()
+
+    questboardService.GetPicture(loggedInUsername)
+  .then(pictureObject => {
+    console.log(pictureObject.request.responseURL)
+    console.log(pictureObject)
+    this.setState(latestState => ({pictureUrl: latestState.pictureUrl + pictureObject.config.url}))
+  })
+  }
+
   render() {
+    
+
+    
 
     const { Header, Content, Footer } = Layout;
     return (
@@ -18,6 +37,7 @@ class ContactUs extends React.Component {
         <Header className="subHeader" ><h2>Contact Us!</h2> </Header>
         <Content style={{ margin: '24px auto auto', overflow: 'initial' }}>
           <div className="site-layout-background" style={{ padding: 24, textAlign: 'center' }}>
+<div><img className="displayPicture"src={this.state.pictureUrl} alt="picture"/></div>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Viverra adipiscing at in tellus integer. Lectus proin nibh nisl condimentum id venenatis a condimentum. Amet consectetur adipiscing elit duis tristique sollicitudin. Egestas quis ipsum suspendisse ultrices gravida dictum. Eu sem integer vitae justo. Faucibus purus in massa tempor nec feugiat. Sodales ut etiam sit amet nisl. Urna molestie at elementum eu. Eleifend mi in nulla posuere. Quam pellentesque nec nam aliquam sem et. Tellus at urna condimentum mattis pellentesque id nibh tortor id.
 </p>
             <p>Blandit volutpat maecenas volutpat blandit aliquam etiam. Duis at consectetur lorem donec massa sapien faucibus. Tellus elementum sagittis vitae et leo duis. Egestas purus viverra accumsan in nisl nisi scelerisque eu ultrices. Facilisis mauris sit amet massa vitae tortor condimentum. Feugiat in ante metus dictum at tempor. Gravida rutrum quisque non tellus orci ac auctor augue. Purus faucibus ornare suspendisse sed nisi. Potenti nullam ac tortor vitae purus faucibus. Elit eget gravida cum sociis natoque penatibus et magnis. Leo vel orci porta non. Sed euismod nisi porta lorem. Pulvinar mattis nunc sed blandit libero volutpat. Arcu bibendum at varius vel pharetra vel turpis nunc.

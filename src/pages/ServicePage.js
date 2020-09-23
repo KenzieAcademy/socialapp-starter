@@ -1,4 +1,6 @@
 import axios from 'axios';
+import { Result } from 'antd';
+import { store } from "../redux"
 
 class QuestboardService {
     constructor(
@@ -10,6 +12,20 @@ class QuestboardService {
         //     headers: { Authorization: `Bearer ${loginData.result.token}` }
         // });
     }
+
+    getUsername (){
+        const loginData = JSON.parse(localStorage.getItem("login"))
+        const { username } = loginData.result
+
+        return username
+    }
+
+    getToken (){
+        const { token } = store.getState().auth.login.result
+
+        return token
+    }
+
     Register(userData){
         return this.client.post(this.url + "/users", userData);
     }
@@ -32,7 +48,7 @@ class QuestboardService {
         return this.client.delete(this.url + "/users/{username}");
     }
     GetPicture() {
-        return this.client.get(this.url + "/users/{username}/picture");
+        return this.client.get(this.url + "/users/" + this.getUsername() + "/picture");
     }
     SetPicture() {
         return this.client.put(this.url + "/users/{username}/picture").then(response => {return response.data.picture});
@@ -53,8 +69,17 @@ class QuestboardService {
     DeleteMessage(){
         return this.client.delete(this.url + "/messages/{messageId}");
     }
-    Like(){
-        return this.client.post(this.url + "/likes")
+    Like(messageId){
+        const requestBody = { messageId }
+        const config = {
+            headers: {
+                Authorization: `Bearer ${this.getToken()}`
+            }
+        }
+
+       return this.client
+        .post(this.url + "/likes", requestBody, config)
+        .then(response => response.data.like)
     }
     Dislike(){
         return this.client.delete(this.url +"/likes/{likeId}")
