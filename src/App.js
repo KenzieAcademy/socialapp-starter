@@ -15,7 +15,7 @@ class App extends React.Component {
         <Route exact path="/profile/:username" component={props => <Profile {...props} username={props.match.params.username} />} />
         <Route exact path="/messagefeed" component={MessageFeed} />
         <Route exact path="*" component={NotFound} />
-        //editor's note: readability is considerably better if we spread out the properties on their own line, but I like the white space efficiency
+        {/* editor's note: readability is considerably better if we spread out the properties on their own line, but I like the white space efficiency */}
       </Switch>
     )
   }

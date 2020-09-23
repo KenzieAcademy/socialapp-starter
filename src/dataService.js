@@ -8,7 +8,7 @@ class DataService {
         return this.client.post(this.url + "/users", userData)
     }
     getUserPicture(username){
-        return this.client.get(this.url + `/users/${username}` + "/picture")
+        return this.client.get(`${this.url}/users/${username}"/picture"`)
     }
     putUserPicture(username, picture){
         let token = JSON.parse(localStorage.getItem("login")).result.token
