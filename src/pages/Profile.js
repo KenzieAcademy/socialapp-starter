@@ -10,12 +10,18 @@ class Profile extends React.Component {
     this.state = {
       username: this.props.match.params.username,
       user: {},
+      userImg: "",
     };
 
     this.client = new DataService();
   }
 
   componentDidMount() {
+    this.client.getUserPicture(this.state.username).then((result) =>
+      this.setState({
+        userImg: result.config.url,
+      })
+    );
     return this.client.getUser(this.state.username).then((result) =>
       this.setState({
         user: result.data.user,
@@ -37,7 +43,9 @@ class Profile extends React.Component {
         <Menu isAuthenticated={this.props.isAuthenticated} />
         <h2>Profile</h2>
         <div className="profilespace">
-          <div>profile image here</div>
+          <div>
+            <img src={this.state.userImg} alt="No Image found :(" />
+          </div>
           <div>
             <h1>Profile Name: {this.state.user.displayName} </h1>
             <h1>About Me Section Below:</h1>

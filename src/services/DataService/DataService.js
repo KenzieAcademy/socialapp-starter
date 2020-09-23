@@ -44,5 +44,8 @@ class DataService {
   getUser(username) {
     return this.client.get(this.url + "/users/" + username);
   }
+  getUserPicture(username) {
+    return this.client.get(`${this.url}/users/${username}/picture`);
+  }
 }
 export default DataService;

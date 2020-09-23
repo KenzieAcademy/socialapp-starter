@@ -20,6 +20,7 @@ class MessageFeed extends React.Component {
     return this.client.getMessages(10).then((result) =>
       this.setState({
         messages: result.data.messages,
+
         // messageSent: false,
       })
     );
@@ -44,14 +45,10 @@ class MessageFeed extends React.Component {
     event.target.reset();
   };
 
+  removeLike = (event) => {};
+
   handleLike = (event) => {
-    let userData = JSON.parse(localStorage.getItem("login")).result;
     let likeTarget = { messageId: Number(event.target.id) };
-    let messagecheck = this.client.getSpecificMessage(Number(event.target.id));
-    console.log(messagecheck);
-    if (messagecheck.message === userData.username) {
-      return console.log("You Already Liked This");
-    }
     return this.client.likeMessage(likeTarget).then((result) => {
       this.getMessages();
     });
