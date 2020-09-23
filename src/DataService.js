@@ -1,4 +1,6 @@
 import axios from 'axios'
+import { store } from "../../redux"
+
 class DataService {
     constructor(url = 'http://socialapp-api.herokuapp.com', client = axios.create()) {
         this.url = url;
@@ -62,18 +64,33 @@ class DataService {
 
     likePost(messageID) {
         // Insert API call here
+        // ...
+        getUsername(){
+            const { username, token } = store.getState().auth.login.result
+            return username, token
+            postLike(messageId){
+                const requestBody = { messageId }
+                const config = {
+                    headers: { Authorization: 'Bearer ${this.getToken()' }
+                }
+            }
+            return
+            this.client.post(this.baseURL + "/likes", requestBody, config)
+                .then(response => response.data.like)
+
+
+        }
+
+        setUserPicture(userPicture) {
+            // Insert API call here
+        }
+
+        getUser() {
+            const loginData = JSON.parse(localStorage.getItem('login')).result
+            const username = loginData.username
+            return this.client.get(this.url + "/users/" + username)
+        }
+
     }
 
-    setUserPicture(userPicture) {
-        // Insert API call here
-    }
-
-    getUser() {
-        const loginData = JSON.parse(localStorage.getItem('login')).result
-        const username = loginData.username
-        return this.client.get(this.url + "/users/" + username)
-    }
-
-}
-
-export default DataService
+    export default DataService

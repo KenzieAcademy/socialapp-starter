@@ -3,6 +3,7 @@ import NewMessage from "../components/NewMessage/NewMessage";
 import { userIsAuthenticated } from "../redux/HOCs";
 import MessageList from "../components/messageList/MessageList"
 import DataService from "../DataService"
+import { loginData } from "../DataService"
 
 class MessagePage extends React.Component {
   constructor(props) {
@@ -24,7 +25,7 @@ class MessagePage extends React.Component {
     const loginData = JSON.parse(localStorage.getItem('login')).result
 
     //get logged in user name
-    const username = loginData.username
+    const loggedinUsername = loginData.username
     console.log(this.handleLike)
 
     //get the current username who is liking the message
@@ -36,9 +37,9 @@ class MessagePage extends React.Component {
     //check if current user already liked message
     if (this.props.likes.some(likeObject => likeObject.username === loggedin.Object.username))
 
-      return
+      return {}
     dataService.postLike(this.props.id).then(like => console.log(like))
-
+    //increments counter for number of likes
     this.setState(latestState => ({ likeCount: latestState.likeCount + 1 }))
 
   }
