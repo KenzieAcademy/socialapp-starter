@@ -2,7 +2,7 @@ import React from 'react'
 import Menu from '../components/menu/Menu'
 import Message from '../components/message/Message';
 import GetMessages from '../components/getMessages/GetMessages';
-import DataService from '../components/dataService';
+import DataService from '../dataService';
 
 class MessageFeed extends React.Component {
     state = { messages: [] }
@@ -29,7 +29,6 @@ class MessageFeed extends React.Component {
         
         return (
             <div className="MessageFeed">
-                <Menu />
                 <h1>Message Feed</h1>
                 <ul>
                     {this.state.messages.map(msg => 
@@ -41,4 +40,4 @@ class MessageFeed extends React.Component {
     }
 }
 
-export default MessageFeed
+export default MessageFeed;

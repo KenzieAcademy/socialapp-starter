@@ -3,8 +3,9 @@ import { Switch, Route} from "react-router-dom";
 
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
-import NotFound from "./pages/NotFound";
 import Registration from './pages/Registration';
+import MessageFeed from "./pages/MessageFeed";
+import NotFound from "./pages/NotFound";
 
 class App extends React.Component {
   render() {
@@ -24,6 +25,11 @@ class App extends React.Component {
           exact
           path="/registration"
           component={Registration}
+        />
+        <Route
+          exact
+          path="/MessageFeed"
+          component={MessageFeed}
         />
         <Route
           exact
