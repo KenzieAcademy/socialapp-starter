@@ -63,6 +63,9 @@ a:hover {
   border-right: 3px solid #000;
 }
 
+.ant-layout-content {
+  width: 1000px;
+}
 
 .footer {
   background-color: #11ffee00;
@@ -91,6 +94,8 @@ a:hover {
   position: relative;
   top: 20px;
   background-color: #e0d8c0;
+  border: 5px solid #47170e;
+  text-align: center;
 }
 
 .ant-menu {
@@ -112,4 +117,9 @@ Menu.Item, .ant-menu-item-selected {
 .ant-menu.ant-menu-light.ant-menu-root.ant-menu-inline {
   width: 195px;
   max-width: 195px;
+}
+
+.displayPicture {
+  width: 200px;
+  height: 200px;
 }

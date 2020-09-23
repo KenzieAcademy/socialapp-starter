@@ -71,15 +71,18 @@ const style = {
     <h2>Welcome, {this.username}</h2>
         <hr/>
       <Upload
-         name="avatar" listType="picture-card" className="avatar-uploader" 
+         name="avatar" 
+         listType="picture-card" 
+         className="avatar-uploader" 
          accept=".png" >
-           <Button Icon type="Upload">Upload Profile picture here!</Button>
+{imageUrl ? <img src={imageUrl} alt="avatar" style={{ width: '100%' }} /> : uploadButton }
+           {/* <Button Icon type="Upload">Upload Profile picture here!</Button> */}
            </Upload>
 
         
         </div>
       </Content>
-      <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
+      <Footer className="footer" style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
     </Layout>
   </Layout>
        
