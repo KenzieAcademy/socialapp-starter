@@ -1,6 +1,19 @@
 #del {
   background-color: mediumslateblue;
 }
-#modal {
-  background-color: lawngreen;
+.modal {
+  content: normal;
+  background-color: rgb(120, 205, 231);
+}
+.ant-modal-close {
+  background-color: lightcoral;
+}
+.ant-btn {
+  background-color: lightcoral;
+}
+.modal button {
+  float: right;
+}
+.ant-modal-footer button {
+  margin-top: -20px;
 }
