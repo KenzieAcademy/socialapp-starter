@@ -22,9 +22,12 @@ class Messages extends React.Component{
     render(){
         return(
             <li className="Messages">
-                At{this.props.createdAt}, {this.props.username}posted:
+                At {this.props.createdAt}, {this.props.username} posted:
                 <br />
                 {this.props.text}
+                <div className="like-count">
+                    Likes: {this.props.likes.length}
+                </div>
                 
                    
             </li>

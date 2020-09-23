@@ -28,7 +28,6 @@ return (
             <Menu />
             <h1>Message Feed</h1>
             <ul>
-           
                 {this.state.messages.map(msg => (
                 <Messages key={msg.id}{...msg}/>
                 ))}
