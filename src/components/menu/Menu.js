@@ -24,20 +24,14 @@ class Menu extends React.Component {
 
   render() {
 
-
-
     return (
       <div className="Menu">
 
         <div className="logo">
           <img src={GlobeLogo} width="125" height="110" />
-          {/* $('.GlobeLogo')
-                .transition('jiggle')
-            ; */}
-
         </div>
 
-        <h1>World Music Coalition</h1>
+        <h1>W o r l d . M u s i c . C o a l i t i o n</h1>
         {/* // conditional renderin : if isIdentificated, then show the links  */}
         {this.props.isAuthenticated && (
           <div id="menu-links">
@@ -50,25 +44,35 @@ class Menu extends React.Component {
                      </Link>
                 </Button>
 
+                <Button color='orange'>
+                  <Link to="/messagefeed">
+                    Messages
+                  </Link>
+                </Button>
 
+                <Button color='green'>
+                  <Link to={"/profile/" + this.username}>
+                    Profile
+                    </Link>
+                </Button>
 
-                <Button color='orange'><Link to="/messagefeed"> Messages </Link></Button>
+                <Button color='blue'>
+                  <Link to={"/profile/updateprofile/" + this.username}>
+                    UpDate Profile
+                  </Link>
+                </Button>
 
+                <Button color='red'>
+                  <Link to="/list-of-users/">
+                    List of users
+                    </Link>
+                    </Button>
 
-                <Button color='green'><Link to={"/profile/" + this.username}>Profile</Link></Button>
-
-
-                <Button color='blue'> <Link to={"/profile/updateprofile/" + this.username}> UpDate Profile </Link></Button>
-
-
-                <Button color='red'><Link to="/list-of-users/">List of users</Link></Button>
                 <Button color='violet' text="white">
                   <Link to="/Logout/" onClick={this.handleLogout}>
                     Logout</Link>
                 </Button>
               </Button.Group>
-
-
 
             </div>
 

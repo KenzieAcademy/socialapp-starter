@@ -53,13 +53,6 @@ class UserMessage extends React.Component {
             this.client.getMessages()
         }
 
-     
-       
-       
-        
-        
-    
-
     render() {
         return (
 
@@ -70,6 +63,7 @@ class UserMessage extends React.Component {
 
                     <label htmlFor="textarea">
                         <strong>Create Message Here...</strong>
+                        <br/>
                         <br/>
                                                 
                       <textarea 

@@ -17,15 +17,17 @@ code {
 
 .auto_scroll {
   margin: 40px 0 0 20px;
-  width: 35vw;
+  width: 45vw;
   height: 60vh;
-  border: 1px solid blue;
+  border: 6px solid lightslategrey;
+  border-radius: 6px;
+  padding: 10px;
   overflow:auto;
 }
 
 .MessageItem {
   margin: 5px 0 5px 10px;
-  border-bottom:  1px solid blue;
+  /* border-bottom:  1px solid lightslategrey; */
 }
 
 .message_field_format {
@@ -35,7 +37,7 @@ code {
 
 .centralize_elements {
   margin: 40px 0 0 20px;
-  border: 1px solid blue;
+  border: 3px lightslategrey;
   width: 35vw;
   height: 60vh;
   display: flex;
