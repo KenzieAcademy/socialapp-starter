@@ -93,8 +93,19 @@ class FetchService {
         let URL = this.domain + endpoint;
 
         return fetch(URL)
-        .then(response => response.json())
+            .then(response => response.json())
 
+    }
+
+
+    // ======GetUsers===========================================
+    // https://socialapp-api.herokuapp.com/users?limit=100
+
+    getUsers() {
+        let endpoint = "/users"
+        let userCount = 100
+        let URL = this.domain + endpoint + "?limit=" + userCount
+        return fetch(URL).then(response=>response.json())
     }
 
 
