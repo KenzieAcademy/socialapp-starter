@@ -1,6 +1,7 @@
 import React from "react";
 import BackEndServices from "../BackEndServices";
 import Message from "../components/messages/Message";
+import UserList from "../components/users/UserList"
 
 class MessageFeed extends React.Component {
   state = { messages: [] };
@@ -30,6 +31,7 @@ class MessageFeed extends React.Component {
          )
        )}
         </ul>
+          <UserList />
       </div>
     );
   }

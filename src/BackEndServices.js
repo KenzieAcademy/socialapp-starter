@@ -12,6 +12,10 @@ class BackEndServices {
         return this.client.get(`/messages?limit=${limit}`);
     }
 
+    getUsers(limit= 10) {
+        return this.client.get(`users?limit=${limit}`);
+    }
+
 }
 
 export default new BackEndServices();
