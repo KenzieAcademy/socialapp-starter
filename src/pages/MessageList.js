@@ -1,6 +1,7 @@
 import React from "react";
 import Menu from "../components/menu/Menu";
 import Api from "../pages/dataService";
+import { userIsAuthenticated } from "../redux/HOCs";
 import Message from "../components/message/Message";
 
 class MessageList extends React.Component {
@@ -19,7 +20,7 @@ class MessageList extends React.Component {
     if (this.state.messages.length === 0) {
       return (
         <div className="MessageList">
-          <Menu />
+          <Menu isAuthenticated={this.props.isAuthenticated} />
           <h1>MessageList</h1>
           <h3>LOADING...</h3>
         </div>
@@ -27,7 +28,7 @@ class MessageList extends React.Component {
     }
     return (
       <div className="MessageList">
-        <Menu />
+        <Menu isAuthenticated={this.props.isAuthenticated} />
         <h1>Message Feed</h1>
         <ul>
           {this.state.messages.map((messageObject) => {
@@ -45,4 +46,4 @@ class MessageList extends React.Component {
   }
 }
 
-export default MessageList;
+export default userIsAuthenticated(MessageList);
