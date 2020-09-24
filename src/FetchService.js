@@ -8,7 +8,7 @@ class FetchService {
         let endpoint = "/users"
         let URL = this.domain + endpoint
         return fetch(URL, {
-            method: "Post",
+            method: "POST",
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json"
@@ -53,7 +53,7 @@ class FetchService {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "Authorization": "Bearer " + token
+                "Authorization": "Bearer" + token
             },
        
         })
@@ -65,6 +65,38 @@ class FetchService {
         let URL = this.domain + endpoint + "?limit=" + messageCount
         return fetch(URL)
             .then(response => response.json())
+    }
+
+    createMessage(message) {
+        let endpoint = "/messages"
+        let URL = this.domain + endpoint + message
+        let token = JSON.parse(localStorage.getItem('login')).result.token
+        return fetch(URL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+                "Authorization": "Bearer" + token
+            },
+        })
+            .then(response => response.json())
+    }
+
+    deleteMessage(message, messageId) {
+        let endpoint = "/messages"
+        let URL = this.domain + endpoint + message + messageId
+        let token = JSON.parse(localStorage.getItem('login')).result.token
+
+        return fetch(URL, {
+        method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+                "Authorization": "Bearer" + token
+            },
+       
+        })
+        .then(response => response.json()) 
     }
     
 }
