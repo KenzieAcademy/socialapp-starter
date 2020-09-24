@@ -1,12 +1,7 @@
-* {
-  box-sizing: border-box;
-}
-body {
-  background-color: black;
-  /* background-image: url("../images/profilebg.png"); */
+.profile-bg {
+  background-image: url("../images/profilebg.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  padding: 0;
   height: 100vh;
 }
