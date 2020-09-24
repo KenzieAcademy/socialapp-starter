@@ -43,14 +43,18 @@ class Menu extends React.Component {
           <div id="menu-links">
 
             <div>
-              <Button.Group widths='6'>
+              <Button.Group widths='7'>
                 <Button color='yellow'>
                   <Link to="/Homepage" >
                     Homepage
                      </Link>
                 </Button>
 
+            
+               
+                
 
+                
 
                 <Button color='orange'><Link to="/messagefeed"> Messages </Link></Button>
 
@@ -61,7 +65,7 @@ class Menu extends React.Component {
                 <Button color='blue'> <Link to={"/profile/updateprofile/" + this.username}> UpDate Profile </Link></Button>
 
 
-                <Button color='red'><Link to="/list-of-users/">List of users</Link></Button>
+                <Button color='red'><Link to="/userfeed/">World Music Members</Link></Button>
                 <Button color='violet' text="white">
                   <Link to="/Logout/" onClick={this.handleLogout}>
                     Logout</Link>

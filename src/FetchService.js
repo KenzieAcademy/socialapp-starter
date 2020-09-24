@@ -95,6 +95,12 @@ class FetchService {
         return fetch(URL)
             .then(response => response.json())
 
+
+    getUsers() {
+        let endpoint = "/users"
+        let userCount = 100
+        let URL = this.domain + endpoint + "?limit=" + userCount
+        return fetch(URL).then(response=>response.json())
     }
 
 
