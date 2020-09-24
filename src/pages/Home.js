@@ -5,6 +5,10 @@ import { Link } from "react-router-dom";
 import { userIsNotAuthenticated } from "../redux/HOCs";
 
 class Home extends React.Component {
+  onChange = (date, dateString) => {
+    console.log(date, dateString);
+  };
+
   render() {
     return (
       <div className="Home">

@@ -12,28 +12,7 @@ class NewsFeed extends React.Component {
     return (
       <div className="NewsFeed">
         <h3>News Feed</h3>
-        <div className="NewsFeed-Message">
-          <div>Message: </div>
-          <div>Some message</div>
-          <div> Posted By:</div>
-          <div> User DisplayName</div>
-          <LikeButton/>
-          <UnikeButton />
-          <div>Message: </div>
-          <div>Some message</div>
-          <div> Posted By:</div>
-          <div> User DisplayName</div>
-          <LikeButton/>
-          <UnikeButton />
-          <div>Message: </div>
-          <div>Some message</div>
-          <div> Posted By:</div>
-          <div> User DisplayName</div>
-          <LikeButton/>
-          <UnikeButton />
-        </div>
-        <br />
-        <br />
+        <h3>Message Feed</h3>
       </div>
     );
   }
