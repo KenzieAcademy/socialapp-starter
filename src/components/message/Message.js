@@ -22,6 +22,12 @@ class Message extends React.Component {
       this.setState({ like: usersLiked });
     }
   }
+  deleteMessage = (event) => {
+    event.preventDefault();
+    return this.client
+      .deleteMessage(this.props.id)
+      .then((result) => window.location.reload());
+  };
 
   handleLike = (event) => {
     if (this.state.like != null) {
@@ -49,6 +55,11 @@ class Message extends React.Component {
   };
 
   render() {
+    let Delete = "";
+    let userData = JSON.parse(localStorage.getItem("login"));
+    if (userData.result.username === this.props.username) {
+      Delete = <button onClick={this.deleteMessage}>Delete Message</button>;
+    }
     return (
       <div className="message">
         <h5>{this.props.username}</h5>
@@ -59,6 +70,7 @@ class Message extends React.Component {
           &#10084;
         </button>
         <button onClick={this.removeLike}>Unlike</button>
+        {Delete}
       </div>
     );
   }

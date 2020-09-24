@@ -66,11 +66,7 @@ class MessageFeed extends React.Component {
         <div className="message-field">
           <div className="messages">
             {this.state.messages.map((messageObject) => (
-              <Message
-                key={messageObject.id}
-                {...messageObject}
-                handleLike={this.handleLike}
-              />
+              <Message key={messageObject.id} {...messageObject} />
             ))}
             {/* <MessageList
               handleLike={this.handleLike}
