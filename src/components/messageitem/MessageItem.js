@@ -6,7 +6,10 @@ function MessageItem(props) {
         Message Text: {props.text}
         <br/>
         Username: {props.username}
+        <br/>
         Likes: {props.likes.length}
+        <br/>
+        
     </div>
     )
 }
