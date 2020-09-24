@@ -49,5 +49,15 @@ class DataService {
   //           Headers: {Authori}
   //       }
   //   }
+  //   getUsername() {
+  //     const { username} = JSON.parse(localStorage.getItem("login")).result;
+  //     return username;
+  //   }
+  // }
+
+  //   getToken() {
+  //     const { token } = JSON.parse(localStorage.getItem("login")).result;
+  //     return token;
+  //   }
 }
 export default DataService;

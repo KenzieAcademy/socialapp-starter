@@ -23,8 +23,8 @@ class MainContent extends React.Component {
               padding: 300,
               minHeight: 700,
               backgroundColor: "lightblue",
-              backgroundImage:
-                "url(" + "https://wallpapercave.com/wp/wp2683622.jpg" + ")",
+              // backgroundImage:
+              //   "url(" + "https://wallpapercave.com/wp/wp2683622.jpg" + ")",
             }}
           >
             <switch>
