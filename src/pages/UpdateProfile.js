@@ -4,7 +4,9 @@ import { Segment } from 'semantic-ui-react'
 import { Button } from 'semantic-ui-react'
 import Menu from "../components/menu/Menu";
 import { userIsAuthenticated } from "../redux/HOCs";
+import { withAsyncAction } from "../redux/HOCs"
 import { Link } from 'react-router-dom';
+import UpdateProfileForm from '../components/updateProfileForm/UpdateProfileForm'
 
 import FetchService from "../FetchService";
 
@@ -78,9 +80,6 @@ class UpdateProfile extends React.Component {
                 }
 
             })
-
-
-
     }
 
     handleChange = (event) => {
@@ -89,6 +88,20 @@ class UpdateProfile extends React.Component {
 
         this.setState({ formData: newformData });
     };
+
+    // ==Handle DELETE profile button=======================
+    //==get token from LocalStorage, save it in variable, then logout, 
+    //==then run API deleteUser endpoint
+    //== MUST USE 'export default withAsyncAction("auth", "logout")(UpdateProfile)'
+
+    handleDeleteProfile = (event) => {
+        let token = JSON.parse(localStorage.getItem('login')).result.token;
+       
+        this.props.logout()
+        .then(this.client.deleteUser(this.state.user.username, token))
+    }
+
+
 
     render() {
         let result_message = "";
@@ -114,6 +127,7 @@ class UpdateProfile extends React.Component {
             )
         }
 
+
         return (
             <div className="UpdateProfile">
 
@@ -122,40 +136,19 @@ class UpdateProfile extends React.Component {
                 <h2>My Profile</h2>
                 <h3> {this.state.user.username + "  |  @" + this.state.user.displayName}</h3>
 
-                <form id="profile-form">
+                <UpdateProfileForm
+                    formData={this.state.formData}
+                    handleChange={this.handleChange}
+                    handleUpdateProfile={this.handleUpdateProfile}
 
-                    <label htmlFor="displayname">Display Name</label>
-                    <input
-                        type="text"
-                        name="displayName"
-                        required
-                        value={this.state.formData.displayName}
-                        onChange={this.handleChange}
-                    />
+                />
+
+                {result_message}
 
 
-                    <label htmlFor="about">About: </label>
-                    <input
-                        type="text"
-                        height='200 px'
-                        width='200 px'
-                        name="about"
-                        value={this.state.formData.about}
-                        // required
-                        onChange={this.handleChange}
-                    />
-
-                    <Button secondary type="submit" onClick={this.handleUpdateProfile}>
-                        Update my Profile
-                    </Button >
-                    <br />
-
-                    {result_message}
-
-                    <br />
-                    <Link to={"/profile/" + this.props.match.params.username}>Go to My Profile</Link>
-
-                </form>
+                <Link to={"/profile/" + this.props.match.params.username}>Go to My Profile</Link>
+                <br />
+                <button onClick={this.handleDeleteProfile}><Link to="/">Delete Profile</Link></button>
 
             </div >
 
@@ -163,4 +156,5 @@ class UpdateProfile extends React.Component {
     }
 
 }
-export default userIsAuthenticated(UpdateProfile);
+// export default userIsAuthenticated(UpdateProfile);
+export default withAsyncAction("auth", "logout")(UpdateProfile);

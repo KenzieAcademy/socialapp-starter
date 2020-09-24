@@ -1,25 +1,35 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 
-import Home from "./pages/Home";
+import SignIn from "./pages/SignIn";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
-
 import Registration from "./pages/Registration";
-
 import UpdateProfile from "./pages/UpdateProfile";
 
+import Homepage from "./pages/homepage/Homepage";
 
+import UserFeed from "./pages/UserFeed";
+
+
+
+import MessageFeed from "./pages/MessageFeed";
 
 
 class App extends React.Component {
   render() {
     return (
       <Switch>
+
         <Route
           exact
           path="/"
-          component={Home}
+          component={SignIn}
+        />
+        <Route
+          exact
+          path="/Homepage"
+          component={Homepage}
         />
 
         <Route
@@ -27,7 +37,6 @@ class App extends React.Component {
           path="/registration"
           component={Registration}
         />
-
 
         <Route
           exact
@@ -40,6 +49,18 @@ class App extends React.Component {
           path="/profile/updateprofile/:username"
           component={UpdateProfile}
         />
+        <Route
+          exact
+          path="/userfeed"
+          component={UserFeed}
+        />
+        <Route
+          exact
+          path="/messagefeed"
+          component={MessageFeed}
+
+        />
+
         <Route
           exact
           path="*"
