@@ -10,7 +10,6 @@ import UserFeed from "./pages/UserFeed";
 
 class App extends React.Component {
   render() {
-
     return (
       // <div>
       //  <h2>Javamaniacs</h2>
@@ -51,5 +50,4 @@ class App extends React.Component {
     );
   }
 }
-
 export default App;
