@@ -1,5 +1,4 @@
 import axios from "axios";
-
 class DataService {
   constructor(
     url = "https://socialapp-api.herokuapp.com",
@@ -35,6 +34,16 @@ class DataService {
     userPhoto(username) {
         this.client.get(this.url+"/users/" + username + "/picture")
         console.log(this.userPhoto)
+    }
+
+    // if this.likes.some()
+    getToken () {
+      const {token} =JSON.parse(localStorage.getItem("login")).result
+      return console.log({token})
+    }
+    getUserName () {
+      const {username} =JSON.parse(localStorage.getItem("login")).result
+      return console.log({username})
     }
     // below not complete just thoughts from eric
     // postMessage(message){

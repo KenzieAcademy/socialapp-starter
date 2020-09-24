@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import DataService from "../../dataService"
 
-class userData extends Component {
+class UserData extends Component {
 
   //set our initial state and set up our service as this.client on this component
   constructor(props) {
@@ -45,4 +45,4 @@ class userData extends Component {
 
   }
 }
-export default userData
+export default UserData

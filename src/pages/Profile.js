@@ -1,15 +1,20 @@
 import React from "react";
 import Menu from "../components/menu/Menu";
 import { userIsAuthenticated } from "../redux/HOCs";
-import userData from "../components/getUsers/getUsers"
+import UserData from "../components/getUsers/getUsers"
+import UserProfile from "../components/UpdateUser/UserProfile"
 class Profile extends React.Component {
-  render() {
-    console.log(this.props)
+  render() {if(this.props===null)
+    return(<div><h1>loading</h1></div>)
+    console.log(this.props.match.params.username)
     return (
       <div className="Profile">
         <Menu isAuthenticated={this.props.isAuthenticated} />
-        <h2>Profile</h2>
-        <userData/>
+        
+        {/* <UserData/> */}
+       
+        <UserProfile
+         name= {this.props.match.params.username}/>
       </div>
     );
   }

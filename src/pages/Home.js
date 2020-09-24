@@ -3,7 +3,7 @@ import LoginForm from "../components/loginForm/LoginForm";
 // import Menu from "../components/menu/Menu";
 import { userIsNotAuthenticated } from "../redux/HOCs";
 import RegistrationForm from "../components/RegistrationForm/RegistrationForm";
-import { Layout, Menu, Breadcrumb } from "antd";
+import { Layout, Menu} from "antd";
 import UserData from "../components/getUsers/getUsers";
 class Home extends React.Component {
   render() {

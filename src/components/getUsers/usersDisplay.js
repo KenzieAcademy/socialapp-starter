@@ -63,16 +63,16 @@ componentDidMount(){
     
     console.log(this.state)
     return(
-      <div><dv><Link to='/'>home</Link></dv>
+      <div><div><Link to='/'>home</Link></div>
        
     <h1>hello, I am {this.state.userinfo.displayName}</h1>
         < img 
         height='200'
         width='200'
-        src={this.state.picture} alt='no picture'/>
+        src={this.state.picture} alt=''/>
         <h3>About me:
            <br/>
-        
+           {this.state.userinfo.about}
         </h3>
         </div>
     )
