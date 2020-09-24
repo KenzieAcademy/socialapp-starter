@@ -36,4 +36,3 @@ class Profile extends React.Component {
   }
 }
 export default userIsAuthenticated(Profile);
-
