@@ -4,7 +4,7 @@ import axios from "axios";
 
 class DataService {
   constructor(
-    url = "https://socialapp-api.herokuapp.com",
+    url = "https://socialapp-api.herokuapp.com/",
     client = axios.create()
   ) {
     this.url = url;
@@ -12,7 +12,7 @@ class DataService {
   }
 
   registerUser(regisrationData) {
-    return this.client.post(this.url + "/users", regisrationData);
+    return this.client.post(this.url + "users", regisrationData);
   }
   getAllMessagesData() {
     return this.client.get(this.url + "messages");
