@@ -37,7 +37,7 @@ class LoginForm extends React.Component {
               onChange={this.handleChange}
             />
           </div>
-          <div>- - - - - - - - - - - - - - - - - - - - - - - - - - - - -</div>
+          {/* <div>- - - - - - - - - - - - - - - - - - - - - - - - - - - - -</div> */}
           <label htmlFor="password">PASSWORD</label>
           <div className="PasswordInput">
             <input
@@ -48,11 +48,9 @@ class LoginForm extends React.Component {
             />
           </div>
 
-          <div>- - - - - - - - - - - - - - - - - - - - - - - - - - - - -</div>
+          {/* <div>- - - - - - - - - - - - - - - - - - - - - - - - - - - - -</div> */}
           <div className="LoginButton">
-            <button type="submit" disabled={loading}>
-              LOGIN
-            </button>
+            <input type="submit" value="Submit" disabled={loading} />
           </div>
         </form>
         {loading && <Spinner name="circle" color="red" />}

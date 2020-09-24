@@ -42,29 +42,20 @@ class Home extends React.Component {
 
     return (
       <div className="Home">
-        <Menu />
-        <br></br>
-        <div id="LoginButton">
-          <Button
-            variant={this.state.loginActive}
-            size="lg"
-            disabled={this.state.isRegistered}
-            onClick={() => this.loginButton()}
-          >
-            LOGIN
-          </Button>
-        </div>
-        <div id="RegisterButton">
-          <Button
-            variant={this.state.registerActive}
-            size="lg"
-            disabled={!this.state.isRegistered}
-            onClick={() => this.registerButton()}
-          >
-            JOIN!
-          </Button>
-        </div>
         {form}
+        <div className="JoinUs">
+          <div>Not A Member Yet?</div>
+          <div className="JoinButton">
+            <Button
+              variant={this.state.registerActive}
+              size="lg"
+              disabled={!this.state.isRegistered}
+              onClick={() => this.registerButton()}
+            >
+              JOIN US!
+            </Button>
+          </div>
+        </div>
       </div>
     );
   }

@@ -38,29 +38,32 @@ class MessageFeed extends React.Component {
     if (this.state.messages.length === 0) {
       return (
         <div className="MessageList">
-          <h1>MESSAGE LIST IS LOADING.....</h1>
+          <div className="MessageLoading">Message Feed Is Loading......</div>
         </div>
       );
     }
     return (
-      <div className="MessageList">
-        <Menu isAuthenticated={this.props.isAuthenticated} />
-        <h1>MESSAGE FEED</h1>
-        <OverlayTrigger
-          trigger="click"
-          placement="bottom"
-          overlay={this.popover}
-        >
-          <Button variant="dark" size="lg">
-            MAKE A POST
-          </Button>
-        </OverlayTrigger>
-        <div className="TheFeed">
-          <ul>
-            {this.state.messages.map((messageObject) => {
-              return <Message {...messageObject} />;
-            })}
-          </ul>
+      <div className="Body">
+        <div className="MessageList">
+          <Menu isAuthenticated={this.props.isAuthenticated} />
+          <div className="MessageHeader">Message Feed</div>
+          <br></br>
+          <OverlayTrigger
+            trigger="click"
+            placement="bottom"
+            overlay={this.popover}
+          >
+            <Button variant="dark" size="lg">
+              WRITE A POST!
+            </Button>
+          </OverlayTrigger>
+          <div className="TheFeed">
+            <ul>
+              {this.state.messages.map((messageObject) => {
+                return <Message {...messageObject} />;
+              })}
+            </ul>
+          </div>
         </div>
       </div>
     );

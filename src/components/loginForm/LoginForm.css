@@ -6,19 +6,37 @@
   position: relative;
   margin: auto;
   top: 34px;
-  display: flex;
-  flex-direction: column;
+  /* display: flex; */
+  /* flex-direction: column; */
   text-align: center;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font: italic small-caps bold 12px/30px Georgia, serif;
   font-size: 25px;
   width: 400px;
   color: #f8f13e;
 }
 
+input[type="button"],
+input[type="submit"] {
+  background-color: #343a40;
+  border: 3px solid #b80c12;
+  border-radius: 2px;
+  color: black;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font: italic small-caps bold 12px/30px Georgia, serif;
+  font-size: 25px;
+  padding: 10px;
+  cursor: pointer;
+}
+
 .LoginButton {
   position: relative;
   margin: auto;
-  font-size: 30px;
+  width: 100px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
 }
 
 .LoginForm {

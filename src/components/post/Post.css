@@ -3,13 +3,36 @@
 }
 
 .PostForm {
+  border: 3px solid #b80c12;
+  border-radius: 5px;
   position: relative;
   margin: auto;
-  top: 30px;
-  display: flex;
-  flex-direction: column;
+  left: -290px;
+  top: 8px;
+  width: 830px;
+  height: 360px;
   text-align: center;
+  font-size: 25px;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  color: #b80c12;
-  top: -1px;
+  font: italic small-caps bold 12px/30px Georgia, serif;
+  color: black;
+  font-size: 20px;
+}
+
+.PostButton {
+  padding: 15px;
+}
+
+.PhotoUpload {
+  background-color: #b80c12;
+  border: 3px solid #343a40;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.PostBox {
+  background-color: #b80c12;
+  border: 3px solid #343a40;
+  position: relative;
+  margin: auto;
 }

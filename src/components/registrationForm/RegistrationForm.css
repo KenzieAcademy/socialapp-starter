@@ -9,7 +9,7 @@
   display: flex;
   flex-direction: column;
   text-align: center;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  /* font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif; */
   font-size: 25px;
   color: #f8f13e;
   width: 340px;
@@ -21,4 +21,27 @@
   margin: auto;
   width: 475px;
   height: 490px;
+}
+
+input[type="button"],
+input[type="submit"] {
+  background-color: #343a40;
+  border: 3px solid #b80c12;
+  border-radius: 2px;
+  color: black;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font: italic small-caps bold 12px/30px Georgia, serif;
+  font-size: 25px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.RegisterButton {
+  position: relative;
+  margin: auto;
+  width: 100px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
 }
