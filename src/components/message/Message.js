@@ -26,6 +26,9 @@ class Message extends React.Component {
               <button className="LikeButton" onClick={this.LikeFunction}>
                 Like
               </button>{" "}
+              {/* <div className="LikeButton">
+                <input type="submit" value="" onClick={this.LikeFunction} />{" "}
+              </div> */}
             </footer>
           </Card.Body>
         </Card>

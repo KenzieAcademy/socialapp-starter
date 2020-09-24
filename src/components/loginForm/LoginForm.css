@@ -28,10 +28,8 @@
 
 input[type="button"],
 input[type="submit"] {
-  /* background-image: url(../../assets/images/Login_Button.png); */
+  /* background-image: url(../../assets/images/ThumbsUp.png); */
   background-color: #343a40;
-  /* border: 3px solid black; */
-  /* border-radius: 2px; */
   color: white;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font: italic small-caps bold 12px/30px Georgia, serif;
