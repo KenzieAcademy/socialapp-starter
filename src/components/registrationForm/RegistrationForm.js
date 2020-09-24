@@ -3,6 +3,10 @@ import Spinner from "react-spinkit";
 import { withAsyncAction } from "../../redux/HOCs";
 import "./RegistrationForm.css";
 import RegistrationService from "./registrationService"
+import { Button } from '@material-ui/core';
+import Container from '@material-ui/core/Container';
+
+
 
 
 
@@ -35,6 +39,7 @@ class RegistrationForm extends React.Component {
     const { loading, error } = this.props;
     return (
       <div className="RegistrationForm">
+        <Container maxWidth = "md">
         <form id="registration-form" onSubmit={this.handleRegistration}>
           <label htmlFor="username">Username</label>
           <input
@@ -58,14 +63,15 @@ class RegistrationForm extends React.Component {
             required
             onChange={this.handleChange}
           />
-           <button type="submit" disabled={loading}>
+           <Button color = "secondary" type="submit" disabled={loading}>
             Register
-          </button>
+          </Button>
           
           
         </form>
         {loading && <Spinner name="circle" color="blue" />}
         {error && <p style={{ color: "red" }}>{error.message}</p>}
+        </Container>
       </div>
     );
   }
