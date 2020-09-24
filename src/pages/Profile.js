@@ -1,13 +1,13 @@
 import React from "react";
 import { userIsAuthenticated } from "../redux/HOCs";
-import DataService from "../services/DataService";
+import Service from "../services/Service";
 import Menu from "../components/menu/Menu"
 
 
 class Profile extends React.Component {
   constructor(props) {
     super(props);
-    this.client = new DataService();
+    this.client = new Service();
 
   }
   handleDelete = (e) => {
