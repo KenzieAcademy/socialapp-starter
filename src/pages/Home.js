@@ -15,7 +15,10 @@ class Home extends React.Component {
         <Menu />
         <h2>Your favorite microblogging platform</h2>
         <LoginForm />
-        <Link to="/RegisterUser">Create User</Link>
+        <br />
+        <button className="RegisterButton">
+          <Link to="/RegisterUser">Create User</Link>
+        </button>
       </div>
     );
   }
