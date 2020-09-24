@@ -63,6 +63,7 @@ class DataService {
   getMessageList(limit = 20) {
     return this.client.get(`${this.url}/messages?limit=${limit}`);
   }
+
   deleteLike(likeId) {
     let loginData = JSON.parse(localStorage.getItem("login")).result;
     let token = loginData.token;

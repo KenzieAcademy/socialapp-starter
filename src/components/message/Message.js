@@ -19,8 +19,20 @@ class Message extends React.Component {
       }));
     });
   };
+  handleUnlike = () => {
+    const dataService = new DataService();
+    const username = JSON.parse(localStorage.getItem("login")).result.username;
+    if (this.state.likes.some((like) => like.username === username)) return;
+
+    dataService.deleteLike(this.props.like).then((like) => {
+      console.log({ like });
+      this.setState((latestState) => ({
+        likeCount: latestState.likeCount - 1,
+        likes: [...latestState.likes, like],
+      }));
+    });
+  };
   render() {
-    console.log(this.props);
     return (
       <li>
         {this.props.createdAt}, {this.props.username} posted: <br />
@@ -28,7 +40,7 @@ class Message extends React.Component {
         <div className="like-count">likes: {this.state.likeCount}</div>
         <button onClick={this.handleLike}>
           <span role="img" aria-label="fire">
-            🔥
+            🦕
           </span>
         </button>
       </li>
