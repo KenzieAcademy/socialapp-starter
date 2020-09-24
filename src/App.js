@@ -6,8 +6,11 @@ import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
 import Registration from "./pages/Registration";
 import UpdateProfile from "./pages/UpdateProfile";
+
+import Homepage from "./pages/homepage/Homepage";
+
 import UserFeed from "./pages/UserFeed";
-import Homepage from "./components/homepage/Homepage";
+
 
 
 import MessageFeed from "./pages/MessageFeed";

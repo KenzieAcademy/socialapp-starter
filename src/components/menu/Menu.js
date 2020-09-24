@@ -39,7 +39,7 @@ class Menu extends React.Component {
 
         <h1>World Music Coalition</h1>
         {/* // conditional renderin : if isIdentificated, then show the links  */}
-        {this.props.isAuthenticated && (
+        {/* {this.props.isAuthenticated && ( */}
           <div id="menu-links">
 
             <div>
@@ -78,8 +78,9 @@ class Menu extends React.Component {
 
           </div>
 
-        )}
+        {/* )} */}
       </div>)
   }
 }
+//export default ("auth", "logout")(Menu);
 export default withAsyncAction("auth", "logout")(Menu);
