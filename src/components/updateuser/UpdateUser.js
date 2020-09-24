@@ -1,25 +1,23 @@
-import DeleteMessage from "../deleteMessage/DeleteMessage";
+import React from "react";
+import "./updateuser.css";
+import Dataservice from "../../pages/dataService";
 
-export default class TodoList extends Component {
-  removeItem(e) {
-    this.props.removeTodo(message);
+class UpdateUser extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      username: "",
+      password: "",
+      displayName: "",
+      messages: "",
+    };
+    this.client = new Dataservice();
   }
   render() {
     return (
-      <ul>
-        {this.props.todos.map((todo) => {
-          return (
-            <li
-              onClick={() => {
-                this.removeItem(todo);
-              }}
-              key={todo}
-            >
-              {todo}
-            </li>
-          );
-        })}
-      </ul>
+      <div className="updateuser">
+        <button id="update">Update</button>
+      </div>
     );
   }
 }
