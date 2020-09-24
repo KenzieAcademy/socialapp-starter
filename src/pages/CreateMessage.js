@@ -10,6 +10,7 @@ class CreateMessage extends React.Component {
     super(props);
     this.client = new DataService();
     this.state = { messageString };
+    //delete line
   }
 
   componentDidMount() {
