@@ -7,11 +7,11 @@ import ProfilePic from "../components/profile/ProfilePic";
 class Profile extends React.Component {
   render() {
     return (
-      <div className="Profile">
-        <Menu isAuthenticated={this.props.isAuthenticated} />
-        <h2>Profile</h2>
-       
-        
+      <div className="profile-bg">
+        <div className="Profile">
+          <Menu isAuthenticated={this.props.isAuthenticated} />
+          <h2>Profile</h2>
+        </div>
       </div>
     );
   }

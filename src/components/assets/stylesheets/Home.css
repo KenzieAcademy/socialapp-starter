@@ -1,20 +1,21 @@
-* {
-  box-sizing: border-box;
-}
-body {
-  background-color: black;
+.main {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
   background-image: url("../images/welcome.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  color: white;
-  padding: 0;
+  flex-basis: 800px;
   height: 100vh;
 }
-
 .Container {
-  border: 2px solid white;
   padding: 0;
+  margin: 0;
+  width: 400px;
+  height: 400px;
 }
 .Home {
   background-color: rgba(90, 89, 89, 0.5);
