@@ -23,7 +23,7 @@ class DataService {
     return this.client.get(this.url + "/users?limit=" + number);
   }
 
-  postmessage() {
+  postMessages() {
     return this.client.post(this.url + "messages");
   }
 

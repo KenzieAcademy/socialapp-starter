@@ -2,7 +2,7 @@ import React from "react";
 import DataService from "../dataService";
 import Menu from "../components/menu/Menu";
 import { userIsAuthenticated } from "../redux/HOCs";
-// import Message from "";
+
 import { message, Result } from "antd";
 import Message from "../components/message/Message";
 

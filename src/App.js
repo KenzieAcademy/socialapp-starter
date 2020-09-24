@@ -4,65 +4,24 @@ import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import MessageFeed from "./pages/MessageFeed";
 import NotFound from "./pages/NotFound";
+
 import { Layout, Avatar, Menu, Breadcrumb, Button, message } from "antd";
 import Title from "antd/lib/typography/Title";
 import SubMenu from "antd/lib/menu/SubMenu";
 import Icon from "@ant-design/icons";
+import TwitHeader from "./components/pagelayout/Header";
+import SideBar from "./components/pagelayout/SideBar";
+import EditProfile from "./pages/EditProfile";
 
 const { Header, Footer, Sider, Content } = Layout;
 
-let currentpagepath = "";
-let currentpagecomponent;
 class App extends React.Component {
   render() {
-    if ((currentpagepath = "/MessageFeed")) {
-      currentpagecomponent = MessageFeed;
-    } else {
-      currentpagepath = "/profile/:username";
-      currentpagecomponent = Profile;
-    }
     return (
       <div className="App">
-        <Header style={{ padding: 10 }}>
-          <Avatar style={{ float: "right" }} src=".Twitter.png" />
-          <Title style={{ color: "lightblue" }} level={3}>
-            Twitter
-          </Title>
-        </Header>
+        <TwitHeader />
         <Layout>
-          <Sider>
-            <Menu defaultSelectedKeys={["Dashboard"]} mode="inline">
-              <Menu.Item key="Dashboard">
-                <Button
-                  className="ProfileDash"
-                  onClick={(currentpagepath = "/profile/:username")}
-                >
-                  {" "}
-                  Profile Dashboard{" "}
-                </Button>
-              </Menu.Item>
-              <SubMenu
-                title={
-                  <span>
-                    <Icon type="mail" />
-                    <span>User</span>
-                  </span>
-                }
-              >
-                <Menu.ItemGroup key="AboutUS" title="About Me">
-                  <Menu.Item key="location1">
-                    <Button
-                      className="MessageFeed"
-                      onClick={(currentpagepath = "/MessageFeed")}
-                    >
-                      Message Feed
-                    </Button>
-                  </Menu.Item>
-                  <Menu.Item key="location2"> Edit Profile</Menu.Item>
-                </Menu.ItemGroup>
-              </SubMenu>
-            </Menu>
-          </Sider>
+          <SideBar />
           <Layout>
             <Content style={{ padding: "0 50px" }}>
               <Breadcrumb style={{ margin: "16px 0" }}>
@@ -77,11 +36,12 @@ class App extends React.Component {
                 }}
               >
                 <switch>
-                  <Route
-                    exact
-                    path={"/profile/:username"}
-                    component={Profile}
-                  />
+                  <Route exact path="/messagefeed" component={MessageFeed} />
+                  <Route exact path="/" component={Home} />
+                  <Route exact path="/profile/:username" component={Profile} />
+                  <Route exact path="/editprofile" component={EditProfile} />
+                  <Route exact path="*" component={NotFound} />
+                  {/* <Route exact path="*" component={Button} /> */}
                 </switch>
               </div>
             </Content>
@@ -90,13 +50,13 @@ class App extends React.Component {
             </Footer>
           </Layout>
         </Layout>
-        <Switch>
+        {/* <Switch>
           <Route exact path="/" component={Home} />
-          {/* <Route exact path="/profile/:username" component={Profile} />} */}
-          {/* <Route exact path="*" component={NotFound} /> */}
-          {/* <Route exact path="*" component={Button} /> */}
+          <Route exact path="/profile/:username" component={Profile} />
+          <Route exact path="*" component={NotFound} />
+          <Route exact path="*" component={Button} />
           <Route exact path="/profile/:username" component={MessageFeed} />
-        </Switch>
+        </Switch> */}
       </div>
     );
   }
