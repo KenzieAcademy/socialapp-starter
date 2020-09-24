@@ -31,7 +31,6 @@ class Profile extends React.Component {
         <h2>Profile</h2>
         {this.state.user.username}
         <UploadPhoto />
-        <LikeButton />
         <DeleteAcctButton />
       </div>
     );
