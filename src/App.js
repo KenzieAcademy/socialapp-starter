@@ -7,7 +7,12 @@ import NotFound from "./pages/NotFound";
 import { Layout, Avatar, Menu, Breadcrumb, Button, message } from "antd";
 import Title from "antd/lib/typography/Title";
 import SubMenu from "antd/lib/menu/SubMenu";
+import { SettingOutlined } from "@ant-design/icons";
 import Icon from "@ant-design/icons";
+
+
+
+
 
 const { Header, Footer, Sider, Content } = Layout;
 
@@ -23,14 +28,21 @@ class App extends React.Component {
     }
     return (
       <div className="App">
-        <Header style={{ padding: 10 }}>
-          <Avatar style={{ float: "right" }} src=".Twitter.png" />
+        <Header style={{ padding: 20, backgroundColor: "dark" }}>
           <Title style={{ color: "lightblue" }} level={3}>
-            Twitter
+            <Avatar style={{ float: "right" }} size={40} src='https://image.similarpng.com/thumbnail/2020/06/Popular-Logo-Twitter-clipart-PNG.png' />
+            <h2 style={{ color: "lightblue" }}>Twitter</h2>
           </Title>
         </Header>
         <Layout>
-          <Sider>
+          <Sider style={{ backgroundColor: "dark" }}>
+            <switch>
+              <Route
+                exact
+                path={"/profile/:username"}
+                component={Profile}
+              />
+            </switch>
             <Menu defaultSelectedKeys={["Dashboard"]} mode="inline">
               <Menu.Item key="Dashboard">
                 <Button
@@ -45,7 +57,7 @@ class App extends React.Component {
                 title={
                   <span>
                     <Icon type="mail" />
-                    <span>User</span>
+                    <span>User Information</span>
                   </span>
                 }
               >
@@ -58,14 +70,19 @@ class App extends React.Component {
                       Message Feed
                     </Button>
                   </Menu.Item>
-                  <Menu.Item key="location2"> Edit Profile</Menu.Item>
+                  <Menu.Item key="location1"> Edit Profile</Menu.Item>
+                  <Menu.Item key="location2"> Waiting... </Menu.Item>
+                  <Button
+                  > <SettingOutlined /> Logout</Button>
+
+
                 </Menu.ItemGroup>
               </SubMenu>
             </Menu>
           </Sider>
           <Layout>
-            <Content style={{ padding: "0 50px" }}>
-              <Breadcrumb style={{ margin: "16px 0" }}>
+            <Content style={{ padding: "0 35px" }}>
+              <Breadcrumb style={{ margin: "10px 0" }}>
                 <Breadcrumb.Item>Dashboard</Breadcrumb.Item>
               </Breadcrumb>
               <div
@@ -73,16 +90,9 @@ class App extends React.Component {
                   background: "#fff",
                   padding: 300,
                   minHeight: 700,
-                  backgroundColor: "lightblue",
+                  backgroundColor: "lightblue", backgroundImage: "url(" + "https://wallpapercave.com/wp/wp2683622.jpg" + ")"
                 }}
               >
-                <switch>
-                  <Route
-                    exact
-                    path={"/profile/:username"}
-                    component={Profile}
-                  />
-                </switch>
               </div>
             </Content>
             <Footer style={{ textAlign: "center" }}>
@@ -98,6 +108,7 @@ class App extends React.Component {
           <Route exact path="/profile/:username" component={MessageFeed} />
         </Switch>
       </div>
+
     );
   }
 }
