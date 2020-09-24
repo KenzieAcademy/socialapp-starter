@@ -1,6 +1,6 @@
 import axios from "axios";
 
-class UpdateUserInfoService {
+class GetUserPictureService {
   constructor(
     url = "https://socialapp-api.herokuapp.com",
     client = axios.create()
@@ -9,12 +9,10 @@ class UpdateUserInfoService {
     this.client = client;
   }
 
-  updateInfo(updateInfo) {
+  GetUserPicture(username) {
     let loginData = JSON.parse(localStorage.getItem("login"));
-
-    return this.client.patch(
-      `${this.url}/users/${loginData.result.username}`,
-      updateInfo,
+    return this.client.get(
+      this.url + "/users/" + username + "/picture",
       {
         headers: {
           Authorization: `Bearer ${loginData.result.token}`,
@@ -24,4 +22,4 @@ class UpdateUserInfoService {
   }
 }
 
-export default UpdateUserInfoService;
+export default GetUserPictureService;
