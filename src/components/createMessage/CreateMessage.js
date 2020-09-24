@@ -4,12 +4,7 @@ import DataService from "../../DataService";
 class CreateMessage extends React.Component {
   constructor(props) {
     super(props);
-
-
-    this.state = {
-      isSubmitted: false,
-      messageData: { text: "" },
-    };
+    this.state = { isSubmitted: false, messageData: { text: "" } };
 
     this.client = new DataService();
   }

@@ -14,6 +14,7 @@ class Profile extends React.Component {
         <br />
         <UserCard />
         <br />
+
         <CreateMessage />
         <MessageList />
       </div>
