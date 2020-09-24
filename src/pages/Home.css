@@ -1,0 +1,9 @@
+* {
+  box-sizing: border-box;
+}
+
+.Home {
+  position: relative;
+  margin: auto;
+  text-align: center;
+}

@@ -1,0 +1,33 @@
+* {
+  box-sizing: border-box;
+}
+
+.ProfileBody {
+  top: 19px;
+  border-radius: 5px;
+  width: 850px;
+  height: 340px;
+  position: relative;
+  margin: auto;
+}
+
+.ProfileContent {
+  left: -3px;
+  border: 3px solid black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  position: relative;
+  margin: auto;
+  width: 830px;
+  position: relative;
+  margin: auto;
+}
+
+.SaveButton {
+  left: 360px;
+  top: -15px;
+  position: relative;
+  margin: auto;
+  padding: 10px;
+}

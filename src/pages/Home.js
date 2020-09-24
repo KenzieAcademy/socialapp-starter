@@ -4,30 +4,31 @@ import RegistrationForm from "../components/registrationForm/RegistrationForm";
 import Menu from "../components/menu/Menu.js";
 import { userIsNotAuthenticated } from "../redux/HOCs";
 import Button from "react-bootstrap/Button";
+import "../pages/Home.css";
 
 class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       isRegistered: true,
-      loginActive: "secondary",
-      registerActive: "primary",
+      loginActive: "light",
+      registerActive: "dark",
     };
   }
 
   loginButton = () => {
     this.setState({
       isRegistered: true,
-      registerActive: "primary",
-      loginActive: "secondary",
+      registerActive: "dark",
+      loginActive: "light",
     });
   };
 
   registerButton = () => {
     this.setState({
       isRegistered: false,
-      registerActive: "secondary",
-      loginActive: "primary",
+      registerActive: "light",
+      loginActive: "dark",
     });
   };
 
@@ -41,25 +42,20 @@ class Home extends React.Component {
 
     return (
       <div className="Home">
-        <Menu />
-        <br></br>
-        <Button
-          variant={this.state.loginActive}
-          size="lg"
-          disabled={this.state.isRegistered}
-          onClick={() => this.loginButton()}
-        >
-          Login
-        </Button>
-        <Button
-          variant={this.state.registerActive}
-          size="lg"
-          disabled={!this.state.isRegistered}
-          onClick={() => this.registerButton()}
-        >
-          Register
-        </Button>
         {form}
+        <div className="JoinUs">
+          <div>Not A Member Yet?</div>
+          <div className="JoinButton">
+            <Button
+              variant={this.state.registerActive}
+              size="lg"
+              disabled={!this.state.isRegistered}
+              onClick={() => this.registerButton()}
+            >
+              JOIN US!
+            </Button>
+          </div>
+        </div>
       </div>
     );
   }
