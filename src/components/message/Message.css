@@ -1,0 +1,55 @@
+* {
+  box-sizing: border-box;
+}
+
+.Body {
+  width: 850px;
+  position: relative;
+  margin: auto;
+}
+
+.Message {
+  border: 3px solid black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  background-color: #b80c12;
+  text-align: left;
+  padding: 10px;
+}
+
+.CardBody {
+  border: 3px solid black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  padding: 10px;
+  width: 627px;
+  position: relative;
+  margin: 10px;
+  left: 63px;
+}
+
+.MessageText {
+  padding: 5px;
+  border: 3px solid black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  background-color: white;
+}
+
+.LikeButton {
+  position: relative;
+  margin: auto;
+  left: 230px;
+  background-color: black;
+  border: 3px solid white;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  font: italic small-caps bold 12px/30px Georgia, serif;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+}

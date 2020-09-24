@@ -14,8 +14,8 @@ class SocialappService {
     return this.client.get(this.url + "users");
   }
 
-  getMessages(limit = 20) {
-    return this.client.get(this.url + "messages", limit);
+  getMessages() {
+    return this.client.get(this.url + "messages");
   }
 
   postMessage(message) {

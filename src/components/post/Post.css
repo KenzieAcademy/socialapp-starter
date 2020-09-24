@@ -1,0 +1,42 @@
+* {
+  box-sizing: border-box;
+}
+
+.PostForm {
+  border: 3px solid black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  position: relative;
+  margin: auto;
+  left: -290px;
+  top: 11px;
+  width: 830px;
+  height: 360px;
+  text-align: center;
+  font-size: 25px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font: italic small-caps bold 12px/30px Georgia, serif;
+  color: black;
+  font-size: 20px;
+}
+
+.PostButton {
+  padding: 15px;
+}
+
+.PhotoUpload {
+  background-color: #b80c12;
+  border: 3px solid black;
+  border-width: 3px;
+  border-style: dashed;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.PostBox {
+  background-color: #b80c12;
+  border: 3px solid #343a40;
+  position: relative;
+  margin: auto;
+}

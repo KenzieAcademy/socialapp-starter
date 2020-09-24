@@ -1,5 +1,68 @@
+* {
+  box-sizing: border-box;
+}
+
+.Body {
+  padding: 10px;
+  width: 850px;
+  position: relative;
+  margin: auto;
+  border: 3px solid black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  background-image: url(../../assets/images/Coupon_Background_Dark.png);
+  width: 850px;
+}
+
 #registration-form {
+  position: relative;
+  margin: auto;
+  top: 35px;
   display: flex;
   flex-direction: column;
-  max-width: 20em;
+  text-align: center;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font: italic small-caps bold 12px/30px Georgia, serif;
+  font-size: 25px;
+  color: black;
+  width: 340px;
+}
+
+.RegistrationForm {
+  border: 3px solid black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  /* background-color: #b80c12; */
+  background-image: url(../../assets/images/Clear_Red.png);
+  text-align: left;
+  padding: 10px;
+  position: relative;
+  margin: auto;
+  width: 475px;
+  height: 490px;
+}
+
+input[type="button"],
+input[type="submit"] {
+  background-color: #343a40;
+  border: 3px solid #b80c12;
+  border-radius: 2px;
+  color: white;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font: italic small-caps bold 12px/30px Georgia, serif;
+  font-size: 25px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.RegisterButton {
+  position: relative;
+  margin: auto;
+  width: 100px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
 }
