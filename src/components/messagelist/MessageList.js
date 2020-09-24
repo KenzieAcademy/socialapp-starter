@@ -1,10 +1,11 @@
 import React from "react"
 import MessageItem from "../messageitem/MessageItem"
+import { Feed } from 'semantic-ui-react'
 
 function MessageList(props) {
 
     return (
-        <div className="MessageList">
+        <Feed >
             {props.messages.map((messageObj, index) => {
                 return <MessageItem
                     index={index}
@@ -19,7 +20,7 @@ function MessageList(props) {
             })}
 
 
-        </div>
+        </Feed>
     )
 
 }

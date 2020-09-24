@@ -26,44 +26,62 @@ class FetchService {
         let URL = this.domain + endpoint + userName
         let token = JSON.parse(localStorage.getItem('login')).result.token
         return fetch(URL, {
-        method: "PATCH",
+            method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
                 "Authorization": "Bearer " + token
             },
-        body: JSON.stringify(updateData)
+            body: JSON.stringify(updateData)
         })
-        .then(response => response.json()) 
+            .then(response => response.json())
     }
     deleteUser(userName) {
         let endpoint = "/users/"
         let URL = this.domain + endpoint + userName
         let token = JSON.parse(localStorage.getItem('login')).result.token
         return fetch(URL, {
-        method: "DELETE",
+            method: "DELETE",
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
                 "Authorization": "Bearer" + token
             },
         })
-        .then(response => response.json()) 
+            .then(response => response.json())
     }
-    addLike(messageId){
+    addLike(messageId) {
         let endpoint = "/likes"
         let URL = this.domain + endpoint
         let token = JSON.parse(localStorage.getItem("login")).result.token
 
-        return fetch(URL,{
+        return fetch(URL, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
                 "Authorization": "Bearer " + token
             },
-            body: JSON.stringify({"messageId": messageId})
+            body: JSON.stringify({ "messageId": messageId })
         }).then(response => response.json())
+    }
+
+    removeLike(likeId) {
+        let endpoint = "/likes/"
+        let URL = this.domain + endpoint + likeId
+        let token = JSON.parse(localStorage.getItem("login")).result.token
+
+        return fetch(URL, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+                "Authorization": "Bearer " + token
+            },
+           
+        }).then(response => response.json())
+
+
     }
     userMessage() {
         let endpoint = "/messages"
@@ -94,23 +112,23 @@ class FetchService {
         let token = JSON.parse(localStorage.getItem('login')).result.token
 
         return fetch(URL, {
-        method: "DELETE",
+            method: "DELETE",
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
                 "Authorization": "Bearer" + token
             },
-       
+
         })
-        .then(response => response.json()) 
+            .then(response => response.json())
     }
-    userList(){
+    userList() {
         let endpoint = "/users"
         let userCount = 100
         let URL = this.domain + endpoint + "?limit=" + userCount
-        return fetch (URL)
-        .then(response => response.json())
-    } 
-    
+        return fetch(URL)
+            .then(response => response.json())
+    }
+
 }
 export default FetchService;
