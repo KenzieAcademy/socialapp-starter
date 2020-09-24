@@ -13,13 +13,13 @@ class LoginForm extends React.Component {
       password: ""
     };
   }
-  handleLogin = e => {
-    e.preventDefault();
+  handleLogin = event => {
+    event.preventDefault();
     this.props.login(this.state);
   };
 
-  handleChange = e => {
-    this.setState({ [e.target.name]: e.target.value });
+  handleChange = event => {
+    this.setState({ [event.target.name]: event.target.value });
   };
 
   render() {

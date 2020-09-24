@@ -93,8 +93,14 @@ class FetchService {
         let URL = this.domain + endpoint;
 
         return fetch(URL)
-        .then(response => response.json())
+            .then(response => response.json())
 
+
+    getUsers() {
+        let endpoint = "/users"
+        let userCount = 100
+        let URL = this.domain + endpoint + "?limit=" + userCount
+        return fetch(URL).then(response=>response.json())
     }
 
 
@@ -138,6 +144,28 @@ class FetchService {
         })
             .then(response => response.json())
 
+    }
+
+    //=====DeleteUSER==========================================
+    deleteUser(username, token) {
+
+        console.log("Hi from deleteUser API")
+
+        let endpoint = "/users/" + username;
+        let URL = this.domain + endpoint;
+
+        console.log(URL)
+        
+        return fetch(URL, {
+            method: 'DELETE',
+            headers: {
+                'accept': 'application/json',
+                'Authorization': 'Bearer ' + token,
+
+            }
+
+        })
+        .then(response => response.json())
     }
 
 }
