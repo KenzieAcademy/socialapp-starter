@@ -29,36 +29,38 @@ class RegistrationForm extends React.Component {
     const { loading, error } = this.props;
 
     return (
-      <div className="RegistrationForm">
-        <form id="registration-form" onSubmit={this.handleRegistration}>
-          <label htmlFor="username">Username</label>
-          <input
-            type="text"
-            name="username"
-            autoFocus
-            required
-            onChange={this.handleChange}
-          />
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            name="password"
-            required
-            onChange={this.handleChange}
-          />
-          <label htmlFor="displayName">Display Name</label>
-          <input
-            type="text"
-            name="displayName"
-            required
-            onChange={this.handleChange}
-          />
-          <div className="RegisterButton">
-            <input type="submit" value="Submit" disabled={loading} />
-          </div>
-        </form>
-        {loading && <Spinner name="circle" color="blue" />}
-        {error && <p style={{ color: "red" }}>{error.message}</p>}
+      <div className="Body">
+        <div className="RegistrationForm">
+          <form id="registration-form" onSubmit={this.handleRegistration}>
+            <label htmlFor="username">Username</label>
+            <input
+              type="text"
+              name="username"
+              autoFocus
+              required
+              onChange={this.handleChange}
+            />
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              name="password"
+              required
+              onChange={this.handleChange}
+            />
+            <label htmlFor="displayName">Display Name</label>
+            <input
+              type="text"
+              name="displayName"
+              required
+              onChange={this.handleChange}
+            />
+            <div className="RegisterButton">
+              <input type="submit" value="Submit" disabled={loading} />
+            </div>
+          </form>
+          {loading && <Spinner name="circle" color="blue" />}
+          {error && <p style={{ color: "red" }}>{error.message}</p>}
+        </div>
       </div>
     );
   }

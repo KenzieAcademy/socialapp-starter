@@ -25,36 +25,38 @@ class LoginForm extends React.Component {
   render() {
     const { loading, error } = this.props;
     return (
-      <div className="LoginForm">
-        <form id="login-form" onSubmit={this.handleLogin}>
-          <label htmlFor="username">Username</label>
-          <div className="UsernameInput">
-            <input
-              type="text"
-              name="username"
-              autoFocus
-              required
-              onChange={this.handleChange}
-            />
-          </div>
-          {/* <div>- - - - - - - - - - - - - - - - - - - - - - - - - - - - -</div> */}
-          <label htmlFor="password">Password</label>
-          <div className="PasswordInput">
-            <input
-              type="password"
-              name="password"
-              required
-              onChange={this.handleChange}
-            />
-          </div>
+      <div className="Body">
+        <div className="LoginForm">
+          <form id="login-form" onSubmit={this.handleLogin}>
+            <label htmlFor="username">Username</label>
+            <div className="UsernameInput">
+              <input
+                type="text"
+                name="username"
+                autoFocus
+                required
+                onChange={this.handleChange}
+              />
+            </div>
+            {/* <div>- - - - - - - - - - - - - - - - - - - - - - - - - - - - -</div> */}
+            <label htmlFor="password">Password</label>
+            <div className="PasswordInput">
+              <input
+                type="password"
+                name="password"
+                required
+                onChange={this.handleChange}
+              />
+            </div>
 
-          {/* <div>- - - - - - - - - - - - - - - - - - - - - - - - - - - - -</div> */}
-          <div className="LoginButton">
-            <input type="submit" value="Enter" disabled={loading} />
-          </div>
-        </form>
-        {loading && <Spinner name="circle" color="red" />}
-        {error && <p style={{ color: "red" }}>{error.message}</p>}
+            {/* <div>- - - - - - - - - - - - - - - - - - - - - - - - - - - - -</div> */}
+            <div className="LoginButton">
+              <input type="submit" value="Enter" disabled={loading} />
+            </div>
+          </form>
+          {loading && <Spinner name="circle" color="red" />}
+          {error && <p style={{ color: "red" }}>{error.message}</p>}
+        </div>
       </div>
     );
   }

@@ -2,26 +2,36 @@
   box-sizing: border-box;
 }
 
+.Body {
+  padding: 10px;
+  width: 850px;
+  position: relative;
+  margin: auto;
+  border: 3px solid black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  width: 850px;
+}
+
 #login-form {
   position: relative;
   margin: auto;
   top: 34px;
-  /* display: flex; */
-  /* flex-direction: column; */
   text-align: center;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font: italic small-caps bold 12px/30px Georgia, serif;
   font-size: 25px;
   width: 400px;
-  color: #f8f13e;
+  color: black;
 }
 
 input[type="button"],
 input[type="submit"] {
-  background-image: url(../../assets/images/Login_Button.png);
+  /* background-image: url(../../assets/images/Login_Button.png); */
   background-color: #343a40;
-  border: 3px solid #b80c12;
-  border-radius: 2px;
+  /* border: 3px solid black; */
+  /* border-radius: 2px; */
   color: white;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font: italic small-caps bold 12px/30px Georgia, serif;
@@ -41,9 +51,13 @@ input[type="submit"] {
 }
 
 .LoginForm {
-  background-image: url(../../assets/images/Login_Background.png);
+  background-image: url(../../assets/images/Clear_Red.png);
   position: relative;
   margin: auto;
+  border: 3px solid black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
   width: 475px;
   height: 375px;
 }

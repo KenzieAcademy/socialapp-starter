@@ -2,6 +2,19 @@
   box-sizing: border-box;
 }
 
+.Body {
+  padding: 10px;
+  width: 850px;
+  position: relative;
+  margin: auto;
+  border: 3px solid black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  background-image: url(../../assets/images/Coupon_Background_Dark.png);
+  width: 850px;
+}
+
 #registration-form {
   position: relative;
   margin: auto;
@@ -12,12 +25,19 @@
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font: italic small-caps bold 12px/30px Georgia, serif;
   font-size: 25px;
-  color: #f8f13e;
+  color: black;
   width: 340px;
 }
 
 .RegistrationForm {
-  background-image: url(../../assets/images/Register_Background.png);
+  border: 3px solid black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  /* background-color: #b80c12; */
+  background-image: url(../../assets/images/Clear_Red.png);
+  text-align: left;
+  padding: 10px;
   position: relative;
   margin: auto;
   width: 475px;
