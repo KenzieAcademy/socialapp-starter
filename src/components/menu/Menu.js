@@ -37,7 +37,7 @@ class Menu extends React.Component {
           <div id="menu-links">
 
             <div>
-              <Button.Group widths='6'>
+            <Button.Group widths='6'>
                 <Button color='yellow'>
                   <Link to="/Homepage" >
                     Homepage

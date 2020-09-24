@@ -67,8 +67,6 @@ class Profile extends React.Component {
           <Button content='Update My Info' primary  />
         </Link>
 
-
-
       </div>
     );
   }

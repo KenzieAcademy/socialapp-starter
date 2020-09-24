@@ -25,7 +25,8 @@ function MessageItem(props) {
                 </Label>
                 </Button>
 
-            <Button size="mini" color="blue" onClick={() => { props.handleRemoveLike(props.id) }}>No Love</Button>
+            <Button color="blue" onClick={() => { props.handleRemoveLike(props.id) }}>No Love</Button>
+            <br/>
 
         </div>
     )
