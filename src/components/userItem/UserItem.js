@@ -2,7 +2,6 @@ import React from 'react'
 
 
 
-
 function UserItem(props) {
     return (
         <div className="UserItem">
@@ -10,6 +9,7 @@ function UserItem(props) {
             {" "}
             {props.text}
         </div>
+        
     )
 }
 
