@@ -4,7 +4,7 @@ import axios from "axios";
 
 class DataService {
   constructor(
-    url = "https://socialapp-api.herokuapp.com",
+    url = "https://socialapp-api.herokuapp.com/",
     client = axios.create()
   ) {
     this.url = url;
@@ -12,56 +12,56 @@ class DataService {
   }
 
   registerUser(regisrationData) {
-    return this.client.post(this.url + "/users", regisrationData);
+    return this.client.post(this.url + "users", regisrationData);
   }
   getAllMessagesData() {
-    return this.client.get(this.url + "/messages");
+    return this.client.get(this.url + "messages?limit=15");
   }
 
   getMessageData(messageId) {
-    return this.client.get(this.url + "/messages/" + messageId);
+    return this.client.get(this.url + "messages/" + messageId);
   }
 
   deleteMessage(messageId) {
     let loginData = JSON.parse(localStorage.getItem("login"));
-    return this.client.delete(this.url + "/messages/" + messageId, {
+    return this.client.delete(this.url + "messages/" + messageId, {
       headers: { Authorization: `Bearer ${loginData.result.token}` },
     });
   }
 
   createMessage(message /* a string*/) {
     let loginData = JSON.parse(localStorage.getItem("login"));
-    return this.client.post(this.url + "/messages", message, {
+    return this.client.post(this.url + "messages", message, {
       headers: { Authorization: `Bearer ${loginData.result.token}` },
     });
   }
 
   handleLike(messageId) {
     let loginData = JSON.parse(localStorage.getItem("login"));
-    return this.client.post(this.url + "/likes", messageId, {
+    return this.client.post(this.url + "likes", messageId, {
       headers: { Authorization: `Bearer ${loginData.result.token}` },
     });
   }
 
   handleUnlike(likeId) {
     let loginData = JSON.parse(localStorage.getItem("login"));
-    return this.client.delete(this.url + "/likes/" + likeId, {
+    return this.client.delete(this.url + "likes/" + likeId, {
       headers: { Authorization: `Bearer ${loginData.result.token}` },
     });
   }
 
   getUser(username) {
-    return this.client.get(this.url + "/users/" + username);
+    return this.client.get(this.url + "users/" + username);
   }
 
   getUserPhoto(username) {
-    return this.client.get(this.url + "/users/" + username + "/picture");
+    return this.client.get(this.url + "users/" + username + "/picture");
   }
 
   deleteUser(username) {
     let loginData = JSON.parse(localStorage.getItem("login"));
 
-    return this.client.delete(this.url + "/users/" + username, {
+    return this.client.delete(this.url + "users/" + username, {
       headers: { Authorization: `Bearer ${loginData.result.token}` },
     });
   }
@@ -69,7 +69,7 @@ class DataService {
   updateAbout(username, about) {
     let loginData = JSON.parse(localStorage.getItem("login"));
 
-    return this.client.patch(this.url + "/users/" + username, about, {
+    return this.client.patch(this.url + "users/" + username, about, {
       headers: { Authorization: `Bearer ${loginData.result.token}` },
     });
   }
