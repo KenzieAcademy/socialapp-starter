@@ -23,7 +23,7 @@ class DataService {
     return this.client.get(this.url + "/users?limit=" + number);
   }
 
-  postmessage() {
+  postMessages() {
     return this.client.post(this.url + "messages");
   }
 
@@ -48,6 +48,16 @@ class DataService {
   //       return this.client.post(this.url +"/users",){
   //           Headers: {Authori}
   //       }
+  //   }
+  //   getUsername() {
+  //     const { username} = JSON.parse(localStorage.getItem("login")).result;
+  //     return username;
+  //   }
+  // }
+
+  //   getToken() {
+  //     const { token } = JSON.parse(localStorage.getItem("login")).result;
+  //     return token;
   //   }
 }
 export default DataService;
