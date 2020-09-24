@@ -11,7 +11,7 @@ function MessageItem(props) {
         <br/>
         <button onClick={()=> {props.handleLike(props.id) }}>Like</button>
         <br/>
-        <button onClick={()=> {props.handleRemoveLike(props.id) }}>UnLike</button>
+        <button onClick={()=> {props.handleRemoveLike(props.index) }}>UnLike</button>
 
     </div>
     )
