@@ -1,4 +1,5 @@
 import axios from 'axios';
+
 class DataService {
     constructor(url = "https://socialapp-api.herokuapp.com", client = axios.create()) {
         this.url = url;
@@ -18,9 +19,7 @@ class DataService {
             headers: { Authorization: `Bearer ${token}` },
         });
     }
-    // getMessages() {
-    //    return this.client.get(this.url + "/messages");
-    // }
+    
     postMessage(message) {
         let loginData = JSON.parse(localStorage.getItem("login"));
         return this.client.post(this.url + "/messages", message, {

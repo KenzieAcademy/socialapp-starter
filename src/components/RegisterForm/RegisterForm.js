@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Spinner from "react-spinkit";
 import CreateUser from "../../APIService";
 import { withAsyncAction } from "../../redux/HOCs";
-import "./RegisterForm.css";
+ import "./RegisterForm.css";
 
 class RegisterForm extends Component {
   constructor(props) {
