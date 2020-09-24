@@ -7,6 +7,7 @@ class Message extends React.Component {
     this.state = {
       likeCount: this.props.likes.length,
       like: null,
+      deleted: false,
     };
 
     this.client = new DataService();
@@ -26,7 +27,7 @@ class Message extends React.Component {
     event.preventDefault();
     return this.client
       .deleteMessage(this.props.id)
-      .then((result) => window.location.reload());
+      .then((result) => this.setState({ deleted: true }));
   };
 
   handleLike = (event) => {
@@ -59,6 +60,9 @@ class Message extends React.Component {
     let userData = JSON.parse(localStorage.getItem("login"));
     if (userData.result.username === this.props.username) {
       Delete = <button onClick={this.deleteMessage}>Delete Message</button>;
+    }
+    if (this.state.deleted === true) {
+      return <div></div>;
     }
     return (
       <div className="message">
