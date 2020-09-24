@@ -5,6 +5,7 @@ class CreateMessage extends React.Component {
   constructor(props) {
     super(props);
 
+
     this.state = {
       isSubmitted: false,
       messageData: { text: "" },
