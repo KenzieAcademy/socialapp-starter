@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import DataService from "../../dataService"
 
 // function UserDisplay(props) {
-  
+
 //   let userData=DataService.getAUser(props)
 //   console.log(userData)
 //   return <div className="Welcome"><h1>{props.name}</h1>
 
 //   <h2>testing? {props.username}</h2>
-    
+
 //   </div>;
 // }
 // export default UserDisplay;
@@ -17,12 +17,12 @@ import DataService from "../../dataService"
 class UserDisplay extends Component {
 
   //set our initial state and set up our service as this.client on this component
-  constructor(props)
-  {super(props)
+  constructor(props) {
+    super(props)
     this.client = new DataService();
     this.state = {
-     data: {},
-    
+      data: {},
+
 
     }
   }
@@ -33,32 +33,30 @@ class UserDisplay extends Component {
       })
     })
   }
-  getthepicture(){
+  getthepicture() {
     return this.client.GetUserPicture(this.props.name).then(result => {
       this.setState({
-       picture:result
+        picture: result
       })
     })
   }
-  
-componentDidMount(){
-  this.gettheuser()
-  this.getthepicture()
- 
-}
-    render() {
+
+  componentDidMount() {
+    this.gettheuser()
+    this.getthepicture()
+
+  }
+  render() {
     console.log(this.state)
-    return(
+    return (
       <div>
-        
+
         <h1>{this.state.data.displayName}</h1>
-        <h3>About me: <br/>
-        < img src={this.state.data.pictureLocation} alt='no picture'/>
+        <h3>About me: <br />
+          <img src={this.state.data.pictureLocation} alt='no picture' />
           {this.state.data.about}</h3>
-        </div>
+      </div>
     )
-   
-    
   }
 }
 export default UserDisplay 

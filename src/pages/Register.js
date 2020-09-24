@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 class Register extends React.Component {
     render() {
-        const { Header, Content, Footer } = Layout;
+        const { Footer } = Layout;
 
         return (
             <div className="Home">
