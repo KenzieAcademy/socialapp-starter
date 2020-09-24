@@ -3,17 +3,30 @@ import Menu from "../components/menu/Menu"
 import api from "../services/BackendService"
 import Message from "../components/message/Message"
 import PostMessage from "../components/PostMessage"
+import PostMessageService from "../services/PostMessageService"
+// import { userIsAuthericated } from "../redux/HOCs"
 
 class MessageList extends React.Component {
-    state = { messages: [] }
+    state = { messages: [], text: "" }
 
     componentDidMount() {
         api.getAllMessages().then(response => {
             this.setState({ messages: response.data.messages })
+
         })
     }
-
-
+    handleMessagePost = (event) => {
+        event.preventDefault();
+        new PostMessageService().postMessage({ text: this.state.text }).then((result) => {
+            console.log(result.data);
+        });
+        console.log("Post Button Pressed")
+    };
+    handleChange = (event) => {
+        this.setState({
+            [event.target.name]: event.target.value,
+        });
+    };
     render() {
         if (this.state.messages.length === 0) {
             return (
@@ -28,7 +41,8 @@ class MessageList extends React.Component {
             <div className="MessageList">
                 <Menu />
                 <h1>Message Feed</h1>
-                <PostMessage />
+                <PostMessage handleChange={this.handleChange} handleMessagePost={this.handleMessagePost} text={this.state.text} />
+
                 <ul>
                     {this.state.messages.map(messageObject => (
                         <Message key={messageObject.id} {...messageObject} />

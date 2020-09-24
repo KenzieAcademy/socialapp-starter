@@ -1,5 +1,5 @@
 import React from "react";
-
+// import userIsAuthenticated from "../../redux/HOCs"
 class Message extends React.Component {
   render() {
     return (

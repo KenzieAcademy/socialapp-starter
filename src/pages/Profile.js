@@ -1,5 +1,5 @@
 import React from "react";
-import { userIsAuthenticated } from "../redux/HOCs";
+import { userIsAuthenticated } from "../redux/HOCs"
 import DataService from "../services/DataService";
 import Menu from "../components/menu/Menu";
 import "./Profile.css";
@@ -15,6 +15,8 @@ class Profile extends React.Component {
       .deleteUser()
       .then((payload) => {
         console.log(payload);
+        localStorage.clear();
+        window.location.reload();
       })
       .catch((error) => {
         console.log(error);
