@@ -17,6 +17,7 @@ class ProfileContent extends React.Component {
           <ListGroup.Item>joined date</ListGroup.Item>
       </ListGroup>
         <Button>hi</Button>
+        <Button variant="link">Link</Button>
       </div>
     );
   }
