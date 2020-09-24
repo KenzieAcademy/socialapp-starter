@@ -8,7 +8,9 @@ class Message extends React.Component {
   };
   handleLike = () => {
     const dataService = new DataService();
-    // if (this.state.likes.same(like => like.username ===))
+    const username = JSON.parse(localStorage.getItem("login")).result.username;
+    if (this.state.likes.some((like) => like.username === username)) return;
+
     dataService.postLikes(this.props.id).then((like) => {
       console.log({ like });
       this.setState((latestState) => ({
@@ -18,6 +20,7 @@ class Message extends React.Component {
     });
   };
   render() {
+    console.log(this.props);
     return (
       <li>
         {this.props.createdAt}, {this.props.username} posted: <br />

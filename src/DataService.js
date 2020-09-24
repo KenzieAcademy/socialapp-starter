@@ -67,14 +67,13 @@ class DataService {
   postLikes(messageId) {
     const data = { messageId };
     let loginData = JSON.parse(localStorage.getItem("login"));
-    return this.client.post(this.url + "/likes", data, {
-      headers: { Authorization: `Bearer ${loginData.result.token} ` },
-      // .then(
-      //   (response) => {
-      //     return response.data.like;
-      //   }
-      // ),
-    });
+    return this.client
+      .post(this.url + "/likes", data, {
+        headers: { Authorization: `Bearer ${loginData.result.token} ` },
+      })
+      .then((response) => {
+        return response.data.like;
+      });
   }
 }
 
