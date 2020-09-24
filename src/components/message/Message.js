@@ -1,59 +1,39 @@
-import React, { createElement, useState } from "react";
-import { Comment, Tooltip, Avatar } from "antd";
-import moment from "moment";
-import {
-  DislikeOutlined,
-  LikeOutlined,
-  DislikeFilled,
-  LikeFilled,
-} from "@ant-design/icons";
-function Message(props) {
-  const [likes, setLikes] = useState(0);
-  const [dislikes, setDislikes] = useState(0);
-  const [action, setAction] = useState(null);
+import React from "react";
+import DataService from "../../DataService";
 
-  const like = () => {
-    setLikes(1);
-    setDislikes(0);
-    setAction("liked");
+class Message extends React.Component {
+  state = {
+    likeCount: this.props.likes.length,
+    likes: this.props.likes,
   };
+  handleLike = () => {
+    const dataService = new DataService();
+    const username = JSON.parse(localStorage.getItem("login")).result.username;
+    if (this.state.likes.some((like) => like.username === username)) return;
 
-  const dislike = () => {
-    setLikes(0);
-    setDislikes(1);
-    setAction("disliked");
+    dataService.postLikes(this.props.id).then((like) => {
+      console.log({ like });
+      this.setState((latestState) => ({
+        likeCount: latestState.likeCount + 1,
+        likes: [...latestState.likes, like],
+      }));
+    });
   };
-
-  const actions = [
-    <Tooltip key="comment-basic-like" title="Like">
-      <span onClick={like}>
-        {createElement(action === "liked" ? LikeFilled : LikeOutlined)}
-        <span className="comment-action">{likes}</span>
-      </span>
-    </Tooltip>,
-    <Tooltip key="comment-basic-dislike" title="Dislike">
-      <span onClick={dislike}>
-        {React.createElement(
-          action === "disliked" ? DislikeFilled : DislikeOutlined
-        )}
-        <span className="comment-action">{dislikes}</span>
-      </span>
-    </Tooltip>,
-    <span key="comment-basic-reply-to">Reply to</span>,
-  ];
-  return (
-    <Comment
-      actions={actions}
-      author={props.username}
-      avatar={<Avatar />}
-      content={props.text}
-      datetime={
-        <Tooltip title={moment().format("YYYY-MM-DD HH:mm:ss")}>
-          <span>{moment().fromNow()}</span>
-        </Tooltip>
-      }
-    />
-  );
+  render() {
+    console.log(this.props);
+    return (
+      <li>
+        {this.props.createdAt}, {this.props.username} posted: <br />
+        {this.props.text}
+        <div className="like-count">likes: {this.state.likeCount}</div>
+        <button onClick={this.handleLike}>
+          <span role="img" aria-label="fire">
+            🔥
+          </span>
+        </button>
+      </li>
+    );
+  }
 }
-
+//if we use emojis must be put in a span with role = img and aria-label
 export default Message;
