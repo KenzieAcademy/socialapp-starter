@@ -1,8 +1,8 @@
 import React from "react";
 import LoginForm from "../components/loginForm/LoginForm";
 import Menu from "../components/menu/Menu";
+import { Link } from "react-router-dom";
 import { userIsNotAuthenticated } from "../redux/HOCs";
-import RegistrationForm from "../components/registraionForm/RegistrationForm";
 
 class Home extends React.Component {
   onChange = (date, dateString) => {
@@ -15,9 +15,7 @@ class Home extends React.Component {
         <Menu />
         <h2>Your favorite microblogging platform</h2>
         <LoginForm />
-        <hr />
-        <h2>Register below:</h2>
-        <RegistrationForm />
+        <Link to="/RegisterUser">Create User</Link>
       </div>
     );
   }

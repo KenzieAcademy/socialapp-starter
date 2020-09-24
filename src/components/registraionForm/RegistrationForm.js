@@ -53,12 +53,9 @@ class RegistrationForm extends React.Component {
             required
             onChange={this.handleChange}
           />
-          <Button type="primary" disabled={loading}>
+          <button type="submit" disabled={loading}>
             Register
-          </Button>
-          {/*/<button type="submit" disabled={loading}>
-            Register
-          </button>*/}
+          </button>
         </form>
         {loading && <Spinner name="circle" color="blue" />}
         {error && <p style={{ color: "red" }}>{error.message}</p>}
