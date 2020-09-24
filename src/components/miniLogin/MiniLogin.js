@@ -1,6 +1,5 @@
 import React from "react";
 import { withAsyncAction } from "../../redux/HOCs";
-import "./LoginForm.css";
 import Spinner from "react-spinkit";
 
 class MiniLogin extends React.Component {
@@ -22,10 +21,17 @@ class MiniLogin extends React.Component {
     const { loading, error } = this.props;
     return (
       <div className="LoginButton">
-        <input type="submit" value="Enter" disabled={loading} />
+        <input
+          type="submit"
+          value="Enter"
+          onClick={this.handleLogin}
+          disabled={loading}
+        />
         {loading && <Spinner name="circle" color="red" />}
         {error && <p style={{ color: "red" }}>{error.message}</p>}
       </div>
     );
   }
 }
+
+export default withAsyncAction("auth", "login")(MiniLogin);

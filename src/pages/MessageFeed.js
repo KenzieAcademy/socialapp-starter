@@ -18,13 +18,17 @@ class MessageFeed extends React.Component {
       <Popover id="newPost">
         {/* <Popover.Title as="h2">NEW POST</Popover.Title> */}
         <Popover.Content>
-          <Post />
+          <Post passdown={this.handleNewPost} />
         </Popover.Content>
       </Popover>
     );
   }
 
   componentDidMount() {
+    this.handleNewPost();
+  }
+
+  handleNewPost() {
     this.api
       .getMessages()
       .then((response) =>

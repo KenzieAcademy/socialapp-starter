@@ -1,5 +1,5 @@
 import React from "react";
-import LoginForm from "../loginForm/LoginForm";
+import MiniLogin from "../miniLogin/MiniLogin";
 import Modal from "react-bootstrap/Modal";
 
 class RegisterPopup extends React.Component {
@@ -17,7 +17,7 @@ class RegisterPopup extends React.Component {
           <Modal.Title>Thank You for Registering!</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <LoginForm
+          <MiniLogin
             username={this.props.username}
             password={this.props.password}
           />

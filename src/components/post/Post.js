@@ -11,6 +11,7 @@ import "./Post.css";
 class Post extends React.Component {
   constructor(props) {
     super(props);
+    this.update = props.passdown;
     this.client = new SocialappService();
     this.state = {
       text: "",
@@ -23,7 +24,8 @@ class Post extends React.Component {
 
   handlePost = (e) => {
     e.preventDefault();
-    this.client.postMessage(this.state);
+    this.client.postMessage({ text: this.state.text });
+    //this.update();
   };
 
   render() {

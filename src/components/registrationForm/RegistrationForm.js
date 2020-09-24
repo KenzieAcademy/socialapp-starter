@@ -37,7 +37,12 @@ class RegistrationForm extends React.Component {
     const { loading, error } = this.props;
     let popup = "";
     if (this.state.registered === true) {
-      popup = <RegisterPopup />;
+      popup = (
+        <RegisterPopup
+          username={this.state.username}
+          password={this.state.password}
+        />
+      );
     }
 
     return (
