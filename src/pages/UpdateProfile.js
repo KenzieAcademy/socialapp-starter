@@ -148,7 +148,7 @@ class UpdateProfile extends React.Component {
 
                 <Link to={"/profile/" + this.props.match.params.username}>Go to My Profile</Link>
                 <br />
-                <button onClick={this.handleDeleteProfile}><Link to="/">Delete Profile</Link></button>
+                <Button onClick={this.handleDeleteProfile}><Link to="/">Delete Profile</Link></Button>
 
             </div >
 

@@ -128,7 +128,7 @@ class Profile extends React.Component {
             accept="image/png, image/jpeg, image/gif"
             onChange={this.onFileChange}
           />
-          <button onClick={this.handleSubmitPhoto}>Change my Picture</button>
+          <button onClick={this.handleSubmitPhoto}>Save Change</button>
         </form>
 
 
@@ -138,11 +138,12 @@ class Profile extends React.Component {
 
 
 
-        <Button >
+        {/* <Button >
 
-          {/* <input type="file" accept="image/*" id="file-input" /> */}
+          <input type="file" accept="image/*" id="file-input" /> 
 
-        </Button>
+        </Button> */}
+        <hr/>
         <Link to={"/profile/updateprofile/" + this.props.match.params.username}>
           <Button content='Update My Info' primary />
         </Link>
