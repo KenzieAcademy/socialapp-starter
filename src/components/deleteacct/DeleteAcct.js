@@ -14,6 +14,7 @@ class DeleteAcctButton extends React.Component {
     this.handleDelete = this.handleDelete.bind(this);
     this.client = new Dataservice();
   }
+
   showModal = () => {
     this.setState({
       visible: true,
@@ -45,7 +46,7 @@ class DeleteAcctButton extends React.Component {
           onOk={this.handleDelete}
           onCancel={this.handleCancel}
         >
-          <p>R u sure to delete Account</p>
+          <p>R u sure to delete account</p>
         </Modal>
       </div>
     );
