@@ -34,14 +34,16 @@ class Profile extends React.Component {
         <dl>
           <dt>Bio</dt>
           <dd></dd>
-          <br/>
+          <br />
           <dt>Location</dt>
-          <br/>
+          <br />
           <dd></dd>
           <dt>Date Joined</dt>
-
         </dl>
-        <button className="DeleteUser" onClick={this.handleDelete}> Delete User</button>
+        <button className="DeleteUser" onClick={this.handleDelete}>
+          {" "}
+          Delete User
+        </button>
       </div>
     );
   }
