@@ -38,11 +38,7 @@ class DataService {
     return this.client.post(this.url + "users", regisrationData);
   }
   getAllMessagesData() {
-<<<<<<< HEAD
-    return this.client.get(this.url + "messages");
-=======
     return this.client.get(this.url + "messages?limit=15");
->>>>>>> 6d6aa202e71895d47dfe6f16db56548337bf7196
   }
 
   getMessageData(messageId) {
