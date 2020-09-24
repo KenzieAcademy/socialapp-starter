@@ -1,8 +1,8 @@
 import React from "react";
 import Menu from "../components/menu/Menu";
 import { userIsAuthenticated } from "../redux/HOCs";
-import DataService from "../DataService.js";
-import Message from "../components/message/Message";
+import MessageList from "../components/messageList/MessageList";
+import DataService from "../DataService";
 
 class Feed extends React.Component {
   constructor(props) {
@@ -31,14 +31,8 @@ class Feed extends React.Component {
     return (
       <div className="Feed">
         <Menu isAuthenticated={this.props.isAuthenticated} />
-        <h1>Message Feed</h1>
-        <h2>Messages</h2>
-        <h2>Messages</h2>
-        <ul>
-          {this.state.messages.map((messageObject) => {
-            return <Message {...messageObject} />;
-          })}
-        </ul>
+
+        <MessageList />
       </div>
     );
   }

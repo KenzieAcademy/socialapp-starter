@@ -1,15 +1,22 @@
 import React from "react";
 import Menu from "../components/menu/Menu";
 import { userIsAuthenticated } from "../redux/HOCs";
+// import GetUserPicture from "../components/getUserPi
+import InputFile from "../components/inputFileButton/InputFile";
+
 import DataService from "../DataService";
-import { Button } from "antd";
-import { Avatar } from "antd";
+import { Button, Avatar } from "antd";
+
 import { UserOutlined } from "@ant-design/icons";
 import UpdateUser from "../components/updateUser/UpdateUser";
+import { Redirect } from "react-router-dom";
 
 class Profile extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      redirect: null,
+    };
     this.client = new DataService();
   }
   handleDelete = (e) => {
@@ -22,17 +29,27 @@ class Profile extends React.Component {
       .catch((error) => {
         console.log(error);
       });
+    localStorage.clear();
+    window.location.reload();
+    // this.setState({ redirect: "/" });
   };
   render() {
+    if (this.state.redirect) {
+      return <Redirect to={this.state.redirect} />;
+    }
     return (
       <div className="Profile">
         <Menu isAuthenticated={this.props.isAuthenticated} />
         <h2>Profile</h2>
         <button onClick={this.handleDelete}>Delete Profile</button>
         <div>
-          <Avatar size={264} icon={<UserOutlined />} />
+          <Avatar
+            size={264}
+            icon={<UserOutlined />}
+            // src={InputFile.props.state.imgUrl}
+          />
         </div>
-        <Button type="primary">Change Picture</Button>
+        <InputFile />
         <Button type="primary" danger onClick={this.handleDelete}>
           Delete User
         </Button>
