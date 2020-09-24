@@ -1,6 +1,7 @@
 import React from "react";
 //import img from "../assets/images/likeThumbnail.jpg";
 import Card from "react-bootstrap/Card";
+import MiniProfile from "../miniProfile/MiniProfile";
 class Message extends React.Component {
   LikeFunction() {
     return <img src=""></img>; //Sometype of image thumbnail
@@ -8,6 +9,7 @@ class Message extends React.Component {
   render() {
     return (
       <Card style={{ width: "18rem" }}>
+        <MiniProfile />
         <Card.Body className="Message">
           <Card.Title> From: {this.props.username}</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">
