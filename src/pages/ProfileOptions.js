@@ -3,14 +3,23 @@ import { Link } from "react-router-dom";
 import Menu from "../components/menu/Menu";
 import DeleteUserButton from "../components/deleteUserButton/DeleteUserButton";
 import UpdateAbout from "../components/updateAbout/UpdateAbout";
+import { Card } from 'antd';
 
 class ProfileOptions extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
-    this.state = {};
+    this.state = {
+      userData:[]
+    };
   }
+  // updateProfile = (userData)=>{
+  //   this.setState((state,props)=>{
+  //     userData: [...state.userData]
+  //   })
 
+
+  // }
   render() {
     return (
       <div className="ProfileOptions">
@@ -19,14 +28,19 @@ class ProfileOptions extends React.Component {
         <h2>Settings</h2>
         <br />
         <h3>Update About :</h3>
-        <UpdateAbout />
+        <UpdateAbout 
+        
+        />
         <br />
+        <Card style={{ textAlign: "left", width: "50%", margin: "left" }}></Card>
         <h3>Update Picture :</h3>
         <button className="update-pic">update</button>
         <br />
         <br />
+
         <h3>Delete User: </h3>
         <DeleteUserButton />
+        <Card/>
       </div>
     );
   }

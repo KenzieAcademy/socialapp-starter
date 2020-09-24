@@ -1,24 +1,91 @@
 import React from "react";
-import DataService from "../../DataService";
 import noDisplayPhoto from "../../assests/nodisplayphoto.png";
+import DataService from "../../DataService";
+import { displayName } from "react-spinkit";
+import { Card } from 'antd';
 
 class UserCard extends React.Component {
   constructor(props) {
     super(props);
-  }
+    this.client = new DataService
+    this.state = {
+      user:{
+        "userName": "",
+        "displayName": "",
+        "about": "",
+    
+      },
+      statusCode: 0
+    }
+    
+}
+
+// handleChange = (event)=>{
+//   const userData = {this.state.userData};
+//   userData[event.target.name]=event.target.value; //new Object
+
+  
+
+// }
+
+// handleSubmit = (event)=>{
+//   event.preventDefault();
+//   this.setState({
+//     submitted : false
+//   });
+// }
+componentDidMount(){
+  let about ={}
+  let loginData = JSON.parse(localStorage.getItem("login"))
+  this.client.getUser(loginData.result.username).then(res => {console.log(res.data.user)
+
+
+  this.setState({
+    user:{
+      userName: res.data.user.username,
+      displayName: res.data.user.displayName,
+      about: res.data.user.about
+  
+    },
+
+  })
+    
+});
+console.log(this.state.user)
+
+}
 
   render() {
+    
+
     return (
+    
+      
       <div className="UserCard">
-        <h3>Display Name: Users Display Name</h3>
-        <br />
+
+            <br />
         <h5>Photo</h5>
         <img src="" atl="userPicture" />
+          <br/>
 
-        <h4>
-          About : <p>about user</p>
-        </h4>
+        <Card title="All About Me!" extra={<a href="/ProfileOptions">Edit</a>} style={{ width: 300 }}>
+        <strong>Display Name: </strong>
+        <h3>{this.state.user.displayName}</h3>
+        <br/>
+        <strong>
+            About Me : <p>  
+              {this.state.user.about}</p>
+        </strong>
+      
+      
+    </Card>
+        
+        
+      
+        
+        
       </div>
+      
     );
   }
 }
