@@ -2,12 +2,7 @@ import React from "react";
 import Spinner from "react-spinkit";
 import "./RegistrationForm.css";
 import DataService from "../../DataService";
-<<<<<<< HEAD
-
-
-=======
 import { Button } from "antd";
->>>>>>> 6d6aa202e71895d47dfe6f16db56548337bf7196
 class RegistrationForm extends React.Component {
   state = {
     ModalText: 'Content of the modal',
