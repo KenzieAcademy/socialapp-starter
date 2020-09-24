@@ -1,9 +1,7 @@
 import React from "react";
-import DataService from "../../dataService";
-
-
 import { userIsAuthenticated } from "../../redux/HOCs";
-
+import DataService from "../../dataService";
+import "./PostMessage.css"
 
 
 class PostMessage extends React.Component {
@@ -58,6 +56,12 @@ class PostMessage extends React.Component {
                         />
                     </div>
                     <button type='submit'>Post message</button>
+                    <div className="postBox">
+                        <p>
+                            {this.state.text}
+                        </p>
+
+                    </div>
                 </form>
             </div>
         )

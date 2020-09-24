@@ -1,10 +1,9 @@
 import React from "react";
 import Menu from "../components/menu/Menu";
 import { userIsAuthenticated } from "../redux/HOCs";
-import PostMessage from '../components/postMessage/PostMessage'
+// import PostMessage from '../components/postMessage/PostMessage'
 import GetUsers from "../components/getUsers/GetUsers";
-import PostMessage from "../components/postMessage/PostMessage";
-import DeleteMessage from "../components/deleteMessage/DeleteMessage";
+// import DeleteMessage from "../components/deleteMessage/DeleteMessage";
 
 class Profile extends React.Component {
   render() {
@@ -12,9 +11,9 @@ class Profile extends React.Component {
       <div className="Profile">
         <Menu isAuthenticated={this.props.isAuthenticated} />
         <h2>Profile</h2>
-        <PostMessage />
+        
         <br />
-        <DeleteMessage />
+        
         <br />
         <GetUsers />
       </div>
