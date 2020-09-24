@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
 // import PostMessage from "./services/PostMessageService"
-import RegistrationForm from "./components/registrationForm/RegistrationForm"
+import RegistrationForm from "./components/registrationForm/RegisterForm"
 import MessageList from "./pages/MessageList"
 import PostMessage from "./components/PostMessage";
 
