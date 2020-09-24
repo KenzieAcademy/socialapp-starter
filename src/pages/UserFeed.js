@@ -30,11 +30,8 @@ class UserFeed extends React.Component {
             <div className="UserFeed">
                 <Menu isAuthenticated={this.props.isAuthenticated} />
                 <UserList user={this.state.user} />
-
             </div>
         )
-
     }
 }
-
 export default userIsAuthenticated(UserFeed)
