@@ -45,11 +45,7 @@ class DataService {
 
   handleUnlike(likeId) {
     let loginData = JSON.parse(localStorage.getItem("login"));
-<<<<<<< HEAD
     return this.client.delete(this.url + "likes/" + likeId, {
-=======
-    return this.client.delete(this.url + "/likes/" + likeId, {
->>>>>>> 91a5723c8dccbe3e13c76f82bd24a4e15ab16b5e
       headers: { Authorization: `Bearer ${loginData.result.token}` },
     });
   }

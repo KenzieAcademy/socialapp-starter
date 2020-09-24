@@ -11,9 +11,6 @@ class NewsFeed extends React.Component {
     return (
       <div className="NewsFeed">
         <h3>News Feed</h3>
-<<<<<<< HEAD
-        <h3>Message Feed</h3>
-=======
         <div className="NewsFeed-Message">
           <div>Message: </div>
           <div>Some message</div>
@@ -30,7 +27,6 @@ class NewsFeed extends React.Component {
         </div>
         <br />
         <br />
->>>>>>> 91a5723c8dccbe3e13c76f82bd24a4e15ab16b5e
       </div>
     );
   }
