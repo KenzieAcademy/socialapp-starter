@@ -23,6 +23,7 @@
 
 .MessageHeader {
   top: 12px;
+  left: -2px;
   position: relative;
   margin: auto;
   border: 3px solid black;

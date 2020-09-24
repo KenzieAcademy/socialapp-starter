@@ -54,7 +54,7 @@ class MessageFeed extends React.Component {
             overlay={this.popover}
           >
             <Button variant="dark" size="lg">
-              WRITE A POST!
+              POST A MESSAGE!
             </Button>
           </OverlayTrigger>
           <div className="TheFeed">
