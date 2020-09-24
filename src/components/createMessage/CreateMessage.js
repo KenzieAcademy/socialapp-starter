@@ -5,16 +5,12 @@ class CreateMessage extends React.Component {
   constructor(props) {
     super(props);
 
-<<<<<<< HEAD
-    this.client = new DataService()
-=======
     this.state = {
       isSubmitted: false,
       messageData: { text: "" },
     };
 
     this.client = new DataService();
->>>>>>> 505b93bcce05e7fb76700794e55ee142f1990326
   }
 
   handleCreateMessage = (e) => {
