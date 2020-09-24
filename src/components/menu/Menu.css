@@ -6,6 +6,7 @@
   position: relative;
   margin: auto;
   top: 6px;
+  left: -2px;
   border: 3px solid black;
   border-radius: 5px;
   border-width: 3px;
