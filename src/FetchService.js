@@ -67,6 +67,7 @@ class FetchService {
             .then(response => response.json())
     }
 
+<<<<<<< HEAD
     createMessage(message) {
         let endpoint = "/messages"
         let URL = this.domain + endpoint + message
@@ -98,6 +99,15 @@ class FetchService {
         })
         .then(response => response.json()) 
     }
+=======
+    userList(){
+        let endpoint = "/users"
+        let userCount = 100
+        let URL = this.domain + endpoint + "?limit=" + userCount
+        return fetch (URL)
+        .then(response => response.json())
+    } 
+>>>>>>> master
     
 }
 
