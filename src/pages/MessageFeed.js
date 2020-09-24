@@ -32,6 +32,7 @@ class MessageFeed extends React.Component {
          )
        )}
         </ul>
+        
       </div>
     );
   }
