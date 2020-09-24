@@ -3,7 +3,6 @@ class FetchService {
     constructor() {
         this.domain = "https://socialapp-api.herokuapp.com"
     }
-
     registerUser(userData) {
         let endpoint = "/users"
         let URL = this.domain + endpoint
@@ -17,20 +16,15 @@ class FetchService {
         })
             .then(response => response.json())
     }
-
     getUser(userName) {
         let endpoint = "/users/"
         let URL = this.domain + endpoint + userName
-
         return fetch(URL).then(response => response.json())
-
     }
-
     updateUser(userName, updateData) {
         let endpoint = "/users/"
         let URL = this.domain + endpoint + userName
         let token = JSON.parse(localStorage.getItem('login')).result.token
-
         return fetch(URL, {
         method: "PATCH",
             headers: {
@@ -42,12 +36,10 @@ class FetchService {
         })
         .then(response => response.json()) 
     }
-
     deleteUser(userName) {
         let endpoint = "/users/"
         let URL = this.domain + endpoint + userName
         let token = JSON.parse(localStorage.getItem('login')).result.token
-
         return fetch(URL, {
         method: "DELETE",
             headers: {
@@ -55,7 +47,6 @@ class FetchService {
                 "Accept": "application/json",
                 "Authorization": "Bearer " + token
             },
-       
         })
         .then(response => response.json()) 
     }
@@ -66,8 +57,12 @@ class FetchService {
         return fetch(URL)
             .then(response => response.json())
     }
-    
+    userList(){
+        let endpoint = "/users"
+        let userCount = 100
+        let URL = this.domain + endpoint + "?limit=" + userCount
+        return fetch (URL)
+        .then(response => response.json())
+    } 
 }
-
-
 export default FetchService;

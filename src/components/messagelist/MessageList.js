@@ -1,6 +1,5 @@
 import React from "react"
 import MessageItem from "../messageitem/MessageItem"
-
 class MessageList extends React.Component {
     render() {
         return (
@@ -11,14 +10,10 @@ class MessageList extends React.Component {
                         text={messageObj.text}
                         username={messageObj.username}
                         likes={messageObj.likes}
-                        
                     />
                 })}
-
-
             </div>
         )
     }
 }
-
 export default MessageList

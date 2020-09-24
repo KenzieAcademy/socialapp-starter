@@ -4,11 +4,9 @@ import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import MessageFeed from "./pages/MessageFeed"
 import NotFound from "./components/notfound/NotFound";
-
-
+import UserFeed from "./pages/UserFeed";
 class App extends React.Component {
   render() {
-    
     return (
      // <div>
       //  <h2>Javamaniacs</h2>
@@ -31,6 +29,11 @@ class App extends React.Component {
           component={MessageFeed}
         />
         <Route
+        exact
+        path="/userFeed"
+        component={UserFeed}
+        />
+        <Route
           exact
           path="*"
           component={NotFound}
@@ -39,5 +42,4 @@ class App extends React.Component {
     );
   }
 }
-
 export default App;
