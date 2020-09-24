@@ -15,6 +15,13 @@ class Profile extends React.Component {
 
     this.client = new DataService();
   }
+  deleteUser = (event) => {
+    event.preventDefault();
+    this.client.deleteUser(this.state.username).then((result) => {
+      localStorage.clear();
+      window.location.reload();
+    });
+  };
 
   componentDidMount() {
     this.client.getUserPicture(this.state.username).then((result) =>
@@ -55,6 +62,7 @@ class Profile extends React.Component {
           </div>
         </div>
         <Link to="/profileUpdate">Update Profile</Link>
+        <button onClick={this.deleteUser}>Delete User</button>
       </div>
     );
   }
