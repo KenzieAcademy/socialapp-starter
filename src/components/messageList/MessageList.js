@@ -19,11 +19,22 @@ class MessageList extends React.Component {
       .then((response) => this.setState({ messages: response.data.messages }));
   }
 
+  handleDeleteMesssage = (messageId) => {
+    const dataService = new DataService();
+    dataService.deleteMessage(messageId).then((response) => {
+      console.log(response.data);
+      this.client
+        .getMessageList()
+        .then((response) =>
+          this.setState({ messages: response.data.messages })
+        );
+    });
+  };
+
   handlePostMessage = (e) => {
     e.preventDefault();
     console.log("using handlepost");
     this.client.postMessage({ text: this.state.text }).then((result) => {
-      console.log(result.data);
       this.setState((state) => ({
         messages: [result.data.message, ...state.messages],
       }));
@@ -33,7 +44,6 @@ class MessageList extends React.Component {
 
   handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
-    console.log({ [e.target.name]: e.target.value });
   };
 
   render() {
@@ -46,7 +56,11 @@ class MessageList extends React.Component {
         <h1>Message feed</h1>
         <ul>
           {this.state.messages.map((messageObject) => (
-            <Message key={messageObject.id} {...messageObject} />
+            <Message
+              handleDeleteMesssage={this.handleDeleteMesssage}
+              key={messageObject.id}
+              {...messageObject}
+            />
           ))}
         </ul>
       </div>
