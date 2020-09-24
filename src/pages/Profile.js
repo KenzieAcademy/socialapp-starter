@@ -44,7 +44,9 @@ class Profile extends React.Component {
         <h2>Profile</h2>
         <div className="profilespace">
           <div>
-            <img src={this.state.userImg} alt="No Image found :(" />
+            <img src={this.state.userImg} alt="No Profile found :(" />
+            <br />
+            <Link to="/profilePictureUpdate">Change Profile Picture</Link>
           </div>
           <div>
             <h1>Profile Name: {this.state.user.displayName} </h1>

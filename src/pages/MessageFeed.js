@@ -1,8 +1,8 @@
 import React from "react";
 import Menu from "../components/menu/Menu";
 import { userIsAuthenticated } from "../redux/HOCs";
-import MessageList from "../components/messageList/MessageList";
 import DataService from "../services/DataService/DataService";
+import Message from "../components/message/Message";
 
 class MessageFeed extends React.Component {
   constructor(props) {
@@ -45,15 +45,6 @@ class MessageFeed extends React.Component {
     event.target.reset();
   };
 
-  removeLike = (event) => {};
-
-  handleLike = (event) => {
-    let likeTarget = { messageId: Number(event.target.id) };
-    return this.client.likeMessage(likeTarget).then((result) => {
-      this.getMessages();
-    });
-  };
-
   componentDidMount() {
     this.getMessages();
   }
@@ -70,13 +61,21 @@ class MessageFeed extends React.Component {
     return (
       <div className="MessageBlock">
         <Menu isAuthenticated={this.props.isAuthenticated} />
+
         <h1>Messages</h1>
         <div className="message-field">
           <div className="messages">
-            <MessageList
+            {this.state.messages.map((messageObject) => (
+              <Message
+                key={messageObject.id}
+                {...messageObject}
+                handleLike={this.handleLike}
+              />
+            ))}
+            {/* <MessageList
               handleLike={this.handleLike}
               messageArray={this.state.messages}
-            />
+            /> */}
           </div>
           <div className="NewMessage">
             <form

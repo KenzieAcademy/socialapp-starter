@@ -41,11 +41,31 @@ class DataService {
     });
   }
 
+  unlikeMessage(likeId) {
+    let loginData = JSON.parse(localStorage.getItem("login"));
+    return this.client.delete(this.url + "/likes/" + likeId, {
+      headers: { Authorization: `Bearer ${loginData.result.token}` },
+    });
+  }
+
   getUser(username) {
     return this.client.get(this.url + "/users/" + username);
   }
   getUserPicture(username) {
     return this.client.get(`${this.url}/users/${username}/picture`);
+  }
+  changeProfilePic(picture) {
+    let loginData = JSON.parse(localStorage.getItem("login"));
+    console.log(picture);
+    return this.client.put(
+      `${this.url}/users/${loginData.result.username}/picture`,
+      picture,
+      {
+        headers: {
+          Authorization: `Bearer ${loginData.result.token}`,
+        },
+      }
+    );
   }
 }
 export default DataService;
