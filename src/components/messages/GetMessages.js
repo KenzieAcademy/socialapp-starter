@@ -6,6 +6,10 @@ import Message from "./Message";
 class GetMessages extends React.Component {
   state = { messages: [] };
 
+  rerenderMessages = () => {
+      this.forceUpdate()
+  }
+
   componentDidMount() {
     MessageService.obtainMessages().then((response) => {
       this.setState({ messages: response.data.messages });

@@ -1,5 +1,7 @@
 import React from "react";
+import LikeButton from "../likeButton/LikeButton";
 import { displayName } from "react-spinkit";
+import { Link } from "react-router-dom";
 import {
   Feed,
   FeedContent,
@@ -19,7 +21,9 @@ class Message extends React.Component {
       <Feed.Event>
         <FeedContent>
           <FeedSummary>
-            <FeedUser>{this.props.username}</FeedUser>
+              <Link to={`/profile/${this.props.username}`}>
+                {this.props.username}
+              </Link>
             <FeedDate>
               at {new Date(this.props.createdAt).toDateString()}
             </FeedDate>
@@ -27,7 +31,11 @@ class Message extends React.Component {
           <FeedExtra text>{this.props.text}</FeedExtra>
           <FeedMeta>
             <FeedLike>
-              <Icon name="like" /> {this.props.likes.length} Likes
+              <LikeButton
+                className="likeButton"
+                likesArray={this.props.likes}
+                messageId={this.props.id}
+              />
             </FeedLike>
           </FeedMeta>
         </FeedContent>

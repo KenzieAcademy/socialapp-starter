@@ -26,9 +26,15 @@ class PostMessageForm extends React.Component {
         console.log(result.data);
       })
       .catch((error) => {
+<<<<<<< HEAD
         console.log(error);
       });
     this.setState({ text: "" });
+=======
+        console.log(error)
+      });
+      this.setState ({text: ""})
+>>>>>>> ec72b289c443984a01a5009d4dc16c37ec07abab
   };
 
   render() {
@@ -41,6 +47,8 @@ class PostMessageForm extends React.Component {
               name="text"
               required
               placeholder="Type a Message Here!"
+              minLength = "2"
+              maxLength = "255"
               onChange={this.handleChange}
             />
           </Form.Field>
