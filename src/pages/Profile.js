@@ -7,7 +7,12 @@ import { Segment } from 'semantic-ui-react'
 import { Button } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 import { userIsAuthenticated } from "../redux/HOCs";
-import Webcam from 'webcam-easy';
+
+
+
+
+
+
 
 class Profile extends React.Component {
   constructor(props) {
@@ -54,57 +59,22 @@ class Profile extends React.Component {
             height='200 px'
             width='200 px'
           />
-        </Segment>
+        </Segment> 
+        
+        
+        
+        
+        
+        <Button color="orange" content ='Change Photo' primary />
+       
+
+        
+        
         <Button >
 
         <input type="file" accept="image/*" id="file-input" />
          
         </Button>
-
-
-
-
-
-
-
-
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <Link to={"/profile/updateprofile/" + this.props.match.params.username}>
           <Button content='Update My Info' primary />
         </Link>
@@ -115,20 +85,10 @@ class Profile extends React.Component {
         <p> Profile created:  {this.state.user.createdAt}</p>
         <p> Profile updated:  {this.state.user.updatedAt}</p>
 
-
-
-
-
-
-
-
-
-
-
-
       </div>
     );
   }
 }
 
 export default userIsAuthenticated(Profile);
+

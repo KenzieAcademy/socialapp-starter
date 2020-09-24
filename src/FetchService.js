@@ -94,7 +94,7 @@ class FetchService {
 
         return fetch(URL)
             .then(response => response.json())
-
+    }
 
     getUsers() {
         let endpoint = "/users"
