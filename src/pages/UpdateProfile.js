@@ -4,6 +4,7 @@ import { Segment } from 'semantic-ui-react'
 import { Button } from 'semantic-ui-react'
 import Menu from "../components/menu/Menu";
 import { userIsAuthenticated } from "../redux/HOCs";
+import { withAsyncAction } from "../redux/HOCs"
 import { Link } from 'react-router-dom';
 import UpdateProfileForm from '../components/updateProfileForm/UpdateProfileForm'
 
@@ -79,9 +80,6 @@ class UpdateProfile extends React.Component {
                 }
 
             })
-
-
-
     }
 
     handleChange = (event) => {
@@ -90,6 +88,20 @@ class UpdateProfile extends React.Component {
 
         this.setState({ formData: newformData });
     };
+
+    // ==Handle DELETE profile button=======================
+    //==get token from LocalStorage, save it in variable, then logout, 
+    //==then run API deleteUser endpoint
+    //== MUST USE 'export default withAsyncAction("auth", "logout")(UpdateProfile)'
+
+    handleDeleteProfile = (event) => {
+        let token = JSON.parse(localStorage.getItem('login')).result.token;
+       
+        this.props.logout()
+        .then(this.client.deleteUser(this.state.user.username, token))
+    }
+
+
 
     render() {
         let result_message = "";
@@ -115,6 +127,7 @@ class UpdateProfile extends React.Component {
             )
         }
 
+
         return (
             <div className="UpdateProfile">
 
@@ -123,16 +136,19 @@ class UpdateProfile extends React.Component {
                 <h2>My Profile</h2>
                 <h3> {this.state.user.username + "  |  @" + this.state.user.displayName}</h3>
 
-                <UpdateProfileForm 
-                formData = {this.state.formData}
-                handleChange = {this.handleChange}
-                handleUpdateProfile = {this.handleUpdateProfile}
-                
+                <UpdateProfileForm
+                    formData={this.state.formData}
+                    handleChange={this.handleChange}
+                    handleUpdateProfile={this.handleUpdateProfile}
+
                 />
-                
+
                 {result_message}
 
+
                 <Link to={"/profile/" + this.props.match.params.username}>Go to My Profile</Link>
+                <br />
+                <button onClick={this.handleDeleteProfile}><Link to="/">Delete Profile</Link></button>
 
             </div >
 
@@ -140,4 +156,5 @@ class UpdateProfile extends React.Component {
     }
 
 }
-export default userIsAuthenticated(UpdateProfile);
+// export default userIsAuthenticated(UpdateProfile);
+export default withAsyncAction("auth", "logout")(UpdateProfile);

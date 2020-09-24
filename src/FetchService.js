@@ -95,11 +95,6 @@ class FetchService {
         return fetch(URL)
             .then(response => response.json())
 
-    }
-
-
-    // ======GetUsers===========================================
-    // https://socialapp-api.herokuapp.com/users?limit=100
 
     getUsers() {
         let endpoint = "/users"
@@ -149,6 +144,28 @@ class FetchService {
         })
             .then(response => response.json())
 
+    }
+
+    //=====DeleteUSER==========================================
+    deleteUser(username, token) {
+
+        console.log("Hi from deleteUser API")
+
+        let endpoint = "/users/" + username;
+        let URL = this.domain + endpoint;
+
+        console.log(URL)
+        
+        return fetch(URL, {
+            method: 'DELETE',
+            headers: {
+                'accept': 'application/json',
+                'Authorization': 'Bearer ' + token,
+
+            }
+
+        })
+        .then(response => response.json())
     }
 
 }
