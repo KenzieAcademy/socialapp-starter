@@ -3,7 +3,10 @@ import Menu from "../components/menu/Menu"
 import UserList from "../components/userList/UserList";
 //import UserList from "../components/userList/UserList"
 import FetchService from "../FetchService";
+
 import { userIsAuthenticated } from "../redux/HOCs";
+
+
 class UserFeed extends React.Component {
     constructor(props) {
         super(props)
@@ -19,6 +22,9 @@ class UserFeed extends React.Component {
             })
         })
     }
+
+
+
     render() {
         return (
             <div className="UserFeed">

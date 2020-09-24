@@ -64,5 +64,6 @@ class FetchService {
         return fetch (URL)
         .then(response => response.json())
     } 
+    
 }
 export default FetchService;
