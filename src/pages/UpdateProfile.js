@@ -148,7 +148,7 @@ class UpdateProfile extends React.Component {
 
                 <Link to={"/profile/" + this.props.match.params.username}>Go to My Profile</Link>
                 <br />
-                <button onClick={this.handleDeleteProfile}><Link to="/">Delete Profile</Link></button>
+                <Button onClick={this.handleDeleteProfile}><Link to="/">Delete Profile</Link></Button>
 
             </div >
 
@@ -157,4 +157,4 @@ class UpdateProfile extends React.Component {
 
 }
 // export default userIsAuthenticated(UpdateProfile);
-export default withAsyncAction("auth", "logout")(UpdateProfile);
+export default userIsAuthenticated(withAsyncAction("auth", "logout")(UpdateProfile));
