@@ -39,7 +39,8 @@ class DeleteAcctButton extends React.Component {
           Delete Account
         </Button>
         <Modal
-          id="modal"
+          className="modal"
+          title="User Account"
           visible={this.state.visible}
           onOk={this.handleDelete}
           onCancel={this.handleCancel}
