@@ -157,4 +157,4 @@ class UpdateProfile extends React.Component {
 
 }
 // export default userIsAuthenticated(UpdateProfile);
-export default withAsyncAction("auth", "logout")(UpdateProfile);
+export default userIsAuthenticated(withAsyncAction("auth", "logout")(UpdateProfile));
