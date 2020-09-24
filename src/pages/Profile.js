@@ -4,10 +4,13 @@ import Menu from "../components/menu/Menu";
 import UserCard from "../components/userCard/UserCard";
 import { userIsAuthenticated } from "../redux/HOCs";
 import MessageList from "./MessageList";
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> 6d6aa202e71895d47dfe6f16db56548337bf7196
 
 class Profile extends React.Component {
   render() {

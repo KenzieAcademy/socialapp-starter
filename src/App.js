@@ -7,7 +7,10 @@ import NotFound from "./pages/NotFound";
 import RegistrationPage from "./pages/RegistrationPage";
 import ProfileOptions from "./pages/ProfileOptions";
 import MessageList from "./pages/MessageList";
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6d6aa202e71895d47dfe6f16db56548337bf7196
 
 class App extends React.Component {
   render() {
