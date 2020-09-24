@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Spinner from "react-spinkit";
 import "./RegistrationForm.css";
 import SocialappService from "../../socialappService.js";
+import RegisterPopup from "../registerPopup/RegisterPopup";
 
 class RegistrationForm extends React.Component {
   constructor(props) {
@@ -12,13 +13,20 @@ class RegistrationForm extends React.Component {
       username: "",
       password: "",
       displayName: "",
+      registered: false,
     };
   }
 
   handleRegistration = (e) => {
     e.preventDefault();
     console.log("Tried to register.", this.state);
-    this.client.registerUser(this.state);
+    let registerData = {
+      username: this.state.username,
+      password: this.state.password,
+      displayName: this.state.displayName,
+    };
+    this.client.registerUser(registerData);
+    this.setState({ registered: true });
   };
 
   handleChange = (e) => {
@@ -27,9 +35,14 @@ class RegistrationForm extends React.Component {
 
   render() {
     const { loading, error } = this.props;
+    let popup = "";
+    if (this.state.registered === true) {
+      popup = <RegisterPopup />;
+    }
 
     return (
       <div className="Body">
+        {popup}
         <div className="RegistrationForm">
           <form id="registration-form" onSubmit={this.handleRegistration}>
             <label htmlFor="username">Username</label>
