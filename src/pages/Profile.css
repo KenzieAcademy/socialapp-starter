@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+}
+
+.Body {
+  /* width: 850px; */
+  position: relative;
+  margin: auto;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+.ProfileHeader {
+  top: 12px;
+  position: relative;
+  margin: auto;
+  border: 3px solid black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  width: 830px;
+  background-color: #b80c12;
+  font-size: 45px;
+  color: black;
+  text-align: center;
+}

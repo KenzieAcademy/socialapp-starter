@@ -20,6 +20,7 @@ class Menu extends React.Component {
 
   render() {
     return (
+
       <div class="card" className="Menu">
         <div class="card-header">
           <h1>Clip-tastic! Home of extreme couponing!</h1>
@@ -34,6 +35,7 @@ class Menu extends React.Component {
             </div>
           )}
         </div>
+
       </div>
     );
   }

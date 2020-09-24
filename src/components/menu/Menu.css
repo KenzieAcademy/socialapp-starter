@@ -1,20 +1,30 @@
+* {
+  box-sizing: border-box;
+}
+
 .Menu {
-  background-color: lightskyblue;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 1em;
-  border-radius: 1em;
+  position: relative;
+  margin: auto;
+  top: 6px;
+  border: 3px solid black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  background-color: #b80c12;
+  width: 830px;
 }
 
 #menu-links {
-  display: flex;
-  padding-left: 1em;
+  text-align: right;
+  position: relative;
+  margin: auto;
 }
 
 #menu-links a {
   padding-right: 0.5em;
-  color: darkblue;
+  font-size: 20px;
+  padding: 5px;
+  color: black;
   text-decoration: underline;
   cursor: pointer;
 }
