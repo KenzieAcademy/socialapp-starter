@@ -9,9 +9,8 @@ class UserCard extends React.Component {
     super(props);
     this.client = new DataService
     this.state = {
-     //isSubmitted:false,
-      data:{
-        "username": "",
+      user:{
+        "userName": "",
         "displayName": "",
         "about": "",
     
@@ -38,15 +37,21 @@ class UserCard extends React.Component {
 componentDidMount(){
   let about ={}
   let loginData = JSON.parse(localStorage.getItem("login"))
-  this.client.getUser(loginData.result.username ).then(res => console.log(res))
+  this.client.getUser(loginData.result.username).then(res => {console.log(res.data.user)
 
 
   this.setState({
-
-
+    user:{
+      userName: res.data.user.username,
+      displayName: res.data.user.displayName,
+      about: res.data.user.about
   
+    },
+
+  })
+    
 });
-console.log(this.state)
+console.log(this.state.user)
 
 }
 
@@ -64,13 +69,13 @@ console.log(this.state)
           <br/>
 
         <Card title="All About Me!" extra={<a href="/ProfileOptions">Edit</a>} style={{ width: 300 }}>
-        <h3>User Name: 
-          {this.state.data.userName}</h3>
+        <strong>Display Name: </strong>
+        <h3>{this.state.user.displayName}</h3>
         <br/>
-        <h4>
+        <strong>
             About Me : <p>  
-              {this.state.data.about}</p>
-        </h4>
+              {this.state.user.about}</p>
+        </strong>
       
       
     </Card>

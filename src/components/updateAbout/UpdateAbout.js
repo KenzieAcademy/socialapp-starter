@@ -3,12 +3,6 @@ import DataService from "../../DataService";
 import { Card, Form, Input, Button } from 'antd';
 
 const FormItem = Form.item;
-// const formItemLayout =
-//     formLayout === 'horizontal'
-//       ? {
-//           labelCol: { span: 4 },
-//           wrapperCol: { span: 14 },
-//         }
 
 class UpdateAbout extends React.Component {
   constructor(props) {
@@ -17,9 +11,9 @@ class UpdateAbout extends React.Component {
     this.state = {
       isSubmitted:false,
       userData: {
-      userName: "",
-      displayName: "",
+      password: "string",
       about: "",
+      displayName: "",
     
       },
       statusCode: 0
@@ -28,39 +22,42 @@ class UpdateAbout extends React.Component {
   }
 
   handleChange = (event)=>{
-    const {userData} = {...this.state};
+    const userData = {...this.state.userData};
     userData[event.target.name]=event.target.value;
-    this.setstate({
+    this.setState({
       userData
     })
   }
   handleSubmit = (event)=>{
     let about ={}
     let loginData = JSON.parse(localStorage.getItem("login"))
-    this.client.updateAbout(loginData.result.userName ).then(res => console.log(res.data.user.username))
+    this.client.updateAbout(loginData.result.username,this.state.userData).then(res => console.log(res))
     event.preventDefault();
+    console.log(this.state.userData);
     this.setState({
-      submitted : true
+      isSubmitted : true
    
    });
   
    this.setState({
     userData:{
-    userName:"",
-        displayName:"",
-     about:"",
+    password:"",
+        about:"",
+     displayName:"",
     }
   });
 
-}
-  componentDidMount(){
-
-  }
+};
+  componentDidMount() {
+    
+    }
 
   
   
 
   render() {
+    const FormItem = Form.item;
+
     return (
       <div className="UpdateAbout">
         <Card style={{ textAlign: "left", width: "50%", margin: "left" }}>
@@ -70,16 +67,16 @@ class UpdateAbout extends React.Component {
         onSubmit = {this.handleSubmit}>
           
           <Form.Item>
-          <label htmlFor="userName">User Name:    </label>
-          <input type="text" name="userName" 
-          value = {this.state.userData.userName}
+          <label htmlFor="password">Password:    </label>
+          <input type="text" name="password" required
+          value = {this.state.userData.password}
           onChange = {this.handleChange}
            />
           </Form.Item>
           <Form.Item>
           
           <label htmlFor="displayName">Display Name:  </label>
-          <input type="text" name="displayName" 
+          <input type="text" name="displayName" required 
           value = {this.state.userData.displayName}
           onChange = {this.handleChange}
            />
@@ -87,7 +84,7 @@ class UpdateAbout extends React.Component {
 
            <Form.Item>
           <label htmlFor="about">About:  </label>
-          <input type="text" name="about" 
+          <input type="text" name="about" required
           value = {this.state.userData.about}
           onChange = {this.handleChange}
            />

@@ -3,7 +3,6 @@ import CreateMessage from "../components/createMessage/CreateMessage";
 import Menu from "../components/menu/Menu";
 import NewsFeed from "../components/newsFeed/NewsFeed";
 import UserCard from "../components/userCard/UserCard";
-import MainHome from "./mainHome/MainHome"
 import { userIsAuthenticated } from "../redux/HOCs";
 
 
@@ -16,7 +15,7 @@ class Profile extends React.Component {
       
       
       <div className="Profile">
-        <MainHome />
+        
         <Menu isAuthenticated={this.props.isAuthenticated} />
         <h2>Profile</h2>
         <br />

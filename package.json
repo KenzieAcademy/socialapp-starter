@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "antd": "^4.6.3",
+    "antd": "^4.6.4",
     "axios": "^0.20.0",
     "connected-react-router": "^6.8.0",
     "history": "^4.10.1",
@@ -20,7 +20,7 @@
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
-    "start": "SET PORT=5000 && react-scripts start",
+    "start": "SET PORT=5001 && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -36,6 +36,6 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "dependency-cruiser": "^5.5.0"
+    "dependency-cruiser": "^9.14.0"
   }
 }
