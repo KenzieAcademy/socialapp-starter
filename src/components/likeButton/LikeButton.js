@@ -37,7 +37,6 @@ class LikeButton extends React.Component {
           let likesArrayCopy = [...this.state.likesArray];
           likesArrayCopy.forEach((likeObject) => {
             if (this.loginData.result.username === likeObject.username) {
-              console.log("MATCH FOUND PLS SLICE")
               likesArrayCopy.pop(likeObject);
             }
           });

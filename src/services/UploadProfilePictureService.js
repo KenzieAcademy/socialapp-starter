@@ -9,10 +9,10 @@ class UploadProfilePictureService {
       this.client = client;
     }
   
-    uploadProfilePicture(Picture) {
+    uploadProfilePicture(picture) {
       let loginData = JSON.parse(localStorage.getItem("login"));
   
-      return this.client.put(this.url + "/users/" + loginData.result.username + "/picture", Picture, {
+      return this.client.put(this.url + "/users/" + loginData.result.username + "/picture", picture, {
         headers: {
           Authorization: `Bearer ${loginData.result.token}`,
         },

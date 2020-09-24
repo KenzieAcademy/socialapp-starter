@@ -1,6 +1,6 @@
 import axios from "axios";
 
-class GetLoggedInUserPictureService {
+class GetUserPictureService {
   constructor(
     url = "https://socialapp-api.herokuapp.com",
     client = axios.create()
@@ -9,11 +9,10 @@ class GetLoggedInUserPictureService {
     this.client = client;
   }
 
-  GetLoggedInUserPicture() {
+  GetUserPicture(username) {
     let loginData = JSON.parse(localStorage.getItem("login"));
-
     return this.client.get(
-      this.url + "/users/" + loginData.result.username + "/picture",
+      this.url + "/users/" + username + "/picture",
       {
         headers: {
           Authorization: `Bearer ${loginData.result.token}`,
@@ -23,4 +22,4 @@ class GetLoggedInUserPictureService {
   }
 }
 
-export default GetLoggedInUserPictureService;
+export default GetUserPictureService;

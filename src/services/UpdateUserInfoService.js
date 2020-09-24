@@ -13,7 +13,7 @@ class UpdateUserInfoService {
     let loginData = JSON.parse(localStorage.getItem("login"));
 
     return this.client.patch(
-      this.url + "/users/" + `${loginData.result.username}`,
+      `${this.url}/users/${loginData.result.username}`,
       updateInfo,
       {
         headers: {
