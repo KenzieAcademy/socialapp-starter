@@ -8,7 +8,7 @@ class FetchService {
         let endpoint = "/users"
         let URL = this.domain + endpoint
         return fetch(URL, {
-            method: "Post",
+            method: "POST",
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json"
@@ -53,7 +53,7 @@ class FetchService {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "Authorization": "Bearer " + token
+                "Authorization": "Bearer" + token
             },
        
         })
@@ -67,6 +67,39 @@ class FetchService {
             .then(response => response.json())
     }
 
+<<<<<<< HEAD
+    createMessage(message) {
+        let endpoint = "/messages"
+        let URL = this.domain + endpoint + message
+        let token = JSON.parse(localStorage.getItem('login')).result.token
+        return fetch(URL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+                "Authorization": "Bearer" + token
+            },
+        })
+            .then(response => response.json())
+    }
+
+    deleteMessage(message, messageId) {
+        let endpoint = "/messages"
+        let URL = this.domain + endpoint + message + messageId
+        let token = JSON.parse(localStorage.getItem('login')).result.token
+
+        return fetch(URL, {
+        method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+                "Authorization": "Bearer" + token
+            },
+       
+        })
+        .then(response => response.json()) 
+    }
+=======
     userList(){
         let endpoint = "/users"
         let userCount = 100
@@ -74,6 +107,7 @@ class FetchService {
         return fetch (URL)
         .then(response => response.json())
     } 
+>>>>>>> master
     
 }
 
