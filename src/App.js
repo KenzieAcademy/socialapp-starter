@@ -6,7 +6,11 @@ import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
 import Registration from "./pages/Registration";
 import UpdateProfile from "./pages/UpdateProfile";
-import Homepage from "./components/homepage/Homepage";
+
+import Homepage from "./pages/homepage/Homepage";
+
+import UserFeed from "./pages/UserFeed";
+
 
 
 import MessageFeed from "./pages/MessageFeed";
@@ -16,7 +20,7 @@ class App extends React.Component {
   render() {
     return (
       <Switch>
-        
+
         <Route
           exact
           path="/"
@@ -26,14 +30,13 @@ class App extends React.Component {
           exact
           path="/Homepage"
           component={Homepage}
-       />
+        />
 
         <Route
           exact
           path="/registration"
           component={Registration}
         />
-
 
         <Route
           exact
@@ -45,6 +48,11 @@ class App extends React.Component {
           exact
           path="/profile/updateprofile/:username"
           component={UpdateProfile}
+        />
+        <Route
+          exact
+          path="/userfeed"
+          component={UserFeed}
         />
         <Route
           exact

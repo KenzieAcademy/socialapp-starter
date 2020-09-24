@@ -33,7 +33,7 @@ class Menu extends React.Component {
 
         <h1>W o r l d . M u s i c . C o a l i t i o n</h1>
         {/* // conditional renderin : if isIdentificated, then show the links  */}
-        {this.props.isAuthenticated && (
+        {/* {this.props.isAuthenticated && ( */}
           <div id="menu-links">
 
             <div>
@@ -62,12 +62,9 @@ class Menu extends React.Component {
                   </Link>
                 </Button>
 
-                <Button color='red'>
-                  <Link to="/list-of-users/">
-                    List of users
-                    </Link>
-                    </Button>
 
+
+                <Button color='red'><Link to="/userfeed/">World Music Members</Link></Button>
                 <Button color='violet' text="white">
                   <Link to="/Logout/" onClick={this.handleLogout}>
                     Logout</Link>
@@ -78,8 +75,9 @@ class Menu extends React.Component {
 
           </div>
 
-        )}
+        {/* )} */}
       </div>)
   }
 }
+//export default ("auth", "logout")(Menu);
 export default withAsyncAction("auth", "logout")(Menu);
