@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Menu from "../../components/menu/Menu";
 import "./Homepage.css";
 import { Button, } from 'semantic-ui-react'
+import { withAsyncAction } from "../../redux/HOCs";
 import Team from "./assets/Team.png"
-
 
 class Homepage extends React.Component {
     constructor(props) {
@@ -16,6 +17,7 @@ class Homepage extends React.Component {
     render() {
         return (
             <div className="Home">
+                <Menu />
                 <h1>Welcome to World Music Coalition (WMC)!</h1>
                 <p>World Music Coalition WMC works with musicians, composers and industry stakeholders to identify
                 solutions to shared challenges. We promote strategies, policies, technologies
@@ -30,7 +32,7 @@ class Homepage extends React.Component {
 
                 <h1>Codefactory Team:</h1>
                 <div className="Team">
-                    <img src={Team} width="600" height="500" />
+                    <img src={Team} width="800" height="600" />
                 </div>
                 <div>
                 <li>Mike Bartosz </li>
@@ -57,3 +59,4 @@ class Homepage extends React.Component {
 
 
 export default Homepage;
+
