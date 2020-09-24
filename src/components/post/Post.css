@@ -3,12 +3,14 @@
 }
 
 .PostForm {
-  border: 3px solid #b80c12;
+  border: 3px solid black;
   border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
   position: relative;
   margin: auto;
   left: -290px;
-  top: 8px;
+  top: 11px;
   width: 830px;
   height: 360px;
   text-align: center;
@@ -25,7 +27,9 @@
 
 .PhotoUpload {
   background-color: #b80c12;
-  border: 3px solid #343a40;
+  border: 3px solid black;
+  border-width: 3px;
+  border-style: dashed;
   border-radius: 5px;
   padding: 10px;
 }

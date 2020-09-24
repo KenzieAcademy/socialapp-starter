@@ -27,7 +27,7 @@ class LoginForm extends React.Component {
     return (
       <div className="LoginForm">
         <form id="login-form" onSubmit={this.handleLogin}>
-          <label htmlFor="username">USERNAME</label>
+          <label htmlFor="username">Username</label>
           <div className="UsernameInput">
             <input
               type="text"
@@ -38,7 +38,7 @@ class LoginForm extends React.Component {
             />
           </div>
           {/* <div>- - - - - - - - - - - - - - - - - - - - - - - - - - - - -</div> */}
-          <label htmlFor="password">PASSWORD</label>
+          <label htmlFor="password">Password</label>
           <div className="PasswordInput">
             <input
               type="password"
@@ -50,7 +50,7 @@ class LoginForm extends React.Component {
 
           {/* <div>- - - - - - - - - - - - - - - - - - - - - - - - - - - - -</div> */}
           <div className="LoginButton">
-            <input type="submit" value="Submit" disabled={loading} />
+            <input type="submit" value="Enter" disabled={loading} />
           </div>
         </form>
         {loading && <Spinner name="circle" color="red" />}

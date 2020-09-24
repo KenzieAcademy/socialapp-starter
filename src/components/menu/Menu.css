@@ -6,10 +6,11 @@
   position: relative;
   margin: auto;
   top: 6px;
-  border: 3px solid #b80c12;
-  padding: 5px;
+  border: 3px solid black;
   border-radius: 5px;
-  background-color: black;
+  border-width: 3px;
+  border-style: dashed;
+  background-color: #b80c12;
   width: 830px;
 }
 
@@ -23,7 +24,7 @@
   padding-right: 0.5em;
   font-size: 20px;
   padding: 5px;
-  color: #b80c12;
+  color: black;
   text-decoration: underline;
   cursor: pointer;
 }

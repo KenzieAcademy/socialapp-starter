@@ -14,11 +14,13 @@
   top: 12px;
   position: relative;
   margin: auto;
-  border: 3px solid #b80c12;
+  border: 3px solid black;
   border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
   width: 830px;
-  background-color: black;
+  background-color: #b80c12;
   font-size: 45px;
-  color: #b80c12;
+  color: black;
   text-align: center;
 }

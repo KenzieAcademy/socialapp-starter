@@ -18,10 +18,11 @@
 
 input[type="button"],
 input[type="submit"] {
+  background-image: url(../../assets/images/Login_Button.png);
   background-color: #343a40;
   border: 3px solid #b80c12;
   border-radius: 2px;
-  color: black;
+  color: white;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font: italic small-caps bold 12px/30px Georgia, serif;
   font-size: 25px;

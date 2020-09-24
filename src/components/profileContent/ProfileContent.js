@@ -15,7 +15,7 @@ class ProfileContent extends React.Component {
             <ListGroup.Item>Location</ListGroup.Item>
             <ListGroup.Item>Date Joined</ListGroup.Item>
             <ListGroup.Item>Favorite Brands</ListGroup.Item>
-            <ListGroup.Item>Display Nmae</ListGroup.Item>
+            <ListGroup.Item>Display Name</ListGroup.Item>
           </ListGroup>
         </div>
         <br></br>
