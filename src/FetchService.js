@@ -96,11 +96,12 @@ class FetchService {
             .then(response => response.json())
     }
 
+    //=====GetUsers======================================
     getUsers() {
         let endpoint = "/users"
         let userCount = 100
         let URL = this.domain + endpoint + "?limit=" + userCount
-        return fetch(URL).then(response=>response.json())
+        return fetch(URL).then(response => response.json())
     }
 
 
@@ -155,7 +156,7 @@ class FetchService {
         let URL = this.domain + endpoint;
 
         console.log(URL)
-        
+
         return fetch(URL, {
             method: 'DELETE',
             headers: {
@@ -165,8 +166,23 @@ class FetchService {
             }
 
         })
-        .then(response => response.json())
+            .then(response => response.json())
     }
+
+        //=====SetUserPicture==========================================
+        setUserPicture(username, pictureObject) {
+            let URL = this.domain + "/users/" + username + "/picture";
+            let token = JSON.parse(localStorage.getItem('login')).result.token;
+    
+            return fetch(URL, {
+                method: "PUT",
+                headers: { 'Authorization': 'Bearer ' + token },
+                body: pictureObject
+            })
+                .then(response => response.json())
+    
+        }
+    
 
 }
 
