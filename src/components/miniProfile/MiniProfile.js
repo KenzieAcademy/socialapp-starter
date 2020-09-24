@@ -15,17 +15,19 @@ const styles = {
 class MiniProfile extends React.Component {
   render() {
     return (
-      <Card class="card" className="Miniprofile">
-        <Card-Body class="card-body">
-          <img
-            src={MiniProfileIMG}
-            style={styles.paperContainer}
-            class="btn btn-primary"
-          />
-          <p class="card-text">{this.props.username}</p>
-          <Card.Subtitle class="card-Subtitle">Mini-Profile</Card.Subtitle>
-        </Card-Body>
-      </Card>
+      <div className="ProfileCard">
+        <Card class="card" className="Miniprofile">
+          <Card-Body class="card-body">
+            <img
+              src={MiniProfileIMG}
+              style={styles.paperContainer}
+              class="btn btn-primary"
+            />
+            <p class="card-text">{this.props.username}</p>
+            <Card.Subtitle class="card-Subtitle">Mini-Profile</Card.Subtitle>
+          </Card-Body>
+        </Card>
+      </div>
     );
   }
 }

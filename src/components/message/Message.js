@@ -1,7 +1,6 @@
 import React from "react";
 // import Image from "../../assets/images/ThumbsUp.png";
 import Card from "react-bootstrap/Card";
-import MiniProfile from "../miniProfile/MiniProfile";
 import "../message/Message.css";
 
 class Message extends React.Component {
@@ -10,9 +9,8 @@ class Message extends React.Component {
   }
   render() {
     return (
-      <div className="Body">
-        <Card style={{ width: "18rem" }}>
-          <div className="ProfilePic">{/* <MiniProfile /> */}</div>
+      <div className="CardBody">
+        <Card style={{ width: "600px" }}>
           <Card.Body className="Message">
             <Card.Title> From: {this.props.username}</Card.Title>
             <Card.Subtitle className="mb-2 text-muted">
@@ -25,9 +23,9 @@ class Message extends React.Component {
               {/* <Card.Link href="#">Reply</Card.Link>
             <Card.Link href="#">...</Card.Link> */}
               <div className="likes">Likes: {this.props.likes.length}</div>{" "}
-              <div className="LikeButton">
-                <button onClick={this.LikeFunction}>Like</button>{" "}
-              </div>
+              <button className="LikeButton" onClick={this.LikeFunction}>
+                Like
+              </button>{" "}
             </footer>
           </Card.Body>
         </Card>

@@ -53,3 +53,11 @@
   text-align: center;
   cursor: pointer;
 }
+
+.ProfilePic {
+  background: none;
+  position: relative;
+  margin: auto;
+  width: 150px;
+  height: 150px;
+}
