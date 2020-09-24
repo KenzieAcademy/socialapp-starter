@@ -20,11 +20,41 @@ class MessageFeed extends React.Component {
         })
     }
 
+    handleLike =(messageId, event) => {
+        this.client.addLike(messageId).then((data) => {
+            this.getMessage()
+            
+        })
+        
+    }
+    handleRemoveLike = (messageIdex, event) =>{
+        
+        this.client.getMessage(messageIdex).then(messageData =>{
+            let messageLike = messageData.message.likes.find((likeObj) =>{
+            let foundUserName = likeObj.username === JSON.parse(localStorage.getItem("login")).result.username
+            return foundUserName
+            }) 
+            if (!messageLike)  {
+                return
+            } else{
+                return this.client.removeLike(messageLike.id)
+            }
+
+        }).then(data => {
+            this.getMessage()
+        })
+    }
+
     render() {
         return (
             <div className="MessageFeed">
                 <Menu isAuthenticated={this.props.isAuthenticated}/>
-                <MessageList messages={this.state.messages}/>
+                <MessageList 
+                messages={this.state.messages}
+                handleLike={this.handleLike}
+                handleRemoveLike={this.handleRemoveLike}
+                
+                />
                 
             </div>
         )

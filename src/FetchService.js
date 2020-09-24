@@ -43,11 +43,10 @@ class FetchService {
         .then(response => response.json()) 
     }
 
-    deleteUser(userName) {
+    deleteUser(userName, token) {
         let endpoint = "/users/"
         let URL = this.domain + endpoint + userName
-        let token = JSON.parse(localStorage.getItem('login')).result.token
-
+        
         return fetch(URL, {
         method: "DELETE",
             headers: {
@@ -58,6 +57,21 @@ class FetchService {
        
         })
         .then(response => response.json()) 
+    }
+    addLike(messageId){
+        let endpoint = "/likes"
+        let URL = this.domain + endpoint
+        let token = JSON.parse(localStorage.getItem("login")).result.token
+
+        return fetch(URL,{
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+                "Authorization": "Bearer " + token
+            },
+            body: JSON.stringify({"messageId": messageId})
+        }).then(response => response.json())
     }
     userMessage() {
         let endpoint = "/messages"

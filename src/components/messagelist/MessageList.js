@@ -1,16 +1,19 @@
 import React from "react"
 import MessageItem from "../messageitem/MessageItem"
 
-class MessageList extends React.Component {
-    render() {
+function MessageList(props) {
+    
         return (
             <div className="MessageList">
-                {this.props.messages.map((messageObj, i) => {
+                {props.messages.map((messageObj, i) => {
                     return <MessageItem
-                        key={i}
+                        key={messageObj.id}
                         text={messageObj.text}
                         username={messageObj.username}
                         likes={messageObj.likes}
+                        id={messageObj.id}
+                        handleLike={props.handleLike}
+                        handleRemoveLike={props.handleRemoveLike}
                         
                     />
                 })}
@@ -18,7 +21,7 @@ class MessageList extends React.Component {
 
             </div>
         )
-    }
+    
 }
 
 export default MessageList

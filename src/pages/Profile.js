@@ -58,10 +58,8 @@ class Profile extends React.Component {
   }
 
   handleDeleteUser = event => {
-    event.preventDefault()
-    this.props.logout() 
-    this.client.deleteUser(this.state.user.username)
-    
+    let token = JSON.parse(localStorage.getItem("login")).result.token
+    this.props.logout().then(this.client.deleteUser(this.state.user.username, token))
   }
 
   render() {
