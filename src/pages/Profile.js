@@ -3,7 +3,6 @@ import LikeButton from "../components/likebutton/LikeButton";
 import Menu from "../components/menu/Menu";
 import { userIsAuthenticated } from "../redux/HOCs";
 import UploadPhoto from "../components/uploadPhoto/UploadPhoto";
-import DeleteMessage from "../components/deleteMessage/DeleteMessage";
 import DeleteAcctButton from "../components/deleteacct/DeleteAcct";
 import DataService from "./dataService";
 
