@@ -2,25 +2,37 @@ import React from "react";
 import DataService from "../../DataService";
 
 class Message extends React.Component {
-  state = {
-    likeCount: this.props.likes.length,
-    likes: this.props.likes,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      likeCount: this.props.likes.length,
+      likes: this.props.likes,
+    };
+  }
+
   handleLike = () => {
     const dataService = new DataService();
     const username = JSON.parse(localStorage.getItem("login")).result.username;
     if (this.state.likes.some((like) => like.username === username)) return;
 
     dataService.postLikes(this.props.id).then((like) => {
-      console.log({ like });
       this.setState((latestState) => ({
         likeCount: latestState.likeCount + 1,
         likes: [...latestState.likes, like],
       }));
     });
   };
+
   render() {
-    console.log(this.props);
+    let deleteMessageButton = null;
+    let userName = JSON.parse(localStorage.getItem("login")).result;
+    if (this.props.username === userName.username) {
+      deleteMessageButton = (
+        <button onClick={() => this.props.handleDeleteMesssage(this.props.id)}>
+          Delete Message
+        </button>
+      );
+    }
     return (
       <li>
         {this.props.createdAt}, {this.props.username} posted: <br />
@@ -31,6 +43,7 @@ class Message extends React.Component {
             🔥
           </span>
         </button>
+        {deleteMessageButton}
       </li>
     );
   }
