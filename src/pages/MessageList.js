@@ -33,8 +33,8 @@ class MessageList extends React.Component {
       <div className="MessageList">
         <h1>Message Feed</h1>
         <ul>
-          {this.state.messages.map((msgObj, i) => (
-            <Message key={i} {...msgObj} />
+          {this.state.messages.map((msgObj) => (
+            <Message keyId={msgObj.id} {...msgObj} />
           ))}
         </ul>
       </div>

@@ -1,3 +1,4 @@
+import { OmitProps } from "antd/lib/transfer/ListBody";
 import React from "react";
 import GetDisplayName from "../getDisplayName/GetDisplayName";
 
@@ -6,7 +7,7 @@ function Message(props) {
     return <div>LOADING</div>;
   } else {
     return (
-      <li className="Message">
+      <li key={props.keyId} className="Message">
         At {new Date(props.createdAt).toDateString()}{" "}
         <GetDisplayName username={props.username} /> posted:
         <div className="message-text">{props.text} </div>
