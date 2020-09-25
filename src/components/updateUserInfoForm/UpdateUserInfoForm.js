@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Button, Header, Input, Label, TextArea} from "semantic-ui-react";
+import { Form, Button, Header, Input, Label, TextArea, Message} from "semantic-ui-react";
 import UpdateUserInfoService from "../../services/UpdateUserInfoService";
 import "./UpdateUserInfoForm.css";
 
@@ -49,8 +49,11 @@ class UpdateUserInfoForm extends React.Component {
     if (this.state.submitted) {
       return (
         <div className="UpdateUserInfoForm">
-          <Header as="h3">Thank You for Updating Your User Information!</Header>
-          <br />
+          <Message
+            success
+            header="Form Completed!"
+            content='You have Successfully Updated Your User Information!'
+          />
           <Button onClick={this.handleReset}>Reset Form</Button>
         </div>
       );
