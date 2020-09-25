@@ -32,9 +32,7 @@ TextArea {
       background-size: cover;
       color: white;
       width: 400px;
-      
-      
-    
+  
   }
   .feedbox{
     display: flex;
@@ -72,12 +70,17 @@ TextArea {
     font-weight: bold;
     font-family: sans-serif;
     font-size: 25px;
-    
-    
-    
-   
+    padding-left: 30px;
 
   }
   .profile-title {
     color:darkblue;
+  }
+  .lik-button {
+   float: left;
+   padding-top: 3px;
+   font-size: 20px;
+  }
+  .delete-btn {
+    float: right;
   }

@@ -2,8 +2,10 @@ import React from "react";
 import DataService from "../../DataService"
 import Spinner from "react-spinkit";
 import { withAsyncAction } from "../../redux/HOCs";
-import { Input } from 'antd';
+import { Input} from 'antd';
 import './messages.css';
+
+
 
 class PostMessage extends React.Component {
     constructor(props) {
@@ -12,7 +14,10 @@ class PostMessage extends React.Component {
        text:''
          }
          this.client = new DataService ();
+         
     }
+   
+    
 
     
   handleMessage = e => {
@@ -22,12 +27,12 @@ class PostMessage extends React.Component {
     this.client.postMessage(this.state.text)
     this.setState({text:''})
     
-    
   };
+ 
 
   handleChange = e => {
-   
-    this.setState({ [e.target.name]: e.target.value });
+    
+    this.setState({ [e.target.name]: e.target.value })
   
   };
 
@@ -36,8 +41,11 @@ class PostMessage extends React.Component {
    const { TextArea } = Input;
     
     return (
+    
+ 
+      
       <div className="MessageForm">
-        <form id="message-form" onSubmit={this.handleMessage}>
+        <form id="message-form"  onSubmit={this.handleMessage}>
         
         
         <TextArea rows={4} 
@@ -49,7 +57,7 @@ class PostMessage extends React.Component {
          onChange={this.handleChange}/>
 
           <br />
-          <button className='post-msj-btn' type="submit" disabled={loading}>
+          <button  className='post-msj-btn' type="submit" disabled={loading}>
             Post Message
           </button>
         </form>

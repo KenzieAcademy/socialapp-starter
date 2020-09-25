@@ -17,6 +17,15 @@ class DataService {
             }
         });
     }
+    postLike(like) {
+        let authData = JSON.parse(localStorage.getItem('login'))
+        return this.client.post(this.url + "/likes", like, {
+            headers: {
+                Authorization: `Bearer ${authData.result.token}`,
+                'Content-Type': 'application/json'
+            }
+        });
+    }
     deleteMessages(Id){
         let authData = JSON.parse(localStorage.getItem('login'))
         return this.client.delete(this.url +"/messages/"+ Id,{
