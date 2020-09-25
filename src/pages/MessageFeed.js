@@ -31,7 +31,11 @@ class MessageFeed extends React.Component {
          )
        )}
         </ul>
+<<<<<<< HEAD
           <UserList />
+=======
+        
+>>>>>>> master
       </div>
     );
   }
