@@ -20,20 +20,6 @@ class UserCard extends React.Component {
     
 }
 
-// handleChange = (event)=>{
-//   const userData = {this.state.userData};
-//   userData[event.target.name]=event.target.value; //new Object
-
-  
-
-// }
-
-// handleSubmit = (event)=>{
-//   event.preventDefault();
-//   this.setState({
-//     submitted : false
-//   });
-// }
 componentDidMount(){
   let about ={}
   let loginData = JSON.parse(localStorage.getItem("login"))
