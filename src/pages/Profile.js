@@ -13,6 +13,7 @@ class Profile extends React.Component {
           <div className="ProfileHeader">My Profile</div>
           <ProfileContent />
         </div>
+ 
       </div>
     );
   }
