@@ -13,7 +13,7 @@ class Message extends React.Component {
   render() {
     return (
       <div className="CardBody">
-        <Card style={{ width: "600px" }}>
+        <Card style={{ width: "575px" }}>
           <Card.Body className="Message">
             <img className="ProfilePic" src={ProfilePic} alt="Profile Pic" />
             <div className="ProfileLink">
@@ -24,14 +24,15 @@ class Message extends React.Component {
             </div>
             <div className="PostedTitle">
               <Card.Subtitle className="mb-2 text-muted">
-                {new Date(this.props.createdAt).toDateString}
-                Posted:{" "}
+                {new Date(this.props.createdAt).toDateString}{" "}
               </Card.Subtitle>
             </div>
             <Card.Text className="MessageText">{this.props.text}</Card.Text>
             <footer>
               {" "}
-              <div className="likes">Likes: {this.props.likes.length}</div>{" "}
+              <div className="LikesNumber">
+                <div className="Likes">Likes: {this.props.likes.length}</div>{" "}
+              </div>
               <button className="LikeButton" onClick={this.LikeFunction}>
                 LIKE MY POST!
               </button>{" "}
