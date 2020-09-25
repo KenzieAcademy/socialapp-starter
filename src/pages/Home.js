@@ -5,47 +5,47 @@ import { userIsNotAuthenticated } from "../redux/HOCs";
 import RegistrationForm from "../components/RegistrationForm/RegistrationForm"
 import { Carousel } from 'antd';
 import UserData from "../components/getUsers/getUsers"
+import funtable from "../pages/assets/photo1.jpg"
+import clubspot from "../pages/assets/photo4.jpg"
 
 class Home extends React.Component {
 
 
   render() {
     const contentStyle = {
-      height: '160px',
+      height: '260px',
       color: '#fff',
-      lineHeight: '160px',
+      lineHeight: '200px',
       textAlign: 'center',
-      background: '#364d79',
+      // background: '#364d79',
+     
     };
 
     return (
       <div className="Home">
 
-        test etst
+
         <div className="site-layout-content">
-
-
+          <Menu />
+         
+          <Carousel className="slidedeck" autoplay>
+            <div>
+         
+              <h3 style={contentStyle}> <img className="imageslide" src={ funtable}style={{height:'300px'} }/></h3>
+            </div>
+            <div>
+              <h3 style={contentStyle}><img className="imageslide"src={ clubspot}style={{height:'300px'} }/></h3>
+            </div>
+            <div>
+              <h3 style={contentStyle}><img className="imageslide"src={ funtable}style={{height:'100px'} }/></h3>
+            </div>
+            <div>
+              <h3 style={contentStyle}><img className="imageslide"src={ funtable}style={{height:'100px'} }/></h3>
+            </div>
+          </Carousel>
         </div>
-        <Menu />
-        <h2>Your favorite microblogging platform</h2>
         <LoginForm />
         <RegistrationForm />
-        <UserData />
-
-        <Carousel autoplay>
-          <div>
-            <h3 style={contentStyle}>1</h3>
-          </div>
-          <div>
-            <h3 style={contentStyle}>2</h3>
-          </div>
-          <div>
-            <h3 style={contentStyle}>3</h3>
-          </div>
-          <div>
-            <h3 style={contentStyle}>4</h3>
-          </div>
-        </Carousel>,
       </div>
 
     );

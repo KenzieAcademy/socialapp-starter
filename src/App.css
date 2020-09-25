@@ -1,5 +1,52 @@
-Body  {
-   background-image: url(./pages/assets/photo3.jpg);
-   background-position: 50%;
-   
+body, html {
+    height: 100%;
+     background-size: cover; 
+     /* background-image: url('./pages/assets/photo3.jpg'); */
+    background-color: slateblue;
+  }
+
+  
+  
+  .slidedeck{
+display: flex;
+justify-content: center;
 }
+.imageslide{
+    display: flex;
+    justify-self: center;
+   position: relative;
+   margin: auto;
+   
+
+}
+
+
+
+
+h1 {
+font-family:  Trattatello, fantasy;
+font-style: bold;
+font-size: 50px;
+color: firebrick;
+justify-content: center;
+}
+.Menu{
+  
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    background: none;
+}
+
+.RegistrationForm{
+display: flex;
+justify-content: center
+}
+
+.LoginForm {
+    
+ display: flex;
+ flex-wrap: wrap;
+justify-self: center;
+}
+
