@@ -1,4 +1,5 @@
 import axios from "axios";
+
 class DataService {
   constructor(
     url = "https://socialapp-api.herokuapp.com",
@@ -11,12 +12,21 @@ class DataService {
     console.log(userdata);
     return this.client.post(this.url + "/users", userdata);
   }
+
   getLoginForm() {
     return this.client.post(this.url + "/login");
   }
-  getMessages(limit = 20) {
-    return this.client.get(this.url + "/messages?limit=" + limit);
+
+  getLogout() {
+    return this.client.post(`${this.url}/logout`);
   }
+  postlike(userdata) {
+    return this.client.post(this.url + "/likes", userdata);
+  }
+  getMessages(limit = 20) {
+    return this.client.get(this.url + "/messages?limit=" + limit).then;
+  }
+
   deleteuser() {
     const loginData = JSON.parse(localStorage.getItem("login")).result;
 
@@ -25,12 +35,50 @@ class DataService {
     });
   }
 
-  // deletemessage() {
-  // const messagedata = JSON.parse(localStorage.getItem(messageId)).result;
+  createMessage() {
+    return this.client.post(this.url + "/messages");
+  }
 
-  //return this.client.delete(this.url + `/messages/${messagedata.messageId}`, {
-  //headers: { Authorization: `Bearer ${messagedata.token}` },
-  //});
-  //}
+  deleteMessage(messageId) {
+    const loginData = JSON.parse(localStorage.getItem("login")).result;
+    return this.client.delete(this.url + "/messages/" + messageId, {
+      headers: { Authorization: `Bearer ${loginData.token}` },
+    });
+  }
+  getMessage(messageId) {
+    const loginData = JSON.parse(localStorage.getItem("login")).result;
+    return this.client.get(this.url + "/messages/" + messageId, {
+      headers: { Authorization: `Bearer ${loginData.token}` },
+    });
+  }
+  deletelikes(likeId) {
+    const loginData = JSON.parse(localStorage.getItem("login")).result;
+    return this.client.delete(this.url + "/likes/" + likeId, {
+      headers: { Authorization: `Bearer ${loginData.token}` },
+    });
+  }
+  getPicture(username) {
+    const loginData = JSON.parse(localStorage.getItem("login")).result;
+    return this.client.get(this.url + "/users/" + username + "/picture", {
+      headers: { Authorization: `Bearer ${loginData.token}` },
+    });
+  }
+  setPicture(username) {
+    const loginData = JSON.parse(localStorage.getItem("login")).result;
+    return this.client.put(this.url + "/users/" + username + "/picture", {
+      headers: { Authorization: `Bearer ${loginData.token}` },
+    });
+  }
+  userUpdate(userId) {
+    return this.client.patch(this.url + "/users/" + userId);
+  }
+  getUser(username) {
+    console.log(username);
+    return this.client.get(this.url + "/users/" + username);
+  }
+  setuserphoto(formdata) {
+    return this.client.put(this.url + "/users", formdata);
+  }
 }
+
 export default DataService;
