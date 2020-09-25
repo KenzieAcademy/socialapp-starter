@@ -22,10 +22,6 @@ class App extends React.Component {
             <UserDisplay {...props} name={props.match.params.name} />
           )}
         />
-<<<<<<< HEAD
-
-=======
->>>>>>> 11e5826e77b98edfb1c7a7d9eddf66ab6cc7622a
         <Route exact path="/profile/:username" component={Profile} />
 
         <Route exact path="/messagefeed" component={NewsFeed} />

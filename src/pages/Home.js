@@ -28,11 +28,11 @@ class Home extends React.Component {
             </Menu>
           </Header>
           <Content style={{ padding: "0 50px" }}>
-//             <Breadcrumb style={{ margin: "16px 0" }}>
+{/* //             <Breadcrumb style={{ margin: "16px 0" }}>
 //               <Breadcrumb.Item> User</Breadcrumb.Item>
 //               <Breadcrumb.Item>Register</Breadcrumb.Item>
 //               <Breadcrumb.Item>Contact</Breadcrumb.Item>
-//             </Breadcrumb>
+//             </Breadcrumb> */}
             <div className="site-layout-content">
               <h2>is this working now!!!!</h2>
               <Menu />
