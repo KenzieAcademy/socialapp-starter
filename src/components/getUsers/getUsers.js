@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import DataService from "../../dataService"
+import DataService from "../../dataService";
 
-class userData extends Component {
+class UserData extends Component {
+
 
   //set our initial state and set up our service as this.client on this component
   constructor(props) {
@@ -12,9 +13,7 @@ class userData extends Component {
       users: [],
     }
     this.client.getUsers().then(res => {
-      console.log(res.data.users)
-      this.setState({ users: res.data.users })
-      console.log(this.state.users)
+      this.setState({ users: res.data.users }) 
     })
   }
 
@@ -22,6 +21,7 @@ class userData extends Component {
     if (this.state.users === [])
       return (
         <div>
+
 
           <h1>loading</h1></div>
       )
@@ -45,4 +45,4 @@ class userData extends Component {
 
   }
 }
-export default userData
+export default UserData

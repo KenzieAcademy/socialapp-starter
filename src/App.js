@@ -1,10 +1,11 @@
-import React from "react";
+import React from "react";  
 // import axios from "axios";
 import { Switch, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
-
+import LoginForm from "./components/loginForm/LoginForm";
+import "./App.css";
 import NewsFeed from "./pages/NewsFeed";
 import Register from "./pages/Register";
 import UserDisplay  from "./components/getUsers/usersDisplay"
