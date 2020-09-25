@@ -3,8 +3,7 @@ import LoginForm from "../components/loginForm/LoginForm";
 // import Menu from "../components/menu/Menu";
 import { userIsNotAuthenticated } from "../redux/HOCs";
 import RegistrationForm from "../components/RegistrationForm/RegistrationForm";
-import GetMessage from "../components/getMessages/GetMessages";
-import { Layout, Menu, Breadcrumb } from "antd";
+import { Layout, Menu} from "antd";
 import UserData from "../components/getUsers/getUsers";
 class Home extends React.Component {
   render() {
@@ -35,7 +34,7 @@ class Home extends React.Component {
 //               <Breadcrumb.Item>Contact</Breadcrumb.Item>
 //             </Breadcrumb>
             <div className="site-layout-content">
-              <h2>Your favorite Hangout platform</h2>
+              <h2>is this working now!!!!</h2>
               <Menu />
               <LoginForm />
               <RegistrationForm />
