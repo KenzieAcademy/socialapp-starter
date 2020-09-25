@@ -12,9 +12,9 @@ class UserData extends Component {
       users: [],
     }
     this.client.getUsers().then(res => {
-      console.log(res.data.users)
+    
       this.setState({ users: res.data.users })
-      console.log(this.state.users)
+     
     })
   }
 

@@ -39,41 +39,23 @@ class UserProfile extends Component {
     })
     
   }
-    userUpdate(){
-        console.log('hello2333')
-}
 handleSubmit = (event) => {
-  event.preventDefault();
- 
-  this.setState({
-    displayName: event.target.elements.displayName.value,
-    about: event.target.elements.about.value,
-  password:event.target.elements.password.value
-  })
-  console.log(event.target.elements.displayName.value)
-  console.log(this.state)
-  this.test()
- 
-  console.log(this.objData)
+  event.preventDefault()
+ let displayNameInput=event.target.elements.displayName.value
+  let aboutInput=event.target.elements.about.value
+  if(displayNameInput.length<=1){
+    displayNameInput=this.state.userinfo.displayName
+  }
+  if(aboutInput.length<=1){
+    aboutInput=this.state.userinfo.about
+  }
   const textdata={
     password: event.target.elements.password.value,
-    about: event.target.elements.about.value,
-    displayName: event.target.elements.displayName.value,
+    about: aboutInput,
+    displayName: displayNameInput,
 }
-console.log(textdata)
   this.client.UpdateUser(textdata,
     this.state.userinfo.username)
-}
-
-test(){if(this.state.displayName===''){
-  this.setState({
-    displayName: this.state.userinfo.displayName
-  })
-}
-else{
-  console.log(this.state)
-  console.log('bye')
-}
 }
      
   
@@ -85,8 +67,6 @@ componentDidMount(){
     render() {
       if(this.state.mount===0)
       return(<div><h1>loading</h1></div>);
-    
-    console.log(this.state)
     return(
       <div id='profileInfo'>
        
@@ -104,22 +84,23 @@ componentDidMount(){
             <div>Update Display Name</div>
             <label>Change your Display Name! </label><input type='text' 
             name='displayName'
-             placeholder={this.state.userinfo.displayName} 
+             placeholder={this.state.userinfo.displayName}
+              
              ></input>
               <label>Let us Know About You! </label><input type='text' 
             name='about'
-             placeholder={this.state.userinfo.about} 
+             placeholder={this.state.userinfo.about}
+             
              ></input>
              <label>Password to Update</label><input type='password' 
             name='password'
-             placeholder='****' 
+             placeholder='****'
+             required 
              ></input>
             
             <button type='submit'>Update</button>
             </form></div>
         <Link to='/'>hello</Link>
-        <button onClick={this.client.getToken}>test</button>
-        
 
 
 

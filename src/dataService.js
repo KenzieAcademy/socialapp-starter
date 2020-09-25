@@ -54,18 +54,8 @@ class DataService {
         Accept: "application/json"},
             body: JSON.stringify(textdata)
       })}
-  //   return fetch(this.client.url + "/users/"+username, {
-  //     method: "POST",
-  //      headers: { Authorization: "Bearer " + token, 
-  //   "Content-Type": "application/json",
-  // Accept: "application/json"}
-  //     body: JSON.stringify(loginData)
-  //   })
-    // below not complete just thoughts from eric
-    // postMessage(message){
-    // let authData=JSON.parse(localStorage.getItem("login.token"))
-    //     return this.client.post(this.url+"/users",registrationData,
-    //     headers, {Authorization: Bearer ${authData.result.token}});
-    // }
+      
+    
+
 }
 export default DataService;
