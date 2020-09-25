@@ -5,12 +5,18 @@ import "../message/Message.css";
 import SocialappService from "../../socialappService";
 import MiniProfileIMG from "../../assets/images/marioParty.jpg";
 import Image from "react-bootstrap/Image";
+import { userIsAuthenticated } from "../../redux/HOCs";
 
 class Message extends React.Component {
   constructor(props) {
     super(props);
     this.api = new SocialappService();
-    this.state = { user: {}, date: "", userPic: MiniProfileIMG };
+    this.state = {
+      user: {},
+      date: "",
+      userPic: MiniProfileIMG,
+      likes: this.props.likes.length,
+    };
   }
 
   componentDidMount() {
@@ -24,9 +30,13 @@ class Message extends React.Component {
     //   .then((response) => this.setState({ userPic: response.data.message }));
   }
 
-  LikeFunction() {
-    return <img alt="like" src=""></img>; //Sometype of image thumbnail
-  }
+  LikeFunction = () => {
+    let messageID = { messageId: this.props.id };
+    this.api
+      .addLike(messageID)
+      .then(this.setState({ likes: this.state.likes++ }));
+  };
+
   render() {
     if (this.state.userPic === "User does not have a picture") {
       this.setState({ userPic: MiniProfileIMG });
@@ -45,7 +55,7 @@ class Message extends React.Component {
               {" "}
               {/* <Card.Link href="#">Reply</Card.Link>
             <Card.Link href="#">...</Card.Link> */}
-              <div className="likes">Likes: {this.props.likes.length}</div>{" "}
+              <div className="likes">Likes: {this.state.likes}</div>{" "}
               <div className="LikeButton">
                 <button onClick={this.LikeFunction}>Like</button>{" "}
               </div>
@@ -57,4 +67,4 @@ class Message extends React.Component {
   }
 }
 
-export default Message;
+export default userIsAuthenticated(Message);

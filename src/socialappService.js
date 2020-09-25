@@ -30,6 +30,13 @@ class SocialappService {
     return this.client.put(this.url + "users/" + user + "/picture", picture);
   }
 
+  addLike(messageID) {
+    let loginData = JSON.parse(localStorage.getItem("login"));
+    return this.client.post(this.url + "likes", messageID, {
+      headers: { Authorization: `Bearer ${loginData.result.token}` },
+    });
+  }
+
   postMessage(message) {
     let loginData = JSON.parse(localStorage.getItem("login"));
     return this.client.post(this.url + "messages", message, {
