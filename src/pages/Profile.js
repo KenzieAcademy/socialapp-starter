@@ -6,7 +6,6 @@ import InputFile from "../components/inputFileButton/InputFile";
 
 import DataService from "../DataService";
 import { Button, Avatar } from "antd";
-
 import { UserOutlined } from "@ant-design/icons";
 import UpdateUser from "../components/updateUser/UpdateUser";
 import { Redirect } from "react-router-dom";
