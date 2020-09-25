@@ -3,17 +3,19 @@
 }
 
 .Body {
-  width: 850px;
   position: relative;
   margin: auto;
+  font-size: 25px;
 }
 
 .Message {
-  border: 3px solid black;
+  width: 627px;
+  height: 240px;
+  border: 3px solid #b80c12;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
-  background-color: #b80c12;
+  background-color: black;
   text-align: left;
   padding: 10px;
 }
@@ -24,32 +26,85 @@
   border-width: 3px;
   border-style: dashed;
   padding: 10px;
-  width: 627px;
+  width: 654px;
   position: relative;
+  margin: auto;
   margin: 10px;
-  left: 63px;
+  left: 32px;
 }
 
 .MessageText {
+  position: relative;
+  margin: auto;
   padding: 5px;
-  border: 3px solid black;
+  border: 2px solid white;
   border-radius: 5px;
-  border-width: 3px;
-  border-style: dashed;
-  background-color: white;
+  border-width: 2px;
+  background-image: url(../../assets/images/Coupon_Background_Dark.png);
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  color: black;
+  width: 468px;
+  height: 185px;
+  top: -130px;
+  left: 68px;
 }
 
 .LikeButton {
   position: relative;
   margin: auto;
-  left: 230px;
-  background-color: black;
-  border: 3px solid white;
+  width: 125px;
+  top: -191px;
+  background-color: #202326;
+  border: 2px solid #b80c12;
   border-radius: 5px;
-  border-width: 3px;
+  border-width: 2px;
   border-style: dashed;
-  font: italic small-caps bold 12px/30px Georgia, serif;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 18px;
   color: white;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
   text-align: center;
   cursor: pointer;
+}
+
+.ProfileLink a {
+  text-decoration: none;
+  position: relative;
+  margin: auto;
+  float: left;
+  top: 26px;
+  left: 4px;
+  font-size: 15px;
+  color: #b80c12;
+  text-decoration: underline;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  cursor: pointer;
+}
+
+.ProfilePic {
+  border: 2px solid #b80c12;
+  border-radius: 5px;
+  border-width: 2px;
+  border-style: dashed;
+  top: 25px;
+  width: 125px;
+  height: 125px;
+  position: relative;
+  margin: auto;
+}
+
+.MemberTitle {
+  top: -130px;
+  left: -112px;
+  position: relative;
+  margin: auto;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+}
+
+.LikesNumber {
+  position: relative;
+  margin: auto;
+  top: -348px;
+  left: 537px;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
 }

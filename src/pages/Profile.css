@@ -7,6 +7,7 @@
   position: relative;
   margin: auto;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
 }
 
 .ProfileHeader {
@@ -19,8 +20,10 @@
   border-width: 3px;
   border-style: dashed;
   width: 830px;
-  background-color: #b80c12;
+  /* background-color: #b80c12; */
+  background-image: url(../assets/images/Clear_Red.png);
   font-size: 45px;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
   color: black;
   text-align: center;
 }
