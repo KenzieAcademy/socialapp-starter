@@ -22,12 +22,20 @@ class SocialappService {
     return this.client.get(this.url + "messages");
   }
 
+  getMessage(messageID) {
+    return this.client.get(this.url + "messages/" + messageID);
+  }
+
   getProfilePic(user) {
     return this.client.get(this.url + "users/" + user + "/picture");
   }
 
   setProfilePic(user, picture) {
     return this.client.put(this.url + "users/" + user + "/picture", picture);
+  }
+
+  updateUser(user, updateData) {
+    return this.client.patch(this.url + "users/" + user, updateData);
   }
 
   addLike(messageID) {

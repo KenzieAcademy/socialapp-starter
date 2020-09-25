@@ -37,7 +37,7 @@ class Message extends React.Component {
     let messageID = { messageId: this.props.id };
     this.api
       .addLike(messageID)
-      .then(this.setState({ likes: this.state.likes++ }));
+      .then(this.setState({ likes: this.state.likes + 1 }));
   };
 
   render() {
@@ -65,16 +65,13 @@ class Message extends React.Component {
               </Card.Subtitle>
             </div>
             <Card.Text className="MessageText">{this.props.text}</Card.Text>
-            <Card.Footer>
-              <div className="likes">Likes: {this.state.likes}</div>
-              <div className="LikeButton">
-                <button onClick={this.LikeFunction}>Like</button>
-              </div>
-              <button className="LikeButton" onClick={this.LikeFunction}>
-                LIKE MY POST!
-              </button>
-            </Card.Footer>
           </Card.Body>
+          <Card.Footer>
+            <Card.Text className="likes">Likes: {this.state.likes}</Card.Text>
+            <button className="LikeButton" onClick={this.LikeFunction}>
+              LIKE MY POST!
+            </button>
+          </Card.Footer>
         </Card>
       </div>
     );
