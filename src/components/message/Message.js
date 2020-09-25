@@ -13,7 +13,7 @@ this.state={
 handleSubmit = (event)=>{
   event.preventDefault();
   this.setState({
-    isSubmitted: !isSubmitted
+    isSubmitted: !this.state.isSubmitted
   })
 }
 render(){
