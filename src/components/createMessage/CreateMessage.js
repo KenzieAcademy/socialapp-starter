@@ -4,7 +4,7 @@ import DataService from "../../DataService";
 class CreateMessage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { isSubmitted: false, messageData: { text: "" } };
+    this.state = { messageData: { text: "" } };
 
     this.client = new DataService();
   }
@@ -13,8 +13,8 @@ class CreateMessage extends React.Component {
     e.preventDefault();
     this.client.createMessage(this.state.messageData).then((response) => {
       console.log(response);
+      this.props.handleSubmit();
     });
-    this.setState({ isSubmitted: true });
   };
 
   handleChange = (e) => {
@@ -24,11 +24,12 @@ class CreateMessage extends React.Component {
   };
 
   handleClear = (e) => {
-    this.setState({ isSubmitted: false, messageData: { text: "" } });
+    this.setState({ messageData: { text: "" } });
+    this.props.handleSubmit();
   };
 
   render() {
-    if (!this.state.isSubmitted) {
+    if (!this.props.isSubmitted) {
       return (
         <form id="CreateMessage-button" onSubmit={this.handleCreateMessage}>
           <label htmlFor="text">Your Lucky Message</label>
