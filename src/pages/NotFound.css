@@ -2,12 +2,35 @@
   box-sizing: border-box;
 }
 
-.Body {
+.NotFoundBody {
+  background-image: url(../assets/images/Clear_Red.png);
   border: 3px solid black;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
-  width: 850px;
   position: relative;
   margin: auto;
+  width: 850px;
+  height: 250px;
+  text-align: center;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font: italic small-caps bold 12px/30px Georgia, serif;
+}
+
+.NotFound {
+  padding-bottom: 50px;
+  position: relative;
+  margin: auto;
+  font-size: 55px;
+  color: black;
+}
+
+.Link a {
+  text-decoration: none;
+  position: relative;
+  margin: auto;
+  font-size: 55px;
+  color: black;
+  text-decoration: underline;
+  cursor: pointer;
 }

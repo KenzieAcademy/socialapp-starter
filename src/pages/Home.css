@@ -7,3 +7,10 @@
   margin: auto;
   text-align: center;
 }
+
+.JoinUs {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font: italic small-caps bold 12px/30px Georgia, serif;
+  font-size: 25px;
+  color: #b80c12;
+}

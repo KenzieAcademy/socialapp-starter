@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
-import MiniProfileIMG from "../../assets/images/marioParty.jpg";
+import MiniProfileIMG from "../../assets/images/Placeholder_Image.gif";
 
 const styles = {
   paperContainer: {
@@ -8,7 +8,6 @@ const styles = {
     width: 120,
     maxwidth: 20,
     maxheight: 20,
-    backgroundImage: `url(${"static/src/img/main.jpg"})`,
   },
 };
 
@@ -24,7 +23,6 @@ class MiniProfile extends React.Component {
               class="btn btn-primary"
             />
             <p class="card-text">{this.props.username}</p>
-            <Card.Subtitle class="card-Subtitle">Mini-Profile</Card.Subtitle>
           </Card-Body>
         </Card>
       </div>

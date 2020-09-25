@@ -56,10 +56,23 @@
   cursor: pointer;
 }
 
-/* input[type="button"],
-input[type="submit"] {
-  background-image: url(../../assets/images/ThumbsUp.png);
-  width: 25px;
-  height: 25px;
+.ProfileLink a {
+  text-decoration: none;
+  position: relative;
+  margin: auto;
+  font-size: 15px;
+  color: #b80c12;
+  text-decoration: underline;
   cursor: pointer;
-} */
+}
+
+.ProfilePic {
+  border: 2px solid #b80c12;
+  border-radius: 5px;
+  border-width: 2px;
+  border-style: dashed;
+  width: 100px;
+  height: 100px;
+  position: relative;
+  margin: auto;
+}
