@@ -28,6 +28,8 @@ class RegistrationForm extends React.Component {
     e.preventDefault();
     this.client.registerUser(this.state).then((result) => {
       console.log(result.data)
+        
+      
     })
   };
 
@@ -71,6 +73,7 @@ class RegistrationForm extends React.Component {
         </form>
         {loading && <Spinner name="circle" color="blue" />}
         {error && <p style={{ color: "red" }}>{error.message}</p>}
+
         </Container>
       </div>
     );
