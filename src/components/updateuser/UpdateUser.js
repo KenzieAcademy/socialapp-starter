@@ -21,5 +21,4 @@ class UpdateUser extends React.Component {
     );
   }
 }
-
 export default UpdateUser;

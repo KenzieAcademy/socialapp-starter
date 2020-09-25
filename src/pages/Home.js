@@ -3,9 +3,8 @@ import LoginForm from "../components/loginForm/LoginForm";
 import Menu from "../components/menu/Menu";
 import { userIsNotAuthenticated } from "../redux/HOCs";
 import RegistrationForm from "../components/registrationForm/RegistrationForm";
-import LikeButton from "../components/likebutton/LikeButton";
+
 import UpdateUser from "../components/updateuser/UpdateUser";
-import LogoutButton from "../components/logoutButton/Logout";
 import FollowButton from "../components/followbutton/FollowButton";
 
 class Home extends React.Component {
@@ -17,8 +16,6 @@ class Home extends React.Component {
         <LoginForm />
         <hr />
         <RegistrationForm />
-        <LikeButton />
-        <LogoutButton />
         <UpdateUser />
         <FollowButton />
       </div>
