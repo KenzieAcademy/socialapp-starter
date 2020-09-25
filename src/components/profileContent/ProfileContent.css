@@ -5,8 +5,8 @@
 .ProfileBody {
   top: 19px;
   border-radius: 5px;
-  width: 850px;
-  height: 340px;
+  width: 850px; 
+  height: 640px;
   position: relative;
   margin: auto;
 }
