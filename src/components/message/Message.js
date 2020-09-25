@@ -1,16 +1,19 @@
 import React from "react";
-// import Image from "../../assets/images/ThumbsUp.png";
+// import Image from "../../assets/images/Placeholder_Image.gif";
+// import Image from "react-bootstrap/Image";
 import Card from "react-bootstrap/Card";
+import { Link } from "react-router-dom";
 import "../message/Message.css";
+import ProfilePic from "../../assets/images/Placeholder_Image.gif";
 import SocialappService from "../../socialappService";
-import MiniProfileIMG from "../../assets/images/marioParty.jpg";
 import Image from "react-bootstrap/Image";
+
 
 class Message extends React.Component {
   constructor(props) {
     super(props);
     this.api = new SocialappService();
-    this.state = { user: {}, date: "", userPic: MiniProfileIMG };
+    this.state = { user: {}, date: "", userPic: ProfilePic };
   }
 
   componentDidMount() {
@@ -32,23 +35,33 @@ class Message extends React.Component {
       this.setState({ userPic: MiniProfileIMG });
     }
     return (
-      <div className="Body">
-        <Card style={{ width: "18rem" }}>
+      <div className="CardBody">
+        <Card style={{ width: "575px" }}>
           <Card.Body className="Message">
-            <Image rounded src={this.state.userPic} />
-            <Card.Title> From: {this.state.user.displayName}</Card.Title>
-            <Card.Subtitle className="mb-2 text-muted">
-              Posted:{this.state.date}
-            </Card.Subtitle>
+            <img className="ProfilePic" src={this.state.userPic} alt="Profile Pic" />
+            <div className="ProfileLink">
+              <Link to="/miniProfile">Check Out My Profile</Link>
+            </div>
+            <div className="MemberTitle">
+              <Card.Title> Member: {this.state.user.displayName}</Card.Title>
+            </div>
+            <div className="PostedTitle">
+              <Card.Subtitle className="mb-2 text-muted">
+                this.state.date
+              </Card.Subtitle>
+            </div>
             <Card.Text className="MessageText">{this.props.text}</Card.Text>
             <footer>
               {" "}
-              {/* <Card.Link href="#">Reply</Card.Link>
-            <Card.Link href="#">...</Card.Link> */}
-              <div className="likes">Likes: {this.props.likes.length}</div>{" "}
-              <div className="LikeButton">
-                <button onClick={this.LikeFunction}>Like</button>{" "}
+              <div className="LikesNumber">
+                <div className="Likes">Likes: {this.props.likes.length}</div>{" "}
               </div>
+              <button className="LikeButton" onClick={this.LikeFunction}>
+                LIKE MY POST!
+              </button>{" "}
+              {/* <div className="LikeButton">
+                <input type="submit" value="" onClick={this.LikeFunction} />{" "}
+              </div> */}
             </footer>
           </Card.Body>
         </Card>

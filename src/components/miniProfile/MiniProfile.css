@@ -1,0 +1,18 @@
+* {
+  box-sizing: border-box;
+}
+
+.ProfileCardBody {
+  position: relative;
+  margin: auto;
+}
+
+.Miniprofile {
+  position: relative;
+  margin: auto;
+}
+
+.ProfilePic {
+  position: relative;
+  margin: auto;
+}
