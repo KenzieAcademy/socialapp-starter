@@ -71,6 +71,26 @@ class DataService {
     });
   }
 
+  getMessage(messageId) {
+    return this.client.get(`${this.url}/messages/${messageId}`);
+  }
+
+  deleteMessage(messageId) {
+    let loginData = JSON.parse(localStorage.getItem("login")).result;
+    let token = loginData.token;
+    return this.client.delete(this.url + "/messages/" + messageId, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+  }
+
+  deleteLike(likeId) {
+    let loginData = JSON.parse(localStorage.getItem("login")).result;
+    let token = loginData.token;
+    return this.client.delete(this.url + "/likes/" + likeId, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+  }
+
   postLikes(messageId) {
     const data = { messageId };
     let loginData = JSON.parse(localStorage.getItem("login"));
