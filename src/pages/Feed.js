@@ -8,7 +8,6 @@ class Feed extends React.Component {
     return (
       <div className="Feed">
         <Menu isAuthenticated={this.props.isAuthenticated} />
-
         <MessageList />
       </div>
     );
