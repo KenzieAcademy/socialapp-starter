@@ -1,6 +1,7 @@
 import React from "react"
 import { userIsAuthenticated } from "../../redux/HOCs"
 import Service from "../../services/Service"
+import "./PostMessage.css"
 
 
 class PostMessage extends React.Component {
@@ -10,7 +11,7 @@ class PostMessage extends React.Component {
             text: "",
         };
 
-        this.Service = new Service()
+        this.client = new Service()
     }
 
     handleChange = (event) => {
@@ -21,7 +22,8 @@ class PostMessage extends React.Component {
 
     handleMessagePost = (event) => {
         event.preventDefault();
-        this.Service.postMessage(this.state).then((result) => {
+        this.client.postMessage(this.state)
+        .then((result) => {
             console.log(result.data);
         });
         console.log("Post Button Pressed")

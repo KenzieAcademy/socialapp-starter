@@ -28,7 +28,7 @@ class DataService {
         });
     }
     getAllMessages(limit = 1000) {
-        return this.client.get(`/messages?limit=${limit}`)
+        return this.client.get(this.url +`/messages?limit=${limit}`)
     }
     getUserMessages(username, limit = 20) {
         return this.client.get(`/messages?username=${username}limit=${limit}`)

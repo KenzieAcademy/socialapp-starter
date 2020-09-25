@@ -3,10 +3,8 @@ import { Switch, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
-// import PostMessage from "./services/PostMessageService"
 import RegistrationForm from "./components/registrationForm/RegistrationForm"
-import MessageList from "./pages/MessageList"
-import PostMessage from "./components/PostMessage";
+import MessageFeed from "./pages/MessageFeed"
 
 class App extends React.Component {
 
@@ -33,7 +31,7 @@ class App extends React.Component {
           <Route
             exact
             path="/messagefeed"
-            component={MessageList}
+            component={MessageFeed}
           />
 
           <Route
@@ -46,9 +44,6 @@ class App extends React.Component {
             path="*"
             component={NotFound}
           />
-          <Route exact 
-          path="/postmessage" 
-          component={PostMessage} />
         </Switch>
       </div>
 
