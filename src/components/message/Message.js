@@ -15,26 +15,25 @@ class Message extends React.Component {
       <div className="CardBody">
         <Card style={{ width: "600px" }}>
           <Card.Body className="Message">
-            <img
-              className="ProfilePic"
-              src={ProfilePic}
-              alt="Profile Pic"
-              // class="img-thumbnail"
-            />
+            <img className="ProfilePic" src={ProfilePic} alt="Profile Pic" />
             <div className="ProfileLink">
               <Link to="/miniProfile">Check Out My Profile</Link>
             </div>
-            <Card.Title> From: {this.props.username}</Card.Title>
-            <Card.Subtitle className="mb-2 text-muted">
-              {new Date(this.props.createdAt).toDateString}
-              posted:{" "}
-            </Card.Subtitle>
+            <div className="MemberTitle">
+              <Card.Title> Member: {this.props.username}</Card.Title>
+            </div>
+            <div className="PostedTitle">
+              <Card.Subtitle className="mb-2 text-muted">
+                {new Date(this.props.createdAt).toDateString}
+                Posted:{" "}
+              </Card.Subtitle>
+            </div>
             <Card.Text className="MessageText">{this.props.text}</Card.Text>
             <footer>
               {" "}
               <div className="likes">Likes: {this.props.likes.length}</div>{" "}
               <button className="LikeButton" onClick={this.LikeFunction}>
-                Like
+                LIKE MY POST!
               </button>{" "}
               {/* <div className="LikeButton">
                 <input type="submit" value="" onClick={this.LikeFunction} />{" "}
