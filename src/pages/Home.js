@@ -34,10 +34,10 @@ class Home extends React.Component {
 //               <Breadcrumb.Item>Contact</Breadcrumb.Item>
 //             </Breadcrumb> */}
             <div className="site-layout-content">
-              <h2>is this working now!!!!</h2>
+             
               <Menu />
               <LoginForm />
-              <RegistrationForm />
+            
             </div>
           </Content>
           <Footer style={{ textAlign: "center" }}>
@@ -46,11 +46,9 @@ class Home extends React.Component {
         </Layout>
 
         <Menu />
-        <h2>Your favorite microblogging platform</h2>
-        <LoginForm />
-        <RegistrationForm />
-        <RegistrationForm />
-        <UserData />
+      
+    
+    
       </div>
     );
   }
