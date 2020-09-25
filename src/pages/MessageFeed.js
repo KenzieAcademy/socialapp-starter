@@ -8,27 +8,31 @@ import Button from "react-bootstrap/Button";
 import Popover from "react-bootstrap/Popover";
 import { OverlayTrigger } from "react-bootstrap";
 import "../pages/MessageFeed.css";
+import MiniProfile from "../components/miniProfile/MiniProfile";
 
 class MessageFeed extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { messages: [] };
+    this.state = { messages: [], text: "", currentUser: {} };
     this.api = new SocialappService();
     this.popover = (
       <Popover id="newPost">
         {/* <Popover.Title as="h2">NEW POST</Popover.Title> */}
         <Popover.Content>
-          <Post passdown={this.handleNewPost} />
+          <Post post={this.handleNewPost} change={this.handleChange} />
         </Popover.Content>
       </Popover>
     );
   }
 
   componentDidMount() {
-    this.handleNewPost();
+    this.retrieveMessages();
+    this.api
+      .getUser(localStorage.getItem("user"))
+      .then((response) => this.setState({ currentUser: response.data.user }));
   }
 
-  handleNewPost() {
+  retrieveMessages() {
     this.api
       .getMessages()
       .then((response) =>
@@ -37,6 +41,19 @@ class MessageFeed extends React.Component {
         )
       );
   }
+
+  handleChange = (e) => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
+
+  handleNewPost = (e) => {
+    e.preventDefault();
+    this.api.postMessage({ text: this.state.text });
+    setTimeout(() => {
+      this.retrieveMessages();
+      document.body.click();
+    }, 1000);
+  };
 
   render() {
     if (this.state.messages.length === 0) {
@@ -48,6 +65,7 @@ class MessageFeed extends React.Component {
     }
     return (
       <div className="Body">
+        <MiniProfile user={this.state.currentUser} />
         <div className="MessageList">
           <Menu isAuthenticated={this.props.isAuthenticated} />
           <div className="MessageHeader">Message Feed</div>
@@ -56,6 +74,7 @@ class MessageFeed extends React.Component {
             trigger="click"
             placement="bottom"
             overlay={this.popover}
+            rootClose={true}
           >
             <Button variant="dark" size="lg">
               POST A MESSAGE!

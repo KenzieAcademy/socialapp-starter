@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Spinner from "react-spinkit";
 import "./RegistrationForm.css";
 import SocialappService from "../../socialappService.js";

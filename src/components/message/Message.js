@@ -1,23 +1,44 @@
 import React from "react";
 // import Image from "../../assets/images/ThumbsUp.png";
 import Card from "react-bootstrap/Card";
-import MiniProfile from "../miniProfile/MiniProfile";
 import "../message/Message.css";
+import SocialappService from "../../socialappService";
+import MiniProfileIMG from "../../assets/images/marioParty.jpg";
+import Image from "react-bootstrap/Image";
 
 class Message extends React.Component {
+  constructor(props) {
+    super(props);
+    this.api = new SocialappService();
+    this.state = { user: {}, date: "", userPic: MiniProfileIMG };
+  }
+
+  componentDidMount() {
+    this.api
+      .getUser(this.props.username)
+      .then((response) => this.setState({ user: response.data.user }));
+    const postedAt = new Date(this.props.createdAt);
+    this.setState({ date: postedAt.toUTCString() });
+    // this.api
+    //   .getProfilePic(this.props.username)
+    //   .then((response) => this.setState({ userPic: response.data.message }));
+  }
+
   LikeFunction() {
-    return <img src=""></img>; //Sometype of image thumbnail
+    return <img alt="like" src=""></img>; //Sometype of image thumbnail
   }
   render() {
+    if (this.state.userPic === "User does not have a picture") {
+      this.setState({ userPic: MiniProfileIMG });
+    }
     return (
       <div className="Body">
         <Card style={{ width: "18rem" }}>
-          <div className="ProfilePic">{/* <MiniProfile /> */}</div>
           <Card.Body className="Message">
-            <Card.Title> From: {this.props.username}</Card.Title>
+            <Image rounded src={this.state.userPic} />
+            <Card.Title> From: {this.state.user.displayName}</Card.Title>
             <Card.Subtitle className="mb-2 text-muted">
-              {new Date(this.props.createdAt).toDateString}
-              posted:{" "}
+              Posted:{this.state.date}
             </Card.Subtitle>
             <Card.Text className="MessageText">{this.props.text}</Card.Text>
             <footer>
