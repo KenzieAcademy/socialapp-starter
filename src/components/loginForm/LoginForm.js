@@ -3,22 +3,21 @@ import Spinner from "react-spinkit";
 import { withAsyncAction } from "../../redux/HOCs";
 import "./LoginForm.css";
 
-
 class LoginForm extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       username: "",
-      password: ""
+      password: "",
     };
   }
 
-  handleLogin = event => {
+  handleLogin = (event) => {
     event.preventDefault();
     this.props.login(this.state);
   };
 
-  handleChange = event => {
+  handleChange = (event) => {
     this.setState({ [event.target.name]: event.target.value });
   };
 
