@@ -46,6 +46,7 @@ class MessageList extends React.Component {
       );
     }
 
+
     if (!this.state.isSubmitted) {
       return (
         <div className="MessageList">
@@ -76,6 +77,7 @@ class MessageList extends React.Component {
           </ul>
         </div>
       );
+
   }
 }
 

@@ -1,4 +1,3 @@
-import { OmitProps } from "antd/lib/transfer/ListBody";
 import React from "react";
 import GetDisplayName from "../getDisplayName/GetDisplayName";
 

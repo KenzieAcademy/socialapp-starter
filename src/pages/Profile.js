@@ -1,4 +1,6 @@
 import React from "react";
+
+
 import Menu from "../components/menu/Menu";
 import UserCard from "../components/userCard/UserCard";
 import { userIsAuthenticated } from "../redux/HOCs";
@@ -12,6 +14,8 @@ class Profile extends React.Component {
         <h2>Profile</h2>
         <br />
         <UserCard />
+
+
         <MessageList />
         <br />
       </div>
