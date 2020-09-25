@@ -45,6 +45,7 @@ class Home extends React.Component {
           </Carousel>
         </div>
         <LoginForm />
+      Link to="/register"><p>Register</p></Link>
         <RegistrationForm />
 
       </div>

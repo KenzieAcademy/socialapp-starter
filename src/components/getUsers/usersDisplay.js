@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import DataService from "../../dataService"
 import { Link } from "react-router-dom";
 // function UserDisplay(props) {
-  
+
 //   let userData=DataService.getAUser(props)
 //   console.log(userData)
 //   return <div className="Welcome"><h1>{props.name}</h1>
 
 //   <h2>testing? {props.username}</h2>
-    
+
 //   </div>;
 // }
 // export default UserDisplay;
@@ -17,12 +17,14 @@ import { Link } from "react-router-dom";
 class UserDisplay extends Component {
 
   //set our initial state and set up our service as this.client on this component
-  constructor(props)
-  {super(props)
+  constructor(props) {
+    super(props)
     this.client = new DataService();
     this.state = {
+
      data: {},
     mount:0
+
 
     }
   }
@@ -40,16 +42,19 @@ class UserDisplay extends Component {
     })
     
   }
+
   getthepicture(){
     return this.client.GetUserPicture(this.state.userinfo.username).then(result => { 
       this.setState({
         picture: result.config.url,
         mount:1
+
       })
       console.log(this.state)
     })
     
   }
+
   
 componentDidMount(){
   this.gettheuser()
@@ -76,8 +81,6 @@ componentDidMount(){
         </h3>
         </div>
     )
-   
-    
   }
 }
 export default UserDisplay 
