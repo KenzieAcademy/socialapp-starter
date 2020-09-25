@@ -6,7 +6,7 @@ import RegistrationForm from "../components/registrationForm/RegistrationForm";
 import LikeButton from "../components/likebutton/LikeButton";
 import UpdateUser from "../components/updateuser/UpdateUser";
 import LogoutButton from "../components/logoutButton/Logout";
-import Uploadphoto from "../components/uploadPhoto/UploadPhoto";
+import FollowButton from "../components/followbutton/FollowButton";
 
 class Home extends React.Component {
   render() {
@@ -20,7 +20,7 @@ class Home extends React.Component {
         <LikeButton />
         <LogoutButton />
         <UpdateUser />
-        <Uploadphoto />
+        <FollowButton />
       </div>
     );
   }
