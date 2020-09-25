@@ -11,25 +11,26 @@
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
-  width: 850px;
 }
 
 #login-form {
   position: relative;
   margin: auto;
-  top: 34px;
+  top: 25px;
   text-align: center;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font: italic small-caps bold 12px/30px Georgia, serif;
   font-size: 25px;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
   width: 400px;
-  color: black;
+  color: #b80c12;
 }
 
 input[type="button"],
 input[type="submit"] {
-  /* background-image: url(../../assets/images/ThumbsUp.png); */
   background-color: #343a40;
+  border: 3px solid #b80c12;
+  border-radius: 2px;
   color: white;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font: italic small-caps bold 12px/30px Georgia, serif;
@@ -49,11 +50,10 @@ input[type="submit"] {
 }
 
 .LoginForm {
-  background-image: url(../../assets/images/Clear_Red.png);
-  /* background-color: white; */
+  background-color: black;
   position: relative;
   margin: auto;
-  border: 3px solid black;
+  border: 3px solid #b80c12;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;

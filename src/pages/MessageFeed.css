@@ -31,14 +31,18 @@
   border-width: 3px;
   border-style: dashed;
   width: 830px;
-  background-color: #b80c12;
+  /* background-color: #b80c12; */
+  background-image: url(../assets/images/Clear_Red.png);
   font-size: 45px;
+  font-size: 45px;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
   color: black;
 }
 
 .MessageLoading {
   color: #b80c12;
   font-size: 60px;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
   position: relative;
   margin: auto;
   top: 100px;
@@ -50,10 +54,12 @@
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
-  background-color: #b80c12;
+  /* background-color: #b80c12; */
   /* background-image: url(../assets/images/); */
   font-size: 25px;
-  width: 250px;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  color: black;
+  width: 200px;
   position: relative;
   margin: auto;
 }

@@ -3,11 +3,11 @@
 }
 
 .NotFoundBody {
-  background-image: url(../assets/images/Clear_Red.png);
+  /* background-image: url(../assets/images/Clear_Red.png);
   border: 3px solid black;
   border-radius: 5px;
   border-width: 3px;
-  border-style: dashed;
+  border-style: dashed; */
   position: relative;
   margin: auto;
   width: 850px;
@@ -18,19 +18,21 @@
 }
 
 .NotFound {
-  padding-bottom: 50px;
+  top: 50px;
   position: relative;
   margin: auto;
   font-size: 55px;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
   color: black;
 }
 
 .Link a {
+  top: 75px;
   text-decoration: none;
   position: relative;
   margin: auto;
   font-size: 55px;
-  color: black;
+  color: #b80c12;
   text-decoration: underline;
   cursor: pointer;
 }
