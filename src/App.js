@@ -1,23 +1,22 @@
-import React from "react"
+import React from "react";
 import { Switch, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
-import MessageFeed from "./pages/MessageFeed"
-import RegistrationForm from "./components/registrationForm/RegistrationForm"
+// import PostMessage from "./services/PostMessageService"
+import RegistrationForm from "./components/RegisterForm/RegisterForm"
+import MessageList from "./pages/MessageList"
+import PostMessage from "./components/PostMessage";
 
 class App extends React.Component {
-
-  handleLogout = event => {
+  handleLogout = (event) => {
     event.preventDefault();
     this.props.logout();
-  }
+  };
 
   render() {
-
     return (
-      <div className="root" >
-
+      <div className="root">
         <Switch>
           <Route
             exact
@@ -32,11 +31,12 @@ class App extends React.Component {
           <Route
             exact
             path="/messagefeed"
-            component={MessageFeed}
+            component={MessageList}
           />
+
           <Route
             exact
-            path="/signup"            
+            path="/signup"
             component={RegistrationForm}
           />
           <Route
@@ -44,12 +44,13 @@ class App extends React.Component {
             path="*"
             component={NotFound}
           />
+          <Route exact 
+          path="/postmessage" 
+          component={PostMessage} />
         </Switch>
       </div>
-
-    )
-
+    );
   }
 }
 
-export default App
+export default App;
