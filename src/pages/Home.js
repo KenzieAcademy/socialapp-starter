@@ -44,10 +44,10 @@ class Home extends React.Component {
             </div>
           </Carousel>
         </div>
+      <div className='loginform'>
         <LoginForm />
       <Link to="/register"><p>Register</p></Link>
-        <RegistrationForm />
-
+      </div>
       </div>
 
     );
