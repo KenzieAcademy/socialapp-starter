@@ -14,7 +14,7 @@ class Message extends React.Component {
         <div className="textDiv">{this.props.text}</div>
         <div className="like-Thumb">Likes: {this.state.likeThumb}</div>
         <button onClick={this.handlesLike}>
-            <img class="image" src="https://opticalprism.ca/wp-content/uploads/2019/09/likes.png" alt="100" width="25px" height="25px" />
+            <img className="image" src="https://opticalprism.ca/wp-content/uploads/2019/09/likes.png" alt="100" width="25px" height="25px" />
              
         </button>
         </li></div>
