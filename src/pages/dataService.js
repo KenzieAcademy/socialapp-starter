@@ -20,21 +20,26 @@ class DataService {
   getLogout() {
     return this.client.post(`${this.url}/logout`);
   }
-  postlike(messageId) {
+
+  posttlike(messageId) {
     const data = { messageId };
     const config = {
-      baseURL: this.baseURL,
       headers: {
         Authorization: `Bearer ${this.getToken()}`,
       },
     };
     return this.client
-      .post(this.url + "/likes", messageId, config)
+      .post(this.url + "/likes", data, config)
       .then((respose) => {
-        return respose.data.like;
+        return respose.data;
       });
   }
-  getMessages(limit = 20) {
+  getToken() {
+    const loginData = JSON.parse(localStorage.getItem("login"));
+    const { token } = loginData.result;
+    return token;
+  }
+  getMessag(limit = 20) {
     return this.client.get(this.url + "/messages?limit=" + limit);
   }
 
@@ -58,7 +63,6 @@ class DataService {
     return this.client.delete(this.url + "/messages/" + messageId, {
       headers: { Authorization: `Bearer ${loginData.token}` },
     });
-
   }
   getMessage(messageId) {
     const loginData = JSON.parse(localStorage.getItem("login")).result;
@@ -87,11 +91,10 @@ class DataService {
   }
   userUpdate(userId) {
     return this.client.patch(this.url + "/users/" + userId);
-
   }
   getUser(username) {
     console.log(username);
-    return this.client.get(this.url + "/users/" + username)
+    return this.client.get(this.url + "/users/" + username);
   }
   getMessages() {
     return this.client.get(this.url + "/messages");
@@ -99,8 +102,6 @@ class DataService {
   setuserphoto(formdata) {
     return this.client.put(this.url + "/users", formdata);
   }
-
-
 }
 
 export default DataService;
