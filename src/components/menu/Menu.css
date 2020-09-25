@@ -19,6 +19,7 @@
   text-align: right;
   position: relative;
   margin: auto;
+  left: -10px;
 }
 
 #menu-links a {
