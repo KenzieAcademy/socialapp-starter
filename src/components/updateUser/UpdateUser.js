@@ -47,6 +47,13 @@ class UpdateUser extends React.Component {
             required
             onChange={this.handleChange}
           />
+          <label htmlFor="about">About</label>
+          <input
+            type="text"
+            name="about"
+            required
+            onChange={this.handleChange}
+          />
           <button type="submit" disabled={loading}>
             Update
           </button>
