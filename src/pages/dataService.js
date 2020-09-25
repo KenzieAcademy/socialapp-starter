@@ -25,9 +25,6 @@ class DataService {
     });
   }
 
-  getMessages() {
-    return this.client.get(this.url + "/messages");
-  }
   // deletemessage() {
   // const messagedata = JSON.parse(localStorage.getItem(messageId)).result;
 

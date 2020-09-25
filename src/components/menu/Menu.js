@@ -15,6 +15,7 @@ class Menu extends React.Component {
         <h1>Kwitter</h1>
         {this.props.isAuthenticated && (
           <div id="menu-links">
+            <Link to="/">Profile</Link>
             <Link to="/messagefeed">Message Feed</Link>
             <Link to="/" onClick={this.handleLogout}>
               Logout
