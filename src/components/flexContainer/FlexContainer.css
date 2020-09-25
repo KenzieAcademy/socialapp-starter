@@ -1,0 +1,10 @@
+.Header {
+  font-family: Kufam;
+  color: lightgreen;
+}
+
+#Planet {
+  background-color: none;
+  text-align: justify;
+  margin-right: 10px;
+}
