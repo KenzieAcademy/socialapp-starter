@@ -1,23 +1,24 @@
 import React from "react";
 import Spinner from "react-spinkit";
 import { withAsyncAction } from "../../redux/HOCs";
+import { Form, Button, Label, Input } from "semantic-ui-react";
 import "./LoginForm.css";
 
 class LoginForm extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       username: "",
-      password: ""
+      password: "",
     };
   }
 
-  handleLogin = e => {
+  handleLogin = (e) => {
     e.preventDefault();
-    this.props.login(this.state);
+    this.props.login(this.state).catch((error) => console.log(error));
   };
 
-  handleChange = e => {
+  handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };
 
@@ -25,26 +26,34 @@ class LoginForm extends React.Component {
     const { loading, error } = this.props;
     return (
       <div className="LoginForm">
-        <form id="login-form" onSubmit={this.handleLogin}>
-          <label htmlFor="username">Username</label>
-          <input
-            type="text"
-            name="username"
-            autoFocus
-            required
-            onChange={this.handleChange}
-          />
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            name="password"
-            required
-            onChange={this.handleChange}
-          />
-          <button type="submit" disabled={loading}>
+        <Form id="login-form" onSubmit={this.handleLogin}>
+          <Form.Field>
+            <Label size="large" color="blue" htmlFor="username">
+              Username
+            </Label>
+            <Input
+              type="text"
+              name="username"
+              autoFocus
+              required
+              onChange={this.handleChange}
+            />
+          </Form.Field>
+          <Form.Field>
+            <Label size="large" color="blue" htmlFor="password">
+              Password
+            </Label>
+            <Input
+              type="password"
+              name="password"
+              required
+              onChange={this.handleChange}
+            />
+          </Form.Field>
+          <Button type="submit" disabled={loading}>
             Login
-          </button>
-        </form>
+          </Button>
+        </Form>
         {loading && <Spinner name="circle" color="blue" />}
         {error && <p style={{ color: "red" }}>{error.message}</p>}
       </div>
