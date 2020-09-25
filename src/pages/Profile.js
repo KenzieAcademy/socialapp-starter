@@ -24,12 +24,13 @@ class Profile extends React.Component {
       .deleteUser()
       .then((payload) => {
         console.log(payload);
+        localStorage.clear();
+        window.location.reload();
       })
       .catch((error) => {
         console.log(error);
       });
-    localStorage.clear();
-    window.location.reload();
+
     // this.setState({ redirect: "/" });
   };
   render() {
