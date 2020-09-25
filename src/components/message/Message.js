@@ -42,13 +42,13 @@ class Message extends React.Component {
 
   render() {
     if (this.state.userPic === "User does not have a picture") {
-      this.setState({ userPic: MiniProfileIMG });
+      this.setState({ userPic: ProfilePic });
     }
     return (
       <div className="CardBody">
         <Card style={{ width: "575px" }}>
           <Card.Body className="Message">
-            <img
+            <Image
               className="ProfilePic"
               src={this.state.userPic}
               alt="Profile Pic"
@@ -65,19 +65,15 @@ class Message extends React.Component {
               </Card.Subtitle>
             </div>
             <Card.Text className="MessageText">{this.props.text}</Card.Text>
-            <footer>
-              {" "}
-              <div className="likes">Likes: {this.state.likes}</div>{" "}
+            <Card.Footer>
+              <div className="likes">Likes: {this.state.likes}</div>
               <div className="LikeButton">
-                <button onClick={this.LikeFunction}>Like</button>{" "}
+                <button onClick={this.LikeFunction}>Like</button>
               </div>
               <button className="LikeButton" onClick={this.LikeFunction}>
                 LIKE MY POST!
-              </button>{" "}
-              {/* <div className="LikeButton">
-                <input type="submit" value="" onClick={this.LikeFunction} />{" "}
-              </div> */}
-            </footer>
+              </button>
+            </Card.Footer>
           </Card.Body>
         </Card>
       </div>
