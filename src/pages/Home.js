@@ -3,8 +3,8 @@ import LoginForm from "../components/loginForm/LoginForm";
 // import Menu from "../components/menu/Menu";
 import { userIsNotAuthenticated } from "../redux/HOCs";
 import RegistrationForm from "../components/RegistrationForm/RegistrationForm";
-//import GetMessage from "../components/getMessages/GetMessages";
-import { Layout, Menu } from "antd";
+
+import { Layout, Menu} from "antd";
 import UserData from "../components/getUsers/getUsers";
 class Home extends React.Component {
   render() {
@@ -27,18 +27,25 @@ class Home extends React.Component {
             </Menu>
           </Header>
           <Content style={{ padding: "0 50px" }}>
+
+{/* //             <Breadcrumb style={{ margin: "16px 0" }}>
+//               <Breadcrumb.Item> User</Breadcrumb.Item>
+//               <Breadcrumb.Item>Register</Breadcrumb.Item>
+//               <Breadcrumb.Item>Contact</Breadcrumb.Item>
+//             </Breadcrumb> */}
             <div className="site-layout-content">
-              <h2>is this working now!!!!</h2>
+             
               <Menu />
               <LoginForm />
-              <RegistrationForm />
+            
             </div>
           </Content>
           <Footer style={{ textAlign: "center" }}>Mix&Mingle</Footer>
         </Layout>
         <Menu />
-        <h2>Random list of users</h2>
-        <UserData />
+      
+    
+    
       </div>
     );
   }
