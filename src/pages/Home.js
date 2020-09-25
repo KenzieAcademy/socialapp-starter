@@ -3,6 +3,7 @@ import LoginForm from "../components/loginForm/LoginForm";
 // import Menu from "../components/menu/Menu";
 import { userIsNotAuthenticated } from "../redux/HOCs";
 import RegistrationForm from "../components/RegistrationForm/RegistrationForm";
+
 import { Layout, Menu} from "antd";
 import UserData from "../components/getUsers/getUsers";
 class Home extends React.Component {
@@ -15,10 +16,8 @@ class Home extends React.Component {
         {/* <h2>Your favorite microblogging platform</h2> */}
         {/* <LoginForm /> */}
         {/* <RegistrationForm /> */}
-       
+
         <Layout className="layout">
-
-
           <Header>
             <div className="logo" />
             <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["2"]}>
@@ -28,6 +27,7 @@ class Home extends React.Component {
             </Menu>
           </Header>
           <Content style={{ padding: "0 50px" }}>
+
 {/* //             <Breadcrumb style={{ margin: "16px 0" }}>
 //               <Breadcrumb.Item> User</Breadcrumb.Item>
 //               <Breadcrumb.Item>Register</Breadcrumb.Item>
@@ -40,11 +40,8 @@ class Home extends React.Component {
             
             </div>
           </Content>
-          <Footer style={{ textAlign: "center" }}>
-            Mix&Mingle
-          </Footer>
+          <Footer style={{ textAlign: "center" }}>Mix&Mingle</Footer>
         </Layout>
-
         <Menu />
       
     
