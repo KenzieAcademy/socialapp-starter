@@ -14,22 +14,44 @@ class Profile extends React.Component {
       password: "loading",
       about: "loading",
       displayName: "loading",
+      checked: false,
     };
   }
 
   componentDidMount() {
+    this.getUser();
+  }
+
+  getUser() {
     this.api.getUser(localStorage.getItem("user")).then((response) =>
       this.setState({
         user: response.data.user,
-        password: response.data.user.password,
+        password: localStorage.getItem("password"),
         about: response.data.user.about,
         displayName: response.data.user.displayName,
       })
     );
   }
 
+  handleUpdateUser = () => {
+    let updateData = {
+      password: this.state.password,
+      about: this.state.about,
+      displayName: this.state.displayName,
+    };
+    this.api.updateUser(this.state.user.username, updateData);
+    this.setState({ checked: false });
+    setTimeout(() => {
+      this.getUser();
+    }, 500);
+  };
+
   handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
+  };
+
+  handleSwitch = () => {
+    this.setState({ checked: !this.state.checked });
   };
 
   render() {
@@ -38,9 +60,14 @@ class Profile extends React.Component {
         <div className="Profile">
           <Menu isAuthenticated={this.props.isAuthenticated} />
           <div className="ProfileHeader">My Profile</div>
-          <ProfileContent />
+          <ProfileContent
+            user={this.state.user}
+            change={this.handleChange}
+            checked={this.state.checked}
+            clickSwitch={this.handleSwitch}
+            submitButton={this.handleUpdateUser}
+          />
         </div>
- 
       </div>
     );
   }
