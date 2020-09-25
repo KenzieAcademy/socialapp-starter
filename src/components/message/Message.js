@@ -7,6 +7,7 @@ class Message extends React.Component {
     this.state = {
       likeCount: this.props.likes.length,
       likes: this.props.likes,
+      liked: false,
     };
   }
 
@@ -19,23 +20,28 @@ class Message extends React.Component {
       this.setState((latestState) => ({
         likeCount: latestState.likeCount + 1,
         likes: [...latestState.likes, like],
+        liked: true,
       }));
     });
   };
   handleUnlike = () => {
     const dataService = new DataService();
     const username = JSON.parse(localStorage.getItem("login")).result.username;
-    if (this.state.likes.some((like) => like.username === username)) return;
+    const likeId = this.state.likes
+      .filter((like) => like.username === username)
+      .map((filterLike) => filterLike.id);
+    console.log(likeId);
+    if (this.state.likes.some((like) => like.username === username));
 
-    dataService.deleteLike(this.props.like).then((like) => {
-      console.log({ like });
+    dataService.deleteLike(likeId).then((like) => {
+      console.log(like);
       this.setState((latestState) => ({
         likeCount: latestState.likeCount - 1,
-        likes: [...latestState.likes, like],
+        likes: [],
+        liked: false,
       }));
     });
   };
-  render() {
 
   render() {
     let deleteMessageButton = null;
@@ -52,12 +58,22 @@ class Message extends React.Component {
         {this.props.createdAt}, {this.props.username} posted: <br />
         {this.props.text}
         <div className="like-count">likes: {this.state.likeCount}</div>
-        <button onClick={this.handleLike}>
-          <span role="img" aria-label="fire">
-            🦕
-          </span>
-        </button>
-        {deleteMessageButton}
+        <div>
+          {this.state.liked ? (
+            <button onClick={this.handleUnlike}>
+              <span role="img" aria-label="fire">
+                🦕
+              </span>
+            </button>
+          ) : (
+            <button onClick={this.handleLike}>
+              <span role="img" aria-label="fire">
+                🦕
+              </span>
+            </button>
+          )}
+          {deleteMessageButton}
+        </div>
       </li>
     );
   }
