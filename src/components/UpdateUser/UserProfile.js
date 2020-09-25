@@ -48,12 +48,21 @@ handleSubmit = (event) => {
   this.setState({
     displayName: event.target.elements.displayName.value,
     about: event.target.elements.about.value,
-    password:event.target.elements.password.value
+  password:event.target.elements.password.value
   })
   console.log(event.target.elements.displayName.value)
-  console.log('why')
   console.log(this.state)
   this.test()
+ 
+  console.log(this.objData)
+  const textdata={
+    password: event.target.elements.password.value,
+    about: event.target.elements.about.value,
+    displayName: event.target.elements.displayName.value,
+}
+console.log(textdata)
+  this.client.UpdateUser(textdata,
+    this.state.userinfo.username)
 }
 
 test(){if(this.state.displayName===''){
@@ -108,7 +117,7 @@ componentDidMount(){
             
             <button type='submit'>Update</button>
             </form></div>
-        <Link>hello</Link>
+        <Link to='/'>hello</Link>
         <button onClick={this.client.getToken}>test</button>
         
 

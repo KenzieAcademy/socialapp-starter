@@ -45,6 +45,22 @@ class DataService {
       const {username} =JSON.parse(localStorage.getItem("login")).result
       return console.log({username})
     }
+    UpdateUser(textdata,user){ 
+      const {token} =JSON.parse(localStorage.getItem("login")).result
+      return fetch(this.url + "/users/"+user, {
+        method:"PATCH",
+             headers: { Authorization: "Bearer " + token, 
+          "Content-Type": "application/json",
+        Accept: "application/json"},
+            body: JSON.stringify(textdata)
+      })}
+  //   return fetch(this.client.url + "/users/"+username, {
+  //     method: "POST",
+  //      headers: { Authorization: "Bearer " + token, 
+  //   "Content-Type": "application/json",
+  // Accept: "application/json"}
+  //     body: JSON.stringify(loginData)
+  //   })
     // below not complete just thoughts from eric
     // postMessage(message){
     // let authData=JSON.parse(localStorage.getItem("login.token"))
