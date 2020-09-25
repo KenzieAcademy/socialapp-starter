@@ -1,12 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "antd/dist/antd.css";
+import 'antd/dist/antd.css'; 
 import "./index.css";
 import * as serviceWorker from "./serviceWorker";
 import { Provider } from "react-redux";
 import { ConnectedRouter } from "connected-react-router";
 import App from "./App";
 import { store, history } from "./redux";
+import "./App.css";
 
 ReactDOM.render(
   <Provider store={store}>
@@ -20,3 +21,4 @@ ReactDOM.render(
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
+
