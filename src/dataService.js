@@ -1,5 +1,4 @@
 import axios from "axios";
-
 class DataService {
   constructor(
     url = "https://socialapp-api.herokuapp.com",
@@ -30,13 +29,33 @@ class DataService {
   //     headers, {Authorization: Bearer ${authData.result.token}});
   // }
     GetAUser(username){
-        return this.client.get(this.url+'/'+username)
+        return this.client.get(this.url+'/users/'+username)
     }
-    // below not complete just thoughts from eric
-    // postMessage(message){
-    // let authData=JSON.parse(localStorage.getItem("login.token"))
-    //     return this.client.post(this.url+"/users",registrationData,
-    //     headers, {Authorization: Bearer ${authData.result.token}});
-    // }
+    userPhoto(username) {
+        this.client.get(this.url+"/users/" + username + "/picture")
+        console.log(this.userPhoto)
+    }
+
+    // if this.likes.some()
+    getToken () {
+      const {token} =JSON.parse(localStorage.getItem("login")).result
+      return console.log({token})
+    }
+    getUserName () {
+      const {username} =JSON.parse(localStorage.getItem("login")).result
+      return console.log({username})
+    }
+    UpdateUser(textdata,user){ 
+      const {token} =JSON.parse(localStorage.getItem("login")).result
+      return fetch(this.url + "/users/"+user, {
+        method:"PATCH",
+             headers: { Authorization: "Bearer " + token, 
+          "Content-Type": "application/json",
+        Accept: "application/json"},
+            body: JSON.stringify(textdata)
+      })}
+      
+    
+
 }
 export default DataService;
