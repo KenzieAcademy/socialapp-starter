@@ -23,7 +23,6 @@ class UserCard extends React.Component {
     let loginData = JSON.parse(localStorage.getItem("login"));
     this.client.getUser(loginData.result.username).then((res) => {
       console.log(res.data.user);
-
       this.setState({
         user: {
           userName: res.data.user.username,
