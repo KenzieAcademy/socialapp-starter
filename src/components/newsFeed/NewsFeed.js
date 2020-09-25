@@ -1,7 +1,4 @@
 import React from "react";
-import DataService from "../../DataService";
-import DeleteMessage from "../deleteMessage/DeleteMessage";
-import LikeButton from "../likeButton/LikeButton";
 
 class NewsFeed extends React.Component {
   constructor(props) {
@@ -12,7 +9,7 @@ class NewsFeed extends React.Component {
     return (
       <div className="NewsFeed">
         <h3>News Feed</h3>
-        <h3>Message Feed</h3>
+        <div className="NewsFeed-Message">Message Card</div>
       </div>
     );
   }
