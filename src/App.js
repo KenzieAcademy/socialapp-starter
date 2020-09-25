@@ -23,14 +23,11 @@ class App extends React.Component {
             <UserDisplay {...props} name={props.match.params.name} />
           )}
         />
-        <Route exact path="/messagefeed" component={NewsFeed}/>
         <Route exact path="/profile/:username" component={Profile} />
 
         <Route exact path="/messagefeed" component={NewsFeed} />
         <Route exact path="/user/:username" component={UserDisplay }/>
-
         <Route exact path="*" component={NotFound} />
-        
 
       </Switch>
     );
