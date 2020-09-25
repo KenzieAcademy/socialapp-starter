@@ -7,8 +7,8 @@ class LoginForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: "",
-      password: "",
+      username: this.props.username || "",
+      password: this.props.password || "",
     };
   }
 
@@ -33,23 +33,26 @@ class LoginForm extends React.Component {
               <input
                 type="text"
                 name="username"
+                value={this.props.username}
                 autoFocus
                 required
                 onChange={this.handleChange}
               />
             </div>
-            {/* <div>- - - - - - - - - - - - - - - - - - - - - - - - - - - - -</div> */}
+            <br></br>
+            <div>- - - - - - - - - - - - - - - - - - - - - - - - -</div>
             <label htmlFor="password">Password</label>
             <div className="PasswordInput">
               <input
                 type="password"
                 name="password"
+                value={this.props.password}
                 required
                 onChange={this.handleChange}
               />
             </div>
-
-            {/* <div>- - - - - - - - - - - - - - - - - - - - - - - - - - - - -</div> */}
+            <br></br>
+            <div>- - - - - - - - - - - - - - - - - - - - - - - - -</div>
             <div className="LoginButton">
               <input type="submit" value="Enter" disabled={loading} />
             </div>

@@ -11,7 +11,8 @@
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
-  background-color: #b80c12;
+  /* background-color: #b80c12; */
+  background-image: url(../../assets/images/Clear_Red.png);
   width: 830px;
 }
 
@@ -19,13 +20,15 @@
   text-align: right;
   position: relative;
   margin: auto;
+  left: -10px;
 }
 
 #menu-links a {
   padding-right: 0.5em;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  color: black;
   font-size: 20px;
   padding: 5px;
-  color: black;
   text-decoration: underline;
   cursor: pointer;
 }
