@@ -10,8 +10,12 @@ class MessageService {
   }
 
   //Gets all Message Data
-  obtainMessages(limit = 20) {
-    return this.client.get(`${this.url}/messages?limit=${limit}`);
+  obtainMessages() {
+    return this.client.get(`${this.url}/messages`);
+  }
+
+  obtainUserMessages(username) {
+    return this.client.get(`${this.url}/messages?username=${username}`);
   }
 }
 export default new MessageService();

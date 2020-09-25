@@ -9,7 +9,7 @@ class DeleteUserMessagesService {
     this.client = client;
   }
 
-  deleteUserMessage() {
+  deleteUserMessage(messageId) {
     let loginData = JSON.parse(localStorage.getItem("login"));
 
     return this.client.delete(this.url + "/messages/" + messageId, {
