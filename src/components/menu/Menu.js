@@ -8,7 +8,6 @@ class Menu extends React.Component {
     event.preventDefault();
     this.props.logout();
   };
-
   render() {
     return (
       <div className="Menu">

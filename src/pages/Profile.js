@@ -6,7 +6,6 @@ import InputFile from "../components/inputFileButton/InputFile";
 
 import DataService from "../DataService";
 import { Button, Avatar } from "antd";
-
 import { UserOutlined } from "@ant-design/icons";
 import UpdateUser from "../components/updateUser/UpdateUser";
 import { Redirect } from "react-router-dom";
@@ -41,7 +40,6 @@ class Profile extends React.Component {
       <div className="Profile">
         <Menu isAuthenticated={this.props.isAuthenticated} />
         <h2>Profile</h2>
-        <button onClick={this.handleDelete}>Delete Profile</button>
         <div>
           <Avatar
             size={264}
