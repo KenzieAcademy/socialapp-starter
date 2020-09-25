@@ -19,6 +19,7 @@ const MiniProfile = (props) => {
       <Card class="card" className="Miniprofile">
         <Card-Body class="card-body">
           <img
+            alt="profile"
             src={MiniProfileIMG}
             style={styles.paperContainer}
             class="btn btn-primary"

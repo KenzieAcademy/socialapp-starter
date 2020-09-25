@@ -35,7 +35,10 @@ class SocialappService {
   }
 
   updateUser(user, updateData) {
-    return this.client.patch(this.url + "users/" + user, updateData);
+    let loginData = JSON.parse(localStorage.getItem("login"));
+    return this.client.patch(this.url + "users/" + user, updateData, {
+      headers: { Authorization: `Bearer ${loginData.result.token}` },
+    });
   }
 
   addLike(messageID) {

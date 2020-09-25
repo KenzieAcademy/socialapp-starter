@@ -15,6 +15,7 @@ class LoginForm extends React.Component {
   handleLogin = (e) => {
     e.preventDefault();
     localStorage.setItem("user", this.state.username);
+    localStorage.setItem("password", this.state.password);
     this.props.login(this.state);
   };
 
