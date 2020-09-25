@@ -4,9 +4,53 @@ import DataService from "../../DataService";
 class CreateMessage extends React.Component {
   constructor(props) {
     super(props);
+    this.state ={isSubmitted: false, messageData:{text:""}}
+
+    this.client = new DataService()
   }
+
+  handleCreateMessage = (e) => {
+    e.preventDefault();
+    this.client.createMessage(this.state.messageData).then((response) => {
+      console.log(response);
+    });
+    this.setState({ isSubmitted: true });
+  };
+
+  handleChange = (e) => {
+    const messageData = { ...this.state.messageData };
+    messageData[e.target.name] = e.target.value;
+    this.setState({ messageData });
+  };
+
+  handleClear = (e) => {
+    this.setState({ isSubmitted: false, messageData: { text: "" } });
+  };
+
   render() {
-    return <button className="CreateMessage-button">Create Message</button>;
+    if (!this.state.isSubmitted) {
+      return (
+        <form id="CreateMessage-button" onSubmit={this.handleCreateMessage}>
+          <label htmlFor="text">Your Lucky Message</label>
+          <textarea
+            type="text"
+            name="text"
+            value={this.state.messageData.text}
+            onChange={this.handleChange}
+          />
+          <button type="sumbit" value="true">
+            Send Your Luck to the World
+          </button>
+        </form>
+      );
+    } else {
+      return (
+        <div>
+          Looks like shared your luck
+          <button onClick={this.handleClear}>Create Another Message</button>
+        </div>
+      );
+    }
   }
 }
 
