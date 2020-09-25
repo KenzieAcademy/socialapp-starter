@@ -1,7 +1,6 @@
 import React from "react";
 import LoginForm from "../components/loginForm/LoginForm";
 import RegistrationForm from "../components/registrationForm/RegistrationForm";
-import Menu from "../components/menu/Menu.js";
 import { userIsNotAuthenticated } from "../redux/HOCs";
 import Button from "react-bootstrap/Button";
 import "../pages/Home.css";

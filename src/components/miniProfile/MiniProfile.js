@@ -12,22 +12,24 @@ const styles = {
   },
 };
 
-class MiniProfile extends React.Component {
-  render() {
-    return (
-      <Card class="card" className="Miniprofile">
-        <Card-Body class="card-body">
-          <img
-            src={MiniProfileIMG}
-            style={styles.paperContainer}
-            class="btn btn-primary"
-          />
-          <p class="card-text">{this.props.username}</p>
-          <Card.Subtitle class="card-Subtitle">Mini-Profile</Card.Subtitle>
-        </Card-Body>
-      </Card>
-    );
-  }
-}
+const MiniProfile = (props) => {
+  let joined = new Date(props.user.createdAt);
+  return (
+    <Card className="Miniprofile">
+      <Card-Body className="card-body">
+        <img
+          alt="profile"
+          src={MiniProfileIMG}
+          style={styles.paperContainer}
+          className="btn btn-primary"
+        />
+        <Card.Subtitle className="card-Subtitle">
+          {props.user.displayName} <br></br>
+          Member Since: {joined.toUTCString()}
+        </Card.Subtitle>
+      </Card-Body>
+    </Card>
+  );
+};
 
 export default MiniProfile;

@@ -14,8 +14,20 @@ class SocialappService {
     return this.client.get(this.url + "users");
   }
 
+  getUser(user) {
+    return this.client.get(this.url + "users/" + user);
+  }
+
   getMessages() {
     return this.client.get(this.url + "messages");
+  }
+
+  getProfilePic(user) {
+    return this.client.get(this.url + "users/" + user + "/picture");
+  }
+
+  setProfilePic(user, picture) {
+    return this.client.put(this.url + "users/" + user + "/picture", picture);
   }
 
   postMessage(message) {
