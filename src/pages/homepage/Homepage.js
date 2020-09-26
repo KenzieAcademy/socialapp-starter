@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Menu from "../../components/menu/Menu";
+import { userIsAuthenticated } from "../../redux/HOCs";
 import "./Homepage.css";
 import { Button, } from 'semantic-ui-react'
 import { withAsyncAction } from "../../redux/HOCs";
@@ -17,7 +18,8 @@ class Homepage extends React.Component {
     render() {
         return (
             <div className="Home">
-                <Menu />
+                {/* <Menu /> */}
+                <Menu isAuthenticated={this.props.isAuthenticated} />
                 <h1>Welcome to World Music Coalition (WMC)!</h1>
                 <p>World Music Coalition WMC works with musicians, composers and industry stakeholders to identify
                 solutions to shared challenges. We promote strategies, policies, technologies
@@ -58,5 +60,5 @@ class Homepage extends React.Component {
 
 
 
-export default Homepage;
+export default userIsAuthenticated(Homepage);
 

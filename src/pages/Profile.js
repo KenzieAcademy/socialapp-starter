@@ -9,11 +9,6 @@ import { Link } from 'react-router-dom'
 import { userIsAuthenticated } from "../redux/HOCs";
 
 
-
-
-
-
-
 class Profile extends React.Component {
   constructor(props) {
 
@@ -29,21 +24,84 @@ class Profile extends React.Component {
         "createdAt": "",
         "updatedAt": ""
       },
-      "statusCode": ""
+      "statusCode": "",
+      picture: null
 
     }
 
   }
   componentDidMount() {
     this.client.getUser(this.props.match.params.username)
-      .then((userData) => { this.setState(userData) })
+      .then((userData) => {
+        this.setState({
+          user: userData.user,
+          statusCode: userData.statusCode,
+
+        })
+      })
   }
 
-  // handleUpdateUser = (event) => {
-  //   event.preventDefault()
+  handleSubmitPhoto = (event) => {
+    console.log("HI!!!")
+    event.preventDefault()
+    let formData = this.fileUpload(this.state.picture)
+    this.client.setUserPicture(this.state.user.username, formData).then(() => {
+      this.client.getUser(this.props.match.params.username).then((userData) => {
+        this.setState({
+          user: userData.user,
+          statusCode: userData.statusCode,
+          pictureLocation: userData.user.pictureLocation
 
-  //   console.log("HIII")
-  // }
+        })
+      })
+    })
+  }
+
+  //On file select (button Choose File)
+  onFileChange = (event) => {
+    let pictureFile;
+    console.log(event.target.files)
+    if (event.target.files !== undefined) {
+      pictureFile = event.target.files[0]
+    }
+    this.setState({
+      picture: pictureFile
+    })
+    this.fileUpload()
+  };
+
+
+  fileUpload(file) {
+
+    let formData = new FormData()
+    formData.append("picture", file)
+    console.log(formData);
+    return formData
+  }
+
+  pictureFile = () => {
+    if (this.state.user.pictureLocation !== null) {
+      return (
+        <div>
+          <img src={'https://socialapp-api.herokuapp.com' + this.state.user.pictureLocation}
+            height='200 px'
+            width='200 px'
+          />
+        </div>
+      )
+    } else {
+      return (
+        <div>
+          <img src='https://i0.wp.com/theregister.co.nz/wp-content/uploads/converted_files/tumb/images/longform/shutterstock_1059853814-scaled.jpg?resize=1200%2C800&ssl=1'
+            height='200 px'
+            width='200 px'
+          />
+        </div>
+      )
+
+    }
+  }
+
 
 
   render() {
@@ -55,26 +113,37 @@ class Profile extends React.Component {
 
 
         <Segment>
-          <img src='https://i0.wp.com/theregister.co.nz/wp-content/uploads/converted_files/tumb/images/longform/shutterstock_1059853814-scaled.jpg?resize=1200%2C800&ssl=1'
-            height='200 px'
-            width='200 px'
+
+          {this.pictureFile()}
+
+        </Segment>
+
+
+        <form onSubmit={this.handleSubmitPhoto}>
+
+          <input
+
+            name="picture"
+            type="file"
+            accept="image/png, image/jpeg, image/gif"
+            onChange={this.onFileChange}
           />
-        </Segment> 
-        
-        
-        
-        
-        
-        <Button color="orange" content ='Change Photo' primary />
-       
+          <button onClick={this.handleSubmitPhoto}>Save Change</button>
+        </form>
 
-        
-        
-        <Button >
 
-        <input type="file" accept="image/*" id="file-input" />
-         
-        </Button>
+
+        {/* <Button color="orange" content='Change Photo' primary /> */}
+
+
+
+
+        {/* <Button >
+
+          <input type="file" accept="image/*" id="file-input" /> 
+
+        </Button> */}
+        <hr/>
         <Link to={"/profile/updateprofile/" + this.props.match.params.username}>
           <Button content='Update My Info' primary />
         </Link>
@@ -84,6 +153,7 @@ class Profile extends React.Component {
         <p> About:  {this.state.user.about}</p>
         <p> Profile created:  {this.state.user.createdAt}</p>
         <p> Profile updated:  {this.state.user.updatedAt}</p>
+        <p> ImagePath:  {this.state.user.pictureLocation}</p>
 
       </div>
     );

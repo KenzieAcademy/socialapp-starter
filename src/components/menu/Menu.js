@@ -33,7 +33,7 @@ class Menu extends React.Component {
 
         <h1>W o r l d . M u s i c . C o a l i t i o n</h1>
         {/* // conditional renderin : if isIdentificated, then show the links  */}
-        {/* {this.props.isAuthenticated && ( */}
+        {this.props.isAuthenticated && (
           <div id="menu-links">
 
             <div>
@@ -72,7 +72,8 @@ class Menu extends React.Component {
             </div>
 
           </div>
-        )}
+
+         )} 
       </div>)
   }
 }
