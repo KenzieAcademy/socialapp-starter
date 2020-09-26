@@ -8,7 +8,11 @@
   border-radius: .5em;
 }
 
-.Menu h1 {font-family: 'Ranchers', cursive;
+.Menu h1 {
+  font-family: 'Ranchers', cursive;
+  background-color: none;
+  color: black
+
 }
 
 .logo, .Menu h1 {
