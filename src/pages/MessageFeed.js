@@ -1,8 +1,8 @@
 import React from 'react'
 import Menu from '../components/menu/Menu';
-import Message from '../components/message/Message';
 import GetMessages from '../components/getMessages/GetMessages';
 import DataService from '../dataService';
+import { userIsAuthenticated } from '../redux/HOCs';
 
 class MessageFeed extends React.Component {
     state = { messages: [] }
@@ -20,7 +20,7 @@ class MessageFeed extends React.Component {
             return (
                 <div className="MessageFeed">
                     <Menu />
-                    <GetMessages />
+                    {/* <GetMessages /> */}
                     <h1>Message Feed</h1>
                     <h3>Loading...</h3>
                 </div>
@@ -29,16 +29,12 @@ class MessageFeed extends React.Component {
         
         return (
             <div className="MessageFeed">
+                <Menu />
                 <h1>Message Feed</h1>
-                <ul>
-                    {this.state.messages.map(msg => (
-                    <Message key={msg.id} {...msg} />
-                    ))}
-                </ul>
-
+                <GetMessages />
             </div>
         )
     }
 }
 
-export default MessageFeed;
+export default userIsAuthenticated(MessageFeed);

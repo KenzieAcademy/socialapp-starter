@@ -1,0 +1,15 @@
+#message-list {
+list-style-type: none;
+
+}
+
+.Message {
+    border: orange 2px solid;
+    width: 500px;
+    margin: 15px auto;
+    padding: 2%;
+}
+
+span.spanlike {
+    float: right;
+}

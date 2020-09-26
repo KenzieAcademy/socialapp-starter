@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 class dataService {
-    constructor(url = 'https://socialapp-api.herokuapp.com', client = axios.create()){
+    constructor(url = 'https://socialapp-api.herokuapp.com', client = axios.create()) {
         this.url = url;
         this.client = client;
     }
@@ -20,15 +20,17 @@ class dataService {
 
     getMessages() {
         return this.client
-        .get(this.url + '/messages')
-        .then(response => {
-            return response.data.messages
-        })
+            .get(this.url + '/messages')
+            .then(response => {
+                return response.data.messages
+            })
     }
 
     postLike(userData3) {
-        return this.client.post(this.url + '/likes', {headers: { Authorization: "Bearer " + userData3.token}
-    })
+        console.log(userData3)
+        return this.client.post(this.url + '/likes', { messageId: userData3.messageId }, {
+            headers: { Authorization: "Bearer " + userData3.token }
+        })
     }
 }
 
