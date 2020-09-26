@@ -3,11 +3,9 @@ import Menu from "../components/menu/Menu"
 import api from "../services/BackendService"
 import Message from "../components/message/Message"
 import PostMessage from "../components/PostMessage"
-import PostMessageService from "../services/PostMessageService"
-// import { userIsAuthericated } from "../redux/HOCs"
 
 class MessageList extends React.Component {
-    state = { messages: [], text: "" }
+    state = { messages: [] }
 
     componentDidMount() {
         api.getAllMessages().then(response => {
@@ -17,7 +15,7 @@ class MessageList extends React.Component {
     }
     handleMessagePost = (event) => {
         event.preventDefault();
-        new PostMessageService().postMessage({ text: this.state.text }).then((result) => {
+        new PostMessage().postMessage({ text: this.state.text }).then((result) => {
             console.log(result.data);
         });
         console.log("Post Button Pressed")
