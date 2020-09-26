@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Menu from "../components/menu/Menu"
 import PostMessage from "../components/postMessage/PostMessage"
 import DeleteMessage from "../components/deleteMessage/DeleteMessage";
+import GetMessages from "../components/getMessages/GetMessages";
 
 
 class MyMessages extends React.Component {
@@ -15,6 +16,8 @@ class MyMessages extends React.Component {
                <PostMessage />
                 <br/>
                 <DeleteMessage />
+                <br/>
+                <GetMessages />
                 <br/>
                 <Link to="/profile/:username">Back to Profile</Link>
             </div>

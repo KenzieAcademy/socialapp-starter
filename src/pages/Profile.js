@@ -3,7 +3,7 @@ import Menu from "../components/menu/Menu";
 import { userIsAuthenticated } from "../redux/HOCs";
 import GetUsers  from "../components/getUsers/GetUsers";
 import DeleteUser from "../components/deleteUser/DeleteUser";
-import GetMessages from "../components/getMessages/GetMessages";
+// import GetMessages from "../components/getMessages/GetMessages";
 
 class Profile extends React.Component {
   
@@ -14,7 +14,7 @@ class Profile extends React.Component {
         <h2>Profile</h2>
         <GetUsers />
         <DeleteUser />
-        <GetMessages />
+        {/* <GetMessages /> */}
       </div>
     );
   }

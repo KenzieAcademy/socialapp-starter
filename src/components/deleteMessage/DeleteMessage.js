@@ -10,6 +10,7 @@ class DeleteMessage extends React.Component {
         this.state = {
             username: loginData.result.username,
             token: loginData.result.token,
+            messageId: this.props.id
         }
     }
 
