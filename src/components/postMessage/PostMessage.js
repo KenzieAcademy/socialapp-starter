@@ -66,7 +66,7 @@ class PostMessage extends React.Component {
                             onChange={this.handleChange}
                         /> */}
                     </div>
-                    <button type='submit'>Post message</button>
+                    <button type='submit'>Post</button>
                     {/* <div className="postBox">
                         <p>
                             {this.state.text}
