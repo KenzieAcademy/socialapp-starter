@@ -3,6 +3,7 @@ import noDisplayPhoto from "../../assests/nodisplayphoto.png";
 import DataService from "../../DataService";
 import { displayName } from "react-spinkit";
 import { Card } from "antd";
+import GetUserPhoto from "../getUserPhoto/GetUserPhoto";
 
 class UserCard extends React.Component {
   constructor(props) {
@@ -10,7 +11,7 @@ class UserCard extends React.Component {
     this.client = new DataService();
     this.state = {
       user: {
-        userName: "",
+        username: "",
         displayName: "",
         about: "",
       },
@@ -19,13 +20,11 @@ class UserCard extends React.Component {
   }
 
   componentDidMount() {
-    let about = {};
-    let loginData = JSON.parse(localStorage.getItem("login"));
-    this.client.getUser(loginData.result.username).then((res) => {
+    this.client.getUser(this.props.username).then((res) => {
       console.log(res.data.user);
       this.setState({
         user: {
-          userName: res.data.user.username,
+          username: res.data.user.username,
           displayName: res.data.user.displayName,
           about: res.data.user.about,
         },
@@ -37,11 +36,7 @@ class UserCard extends React.Component {
   render() {
     return (
       <div className="UserCard">
-        <br />
-        <h5>Photo</h5>
-        <img src="" atl="userPicture" />
-        <br />
-
+        <GetUserPhoto username={this.props.username} />
         <Card
           title="All About Me!"
           extra={<a href="/ProfileOptions">Edit</a>}
