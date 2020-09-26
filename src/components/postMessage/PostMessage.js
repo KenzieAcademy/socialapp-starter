@@ -4,6 +4,7 @@ import DataService from "../../dataService";
 import "./PostMessage.css"
 
 
+
 class PostMessage extends React.Component {
     constructor(props) {
         const loginData = JSON.parse(localStorage.getItem('login'))
@@ -31,6 +32,7 @@ class PostMessage extends React.Component {
 
                 })
             });
+           
     }
 
 

@@ -8,29 +8,17 @@ class DeleteMessage extends React.Component {
         super(props)
         this.client = new DataService()
         this.state = {
-            id: 0,
-            token: loginData.result.token
+            username: loginData.result.username,
+            token: loginData.result.token,
         }
     }
 
-    handleDeleteMessage = event  => {
+    handleDeleteMessage = event => {
         event.preventDefault()
-
-        alert('delete button pushed')
-        this.client.deleteMessage({
-            id: this.state.id,
-            token: this.state.token
-        })
-            .then(result => {
-                console.log(result.data.messages.messageID)
-                this.setState({
-                    id: result.data.messages.messageID
-
-                })
-            });
-
+        console.log(this.state.messageId);
+        alert('Do you really want to delete this post?')
+        this.client.deleteMessage({ messageId: this.props.id })
     }
-
 
     render() {
         return (
