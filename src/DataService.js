@@ -43,6 +43,7 @@ class DataService {
       }
     );
   }
+
   postMessage(message) {
     console.log("posting", message);
     let loginData = JSON.parse(localStorage.getItem("login"));
@@ -62,13 +63,6 @@ class DataService {
 
   getMessageList(limit = 20) {
     return this.client.get(`${this.url}/messages?limit=${limit}`);
-  }
-  deleteLike(likeId) {
-    let loginData = JSON.parse(localStorage.getItem("login")).result;
-    let token = loginData.token;
-    return this.client.delete(this.url + "/likes/" + likeId, {
-      headers: { Authorization: `Bearer ${token}` },
-    });
   }
 
   getMessage(messageId) {
@@ -99,6 +93,7 @@ class DataService {
         headers: { Authorization: `Bearer ${loginData.result.token} ` },
       })
       .then((response) => {
+        console.log(response);
         return response.data.like;
       });
   }
