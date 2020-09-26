@@ -1,5 +1,4 @@
 import React from "react";
-// import Menu from "../menu/Menu";
 import { Segment } from 'semantic-ui-react'
 import { Button } from 'semantic-ui-react'
 import Menu from "../components/menu/Menu";
@@ -131,7 +130,6 @@ class UpdateProfile extends React.Component {
         return (
             <div className="UpdateProfile">
 
-
                 <Menu isAuthenticated={this.props.isAuthenticated} />
                 <h2>Update My Profile</h2>
                 <h3> {this.state.user.username + "  |  @" + this.state.user.displayName}</h3>
@@ -145,10 +143,13 @@ class UpdateProfile extends React.Component {
 
                 {result_message}
 
-
-                <Link to={"/profile/" + this.props.match.params.username}>Go to My Profile</Link>
+                <br/>
+                <Button color="blue">
+                    <Link to={"/profile/" + this.props.match.params.username}>Go to My Profile</Link>
+                    </Button>
                 <br />
-                <Button onClick={this.handleDeleteProfile}><Link to="/">Delete Profile</Link></Button>
+                <br/>
+                <Button color="red" onClick={this.handleDeleteProfile}><Link to="/">Delete Profile</Link></Button>
 
             </div >
 
