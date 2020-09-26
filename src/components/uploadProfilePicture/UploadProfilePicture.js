@@ -14,10 +14,11 @@ class UploadProfilePicture extends React.Component {
   handleUpload = (event) => {
     event.preventDefault();
     console.log(this.state);
-    let file = { picture: this.state.picture.stream() };
-    console.log(file);
+    let newFile = new FormData();
+    newFile.append("picture", this.state.picture);
+
     return this.client
-      .changeProfilePic(this.state.picture.stream())
+      .changeProfilePic(newFile)
       .then((result) => console.log(result));
   };
 

@@ -24,11 +24,12 @@ class Profile extends React.Component {
   };
 
   componentDidMount() {
-    this.client.getUserPicture(this.state.username).then((result) =>
+    this.client.getUserPicture(this.state.username).then((result) => {
+      console.log(result);
       this.setState({
         userImg: result.config.url,
-      })
-    );
+      });
+    });
     return this.client.getUser(this.state.username).then((result) =>
       this.setState({
         user: result.data.user,
@@ -45,13 +46,19 @@ class Profile extends React.Component {
         </div>
       );
     }
+    let profileImg =
+      "https://cdn.pixabay.com/photo/2012/11/05/07/51/ice-crystal-64157_960_720.jpg";
+    if (this.state.userImg) {
+      profileImg = this.state.userImg;
+    }
+
     return (
       <div className="Profile">
         <Menu isAuthenticated={this.props.isAuthenticated} />
         <h2>Profile</h2>
         <div className="profilespace">
           <div>
-            <img src={this.state.userImg} alt="No Profile found :(" />
+            <img src={profileImg} alt="No Profile found :(" />
             <br />
             <Link to="/profilePictureUpdate">Change Profile Picture</Link>
           </div>

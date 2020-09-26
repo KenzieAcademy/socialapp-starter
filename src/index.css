@@ -16,3 +16,8 @@ code {
 .message-field {
   display: flex;
 }
+img {
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid slateblue;
+}
