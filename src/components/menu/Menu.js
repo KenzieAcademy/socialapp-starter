@@ -62,8 +62,6 @@ class Menu extends React.Component {
                   </Link>
                 </Button>
 
-
-
                 <Button color='red'><Link to="/userfeed/">World Music Members</Link></Button>
                 <Button color='violet' text="white">
                   <Link to="/Logout/" onClick={this.handleLogout}>
@@ -74,10 +72,9 @@ class Menu extends React.Component {
             </div>
 
           </div>
-
-        {/* )} */}
+        )}
       </div>)
   }
 }
-//export default ("auth", "logout")(Menu);
+// export default ("auth", "logout")(Menu);
 export default withAsyncAction("auth", "logout")(Menu);
