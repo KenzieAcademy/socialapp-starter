@@ -4,7 +4,6 @@ import Menu from "../components/menu/Menu";
 import { userIsNotAuthenticated } from "../redux/HOCs";
 import { Link } from "react-router-dom";
 
-
 class Home extends React.Component {
   render() {
     return (
@@ -12,8 +11,7 @@ class Home extends React.Component {
         <Menu />
         <h2>Your favorite travel microblogging platform</h2>
         <LoginForm />
-        <br />
-        <Link to="/RegistrationForm">New user? Register here</Link>
+        <Link to='/registration'>New user? Register Here</Link>
       </div>
     );
   }

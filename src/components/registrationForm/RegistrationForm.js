@@ -1,34 +1,37 @@
 import React from "react";
 import Spinner from "react-spinkit";
-// import { withRouter } from 'react-router-dom'
 import { withAsyncAction } from "../../redux/HOCs";
-import DataService from "../../dataService"
-
-
+import "./RegistrationForm.css";
+import DataService from '../../dataService';
 
 class RegistrationForm extends React.Component {
   constructor(props) {
     super(props)
-    this.client = new DataService()
     this.state = {
       username: "",
       password: "",
       displayName: ""
-    }
+    };
+    this.client = new DataService();
   }
 
   handleRegistration = e => {
     e.preventDefault();
     this.client.registerUser(this.state).then(result => {
       // this.props.history.push('/')
+      // alert(JSON.stringify(result.data))
       this.props.login(
         {
           "username": this.state.username,
           "password": this.state.password
         }
-      )
+        );
+    
     })
+    
   };
+
+
 
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
@@ -47,17 +50,17 @@ class RegistrationForm extends React.Component {
             required
             onChange={this.handleChange}
           />
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            name="password"
-            required
-            onChange={this.handleChange}
-          />
           <label htmlFor="displayName">Display Name</label>
           <input
             type="text"
             name="displayName"
+            required
+            onChange={this.handleChange}
+          />
+          <label htmlFor="password">Password</label>
+          <input
+            type="password"
+            name="password"
             required
             onChange={this.handleChange}
           />
@@ -72,5 +75,4 @@ class RegistrationForm extends React.Component {
   }
 }
 
-// export default withRouter(RegistrationForm);
 export default withAsyncAction("auth", "login")(RegistrationForm);

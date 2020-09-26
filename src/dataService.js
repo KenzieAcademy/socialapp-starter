@@ -12,6 +12,17 @@ class DataService {
         return this.client.post(this.url + '/users', userData)
     }
 
+    loginUser(userData) {
+        return this.client.post(this.url + '/auth/login', userData)
+    }
+
+    getUsers() {
+        return this.client.get(this.url + '/users')
+    }
+
+    getMessages() {
+        return this.client.get(this.url + '/messages')
+    }
 
     postMessage(messageData) {
         console.log(messageData.text);
@@ -30,5 +41,5 @@ class DataService {
 
 }
 
-
 export default DataService;
+

@@ -3,35 +3,23 @@ import { userIsAuthenticated } from "../redux/HOCs";
 import { Link } from "react-router-dom";
 import Menu from "../components/menu/Menu"
 import PostMessage from "../components/postMessage/PostMessage"
-import DeleteMessage from "../components/deleteMessage/DeleteMessage"
+import DeleteMessage from "../components/deleteMessage/DeleteMessage";
 
-import DataService from "../dataService"
 
-class MessageFeed extends React.Component {
-    state = { messages: [] }
-
-    componentDidMount() {
-        new DataService()
-            .getMessages()
-            .then(messages => {
-                this.setState({ messages })
-            })
-    }
+class MyMessages extends React.Component {
 
     render() {
-       
         return (
-            <div className='MessageFeed'>
+            <div className='MyMessages'>
                 <Menu isAuthenticated={this.props.isAuthenticated} />
-                <h1>Message Feed</h1>
-                <PostMessage />
+               <PostMessage />
+                <br/>
                 <DeleteMessage />
-                <br />
-
+                <br/>
                 <Link to="/profile/:username">Back to Profile</Link>
             </div>
         )
     }
 }
 
-export default userIsAuthenticated(MessageFeed)
+export default userIsAuthenticated(MyMessages)
