@@ -7,43 +7,39 @@ class Message extends React.Component {
     this.state = {
       likeCount: this.props.likes.length,
       likes: this.props.likes,
-      liked: false,
     };
+    this.client = new DataService();
   }
 
   handleLike = () => {
-    const dataService = new DataService();
+    //I merged the two handleLike methods into one. The previous set up was keeping track of if liked with a boolean value in state. This caused issues with being unable to like/unlike once you navigated away or refreshed.
     const username = JSON.parse(localStorage.getItem("login")).result.username;
-    if (this.state.likes.some((like) => like.username === username)) return;
+    //this should return the index our like is located. Seems more performant than the previsous filter/map version.
+    const likeIndex = this.state.likes.findIndex(
+      (like) => like.username === username
+    );
 
-    dataService.postLikes(this.props.id).then((like) => {
-      this.setState((latestState) => ({
-        likeCount: latestState.likeCount + 1,
-        likes: [...latestState.likes, like],
-        liked: true,
-      }));
-    });
-  };
-  handleUnlike = () => {
-    const dataService = new DataService();
-    const username = JSON.parse(localStorage.getItem("login")).result.username;
-    const likeId = this.state.likes
-      .filter((like) => like.username === username)
-      .map((filterLike) => filterLike.id);
-    console.log(likeId);
-    if (this.state.likes.some((like) => like.username === username));
-
-    dataService.deleteLike(likeId).then((like) => {
-      console.log(like);
-      this.setState((latestState) => ({
-        likeCount: latestState.likeCount - 1,
-        likes: [],
-        liked: false,
-      }));
-    });
+    if (this.state.likes.some((like) => like.username === username)) {
+      this.client.deleteLike(this.state.likes[likeIndex].id).then((result) => {
+        //Here in delete like we pass the likeIndex in the brackets and access the id of the like.
+        console.log(result);
+        this.setState((latestState) => ({
+          likeCount: latestState.likeCount - 1,
+          likes: [],
+        }));
+      });
+    } else {
+      this.client.postLikes(this.props.id).then((like) => {
+        this.setState((latestState) => ({
+          likeCount: latestState.likeCount + 1,
+          likes: [...latestState.likes, like],
+        }));
+      });
+    }
   };
 
   render() {
+    //Here we're just using conditional rendering to make sure this delete message button appears on our messages.
     let deleteMessageButton = null;
     let userName = JSON.parse(localStorage.getItem("login")).result;
     if (this.props.username === userName.username) {
@@ -58,22 +54,12 @@ class Message extends React.Component {
         {this.props.createdAt}, {this.props.username} posted: <br />
         {this.props.text}
         <div className="like-count">likes: {this.state.likeCount}</div>
-        <div>
-          {this.state.liked ? (
-            <button onClick={this.handleUnlike}>
-              <span role="img" aria-label="fire">
-                🦕
-              </span>
-            </button>
-          ) : (
-            <button onClick={this.handleLike}>
-              <span role="img" aria-label="fire">
-                🦕
-              </span>
-            </button>
-          )}
-          {deleteMessageButton}
-        </div>
+        <button onClick={this.handleLike}>
+          <span role="img" aria-label="fire">
+            🦕
+          </span>
+        </button>
+        {deleteMessageButton}
       </li>
     );
   }
