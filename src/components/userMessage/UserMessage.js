@@ -48,7 +48,6 @@ class UserMessage extends React.Component {
             })
     };
 
-
     componentDidUpdate() {
         this.client.getMessages()
     }
@@ -65,13 +64,10 @@ class UserMessage extends React.Component {
                         <strong>Create Message Here...</strong>
                         <br />
                         <br />
-
                         <textarea
                             className="textarea"
                             name="text"
                             placeholder='Start Typing Here...'
-
-                            //    value={this.state.message.textMessage}
                             onChange={this.handleChange} >
 
                         </textarea>

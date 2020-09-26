@@ -133,7 +133,7 @@ class UpdateProfile extends React.Component {
 
 
                 <Menu isAuthenticated={this.props.isAuthenticated} />
-                <h2>My Profile</h2>
+                <h2>Update My Profile</h2>
                 <h3> {this.state.user.username + "  |  @" + this.state.user.displayName}</h3>
 
                 <UpdateProfileForm

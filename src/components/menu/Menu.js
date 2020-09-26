@@ -62,8 +62,6 @@ class Menu extends React.Component {
                   </Link>
                 </Button>
 
-
-
                 <Button color='red'><Link to="/userfeed/">World Music Members</Link></Button>
                 <Button color='violet' text="white">
                   <Link to="/Logout/" onClick={this.handleLogout}>
