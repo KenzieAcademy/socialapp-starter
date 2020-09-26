@@ -14,12 +14,11 @@ class GetUserPhoto extends React.Component {
   }
   componentDidMount() {
     this.client.getUserPhoto(this.props.username).then((result) => {
-      console.log(result);
       this.setState({ imgSrc: result.config.url, hasImage: true });
     });
   }
   render() {
-    if (!this.hasImage) {
+    if (this.state.hasImage) {
       return (
         <div>
           <h2>photo</h2>
