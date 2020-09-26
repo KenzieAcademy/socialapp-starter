@@ -1,5 +1,62 @@
-#login-form {
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#login-form{
+  width: 500px;
+  height: 500px;
   display: flex;
   flex-direction: column;
-  max-width: 20em;
+  /* background-image:url("./9.jpg"); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  align-items: center;
+  padding:20px;
+  margin-bottom:10px;
+  font-family: 'Raleway', sans-serif;
+  color:#FFF;
+  height:100%;
+  width: 100%;
+  border-radius: 20px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-transform: uppercase;
 }
+#login-form label {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 5px;
+  color: #494cf0;
+  text-transform: uppercase;
+}
+#login-form input{
+  padding: 10px;
+  font-size: 15px;
+  width: 100%;
+  background: rgba(255,255,255,);
+  border: none;
+  border-bottom: 1px solid #333;
+  outline:none;
+  text-align: center;
+  border-radius: 5px;
+  color: black;
+}
+#login-form Button{
+ padding: 15px 30px;
+ width: 100%;
+ margin-top: 37px;
+ /* background:darkgoldenrod; */
+ color: #FFF;
+ border: none;
+ border-radius: 5px;
+ text-transform: uppercase;
+ font-size: 20px;
+ cursor: pointer;
+ transition: 0. 5s;
+ 
+}
+   #login-form Button :hover{
+     color: rgb(84, 82, 218);
+   }
+
+

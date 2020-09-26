@@ -9,14 +9,14 @@ const { Header, Footer, Sider, Content } = Layout;
 class TwitHeader extends React.Component {
   render() {
     return (
-      <Header style={{ padding: 20, backgroundColor: "dark" }}>
+      <Header style={{ padding: 13, backgroundColor: "dark" }}>
         <Title style={{ color: "lightblue" }} level={3}>
           <Avatar
             style={{ float: "right" }}
-            size={40}
-            src="https://image.similarpng.com/thumbnail/2020/06/Popular-Logo-Twitter-clipart-PNG.png"
+            size={48}
+            src="https://cdn.dribbble.com/users/1525393/screenshots/6484130/comp_1.gif"
           />
-          <h2 style={{ color: "lightblue" }}>Twitter</h2>
+          <h2 style={{ color: "lightblue", fontFamily: "Brush Script MT", fontSize: "45px" }}>Twitter</h2>
         </Title>
       </Header>
     );

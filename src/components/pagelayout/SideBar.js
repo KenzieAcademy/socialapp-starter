@@ -6,10 +6,16 @@ import { Layout, Avatar, Menu, Breadcrumb, Button, message } from "antd";
 import Title from "antd/lib/typography/Title";
 import { Link, Route } from "react-router-dom";
 import { SettingOutlined } from "@ant-design/icons";
+import { withAsyncAction } from "../../redux/HOCs";
+import "../menu/Menu.css";
 
 const { Header, Footer, Sider, Content } = Layout;
 
 class SideBar extends React.Component {
+  handleLogout = (event) => {
+    event.preventDefault();
+    this.props.logout();
+  };
   render() {
     return (
       // <Sider>
@@ -69,11 +75,20 @@ class SideBar extends React.Component {
                   <Link to="/editprofile">Edit Profile</Link>
                 </Route>
               </Menu.Item>
-              <Menu.Item key="location3"> Waiting... </Menu.Item>
-              <Button>
-                {" "}
-                <SettingOutlined /> Logout
-              </Button>
+              <Menu.Item id="menu-links">
+                <Link to="/" onClick={this.handleLogout}>
+                  <SettingOutlined /> Logout
+            </Link>
+              </Menu.Item>
+              <div className="Menu">
+                {this.props.isAuthenticated && (
+                  <div id="menu-links">
+                    <Link to="/" onClick={this.handleLogout}>
+                      Logout
+            </Link>
+                  </div>
+                )}
+              </div>
             </Menu.ItemGroup>
           </SubMenu>
         </Menu>
@@ -81,4 +96,4 @@ class SideBar extends React.Component {
     );
   }
 }
-export default SideBar;
+export default withAsyncAction("auth", "logout")(SideBar);
