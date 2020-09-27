@@ -1,8 +1,8 @@
 import React from "react";
-import Spinner from "react-spinkit";
+// import Spinner from "react-spinkit";
 // import { withAsyncAction } from "../../redux/HOCs";
 import "./RegisterForm.css";
-import { Button } from 'semantic-ui-react';
+import { Button, Form } from 'semantic-ui-react';
 import FetchService from "../../FetchService"
 
 class RegisterForm extends React.Component {
@@ -78,8 +78,9 @@ class RegisterForm extends React.Component {
         return (
             <div className="RegisterForm">
                 {/* //======================= */}
-                <form id="register-form">
-                    <label htmlFor="username">Username</label>
+                <Form>
+                    <Form.Field required>
+                    <label>Username</label>
                     <input
                         type="text"
                         name="username"
@@ -87,28 +88,35 @@ class RegisterForm extends React.Component {
                         required
                         onChange={this.handleChange}
                     />
+                    </Form.Field>
 
-                    <label htmlFor="displayname">Display Name</label>
+                    <Form.Field required>
+                    <label>Display Name</label>
                     <input
                         type="text"
                         name="displayName"
                         required
                         onChange={this.handleChange}
                     />
+                    </Form.Field>
 
-                    <label htmlFor="password">Password</label>
+                    <Form.Field required>           
+                    <label>Password</label>
                     <input
                         type="password"
                         name="password"
                         required
                         onChange={this.handleChange}
                     />
-                    <Button secondary type="submit" onClick={this.handleRegister}>
-                        Register
+                    </Form.Field>
+
+                    <br/>
+                    <Button color="teal"type="submit" onClick={this.handleRegister}>
+                        Click to Register
                     </Button >
-                </form>
+                </Form>
 
-
+                
                 {result_message}
 
             </div>

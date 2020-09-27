@@ -18,7 +18,7 @@ class NotFound extends React.Component {
         <br/>
 
         <div className="logo">
-          <img src={Globe404} width="325" height="300" />
+          <img src={Globe404} width="250" height="225" />
         </div>
         
         {/* <Button color='orange' ><Link to="/">I think you're lost.  Time to go home.</Link>

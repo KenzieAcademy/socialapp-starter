@@ -11,11 +11,12 @@
 .Menu h1 {
   font-family: 'Ranchers', cursive;
   background-color: none;
+  text-align: center;
   color: black
 
 }
 
-.logo, .Menu h1 {
+.logo, .Menu {
   text-align: center;
 }
 
