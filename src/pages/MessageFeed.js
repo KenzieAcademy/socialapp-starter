@@ -52,7 +52,7 @@ class MessageFeed extends React.Component {
     setTimeout(() => {
       this.retrieveMessages();
       document.body.click();
-    }, 1000);
+    }, 500);
   };
 
   render() {

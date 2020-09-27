@@ -7,13 +7,19 @@ import "../message/Message.css";
 import ProfilePic from "../../assets/images/Placeholder_Image.gif";
 import SocialappService from "../../socialappService";
 import Image from "react-bootstrap/Image";
-
+import { userIsAuthenticated } from "../../redux/HOCs";
 
 class Message extends React.Component {
   constructor(props) {
     super(props);
     this.api = new SocialappService();
-    this.state = { user: {}, date: "", userPic: ProfilePic };
+
+    this.state = {
+      user: {},
+      date: "",
+      userPic: ProfilePic,
+      likes: this.props.likes.length,
+    };
   }
 
   componentDidMount() {
@@ -27,18 +33,26 @@ class Message extends React.Component {
     //   .then((response) => this.setState({ userPic: response.data.message }));
   }
 
-  LikeFunction() {
-    return <img alt="like" src=""></img>; //Sometype of image thumbnail
-  }
+  LikeFunction = () => {
+    let messageID = { messageId: this.props.id };
+    this.api
+      .addLike(messageID)
+      .then(this.setState({ likes: this.state.likes + 1 }));
+  };
+
   render() {
     if (this.state.userPic === "User does not have a picture") {
-      this.setState({ userPic: MiniProfileIMG });
+      this.setState({ userPic: ProfilePic });
     }
     return (
       <div className="CardBody">
         <Card style={{ width: "575px" }}>
           <Card.Body className="Message">
-            <img className="ProfilePic" src={this.state.userPic} alt="Profile Pic" />
+            <Image
+              className="ProfilePic"
+              src={this.state.userPic}
+              alt="Profile Pic"
+            />
             <div className="ProfileLink">
               <Link to="/miniProfile">Check Out My Profile</Link>
             </div>
@@ -51,23 +65,17 @@ class Message extends React.Component {
               </Card.Subtitle>
             </div>
             <Card.Text className="MessageText">{this.props.text}</Card.Text>
-            <footer>
-              {" "}
-              <div className="LikesNumber">
-                <div className="Likes">Likes: {this.props.likes.length}</div>{" "}
-              </div>
-              <button className="LikeButton" onClick={this.LikeFunction}>
-                LIKE MY POST!
-              </button>{" "}
-              {/* <div className="LikeButton">
-                <input type="submit" value="" onClick={this.LikeFunction} />{" "}
-              </div> */}
-            </footer>
           </Card.Body>
+          <Card.Footer>
+            <Card.Text className="likes">Likes: {this.state.likes}</Card.Text>
+            <button className="LikeButton" onClick={this.LikeFunction}>
+              LIKE MY POST!
+            </button>
+          </Card.Footer>
         </Card>
       </div>
     );
   }
 }
 
-export default Message;
+export default userIsAuthenticated(Message);

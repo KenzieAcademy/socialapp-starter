@@ -12,24 +12,26 @@ const styles = {
 };
 
 const MiniProfile = (props) => {
-    return (
-      <div className="ProfileCard">
-        <Card class="card" className="Miniprofile">
-          <Card-Body class="card-body">
-            <img
-              src={MiniProfileIMG}
-              style={styles.paperContainer}
-              class="btn btn-primary"
-            />
-            <Card.Subtitle className="card-Subtitle">
-          {props.user.displayName} <br></br>
-          Member Since: {joined.toUTCString()}
-        </Card.Subtitle>
-          </Card-Body>
-        </Card>
-      </div>
-    );
-}
+  let joined = new Date(props.user.createdAt);
 
+  return (
+    <div className="ProfileCard">
+      <Card class="card" className="Miniprofile">
+        <Card-Body class="card-body">
+          <img
+            alt="profile"
+            src={MiniProfileIMG}
+            style={styles.paperContainer}
+            class="btn btn-primary"
+          />
+          <Card.Subtitle className="card-Subtitle">
+            {props.user.displayName} <br></br>
+            Member Since: {joined.toUTCString()}
+          </Card.Subtitle>
+        </Card-Body>
+      </Card>
+    </div>
+  );
+};
 
 export default MiniProfile;

@@ -22,12 +22,30 @@ class SocialappService {
     return this.client.get(this.url + "messages");
   }
 
+  getMessage(messageID) {
+    return this.client.get(this.url + "messages/" + messageID);
+  }
+
   getProfilePic(user) {
     return this.client.get(this.url + "users/" + user + "/picture");
   }
 
   setProfilePic(user, picture) {
     return this.client.put(this.url + "users/" + user + "/picture", picture);
+  }
+
+  updateUser(user, updateData) {
+    let loginData = JSON.parse(localStorage.getItem("login"));
+    return this.client.patch(this.url + "users/" + user, updateData, {
+      headers: { Authorization: `Bearer ${loginData.result.token}` },
+    });
+  }
+
+  addLike(messageID) {
+    let loginData = JSON.parse(localStorage.getItem("login"));
+    return this.client.post(this.url + "likes", messageID, {
+      headers: { Authorization: `Bearer ${loginData.result.token}` },
+    });
   }
 
   postMessage(message) {
