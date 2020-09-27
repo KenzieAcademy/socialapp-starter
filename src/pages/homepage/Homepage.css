@@ -1,0 +1,15 @@
+h1 {
+     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, Ranchers;
+    
+} 
+p {
+    color:rgba(0, 0, 0, 0.932);
+    font-size: larger;
+    font-language-override: initial;
+
+}
+
+li{
+    font-size: 12pt;
+
+}

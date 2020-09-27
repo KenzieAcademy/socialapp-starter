@@ -1,20 +1,26 @@
 .Menu {
-  background-color: lightskyblue;
-  display: flex;
-  justify-content: space-between;
+  background: linear-gradient(to bottom, white 55%, lightgray 100%);
+  display: flex-inline;
+  justify-content: center;
   align-items: center;
-  padding: 0 1em;
-  border-radius: 1em;
+  padding: 0 0em;
+  height: 210px;
+  border-radius: .5em;
 }
 
-#menu-links {
-  display: flex;
-  padding-left: 1em;
+.Menu h1 {
+  font-family: 'Ranchers', cursive;
+  background-color: none;
+  text-align: center;
+  color: black
+
 }
 
-#menu-links a {
-  padding-right: 0.5em;
-  color: darkblue;
-  text-decoration: underline;
-  cursor: pointer;
+.logo, .Menu {
+  text-align: center;
 }
+
+button a {
+  color: white
+}
+
