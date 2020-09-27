@@ -53,7 +53,7 @@ class Messages extends React.Component {
                 <h4>What do you want to share with the world {this.state.username}?</h4>
                 <form onSubmit={this.handleMessage}>
                     <div>
-                        <label htmlFor="text">Post a message </label>
+                        <label htmlFor="text">Post message </label>
                         <input
                             type="text"
                             name="text"
