@@ -61,13 +61,10 @@ class LoginForm extends React.Component {
           <Checkbox
           color="white"
           name="remember" valuePropName="checked"
-          > Remember Me 
+          > <span className="remember-me"></span>Remember Me 
           </Checkbox>  
-          
-          <a className="login-form-forgot" href="">
-          Forgot password
-        </a>
-          
+
+        
           <br />
 
           <Button
