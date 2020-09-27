@@ -27,6 +27,7 @@ class LoginForm extends React.Component {
     const { loading, error } = this.props;
     return (
       <div className="LoginForm">
+        <h2 style={{ textAlign: "center", fontFamily: "Brush Script MT", fontSize: "70px" }}>Your favorite microblogging platform</h2>
         <form id="login-form">
           <label htmlFor="username">Username</label>
 
@@ -59,4 +60,3 @@ class LoginForm extends React.Component {
 }
 
 export default withAsyncAction("auth", "login")(LoginForm);
-// this new update

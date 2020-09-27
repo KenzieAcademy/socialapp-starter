@@ -1,7 +1,9 @@
 import React from "react";
 import Spinner from "react-spinkit";
 import "./RegistrationForm.css";
+import "./LoginForm.css";
 import DataService from "../../dataService";
+import Button from "antd/lib/button";
 
 class RegistrationForm extends React.Component {
   constructor(props) {
@@ -52,9 +54,9 @@ class RegistrationForm extends React.Component {
             required
             onChange={this.handleChange}
           />
-          <button type="submit" disabled={loading}>
-            Register
-          </button>
+          <Button type="submit" disabled={loading}>
+            Sign Up
+          </Button>
         </form>
         {loading && <Spinner name="circle" color="blue" />}
         {error && <p style={{ color: "red" }}>{error.message}</p>}
