@@ -11,7 +11,7 @@
   /* bottom:140px; */
   /* display: flex;
   flex-direction: column; */
-  background-image:url("./12.gif");
+  background-image:url("./11.gif");
   background-repeat: no-repeat;
   background-size: cover;
   align-items: center;
@@ -29,7 +29,7 @@
   font-size: 20px;
   text-align: center;
   margin-bottom: 5px;
-  color: #494cf0;
+  color: #ffffff;
   text-transform: uppercase;
 }
 
@@ -78,7 +78,7 @@
      bottom: 310px;
     /* display: flex;
     flex-direction: column; */
-    background-image:url("./13.gif");
+    background-image:url("./11.gif");
     background-repeat: no-repeat;
     background-size: cover;
     align-items: center;
@@ -95,7 +95,7 @@
     font-size: 20px;
     text-align: center;
     margin-bottom: 5px;
-    color: #494cf0;
+    color: #ffffff;
     text-transform: uppercase;
   }
   #registration-form input{
