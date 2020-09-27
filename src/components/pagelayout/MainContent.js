@@ -26,7 +26,7 @@ class MainContent extends React.Component {
               MozBackgroundSize: "no-repeat",
               backgroundColor: "lightblue",
               backgroundImage:
-                "url(" + "https://i.pinimg.com/originals/81/16/88/811688d44a9906c2b1db6cde2304168b.gif" + ")",
+                "url(" + "https://i.pinimg.com/originals/81/16/88/811688d44a9906c2b1db6cde2304168b.gif" + ")", backgroundPosition: "center", backgroundSize: "cover", backgroundRepeat: 'no-repeat'
             }}
           >
             <Switch>

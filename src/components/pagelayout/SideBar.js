@@ -60,7 +60,7 @@ class SideBar extends React.Component {
             title={
               <span>
                 <Icon type="mail" />
-                <span>User</span>
+                <span>User Information</span>
               </span>
             }
           >
