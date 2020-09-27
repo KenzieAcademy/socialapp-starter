@@ -11,8 +11,7 @@ const styles = {
   },
 };
 
-class MiniProfile extends React.Component {
-  render() {
+const MiniProfile = (props) => {
     return (
       <div className="ProfileCard">
         <Card class="card" className="Miniprofile">
@@ -22,12 +21,15 @@ class MiniProfile extends React.Component {
               style={styles.paperContainer}
               class="btn btn-primary"
             />
-            <p class="card-text">{this.props.username}</p>
+            <Card.Subtitle className="card-Subtitle">
+          {props.user.displayName} <br></br>
+          Member Since: {joined.toUTCString()}
+        </Card.Subtitle>
           </Card-Body>
         </Card>
       </div>
     );
-  }
 }
+
 
 export default MiniProfile;
