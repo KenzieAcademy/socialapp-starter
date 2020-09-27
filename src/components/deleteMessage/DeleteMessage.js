@@ -10,15 +10,15 @@ class DeleteMessage extends React.Component {
         this.state = {
             username: loginData.result.username,
             token: loginData.result.token,
-            messageId: this.props.id
+            id: null
         }
     }
 
     handleDeleteMessage = event => {
         event.preventDefault()
-        console.log(this.state.messageId);
+        console.log(this.state.id);
         alert('Do you really want to delete this post?')
-        this.client.deleteMessage({ messageId: this.props.id })
+        this.client.deleteMessage({ id: this.state.id })
     }
 
     render() {
@@ -29,6 +29,5 @@ class DeleteMessage extends React.Component {
         )
     }
 }
-
 export default userIsAuthenticated(DeleteMessage)
 

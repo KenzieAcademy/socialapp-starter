@@ -31,7 +31,7 @@ class PostMessage extends React.Component {
                     text: result.data.messages
                 })
             });
-            this.setState({text: ""})
+        this.setState({ text: "" })
     }
 
 
@@ -48,8 +48,8 @@ class PostMessage extends React.Component {
                 <form onSubmit={this.handlePostMessage}>
                     <div>
                         <label htmlFor="text">Create message </label>
-                        <br/>
-                        <textarea 
+                        <br />
+                        <textarea
                             type="text"
                             name="text"
                             value={this.state.text}
@@ -59,20 +59,8 @@ class PostMessage extends React.Component {
                             cols="50"
                             onChange={this.handleChange}
                         />
-                        {/* <input
-                            type="text"
-                            name="text"
-                            placeholder="Write your post here"
-                            onChange={this.handleChange}
-                        /> */}
                     </div>
                     <button type='submit'>Post</button>
-                    {/* <div className="postBox">
-                        <p>
-                            {this.state.text}
-                        </p>
-
-                    </div> */}
                 </form>
             </div>
         )

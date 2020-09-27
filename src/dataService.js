@@ -20,9 +20,9 @@ class DataService {
         return this.client.get(this.url + '/users')
     }
 
-    getMessages() {
-        return this.client.get(this.url + '/messages')
-    }
+    // getMessages() {
+    //     return this.client.get(this.url + '/messages')
+    // }
 
     postMessage(messageData) {
         console.log(messageData.text);
@@ -33,12 +33,27 @@ class DataService {
     }
 
     deleteMessage(messageData2) {
-        console.log(messageData2);
-        return this.client.delete(this.url + '/messages' + messageData2.messageId, {
+        console.log(messageData2.id);
+        return this.client.delete(this.url + '/messages/' + messageData2.id, {
             headers: { Authorization: "Bearer " + messageData2.token }
         })
     }
 
+
+    // ------------------------below this line may be deleted
+
+
+    //  returns a promise for the messages array
+    getRecentMessages() {
+        return this.client
+        .get(this.url + "/messages?limit=20")
+        .then(response => {
+            return response.data.messages
+        })
+    }
+
+
+    // ------------------------above this line may be deleted
 }
 
 export default DataService;
