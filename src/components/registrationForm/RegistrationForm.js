@@ -3,6 +3,7 @@ import Spinner from "react-spinkit";
 
 import "./RegistrationForm.css";
 import Dataservice from "../../pages/dataService";
+import { Link } from "react-router-dom";
 
 class RegistrationForm extends React.Component {
   constructor(props) {
@@ -59,10 +60,11 @@ class RegistrationForm extends React.Component {
             required
             onChange={this.handleChange}
           />
-
-          <button type="submit" disabled={loading}>
-            Register
-          </button>
+          <Link to={`/`}>
+            <button type="submit" disabled={loading}>
+              Register
+            </button>
+          </Link>
         </form>
         {loading && <Spinner name="circle" color="red" />}
         {error && <p style={{ color: "red" }}>{error.message}</p>}
