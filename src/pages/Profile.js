@@ -1,7 +1,9 @@
 import React from "react";
-import { userIsAuthenticated } from "../redux/HOCs"
+import { userIsAuthenticated } from "../redux/HOCs";
 import DataService from "../services/DataService";
 import Menu from "../components/menu/Menu";
+import ProfileContent from "../components/profileContent/ProfileContent";
+import Button from "react-bootstrap/Button"
 import "./Profile.css";
 
 class Profile extends React.Component {
@@ -25,27 +27,16 @@ class Profile extends React.Component {
 
   render() {
     return (
-      <div className="Profile">
-        <Menu />
-        <h2>Profile Name</h2>
-        <img
-          src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1152887/beasley.png"
-          alt="Beasley the Bard"
-        />
-
-        <dl>
-          <dt>Bio</dt>
-          <dd></dd>
-          <br />
-          <dt>Location</dt>
-          <br />
-          <dd></dd>
-          <dt>Date Joined</dt>
-        </dl>
-        <button className="DeleteUser" onClick={this.handleDelete}>
-          {" "}
+      <div className="Body">
+        <div className="Profile">
+          <Menu userIsAuthenticated={this.props.isAuthenticated} />
+          <h2>My Profile</h2>
+          <ProfileContent />
+          <Button className="DeleteUser" onClick={this.handleDelete}>
+            {" "}
           Delete User
-        </button>
+        </Button>
+        </div>
       </div>
     );
   }

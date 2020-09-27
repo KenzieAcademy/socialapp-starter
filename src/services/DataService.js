@@ -5,8 +5,8 @@ class DataService {
         this.url = url;
         this.client = client;
     }
-    
-    
+
+
 
     registerUser(userData) {
         return this.client.post(this.url + "/users", userData);
@@ -19,7 +19,7 @@ class DataService {
             headers: { Authorization: `Bearer ${token}` },
         });
     }
-    
+
     postMessage(message) {
         let loginData = JSON.parse(localStorage.getItem("login"));
         return this.client.post(this.url + "/messages", message, {
