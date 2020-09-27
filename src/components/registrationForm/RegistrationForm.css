@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   max-width: 20em;
+  margin-left: 450px;
 }
 .Menu {
   background-image: url(theme.png);
@@ -11,4 +12,8 @@
 .Menu h1 {
   margin-left: 490px;
   font-size: 50px;
+}
+.regist {
+  margin-left: 100px;
+  background-color: rgb(149, 182, 241);
 }
