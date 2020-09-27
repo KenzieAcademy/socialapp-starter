@@ -6,6 +6,7 @@ class NotFound extends React.Component {
     return (
       <div className="NotFound">
         <p>Page not found for {this.props.location.pathname}</p>
+        <img className="Image" src="https://miro.medium.com/max/875/1*oTOmPQFJQSOHrYHWnxytgA.png" alt="Not Found" />
         <Link to="/">Go Home</Link>
       </div>
     );
@@ -13,3 +14,4 @@ class NotFound extends React.Component {
 }
 
 export default NotFound;
+
