@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Form } from 'semantic-ui-react';
+import { Button, Form, Icon } from 'semantic-ui-react';
 
 
 
@@ -11,7 +11,8 @@ function UpdateProfileForm(props) {
             <hr />
             <div height >
                 <Form.Field/>
-                <label><strong/>Display Name:<strong/></label>
+                <label>Display Name:</label>
+                <h8>  ...the name that will appeard in your profile</h8>
                 <input
                     type="text"
                     name="displayName"
@@ -19,15 +20,16 @@ function UpdateProfileForm(props) {
                     value={props.formData.displayName}
                     onChange={props.handleChange}
                 />
+                 {/* <h5> Display Name is the name that will appeard in your profile</h5> */}
                 <Form.Field />
-                <br/>
-                <h5> Display Name is the name that will appeard in your profile</h5>
+               
             </div>
             <hr />
+            <br/>
             <div>
                 <Form.Field/>
                 <label>About: </label>
-                <input
+                <input 
                     type="text"
                     height='200 px'
                     width='200 px'
@@ -37,8 +39,8 @@ function UpdateProfileForm(props) {
                 />
                 <Form.Field/>
             </div>
-            <br/>
             <hr />
+            <br/>
             <Button color="green" type="submit" onClick={props.handleUpdateProfile}> Update my Profile </Button>
 
         </Form>

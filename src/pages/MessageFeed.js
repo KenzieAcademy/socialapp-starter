@@ -131,11 +131,13 @@ class MessageFeed extends React.Component {
 
     render() {
         return (
-
+        
             <div className="MessageFeed">
                 <Menu isAuthenticated={this.props.isAuthenticated} />
 
                 <div className="message_field_format">
+                    <br/>
+                <br/>
                     <div className="auto_scroll">
                         <MessageList messages={this.state.messages} handleLike={this.handleLike}
                             handleRemoveLike={this.handleRemoveLike} />
@@ -146,7 +148,7 @@ class MessageFeed extends React.Component {
                         <form id="user_message">
 
                             <label htmlFor="textarea">
-                                <strong>Create a Messege:</strong>
+                                <strong> Create a Messege:</strong>
                                 <br></br>
 
                                 <textarea

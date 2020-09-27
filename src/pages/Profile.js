@@ -2,6 +2,7 @@ import React from "react";
 //import React, { Component } from 'react'
 import Menu from "../components/menu/Menu";
 import FetchService from "../FetchService";
+// import Noimage from "../components/images/Noimage"
 
 import { Segment } from 'semantic-ui-react'
 import { Button } from 'semantic-ui-react'
@@ -42,7 +43,6 @@ class Profile extends React.Component {
   }
 
   handleSubmitPhoto = (event) => {
-    console.log("HI!!!")
     event.preventDefault()
     let formData = this.fileUpload(this.state.picture)
     this.client.setUserPicture(this.state.user.username, formData).then(() => {
@@ -92,7 +92,7 @@ class Profile extends React.Component {
     } else {
       return (
         <div>
-          <img src='https://i0.wp.com/theregister.co.nz/wp-content/uploads/converted_files/tumb/images/longform/shutterstock_1059853814-scaled.jpg?resize=1200%2C800&ssl=1'
+          <img src={'../components/images/Noimage.png'}
             height='200 px'
             width='200 px'
           />
@@ -108,7 +108,7 @@ class Profile extends React.Component {
     return (
       <div className="Profile">
         <Menu isAuthenticated={this.props.isAuthenticated} />
-        <h2>My Profile</h2>
+        <h2>My Current Profile</h2>
         <h3> {this.state.user.username + "  |  @" + this.state.user.displayName}</h3>
 
 
