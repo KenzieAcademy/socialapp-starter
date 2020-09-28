@@ -1,7 +1,7 @@
 import React from "react";
 import DataService from '../../dataService';
-
 import Message from "../message/Message"
+
 
 
 class GetMessages extends React.Component {
@@ -9,8 +9,6 @@ class GetMessages extends React.Component {
   state = {
     messages: [],
   }
-
-
 
   componentDidMount() {
     new DataService()
@@ -53,20 +51,13 @@ class GetMessages extends React.Component {
       <div className="MessageFeed">
         <h2>Message Feed</h2>
         <ul>
+          {this.state.messages.map(msg => <Message key={msg.id} {...msg} />)}
+         
           {/* <Message {...this.state.messages[0]} /> */}
-          {this.state.messages.map(msg => <Message key={msg.id} {...msg} /> )}
           {/* <li>{this.state.messages[0].text}</li> */}
         </ul>
       </div>
     )
-
-
-
-
-
-
-
-
 
     // const { loading, error } = this.props;
     // return (

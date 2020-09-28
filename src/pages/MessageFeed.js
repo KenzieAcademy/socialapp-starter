@@ -3,7 +3,7 @@ import { userIsAuthenticated } from "../redux/HOCs";
 import { Link } from "react-router-dom";
 import Menu from "../components/menu/Menu"
 import PostMessage from "../components/postMessage/PostMessage"
-import DeleteMessage from "../components/deleteMessage/DeleteMessage";
+// import DeleteMessage from "../components/deleteMessage/DeleteMessage";
 import GetMessages from "../components/getMessages/GetMessages";
 
 
@@ -15,7 +15,7 @@ class MyMessages extends React.Component {
                 <Menu isAuthenticated={this.props.isAuthenticated} />
                <PostMessage />
                 <br/>
-                <DeleteMessage />
+                {/* <DeleteMessage /> */}
                 <br/>
                 <GetMessages />
                 <br/>

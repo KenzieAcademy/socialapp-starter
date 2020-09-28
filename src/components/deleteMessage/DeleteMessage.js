@@ -10,21 +10,25 @@ class DeleteMessage extends React.Component {
         this.state = {
             username: loginData.result.username,
             token: loginData.result.token,
-            id: null
+            data: []
         }
     }
 
     handleDeleteMessage = event => {
         event.preventDefault()
-        console.log(this.state.id);
+
         alert('Do you really want to delete this post?')
-        this.client.deleteMessage({ id: this.state.id })
+        console.log(this.props.id)
+        this.client.deleteMessage({ messageID: this.props.id, token: this.state.token })
+
+
+
     }
 
     render() {
         return (
             <div className='DeleteMessage'>
-                <button type='submit' onClick={this.handleDeleteMessage} >Delete message</button>
+                <button type='submit' onClick={this.handleDeleteMessage} >Delete 🗑️</button>
             </div>
         )
     }

@@ -32,6 +32,7 @@ class PostMessage extends React.Component {
                 })
             });
         this.setState({ text: "" })
+        
     }
 
 
