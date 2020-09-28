@@ -12,11 +12,13 @@ class UpdateUserPic extends Component {
         const file = e.target.files
         formData.append("picture",file[0])
         this.client.changePic(formData)
+        window.location.reload()
     }
     
     render() {
         return (
             <div>
+                <div>Update Profile Image</div>
                 <input type="file" name="Profile Picture" onChange={this.onChange} />
             </div>
         )

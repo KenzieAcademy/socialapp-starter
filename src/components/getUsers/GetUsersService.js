@@ -7,7 +7,11 @@ class GetUsersService {
     }
     
     getUsers(){
-        return this.client.get(this.url);
+        return this.client.get(this.url + "?limit=1000");
+    }
+
+    getUser(username){
+        return this.client.get(this.url + "/" + username);
     }
 };
 
