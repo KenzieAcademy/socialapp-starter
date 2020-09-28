@@ -1,0 +1,8 @@
+.Message {
+    border: 1px solid black;
+    border-radius: 4px;
+    width: 500px;
+    list-style-type: none;
+    padding-left: 10px;
+    padding-bottom: 5px;
+}
