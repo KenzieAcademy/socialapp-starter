@@ -53,10 +53,6 @@ class GetUsers extends Component {
                 profileUserName.innerText = "Username: " + user.username
                 profile.append(profileUserName)
                 
-                const profileEmail = document.createElement("h3")
-                profileEmail.innerText = "Email: " + user.email
-                profile.append(profileEmail)
-                
                 const profileAbout = document.createElement("p")
                 profileAbout.innerText = "About me: " + user.about
                 profile.append(profileAbout)
@@ -95,9 +91,14 @@ class GetUsers extends Component {
         }
         else if(!this.state.all && currentUser === user) {
             return (
-                <div id="user-profile">
-                    <img id="profile-pic" src="https://i.postimg.cc/6QgJNjX8/default.png" alt="profile.img" />
-                    <UpdateUserPic />
+                <div>
+                    <div id="user-profile">
+                        <img id="profile-pic" src="https://i.postimg.cc/6QgJNjX8/default.png" alt="profile.img" />
+                        <UpdateUserPic />
+                    </div>
+                    <div id="user-update">
+                        <a href="http://localhost:3000/update">Update Profile Info</a>
+                    </div>
                 </div>
             )
         }

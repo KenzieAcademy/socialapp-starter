@@ -11,6 +11,7 @@ class PostMessage extends Component {
     }
 
     handleSubmit = e => {
+        e.preventDefault()
         this.client.postMessage(this.state)
     }
 
