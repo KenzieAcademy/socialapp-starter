@@ -1,7 +1,9 @@
 import React from "react";
 import Spinner from "react-spinkit";
+import { Button, Input } from "antd"
+
 import { withAsyncAction } from "../../redux/HOCs";
-import "./registrationForm.css";
+import "./RegistrationForm.css";
 import DataService from '../../dataService';
 
 class RegistrationForm extends React.Component {
@@ -18,16 +20,15 @@ class RegistrationForm extends React.Component {
   handleRegistration = e => {
     e.preventDefault();
     this.client.registerUser(this.state).then(result => {
-      // alert(JSON.stringify(result.data))
       this.props.login(
         {
           "username": this.state.username,
           "password": this.state.password
         }
-        );
-    
+      );
+
     })
-    
+
   };
 
 
@@ -41,34 +42,32 @@ class RegistrationForm extends React.Component {
     return (
       <div className="RegistrationForm">
         <form id="registration-form" onSubmit={this.handleRegistration}>
-          <label htmlFor="username"> Username: </label>
-          <input
-            type="text"
+
+          <Input
+            addonBefore="Username"
             name="username"
             autoFocus
             required
             onChange={this.handleChange}
           />
-          <br />
-          <label htmlFor="displayName"> Display Name: </label>
-          <input
-            type="text"
+
+          <Input
+            addonBefore="Display Name"
             name="displayName"
             required
             onChange={this.handleChange}
           />
-          <br />
-          <label htmlFor="password"> Password: </label>
-          <input
-            type="password"
+
+          <Input.Password
+            addonBefore="Password"
             name="password"
             required
             onChange={this.handleChange}
           />
-          <br />
-          <button type="submit" disabled={loading}>
+
+          <Button type="primary" htmlType="submit">
             Submit
-          </button>
+          </Button>
         </form>
         {loading && <Spinner name="circle" color="blue" />}
         {error && <p style={{ color: "red" }}>{error.message}</p>}
