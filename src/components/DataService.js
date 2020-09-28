@@ -46,10 +46,20 @@ class DataService {
         })
 
     }
-    getMessage() {
-        return this.client.get(this.url + '/messages')
+    getMessages() {
+        return this.client.get(this.url + '/messages?limit=20').then(response => { return response.data.messages})
+        
 
     }
+
+
+
+    //likes
+    likeMessage() {
+        return this.client.post(this.url + '/messages').then (response => { console.log(response)})
+
+    }
+
 
 
 
