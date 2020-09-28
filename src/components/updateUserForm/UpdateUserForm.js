@@ -42,6 +42,7 @@ class UpdateUserForm extends React.Component {
     return (
       <div className="UpdateUserForm">
         <h1>Update Profile</h1>
+        <h3>All fields are optional</h3>
         <form id="updateUser-form" onSubmit={this.handleUpdateUser}>
           <label htmlFor="password">Password </label>
           <input
