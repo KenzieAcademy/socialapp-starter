@@ -1,5 +1,6 @@
 import React , { Component } from 'react'
 import GetUsersService from './GetUsersService'
+import UpdateUserPic from '../UpdateUser/UpdateUserPic'
 
 class GetUsers extends Component {
     constructor(props) {
@@ -33,15 +34,10 @@ class GetUsers extends Component {
         const userList = this.state.users
         for (let i = 0; i < userList.length; i++) {
             if (this.state.userName === userList[i].username) {
-                const profileImg = document.createElement("img")
-                if (userList[i].pictureLocation === null) {
-                    profileImg.src = "https://i.postimg.cc/6QgJNjX8/default.png"
-                }
-                else {
+                const profileImg = document.getElementById("profile-pic")
+                if (userList[i].pictureLocation != null) {
                     profileImg.src = "https://socialapp-api.herokuapp.com/users/" + userList[i].username + "/picture"
                 }
-                profileImg.alt = "image not found"
-                profile.append(profileImg)
 
                 const profileName = document.createElement("h2")
                 profileName.innerText = userList[i].displayName
@@ -92,6 +88,8 @@ class GetUsers extends Component {
         else {
             return (
                 <div id="user-profile">
+                    <img id="profile-pic" src="https://i.postimg.cc/6QgJNjX8/default.png" alt="profile.img" />
+                    <UpdateUserPic />
                 </div>
             )
         }
