@@ -8,7 +8,6 @@ import Feed from '../components/feed/Feed'
 import UploadPicture from '../components/uploadPicture/UploadPicture'
 
 
-
 class Profile extends React.Component {
   render() {
     return (
