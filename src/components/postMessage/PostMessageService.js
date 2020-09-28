@@ -1,5 +1,4 @@
 import { jsonHeaders, handleJsonResponse } from "../../redux/actionCreators/constants";
-import { store } from "../../redux/configureStore"
 import axios from "axios"
 
 class PostMessageService {
@@ -7,10 +6,6 @@ class PostMessageService {
         this.url = url + "messages";
         this.client = client;
     }
-
-    // getToken() {
-    //     const token = store.
-    // }
 
     postMessage(messageBody) {
         const loginData = JSON.parse(localStorage.getItem("login"));
