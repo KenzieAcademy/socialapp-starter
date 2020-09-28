@@ -17,9 +17,9 @@ class DataService {
 
     }
     updateUser(userData, userName) {
-        return this.client.patch(this.url + `${"/users/"}${userName}` ,userData, {
+        return this.client.patch(this.url + `${"/users/"}${userName}`, userData, {
             headers: {
-                
+
                 Authorization: "Bearer " + this.token.result.token
             }
         })
@@ -28,7 +28,7 @@ class DataService {
     deleteUser(userName) {
         return this.client.delete(this.url + '/users/' + userName, {
             headers: {
-                
+
                 Authorization: "Bearer " + this.token.result.token
             }
         })
@@ -40,7 +40,7 @@ class DataService {
     createMessage(message) {
         return this.client.post(this.url + '/messages', message, {
             headers: {
-                
+
                 Authorization: "Bearer " + this.token.result.token
             }
         })
@@ -50,24 +50,25 @@ class DataService {
         return this.client.get(this.url + '/messages')
 
     }
-    getMessageFeed(messages){
+    getMessageFeed(messages) {
         return this.client.get(this.url + "messages", messages)
     }
-    postMessage(messages){
+    postMessage(messages) {
         return this.client.post(this.url + "messages", messages)
     }
-    deletMessage(messages){
+    deletMessage(messages) {
         return this.client.delete(this.url + "messages/{messageID}", messages)
     }
-    getPicther(){
-
+    getPicther(picther) {
+        return this.client.get(this.url + "/users/{username}/picture", picther)
     }
-    putPitcher(){
-
+    putPitcher(pictherData) {
+        return this.client.put(this.url + "/users/{username}/picture", pictherData, {
+            headers: {
+                Authorization: "Bearer" + this.token.result.token
+            }
+        })
     }
-
-
-
 
 
 
