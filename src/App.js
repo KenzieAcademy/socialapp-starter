@@ -2,7 +2,9 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 import { Grommet } from 'grommet'
 
+
 import DeleteUser from "./components/deleteUser/DeleteUser";
+
 import Home from "./pages/Home";
 import LoginPage from "./pages/LoginPage";
 import Profile from "./pages/Profile";
@@ -50,6 +52,7 @@ class App extends React.Component {
           path="*"
           component={NotFound}
         />
+
         
       </Switch>
       </Grommet>
