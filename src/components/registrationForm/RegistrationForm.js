@@ -67,6 +67,11 @@ class RegistrationForm extends React.Component {
               Register
             </button>
           </Link>
+          <Link to={`/`}>
+            <a className="homepage" type="submit" disabled={loading}>
+              Go Back Home
+            </a>
+          </Link>
         </form>
         {loading && <Spinner name="circle" color="red" />}
         {error && <p style={{ color: "red" }}>{error.message}</p>}
