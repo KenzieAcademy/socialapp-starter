@@ -11,7 +11,7 @@ constructor(props){
   super(props)
 
   this.state = {
-    messageContent:{text:""},
+    text:""
     
       
     
@@ -37,8 +37,8 @@ handleSubmit = (event) => {
  
 
 
- this.client.createMessage(this.state.messageContent ).then(result =>{
-  console.log(JSON.stringify(result.data))
+ this.client.createMessage(this.state ).then(result =>{
+  console.log(result.data)
 })
 };
 
@@ -71,7 +71,7 @@ handleSubmit = (event) => {
             placeholer='Enter Message'
             style={{minHeight: 200, minWidth: 400}}
             type="text"
-            name="messageContent"
+            name="text"
             required
             onChange={this.handleChange}
           />
