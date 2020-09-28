@@ -1,5 +1,7 @@
 import axios from 'axios';
-import {store} from "../../redux" ;
+import { Result } from 'antd';
+import { store } from "../redux"
+
 class QuestboardService {
     constructor(
         url = 'https://socialapp-api.herokuapp.com', client = axios.create()){
@@ -10,14 +12,17 @@ class QuestboardService {
         //     headers: { Authorization: `Bearer ${loginData.result.token}` }
         // });
     }
-    
-    getUsername(){
+
+    getUsername (){
         const loginData = JSON.parse(localStorage.getItem("login"))
-        const {username} = loginData.result
+        const { username } = loginData.result
+
         return username
     }
-    getToken(){
-        const {token} = store.getState().auth.login.result
+
+    getToken (){
+        const { token } = store.getState().auth.login.result
+
         return token
     }
 
@@ -44,7 +49,7 @@ class QuestboardService {
         return this.client.delete(this.url + "/users/{username}");
     }
     GetPicture() {
-        return this.client.get(this.url + "/users/{username}/picture");
+        return this.client.get(this.url + "/users/" + this.getUsername() + "/picture");
     }
     SetPicture(imageUrl) {
         const RequestPicture = {imageUrl}
