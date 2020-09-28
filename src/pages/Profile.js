@@ -59,6 +59,7 @@ class Profile extends React.Component {
       <div className="container">
         <Menu isAuthenticated={this.props.isAuthenticated} />
 
+
          <Header 
         className="mainHeader" 
         style={{ padding: 0, textAlign: 'center'}}> 
@@ -66,6 +67,37 @@ class Profile extends React.Component {
         src={theQuestBoardHeader} 
         alt="QuestBoard Header" /> 
         </Header> 
+=======
+        
+        
+        <Layout>
+    <MenuUnauthenticated />
+    <Layout className="site-layout" style={{ marginLeft: 190 }}>
+      <Header className="mainHeader" style={{ padding: 0, textAlign: 'center'}}> <img className="theQuestBoardHeader" src={theQuestBoardHeader} alt="QuestBoard Header" /> </Header>
+      <Header className="subHeader" ><h2>Quests will appear here!</h2> </Header>
+      <Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>
+        <div className="site-layout-background" style={{ padding: 24, textAlign: 'center' }}>
+
+        <div className="Profile">
+      <Menu isAuthenticated={this.props.isAuthenticated} />
+    <h2>Welcome, {this.username}</h2>
+        <hr/>
+      <Upload
+         name="avatar" 
+         listType="picture-card" 
+         className="avatar-uploader" 
+         accept=".png" >
+{imageUrl ? <img src={imageUrl} alt="avatar" style={{ width: '100%' }} /> : uploadButton }
+           {/* <Button Icon type="Upload">Upload Profile picture here!</Button> */}
+           </Upload>
+
+        
+        </div>
+      </Content>
+      <Footer className="footer" style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
+    </Layout>
+  </Layout>
+
        
       
         
