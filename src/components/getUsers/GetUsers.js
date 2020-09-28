@@ -1,13 +1,11 @@
 import React , { Component } from 'react'
-import GetUserService from './GetUserService'
 import GetUsersService from './GetUsersService'
 import UpdateUserPic from '../UpdateUser/UpdateUserPic'
 
 class GetUsers extends Component {
     constructor(props) {
         super(props)
-        this.client1 = new GetUserService()
-        this.client2 = new GetUsersService()
+        this.client = new GetUsersService()
         this.state = {
             user: {},
             users: [],
@@ -19,7 +17,7 @@ class GetUsers extends Component {
 
     componentDidMount() {
         if(!this.state.all) {
-            return this.client1.getUser(this.state.userName).then(result => {
+            return this.client.getUser(this.state.userName).then(result => {
                 this.setState({
                     user: result.data.user,
                     mounted: true
@@ -28,7 +26,7 @@ class GetUsers extends Component {
             })
         }
         else {
-            return this.client2.getUsers().then(result => {
+            return this.client.getUsers().then(result => {
                 this.setState({
                     users: result.data.users,
                     mounted: true
