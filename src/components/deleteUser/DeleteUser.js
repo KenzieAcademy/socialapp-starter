@@ -2,9 +2,9 @@ import React from "react";
 import Spinner from "react-spinkit";
 import "./DeletionForm.css";
 import DataService from "../../DataService";
-import { DatePicker } from 'antd';
-import { Button } from 'antd';
-import Warning-Sign.png from "../assets";
+//import { DatePicker } from 'antd';
+//import { Button } from 'antd';
+import WarningSign from "../assets/images/Warning-Sign.png";
 //ReactDOM.render(<DatePicker />, mountNode);
 //import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
 //import DeletionForm from "../deleteUser/DeletionForm"
@@ -39,7 +39,7 @@ class DeleteUser extends React.Component {
                     <button type="primary" danger>
                         DELETE your Profile?
                     </button>
-                    <img className="Warning-Sign" src={Warning - Sign} alt="Warning-Sign" />
+                    <img className="WarningSign" src={WarningSign} alt="WarningSign" />
                 </form>
                 {loading && <Spinner name="circle" color="blue" />}
                 {error && <p style={{ color: "red" }}>{error.message}</p>}

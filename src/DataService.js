@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { store } from "../../redux"
+import { store } from "./redux"
 
 class DataService {
     constructor(url = 'http://socialapp-api.herokuapp.com', client = axios.create()) {
@@ -7,6 +7,11 @@ class DataService {
         this.client = client;
     }
 
+
+    getUsername() {
+        const { username } = store.getState().auth.login.result
+        return username
+    }
     registerUser(userData) {
         return this.client.post(this.url + "/users", userData);
     }
@@ -23,6 +28,12 @@ class DataService {
         )
     }
 
+
+    getUser() {
+        const loginData = JSON.parse(localStorage.getItem('login')).result
+        const username = loginData.username
+        return this.client.get(this.url + "/users/" + username)
+    }
     deleteUser() {
         console.log("attempting to delete user")
         const loginData = JSON.parse(localStorage.getItem('login')).result
@@ -62,46 +73,21 @@ class DataService {
         )
     }
 
-    likePost(messageID) {
-        // Insert API call here
-        // ...
-        getUsername(){
-            const { username, token } = store.getState().auth.login.result
-            return username, token
-            postLike(messageId){
-                const requestBody = { messageId }
-                const config = {
-                    headers: { Authorization: 'Bearer ${this.getToken()' }
-                }
+    likePost(messageId) {
+        const requestBody = { messageId }
+        const loginData = JSON.parse(localStorage.getItem('login')).result
+        let token = loginData.token
+        let url = this.url + "/likes"
+        return this.client.post(url, requestBody,
+            {
+                headers: { Authorization: `Bearer ${token}` }
             }
-            return
-            this.client.post(this.baseURL + "/likes", requestBody, config)
-                .then(response => response.data.like)
-            likePost(messageId) {
-                const requestBody = { messageId }
-                const loginData = JSON.parse(localStorage.getItem('login')).result
-                let token = loginData.token
-                let url = this.url + "/likes"
-                return this.client.post(url, requestBody,
-                    {
-                        headers: { Authorization: `Bearer ${token}` }
-                    }
-                )
-            }
-
-
-        }
-
-        setUserPicture(userPicture) {
-            // Insert API call here
-        }
-
-        getUser() {
-            const loginData = JSON.parse(localStorage.getItem('login')).result
-            const username = loginData.username
-            return this.client.get(this.url + "/users/" + username)
-        }
-
+        )
     }
 
-    export default DataService
+
+
+}
+
+
+export default DataService
