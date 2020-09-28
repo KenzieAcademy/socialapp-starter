@@ -3,6 +3,7 @@ import QuestboardService from "../../pages/ServicePage"
 import axios from "axios"
 import {jsonHeaders, domain, handleJsonResponse} from "../../redux/actionCreators/constants/index"
 import "./TextInput.css"
+import { Button , Input} from 'antd';
 
 let url = domain + '/messages';
 const loginData = JSON.stringify(localStorage.getItem("login"));
@@ -41,13 +42,16 @@ class TextInput extends React.Component {
                     body: JSON.stringify(text)
             }).then(handleJsonResponse)
             .then(result => {
+                this.setState({ text: "" })
                 return result
             })
 
-
+            
         }
+        
 
         render() {
+            const { TextArea } = Input;
             console.log(loginData)
             return (
                     <div id="inputTextBorderBox">
@@ -55,20 +59,21 @@ class TextInput extends React.Component {
                     
                         <form>
                             
-                            <input 
+                            <TextArea 
                                 id="feedMessageInput" 
                                 name="input1"
+                                placeholder="Your Text Here..."
                                 onChange={this.textStateChange}
                             />
 
                         </form>
 
-                        <button
+                        <Button
                         id="TextSubmitButton"
                         onClick={this.textInputClick}
                         >
                         Submit
-                        </button>
+                        </Button>
 
                     </div>
 

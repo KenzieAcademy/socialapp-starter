@@ -14,6 +14,15 @@ class MessageFeed2 extends React.Component {
         })
     }
 
+    componentDidUpdate(prevProps, prevState){
+        if (prevState.messages !== this.state.messages){
+            new QuestboardService().GetMessageList().then(messages => {
+                this.setState({ messages })
+            })
+        }
+      
+      }
+
     render () {
         if (this.state.messages.length === 0)
             return (

@@ -52,6 +52,7 @@ a:hover {
 .sider {
   background-color: #e0d8c0;
   border: #47170e solid 0px;
+  top: 0px;
 }
 
 .ant-menu-item-selected a, .ant-menu-item-selected a:hover {

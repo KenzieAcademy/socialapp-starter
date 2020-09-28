@@ -3,6 +3,7 @@ import Spinner from "react-spinkit";
 import { withAsyncAction } from "../../redux/HOCs";
 import { Link } from "react-router-dom";
 import "./LoginForm.css";
+import GoogleAuth from "./GoogleAuth";
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -50,6 +51,7 @@ class LoginForm extends React.Component {
           </button>
           Or <Link to="/Registration">Register now!</Link>
         </form>
+        <GoogleAuth />
         {loading && <Spinner name="circle" color="blue" />}
         {error && <p style={{ color: "red" }}>{error.message}</p>}
       </div>
