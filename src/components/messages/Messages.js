@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/accessible-emoji */
 import React from 'react';
 import DataService from '../../dataService';
 import { userIsAuthenticated } from '../../redux/HOCs';
