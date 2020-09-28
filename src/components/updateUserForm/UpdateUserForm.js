@@ -2,6 +2,7 @@ import React from "react";
 import Spinner from "react-spinkit";
 import "./UpdateUserForm.css";
 import DataService from "../../DataService"
+import { Switch, Route } from "react-router-dom"
 
 class UpdateUserForm extends React.Component {
   constructor(props) {
@@ -14,6 +15,18 @@ class UpdateUserForm extends React.Component {
 
     this.client = new DataService()
 
+  }
+
+  getUserData() {
+    return this.client.getUser().then(result => {
+      this.setState({
+        data: result.data.user
+      })
+    })
+  }
+
+  componentDidMount() {
+    this.getUserData()
   }
 
   handleUpdateUser = e => {
@@ -29,8 +42,12 @@ class UpdateUserForm extends React.Component {
       updateData.displayName = this.state.displayName
     }
     this.client.updateUser(updateData).then(result => {
-      alert(result.data)
+      if (result.data.statusCode === 200) {
+        alert("You have successfully updated your profile")
+        window.location.href = "/profile/:username"
+      }
     })
+
   };
 
   handleChange = e => {
@@ -54,6 +71,7 @@ class UpdateUserForm extends React.Component {
             onChange={this.handleChange}
           />
           <br />
+          <div>Current Display Name: {this.props.displayName}</div>
           <label htmlFor="displayName">Display Name </label>
           <input
             type="text"
@@ -63,6 +81,7 @@ class UpdateUserForm extends React.Component {
             onChange={this.handleChange}
           />
           <br />
+          <div>Current About: {this.props.about}</div>
           <label htmlFor="about">About </label>
           <input
             type="text"
