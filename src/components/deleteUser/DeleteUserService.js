@@ -3,7 +3,7 @@ import axios from "axios"
 import { store } from "../../redux"
 
 class DeleteUserService {
-    constructor(url = 'https://socialapp-api.herokuapp.com/', client = axios.create()){
+    constructor(url = 'https://socialapp-api.herokuapp.com/users/', client = axios.get()) {
         this.url = url + "deleteUser";
         // this.client = client;
     }
@@ -11,25 +11,21 @@ class DeleteUserService {
     deleteNow(userName) {
         const loginData = JSON.parse(localStorage.getItem("login"));
 
-        fetch(this.url, {
+        fetch(this.url + loginData.result.username, {
             method: "GET",
             headers: { Authorization: `Bearer ${loginData.result.token}`, ...jsonHeaders },
-            body: JSON.stringify(userName)
+            // body: JSON.stringify(userName)
         })
-        .then(handleJsonResponse)
-        .then(result => {
-            return result = ""
-        })
+            .then(handleJsonResponse)
+            .then(result => {
+                return result
+            })
     }
 
-getToken() {
-    const {token, username } = store.getState().auth.login.result
-    return token
-}
-
-
-
-
+    getToken() {
+        const { token } = store.getState().auth.login.result
+        return token
+    }
 
 };
 
