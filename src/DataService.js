@@ -45,17 +45,19 @@ class DataService {
     }
 
     getMessages() {
-        return this.client.get(this.url + "/messages?limit=100")  //Limit 100 messages
+        return this.client.get(this.url + "/messages?limit=50")  //Limit 100 messages
     }
 
     deleteMessage(messageID) {
         const loginData = JSON.parse(localStorage.getItem('login')).result
         let token = loginData.token
         let url = this.url + "/messages/" + messageID
-        return this.client.delete(url, messageID,
+        console.log(url)
+        return this.client.delete(url,
             {
                 headers: { Authorization: `Bearer ${token}` }
             }
+
         )
     }
 
@@ -72,7 +74,7 @@ class DataService {
         const username = loginData.username
         return this.client.get(this.url + "/users/" + username)
     }
-    
+
 }
 
 export default DataService

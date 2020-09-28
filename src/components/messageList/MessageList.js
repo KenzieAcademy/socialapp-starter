@@ -1,7 +1,7 @@
 import React from 'react'
 import './MessageList.css'
 import Message from "../message/Message"
-import { message } from 'antd'
+// import { message } from 'antd'
 
 
 function MessageList(props) {
@@ -10,7 +10,9 @@ function MessageList(props) {
     return (
         <div>
             <h1>Message List</h1>
-            {listItems}
+            <ul>
+                {listItems}
+            </ul>
         </div>
     )
 
