@@ -1,5 +1,7 @@
 import React from "react";
 
+// import InfiniteScroll form 'react-infinite-scroll-component';
+
 class InfiniteScroll extends Component {
 
   constructor() {
@@ -18,6 +20,11 @@ class InfiniteScroll extends Component {
         next={this.fetchMoreData}
         hasMore={true}
         loader={<h4>Loading...</h4>}>
+        endMessage={
+            <p style={{ textAlign: 'center'}}>
+              <b>This is the end</b>
+            </p>
+          }
 
         {this.state.items.map((i, index) => (
         <div style={style} key={index}>
