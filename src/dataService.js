@@ -50,22 +50,11 @@ class DataService {
         return this.client.get(this.url + "/users/{username}/picture", uploadPicture);
     }
 
-    updateUser(userName, updateData) {
-        let endpoint = "/users/"
-        let URL = this.domain + endpoint + userName
-        let token = JSON.parse(localStorage.getItem('login')).result.token
-
-        return fetch(URL, {
-        method: "PATCH",
-            headers: {
-                "Content-Type": "application/json",
-                "Accept": "application/json",
-                "Authorization": "Bearer " + token
-            },
-        body: JSON.stringify(updateData)
-        })
-        .then(response => response.json()) 
-    }
+    updateUser(userName) {
+        return this.client.get(this.url + "/users", userName,
+        {headers: {Authorization: `Bearer ${this.getToken()}`}})
+    }  
+    
     getMessages() {
         return this.client.get(this.url + "/messages")
     }

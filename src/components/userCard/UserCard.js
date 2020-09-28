@@ -1,6 +1,7 @@
 import React from "react";
 
 import DataService from "../../dataService";
+import { Button } from 'evergreen-ui'
 
 
 
@@ -56,7 +57,7 @@ class UserCard extends React.Component {
     render() {
         return (
             <div className="usercard">
-                <h3>User Name: {this.state.user.username}</h3>
+                <h3>User Name: {this.state.user.userData}</h3>
                 <h3>Display Name: {this.state.user.displayName}</h3>
                 <h3>About: {this.state.user.about}</h3>
                 <img />
@@ -85,9 +86,9 @@ class UserCard extends React.Component {
                         required
                         onChange={this.handleChange}
                     />
-                    <button type="primary"  onClick={this.handleUpdateUser}>
+                    <Button type="primary"  onClick={this.handleUpdateUser}>
                         Update User
-                    </button>
+                    </Button>
                 </form>
             </div>
         );
