@@ -32,7 +32,7 @@ class UpdateUser extends Component {
     }
 
     handleChange = (event) => {
-        const formData = {...this.state.formData}
+        const formData = { ...this.state.formData }
         formData[event.target.name] = event.target.value
         this.setState({formData})
 
