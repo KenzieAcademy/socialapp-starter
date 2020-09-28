@@ -78,8 +78,9 @@ class Dice extends React.Component {
                     <button value="4" className="die" >
                     <img className="dice" src={d4} onClick={this.consoleLog}/>
       </button>
+      <img className="dice" src={d6} alt="d6" />
                     <button value="6" className="die" onClick={this.calculateTotal}>
-                    <img className="dice" src={d6} alt="d6" />
+                    
       </button>
                     <button value="8" className="die" onClick={this.calculateTotal}>
                     <img className="dice" src={d8} alt="d8" />
@@ -88,7 +89,7 @@ class Dice extends React.Component {
                     <img className="dice" src={d10} alt="d10" />
       </button>
                     <button value="12" className="die" onClick={this.calculateTotal}>
-                    <img className="dice" src={d12} alt="d12" />
+                    <img className="dice" src={d12} alt="d12" value="12"/>
       </button>
                     <button value="20" className="die" onClick={this.consoleLog}>      </button>  
 

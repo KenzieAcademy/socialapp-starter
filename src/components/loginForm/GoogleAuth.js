@@ -8,11 +8,9 @@ constructor(props){
     }
 }
 
-componentDidMount() {
-    window.addEventListener('message', this.handleMessage )
-}
 
-handleMessage = () => {
+
+handleMessage = (event) => {
     if (window.event.origin === undefined) {
         window.event = window.event.originalEvent;
     }
@@ -40,15 +38,17 @@ handleMessage = () => {
     }
 };
 
-
+componentDidMount() {
+    window.addEventListener('message', this.handleMessage )
+}
 
 handleClick = (event) => {
 // when user clicks login with Google....
-this.state.loginWindow = window.open("https://socialapp-api.herokuapp.com/auth/google/login/");
+this.setState({loginWindow: window.open("https://socialapp-api.herokuapp.com/auth/google/login/") })
 }
     render(){
         return(
-        <div>test test
+        <div>
 
 
         <button onClick={this.handleClick}>Login with Google</button>
