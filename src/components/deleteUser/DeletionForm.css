@@ -1,0 +1,10 @@
+#deletion-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 20em;
+  }
+#button{
+    type: danger;
+    size: large;
+    color: rgb(163, 50, 9);
+  }
