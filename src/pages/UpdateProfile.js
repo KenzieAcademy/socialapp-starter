@@ -58,7 +58,7 @@ class Profile extends React.Component {
     const PictureUpload = questboardService.SetPicture()
     event.preventDefault();
     PictureUpload.then(result =>
-      
+
       {console.log(result)})
     
       }
@@ -101,6 +101,7 @@ class Profile extends React.Component {
       <Button 
          type="primary" 
          className="submitButton" 
+         htmlType="submit"
          onClick={this.handleSubmit}> Save picture
       </Button>
       <hr/>
