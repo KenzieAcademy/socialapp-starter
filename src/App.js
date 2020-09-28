@@ -2,7 +2,7 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 import 'antd/dist/antd.css';
 import Home from "./pages/Home";
-import Profile from "./pages/UpdateProfile";
+import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
 import NewUser from "./pages/NewUser";
 import MessageFeed from "./pages/MessageFeed";

@@ -23,6 +23,7 @@ class MenuAuthenticated extends React.Component {
         height: '100vh',
         position: 'fixed',
         left: 0,
+        width:"3000px",
       }}
     >
       <div className="logo"> <Link to="/"><img src={theQuestBoard} alt="QuestBoard Logo"/></Link> </div>
