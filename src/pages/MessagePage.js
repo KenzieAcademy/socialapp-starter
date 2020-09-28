@@ -55,8 +55,8 @@ class MessagePage extends React.Component {
         < button onClick={this.handleLike} > <span role="img" aria-label=" Like">👍
       </span > </button >
       </div>
-    );
+    )
   }
+}
 
-
-  export default userIsAuthenticated(MessagePage);
+export default { userIsAuthenticated(MessagePage) }

@@ -4,7 +4,7 @@ import "./DeletionForm.css";
 import DataService from "../../DataService";
 import { DatePicker } from 'antd';
 import { Button } from 'antd';
-//import { WarningOutlined } from '@ant-design/icons';
+import Warning-Sign.png from "../assets";
 //ReactDOM.render(<DatePicker />, mountNode);
 //import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
 //import DeletionForm from "../deleteUser/DeletionForm"
