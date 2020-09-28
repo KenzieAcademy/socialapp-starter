@@ -74,7 +74,15 @@ class DataService {
     }
 
     setUserPicture(userPicture) {
-        // Insert API call here
+        const loginData = JSON.parse(localStorage.getItem('login')).result
+        let token = loginData.token
+        const username = loginData.username
+        let url = this.url + `/users/${username}/picture`
+        return this.client.put(url, userPicture,
+            {
+                headers: { Authorization: `Bearer ${token}` }
+            }
+        )
     }
 
     getUser() {
@@ -82,7 +90,8 @@ class DataService {
         const username = loginData.username
         return this.client.get(this.url + "/users/" + username)
     }
-    
+
+
 }
 
 export default DataService
