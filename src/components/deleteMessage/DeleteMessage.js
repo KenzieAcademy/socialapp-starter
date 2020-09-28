@@ -34,3 +34,4 @@ class DeleteMessage extends React.Component {
     }
 }
 export default userIsAuthenticated(DeleteMessage)
+
