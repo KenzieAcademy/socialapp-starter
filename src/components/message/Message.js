@@ -1,6 +1,9 @@
 import React from "react"
-import "./Message.css"
+import { userIsAuthenticated } from "../../redux/HOCs";
 import DataService from "../../dataService";
+
+import "./Message.css"
+
 
 class Message extends React.Component {
     constructor(props) {
@@ -18,12 +21,31 @@ class Message extends React.Component {
         event.preventDefault()
 
         alert('Do you really want to delete this post?')
-        console.log(this.props.id)
-        this.client.deleteMessage(this.props.id)
 
+        console.log(this.props.id)
+        this.client.deleteMessage({
+            id: this.props.id,
+            token: this.state.token
+        })
+        // window.location.reload()
     }
 
+
+    // this.client.getRecentMessages()
+
+
+
+    // refreshMessages = event => {
+    //     getRecentMessages()
+    //         .then(messages => {
+    //             this.setState({ messages })
+    //         })
+    // }
+
+
+
     render() {
+
         return (
             <li className="Message">
                 At {this.props.createdAt}, {this.props.username} posted:
@@ -35,13 +57,14 @@ class Message extends React.Component {
                     <button className="like" >👍</button>
                 </div>
                 { this.props.username === this.state.username &&
-                    <div className="delete">
-                        <button onClick={this.handleDeleteMessage}>🗑️</button>
+                    <div className="deletePost">
+                        <button className="delete" onClick={this.handleDeleteMessage}>🗑️</button>
                     </div>
                 }
             </li>
         )
+
     }
 }
 
-export default Message
+export default userIsAuthenticated(Message)
