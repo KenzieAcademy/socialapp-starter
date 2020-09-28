@@ -3,6 +3,7 @@ import DataService from '../../dataService'
 import { Avatar } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 import { Layout } from 'antd';
+import DeleteUser from '../deleteUser'
 
 
 class ProfileCard extends React.Component {
@@ -130,6 +131,7 @@ class ProfileCard extends React.Component {
           <div style={button} className="Button">
             <button onClick={this.setUserPicture}>Change Picture</button>
           </div>
+          <DeleteUser />
         </div>
       </Content>
     );

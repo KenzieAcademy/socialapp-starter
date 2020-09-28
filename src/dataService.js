@@ -4,11 +4,18 @@ class DataService {
         this.url = url;
         this.client = client;
     }
+    
+    generateConfig() {
+        const token = JSON.parse(localStorage.getItem("login")).result.token
+        return { headers: {Authorization: `Bearer ${token}`}}
+    }
+
     registerUser(userData){
         return this.client.post(this.url + "/users", userData)
     }
     getUserPicture(username){
         return this.client.get(`${this.url}/users/${username}"/picture"`)
+        .catch(error => console.log(error))
     }
     putUserPicture(username, picture){
         let token = JSON.parse(localStorage.getItem("login")).result.token
@@ -28,8 +35,9 @@ class DataService {
         return this.client.patch(this.url+"/users/"+userName)
     }
 
-    deleteUser(userName){
-        return this.client.delete(this.url+"/users/"+userName)
+    deleteUser(user){
+        return this.client.delete(`${this.url}/users/${user}`, this.generateConfig())
+        .catch(error => console.log(error))
     }
 
     postMessage(){
