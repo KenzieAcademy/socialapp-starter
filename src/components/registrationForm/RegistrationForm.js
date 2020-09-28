@@ -1,7 +1,7 @@
 import React from "react";
 import Spinner from "react-spinkit";
 import { withAsyncAction } from "../../redux/HOCs";
-import "./RegistrationForm.css";
+import "./registrationForm.css";
 import DataService from '../../dataService';
 
 class RegistrationForm extends React.Component {
