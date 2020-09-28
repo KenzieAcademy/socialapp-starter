@@ -1,0 +1,30 @@
+#feedBackground {
+    width: 50%;
+    background-color: #e0d8c0;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+.MessageFeed {
+    height: 600px;
+    overflow: scroll;
+}
+
+.messageFeedTitle {
+    width: 100%;
+}
+
+.messageFeedTitle2 {
+    text-align: center;
+}
+
+.feed {
+    position: relative;
+    top: 20%
+}
+
+#feedAndInput {
+    margin-top: 6.50%;
+    margin-left: -15%;
+}
