@@ -1,4 +1,9 @@
 import React from "react";
+
+import {Link} from "react-router-dom"
+import {Image, message, Upload, Button, Layout} from 'antd';
+import "antd/dist/antd.css"
+import Menu from "../components/menu/MenuAuthenticated";
 import { userIsAuthenticated } from "../redux/HOCs";
 import Menu from "../components/menu/MenuAuthenticated";
 import theQuestBoardHeader from '../media/theQuestBoardHeader.png'
@@ -58,20 +63,7 @@ class Profile extends React.Component {
     return (
       <div className="container">
         <Menu isAuthenticated={this.props.isAuthenticated} />
-
-
-         <Header 
-        className="mainHeader" 
-        style={{ padding: 0, textAlign: 'center'}}> 
-        <img className="theQuestBoardHeader" 
-        src={theQuestBoardHeader} 
-        alt="QuestBoard Header" /> 
-        </Header> 
-=======
-        
-        
-        <Layout>
-    <MenuUnauthenticated />
+      
     <Layout className="site-layout" style={{ marginLeft: 190 }}>
       <Header className="mainHeader" style={{ padding: 0, textAlign: 'center'}}> <img className="theQuestBoardHeader" src={theQuestBoardHeader} alt="QuestBoard Header" /> </Header>
       <Header className="subHeader" ><h2>Quests will appear here!</h2> </Header>
@@ -79,8 +71,8 @@ class Profile extends React.Component {
         <div className="site-layout-background" style={{ padding: 24, textAlign: 'center' }}>
 
         <div className="Profile">
-      <Menu isAuthenticated={this.props.isAuthenticated} />
-    <h2>Welcome, {this.username}</h2>
+      
+    <h2>Welcome, {username} </h2>
         <hr/>
       <Upload
          name="avatar" 
@@ -93,10 +85,10 @@ class Profile extends React.Component {
 
         
         </div>
+        </div>
       </Content>
       <Footer className="footer" style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
     </Layout>
-  </Layout>
 
        
       

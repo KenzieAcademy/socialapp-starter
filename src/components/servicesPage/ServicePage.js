@@ -36,6 +36,7 @@ class QuestboardService {
         return this.client.get(this.url + "/auth/logout");
     }
     Users(){
+       
         return this.client.get(this.url + "/users");
     }
     NameUser() {
@@ -50,8 +51,14 @@ class QuestboardService {
     GetPicture() {
         return this.client.get(this.url + "/users/" + this.getUsername() + "/picture");
     }
-    SetPicture() {
-        return this.client.put(this.url + "/users/{username}/picture").then(response => {return response.data.picture});
+    SetPicture(imageUrl) {
+        const RequestPicture = {imageUrl}
+        const config = {
+            headers: {
+                Authorization: `Bearer ${this.getToken()}`
+            }}
+        return this.client.put(this.url + "/users/" + this.getUsername() +"/picture", RequestPicture, config)
+        .then(response => {return response.data.picture});
     }
     GetMessageList(){
         return this.client
@@ -76,7 +83,6 @@ class QuestboardService {
                 Authorization: `Bearer ${this.getToken()}`
             }
         }
-
        return this.client
         .post(this.url + "/likes", requestBody, config)
         .then(response => response.data.like)
