@@ -1,3 +1,4 @@
+
 import React from "react";
 import LoginForm from "../components/loginForm/LoginForm";
 import Menu from "../components/menu/Menu";
@@ -11,10 +12,10 @@ class Home extends React.Component {
       <div className="Home">
         <Menu />
         <h2>Your One Stop Shop For All your traveling Needs</h2>
-       
+
         <LoginForm />
         <Link to='/registration'>
-        Register Now!
+          Register Now!
         </Link>
       </div>
     );

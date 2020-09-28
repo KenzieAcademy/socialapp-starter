@@ -1,13 +1,5 @@
-.Home, .RegistrationForm, .Profile, .LoginForm {
-  background-color:
-  #141414;
-}
-
-label {
-  color: white;
-}
 h2 {
-  color: white
+  color:black
 }
 p {
   color: black;

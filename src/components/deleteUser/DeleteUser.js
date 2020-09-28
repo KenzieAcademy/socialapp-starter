@@ -34,3 +34,4 @@ class DeleteUser extends React.Component {
 }
 
 export default userIsAuthenticated(DeleteUser);
+
