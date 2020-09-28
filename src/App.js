@@ -11,8 +11,6 @@ import Registration from "./pages/Registration"
 import UpdateProfile from "./pages/UpdateProfile"
 
 
-
-
 class App extends React.Component {
   render() {
     return (
