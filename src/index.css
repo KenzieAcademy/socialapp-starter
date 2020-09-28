@@ -10,6 +10,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 
 code {
@@ -52,6 +53,7 @@ a:hover {
 .sider {
   background-color: #e0d8c0;
   border: #47170e solid 0px;
+
 }
 
 .ant-menu-item-selected a, .ant-menu-item-selected a:hover {
@@ -67,9 +69,7 @@ a:hover {
   width: 1000px;
 }
 
-.footer {
-  background-color: #11ffee00;
-}
+
 
 .ant-layout {
   background-color: #11ffee00;
@@ -115,6 +115,24 @@ Menu.Item, .ant-menu-item-selected {
 }
 
 .ant-menu.ant-menu-light.ant-menu-root.ant-menu-inline {
+
+  width:600px;
+  max-width: 600px;
+}
+
+
+
+
+
+.foot{
+
+width: max-content;
+
+ background-color: #e0d8c0;
+
+}
+ 
+=======
   width: 195px;
   max-width: 195px;
 }
@@ -123,3 +141,4 @@ Menu.Item, .ant-menu-item-selected {
   width: 200px;
   height: 200px;
 }
+

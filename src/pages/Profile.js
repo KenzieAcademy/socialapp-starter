@@ -1,15 +1,17 @@
 import React from "react";
 import { userIsAuthenticated } from "../redux/HOCs";
-import MenuUnauthenticated from "../components/menu/MenuUnauthenticated";
+import Menu from "../components/menu/MenuAuthenticated";
 import theQuestBoardHeader from '../media/theQuestBoardHeader.png'
+import Footer from "../components/footer/Footer";
 
- 
 
-import { Layout,Menu, BackTop ,Header,Sider,Content, Footer} from 'antd';
-import {UpOutlined } from '@ant-design/icons';
 
-  
-  
+import { BackTop, Layout,TimePicker } from 'antd';
+import { UpOutlined } from '@ant-design/icons';
+
+
+
+
 
 
 // comment section 
@@ -19,10 +21,10 @@ import {UpOutlined } from '@ant-design/icons';
 
 class Profile extends React.Component {
   super(props) {
-    // this.state = {
-    //   user: [],
-    //   picture: "",
-    // }
+    this.state = {
+      user: [],
+      picture: "",
+    }
 
 
 
@@ -35,27 +37,37 @@ class Profile extends React.Component {
 
 
   render() {
-   
-    const { Header, Content, Footer, Sider } = Layout;
-    
-   
 
 
-// for backtop
-const style = {
-  height: 40,
-  width: 40,
-  lineHeight: '40px',
-  borderRadius: 4,
-  backgroundColor: '#1088e9',
-  color: '#fff',
-  textAlign: 'center',
-  fontSize: 14,
-};
+
+
+    const { Header, Content } = Layout;
+
+    // for backtop
+    const style = {
+      height: 40,
+      width: 40,
+      lineHeight: '40px',
+      borderRadius: 4,
+      backgroundColor: '#1088e9',
+      color: '#fff',
+      textAlign: 'center',
+      fontSize: 14,
+    };
 
     return (
-      <div className="Profile" style={{ height: '600vh', padding: 8 }}>
+      <div className="container">
         <Menu isAuthenticated={this.props.isAuthenticated} />
+
+
+         <Header 
+        className="mainHeader" 
+        style={{ padding: 0, textAlign: 'center'}}> 
+        <img className="theQuestBoardHeader" 
+        src={theQuestBoardHeader} 
+        alt="QuestBoard Header" /> 
+        </Header> 
+=======
         
         
         <Layout>
@@ -85,16 +97,24 @@ const style = {
       <Footer className="footer" style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
     </Layout>
   </Layout>
+
        
+      
+        
+        <Footer className="foot"/>
+      
+  
+    
 
-        <BackTop>
-      <div style={style}><UpOutlined /></div>
+    
+        
+         
+      <BackTop>
+      <div style={style}>UP</div>
     </BackTop>
-
-
-   
-
+        
       </div>
+
     );
   }
 }
