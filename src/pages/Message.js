@@ -1,9 +1,9 @@
  import React from "react";
 import Menu from "../components/menu/Menu";
 import { userIsAuthenticated } from "../redux/HOCs";
-import { Form,Feed, Input, Button, TextArea } from 'semantic-ui-react'
+import { Form, Button, TextArea, Feed } from 'semantic-ui-react'
 import DataService from '../components/DataService'
-
+import MessageFeed from '../components/messageFeed/MessageFeed'
 class Messages extends React.Component {
   
   constructor(props){
@@ -13,7 +13,7 @@ class Messages extends React.Component {
     
     this.state = {
       text:"",
-      messages:[],
+      
       
       
       
@@ -26,16 +26,7 @@ class Messages extends React.Component {
     
     
   }
-  componentDidMount(){
-    this.client.getMessages().then(messages => {
-      
-      this.setState({messages:messages}
-        )
-        
-      })
-      
-      console.log(this.state)
-    }
+ 
   
   
 handleChange = (event) => {
@@ -60,9 +51,7 @@ handleSubmit = (event) => {
 
 
 
-this.client.getMessage().then(result =>{
- console.log(result.data)
-})
+
 };
 
 
@@ -85,6 +74,8 @@ render() {
     <Menu isAuthenticated={this.props.isAuthenticated} />
     
     <h2>Messages</h2>
+    <ul><MessageFeed/></ul>
+    
     
    
     <Form onSubmit={this.handleSubmit}>
