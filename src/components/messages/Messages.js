@@ -1,24 +1,23 @@
 //import DataService from "../../services/DataService";
-import React from"react";;
-
+import React from "react";
 
 class Messages extends React.Component{
 
-   /* state = { likeCount: this.props.likes.length }
+ state = { likeCount: this.props.likes.length }
     
     handleLike = () => {
-        const dataService = new DataService()
-        const username = dataService.getUserName()
-        if (this.props.likes.some(like => like.username === username)) return
-            DataService
-            .postLike(this.props.id)
-            .then(like => {
-                console.log(like)
-                this.setState(latestState => ({ likeCount: latestState.likeCount+ 1}))
-            })
+      /* const dataService = new DataService()
+        const username = dataService.getUsername()
         
-        console.log(this.props.likes)
-    }  */  
+        if (this.props.likes.some(like => like.username === username)) return
+
+    dataService
+        .postLike(this.props.id)
+        .then(like => { 
+            console.log(like)
+            this.setState(latestState => ({ likeCount: latestState.likeCount + 1}))
+            })*/
+    }   
     render(){
         return(
             <li className="Messages">
@@ -26,7 +25,8 @@ class Messages extends React.Component{
                 <br />
                 {this.props.text}
                 <div className="like-count">
-                    Likes: {this.props.likes.length}
+                    Likes: {this.props.likeCount}
+                    <button onClick={this.handleLike}><span role="img" aria-label="Like"> 👍 </span></button>
                 </div>
                 
                    
@@ -35,7 +35,3 @@ class Messages extends React.Component{
     }
 }
 export default Messages; 
-/*<div class="like-count">
-                    Likes: {this.state.likeCount}
-                    </div>
-<button onClick={this.handleLike}><span role="img" aria-label="Like">like</span></button>*/

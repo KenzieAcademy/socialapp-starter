@@ -4,6 +4,7 @@ import { withAsyncAction } from "../../redux/HOCs";
 import "./LoginForm.css";
 import Menu from "../menu/Menu";
 import DataService from "../../services/DataService";
+import GoogleLogin from "../googleLogin/GoogleLogin";
 
 
 
@@ -57,6 +58,7 @@ class LoginForm extends React.Component {
           <button className="loginButton"type="submit" disabled={loading}>
             Login
           </button>
+          <GoogleLogin/>
         </form>
         {loading && <Spinner name="circle" color="blue" />}
         {error && <p style={{ color: "red" }}>{error.message}</p>}

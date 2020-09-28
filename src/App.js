@@ -10,6 +10,7 @@ import NotFound from "./pages/NotFound";
 import 'semantic-ui-css/semantic.min.css';
 import "./images/heros.jpg";
 import MessageFeed from "../src/pages/MessageFeed";
+import UserList from "../src/pages/UserList";
 
 
 class App extends React.Component {
@@ -32,6 +33,11 @@ class App extends React.Component {
           exact
           path="/login"
           component={loginForm}
+        />
+          <Route
+          exact
+          path="/UserList"
+          component={UserList}
         />
          <Route
           exact
