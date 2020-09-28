@@ -1,13 +1,11 @@
 import React from "react";
-import DataService from "../dataService";
-// import { withRouter } from 'react-router-dom'
-
-import { userIsAuthenticated } from "../redux/HOCs";
-
+import { userIsAuthenticated } from "../../redux/HOCs";
+import DataService from "../../dataService";
+import "./PostMessage.css"
 
 
 
-class Messages extends React.Component {
+class PostMessage extends React.Component {
     constructor(props) {
         const loginData = JSON.parse(localStorage.getItem('login'))
         super(props)
@@ -20,7 +18,7 @@ class Messages extends React.Component {
     }
 
 
-    handleMessage = event => {
+    handlePostMessage = event => {
         event.preventDefault()
 
         this.client.postMessage({
@@ -31,9 +29,10 @@ class Messages extends React.Component {
                 console.log(result.data.messages)
                 this.setState({
                     text: result.data.messages
-
                 })
             });
+        this.setState({ text: "" })
+        // window.location.reload()
     }
 
 
@@ -44,17 +43,21 @@ class Messages extends React.Component {
     render() {
 
         return (
-            <div className='Messages'>
+            <div className='PostMessage'>
                 {console.log(this.state.message)}
                 <h4>What do you want to share with the world {this.state.username}?</h4>
-                <form onSubmit={this.handleMessage}>
+                <form onSubmit={this.handlePostMessage}>
                     <div>
-                        <label htmlFor="text">Post a message </label>
-                        <input
+                        <label htmlFor="text">Create message </label>
+                        <br />
+                        <textarea
                             type="text"
                             name="text"
-                            placeholder="Write your post here"
-                            // value={this.state.text}
+                            value={this.state.text}
+                            placeholder="What's on your mind?"
+                            maxLength="255"
+                            rows="5"
+                            cols="50"
                             onChange={this.handleChange}
                         />
                     </div>
@@ -65,5 +68,5 @@ class Messages extends React.Component {
     }
 }
 
-export default userIsAuthenticated(Messages)
+export default userIsAuthenticated(PostMessage)
 

@@ -7,10 +7,6 @@ class DataService {
         this.client = client;
     }
 
-    // registerUser(registrationData) {
-    //     return this.client.post(this.url + "/users", registrationData);
-    // }
-
     registerUser(userData) {
         return this.client.post(this.url + '/users', userData)
     }
@@ -25,6 +21,14 @@ class DataService {
 
     deleteUser(userData) {
         return this.client.delete(this.url + '/users/' + userData, userData)
+    }
+
+    getRecentMessages() {
+        return this.client
+            .get(this.url + "/messages?limit=20")
+            .then(response => {
+                return response.data.messages
+            })
     }
 
 

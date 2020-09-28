@@ -50,9 +50,9 @@ class RegistrationForm extends React.Component {
             required
             onChange={this.handleChange}
           />
-
-          <Input
-            addonBefore="Display Name"
+          <label htmlFor="displayName">Display Name</label>
+          <input
+            type="text"
             name="displayName"
             required
             onChange={this.handleChange}
