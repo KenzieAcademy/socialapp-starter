@@ -1,5 +1,5 @@
 import React from "react"
-import QuestboardService from "../../pages/ServicePage"
+import QuestboardService from "../servicesPage/ServicePage"
 import Message from "../Message/Message"
 import "./feed2.css"
 
