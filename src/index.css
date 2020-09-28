@@ -23,7 +23,7 @@ code {
 .cowboy1 {
   width: 400px;
   position: relative;
-  top: 125px;
+  top: -25px;
   left: -300px;
 }
 
@@ -51,5 +51,5 @@ code {
   width: 250px;
   position: relative;
   top: 500px;
-  left: -300px;
+  left: 50px;
 }
