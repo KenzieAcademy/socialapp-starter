@@ -13,6 +13,16 @@ class Message extends React.Component {
             username: loginData.result.username
         }
     }
+
+    handleDeleteMessage = event => {
+        event.preventDefault()
+
+        alert('Do you really want to delete this post?')
+        console.log(this.props.id)
+        this.client.deleteMessage(this.props.id)
+
+    }
+
     render() {
         return (
             <li className="Message">
@@ -26,7 +36,7 @@ class Message extends React.Component {
                 </div>
                 { this.props.username === this.state.username &&
                     <div className="delete">
-                        <button>🗑️</button>
+                        <button onClick={this.handleDeleteMessage}>🗑️</button>
                     </div>
                 }
             </li>
