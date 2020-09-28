@@ -1,4 +1,5 @@
 import axios from 'axios'
+
 class DataService {
     constructor(url = 'http://socialapp-api.herokuapp.com', client = axios.create()) {
         this.url = url;
@@ -21,12 +22,13 @@ class DataService {
         )
     }
 
-    deleteUser(userData) {
+    deleteUser() {
+        console.log("attempting to delete user")
         const loginData = JSON.parse(localStorage.getItem('login')).result
         let token = loginData.token
         let username = loginData.username
         let url = this.url + "/users/" + username
-        return this.client.delete(url, userData,
+        return this.client.delete(url,
             {
                 headers: { Authorization: `Bearer ${token}` }
             }
@@ -61,12 +63,28 @@ class DataService {
         )
     }
 
-    likePost(messageID) {
-        // Insert API call here
+    likePost(messageId) {
+        const requestBody = { messageId }
+        const loginData = JSON.parse(localStorage.getItem('login')).result
+        let token = loginData.token
+        let url = this.url + "/likes"
+        return this.client.post(url, requestBody,
+            {
+                headers: { Authorization: `Bearer ${token}` }
+            }
+        )
     }
 
     setUserPicture(userPicture) {
-        // Insert API call here
+        const loginData = JSON.parse(localStorage.getItem('login')).result
+        let token = loginData.token
+        const username = loginData.username
+        let url = this.url + `/users/${username}/picture`
+        return this.client.put(url, userPicture,
+            {
+                headers: { Authorization: `Bearer ${token}` }
+            }
+        )
     }
 
     getUser() {

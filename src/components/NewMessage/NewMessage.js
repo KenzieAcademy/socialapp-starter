@@ -37,8 +37,6 @@ class NewMessage extends React.Component {
             required
             onChange={this.handleChange}
           />
-          <label htmlFor="submit">Submit</label>
-
           <button type="submit" disabled={loading}>
             Submit
           </button>

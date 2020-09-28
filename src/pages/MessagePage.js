@@ -20,7 +20,7 @@ class MessagePage extends React.Component {
   render() {
     return (
       <div className="MessagePage">
-        <Menu />
+        <Menu isAuthenticated={this.props.isAuthenticated} />
         <NewMessage isAuthenticated={this.props.isAuthenticated} />
         <h2>New Message</h2>
         <ul></ul>
