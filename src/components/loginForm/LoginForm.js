@@ -2,6 +2,7 @@ import React from "react";
 import Spinner from "react-spinkit";
 import { withAsyncAction } from "../../redux/HOCs";
 import "./LoginForm.css";
+import Button from "react-bootstrap/Button";
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -29,33 +30,37 @@ class LoginForm extends React.Component {
       <div className="Body">
         <div className="LoginForm">
           <form id="login-form" onSubmit={this.handleLogin}>
-            <label htmlFor="username">Username</label>
-            <div className="UsernameInput">
-              <input
-                type="text"
-                name="username"
-                value={this.props.username}
-                autoFocus
-                required
-                onChange={this.handleChange}
-              />
+            <div className="UserNameInput2">
+              <label htmlFor="username">Username</label>
+              <div className="UserNameInputBox2">
+                <input
+                  type="text"
+                  name="username"
+                  value={this.props.username}
+                  autoFocus
+                  required
+                  onChange={this.handleChange}
+                />
+              </div>
             </div>
-            <br></br>
-            <div>- - - - - - - - - - - - - - - - - - - - - - - - -</div>
-            <label htmlFor="password">Password</label>
             <div className="PasswordInput">
-              <input
-                type="password"
-                name="password"
-                value={this.props.password}
-                required
-                onChange={this.handleChange}
-              />
+              <label htmlFor="password">Password</label>
+              <div className="PasswordInputBox">
+                <input
+                  type="password"
+                  name="password"
+                  value={this.props.password}
+                  required
+                  onChange={this.handleChange}
+                />
+              </div>
             </div>
-            <br></br>
-            <div>- - - - - - - - - - - - - - - - - - - - - - - - -</div>
-            <div className="LoginButton">
-              <input type="submit" value="Enter" disabled={loading} />
+            <div className="EnterButtonBox">
+              <div className="EnterButton">
+                <Button variant="dark" size="lg" disabled={loading}>
+                  ENTER!
+                </Button>
+              </div>
             </div>
           </form>
           {loading && <Spinner name="circle" color="red" />}

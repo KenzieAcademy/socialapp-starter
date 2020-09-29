@@ -11,52 +11,82 @@
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
+  background-image: url(../../assets/images/Coupon_Background_Dark.png);
 }
 
 #login-form {
   position: relative;
   margin: auto;
-  top: 25px;
+  top: 35px;
+  display: flex;
+  flex-direction: column;
   text-align: center;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font: italic small-caps bold 12px/30px Georgia, serif;
   font-size: 25px;
-  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
-  width: 400px;
-  color: #b80c12;
+  color: white;
+  width: 340px;
+}
+
+.LoginForm {
+  border: 3px solid black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  background-image: url(../../assets/images/Clear_Red.png);
+  text-align: left;
+  position: relative;
+  margin: auto;
+  width: 380px;
+  height: 370px;
+}
+
+.UserNameInput2 {
+  background-image: url(../../assets/images/Coupon_Background_Dark.png);
+  padding: 10px;
+  position: relative;
+  margin: auto;
+  border: 3px solid black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+}
+
+.UserNameInputBox2 {
+  position: relative;
+  margin: auto;
+  border: 3px solid black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+}
+
+.PasswordInput {
+  top: 10px;
+  background-image: url(../../assets/images/Coupon_Background_Light.png);
+  padding: 10px;
+  position: relative;
+  margin: auto;
+  border: 3px solid black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+}
+
+.PasswordInputBox {
+  position: relative;
+  margin: auto;
+  border: 3px solid black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
 }
 
 input[type="button"],
 input[type="submit"] {
-  background-color: #343a40;
-  border: 3px solid #b80c12;
-  border-radius: 2px;
-  color: white;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  font: italic small-caps bold 12px/30px Georgia, serif;
-  font-size: 25px;
-  padding: 10px;
+  /* background-color: black; */
+  background-image: url(../../assets/images/Join_Us_Button.png);
+  width: 99px;
+  height: 48px;
   cursor: pointer;
-}
-
-.LoginButton {
-  position: relative;
-  margin: auto;
-  width: 100px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  cursor: pointer;
-}
-
-.LoginForm {
-  background-color: black;
-  position: relative;
-  margin: auto;
-  border: 3px solid #b80c12;
-  border-radius: 5px;
-  border-width: 3px;
-  border-style: dashed;
-  width: 475px;
-  height: 375px;
 }

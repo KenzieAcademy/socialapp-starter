@@ -12,22 +12,32 @@
   left: -290px;
   top: 11px;
   width: 830px;
-  height: 363px;
+  height: 377px;
   text-align: center;
   font-size: 25px;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font: italic small-caps bold 12px/30px Georgia, serif;
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
-  color: black;
+  color: white;
   font-size: 20px;
 }
 
-.PostButton {
-  padding: 15px;
+.PostAwayButton {
+  background-color: black;
+  border: 3px solid #b80c12;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  padding: 10px;
+  font-size: 25px;
+  color: white;
+  width: 200px;
+  position: relative;
+  margin: auto;
 }
 
 .PhotoUpload {
-  background-color: #b80c12;
+  background-image: url(../../assets/images/Coupon_Background_Dark.png);
   border: 3px solid black;
   border-width: 3px;
   border-style: dashed;

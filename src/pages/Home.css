@@ -5,13 +5,74 @@
 .Home {
   position: relative;
   margin: auto;
-  text-align: center;
 }
 
 .JoinUs {
+  position: relative;
+  margin: auto;
+  border: 3px solid black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  background-image: url(../assets/images/Clear_Red_Dark.png);
+  width: 850px;
+  height: 45px;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font: italic small-caps bold 12px/30px Georgia, serif;
-  font-size: 25px;
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
-  color: #b80c12;
+  color: black;
+  font-size: 12px;
+}
+
+.HomeLink a {
+  top: 5px;
+  left: 5px;
+  position: relative;
+  margin: auto;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font: italic small-caps bold 12px/30px Georgia, serif;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  color: white;
+  font-size: 20px;
+  padding: 5px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.RegisterLink a {
+  top: -85px;
+  left: 729px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font: italic small-caps bold 12px/30px Georgia, serif;
+  position: relative;
+  margin: auto;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  color: white;
+  font-size: 20px;
+  padding: 5px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.FormBody {
+  top: 10px;
+  position: relative;
+  margin: auto;
+}
+
+.Welcome {
+  position: relative;
+  margin: auto;
+  top: -30px;
+  left: 345px;
+  font-size: 30px;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  color: white;
+}
+
+.NotMemberYet {
+  top: -51px;
+  left: 603px;
+  position: relative;
+  margin: auto;
 }

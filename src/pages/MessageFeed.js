@@ -76,7 +76,7 @@ class MessageFeed extends React.Component {
             overlay={this.popover}
             rootClose={true}
           >
-            <Button className="PostButton" variant="dark" size="lg">
+            <Button className="PostAMessageButto" variant="dark" size="lg">
               POST A MESSAGE
             </Button>
           </OverlayTrigger>

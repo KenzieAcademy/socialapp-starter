@@ -44,8 +44,8 @@ const Post = (props) => {
                 </OverlayTrigger>
               </div>
             </Form>
-
-            <div className="PostButton">
+            <br></br>
+            <div className="PostAwayButton">
               <Button variant="dark" size="lg" onClick={props.post}>
                 POST AWAY!
               </Button>

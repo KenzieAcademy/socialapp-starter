@@ -2,7 +2,8 @@ import React from "react";
 import LoginForm from "../components/loginForm/LoginForm";
 import RegistrationForm from "../components/registrationForm/RegistrationForm";
 import { userIsNotAuthenticated } from "../redux/HOCs";
-import Button from "react-bootstrap/Button";
+// import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom";
 import "../pages/Home.css";
 
 class Home extends React.Component {
@@ -10,24 +11,24 @@ class Home extends React.Component {
     super(props);
     this.state = {
       isRegistered: true,
-      loginActive: "light",
-      registerActive: "dark",
+      // loginActive: "outline-dark",
+      // registerActive: "dark",
     };
   }
 
   loginButton = () => {
     this.setState({
       isRegistered: true,
-      registerActive: "dark",
-      loginActive: "light",
+      // registerActive: "dark",
+      // loginActive: "outline-dark",
     });
   };
 
   registerButton = () => {
     this.setState({
       isRegistered: false,
-      registerActive: "light",
-      loginActive: "dark",
+      // registerActive: "outline-dark",
+      // loginActive: "dark",
     });
   };
 
@@ -41,20 +42,40 @@ class Home extends React.Component {
 
     return (
       <div className="Home">
-        {form}
         <div className="JoinUs">
-          <div>Not A Member Yet?</div>
-          <div className="JoinButton">
-            <Button
+          <div className="HomeLink">
+            <Link to="/" onClick={() => this.loginButton()}>
+              Home
+            </Link>
+            {/* <Button
+              variant={this.state.loginActive}
+              size="sm"
+              disabled={this.state.isRegistered}
+              onClick={() => this.loginButton()}
+            >
+              LOGIN
+            </Button> */}
+          </div>
+          <div className="Welcome">Welcome!</div>
+          <div className="RegisterLink">
+            <div>
+              <div className="NotMemberYet">Not Yet A Member?</div>
+              <Link to="/" onClick={() => this.registerButton()}>
+                Register
+              </Link>
+            </div>
+            {/* <Button
               variant={this.state.registerActive}
-              size="lg"
+              size="sm"
               disabled={!this.state.isRegistered}
               onClick={() => this.registerButton()}
             >
-              JOIN US!
-            </Button>
+              REGISTER
+            </Button> */}
           </div>
         </div>
+        <div className="FormBody">{form}</div>
+        <br></br>
       </div>
     );
   }

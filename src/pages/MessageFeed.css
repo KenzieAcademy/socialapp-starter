@@ -31,7 +31,6 @@
   border-width: 3px;
   border-style: dashed;
   width: 830px;
-  /* background-color: #b80c12; */
   background-image: url(../assets/images/Clear_Red.png);
   font-size: 45px;
   font-size: 45px;
@@ -49,16 +48,9 @@
   font-size: 45px;
 }
 
-.PostButton {
-  border: 3px solid black;
-  border-radius: 5px;
-  border-width: 3px;
-  border-style: dashed;
-  /* background-color: #b80c12; */
-  /* background-image: url(../assets/images/); */
+.PostAMessageButton {
   font-size: 25px;
-  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
-  color: black;
+  color: white;
   width: 200px;
   position: relative;
   margin: auto;
