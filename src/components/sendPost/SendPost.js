@@ -1,5 +1,7 @@
 import React from "react"
-import { Pane, Avatar, Button, Textarea } from "evergreen-ui"
+import { Pane, Button, Textarea } from "evergreen-ui"
+import {store} from '../../redux'
+import AvatarImage from '../Avatarimage/avatarImage'
 import DataService from "../../dataService"
 
 
@@ -8,8 +10,6 @@ class SendPost extends React.Component {
   super(props)
   this.state = {value:""}
   this.client = new DataService();
-    
-  
   }
 
   handleMessage = e => {
@@ -34,9 +34,7 @@ render() {
           marginTop='10px'
           background='tint2'
         >
-          <Avatar isSolid name="Tyler Ammons" size={40}
-            marginRight='10px'
-            paddingTop='10px'/>
+          <AvatarImage username={store.getState().auth.login.result.username} />
 
           <form id="PostMessage" onSubmit={this.handleMessage}>
 
@@ -46,8 +44,7 @@ render() {
             height='8vh'
             width='40vw'
             value={this.state.value}
-            onChange={e => this.setState({ value: e.target.value })}
-            
+            onChange={e => this.setState({ value: e.target.value })}            
           />
           <Button
             appearance='primary'
