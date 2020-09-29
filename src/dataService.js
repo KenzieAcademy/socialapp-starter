@@ -27,13 +27,10 @@ class DataService {
       .then((error) => {
         console.log(error)
       })
-<<<<<<< HEAD
   }
 
   getMessages = () => {
     return this.client.get(this.url + "/messages");
-=======
->>>>>>> master
   }
 
 }
