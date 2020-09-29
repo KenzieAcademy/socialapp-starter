@@ -54,13 +54,19 @@ class Message extends React.Component {
                 <div className='like-count'>
                     Likes: {this.props.likes.length}
                     <br />
-                    <button className="like" >👍</button>
+                  <button onClick={this.handleLike}>
+                    <span className="spanlike" role="img" aria-label="samsung">
+                    <div className="like-count">👍{this.props.likes.length}</div> </span>
+                </button>
+                
                 </div>
                 { this.props.username === this.state.username &&
                     <div className="deletePost">
                         <button className="delete" onClick={this.handleDeleteMessage}>🗑️</button>
                     </div>
                 }
+                
+                
             </li>
         )
 

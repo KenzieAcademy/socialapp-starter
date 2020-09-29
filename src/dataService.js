@@ -24,6 +24,20 @@ class DataService {
         return this.client.delete(this.url + '/users/' + userData3.username, {
             headers: { Authorization: "Bearer " + userData3.token}
           })
+        }
+    getMessages() {
+        return this.client
+            .get(this.url + '/messages')
+            .then(response => {
+                return response.data.messages
+            })
+    }
+
+    postLike(userData3) {
+        console.log(userData3)
+        return this.client.post(this.url + '/likes', { messageId: userData3.messageId }, {
+            headers: { Authorization: "Bearer " + userData3.token }
+        })
     }
 
     getProfile(userData4) {

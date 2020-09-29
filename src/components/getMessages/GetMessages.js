@@ -1,14 +1,18 @@
 import React from "react";
-import DataService from '../../dataService';
-import Message from "../message/Message"
-
-
+import DataService from "../../dataService";
+import "./GetMessages.css";
+import Message from "../message/Message";
+import { userIsAuthenticated} from '../../redux/HOCs';
 
 class GetMessages extends React.Component {
-
-  state = {
-    messages: [],
+  constructor(props) {
+    super(props)
+    this.state = {
+      messages: []
+    };
+    this.client = new DataService();
   }
+  
 
   componentDidMount() {
     new DataService()
@@ -16,7 +20,13 @@ class GetMessages extends React.Component {
       .then(messages => {
         this.setState({ messages })
       })
-  }
+    }
+  //     new DataService()
+  //         .getMessages()
+  //         .then(messages => {
+  //             this.setState({ messages })
+  //         })
+  // }
   // constructor(props) {
   //   super(props)
   //   this.state = {
@@ -72,4 +82,4 @@ class GetMessages extends React.Component {
   }
 }
 
-export default GetMessages;
+export default userIsAuthenticated(GetMessages);

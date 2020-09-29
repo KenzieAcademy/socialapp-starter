@@ -28,9 +28,11 @@ class Message extends React.Component {
             .postLike(
                 {messageId: this.props.id, 
                     token: this.state.token})
-            .then(like => {
-                this.setState(latestState => ({ likeCount: latestState.like.length }))
-            })
+            .then(
+                this.setState(prevState => { likeCount: prevState.likeCount + 1 }  )
+            )
+              
+            }
         }
         }
         // this.setState({ data: this.props.likes})
