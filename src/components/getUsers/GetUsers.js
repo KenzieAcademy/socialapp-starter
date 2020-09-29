@@ -87,6 +87,7 @@ class GetUsers extends Component {
         if(!this.state.mounted) {
             return (
                 <div id="user-profile">
+                    <UpdateUsers/> 
                 </div>
             )
         }
@@ -113,6 +114,7 @@ class GetUsers extends Component {
         else {
             return (
                 <div id="user-profile">
+                    <UpdateUsers/>
                 </div>
             )
         }
