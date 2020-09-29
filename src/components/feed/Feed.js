@@ -2,7 +2,11 @@ import React, { Component } from 'react';
 
 //import our service
 import DataService from '../../dataService';
+
+import UserCard from '../userCard/UserCard';
+import AvatarImage from '../Avatarimage/avatarImage';
 import '../feed/Feed.css';
+// import Scroll from '../feed/Scroll'
 
 class Feed extends Component {
     //set our initial state and set up our service as this.client on this component
@@ -12,60 +16,78 @@ class Feed extends Component {
         this.state = {
             feed: [],
             userfeed: [],
-            createdAt: ""
+            createdAt: "",
+            likes: [],
         }
     }
+    //handleLikes()
+    // handleLikes() {
+    //     let incrementButton = document.querySelector("#increment");
+    //     let decrementButton = document.querySelector("#decrement");
+    //     let counter = document.querySelector("#counter");
+    //     console.log("+ button clicked");
+    //     incrementButton.addEventListener("click", function() {
+
+    //           // Calculate the new value for our counter:
+    //         let newCounterValue = Number(counter.innerHTML) + 1;
+    //         if(newCounterValue >= 10) {         // WHAT IS THIS? Check out "IF Statements" in the Useful Resources section.
+    //         counter.style.color = "red";
+    //       }
+
+    //         counter.innerHTML = newCounterValue;
+    //       })
+    //     // Calculate the new value for our counter:
+    //     let newCounterValue = { messages.likes} + 1;
+    //     counter.innerHTML = newCounterValue;
 
 
+//get a new message from the API and add it to the data object in state
+getMessages(){ 
+    return this.client.getMessages().then(result => {
+        const data = result.data.messages;
+        this.setState({ feed: data })
+    })
+}
+// getLikes() { //catalyst to change state by getting messages//
+//     return this.client.getMessages().then(result => {
+//         const likes = result.data.messages.likes;
+//         this.setState({ likes: likes.length })
+//     })
+// }
+getUserMessages = () => {
+    //get all message and filter
+    const loginData = JSON.parse(localStorage.getItem("login"))
 
-    //get a new message from the API and add it to the data object in state
-    getMessages() { //catalyst to change state by getting messages//
-        return this.client.getMessages().then(result => {
-            const data = result.data.messages
+    this.client.getMessages().then(result => {
+        const userData = result.data.messages.filter(messages => loginData.result.username === messages.username)
+        this.setState({ userfeed: userData })
+        console.log(result.data.messages)
+    })
+}
+//when the component mounts, get the first message
+componentDidMount() {
+    this.getMessages()
+    this.getUserMessages()
+}
 
-            this.setState({ feed: data })
-        })
-    }
-    getUserMessages = () => {
-        //get all message and filter
-        const loginData = JSON.parse(localStorage.getItem("login"))
 
-        this.client.getMessages().then(result => {
-            const userData = result.data.messages.filter(messages => loginData.result.username === messages.username)
-            this.setState({ userfeed: userData })
-            console.log(result.data.messages)
-        })
-    }
+render() {
+    return (
 
-    // getTime = () => {
-    //     //get all message and filter
-    //     const postTime = JSON.parse(userfeed.getItem("createdAt"))
-    //     this.setState({ createdAt })
-
-    //when the component mounts, get the first message
-    componentDidMount() {
-        this.getMessages()
-        this.getUserMessages()
-        // this.getTime()
-    }
-
-    // Function to display data.text .username
-
-    render() {
-        return (
-            <div className="feed">
-                
+        // <div className="avatar">
+        //     <p>AVATAR</p>
+            <div className="User">
                 {this.state.feed.map(message =>
-                    <ul>
-                        <h3>{ message.username }</h3><p>{message.text}</p><h5>{message.createdAt}</h5>
+                    <ul className="feed2">
+                        <AvatarImage username={message.username} />
+                        <h4>{message.username}</h4><h5>{message.createdAt}</h5><p>{message.text}</p>
+                        <button className="like">
+                            👍 Like
+                        </button>
                     </ul>)}
-                
-   
-                {/* {this.state.feed.map(message =>
-                    <li></li>)} */}
 
-            </div>
-        )
-    }
+        </div>
+    )
+}
 }
 export default Feed;
