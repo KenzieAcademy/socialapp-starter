@@ -1,0 +1,10 @@
+.GetUsers {
+    height: 250px;
+    width: 250px;
+    overflow: scroll;
+    overflow-y: visible; /* Hide vertical scrollbar */
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+    float: right;
+    margin-right: 100px;
+    
+}

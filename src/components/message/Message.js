@@ -2,7 +2,7 @@ import React from "react"
 import { userIsAuthenticated } from "../../redux/HOCs";
 import DataService from "../../dataService";
 
-import "./Message.css"
+// import "./Message.css"
 
 
 class Message extends React.Component {

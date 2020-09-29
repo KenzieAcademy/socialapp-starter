@@ -5,9 +5,12 @@ import { userIsAuthenticated } from "../redux/HOCs";
 import UserList from "../components/userList/UserList"
 import Avatar from "../components/avatar/Avatar"
 
-
+import GetUsers from "../components/getUsers/GetUsers";
 import DeleteUser from "../components/deleteUser/DeleteUser";
-// import GetMessages from "../components/getMessages/GetMessages";
+import GetProfile from '../components/getProfile/GetProfile';
+import UpdateUser from '../components/updateUser/UpdateUser'
+
+import GetMessages from "../components/getMessages/GetMessages";
 
 class Profile extends React.Component {
   
@@ -22,8 +25,13 @@ class Profile extends React.Component {
 
         <h2>Profile</h2>
         
-        <DeleteUser />
-        {/* <GetMessages /> */}
+        <GetMessages />
+        <h2>Profile</h2>
+        <GetProfile isAuthenticated={this.props.isAuthenticated} />
+        <GetUsers isAuthenticated={this.props.isAuthenticated}/>
+        <UpdateUser isAuthenticated={this.props.isAuthenticated} />
+        <br />
+        <DeleteUser isAuthenticated={this.props.isAuthenticated}/>
       </div>
       
     )
