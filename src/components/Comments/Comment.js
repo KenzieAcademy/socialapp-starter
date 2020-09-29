@@ -1,10 +1,18 @@
 import React from "react";
 
 function Comment(props) {
+
     return (
         <div className="comment">
-            <span className="author">{props.author}</span>
-            {props.children}
+            <div>
+                <span>
+                    {props.username} posted at {props.createdAt}
+
+
+                </span>
+                {props.text}
+                <span>{props.likes.length}</span>
+            </div>
         </div>
     )
 }

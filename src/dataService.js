@@ -45,6 +45,10 @@ class DataService {
     return this.client.put(endpoint, pictureAsFormData, config)
   }
 
+  getMessages = () => {
+    return this.client.get(this.url + "/messages?limit=20");
+  }
+
 }
 
 export default DataService;
