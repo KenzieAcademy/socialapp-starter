@@ -19,6 +19,9 @@ class RegistrationForm extends React.Component {
 
   handleRegistration = e => {
     e.preventDefault();
+    if (this.state.username.length < 3) {
+      return
+    }
     this.client.registerUser(this.state).then(result => {
       //alert(JSON.stringify(result.data))
       alert("Account registration successful")
@@ -26,7 +29,7 @@ class RegistrationForm extends React.Component {
         username: this.state.username,
         password: this.state.password
       })
-    })
+    }).catch( error => console.log(error))
   };
 
   handleChange = e => {
@@ -44,7 +47,7 @@ class RegistrationForm extends React.Component {
           <input
             type="text"
             name="username"
-            minLength="3"
+            minLength={3}
             maxLength="20"
             autoFocus
             required
@@ -55,7 +58,7 @@ class RegistrationForm extends React.Component {
           <input
             type="password"
             name="password"
-            minLength="3"
+            minLength={3}
             maxLength="20"
             required
             onChange={this.handleChange}

@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { Avatar } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 import "./UpdateUser.css";
@@ -45,9 +44,14 @@ class UpdateUser extends React.Component {
     }
 
     render() {
+        let pictureSource
+        if (this.props.user.pictureLocation) {
+            pictureSource = "https://socialapp-api.herokuapp.com" + this.props.user.pictureLocation
+        }
+        
         return (
             <div className="UpdateUser">
-                <Avatar size={192} icon={<UserOutlined />} /><br /><br />
+                <Avatar src={pictureSource} size={200} icon={<UserOutlined />} /><br /><br />
                 
                 <h2>Profile</h2>
 
@@ -83,7 +87,6 @@ class UpdateUser extends React.Component {
                     closePopup={this.togglePasswordPopup.bind(this)} 
                 /> : null }
 
-                <Link to="/">Delete account</Link>
                 <DeleteAccount className="button-link" />
             </div>
         );

@@ -1,7 +1,22 @@
 import React from 'react';
 import './UpdateUser.css';
+import DataService from "../../dataService"
 
 class UpdateDisplayName extends React.Component {
+    state = {
+        displayName: ""
+    }
+
+    handleSubmit = () => {
+        new DataService().updateUser(this.state).then(response => {
+            console.log(response)
+        })
+    }
+
+    handleChange = e => {
+        this.setState({ [e.target.name]: e.target.value })
+    }
+    
     render() {
         return (
             <div className='popup'>
@@ -10,13 +25,17 @@ class UpdateDisplayName extends React.Component {
                     <p>{this.props.description}</p>
                     <div className="popup-content">
                         <input 
+                            name="displayName"
+                            value={this.state.displayName}
                             size="30"
                             maxLength="20"
                             required
-                            placeholder="Enter a new display name">
+                            placeholder="Enter a new display name"
+                            onChange={this.handleChange}
+                        >
                         </input>
                     </div>
-                    <button>Submit Changes</button>
+                    <button onClick={this.handleSubmit}>Submit Changes</button>
                     <button onClick={this.props.closePopup}>Back to Profile</button>
                     <br />
                 </div>

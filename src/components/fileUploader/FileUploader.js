@@ -6,7 +6,7 @@ const dataService = new DataService()
 
 class FileUploader extends React.Component {
     state = { 
-        imageURL: `https://socialapp-api.herokuapp.com/users/${dataService.getUser()}/picture`,
+        imageURL: `https://socialapp-api.herokuapp.com/users/${dataService.getUsername()}/picture`,
         formData: null
     }
     
@@ -35,7 +35,7 @@ class FileUploader extends React.Component {
 
     updatePicture () {
         const timestamp = Date.now()
-        const imageURL = `https://socialapp-api.herokuapp.com/users/${dataService.getUser()}/picture?t=${timestamp}`
+        const imageURL = `https://socialapp-api.herokuapp.com/users/${dataService.getUsername()}/picture?t=${timestamp}`
         this.setState({ imageURL })
     }
 

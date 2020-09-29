@@ -20,6 +20,10 @@ class DataService {
     return this.client.get(this.url + `/users/${username}`)
   }
 
+  getUsername() {
+    return store.getState().auth.login.result.username
+  }
+
   updateUser = (userData) => {
     const loginData = store.getState().auth.login.result
     const token = loginData.token
@@ -36,7 +40,7 @@ class DataService {
   uploadPicture (pictureAsFormData) {
     const loginData = store.getState().auth.login.result
     const token = loginData.token
-    const endpoint = this.url + `/users/${this.getUser()}/picture`
+    const endpoint = this.url + `/users/${this.getUsername()}/picture`
     const config = {
       headers: {
         Authorization: `Bearer ${token}`

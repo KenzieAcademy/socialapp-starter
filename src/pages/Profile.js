@@ -16,7 +16,7 @@ class Profile extends React.Component {
     this.client = new DataService()
   }
 
-  UNSAFE_componentDidMount() {
+  componentDidMount() {
     this.client.getUser(this.props.username)
       .then(response => {
         this.setState({user: response.data.user})
@@ -34,7 +34,7 @@ class Profile extends React.Component {
         </div>
         <div id="right-column">
           <h2>About Me</h2>
-          <p>The component for this user's bio will go here.</p>
+          <p>{this.state.user.about}</p>
           <h2>Messages</h2>
           <p>
             The component for this user's own messages will go here.
@@ -42,7 +42,6 @@ class Profile extends React.Component {
             They should also be able to post a new message from here too.
           </p>
         </div>
-        <DeleteAccount />
       </div>
     );
   }
