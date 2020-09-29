@@ -14,12 +14,15 @@ class TwitHeader extends React.Component {
             size={48}
             src="https://cdn.dribbble.com/users/1525393/screenshots/6484130/comp_1.gif"
           />
-<<<<<<< HEAD
-          <p style={{ color: "lightblue" }}>Twitter</p>
-          {/* <p style={{ color: "lightblue" size : 14}}>Twitter</p> */}
-=======
-          <h2 style={{ color: "lightblue", fontFamily: "Brush Script MT", fontSize: "45px" }}>Twitter</h2>
->>>>>>> 9a19abc088e6823043ebccf73046eca72d7df218
+          <h2
+            style={{
+              color: "lightblue",
+              fontFamily: "Brush Script MT",
+              fontSize: "45px",
+            }}
+          >
+            Twitter
+          </h2>
         </Title>
       </Header>
     );

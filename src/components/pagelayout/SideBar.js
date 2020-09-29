@@ -74,32 +74,20 @@ class SideBar extends React.Component {
                   <Link to="/editprofile">Edit Profile</Link>
                 </Route>
               </Menu.Item>
-<<<<<<< HEAD
-              <Menu.Item key="location3">
-                <Route>
-                  <Link to="/createmessage">Create Message</Link>
-                </Route>
-              </Menu.Item>
-              <Button>
-                {" "}
-                <SettingOutlined /> Logout
-              </Button>
-=======
               <Menu.Item id="menu-links">
                 <Link to="/" onClick={this.handleLogout}>
                   <SettingOutlined /> Logout
-            </Link>
+                </Link>
               </Menu.Item>
               <div className="Menu">
                 {this.props.isAuthenticated && (
                   <div id="menu-links">
                     <Link to="/" onClick={this.handleLogout}>
                       Logout
-            </Link>
+                    </Link>
                   </div>
                 )}
               </div>
->>>>>>> 9a19abc088e6823043ebccf73046eca72d7df218
             </Menu.ItemGroup>
           </SubMenu>
         </Menu>

@@ -1,5 +1,4 @@
 import React from "react";
-import Profile from "./Profile";
 import DataService from "../dataService";
 
 class EditProfile extends React.Component {
@@ -25,24 +24,25 @@ class EditProfile extends React.Component {
   };
   render() {
     return (
-<<<<<<< HEAD
       <div>
         <p>Edit Profile</p>
         <h1>In the Process of being set up</h1>
         <form onSubmit={this.handleSubmit}>
           <input
             type="text"
-            name="messageInput"
+            name="NewAboutMe"
             placeholder="Change your about me"
+            onChange={this.handleChange}
+          />
+          <br />
+          <input
+            type="text"
+            name="newDisplayName"
+            placeholder="Change displayname"
             onChange={this.handleChange}
           />
           <button>Post</button>
         </form>
-=======
-      <div >
-        Edit Profile
-        <h1>Not set up yet</h1>
->>>>>>> 9a19abc088e6823043ebccf73046eca72d7df218
       </div>
     );
   }
