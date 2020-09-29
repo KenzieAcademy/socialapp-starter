@@ -15,9 +15,13 @@ class NewMessage extends React.Component {
 
   handleMessage = e => {
     e.preventDefault();
-    this.client.postMessages({ text: this.state.message }).then(result => {
-      alert(result.data)
-    });
+    if (this.state.message.length < 256) {
+      this.client.postMessages({ text: this.state.message }).then(result => {
+        alert(result.data)
+      });
+    } else {
+      alert("Your message is too long, please limit to 255 characters.")
+    }
   };
 
   handleChange = e => {

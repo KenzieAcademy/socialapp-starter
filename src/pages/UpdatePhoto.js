@@ -36,7 +36,7 @@ class UpdatePhoto extends React.Component {
             <div>
                 <Menu isAuthenticated={this.props.isAuthenticated} />
                 <div>Current Profile Picture:</div>
-                <img src={src} alt="Profile Picture" />
+                <img src={src} alt="Profile" />
                 <UsersPic />
                 <hr />
                 <Link to="/updateprofile/:username">Update Profile</Link>

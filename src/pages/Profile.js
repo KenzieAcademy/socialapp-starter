@@ -1,13 +1,10 @@
 import React from "react";
 import Menu from "../components/menu/Menu";
-import UsersPic from "../components/usersPic/UsersPic"
 import { userIsAuthenticated } from "../redux/HOCs";
-import DeleteUser from "../components/deleteUser/DeleteUser"
 import { Link } from "react-router-dom"
 import cowboy3 from "../components/assets/images/cowboy3.png";
 import cowboy4 from "../components/assets/images/cowboy4.png";
 import cowgirl1 from "../components/assets/images/cowgirl1.png";
-import UpdateUserForm from "../components/updateUserForm/UpdateUserForm";
 import DataService from "../DataService";
 import whoops from "../components/assets/images/whoops.png"
 

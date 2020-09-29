@@ -2,7 +2,6 @@ import React from "react";
 import Spinner from "react-spinkit";
 import "./UpdateUserForm.css";
 import DataService from "../../DataService"
-import { Switch, Route } from "react-router-dom"
 
 class UpdateUserForm extends React.Component {
   constructor(props) {
