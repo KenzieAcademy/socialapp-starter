@@ -15,7 +15,7 @@ class Menu extends React.Component {
       // const profileURL = "/profile/" + loginData.result.username
       return (
         <div className="Menu">
-          <h1>Jerry Book</h1>
+          <h1 id="menubar">Jerry Book</h1>
           <h3>: a site <strong>by</strong> Jerries, <strong>for</strong> Jerries.</h3>
           {this.props.isAuthenticated && (
             <div id="menu-links">

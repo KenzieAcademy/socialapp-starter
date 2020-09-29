@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import { Grommet } from 'grommet'
 import { Redirect } from 'react-router-dom';
 import axios from "axios"
+import "../menu/Menu.css";
+
 // import Button from '@material-ui/core/Button';
 // import { Home } from '../pages/Home'
 
