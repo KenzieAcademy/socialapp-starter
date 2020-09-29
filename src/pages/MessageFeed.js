@@ -19,20 +19,20 @@ if (this.state.messages.length === 0){
 return(
         <div className="MessageFeed">
             <Menu /> 
-         <h1>Message Feed</h1>
-         <h3>loading...</h3>
+            <h1>Message Feed</h1>
+            <h3>loading...</h3>
         </div>
 )
 }
 return (
-      <div className="MessageFeed">
+        <div className="MessageFeed">
             <Menu />
             <h1>Message Feed</h1>
             <ul>
                 {this.state.messages.map(msg => (
                 <Messages key={msg.id}{...msg}/>
                 ))}
-        </ul>
+            </ul>
           
         </div>
     )

@@ -44,7 +44,7 @@ const ProfileUserCard = () => (
   </Grid.Column>
 
   <Grid.Column >
-      <Form Post>
+      <Form post="true">
       <Form.TextArea />
       <Button content='Post' labelPosition='left' icon='edit' primary />
       </Form>
