@@ -17,14 +17,13 @@ class UpdateUser extends Component {
                 about: '',
                 displayName: ''
             }
-        }
     }
 
     componentDidMount() {
         const loginData = JSON.parse(localStorage.getItem("login"));
         return this.getInfoClient.getUser(loginData.result.username).then(result => {
             this.setState({formData: {
-                about: result.data.user.email,
+                about: result.data.user.about,
                 displayName: result.data.user.displayName
                 }
             })
@@ -88,7 +87,6 @@ class UpdateUser extends Component {
         else {
             return <Redirect to="/" />
         }
-
     }
 }
 

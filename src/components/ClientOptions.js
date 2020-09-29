@@ -14,19 +14,15 @@ class ClientOptions {
     IDeleteUser(){
         return this.client.delete(this.url + "/users/{username}")
     }
-    UpdateClient(messageBody) {
+    UpdateClient(messageObj) {
         const loginData = JSON.parse(localStorage.getItem("login"));
-        const {username, email} = loginData.result
-        fetch(this.url, {
-            method: "PATCH",
-            headers: { Authorization: `Bearer ${loginData.result.token}`, ...jsonHeaders },
-            body: JSON.stringify(messageBody)
-        })
-        .then(handleJsonResponse)
-        .then(result => {
-            return result
-        })
-    }
+        return this.client.patch(
+            this.url + '/users/' + loginData.result.username,
+            messageObj,
+            {headers:{Authorization:`Bearer ${loginData.result.token}`},}
+
+        )
+    } 
     // return this.client.patch(this.url + users + logoutData.results)
     // return this.client.patch(this.uurl + "/user/{username} + grabPicture.results)
     GrabMessageList() {
