@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import "../components/menu/Menu.css";
 import DataServices from '../dataService';
-import CommentBox from "../components/Comments/CommentBox";
-import MsgNavBar from "../components/MsgNavBar/MsgNavBar";
-
+import MsgNavBar from "../components/msgnavbar/MsgNavBar";
+import Comment from "../components/Comments/Comment";
 import { userIsAuthenticated } from "../redux/HOCs";
 
 import { Layout } from 'antd';
@@ -58,12 +57,9 @@ class Messagefeed extends Component {
 
     render() {
         return (
-            <Layout>
-                <MsgNavBar />
+            <Layout className>
+                <MsgNavBar isAuthenticated={this.props.isAuthenticated} />
                 <Header>
-
-
-                    <h1><span>The Dragon's Den</span></h1>
 
 
 
@@ -75,15 +71,8 @@ class Messagefeed extends Component {
                     <Content>
                         <div className="Home">
                             {this.state.messages.map((msg) => (
-                                <div key={msg.id}>
-                                    <span>
-                                        {msg.username} posted at {msg.createdAt}
+                                <Comment key={msg.id} {...msg} />
 
-
-                                    </span>
-                                    {msg.text}
-                                    <span>{}</span>
-                                </div>
                             ))}
                         </div>
                     </Content>
@@ -91,7 +80,6 @@ class Messagefeed extends Component {
                     <Sider>
                         <form  >
                             <label>Comment Section</label>
-                            <CommentBox />
 
 
                             <textarea onChange={this.handleChange} row="1" cols="20"></textarea>
