@@ -33,6 +33,16 @@ class DataService {
     return this.client.get(this.url + "/messages?limit=20");
   }
 
+  deleteUser = () => {
+    const loginData = store.getState().auth.login.result
+    const token = loginData.token
+    const username = loginData.username
+    const url = this.url + "/users/" + username
+    return this.client.delete(url, {
+      headers: { Authorization: `Bearer ${token}` }
+    })
+  }
+
 }
 
 export default DataService;
