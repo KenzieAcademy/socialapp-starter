@@ -23,7 +23,6 @@ class MessagePage extends React.Component {
       <div className="MessagePage">
         <Menu isAuthenticated={this.props.isAuthenticated} />
         <NewMessage isAuthenticated={this.props.isAuthenticated} />
-        <h2>New Message</h2>
         <MessageList messages={this.state.messages} />
       </div>
     );
