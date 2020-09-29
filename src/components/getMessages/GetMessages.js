@@ -1,12 +1,11 @@
 import React , { Component } from 'react'
 import GetMessagesService from './GetMessagesService'
-import LikeMessageService from '../likeMessage/LikeMessageService'
+import LikeMessage from '../likeMessage/LikeMessage'
 import "./GetMessages.css"
 class GetMessages extends Component {
     constructor(props) {
         super(props)
         this.client = new GetMessagesService()
-        this.likeClient = new LikeMessageService()
         this.state = {
             messages: [],
             mounted: false
@@ -17,9 +16,11 @@ class GetMessages extends Component {
         return this.client.getMessages().then(result => {
             this.setState({
                 messages: result.data.messages,
-                mounted: true
             })
             this.displayMessages()
+            this.setState({
+                mounted: true
+            })
         })
     }
 
@@ -32,16 +33,14 @@ class GetMessages extends Component {
             let postUser = document.createElement("h5")
             postUser.innerText = messageArray[i].username
             let postText = document.createElement("p")
+            postText.id = messageArray[i].id
             postText.innerText = messageArray[i].text
-            let postLike = document.createElement("button")
-            postLike.id = messageArray[i].id
-            postLike.innerHTML = "&#128077;"
-            postLike.addEventListener("click", function(event) {
-                this.likeClient.likeMessage(event.target.id)
-            })
-            postText.append(postLike)
             post.append(postUser)
             post.append(postText)
+            let postLikes = document.createElement("div")
+            postLikes.id = "post" + messageArray[i].id
+            postLikes.innerText = messageArray[i].likes.length + " Likes"
+            post.append(postLikes)
             feed.append(post)            
         }
     }
@@ -56,7 +55,7 @@ class GetMessages extends Component {
         else {
             return (
                 <div className="message-feed">
-                    
+                    <LikeMessage />
                 </div>
             )
         }
