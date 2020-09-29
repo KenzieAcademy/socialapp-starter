@@ -2,7 +2,7 @@ import React from "react";
 import Menu from "../components/menu/Menu";
 import { userIsAuthenticated } from "../redux/HOCs";
 import FetchService from "../FetchService"
-import { Card, CardContent, Icon, Image } from 'semantic-ui-react'
+import { Card, CardContent, Icon, Image, Button, Form } from 'semantic-ui-react'
 import { withAsyncAction } from "../redux/HOCs";
 // import imageProfile from "../imageProfile/profile.jpg"
 
@@ -88,7 +88,8 @@ class Profile extends React.Component {
           </Card.Content>
         </Card>
 
-        <form id="Profile-form" onSubmit={this.handleUpdateUser}>
+        <Form onSubmit={this.handleUpdateUser}>
+        <Form.Field>
           <label htmlFor="displayName">Display Name</label>
           <input
             type="text"
@@ -97,7 +98,8 @@ class Profile extends React.Component {
             required
             onChange={this.handleChange}
           />
-          <br/>
+        </Form.Field>
+          <Form.Field>
           <label htmlFor="password">Password</label>
           <input
             type="password"
@@ -105,22 +107,24 @@ class Profile extends React.Component {
             required
             onChange={this.handleChange}
           />
-          <br/>
+          </Form.Field>
+          <Form.Field>
           <label htmlFor="about">About</label>
           <input
-            type="textarea"
+            type="text"
             name="about"
             required
             onChange={this.handleChange}
           />
-          <button type="primary"  onClick={this.handleUpdateUser}>
+          </Form.Field>
+          <Button type="primary"  onClick={this.handleUpdateUser}>
             Update User
-          </button>
+          </Button>
 
-          <button type="primary"  onClick={this.handleDeleteUser}>
+          <Button type="primary"  onClick={this.handleDeleteUser}>
             Delete User
-          </button>
-        </form>
+          </Button>
+        </Form>
       </div>
     );
   }

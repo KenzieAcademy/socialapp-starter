@@ -2,7 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Menu.css";
 import { withAsyncAction } from "../../redux/HOCs";
-import LogoFile from "../../images/The Book Nook logo.png"
+import LogoFile from "../../images/book glasses.jpg"
+
 class Menu extends React.Component {
   constructor(props) {
     super(props)
