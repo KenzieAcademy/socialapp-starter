@@ -5,9 +5,7 @@ import Profile from "./pages/Profile";
 import MessageFeed from "./pages/MessageFeed"
 import CreateMessage from "./pages/CreateMessage"
 import NotFound from "./components/notfound/NotFound";
-//import CreateMessage from "./pages/CreateMessage"
 import UserFeed from "./pages/UserFeed";
-
 
 class App extends React.Component {
   render() {
