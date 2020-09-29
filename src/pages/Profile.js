@@ -20,6 +20,7 @@ class Profile extends React.Component {
           <UploadPicture></UploadPicture>
         </div>
       </Layout>
+      
 
 
     );
