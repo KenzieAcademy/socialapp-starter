@@ -8,6 +8,7 @@ import UpdateBio from './UpdateBio';
 import UpdateAvatar from './UpdateAvatar';
 import UpdateDisplayName from './UpdateDisplayName';
 import UpdatePassword from './UpdatePassword';
+import DeleteAccount from "../deleteAccount/DeleteAccount";
 
 class UpdateUser extends React.Component {
     constructor(props) {
@@ -83,6 +84,7 @@ class UpdateUser extends React.Component {
                 /> : null }
 
                 <Link to="/">Delete account</Link>
+                <DeleteAccount className="button-link" />
             </div>
         );
     }
