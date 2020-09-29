@@ -8,6 +8,7 @@ import DeleteUser from "./components/deleteUser/DeleteUser";
 import Home from "./pages/Home";
 import LoginPage from "./pages/LoginPage";
 import Profile from "./pages/Profile";
+import Update from "./pages/Update";
 import UserList from "./pages/UserList";
 import MessageFeed from "./pages/MessageFeed";
 import NotFound from "./pages/NotFound";
@@ -31,6 +32,11 @@ class App extends React.Component {
           exact
           path="/profile/:username"
           component={Profile}
+        />
+        <Route
+          exact
+          path="/update"
+          component={Update}
         />
         <Route 
           exact

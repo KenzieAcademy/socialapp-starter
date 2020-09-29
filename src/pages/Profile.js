@@ -17,9 +17,7 @@ class Profile extends React.Component {
 
         <GetUsers all={false} username={user}/>
 
-        <UpdateUser/>
         <Link to="/deleteUser">Delete User</Link>
-
 
       </div>
     );

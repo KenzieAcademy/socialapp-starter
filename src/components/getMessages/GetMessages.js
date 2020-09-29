@@ -1,10 +1,12 @@
 import React , { Component } from 'react'
 import GetMessagesService from './GetMessagesService'
+import LikeMessageService from '../likeMessage/LikeMessageService'
 import "./GetMessages.css"
 class GetMessages extends Component {
     constructor(props) {
         super(props)
         this.client = new GetMessagesService()
+        this.likeClient = new LikeMessageService()
         this.state = {
             messages: [],
             mounted: false
@@ -31,6 +33,13 @@ class GetMessages extends Component {
             postUser.innerText = messageArray[i].username
             let postText = document.createElement("p")
             postText.innerText = messageArray[i].text
+            let postLike = document.createElement("button")
+            postLike.id = messageArray[i].id
+            postLike.innerHTML = "&#128077;"
+            postLike.addEventListener("click", function(event) {
+                this.likeClient.likeMessage(event.target.id)
+            })
+            postText.append(postLike)
             post.append(postUser)
             post.append(postText)
             feed.append(post)            

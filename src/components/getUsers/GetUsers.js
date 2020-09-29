@@ -7,6 +7,7 @@ class GetUsers extends Component {
         super(props)
         this.client = new GetUsersService()
         this.state = {
+            user: {},
             users: [],
             mounted: false,
             userName: props.username,
@@ -15,47 +16,46 @@ class GetUsers extends Component {
     }
 
     componentDidMount() {
-        return this.client.getUsers().then(result => {
-            this.setState({
-                users: result.data.users,
-                mounted: true
-            })
-            if (!this.state.all) {
+        if(!this.state.all) {
+            return this.client.getUser(this.state.userName).then(result => {
+                this.setState({
+                    user: result.data.user,
+                    mounted: true
+                })
                 this.displayUser()
-            }
-            else {
+            })
+        }
+        else {
+            return this.client.getUsers().then(result => {
+                this.setState({
+                    users: result.data.users,
+                    mounted: true
+                })
                 this.displayAllUsers()
             }
-        })
+        )}
     }
 
     displayUser() {
         const profile = document.getElementById("user-profile")
-        const userList = this.state.users
-        for (let i = 0; i < userList.length; i++) {
-            if (this.state.userName === userList[i].username) {
+        const user = this.state.user
                 const profileImg = document.getElementById("profile-pic")
-                if (userList[i].pictureLocation != null) {
-                    profileImg.src = "https://socialapp-api.herokuapp.com/users/" + userList[i].username + "/picture"
+                console.log(user.pictureLocation)
+                if (user.pictureLocation != null) {
+                    profileImg.src = "https://socialapp-api.herokuapp.com/users/" + user.username + "/picture"
                 }
 
                 const profileName = document.createElement("h2")
-                profileName.innerText = userList[i].displayName
+                profileName.innerText = user.displayName
                 profile.append(profileName)
                 
                 const profileUserName = document.createElement("h3")
-                profileUserName.innerText = "Username: " + userList[i].username
+                profileUserName.innerText = "Username: " + user.username
                 profile.append(profileUserName)
                 
-                const profileEmail = document.createElement("h3")
-                profileEmail.innerText = "Email: " + userList[i].email
-                profile.append(profileEmail)
-                
                 const profileAbout = document.createElement("p")
-                profileAbout.innerText = "About me: " + userList[i].about
+                profileAbout.innerText = "About me: " + user.about
                 profile.append(profileAbout)
-            }
-        }
     }
 
     displayAllUsers() {
@@ -79,17 +79,39 @@ class GetUsers extends Component {
     }
 
     render() {
+        const loginData = JSON.parse(localStorage.getItem("login"))
+        let currentUser = loginData.result.username
+        let user = this.state.userName
+
         if(!this.state.mounted) {
             return (
                 <div id="user-profile">
                 </div>
             )
         }
-        else {
+        else if(!this.state.all && currentUser === user) {
+            return (
+                <div>
+                    <div id="user-profile">
+                        <img id="profile-pic" src="https://i.postimg.cc/6QgJNjX8/default.png" alt="profile.img" />
+                        <UpdateUserPic />
+                    </div>
+                    <div id="user-update">
+                        <a href="http://localhost:3000/update">Update Profile Info</a>
+                    </div>
+                </div>
+            )
+        }
+        else if(!this.state.all) {
             return (
                 <div id="user-profile">
                     <img id="profile-pic" src="https://i.postimg.cc/6QgJNjX8/default.png" alt="profile.img" />
-                    <UpdateUserPic />
+                </div>
+            )
+        }
+        else {
+            return (
+                <div id="user-profile">
                 </div>
             )
         }
