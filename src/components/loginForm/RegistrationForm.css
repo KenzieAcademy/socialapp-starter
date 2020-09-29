@@ -1,9 +1,0 @@
-#registraton-form {
-  display: flex;
-  flex-direction: column;
-  max-width: 20em;
-}
-body {
-  background: rgb(209, 209, 209);
-  
-}

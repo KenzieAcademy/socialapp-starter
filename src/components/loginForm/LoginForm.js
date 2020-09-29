@@ -27,8 +27,10 @@ class LoginForm extends React.Component {
     const { loading, error } = this.props;
     return (
       <div className="LoginForm">
+        <h2 style={{ textAlign: "center", fontFamily: "fantasy", fontSize: "70px" }}>Your favorite microblogging platform</h2>
         <form id="login-form">
           <label htmlFor="username">Username</label>
+
           <input
             type="text"
             name="username"
