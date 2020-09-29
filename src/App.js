@@ -7,63 +7,28 @@ import About from "./pages/about/About";
 import Visit from "./pages/visit/Visit";
 import Style from "./pages/style/Style";
 import Play from "./pages/play/Play";
-import Meet from "./pages/meet/Meet"
+import Meet from "./pages/meet/Meet";
 import Logoff from "./pages/logoff/Logoff";
 import NotFound from "./pages/notFound/NotFound";
+import CommentForm from "./components/commentForm/CommentForm";
 
 class App extends React.Component {
   render() {
     return (
       <div className="App">
-
         <Switch>
-          <Route
-            exact
-            path="/"
-            component={Home}
-          />
-          <Route
-            exact
-            path="/profile/:username"
-            component={Profile}
-          />
-          <Route
-            exact
-            path="/about"
-            component={About}
-          />
-          <Route
-            exact
-            path="/visit"
-            component={Visit}
-          />
-          <Route
-            exact
-            path="/style"
-            component={Style}
-          />
-          <Route
-            exact
-            path="/play"
-            component={Play}
-          />
-          <Route
-            exact
-            path="/meet"
-            component={Meet}
-          />
-          <Route
-            exact
-            path="/logoff"
-            component={Logoff}
-          />
-          <Route
-            exact
-            path="*"
-            component={NotFound}
-          />
+          <Route exact path="/" component={Home} />
+          <Route exact path="/commentForm" component={CommentForm} />
+          
+          <Route exact path="/profile/:username" component={Profile} />
+          <Route exact path="/about" component={About} />
+          <Route exact path="/visit" component={Visit} />
+          <Route exact path="/style" component={Style} />
+          <Route exact path="/play" component={Play} />
+          <Route exact path="/meet" component={Meet} />
+          <Route exact path="/logoff" component={Logoff} />
+          <Route exact path="*" component={NotFound} />
         </Switch>
-
       </div>
     );
   }
