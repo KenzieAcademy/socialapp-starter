@@ -10,8 +10,8 @@ class About extends React.Component {
         return (
             <div className="About">
                 
-                <CommentForm />
                 <Menu isAuthenticated={this.props.isAuthenticated} />
+                <CommentForm />
                 <h1>About the Universe (of Squirrels)</h1>
             </div>
         )

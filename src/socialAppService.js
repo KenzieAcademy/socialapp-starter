@@ -11,11 +11,11 @@ class socialAppService {
     this.client = client;
   }
 getToken(){
-    const { username, token } = store.getState().auth.login.result;
+    const {  token } = store.getState().auth.login.result;
     return token
 }
 getUsername(){
-    const { username, token } = store.getState().auth.login.result;
+    const { username } = store.getState().auth.login.result;
     return username
 }
   
@@ -27,7 +27,7 @@ getUsername(){
     return this.client.get(this.url + "/users");
   }
   getRecentMessages() {
-    return this.client.get(`${this.url}/messages`).then((response) => {
+    return this.client.get(`${this.url}/messages?limit=20`).then((response) => {
       return response.data.messages;
     });
   }
