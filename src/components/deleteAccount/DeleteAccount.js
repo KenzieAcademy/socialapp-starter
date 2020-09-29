@@ -2,10 +2,14 @@ import React from "react";
 import "./DeleteAccount.css";
 
 class DeleteAccount extends React.Component {
+
+  clickHandler = () => {
+
+  }
   render() {
     return (
       <div className="DeleteAccount">
-        <button>Delete Account</button>
+        <button onClick={this.clickHandler}>Delete Account</button>
       </div>
     );
   }
