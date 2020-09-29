@@ -1,6 +1,7 @@
 import React , { Component } from 'react'
 import GetUsersService from './GetUsersService'
 import UpdateUserPic from '../UpdateUser/UpdateUserPic'
+import "../../index.css";
 
 class GetUsers extends Component {
     constructor(props) {
