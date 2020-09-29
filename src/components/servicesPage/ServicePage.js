@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { Result } from 'antd';
-import { store } from "../redux"
+import { store } from '../../redux'
 
 class QuestboardService {
     constructor(

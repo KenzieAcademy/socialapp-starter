@@ -12,18 +12,17 @@ constructor(props){
 
 handleMessage = (event) => {
     if (window.event.origin === undefined) {
+        console.log("this works.")
         window.event = window.event.originalEvent;
     }
 
-    // verify the message is from us
-    let origin = window.location.protocol + '//' + window.location
-        .host;
-
-    if (window.event.origin !== origin) {
+    if (window.event.origin !== window.location.origin) {
+        console.log("this works.")
         return;
     }
 
     if (window.event.data.statusCode === 200) {
+        console.log("this status thing works.")
         this.username = window.event.data.username;
         this.token = window.event.data.token;
 
@@ -39,7 +38,7 @@ handleMessage = (event) => {
 };
 
 componentDidMount() {
-    window.addEventListener('message', this.handleMessage )
+    window.addEventListener('message', this.handleMessage.bind(this) )
 }
 
 handleClick = (event) => {

@@ -61,12 +61,6 @@ class Dice extends React.Component {
             multiplier: e.target.value
         })
     }
-
-    consoleLog(e) {
-        let value = 20
-        console.log(e.target.value)
-        
-    }
     render() {
         return (
             <div className="dice-roll-container">
@@ -74,27 +68,31 @@ class Dice extends React.Component {
                     {this.renderMultiplier()}
                 </div>
                 <div className="dice-container">
-                    
-                    <button value="4" className="die" >
-                    <img className="dice" src={d4} onClick={this.consoleLog}/>
+                    <img className="dice" src={d4} alt="d4" />
+                    <img className="dice" src={d6} alt="d6" />
+                    <img className="dice" src={d8} alt="d8" />
+                    <img className="dice" src={d10} alt="d10" />
+                    <img className="dice" src={d12} alt="d12" />
+                    <img className="dice" src={d20} alt="d20" /><br />
+                    <button value="4" className="die" onClick={this.calculateTotal}>
+                        d4
       </button>
-      <img className="dice" src={d6} alt="d6" />
                     <button value="6" className="die" onClick={this.calculateTotal}>
-                    
+                        d6
       </button>
                     <button value="8" className="die" onClick={this.calculateTotal}>
-                    <img className="dice" src={d8} alt="d8" />
+                        d8
       </button>
                     <button value="10" className="die" onClick={this.calculateTotal}>
-                    <img className="dice" src={d10} alt="d10" />
+                        d10
       </button>
                     <button value="12" className="die" onClick={this.calculateTotal}>
-                    <img className="dice" src={d12} alt="d12" value="12"/>
+                        d12
       </button>
-                    <button value="20" className="die" onClick={this.consoleLog}>      </button>  
-
-                    <img className="dice" src={d20} alt="d20" value="20" onClick={this.consoleLog}/>
-              </div>
+                    <button value="20" className="die" onClick={this.calculateTotal}>
+                        d20
+      </button>
+                </div>
                 <div className="results-container">
                     <h1>&#x2193;</h1>
                     {this.renderResult()}

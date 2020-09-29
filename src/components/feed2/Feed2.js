@@ -4,9 +4,19 @@ import Message from "../Message/Message"
 import "./feed2.css"
 
 class MessageFeed2 extends React.Component {
-    state = {
+    constructor(props){
+        super(props)
+
+    this.state = {
         messages: []
     }
+
+    this.interval = setInterval(() =>  new QuestboardService().GetMessageList().then(messages => {
+        console.log(this.interval)
+        this.setState({ messages })
+    }), 5000)
+
+}
 
     componentDidMount() {
         new QuestboardService().GetMessageList().then(messages => {
@@ -21,6 +31,11 @@ class MessageFeed2 extends React.Component {
             })
         }
       
+      }
+  
+      componentWillUnmount() {
+        console.log(this.interval)
+        clearInterval(this.interval)
       }
 
     render () {
