@@ -4,13 +4,12 @@ import axios from "axios"
 import "../src/App.css";
 import loginForm from "../src/components/loginForm/LoginForm";
 import RegistrationForm from "./components/registrationForm/RegistrationForm";
-import Profile from "../src/components/profile/Profile";
-import Home from "../src/components/Home/Home";
+import Profile from "../src/pages/ProfilePage";
+import Home from "../src/pages/Home";
 import NotFound from "./pages/NotFound";
 import 'semantic-ui-css/semantic.min.css';
-import "./images/heros.jpg";
 import MessageFeed from "../src/pages/MessageFeed";
-import UserList from "../src/pages/UserList";
+
 
 
 class App extends React.Component {
@@ -33,11 +32,6 @@ class App extends React.Component {
           exact
           path="/login"
           component={loginForm}
-        />
-          <Route
-          exact
-          path="/UserList"
-          component={UserList}
         />
          <Route
           exact

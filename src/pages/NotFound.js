@@ -19,4 +19,3 @@ class NotFound extends React.Component {
 }
 
 export default NotFound;
-// {this.props.location.pathname}

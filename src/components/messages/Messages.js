@@ -17,6 +17,7 @@ class Messages extends React.Component {
                 console.log(like)
                 this.setState(latestState => ({ likeCount: latestState.likeCount + 1 }))
             })
+            console.log(this.props.likes)
     }
     render() {
         return (
@@ -25,11 +26,9 @@ class Messages extends React.Component {
                 <br />
                 {this.props.text}
                 <div className="like-count">
-                    Likes: {this.props.likeCount}
+                    Likes: {this.state.likeCount}
+                    </div>
                     <button onClick={this.handleLike}><span role="img" aria-label="Like"> 👍 </span></button>
-                </div>
-
-
             </li>
         )
     }

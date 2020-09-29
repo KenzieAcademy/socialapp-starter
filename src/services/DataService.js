@@ -1,31 +1,29 @@
 import axios from 'axios';
 import { store } from "../redux";
 
-
-
 class DataService {
 
     constructor
-        (url = "https://socialapp-api.herokuapp.com", 
+        (baseURL = "https://socialapp-api.herokuapp.com", 
         client = axios.create()
     ){
-        this.url = url;
+        this.baseURL = baseURL;
         this.client = client;
     }
     registerUser(userData){
         return this.client
-        .post(this.url + "/users", userData);
+        .post(this.baseURL + "/users", userData);
     }
     getUsers(){
         return this.client
-        .get(this.url + "/users?limit=20")
+        .get(this.baseURL + "/users?limit=20")
         .then(response => {
             return response.data.users
         })
     }
-    getUsername() {
+    getUsername(){
         const loginData = JSON.parse(localStorage.getItem("login"))
-        const {username} = loginData.result
+        const {username} = loginData.result.username
 
         return username
     }
@@ -36,7 +34,7 @@ class DataService {
     }
     getRecentMessages() {
         return this.client
-        .get(this.url + "/messages?limit=20")
+        .get(this.baseURL + "/messages?limit=20")
         .then(response => {
              return response.data.messages
             })
@@ -49,7 +47,7 @@ class DataService {
                     }
                 }
             return this.client
-            .post(this.url +"/likes", requestBody,config )
+            .post(this.baseURL +"/likes", requestBody,config )
             .then(response => response.data.like)
         }
 }
