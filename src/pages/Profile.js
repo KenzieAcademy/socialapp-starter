@@ -1,14 +1,33 @@
 import React from "react";
 import {Link} from "react-router-dom"
-import {Image, message, Upload, Button, Layout} from 'antd';
+import { Image, Layout,BackTop} from 'antd';
 import "antd/dist/antd.css"
 import Menu from "../components/menu/MenuAuthenticated";
-import { userIsAuthenticated } from "../redux/HOCs";
+import theQuestBoardHeader from '../media/theQuestBoardHeader.png'
+import Footer from "../components/footer/Footer";
+import { userIsAuthenticated } from "../redux/HOCs"; 
 import QuestboardService from "../components/servicesPage/ServicePage"
-import Icon from "@ant-design/icons/lib/components/Icon";
-import { Route } from "react-router";
+
+
+
+import { UpOutlined } from '@ant-design/icons';
+
+
+
+
+
+
+// comment section 
+
+const questboardService = new QuestboardService
+const username = questboardService.getUsername(MenuAuthenticated)
+const loggedInUsername = questboardService.getUsername()
+
+
+
 class Profile extends React.Component {
-  super(props) {
+  constructor (props) {
+  super(props) 
     this.state = {
       username: [],
       picture: "",
@@ -40,3 +59,9 @@ class Profile extends React.Component {
   }
 }
 export default userIsAuthenticated(Profile);
+
+
+{/* 
+ <BackTop>
+      <div style={style}>UP</div>
+    </BackTop>  */}

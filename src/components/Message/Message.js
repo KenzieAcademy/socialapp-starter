@@ -2,6 +2,7 @@ import React from "react"
 import "./message.css"
 import QuestboardService from "../servicesPage/ServicePage"
 import { Button } from 'antd';
+import Dice from "../../media/Dice.png"
 
 class Message extends React.Component {
 
@@ -27,8 +28,10 @@ handleLike = () => {
                 At {this.props.createdAt}, {this.props.username} posted:
                 <br />
                 {this.props.text}
-        <div className="like-count">Likes: {this.state.likecount}</div>
-        <Button onClick={this.handleLike}>+</Button>
+                <div className="likecount">
+                    Nat 20 "(likes)": {this.state.likecount}
+                </div>
+                <button onClick ={this.handleLike}><img src = {Dice} alt= "Dice"/></button>
             </div>
         )
     }
