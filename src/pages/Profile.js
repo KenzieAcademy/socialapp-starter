@@ -53,9 +53,8 @@ class Profile extends React.Component {
 
       
 
-      <Button onClick={this.EditProfileButton} primary  size='big'>
-          Edit Profile
-        </Button>
+      <Button onClick={this.EditProfileButton} content='Edit Profile' primary  size='small'/>
+       
       </>
    )
    if ( this.state.isClicked ) {

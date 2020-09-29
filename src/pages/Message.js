@@ -1,9 +1,13 @@
 import React from "react";
 import Menu from "../components/menu/Menu";
 import { userIsAuthenticated } from "../redux/HOCs";
-import { Form, Button, TextArea, Feed } from "semantic-ui-react";
-import DataService from "../components/DataService";
-import MessageFeed from "../components/messageFeed/MessageFeed";
+
+import { Form, Button, TextArea,  } from 'semantic-ui-react'
+import DataService from '../components/DataService'
+import MessageFeed from '../components/messageFeed/MessageFeed'
+
+
+
 class Messages extends React.Component {
   constructor(props) {
     super(props);

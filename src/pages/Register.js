@@ -18,11 +18,14 @@ class Register extends Component {
   handleRegistration = (e) => {
     e.preventDefault();
 
+
+
     this.client.registerUser(this.state).then((result) => {
       console.log(JSON.stringify(result.data));
     });
     this.props.history.push("/profile/:username");
   };
+
 
   handleChange = (event) => {
     this.setState({ [event.target.name]: event.target.value });
