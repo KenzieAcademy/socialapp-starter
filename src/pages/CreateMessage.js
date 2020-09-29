@@ -3,7 +3,7 @@ import Menu from "../components/menu/Menu"
 import FetchService from "../FetchService"
 
 import { userIsAuthenticated } from "../redux/HOCs"
-import {userIsAuthenticated} from "../redux/HOCs"
+
 
 
 class CreateMessage extends React.Component {
