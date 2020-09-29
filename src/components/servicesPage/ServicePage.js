@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Result } from 'antd';
+
 import { store } from "../../redux"
 
 class QuestboardService {
@@ -52,13 +52,12 @@ class QuestboardService {
         return this.client.get(this.url + "/users/" + this.getUsername() + "/picture");
     }
     SetPicture(imageUrl) {
-        const RequestPicture = {imageUrl}
         const config = {
             headers: {
                 Authorization: `Bearer ${this.getToken()}`
             }}
-        return this.client.put(this.url + "/users/" + this.getUsername() +"/picture", RequestPicture, config)
-        .then(response => {return response.data.picture});
+        return this.client.put(this.url + "/users/" + this.getUsername() +"/picture", imageUrl, config)
+        ;
     }
     GetMessageList(){
         return this.client

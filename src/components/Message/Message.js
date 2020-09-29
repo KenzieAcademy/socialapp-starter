@@ -1,6 +1,6 @@
 import React from "react"
 import "./message.css"
-import QuestboardService from "../../pages/ServicePage"
+import QuestboardService from "../servicesPage/ServicePage"
 import Dice from "../../media/Dice.png"
 
 class Message extends React.Component {
