@@ -7,7 +7,7 @@ import LogoFile from "../../images/The Book Nook logo.png"
 class Menu extends React.Component {
   constructor(props) {
     super(props)
-    if( JSON.parse(localStorage.getItem("login")).result){
+    if (JSON.parse(localStorage.getItem("login")).result) {
       this.username = JSON.parse(localStorage.getItem("login")).result.username
     }
   }
@@ -19,18 +19,22 @@ class Menu extends React.Component {
   render() {
     return (
       <div className="Menu">
-       
-        <img className="logo" src={LogoFile}/>
+
+        <img className="logo" src={LogoFile} />
         {this.props.isAuthenticated && (
           <div id="menu-links">
             <Link to="/messagefeed">Message Feed</Link>
+            <Link to=
+              "/createmessage">
+              Create Message
+                </Link>
             <Link to="/" onClick={this.handleLogout}>
               Logout
             </Link>
             <Link to={"/profile" + this.username}>
               Profile
               </Link>
-              <Link to="/userFeed">UserFeed</Link>
+            <Link to="/userFeed">UserFeed</Link>
           </div>
         )}
       </div>
