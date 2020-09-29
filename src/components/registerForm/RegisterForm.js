@@ -1,8 +1,8 @@
 import React from "react"
 // import Spinner from "react-spinkit";
-import "./RegisterForm.css";
+// import "./RegisterForm.css";
 import FetchService from "../../FetchService";
-import { Button } from 'semantic-ui-react'
+import { Button, Form } from 'semantic-ui-react'
 
 
 class RegisterForm extends React.Component {
@@ -12,10 +12,10 @@ class RegisterForm extends React.Component {
     this.client = new FetchService()
     this.state = {
       formData: {
-      username: "",
-      password: "",
-      displayName: ""
-      }, 
+        username: "",
+        password: "",
+        displayName: ""
+      },
       error: "",
       submitted: false
     };
@@ -24,16 +24,16 @@ class RegisterForm extends React.Component {
   handleRegister = event => {
     event.preventDefault();
     this.client.registerUser(this.state.formData)
-        .then(error => {
-          console.log(error)
-          this.setState({
-              error: error.message
-          })
+      .then(error => {
+        console.log(error)
+        this.setState({
+          error: error.message
         })
+      })
 
-      this.setState({
-        submitted: true
-      })  
+    this.setState({
+      submitted: true
+    })
   };
 
   handleChange = event => {
@@ -45,75 +45,55 @@ class RegisterForm extends React.Component {
 
   render() {
     let formElement = ""
-    if(!this.state.submitted){
-       formElement = (<form id="register-form"> 
-          {
-           formElement = <div>Thank you for registering</div>
+    if (!this.state.submitted) {
+      formElement = (
 
-      }         
-       <label htmlFor="username">Username</label>
-       <input
-         type="text"
-         name="username"
-         autoFocus
-         required
-         onChange={this.handleChange}
-       />
-       <label htmlFor="displayName">Display Name</label>
-       <input
-         type="text"
-         name="displayName"
-         autoFocus
-         required
-         onChange={this.handleChange}
-       />
-
-       <label htmlFor="password">Password</label>
-       <input
-         type="password"
-         name="password"
-         required
-         onChange={this.handleChange}
-       />
-       <Button type="submit" onClick={this.handleRegister}>
-         Register
+        <Form id="register-form">
+         
+          <Form.Field>
+            <label htmlFor="username">Username</label>
+            <input
+              type="text"
+              name="username"
+              autoFocus
+              required
+              onChange={this.handleChange}
+            />
+          </Form.Field>
+          <Form.Field>
+            <label htmlFor="displayName">Display Name</label>
+            <input
+              type="text"
+              name="displayName"
+              autoFocus
+              required
+              onChange={this.handleChange}
+            />
+          </Form.Field>
+          <Form.Field>
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              name="password"
+              required
+              onChange={this.handleChange}
+            />
+          </Form.Field>
+          <Button type="submit" onClick={this.handleRegister}>
+            Register
          </Button>
-     </form>)
+
+        </Form>)
+    }  else   {
+      formElement = <div>Thank you for registering</div>
+
     }
     // const { loading, error } = this.props;
     return (
       <div className="RegisterForm">
-          {formElement}
-        {/* <form id="register-form" onSubmit={this.handleRegister}>          
-          <label htmlFor="username">Username</label>
-          <input
-            type="text"
-            name="username"
-            autoFocus
-            required
-            onChange={this.handleChange}
-          />
-          <label htmlFor="displayName">Display Name</label>
-          <input
-            type="text"
-            name="displayName"
-            autoFocus
-            required
-            onChange={this.handleChange}
-          />
-
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            name="password"
-            required
-            onChange={this.handleChange}
-          />
-          <Button type="submit" onClick={this.handleChange}>
-            Register
-            </Button>
-        </form> */}
+        {formElement}
         
+
         {this.state.error !== "" && <p style={{ color: "red" }}>{this.state.error}</p>}
       </div>
     );
