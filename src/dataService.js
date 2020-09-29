@@ -1,9 +1,11 @@
-import axios from 'axios';
+import axios from "axios";
 import { store } from "./redux";
 
 class DataService {
-
-  constructor(url = 'https://socialapp-api.herokuapp.com', client = axios.create()) {
+  constructor(
+    url = "https://socialapp-api.herokuapp.com",
+    client = axios.create()
+  ) {
     this.url = url;
     this.client = client;
   }
@@ -17,32 +19,48 @@ class DataService {
   }
 
   updateUser = (userData) => {
-    const loginData = store.getState().auth.login.result
-    const token = loginData.token
-    const username = loginData.username
-    const url = this.url + "/users/" + username
-    return this.client.patch(url, userData, {
-      headers: { Authorization: `Bearer ${token}` },
-    })
-      .then((error) => {
-        console.log(error)
+    const loginData = store.getState().auth.login.result;
+    const token = loginData.token;
+    const username = loginData.username;
+    const url = this.url + "/users/" + username;
+    return this.client
+      .patch(url, userData, {
+        headers: { Authorization: `Bearer ${token}` },
       })
-  }
+      .then((error) => {
+        console.log(error);
+      });
+  };
 
   getMessages = () => {
     return this.client.get(this.url + "/messages?limit=20");
-  }
+  };
 
   deleteUser = () => {
-    const loginData = store.getState().auth.login.result
-    const token = loginData.token
-    const username = loginData.username
-    const url = this.url + "/users/" + username
+    const loginData = store.getState().auth.login.result;
+    const token = loginData.token;
+    const username = loginData.username;
+    const url = this.url + "/users/" + username;
     return this.client.delete(url, {
-      headers: { Authorization: `Bearer ${token}` }
-    })
-  }
+      headers: { Authorization: `Bearer ${token}` },
+    });
+  };
 
+  likeComment = (messageId) => {
+    const loginData = store.getState().auth.login.result;
+    const token = loginData.token;
+    const url = this.url + "/likes";
+    return this.client.post(
+      url,
+      { messageId },
+      { headers: { Authorization: `Bearer ${token}` } }
+    );
+  };
+
+  getUsername = () => {
+    const loginData = store.getState().auth.login.result;
+    return loginData.username;
+  };
 }
 
 export default DataService;
