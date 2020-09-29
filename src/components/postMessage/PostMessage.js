@@ -6,18 +6,21 @@ class PostMessage extends Component {
         super(props)
         this.client = new PostMessageService()
         this.state = {
-            text: ""
+            text: "",
+            submitted: false
         }
     }
 
     handleSubmit = e => {
         e.preventDefault()
-        this.client.postMessage(this.state)
+        this.client.postMessage(this.state.text)
+        const form = document.getElementById("message-input")
+        form.value = ""
+        this.setState({ submitted: true })
     }
 
     handleChange = e => {
         this.setState({ text: e.target.value });
-        console.log(JSON.stringify(this.state))
       };
 
     render() {
@@ -26,6 +29,7 @@ class PostMessage extends Component {
                 <form id="new-message" onSubmit={this.handleSubmit}>
                 <label htmlFor="message">Type Message: </label>
                     <input
+                        id = "message-input"
                         type="text"
                         name="message"
                         required
