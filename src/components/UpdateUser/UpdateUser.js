@@ -3,19 +3,19 @@
 import React, { Component } from "react"
 import ClientOptions from '../ClientOptions'
 import SocialApp from "../socialapp/SocialApp";
-
+import GetUsersService from '../getUsers/GetUsersService'
+import { displayName } from "react-spinkit";
 class UpdateUser extends Component {
     constructor(props) {
         super(props)
         this.client = new ClientOptions()
 
         this.state = {
-            data: [],
-            submitted: false,
-            formData: {
-                name: '',
-                email: '',
-            }
+            
+            
+            password: '',
+            displayName: '',
+            about: '',
         }
     }
     updateProfile() {
@@ -24,27 +24,13 @@ class UpdateUser extends Component {
             
         
     }
-    componentDidMount() {
-        this.updateProfile()
-    }
+    
     handleChange = (event) => {
-        const formData = { ...this.state.formData }
-        formData[event.target.name] = event.target.value
-
-        this.setState({ formData })
+        this.setState({[event.target.name]:event.target.value})
     }
     handleSubmit = (event) => {
         event.preventDefault()
-        this.setState({
-            submitted: true,
-            formData: {
-                name: this.state.formData.name,
-                email: this.state.formData.email,
-
-            }
-
-
-        })
+        this.client.UpdateClient(this.state)
     }
 
 
@@ -65,8 +51,8 @@ class UpdateUser extends Component {
                     <div>
                         <label htmlFor=""> Name</label>
                         <input type="text"
-                            name="name"
-                            value={this.state.formData.firstName}
+                            name="displayName"
+                            
 
                             onChange={this.handleChange}
                         />
@@ -74,24 +60,28 @@ class UpdateUser extends Component {
                     </div>
 
                     <div>
-                        <label htmlFor="">Email</label>
+                        <label htmlFor="">about</label>
                         <input type="text"
-                            name="email"
-                            value={this.state.formData.email}
+                            name="about"
+                            
 
                             onChange={this.handleChange}
                         />
+                        <label htmlFor="">Password</label>
+                        <input type= "text"
+                        name= "password"
+                        onChange={this.handleChange}
+                        
+                        
+                        />
+
 
                     </div>
 
-                    <button>Submit</button>
+                    <button type= 'submit'>Submit</button>
                 </form>
 
-                <div>
-                    {this.state.data.username}
-                    <br />
-                    {this.state.data.email}
-                </div>
+                
             </div>
         )
     }

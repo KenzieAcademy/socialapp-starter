@@ -1,6 +1,6 @@
 import React , { Component } from 'react'
 import GetUsersService from './GetUsersService'
-
+import  UpdateUsers from '../UpdateUser/UpdateUser' 
 class GetUsers extends Component {
     constructor(props) {
         super(props)
@@ -86,12 +86,14 @@ class GetUsers extends Component {
         if(!this.state.mounted) {
             return (
                 <div id="user-profile">
+                    <UpdateUsers/> 
                 </div>
             )
         }
         else {
             return (
                 <div id="user-profile">
+                    <UpdateUsers/>
                 </div>
             )
         }
