@@ -46,29 +46,24 @@ class DataService {
         })
 
     }
-    getMessage() {
-        return this.client.get(this.url + '/messages')
+    getMessages() {
+        return this.client.get(this.url + '/messages?limit=20').then(response => { return response.data.messages})
+        
 
     }
-    getMessageFeed(messages) {
-        return this.client.get(this.url + "messages", messages)
+
+
+
+    //likes
+    likeMessage() {
+        return this.client.post(this.url + '/messages').then (response => { console.log(response)})
+
     }
-    postMessage(messages) {
-        return this.client.post(this.url + "messages", messages)
-    }
-    deletMessage(messages) {
-        return this.client.delete(this.url + "messages/{messageID}", messages)
-    }
-    getPicther(picther) {
-        return this.client.get(this.url + "/users/{username}/picture", picther)
-    }
-    putPitcher(pictherData) {
-        return this.client.put(this.url + "/users/{username}/picture", pictherData, {
-            headers: {
-                Authorization: "Bearer" + this.token.result.token
-            }
-        })
-    }
+
+
+
+
+
 
 
 
