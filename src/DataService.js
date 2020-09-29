@@ -22,12 +22,13 @@ class DataService {
         )
     }
 
-    deleteUser(userData) {
+    deleteUser() {
+        console.log("attempting to delete user")
         const loginData = JSON.parse(localStorage.getItem('login')).result
         let token = loginData.token
         let username = loginData.username
         let url = this.url + "/users/" + username
-        return this.client.delete(url, userData,
+        return this.client.delete(url,
             {
                 headers: { Authorization: `Bearer ${token}` }
             }
@@ -73,7 +74,15 @@ class DataService {
     }
 
     setUserPicture(userPicture) {
-        // Insert API call here
+        const loginData = JSON.parse(localStorage.getItem('login')).result
+        let token = loginData.token
+        const username = loginData.username
+        let url = this.url + `/users/${username}/picture`
+        return this.client.put(url, userPicture,
+            {
+                headers: { Authorization: `Bearer ${token}` }
+            }
+        )
     }
 
     getUser() {
@@ -81,7 +90,8 @@ class DataService {
         const username = loginData.username
         return this.client.get(this.url + "/users/" + username)
     }
-    
+
+
 }
 
 export default DataService

@@ -2,27 +2,30 @@ import React from "react";
 import Spinner from "react-spinkit";
 import "./DeletionForm.css";
 import DataService from "../../DataService";
+import { DatePicker } from 'antd';
+import { Button } from 'antd';
+import { WarningOutlined } from '@ant-design/icons';
+//ReactDOM.render(<DatePicker />, mountNode);
+//import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
+//import DeletionForm from "../deleteUser/DeletionForm"
+
 
 class DeleteUser extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {
-            "username": "string",
-            "statusCode": 0
-        };
         this.client = new DataService();
     }
 
-
-    handleDeletion = e => {
-        this.setState({ [e.target.name]: e.target.value });
-    }
-
     //Check for error with deletion process
-    deleteUser = () => {
+    deleteUser = (e) => {
+        e.preventDefault()
+        console.log("click")
         this.client.deleteUser()
             .then(data => {
                 console.log(data)
+                localStorage.clear();
+                window.location.reload();
+
             }).catch(error => {
                 console.log(error)
             })
@@ -32,22 +35,15 @@ class DeleteUser extends React.Component {
 
         return (
             <div className="DeletionForm">
-                <form id="deletion-form" onSubmit={this.handleDeletion}>
-                    <label htmlFor="username">Username</label>
-                    <input
-                        type="text"
-                        name="username"
-                        autoFocus
-                        required
-                        onChange={this.handleChange}
-                    />
-                    <button type="danger" disabled={loading}>
-                        Are you sure you want to DELETE ?
-          </button>
+                <form id="deletion-form" onSubmit={this.deleteUser}>
+                    <button type="primary" danger>
+                        DELETE your Profile?
+                    </button>
+                    {/* <img className="warningSign" src={warningSign} alt="warningSign" /> */}
                 </form>
                 {loading && <Spinner name="circle" color="blue" />}
                 {error && <p style={{ color: "red" }}>{error.message}</p>}
-            </div>
+            </div >
         )
     }
 }
