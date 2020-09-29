@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import "../components/menu/Menu.css";
 import DataServices from '../dataService';
 import CommentBox from "../components/Comments/CommentBox";
-//Pages imported below
-import Profile from "../pages/Profile";
+import Menu from "../components/menu/Menu";
 
 import { userIsAuthenticated } from "../redux/HOCs";
 
@@ -69,7 +68,6 @@ class Messagefeed extends Component {
 
 
 
-
                 </Header>
 
 
@@ -78,13 +76,14 @@ class Messagefeed extends Component {
                     <Content>
                         <div className="Home">
                             {this.state.messages.map((msg) => (
-                                <div>
+                                <div key={msg.id}>
                                     <span>
-                                        `${msg.username} posted at ${msg.createdAt},
-                                        message: ${msg.text}`
+                                        {msg.username} posted at {msg.createdAt}
 
 
                                     </span>
+                                    {msg.text}
+                                    <span>{}</span>
                                 </div>
                             ))}
                         </div>
