@@ -8,9 +8,10 @@ import socialAppService from "../../socialAppService";
 class CommentForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { likeCount: this.props.likes };
+
     this.client = new socialAppService();
     this.state = {
+
       lastRefresh: Date(Date.now()).toString(),
       messages: [],
       formData: {},
@@ -24,37 +25,10 @@ class CommentForm extends React.Component {
     });
   }
 
-  handleLike = () => {
-    const loggedInUsername = this.client.getUsername();
-    if (
-      this.props.likes.some(
-        (likeObject) => likeObject.username === loggedInUsername
-      )
-    )
-      return;
-    this.client.postLike(this.props.id).then((like) => {
-      this.setState((latestState) => ({
-        likeCount: latestState.likeCount + 1,
-      }));
-    });
-  };
-  handleDeleteLike = () => {
-    const loggedInUsername = this.client.getUsername();
-    if (
-      this.props.likes.some(
-        (likeObject) => likeObject.username === loggedInUsername
-      )
-    )
-      return;
-    this.client.deleteLike(this.props.id).then((like) => {
-      this.setState((latestState) => ({
-        likeCount: latestState.likeCount - 1,
-      }));
-    });
-  };
+
   refreshScreen() {
     this.setState({ lastRefresh: Date(Date.now()).toString() })
-}
+  }
 
 
   handleChange = (event) => {
@@ -66,7 +40,7 @@ class CommentForm extends React.Component {
   handlePost = (e) => {
     e.preventDefault();
     this.client.postNewMessage(this.state.formData.message);
-    this.formData={};
+    this.formData = {};
   };
 
   render() {
@@ -76,12 +50,11 @@ class CommentForm extends React.Component {
           <Comment.Content>
             <Comment.Actions></Comment.Actions>
 
-            <Form reply>
+            <Form reply onSubmit={this.refreshScreen}>
               <Form.TextArea name="message" onChange={this.handleChange} />
 
               <Button
                 onClick={this.handlePost}
-                onSubmit='refreshScreen()'
                 content="Add Reply"
                 labelPosition="left"
                 icon="edit"
@@ -93,23 +66,7 @@ class CommentForm extends React.Component {
       </Comment.Group>
     );
 
-    // <div>
-    //   {this.props.text}
 
-    //   <div className="like-count">Likes: {this.state.likeCount}</div>
-    //   <button onClick={this.handleLike}>
-    //     <span role="img" aria-label="like">
-    //       :+1:
-    //     </span>
-    //   </button>
-    //   <br />
-    //   <div className="like-count">Dislikes: {this.state.likeCount}</div>
-    //   <button onClick={this.handleDeleteLike}>
-    //     <span role="img" aria-label="like">
-    //       :-1:
-    //     </span>
-    //   </button>
-    // </div>;
 
     if (this.state.messages.length === 0) {
       return (
@@ -130,6 +87,7 @@ class CommentForm extends React.Component {
           ))}
         </ul>
       </div>
+
     );
   }
 }

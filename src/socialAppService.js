@@ -6,19 +6,19 @@ class socialAppService {
     url = "https://socialapp-api.herokuapp.com",
     client = axios.create()
   ) {
-  
+
     this.url = url;
     this.client = client;
   }
-getToken(){
-    const {  token } = store.getState().auth.login.result;
+  getToken() {
+    const { token } = store.getState().auth.login.result;
     return token
-}
-getUsername(){
+  }
+  getUsername() {
     const { username } = store.getState().auth.login.result;
     return username
-}
-  
+  }
+
   registerUser(userData) {
     return this.client.post(this.url + "/users", userData);
   }
@@ -31,8 +31,29 @@ getUsername(){
       return response.data.messages;
     });
   }
+  postLike(messageId) {
+    const endpoint = `${this.url}/likes`
+    const config = {
+      headers: {
+        Authorization: "Bearer " + this.getToken(),
+      },
+    }
+    return this.client.post(endpoint, { messageId }, config)
+      .then(response => response.data.like)
+  }
+  deleteLike(likeId) {
+    const endpoint = `${this.url}/likes/${likeId}`
+    const config = {
+      headers: {
+        Authorization: "Bearer " + this.getToken(),
+      },
+    }
+    return this.client.delete(endpoint, config)
+
+  }
+
   postNewMessage(message) {
-      console.log(this.getToken())
+    console.log(this.getToken())
     return this.client.post(
       this.url + "/messages",
       { text: message },
