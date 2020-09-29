@@ -10,9 +10,10 @@
 
 .Gamebox {
   display: flex;
-  flex-direction: row;
-  height: 60vh;
-  width: 100vw;
+  flex-direction: column;
+  width: auto;
+  height: auto;
   margin: auto;
+  align-self: center;
   
 }

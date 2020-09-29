@@ -12,12 +12,11 @@ class Play extends React.Component {
                 <div className="Play">
                     <Menu isAuthenticated={this.props.isAuthenticated} />
                     {/* <SideBar isAuthenticated={this.props.isAuthenticated} /> */}
-                    <h1>This is the "Let's Play SpaceBallz!" page.</h1>
+                    <h1>Let's Play SpaceBallz!</h1>
                     <div className="Gamebox">
-                        <iframe src='http://www.freearcade.com/SpaceBalls.flash/SpaceBalls.html'
+                        <iframe height="800" width="1090" scrolling="0" src='http://www.freearcade.com/SpaceBalls.flash/SpaceBalls.html'
                         ></iframe>
-                        {/* <iframe height="500" width="500" frameBorder='0' scrolling='0' src='https://www.embed.com/app/arcade/invaders.html'
-                        ></iframe> */}
+
                     </div>
                     <br></br>
                     <br></br>
