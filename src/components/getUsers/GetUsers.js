@@ -40,7 +40,6 @@ class GetUsers extends Component {
         const profile = document.getElementById("user-profile")
         const user = this.state.user
                 const profileImg = document.getElementById("profile-pic")
-                console.log(user.pictureLocation)
                 if (user.pictureLocation != null) {
                     profileImg.src = "https://socialapp-api.herokuapp.com/users/" + user.username + "/picture"
                 }
