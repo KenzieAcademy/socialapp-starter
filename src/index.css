@@ -13,3 +13,22 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+img, #profile-pic {
+  max-height: 200px;
+  max-width: 200px;
+  border-radius: 30%;
+  padding: 10px 20px;
+   display: block;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+
+}
+
+a:link, #profile-pic {
+  color: rgb(108, 193, 227);
+}
+
+a:hover, #user-profile  {
+  color: rgb(36, 81, 140);
+}
