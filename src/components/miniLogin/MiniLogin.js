@@ -1,6 +1,8 @@
 import React from "react";
 import { withAsyncAction } from "../../redux/HOCs";
 import Spinner from "react-spinkit";
+import Button from "react-bootstrap/Button";
+import "../miniLogin/MiniLogin.css";
 
 class MiniLogin extends React.Component {
   constructor(props) {
@@ -20,15 +22,20 @@ class MiniLogin extends React.Component {
   render() {
     const { loading, error } = this.props;
     return (
-      <div className="LoginButton">
-        <input
-          type="submit"
-          value="Enter"
-          onClick={this.handleLogin}
-          disabled={loading}
-        />
-        {loading && <Spinner name="circle" color="red" />}
-        {error && <p style={{ color: "red" }}>{error.message}</p>}
+      <div className="PopUp">
+        <div className="LoginButton">
+          <Button
+            variant="dark"
+            size="lg"
+            type="submit"
+            onClick={this.handleLogin}
+            disabled={loading}
+          >
+            LOGIN
+          </Button>
+          {loading && <Spinner name="circle" color="red" />}
+          {error && <p style={{ color: "red" }}>{error.message}</p>}
+        </div>
       </div>
     );
   }
