@@ -1,5 +1,6 @@
 import React from 'react';
 import './UpdateUser.css';
+import { userIsAuthenticated } from "../../redux/HOCs";
 import DataService from "../../dataService"
 
 class UpdatePassword extends React.Component {
@@ -29,6 +30,7 @@ class UpdatePassword extends React.Component {
                             type="password"
                             value={this.state.password}
                             size="30"
+                            minLength="3"
                             maxLength="20"
                             required
                             placeholder="Enter a new password"
@@ -36,7 +38,7 @@ class UpdatePassword extends React.Component {
                         >
                         </input>
                     </div>
-                    <button>Submit Changes</button>
+                    <button onClick={this.handleSubmit}>Submit Changes</button>
                     <button onClick={this.props.closePopup}>Back to Profile</button>
                     <br />
                 </div>
@@ -45,4 +47,4 @@ class UpdatePassword extends React.Component {
     }
 }
 
-export default UpdatePassword;
+export default userIsAuthenticated(UpdatePassword);

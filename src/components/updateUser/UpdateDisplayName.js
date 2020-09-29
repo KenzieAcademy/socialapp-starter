@@ -28,6 +28,7 @@ class UpdateDisplayName extends React.Component {
                             name="displayName"
                             value={this.state.displayName}
                             size="30"
+                            minLength="3"
                             maxLength="20"
                             required
                             placeholder="Enter a new display name"
