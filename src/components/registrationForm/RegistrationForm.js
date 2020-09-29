@@ -88,7 +88,7 @@ class RegistrationForm extends React.Component {
             <div className="EnterButtonBox">
               <div className="EnterButton">
                 <Button variant="dark" size="lg" disabled={loading}>
-                  REGISTER!
+                  REGISTER
                 </Button>
               </div>
             </div>

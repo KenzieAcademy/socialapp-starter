@@ -32,7 +32,7 @@
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font: italic small-caps bold 12px/30px Georgia, serif;
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
-  color: white;
+  color: black;
   font-size: 20px;
   padding: 5px;
   text-decoration: underline;
@@ -40,14 +40,14 @@
 }
 
 .RegisterLink a {
-  top: -85px;
+  top: -87px;
   left: 729px;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font: italic small-caps bold 12px/30px Georgia, serif;
   position: relative;
   margin: auto;
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
-  color: white;
+  color: black;
   font-size: 20px;
   padding: 5px;
   text-decoration: underline;
@@ -55,7 +55,7 @@
 }
 
 .FormBody {
-  top: 10px;
+  top: 5px;
   position: relative;
   margin: auto;
 }
@@ -63,7 +63,7 @@
 .Welcome {
   position: relative;
   margin: auto;
-  top: -30px;
+  top: -28px;
   left: 345px;
   font-size: 30px;
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
@@ -71,7 +71,7 @@
 }
 
 .NotMemberYet {
-  top: -51px;
+  top: -54px;
   left: 603px;
   position: relative;
   margin: auto;

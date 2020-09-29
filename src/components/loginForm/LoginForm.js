@@ -58,7 +58,7 @@ class LoginForm extends React.Component {
             <div className="EnterButtonBox">
               <div className="EnterButton">
                 <Button variant="dark" size="lg" disabled={loading}>
-                  ENTER!
+                  ENTER
                 </Button>
               </div>
             </div>
