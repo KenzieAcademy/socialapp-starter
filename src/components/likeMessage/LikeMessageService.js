@@ -7,13 +7,13 @@ class LikeMessageService {
         this.client = client;
     }
 
-    likeMessage(messageId) {
+    likeMessage(id) {
         const loginData = JSON.parse(localStorage.getItem("login"));
-        let fetchBody = "messageId:" + messageId
+        let fetchBody = "{\"messageId\":" + id + "}"
         fetch(this.url, {
             method: "POST",
             headers: { Authorization: `Bearer ${loginData.result.token}`, ...jsonHeaders },
-            body: JSON.stringify(fetchBody)
+            body: fetchBody
         })
         .then(handleJsonResponse)
         .then(result => {
