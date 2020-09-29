@@ -1,5 +1,4 @@
 import React from "react";
-import Menu from "../components/menu/Menu";
 import { userIsAuthenticated } from "../redux/HOCs";
 // import { domain, jsonHeaders, handleJsonResponse } from "./constants";
 import DataService from "../dataService";

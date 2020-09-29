@@ -2,10 +2,11 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 import Home from "../../pages/Home";
 import Profile from "../../pages/Profile";
+import CreateMessage from "../../pages/CreateMessage";
 import MessageFeed from "../../pages/MessageFeed";
 import NotFound from "../../pages/NotFound";
 
-import { Layout, Avatar, Menu, Breadcrumb, Button, message } from "antd";
+import { Layout, Breadcrumb } from "antd";
 import EditProfile from "../../pages/EditProfile";
 
 const { Header, Footer, Sider, Content } = Layout;
@@ -27,14 +28,15 @@ class MainContent extends React.Component {
               //   "url(" + "https://wallpapercave.com/wp/wp2683622.jpg" + ")",
             }}
           >
-            <switch>
+            <Switch>
               <Route exact path="/messagefeed" component={MessageFeed} />
               <Route exact path="/" component={Home} />
               <Route exact path="/profile/:username" component={Profile} />
               <Route exact path="/editprofile" component={EditProfile} />
+              <Route exact path="/createmessage" component={CreateMessage} />
               <Route exact path="*" component={NotFound} />
               {/* <Route exact path="*" component={Button} /> */}
-            </switch>
+            </Switch>
           </div>
         </Content>
         <Footer style={{ textAlign: "center" }}>

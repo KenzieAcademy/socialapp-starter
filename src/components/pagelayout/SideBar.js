@@ -2,12 +2,11 @@ import React from "react";
 
 import SubMenu from "antd/lib/menu/SubMenu";
 import Icon from "@ant-design/icons";
-import { Layout, Avatar, Menu, Breadcrumb, Button, message } from "antd";
-import Title from "antd/lib/typography/Title";
+import { Layout, Menu, Button } from "antd";
 import { Link, Route } from "react-router-dom";
 import { SettingOutlined } from "@ant-design/icons";
 
-const { Header, Footer, Sider, Content } = Layout;
+const { Sider } = Layout;
 
 class SideBar extends React.Component {
   render() {
@@ -69,7 +68,11 @@ class SideBar extends React.Component {
                   <Link to="/editprofile">Edit Profile</Link>
                 </Route>
               </Menu.Item>
-              <Menu.Item key="location3"> Waiting... </Menu.Item>
+              <Menu.Item key="location3">
+                <Route>
+                  <Link to="/createmessage">Create Message</Link>
+                </Route>
+              </Menu.Item>
               <Button>
                 {" "}
                 <SettingOutlined /> Logout
