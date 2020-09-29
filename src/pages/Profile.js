@@ -6,7 +6,7 @@ import Footer from "../components/footer/Footer";
 
 
 
-import { BackTop, Layout,TimePicker } from 'antd';
+import { BackTop, Layout } from 'antd';
 import { UpOutlined } from '@ant-design/icons';
 
 
@@ -40,8 +40,8 @@ class Profile extends React.Component {
 
 
 
-
     const { Header, Content } = Layout;
+
 
     // for backtop
     const style = {
@@ -56,34 +56,26 @@ class Profile extends React.Component {
     };
 
     return (
-      <div className="container">
-        <Menu isAuthenticated={this.props.isAuthenticated} />
+      <Layout>
+        <Menu />
+        <Layout className="site-layout" style={{ marginLeft: 190 }}>
+          <Header className="mainHeader" style={{ padding: 0, textAlign: 'center' }}> <img className="theQuestBoardHeader" src={theQuestBoardHeader} alt="QuestBoard Header" /> </Header>
 
-         <Header 
-        className="mainHeader" 
-        style={{ padding: 0, textAlign: 'center'}}> 
-        <img className="theQuestBoardHeader" 
-        src={theQuestBoardHeader} 
-        alt="QuestBoard Header" /> 
-        </Header> 
-       
+          <Content>
+            vsdfsdfsdfsdfsd
+      </Content>
+          
+        </Layout>
       
-        
-        <Footer className="foot"/>
-      
-  
-    
-
-    
-        
-         
-      <BackTop>
-      <div style={style}>UP</div>
-    </BackTop>
-        
-      </div>
-
+{/* <Footer /> */}
+</Layout>
     );
   }
 }
 export default userIsAuthenticated(Profile);
+
+
+{/* 
+ <BackTop>
+      <div style={style}>UP</div>
+    </BackTop>  */}
