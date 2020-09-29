@@ -17,17 +17,23 @@ class MessagePage extends React.Component {
       this.setState({ messages: response.data.messages })
     })
   }
-
   render() {
     return (
       <div className="MessagePage">
         <Menu isAuthenticated={this.props.isAuthenticated} />
         <NewMessage isAuthenticated={this.props.isAuthenticated} />
         <h2>New Message</h2>
+        <ul></ul>
+
         <MessageList messages={this.state.messages} />
+
       </div>
     );
   }
 }
+
+
+
+
 
 export default userIsAuthenticated(MessagePage);
