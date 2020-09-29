@@ -2,6 +2,7 @@ import React , { Component } from 'react'
 import GetUsersService from './GetUsersService'
 import UpdateUserPic from '../UpdateUser/UpdateUserPic'
 import { Link } from "react-router-dom";
+import "../../index.css";
 
 class GetUsers extends Component {
     constructor(props) {
@@ -86,6 +87,7 @@ class GetUsers extends Component {
         if(!this.state.mounted) {
             return (
                 <div id="user-profile">
+                    <UpdateUsers/> 
                 </div>
             )
         }
@@ -114,6 +116,7 @@ class GetUsers extends Component {
         else {
             return (
                 <div id="user-profile">
+                    <UpdateUsers/>
                 </div>
             )
         }

@@ -4,45 +4,33 @@ import Menu from "../menu/Menu";
 import { Link } from "react-router-dom";
 import { Grommet } from 'grommet'
 import { Redirect } from 'react-router-dom';
+import "../menu/Menu.css";
 // import Button from '@material-ui/core/Button';
 // import { Home } from '../pages/Home'
 
 class DeleteNow extends Component {
     constructor(props) {
         super(props)
-        // let url = 'https://socialapp-api.herokuapp.com/'
         this.client = new DeleteUserService();
         this.loginData = JSON.parse(localStorage.getItem("login"));
-        // this.url = url + this.state.username;
-        // this.token = new DeleteUserService(getToken);
         this.state = {
             text: "",
             username: "",
             password: ""
         }
-        // const loginData = JSON.parse(localStorage.getItem("login"));
     }
 
     handleRemove = (e) => {
         const id = JSON.parse(localStorage.getItem("login"));
         const url = 'https://socialapp-api.herokuapp.com/users/';
-        // const id = document.querySelectorAll("li").props['data-id'];
         e.preventDefault();
         this.client.deleteNow(url + id.result.username);
-
         return <Redirect to="/Home" />
 
-            // .then(res => {
-            //     console.log(res.data);
-            // })
-            // .catch((err) => {
-            //     console.log(err);
-            // })
     }
 
     handleChange = e => {
         // let loginData = JSON.parse(localStorage.getItem("login"));
-        // console.log(JSON.stringify(this.state))
         console.log("login")
         // return <Redirect to="/Home" />
         // window.location = "https://"

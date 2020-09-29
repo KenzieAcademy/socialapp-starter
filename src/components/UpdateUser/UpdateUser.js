@@ -17,7 +17,6 @@ class UpdateUser extends Component {
                 about: '',
                 displayName: ''
             }
-        }
     }
 
     componentDidMount() {
@@ -88,7 +87,6 @@ class UpdateUser extends Component {
         else {
             return <Redirect to="/" />
         }
-
     }
 }
 
