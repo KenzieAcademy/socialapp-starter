@@ -1,9 +1,9 @@
 body {
   background-color: #e0d8c0;
   background-image: url(./media/33591.jpg);
+  background-attachment: fixed;
   background-size: cover;
   color: #47170e;
-  margin: 0.5em;
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -56,6 +56,7 @@ a:hover {
 
 }
 
+
 .ant-menu-item-selected a, .ant-menu-item-selected a:hover {
   color: #e0d8c0;
 
@@ -76,8 +77,11 @@ a:hover {
   margin-top: -6px;
 }
 
-.ant-layout-footer {
-  background-color: #11ffee00;
+.ant-carousel {
+  width: 100%;
+  position: absolute;
+  height: 256px;
+  bottom: 0px;
 }
 
 .ant-layout-header {
@@ -96,6 +100,7 @@ a:hover {
   background-color: #e0d8c0;
   border: 5px solid #47170e;
   text-align: center;
+  
 }
 
 .ant-menu {
@@ -115,20 +120,67 @@ Menu.Item, .ant-menu-item-selected {
 }
 
 .ant-menu.ant-menu-light.ant-menu-root.ant-menu-inline {
-
-  width:600px;
+  width:150px;
   max-width: 600px;
 }
 
 
 
 
+.card-container {
+  background-color: #231e39;
+  border-radius: 5px;
+  box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.75);
+  color: #b3b8cd;
+  padding-top: 30px;
+  position: relative;
+  max-width: 100%;
+  text-align: center;
+  
+}
 
-.foot{
 
-width: max-content;
 
- background-color: #e0d8c0;
+p {
+  font-size: 14px;
+  line-height: 21px;
+}
+
+h3 {
+  margin: 5px 0;
+  text-transform: uppercase;
+}
+
+.card-container .Dev {
+    border: 1px solid purple;
+    border-radius: 35%;
+    padding: 5px;
+    width: 70px;
+    height:21px;
+}
+
+.skills {
+    background-color: greenyellow;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+}
+
+.skills ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    
+}
+
+.skills ul li {
+    border: 2px solid #2D2747;
+    border-radius: 5px;
+    display: inline-block;
+    font-size: 15px;
+    margin: 0 7px;
+    padding: 7px;
 
 
   width: 195px;

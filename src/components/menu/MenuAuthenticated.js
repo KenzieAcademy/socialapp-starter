@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import "./Menu.css";
 import { withAsyncAction } from "../../redux/HOCs";
 import theQuestBoard from './theQuestBoardIcon.png'
+import Footer from "../footer/Footer"
 
 class MenuAuthenticated extends React.Component {
   handleLogout = event => {
@@ -22,7 +23,7 @@ class MenuAuthenticated extends React.Component {
         height: '100vh',
         position: 'fixed',
         left: 0,
-        width:"3000px",
+        width:"100px",
       }}
     >
       <div className="logo"> <Link to="/"><img src={theQuestBoard} alt="QuestBoard Logo"/></Link> </div>
@@ -44,9 +45,10 @@ class MenuAuthenticated extends React.Component {
         <Menu.Item key="5">
         <Link to="/ContactUs">Contact Us</Link>
         </Menu.Item>
-        
-      </Menu>
+      </Menu> 
+     
     </Sider>
+    <Footer />
     </Layout>
     );
   }

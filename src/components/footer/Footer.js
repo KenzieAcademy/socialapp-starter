@@ -1,8 +1,8 @@
 import React from "react";
 
 
-import { Layout, Carousel, Card, Col, Row, BackTop, Header, Sider, Content } from 'antd';
-import { createFromIconfontCN, UpOutlined } from '@ant-design/icons';
+import { Carousel, } from 'antd';
+import { createFromIconfontCN, } from '@ant-design/icons';
 
 
 
@@ -11,12 +11,12 @@ import { createFromIconfontCN, UpOutlined } from '@ant-design/icons';
 
 
 
-class Footer extends React.Component {
+class Foot extends React.Component {
 
+    state = {
+        dotPosition: 'top',
 
-
-
-
+    }
 
 
 
@@ -27,18 +27,9 @@ class Footer extends React.Component {
             scriptUrl: '//at.alicdn.com/t/font_8d5l8fzk5b87iudi.js',
         });
 
-        const { Header, Content, Footer, Sider } = Layout;
-        const contentStyle = {
-            height: '200px',
-            color: '#fff',
-            lineHeight: '200px',
-            textAlign: 'center',
-            background: '#e0d8c0',
-           
-            
-           
-        };
 
+
+        const { dotPosition } = this.state;
 
 
 
@@ -52,71 +43,58 @@ class Footer extends React.Component {
         return (
             <div>
 
-                <Footer style={{ textAlign: 'center' }} className="footboy"><em><b> Designed Using Ant  ©2018 by Klinesettes</b></em>
+                {/* take to make one for yourself */}
+                <Carousel autoplay dotPosition={dotPosition}>
+                    {/* start of the dev card  */}
+                    <div class="card-container">
+
+                        <img
+                            class="Dev"
+                            src="https://randomuser.me/api/portraits/women/79.jpg"
+                            alt="user"
 
 
-                    {/* take to make one for yourself */}
-
-                    <Carousel autoplay autoplaySpeed="45sec">
-                        {/* start of the dev card  */}
-                        <div>
-                            <h3 style={contentStyle}>
-
-
-                                <div className="site-card-wrapper">
-                                    <Row gutter={10}>
-                                        <Col span={3}>
-                                            <Card style={{ width:200 }}
-                                                cover={<img alt="example" 
-                                                src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" 
-                                                height="200px" />}>
-
-                                          </Card>      
-                                        </Col>
-
-                                        <Col span={8}>
-                                            <Card title="Just a little About me ."
-                                            bordered=
-                                            {false}>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</Card>
-
-
-                                        </Col>
-                                        <Col span={8}>
-                                            <Card title="Card title"
-                                                bordered={false}>Social Media: &nbsp;&nbsp;&nbsp;<a href="twitter.com"><IconFont type="icon-twitter" style={{ fontSize: '40px', color: '#067c89' }} /> &nbsp;&nbsp;&nbsp;&nbsp;</a><a href="facebook.com"><IconFont type="icon-facebook" style={{ fontSize: '40px', color: 'blue' }} /></a>
-                                                <br />
-                            Location:
-                           <br />
-                                                <p>Email:<a href="mailto:someone@example.com">Send email</a></p>
-
-
-                                                
-                                                {/* end of the devs profile */}
-                                            </Card>
-                                        </Col>
-                                    </Row>
-                                </div>
-
-                            </h3>
-
-
+                        />
+                        <h3><b>Tim Terry</b></h3>
+                        <h2>Ohio</h2>
+                        <p>
+                            Casual Gamer and <br />
+                               front-end developer
+                         </p>
+                        <p>
+                            advent anime fan
+                         </p>
+                        <div class="media links">
+                            <a href="https://www.twitter.com/" target="_blank"><IconFont type="icon-twitter" style={{ fontSize: '40px', color: '#067c89' }} />  </a>
+                            <a href="https://www.facebook.com/" target="_blank"><IconFont type="icon-facebook" style={{ fontSize: '40px', color: 'blue' }} />  </a>
                         </div>
-                        {/* end of the dev card */}
+                        <div class="skills">
+                            <h1>Skills</h1>
+                            <ul>
+                                <li>Front End Development</li>
+                                <li>HTML</li>
+                                <li>CSS</li>
+                                <li>JavaScript</li>
+                                <li>React</li>
+                                <li>Node</li>
+                            </ul>
+                        </div>
+                    </div>
+                    {/* end of the dev card */}
 
 
 
 
 
 
-                    </Carousel>
 
-                </Footer>
+                </Carousel>
             </div>
         );
     }
 }
 
-export default Footer;
+export default Foot;
 
 
 
