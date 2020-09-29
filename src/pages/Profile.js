@@ -1,6 +1,9 @@
 import React from "react";
 
 import { userIsAuthenticated } from "../redux/HOCs";
+import { displayName } from "react-spinkit";
+import DataService from "../components/DataService";
+
 
 import EditProfile from '../components/editprofile/EditProfile'
 import ProfilePageMain from "./ProfilePageMain";
