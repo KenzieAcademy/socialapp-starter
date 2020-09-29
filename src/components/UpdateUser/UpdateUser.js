@@ -17,6 +17,7 @@ class UpdateUser extends Component {
                 about: '',
                 displayName: ''
             }
+        }
     }
 
     componentDidMount() {
