@@ -60,7 +60,7 @@ class Messagefeed extends Component {
             <Layout className>
                 <MsgNavBar isAuthenticated={this.props.isAuthenticated} />
                 <Header>
-
+                    Hello
 
 
                 </Header>
