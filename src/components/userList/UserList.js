@@ -1,6 +1,5 @@
 import React from "react"
 import UserItem from "../userItem/UserItem"
-
 class UserList extends React.Component {
     render() {
         return (
@@ -8,18 +7,12 @@ class UserList extends React.Component {
                 {this.props.user.map((userObj, i) => {
                     return <UserItem
                         key={i}
-                     
                         username={userObj.username}
                         displayName={userObj.displayName}
-                        
-                        
                     />
                 })}
-
-
             </div>
         )
     }
 }
-
 export default UserList

@@ -1,9 +1,7 @@
 import React from "react"
-
 function UserItem(props) {
     return (
     <div className="UserItem">
-        
         <br/>
         UserName: {props.username}
         <br/>
@@ -11,5 +9,4 @@ function UserItem(props) {
     </div>
     )
 }
-
 export default UserItem
