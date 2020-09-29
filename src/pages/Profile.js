@@ -6,41 +6,23 @@ import Menu from "../components/menu/MenuAuthenticated";
 import theQuestBoardHeader from '../media/theQuestBoardHeader.png'
 import Footer from "../components/footer/Footer";
 import { userIsAuthenticated } from "../redux/HOCs"; 
-
-
-
-
 import { UpOutlined } from '@ant-design/icons';
-
-
-
-
-
-
+import QuestboardService from "../components/servicesPage/ServicePage"
 // comment section 
 
-// const questboardService = new QuestboardService
-// const username = questboardService.getUsername(MenuAuthenticated)
-// const loggedInUsername = questboardService.getUsername()
-
-
+const questboardService = new QuestboardService
+const username = questboardService.getUsername()
 
 class Profile extends React.Component {
   constructor (props) {
   super(props) 
     this.state = {
-      username: [],
       picture: "",
     }
     
   }
   render() {
-
-
-
     const { Header, Content } = Layout;
-
-
     // for backtop
     const style = {
       height: 40,
@@ -60,7 +42,8 @@ class Profile extends React.Component {
           <Header className="mainHeader" style={{ padding: 0, textAlign: 'center' }}> <img className="theQuestBoardHeader" src={theQuestBoardHeader} alt="QuestBoard Header" /> </Header>
 
           <Content>
-            vsdfsdfsdfsdfsd
+            <div>Username: {username}</div>
+            <div>Character:</div>
       </Content>
           
         </Layout>
@@ -73,7 +56,7 @@ class Profile extends React.Component {
 export default userIsAuthenticated(Profile);
 
 
-{/* 
- <BackTop>
-      <div style={style}>UP</div>
-    </BackTop>  */}
+ 
+//  <BackTop>
+//       <div style={style}>UP</div>
+//     </BackTop> 

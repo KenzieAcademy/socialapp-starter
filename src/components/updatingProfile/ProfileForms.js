@@ -1,12 +1,16 @@
 import React from "react"
-import { Form, Input, Button, Checkbox } from 'antd';
+import { Form, Input, Button } from 'antd';
+import QuestboardService from "../servicesPage/ServicePage"
 
+const Questboard = new QuestboardService()
 
 class ProfileForms extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            
+            username:`https://socialapp-api.herokuapp.com/users/${Questboard.getUsername()}`,
+            about: "",
+            password: ""
         }
     }
 
@@ -27,6 +31,14 @@ render () {
   const onFinishFailed = errorInfo => {
     console.log('Failed:', errorInfo);
   }
+  // const handleUserName = () => {
+  //   const name = (event.target)
+  //   FormData.append()
+  //   this.setState({formData})
+  // }
+  // const handleNameUpdate = () => {
+  //   Questboard.UpdateUser(this.state.formData)
+  // }
   
   return (
     <Form
@@ -39,7 +51,8 @@ render () {
       <Form.Item
         label="Username"
         name="username"
-        rules={[{ required: true, message: 'Please input your username!' }]}
+        // onChange={}
+        rules={[{ required: true, message: 'Please input your display name!' }]}
       >
         <Input />
       </Form.Item>
@@ -47,21 +60,19 @@ render () {
       <Form.Item
         label="Password"
         name="password"
-        rules={[{ required: true, message: 'Please input your password!' }]}
+        rules={[{ required: true, message: 'Please input your character!' }]}
       >
         <Input.Password />
       </Form.Item>
-
-      <Form.Item {...tailLayout} name="remember" valuePropName="checked">
-        <Checkbox>Remember me</Checkbox>
-      </Form.Item>
-
-      <Form.Item {...tailLayout}>
-        <Button type="primary" htmlType="submit">
+<Form.Item>
+       <Button type="primary" htmlType="submit" 
+      //  onClick={}
+      >
           Submit
         </Button>
       </Form.Item>
     </Form>
+   
     );
 };
 }

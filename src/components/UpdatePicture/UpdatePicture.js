@@ -1,7 +1,7 @@
 import React from "react"
 import QuestboardService from "../servicesPage/ServicePage"
 
-const Questboard = new QuestboardService
+const Questboard = new QuestboardService()
 
 class FileUploader extends React.Component{
     
@@ -21,16 +21,18 @@ class FileUploader extends React.Component{
     
     handleUpload = () => {
         Questboard.SetPicture(this.state.formData)
-            if (Response.statusCode === 200) {
-                alert("Image change successful!")
-            }}
-        
-    // updatePicture = () => {
-    //     const timestamp = Date.now()
-    //     const imageURL = `https://www.socialapp-api.herokuapp.com/users/${Questboard.getUsername}/picture?t=${timestamp}`
-    //     this.setState({imageURL})}
+        .then( response => {
+            if (response.data.status === 200) {
+                console.log("This works")
+                this.updatePicture()
+            }})
+        }
+    updatePicture = () => {
+        const timestamp = Date.now()
+        const imageURL = `https://www.socialapp-api.herokuapp.com/users/${Questboard.getUsername}/picture?t=${timestamp}`
+        this.setState({imageURL})
     
-    
+    }
     render() {
         return (
             <div className="FileUploader">
@@ -38,7 +40,6 @@ class FileUploader extends React.Component{
                 name="picture" 
                 onChange={this.createFormData}/>
                 <button onClick={this.handleUpload}>Upload</button>
-                
                 <div className="image-preview">
                     <img alt="user" src={this.state.imageURL}
                     onError={this.setFallbackImage}/>
