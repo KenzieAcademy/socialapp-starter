@@ -3,7 +3,7 @@ import DataService from '../../dataService'
 import { Avatar } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 import { Layout } from 'antd';
-import DeleteUser from '../deleteUser'
+import DeleteUser from '../deleteUser/DeleteUser'
 
 
 class ProfileCard extends React.Component {
