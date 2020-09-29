@@ -14,7 +14,7 @@ class Play extends React.Component {
                     {/* <SideBar isAuthenticated={this.props.isAuthenticated} /> */}
                     <h1>Let's Play SpaceBallz!</h1>
                     <div className="Gamebox">
-                        <iframe height="800" width="1090" scrolling="0" src='http://www.freearcade.com/SpaceBalls.flash/SpaceBalls.html'
+                        <iframe height="800" width="1080" scrolling="0" src='http://www.freearcade.com/SpaceBalls.flash/SpaceBalls.html'
                         ></iframe>
 
                     </div>
