@@ -11,11 +11,9 @@ class RegistrationForm extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      loginData: {
-        username: "",
-        displayName: "",
-        password: ""
-      },
+      username: "",
+      displayName: "",
+      password: "",
       registered: false
     };
     this.client = new DataService();
@@ -23,12 +21,17 @@ class RegistrationForm extends React.Component {
 
   handleRegistration = e => {
     e.preventDefault();
-    this.client.registerUser(this.state.loginData);
+    let loginData = {
+      username: this.state.username,
+      displayName: this.state.displayName,
+      password: this.state.password
+    }
+    this.client.registerUser(loginData);
     this.setState({registered: true});
     };
 
   handleChange = e => {
-    this.setState({loginData: { [e.target.name]: e.target.value }});
+    this.setState({ [e.target.name]: e.target.value });
   };
 
   render() {

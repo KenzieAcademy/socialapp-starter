@@ -1,4 +1,5 @@
 //import the axios HTTP client to communicate with the API
+import { jsonHeaders } from "../../redux/actionCreators/constants";
 import axios from 'axios';
 
 class DataService {
@@ -11,7 +12,7 @@ class DataService {
         return fetch(this.url, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                ...jsonHeaders
             },
             body: JSON.stringify(userData)
         })
