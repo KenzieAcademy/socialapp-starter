@@ -5,25 +5,14 @@ import {Image, message, Upload, Button, Layout} from 'antd';
 import "antd/dist/antd.css"
 import Menu from "../components/menu/MenuAuthenticated";
 import { userIsAuthenticated } from "../redux/HOCs";
-import Menu from "../components/menu/MenuAuthenticated";
+
 import theQuestBoardHeader from '../media/theQuestBoardHeader.png'
 import Footer from "../components/footer/Footer";
 
-
-
-import { BackTop, Layout,TimePicker } from 'antd';
+import { BackTop, TimePicker } from 'antd';
 import { UpOutlined } from '@ant-design/icons';
 
-
-
-
-
-
 // comment section 
-
-
-
-
 class Profile extends React.Component {
   super(props) {
     this.state = {
@@ -31,20 +20,9 @@ class Profile extends React.Component {
       picture: "",
     }
 
-
-
-
-
   }
 
-
-
-
-
   render() {
-
-
-
 
     const { Header, Content } = Layout;
 
@@ -72,14 +50,14 @@ class Profile extends React.Component {
 
         <div className="Profile">
       
-    <h2>Welcome, {username} </h2>
+    {/* <h2>Welcome, {username} </h2> */}
         <hr/>
       <Upload
          name="avatar" 
          listType="picture-card" 
          className="avatar-uploader" 
          accept=".png" >
-{imageUrl ? <img src={imageUrl} alt="avatar" style={{ width: '100%' }} /> : uploadButton }
+{/* {imageUrl ? <img src={imageUrl} alt="avatar" style={{ width: '100%' }} /> : uploadButton } */}
            {/* <Button Icon type="Upload">Upload Profile picture here!</Button> */}
            </Upload>
 
