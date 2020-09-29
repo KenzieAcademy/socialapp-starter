@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 
 //import our service
 import DataService from '../../dataService';
-
-import UserCard from '../userCard/UserCard';
 import AvatarImage from '../Avatarimage/avatarImage';
 import '../feed/Feed.css';
 // import Scroll from '../feed/Scroll'
