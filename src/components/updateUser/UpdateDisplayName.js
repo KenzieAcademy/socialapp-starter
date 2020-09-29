@@ -11,13 +11,14 @@ class UpdateDisplayName extends React.Component {
                     <div className="popup-content">
                         <input 
                             size="30"
-                            maxlength="20"
+                            maxLength="20"
                             required
                             placeholder="Enter a new display name">
                         </input>
                     </div>
                     <button>Submit Changes</button>
                     <button onClick={this.props.closePopup}>Back to Profile</button>
+                    <br />
                 </div>
             </div>
         );

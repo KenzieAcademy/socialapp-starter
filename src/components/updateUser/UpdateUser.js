@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Avatar, Badge } from 'antd';
+import { Avatar } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 import "./UpdateUser.css";
 
@@ -71,7 +71,7 @@ class UpdateUser extends React.Component {
                 <button className="button-link" onClick={this.toggleDisplayNamePopup.bind(this)}>Change display name</button>
                 {this.state.showDisplayNamePopup ? <UpdateDisplayName 
                     text="Change Display Name" 
-                    description="Your current display name is: Display Name" 
+                    description={`Your current display name is: ${this.props.user.displayName}`}
                     closePopup={this.toggleDisplayNamePopup.bind(this)} 
                 /> : null }
 

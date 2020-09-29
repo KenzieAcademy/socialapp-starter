@@ -10,12 +10,14 @@ class UpdateBio extends React.Component {
                     <p>{this.props.description}</p>
                     <div className="popup-content">
                         <textarea 
-                            cols="90" rows="8" 
+                            rows="7"
+                            maxLength="255" 
                             placeholder="No information given.">
                         </textarea>
                     </div>
                     <button>Submit Changes</button>
                     <button onClick={this.props.closePopup}>Back to Profile</button>
+                    <br />
                 </div>
             </div>
         );

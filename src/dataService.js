@@ -3,7 +3,7 @@ import { store } from "./redux";
 
 class DataService {
 
-  constructor(url = 'https://socialapp-api.herokuapp.com', client = axios.create()) {  
+  constructor(url = 'https://socialapp-api.herokuapp.com', client = axios.create()) {
     this.url = url;
     this.client = client;
   }
@@ -16,17 +16,33 @@ class DataService {
     return this.client.get(this.url + "/users");
   }
 
+  getUser(username) {
+    return this.client.get(this.url + `/users/${username}`)
+  }
+
   updateUser = (userData) => {
     const loginData = store.getState().auth.login.result
     const token = loginData.token
     const username = loginData.username
     const url = this.url + "/users/" + username
     return this.client.patch(url, userData, {
-        headers: { Authorization: `Bearer ${token}` }, 
+      headers: { Authorization: `Bearer ${token}` },
     })
-    .then((error) => {
+      .then((error) => {
         console.log(error)
-    })
+      })
+  }
+
+  uploadPicture (pictureAsFormData) {
+    const loginData = store.getState().auth.login.result
+    const token = loginData.token
+    const endpoint = this.url + `/users/${this.getUser()}/picture`
+    const config = {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    }
+    return this.client.put(endpoint, pictureAsFormData, config)
   }
 
 }

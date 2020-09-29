@@ -26,11 +26,11 @@
     background-color: rgba(0,0,0, 0.5);
 }  
 .popup-inner {  
+    display: inline-block;
     position: absolute;  
     left: 25%;  
     right: 25%;  
-    top: 20%;  
-    bottom: 20%;  
+    top: 20%;
     margin: auto;
     padding-left: 15px;
     padding-right: 15px;
@@ -39,11 +39,11 @@
     border-radius: 8px;
 }
 .popup-inner-small {  
+    display: inline-block;
     position: absolute;  
     left: 25%;  
     right: 25%;  
-    top: 32%;  
-    bottom: 32%;  
+    top: 32%;
     margin: auto;
     padding-left: 15px;
     padding-right: 15px;
@@ -72,4 +72,13 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+}
+.image-preview {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+textarea {
+    width: 100%;
 }

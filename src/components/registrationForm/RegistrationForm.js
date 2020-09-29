@@ -2,6 +2,7 @@ import React from "react";
 import Spinner from "react-spinkit";
 import DataService from "../../dataService";
 import { Link } from "react-router-dom";
+import { withAsyncAction } from "../../redux/HOCs";
 import "./RegistrationForm.css";
 
 class RegistrationForm extends React.Component {
@@ -21,6 +22,10 @@ class RegistrationForm extends React.Component {
     this.client.registerUser(this.state).then(result => {
       //alert(JSON.stringify(result.data))
       alert("Account registration successful")
+      this.props.login({
+        username: this.state.username,
+        password: this.state.password
+      })
     })
   };
 
@@ -39,8 +44,8 @@ class RegistrationForm extends React.Component {
           <input
             type="text"
             name="username"
-            minlength="3"
-            maxlength="20"
+            minLength="3"
+            maxLength="20"
             autoFocus
             required
             onChange={this.handleChange}
@@ -50,8 +55,8 @@ class RegistrationForm extends React.Component {
           <input
             type="password"
             name="password"
-            minlength="3"
-            maxlength="20"
+            minLength="3"
+            maxLength="20"
             required
             onChange={this.handleChange}
           />
@@ -76,4 +81,4 @@ class RegistrationForm extends React.Component {
   }
 }
 
-export default RegistrationForm;
+export default withAsyncAction("auth", "login")(RegistrationForm);

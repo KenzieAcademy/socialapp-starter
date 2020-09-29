@@ -1,7 +1,6 @@
 import React from 'react';
 import './UpdateUser.css';
-import { Avatar, Badge } from 'antd';
-import { UserOutlined } from '@ant-design/icons';
+import FileUploader from "../fileUploader/FileUploader"
 
 
 class UpdateAvatar extends React.Component {
@@ -11,11 +10,9 @@ class UpdateAvatar extends React.Component {
                 <div className='popup-inner'>
                     <h2>{this.props.text}</h2>
                     <p>{this.props.description}</p>
-                    <div className="popup-content">
-                        <Avatar size={256} icon={<UserOutlined />} />
-                    </div>
-                    <button>Upload a Photo</button>
+                    <FileUploader />
                     <button onClick={this.props.closePopup}>Back to Profile</button>
+                    <br />
                 </div>
             </div>
         );
