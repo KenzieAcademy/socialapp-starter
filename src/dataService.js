@@ -31,7 +31,13 @@ class DataService {
             })
     }
 
-
+    deleteMessage(messageData2) {
+        console.log(messageData2);
+        console.log(messageData2.token);
+        return this.client.delete(this.url + '/messages/' + messageData2.id, {
+            headers: { Authorization: "Bearer " + messageData2.token }
+        })
+    }
 
 postMessage(messageData) {
     console.log(messageData.text);
