@@ -182,5 +182,13 @@ h3 {
     margin: 0 7px;
     padding: 7px;
 
+
+  width: 195px;
+  max-width: 195px;
+}
+
+.displayPicture {
+  width: 200px;
+  height: 200px;
 }
 

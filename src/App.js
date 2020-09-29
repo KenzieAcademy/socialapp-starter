@@ -8,8 +8,7 @@ import NewUser from "./pages/NewUser";
 import MessageFeed from "./pages/MessageFeed";
 import ContactUs from "./pages/ContactUs";
 import Registration from "./pages/Registration"
-
-
+import UpdateProfile from "./pages/UpdateProfile"
 
 
 class App extends React.Component {
@@ -46,12 +45,18 @@ class App extends React.Component {
           exact
           path="/Registration"
           component={Registration}
+        
         />
+        <Route 
+        exact
+        path="/UpdateProfile"
+        component={UpdateProfile} />
         <Route
           exact
           path="*"
           component={NotFound}
         />
+        
       </Switch>
       </div>
     );

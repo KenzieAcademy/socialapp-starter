@@ -1,5 +1,5 @@
 import React from "react"
-import QuestboardService from "../../pages/ServicePage"
+import QuestboardService from "../servicesPage/ServicePage"
 import axios from "axios"
 import {jsonHeaders, domain, handleJsonResponse} from "../../redux/actionCreators/constants/index"
 import "./TextInput.css"

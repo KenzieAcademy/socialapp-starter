@@ -42,17 +42,8 @@ class MenuAuthenticated extends React.Component {
               Logout
             </Link>
         </Menu.Item>
-        <Menu.Item key="5" >
-          nav 5
-        </Menu.Item>
-        <Menu.Item key="6" >
-          nav 6
-        </Menu.Item>
-        <Menu.Item key="7" >
-          nav 7
-        </Menu.Item>
-        <Menu.Item key="8" >
-          nav 8
+        <Menu.Item key="5">
+        <Link to="/ContactUs">Contact Us</Link>
         </Menu.Item>
       </Menu> 
      

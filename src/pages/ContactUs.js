@@ -2,7 +2,7 @@ import React from "react";
 import MenuUnauthenticated from "../components/menu/MenuUnauthenticated";
 import { Layout } from 'antd';
 import theQuestBoardHeader from '../media/theQuestBoardHeader.png'
-import QuestboardService from "../pages/ServicePage"
+import QuestboardService from "../components/servicesPage/ServicePage"
 
 
 

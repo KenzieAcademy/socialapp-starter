@@ -1,6 +1,6 @@
 import axios from 'axios';
-import { Result } from 'antd';
-import { store } from "../redux"
+
+import { store } from "../../redux"
 
 class QuestboardService {
     constructor(
@@ -36,6 +36,7 @@ class QuestboardService {
         return this.client.get(this.url + "/auth/logout");
     }
     Users(){
+       
         return this.client.get(this.url + "/users");
     }
     NameUser() {
@@ -50,8 +51,13 @@ class QuestboardService {
     GetPicture() {
         return this.client.get(this.url + "/users/" + this.getUsername() + "/picture");
     }
-    SetPicture() {
-        return this.client.put(this.url + "/users/{username}/picture").then(response => {return response.data.picture});
+    SetPicture(imageUrl) {
+        const config = {
+            headers: {
+                Authorization: `Bearer ${this.getToken()}`
+            }}
+        return this.client.put(this.url + "/users/" + this.getUsername() +"/picture", imageUrl, config)
+        ;
     }
     GetMessageList(){
         return this.client
@@ -76,7 +82,6 @@ class QuestboardService {
                 Authorization: `Bearer ${this.getToken()}`
             }
         }
-
        return this.client
         .post(this.url + "/likes", requestBody, config)
         .then(response => response.data.like)
