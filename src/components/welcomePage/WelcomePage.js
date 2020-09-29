@@ -1,17 +1,16 @@
 import React from "react";
 import Menu from "../menu/Menu";
 import { userIsNotAuthenticated } from "../../redux/HOCs";
+import "./WelcomePage.css"
 
-import "./Home.css";
 
-
-class Home extends React.Component {
+class WelcomePage extends React.Component {
     render() {
         return (
             <div className="hero">
-            <div className="test">
+            <div className="height">
             <Menu />
-            <div className="homepagestuff">
+            <div className="background">
                
             </div>
        
@@ -23,5 +22,5 @@ class Home extends React.Component {
         );
     }
 }
- //<div className="hulk"></div>
-export default userIsNotAuthenticated(Home);
+
+export default userIsNotAuthenticated(WelcomePage);

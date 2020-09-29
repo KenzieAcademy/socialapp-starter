@@ -1,4 +1,4 @@
-.homepagestuff {
+.background {
     display: flex;
     height: 100%;
     width: 100%;
@@ -6,18 +6,9 @@
     align-items: center;
 }
 
-.test {
+.height {
     height: 100%;
 }
-
-/*.hulk {
-    background-image: url(../../images/feed.jpeg);
-    height: 600px;
-    width: 500px;
-    background-repeat: no-repeat;
-    background-size: 90%;
-    background-position: bottom;
-}*/
 
 .hero {
     height: 100%;
