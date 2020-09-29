@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "../components/menu/Menu.css";
-
-
+import DataServices from '../dataService';
 import CommentBox from "../components/Comments/CommentBox";
 //Pages imported below
 import Profile from "../pages/Profile";
@@ -15,8 +14,10 @@ const { Header, Sider, Content, Footer } = Layout;
 class Messagefeed extends Component {
     constructor(props) {
         super(props)
+        this.client = new DataServices();
         this.state =
         {
+            messages: [],
             data: {},
             submitted: false,
             author: '',
@@ -29,12 +30,14 @@ class Messagefeed extends Component {
 
     //Below here, the(function), will reflect a change to the VALUE inside, or of an element
     //onChange attribute should contain this
-    commentHandler = (event) => {
-        this.setState({ comment: event.target.value });
-    }
+    componentDidMount = () => {
+        this.client.getMessages()
+            .then(data => {
+                const list = data.data.messages
+                this.setState({ ...this.state, messages: list }, () =>
+                    console.log(this.state.messages))
 
-    authorHandler = (event) => {
-        this.setState({ author: event.target.value });
+            })
     }
 
 
@@ -44,10 +47,14 @@ class Messagefeed extends Component {
             submitted: true
         })
     }
-
+    handleChange = (event) => {
+        let comment = event.target.value;
+        console.log(comment)
+        this.setState({ children: comment });
+    }
 
     buttonHandler = (event) => {
-        console.log(event.value)
+        console.log(this.state.messages[0].text)
     }
 
     render() {
@@ -58,15 +65,28 @@ class Messagefeed extends Component {
                     <div>
                         <h1><span>The Dragon's Den</span></h1>
                     </div >
+
+
+
+
+
                 </Header>
 
 
                 <Layout>
 
                     <Content>
-                        <Profile />
                         <div className="Home">
+                            {this.state.messages.map((msg) => (
+                                <div>
+                                    <span>
+                                        `${msg.username} posted at ${msg.createdAt},
+                                        message: ${msg.text}`
 
+
+                                    </span>
+                                </div>
+                            ))}
                         </div>
                     </Content>
 
@@ -74,8 +94,10 @@ class Messagefeed extends Component {
                         <form  >
                             <label>Comment Section</label>
                             <CommentBox />
-                            <textarea row="1" cols="20"></textarea>
-                            <input onClick={this.buttonHandler} id="submitComment" type="button" value="post" ></input>
+
+
+                            <textarea onChange={this.handleChange} row="1" cols="20"></textarea>
+                            <button onClick={this.buttonHandler} id="submitComment" type="button" value="post" >Submit</button>
                         </form>
                     </Sider>
                 </Layout>
