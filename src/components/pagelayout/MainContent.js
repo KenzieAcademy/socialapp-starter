@@ -2,13 +2,14 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 import Home from "../../pages/Home";
 import Profile from "../../pages/Profile";
+import CreateMessage from "../../pages/CreateMessage";
 import MessageFeed from "../../pages/MessageFeed";
 import NotFound from "../../pages/NotFound";
 
-import { Layout, Avatar, Menu, Breadcrumb, Button, message } from "antd";
+import { Layout, Breadcrumb } from "antd";
 import EditProfile from "../../pages/EditProfile";
 
-const { Header, Footer, Sider, Content } = Layout;
+const { Footer, Content } = Layout;
 class MainContent extends React.Component {
   render() {
     return (
@@ -26,7 +27,12 @@ class MainContent extends React.Component {
               MozBackgroundSize: "no-repeat",
               backgroundColor: "lightblue",
               backgroundImage:
-                "url(" + "https://i.pinimg.com/originals/81/16/88/811688d44a9906c2b1db6cde2304168b.gif" + ")", backgroundPosition: "center", backgroundSize: "cover", backgroundRepeat: 'no-repeat'
+                "url(" +
+                "https://i.pinimg.com/originals/81/16/88/811688d44a9906c2b1db6cde2304168b.gif" +
+                ")",
+              backgroundPosition: "center",
+              backgroundSize: "cover",
+              backgroundRepeat: "no-repeat",
             }}
           >
             <Switch>
@@ -34,12 +40,19 @@ class MainContent extends React.Component {
               <Route exact path="/" component={Home} />
               <Route exact path="/profile/:username" component={Profile} />
               <Route exact path="/editprofile" component={EditProfile} />
+              <Route exact path="/createmessage" component={CreateMessage} />
               <Route exact path="*" component={NotFound} />
               {/* <Route exact path="*" component={Button} /> */}
             </Switch>
           </div>
         </Content>
-        <Footer style={{ textAlign: "center", fontFamily: "Brush Script MT", fontSize: "30px" }}>
+        <Footer
+          style={{
+            textAlign: "center",
+            fontFamily: "Brush Script MT",
+            fontSize: "30px",
+          }}
+        >
           Ant Design Layout Created By Adam Amadi
         </Footer>
       </Layout>

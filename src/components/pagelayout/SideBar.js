@@ -2,14 +2,13 @@ import React from "react";
 
 import SubMenu from "antd/lib/menu/SubMenu";
 import Icon from "@ant-design/icons";
-import { Layout, Avatar, Menu, Breadcrumb, Button, message } from "antd";
-import Title from "antd/lib/typography/Title";
+import { Layout, Menu, Button } from "antd";
 import { Link, Route } from "react-router-dom";
 import { SettingOutlined } from "@ant-design/icons";
 import { withAsyncAction } from "../../redux/HOCs";
 import "../menu/Menu.css";
 
-const { Header, Footer, Sider, Content } = Layout;
+const { Sider } = Layout;
 
 class SideBar extends React.Component {
   handleLogout = (event) => {
@@ -78,14 +77,14 @@ class SideBar extends React.Component {
               <Menu.Item id="menu-links">
                 <Link to="/" onClick={this.handleLogout}>
                   <SettingOutlined /> Logout
-            </Link>
+                </Link>
               </Menu.Item>
               <div className="Menu">
                 {this.props.isAuthenticated && (
                   <div id="menu-links">
                     <Link to="/" onClick={this.handleLogout}>
                       Logout
-            </Link>
+                    </Link>
                   </div>
                 )}
               </div>
