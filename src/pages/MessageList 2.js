@@ -3,11 +3,11 @@ import Menu from "../components/menu/Menu"
 import BackendService from "../services/BackendService"
 
 class MessageList extends React.Component {
-    state = { messages: []}
+    // state = { messages: []}
 
-    componentDidMount () {
-        BackendService.getMessages().then(response => console.log(response))
-    }
+    // componentDidMount () {
+    //     BackendService.getMessages().then(response => console.log(response))
+    // }
     render () {
         return (
             <div className="MessageList">
