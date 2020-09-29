@@ -8,8 +8,7 @@ import SocialAppService from "../../socialAppService";
 import "./SideBar.css";
 
 const socialAppService = new SocialAppService()
-// class SideBar extends React.Component {
-//     render() {
+
 
 const SideBar = () => (
     <Grid colums={1}>
@@ -45,7 +44,7 @@ const SideBar = () => (
                     <div className="edit-profile">
                         <h3>{socialAppService.getUserName() || "Profile"}</h3>
                         <UploadImage />
-
+                        <br />
                         <EditProfile />
 
                     </div>

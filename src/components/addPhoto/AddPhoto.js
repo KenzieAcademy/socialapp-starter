@@ -53,7 +53,7 @@ class UploadImage extends React.Component {
         console.log("render");
         return (
             <div>
-                {/* <h3>{this.state.getUsername()}</h3> */}
+
                 <form id="upload-image" onSubmit={this.handleUploadImage}>
 
                     <input type="file"
@@ -65,6 +65,7 @@ class UploadImage extends React.Component {
                         Upload a Photo
                     </button>
                 </form>
+                <br />
                 <Image src={this.state.picLocation} size='small' circular />
 
             </div>

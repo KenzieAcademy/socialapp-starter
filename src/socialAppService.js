@@ -35,9 +35,9 @@ class socialAppService {
       picObject, { headers: { Authorization: `Bearer ${loginData.result.token}` } })
   }
 
-  putUserData(userData) {
+  getUserData(userData) {
     let loginData = JSON.parse(localStorage.getItem("login"))
-    return this.client.put(this.url + `/users/${loginData.result}`,
+    return this.client.get(this.url + `/users/${loginData.result}`,
       userData, { headers: { Authorization: `Bearer ${loginData.result.token}` } })
   }
   // deleteMessage() {
