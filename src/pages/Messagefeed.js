@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "../components/menu/Menu.css";
 import DataServices from '../dataService';
 import CommentBox from "../components/Comments/CommentBox";
-import Menu from "../components/menu/Menu";
+import MsgNavBar from "../components/MsgNavBar/MsgNavBar";
 
 import { userIsAuthenticated } from "../redux/HOCs";
 
@@ -59,12 +59,11 @@ class Messagefeed extends Component {
     render() {
         return (
             <Layout>
-
+                <MsgNavBar />
                 <Header>
-                    <div>
-                        <h1><span>The Dragon's Den</span></h1>
-                    </div >
 
+
+                    <h1><span>The Dragon's Den</span></h1>
 
 
 
