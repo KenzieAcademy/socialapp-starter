@@ -30,7 +30,7 @@ class DataService {
   }
 
   getMessages = () => {
-    return this.client.get(this.url + "/messages");
+    return this.client.get(this.url + "/messages?limit=20");
   }
 
 }
