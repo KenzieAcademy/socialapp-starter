@@ -79,9 +79,9 @@ class FetchService {
 
 
     //=====GetMessageS======================================
-    getMessages() {
+    getMessages(messagecount) {
         let endpoint = "/messages";
-        let messagecount = 80;
+        // let messagecount = 80;
         let URL = this.domain + endpoint + "?limit=" + messagecount;
         return fetch(URL).then(response => response.json())
     }

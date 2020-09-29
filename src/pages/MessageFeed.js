@@ -4,6 +4,7 @@ import Menu from "../components/menu/Menu"
 import FetchService from "../FetchService";
 import { Button, Image, List, Segment } from 'semantic-ui-react'
 import MessageList from "../components/messageList/MessageList";
+import MessageBestTen from "../components/messageBestTen/MessageBestTen"
 import UserMessage from "../components/userMessage/UserMessage"
 import "../index.css"
 
@@ -17,7 +18,8 @@ class MessageFeed extends React.Component {
 
         this.state = {
             messages: [],
-
+            messageNum: "",
+            messagesAll: [],
             formData: { text: "" },
             error: "",
             submitted: false
@@ -25,16 +27,64 @@ class MessageFeed extends React.Component {
         }
     }
 
+    intervalID;
+
     componentDidMount() {
 
-        this.client.getMessages()
+        console.log("---did mount");
+
+        this.getData();
+
+        if (this.state.messageNum !== "") {
+            this.getAllMessageData();
+        }
+        //to update every 10 seconds
+        this.intervalID = setInterval(this.getData.bind(this), 10000);
+
+
+        // this.client.getMessages()
+        //     // .then(messageData => console.log(messageData))
+        //     .then((messageData) => {
+        //         this.setState({
+        //             messages: messageData.messages
+        //         })
+        //     })
+    };
+
+    componentWillUnmount() {
+        clearInterval(this.intervalID);
+    }
+
+
+    getData = () => {
+        console.log("---update");
+        let messageNum = 0;
+        this.client.getMessages(100)
             // .then(messageData => console.log(messageData))
             .then((messageData) => {
                 this.setState({
-                    messages: messageData.messages
+                    messages: messageData.messages,
+                    messageNum: messageData.count
+
                 })
+                messageNum = messageData.count;
             })
-    };
+            .then(() => {
+                console.log("num of messages: " + this.state.messageNum);
+                messageNum = this.state.messageNum;
+
+            })
+            .then(() => {
+                this.client.getMessages(messageNum)
+                    .then((messageData) => {
+                        this.setState({
+                            messagesAll: messageData.messages
+                        })
+                    })
+            })
+
+    }
+
 
     handleChange = (event) => {
         const newformData = { ...this.state.formData };
@@ -65,13 +115,13 @@ class MessageFeed extends React.Component {
                     })
                 }
             }).then(() => {
-                this.client.getMessages()
-                // run the code in DidMount method
-                .then((messageData) => {
-                    this.setState({
-                        messages: messageData.messages
+                this.client.getMessages(100)
+                    // run the code in DidMount method
+                    .then((messageData) => {
+                        this.setState({
+                            messages: messageData.messages
+                        })
                     })
-                })
             })
     }
 
@@ -85,7 +135,7 @@ class MessageFeed extends React.Component {
                 console.log(resData);
                 console.log(resData.message);
 
-                this.client.getMessages()
+                this.client.getMessages(100)
                     .then(messageData => {
                         this.setState({
                             messages: messageData.messages
@@ -112,7 +162,7 @@ class MessageFeed extends React.Component {
                 this.client.deleteLike(foundLike.id)
 
                     .then((resData) => {
-                        this.client.getMessages()
+                        this.client.getMessages(100)
                             .then(messageData => {
                                 this.setState({
                                     messages: messageData.messages
@@ -131,13 +181,13 @@ class MessageFeed extends React.Component {
 
     render() {
         return (
-        
+
             <div className="MessageFeed">
                 <Menu isAuthenticated={this.props.isAuthenticated} />
 
                 <div className="message_field_format">
-                    <br/>
-                <br/>
+                    <br />
+                    <br />
                     <div className="auto_scroll">
                         <MessageList messages={this.state.messages} handleLike={this.handleLike}
                             handleRemoveLike={this.handleRemoveLike} />
@@ -168,8 +218,18 @@ class MessageFeed extends React.Component {
                             <Button color="orange" onClick={this.handlePosMessage}>
                                 Post Your Message
                               </Button >
+                            <br /> <br />
+
+                            <p>[This Page is updating every 10 seconds]</p>
+
                         </form>
                     </div>
+
+
+                    <div className="auto_scroll">
+                        <MessageBestTen messages={this.state.messagesAll} />
+                    </div>
+
                 </div>
             </div>
         )

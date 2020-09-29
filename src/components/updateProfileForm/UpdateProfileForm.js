@@ -9,10 +9,11 @@ function UpdateProfileForm(props) {
 
         <Form >
             <hr />
-            <div height >
+            {/* <div height > */}
+            <div  >
                 <Form.Field/>
                 <label>Display Name:</label>
-                <h8>  ...the name that will appeard in your profile</h8>
+                <h5>  ...the name that will appeard in your profile</h5>
                 <input
                     type="text"
                     name="displayName"

@@ -21,7 +21,7 @@ class MessageList extends React.Component {
                             key={i}
                             id={messageObj.id}
                             text={messageObj.text}
-                            createdAt={messageObj.createdAt}
+                            createdAt={messageObj.createdAt.toString().replace('T',' at ').slice(0, 19)}
                             username={messageObj.username}
                             likes={messageObj.likes}
                             handleLike={this.props.handleLike}

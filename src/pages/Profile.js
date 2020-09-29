@@ -151,8 +151,8 @@ class Profile extends React.Component {
         <p> Display Name:  {"@" + this.state.user.displayName}</p>
         <p> Useername:  {this.state.user.username}</p>
         <p> About:  {this.state.user.about}</p>
-        <p> Profile created:  {this.state.user.createdAt}</p>
-        <p> Profile updated:  {this.state.user.updatedAt}</p>
+        <p> Profile created:  {this.state.user.createdAt.toString().replace('T',' at ').slice(0, 19)}</p>
+        <p> Profile updated:  {this.state.user.updatedAt.toString().replace('T',' at ').slice(0, 19)}</p>
         <p> ImagePath:  {this.state.user.pictureLocation}</p>
 
       </div>
