@@ -2,7 +2,7 @@
 
 
 import React,{Component} from 'react'
-import { render } from 'react-dom'
+
 import DataService from '../components/DataService'
 import { withRouter } from 'react-router-dom'
 import { Input, Button } from 'semantic-ui-react'

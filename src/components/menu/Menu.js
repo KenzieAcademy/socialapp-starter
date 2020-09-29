@@ -3,14 +3,10 @@ import { Link } from "react-router-dom";
 import "./Menu.css";
 
 import { withAsyncAction } from "../../redux/HOCs";
-import { logout } from "../../redux/stateReducers/auth";
+
 
 class Menu extends React.Component {
-    constructor(props){
-      super(props)
-
-      
-    }
+    
 
 
   handleLogout = (event) => {

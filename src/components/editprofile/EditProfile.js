@@ -1,9 +1,9 @@
 import React from "react";
 import Menu from "../menu/Menu";
 import { userIsAuthenticated } from "../../redux/HOCs";
-import DataService from '../DataService'
-import { withRouter } from 'react-router-dom'
-import { Input, Button, TextArea  } from 'semantic-ui-react'
+import DataService from '../../DataService'
+
+import { Input, Button, TextArea, Form, FormField  } from 'semantic-ui-react'
 
 
 
@@ -82,11 +82,12 @@ class Profile extends React.Component {
         <Menu isAuthenticated={this.props.isAuthenticated} />
         <h2>Profile</h2>
 
-        <form onSubmit={this.handleSubmit}>
-          <div>
+          
           
            
-          <div>
+      <Form onSubmit={this.handleSubmit}>
+        <Form.Group>
+          <FormField>
             <label htmlFor="username">  Enter user name</label>
               <Input
                 type="text"
@@ -94,8 +95,8 @@ class Profile extends React.Component {
                 required
                 onChange={this.handleChange}
               />
-            </div>
-          <div>
+            </FormField>
+          <FormField>
             <label htmlFor="password">  Password </label>
               <Input
                 type="text"
@@ -104,9 +105,9 @@ class Profile extends React.Component {
                 
                 onChange={this.handleChange}
               />
-            </div>
+            </FormField>
 
-            <div>
+            <FormField>
               <h2>About Me</h2>
               <TextArea
                 type="text"
@@ -114,9 +115,9 @@ class Profile extends React.Component {
              
                 onChange={this.handleChange}
               />
-            </div>
+            </FormField>
 
-            <div>
+            <FormField>
             <label htmlFor="displayName">  Display Name </label>
               <Input
                 type="text"
@@ -124,15 +125,16 @@ class Profile extends React.Component {
              
                 onChange={this.handleChange}
               />
-            </div>
+            </FormField>
 
               
             <br/>
-            <Button primary size='big' >Save</Button>
+            <Button content='save' primary size='tiny'/>
 
+        </Form.Group>
+      </Form>
             
-          </div>
-        </form>
+          
         
         <hr/>
         <div>
@@ -147,7 +149,7 @@ class Profile extends React.Component {
         
         <h3><em>THIS CAN NOT BE UNDONE!</em></h3>
         <Button  onClick={this.handleDelete} 
-        content='DELETE' inverted color="red"/>
+        content='DELETE PROFILE' inverted color="red"/>
       </div>
     );
     
