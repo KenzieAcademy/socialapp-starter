@@ -27,26 +27,12 @@ class Message extends React.Component {
             .postLike(
                 {messageId: this.props.id, 
                     token: this.state.token})
-            .then(like => {
-                this.setState(latestState => ({ likeCount: latestState.like.length }))
-            })
+            .then( 
+                this.setState(prevState => ({ likeCount: prevState.likeCount + 1 }))
+            )
         }
         }
-        // this.setState({ data: this.props.likes})
-        // console.log(this.props.likes.map(like => like.messageId))
-    //     if (this.props.likes.some(like => like.username === username))
-    //     console.log({messageId: this.props.likes.messageId, 
-    //         token: this.state.token})
-
-    //         this.client
-    //             .postLike(
-    //                 {messageId: 1146, 
-    //                     token: this.state.token})
-    //             .then(like => {
-    //                 this.setState(latestState => ({ likeCount: latestState.like.length }))
-    //             })
-
-    // }
+ 
 
 
     render() {
