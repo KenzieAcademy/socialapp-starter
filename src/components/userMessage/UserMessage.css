@@ -1,0 +1,12 @@
+.UserMessage {
+    border-color: white;
+}
+
+.textarea {
+    border-width: 5px;
+    width: 300px;
+    border-color: lightslategray;
+    border-radius: .5em;
+    padding: 10px;
+    margin: 2px;
+}

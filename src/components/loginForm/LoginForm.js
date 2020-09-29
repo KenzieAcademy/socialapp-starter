@@ -1,7 +1,9 @@
 import React from "react";
-import Spinner from "react-spinkit";
+// import Spinner from "react-spinkit";
 import { withAsyncAction } from "../../redux/HOCs";
 import "./LoginForm.css";
+import { Button, Divider, Form, Grid, Segment } from 'semantic-ui-react';
+import { Link } from "react-router-dom";
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -11,45 +13,63 @@ class LoginForm extends React.Component {
       password: ""
     };
   }
-
-  handleLogin = e => {
-    e.preventDefault();
+  handleLogin = event => {
+    event.preventDefault();
     this.props.login(this.state);
   };
 
-  handleChange = e => {
-    this.setState({ [e.target.name]: e.target.value });
+  handleChange = event => {
+    this.setState({ [event.target.name]: event.target.value });
   };
 
   render() {
     const { loading, error } = this.props;
     return (
-      <div className="LoginForm">
-        <form id="login-form" onSubmit={this.handleLogin}>
-          <label htmlFor="username">Username</label>
-          <input
-            type="text"
-            name="username"
-            autoFocus
-            required
-            onChange={this.handleChange}
-          />
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            name="password"
-            required
-            onChange={this.handleChange}
-          />
-          <button type="submit" disabled={loading}>
-            Login
-          </button>
-        </form>
-        {loading && <Spinner name="circle" color="blue" />}
-        {error && <p style={{ color: "red" }}>{error.message}</p>}
-      </div>
+      <Segment placeholder>
+        <Grid columns={2} relaxed='very' stackable>
+          <Grid.Column>
+            <Form>
+              <Form.Input
+                icon='user'
+                iconPosition='left'
+                label='Username'
+                placeholder='Username'
+                name='username'
+                autoFocus
+                required
+                onChange={this.handleChange}
+              />
+              <Form.Input
+                icon='lock'
+                iconPosition='left'
+                label='Password'
+                type='password'
+                name='password'
+                required
+                onChange={this.handleChange}
+              />
+
+              <Button onClick={this.handleLogin} content='Login' color="green"  />
+            </Form>
+          </Grid.Column>
+
+          <Grid.Column verticalAlign='middle'>
+
+            <Link to={"/registration"}>
+            <Button color="green" content='Sign up' icon='signup' size='big' />
+            </Link>
+
+
+          </Grid.Column>
+        </Grid>
+
+        <Divider vertical>Or</Divider>
+      </Segment>
+
     );
   }
 }
 
 export default withAsyncAction("auth", "login")(LoginForm);
+
+
