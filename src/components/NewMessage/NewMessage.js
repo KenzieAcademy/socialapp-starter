@@ -2,7 +2,8 @@ import React from "react";
 import Spinner from "react-spinkit";
 import "./NewMessage.css";
 import DataService from "../../DataService"
-// import { withAsyncAction } from "../../redux/HOCs";
+import { Input } from 'antd';
+import { withAsyncAction } from "../../redux/HOCs";
 
 class NewMessage extends React.Component {
   constructor(props) {
@@ -24,19 +25,21 @@ class NewMessage extends React.Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
+
+
   render() {
     const { loading, error } = this.props;
     return (
       <div className="NewMessage">
+        <h2>New Message</h2>
         <form id="new-message" onSubmit={this.handleMessage}>
-          <label htmlFor="message">New Message</label>
-          <input
-            type="text"
+          <Input.TextArea
+            maxLength={255}
             name="message"
-            autoFocus
             required
             onChange={this.handleChange}
           />
+
           <button type="submit" disabled={loading}>
             Submit
           </button>
