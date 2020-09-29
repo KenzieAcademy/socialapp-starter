@@ -1,6 +1,7 @@
 import React , { Component } from 'react'
 import GetUsersService from './GetUsersService'
 import UpdateUserPic from '../UpdateUser/UpdateUserPic'
+import { Link } from "react-router-dom";
 
 class GetUsers extends Component {
     constructor(props) {
@@ -71,7 +72,7 @@ class GetUsers extends Component {
                 profileImg.alt = "./default.png"
                 profile.append(profileImg)
                 const profileName = document.createElement("a")
-                profileName.href = "http://localhost:3000/profile/" + userList[i].username
+                profileName.href = "/profile/" + userList[i].username
                 profileName.innerText = userList[i].displayName
                 profile.append(profileName)
         }
@@ -96,7 +97,9 @@ class GetUsers extends Component {
                         <UpdateUserPic />
                     </div>
                     <div id="user-update">
-                        <a href="http://localhost:3000/update">Update Profile Info</a>
+                        <Link to="/update">Update Profile Info</Link>
+                        <br/>
+                        <Link to="/deleteUser">Delete User</Link>
                     </div>
                 </div>
             )

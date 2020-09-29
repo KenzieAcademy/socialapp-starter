@@ -24,7 +24,7 @@ class UpdateUser extends Component {
         const loginData = JSON.parse(localStorage.getItem("login"));
         return this.getInfoClient.getUser(loginData.result.username).then(result => {
             this.setState({formData: {
-                about: result.data.user.email,
+                about: result.data.user.about,
                 displayName: result.data.user.displayName
                 }
             })
