@@ -35,11 +35,16 @@ class UserCard extends React.Component {
             about: response.data.user.about,
             createdAt: response.data.user.createdAt,
             displayName: response.data.user.displayName,
+            picture: response.data.user.pictureLocation
             
           
           }),
         );
         
+      }
+
+      gitUsersPicture() {
+
       }
 
     
@@ -69,7 +74,7 @@ class UserCard extends React.Component {
         return (
             <Pane background="yellowTint" border="default" width={420} height={620} marginRight={16} float="left" className="usercard" >
               
-              
+                <img src={this.state.picture}></img>
                 <h3>User Name: {this.state.userName}</h3>
                 <h3>Display Name: {this.state.displayName}</h3>
                 <h3>About: {this.state.about}</h3>
