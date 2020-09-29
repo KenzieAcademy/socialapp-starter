@@ -11,7 +11,7 @@ class Style extends React.Component {
                 <div className="Style">
                     <Menu isAuthenticated={this.props.isAuthenticated} />
                     <h1>This is the "Show us Your Style" page.</h1>
-                    <iframe height="500" width="800" frameBorder='0' scrolling='0' src='https://www.embed.com/app/arcade/invaders.html'
+                    <iframe height="500" width="800" frameBorder='0' scrolling='0' src=''
                     ></iframe>
                     <FootNavBar isAuthenticated={this.props.isAuthenticated} />
                 </div>

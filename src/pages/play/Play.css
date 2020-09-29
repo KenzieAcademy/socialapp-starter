@@ -11,8 +11,8 @@
 .Gamebox {
   display: flex;
   flex-direction: row;
-  height: 50vh;
-  width: 50vw;
+  height: 60vh;
+  width: 100vw;
   margin: auto;
   
 }

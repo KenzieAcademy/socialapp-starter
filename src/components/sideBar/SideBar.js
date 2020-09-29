@@ -3,8 +3,11 @@ import { Icon, Menu, Segment, Sidebar, Grid, Input, Column } from 'semantic-ui-r
 import { Link } from "react-router-dom";
 import Clock from "../clock/Clock";
 import UploadImage from "../addPhoto/AddPhoto";
+import EditProfile from "../editProfile/EditProfile";
+import SocialAppService from "../../socialAppService";
 import "./SideBar.css";
 
+const socialAppService = new SocialAppService()
 // class SideBar extends React.Component {
 //     render() {
 
@@ -37,43 +40,21 @@ const SideBar = () => (
 
                 </Sidebar>
 
-
                 <Sidebar.Pusher>
-                    <div class="ui horizontal segments">
-                        <div class="iu segment">
-                            <p>
-                                {/* <h3>User's Name</h3> */}
-                                <UploadImage />
-                            </p>
-                        </div>
 
-                        <div class="iu segment">
-                            <p>
-                                <button className="Edit">Edit Profile</button>
-                                <h3>About Me</h3>
-                                <br></br>
-                                <input type="text" />
+                    <div className="edit-profile">
+                        <h3>{socialAppService.getUserName() || "Profile"}</h3>
+                        <UploadImage />
 
+                        <EditProfile />
 
-                                <form className="interests-input">
-                                    <label htmlFor="interests-input">Interests</label>
-                                    <br></br>
-                                    <Input type="text"></Input>
-
-                                </form>
-                            </p>
-
-                        </div>
                     </div>
                 </Sidebar.Pusher>
             </Sidebar.Pushable>
         </Grid.Column>
 
-    </Grid>
+    </Grid >
 )
-
-
-
 export default SideBar
 
 

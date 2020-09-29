@@ -1,16 +1,16 @@
-.segment {
+.edit-profile {
     background-image: url("../../components/assets/images/backgrounds/Downside_up.jpg");
    padding-left: 10px;
-   
+      
 }
 
-.h3 {
+h3 {
   font-family: Kufam !important;
     color: white !important;
 }
 
 
-/* .SideBar {
+ /* .SideBar {
   font-family: Kufam;
   background-color: black;
   display: flex;

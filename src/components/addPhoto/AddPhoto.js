@@ -53,7 +53,7 @@ class UploadImage extends React.Component {
         console.log("render");
         return (
             <div>
-                <h3>User's Name</h3>
+                {/* <h3>{this.state.getUsername()}</h3> */}
                 <form id="upload-image" onSubmit={this.handleUploadImage}>
 
                     <input type="file"

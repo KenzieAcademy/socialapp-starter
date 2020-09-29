@@ -1,8 +1,11 @@
-body {
-  /* background-image: url("../../components/assets/images/backgrounds/Downside_up.jpg"); */
-  height: 200vh;
-}
-.Profile {
+ /* .pusher { 
+  background-image: url("../../components/assets/images/backgrounds/Downside_up.jpg");
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}  */
+
+/* .Profile {
   background-image: url("../../components/assets/images/backgrounds/Downside_up.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -11,7 +14,7 @@ body {
   color: white;
   font-family: Kufam;
   padding: 15px;
-}
+} */
 .text {
   color: white;
 }

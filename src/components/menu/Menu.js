@@ -20,7 +20,7 @@ class Menu extends React.Component {
             <Link to="/about">About the Universe</Link>
             <Link to="/play">Let's Play SpaceBallz!</Link>
             <Link to="/meet">Meet the Squirrels</Link>
-            <Link to="/logoff" onClick={this.handleLogout}>
+            <Link to="/" onClick={this.handleLogout}>
               Logout
             </Link>
           </div>
@@ -32,6 +32,4 @@ class Menu extends React.Component {
 
 export default withAsyncAction("auth", "logout")(Menu);
 
-{
-  /* <a href={"https://www.nasa.gov"}>NASA</a> */
-}
+

@@ -1,4 +1,5 @@
 import axios from "axios";
+import { store } from "../src/redux"
 
 class socialAppService {
   constructor(
@@ -16,24 +17,17 @@ class socialAppService {
   getUsers() {
     return this.client.get(this.url + "/users");
   }
-  // updateUser(userData) {
-  //   return this.client.patch(this.url + "users", userData);
-  // }
-  // postMessage() {
-  //   return this.client.post(this.url + "/messages");
-  // }
 
-  // getRecentMessages() {
-  //   return this.client.get("/messages").then(response =>{
-  //     return response.data.messages
-  //   })
-  // }
+  getUserName() {
+    const { username } = store.getState().auth.login.result;
+    return username
 
-  // deleteMessage() {
-  //   let loginData = JSON.parse(localStorage.getItem("login"))
-  //   return this.client.delete(this.url + `/messages/${loginData.result.messageId}/message`
-  //   { headers: { Authorization: `Bearer ${loginData.result.token}` } })
-  // }
+  }
+  updateUser(userData) {
+    let loginData = JSON.parse(localStorage.getItem("login"))
+    return this.client.patch(this.url + `/users/${loginData.result.username}`, userData,
+      { headers: { Authorization: `Bearer ${loginData.result.token}` } })
+  }
 
   putPhoto(picObject) {
     let loginData = JSON.parse(localStorage.getItem("login"))
@@ -41,6 +35,16 @@ class socialAppService {
       picObject, { headers: { Authorization: `Bearer ${loginData.result.token}` } })
   }
 
+  putUserData(userData) {
+    let loginData = JSON.parse(localStorage.getItem("login"))
+    return this.client.put(this.url + `/users/${loginData.result}`,
+      userData, { headers: { Authorization: `Bearer ${loginData.result.token}` } })
+  }
+  // deleteMessage() {
+  //   let loginData = JSON.parse(localStorage.getItem("login"))
+  //   return this.client.delete(this.url + `/messages/${loginData.result.messageId}/message`
+  //   { headers: { Authorization: `Bearer ${loginData.result.token}` } })
+  // }
 
 }
 
