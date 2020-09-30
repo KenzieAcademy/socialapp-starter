@@ -23,10 +23,10 @@ class Menu extends React.Component {
       <div className="Menu">
         {this.props.isAuthenticated && (
           <div id="menu-links">
-            <Link to={this.state.link}>PROFILE</Link>
-            <Link to="/messagefeed">MESSAGE FEED</Link>
+            <Link to={this.state.link}>Profile</Link>
+            <Link to="/messagefeed">Message Feed</Link>
             <Link to="/" onClick={this.handleLogout}>
-              LOGOUT
+              Logout
             </Link>
           </div>
         )}
