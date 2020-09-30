@@ -19,6 +19,7 @@ class MessagePage extends React.Component {
     })
   }
 
+
   loadMoreMessages = () => {
     this.client.getMoreMessages(this.state.offset).then(response => {
       this.setState(currentState => {
@@ -33,10 +34,21 @@ class MessagePage extends React.Component {
       <div className="MessagePage">
         <Menu isAuthenticated={this.props.isAuthenticated} />
         <NewMessage isAuthenticated={this.props.isAuthenticated} />
+
         <MessageList messages={this.state.messages} loadMoreMessages={this.loadMoreMessages} />
+
+        <h2>New Message</h2>
+        <ul></ul>
+
+      
+
       </div>
     );
   }
 }
+
+
+
+
 
 export default userIsAuthenticated(MessagePage);
