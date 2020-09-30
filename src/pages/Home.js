@@ -44,7 +44,7 @@ class Home extends React.Component {
           <div className="Welcome">Welcome!</div>
           <div className="RegisterLink">
             <div>
-              <div className="NotMemberYet">Not Yet A Member?</div>
+              <div className="NotMemberYet">Not A Member Yet?</div>
               <Link to="/" onClick={() => this.registerButton()}>
                 Register
               </Link>

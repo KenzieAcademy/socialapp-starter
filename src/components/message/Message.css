@@ -9,23 +9,18 @@
 }
 
 .Message {
+  background-image: url(../../assets/images/Clear_Red_Dark.png);
   width: 627px;
   height: 240px;
-  border: 3px solid #b80c12;
+  border: 3px solid black;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
-  background-color: black;
   text-align: left;
   padding: 10px;
 }
 
 .CardBody {
-  border: 3px solid black;
-  border-radius: 5px;
-  border-width: 3px;
-  border-style: dashed;
-  padding: 10px;
   width: 654px;
   position: relative;
   margin: auto;
@@ -33,16 +28,24 @@
   left: 32px;
 }
 
+.Card {
+  background: none;
+  position: relative;
+  margin: auto;
+}
+
 .MessageText {
   position: relative;
   margin: auto;
   padding: 5px;
-  border: 2px solid white;
+  border: 3px solid black;
   border-radius: 5px;
-  border-width: 2px;
+  border-width: 3px;
+  border-style: dashed;
   background-image: url(../../assets/images/Coupon_Background_Dark.png);
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
   color: black;
+  font-size: 25px;
   width: 468px;
   height: 185px;
   top: -130px;
@@ -50,41 +53,39 @@
 }
 
 .LikeButton {
+  border: 3px solid black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  width: 125px;
+  height: 53px;
+  background: none;
+  background-image: url(../../assets/images/Thumgs_Up.png);
+  background-repeat: no-repeat;
   position: relative;
   margin: auto;
-  width: 125px;
-  top: -191px;
-  background-color: black;
-  border: 2px solid #b80c12;
-  border-radius: 5px;
-  border-width: 2px;
-  border-style: dashed;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  font-size: 18px;
-  color: white;
-  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
-  text-align: center;
+  top: -213px;
+  font: italic small-caps bold 22px/40px Impact, Haettenschweiler,
+    "Arial Narrow Bold", sans-serif;
+  color: rgba(0, 0, 0, 0);
   cursor: pointer;
 }
 
-.ProfileLink a {
-  text-decoration: none;
-  position: relative;
-  margin: auto;
-  float: left;
-  top: 26px;
-  left: 4px;
-  font-size: 15px;
-  color: #b80c12;
-  text-decoration: underline;
+.LikeButton:hover {
+  border: 3px solid black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  background-image: url(../../assets/images/Thumgs_Up.png);
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
-  cursor: pointer;
+  -webkit-text-stroke: 0.25px white;
+  color: black;
 }
 
 .ProfilePic {
-  border: 2px solid #b80c12;
+  border: 3px solid black;
   border-radius: 5px;
-  border-width: 2px;
+  border-width: 3px;
   border-style: dashed;
   top: 25px;
   width: 125px;
@@ -94,14 +95,15 @@
 }
 
 .MemberTitle {
+  color: black;
   top: -130px;
-  left: -112px;
   position: relative;
   margin: auto;
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
 }
 
 .LikesNumber {
+  color: black;
   position: relative;
   margin: auto;
   top: -348px;
