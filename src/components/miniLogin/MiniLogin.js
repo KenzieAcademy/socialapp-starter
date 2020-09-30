@@ -23,7 +23,7 @@ class MiniLogin extends React.Component {
     const { loading, error } = this.props;
     return (
       <div className="PopUp">
-        <div className="EnterButton">
+        <div className="LoginButton">
           <Button
             variant="dark"
             size="lg"

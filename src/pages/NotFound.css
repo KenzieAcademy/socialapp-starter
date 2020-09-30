@@ -3,17 +3,11 @@
 }
 
 .NotFoundBody {
-  /* background-image: url(../assets/images/Clear_Red.png);
-  border: 3px solid black;
-  border-radius: 5px;
-  border-width: 3px;
-  border-style: dashed; */
   position: relative;
   margin: auto;
   width: 850px;
   height: 250px;
   text-align: center;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font: italic small-caps bold 12px/30px Georgia, serif;
 }
 
@@ -35,4 +29,8 @@
   color: #b80c12;
   text-decoration: underline;
   cursor: pointer;
+}
+
+.Link a:hover {
+  color: white;
 }

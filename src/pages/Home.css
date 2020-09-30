@@ -29,7 +29,6 @@
   position: relative;
   margin: auto;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  /* font: italic small-caps bold 12px/30px Georgia, serif; */
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
   color: black;
   font-size: 25px;
@@ -38,7 +37,7 @@
   cursor: pointer;
 }
 
-.RegisterLink a:hover {
+.HomeLink a:hover {
   color: white;
 }
 
@@ -46,7 +45,6 @@
   top: -81px;
   left: 740px;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  /* font: italic small-caps bold 12px/30px Georgia, serif; */
   position: relative;
   margin: auto;
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;

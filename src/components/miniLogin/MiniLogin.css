@@ -2,11 +2,13 @@
   box-sizing: border-box;
 }
 
-.EnterButton {
+.LoginButton {
   position: relative;
   margin: auto;
-  border: 3px solid black;
-  border-radius: 5px;
-  border-width: 3px;
-  border-style: dashed;
+  text-align: center;
+}
+
+.PopUp {
+  position: relative;
+  margin: auto;
 }
