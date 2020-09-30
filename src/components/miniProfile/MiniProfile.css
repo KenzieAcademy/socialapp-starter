@@ -8,11 +8,54 @@
 }
 
 .Miniprofile {
+  background-image: url(../../assets/images/Clear_Red_Dark.png);
+  left: -1px;
+  width: 570px;
+  height: 70px;
+  border: 3px solid black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
   position: relative;
   margin: auto;
 }
 
-.ProfilePic {
+.ProfilePicThumb {
+  left: -249px;
+  top: 5px;
+  width: 55px;
+  height: 56px;
+  position: relative;
+  margin: auto;
+  border: 3px solid black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+}
+
+.MemberInfo {
+  float: left;
+  position: relative;
+  margin: auto;
+  font-size: 20px;
+}
+
+.MemberName {
+  font-size: 25px;
+  color: black;
+  top: -49px;
+  left: 75px;
+  text-align: left;
+  position: relative;
+  margin: auto;
+}
+
+.MemberSince {
+  font-size: 25px;
+  color: black;
+  top: -49px;
+  left: 75px;
+  text-align: left;
   position: relative;
   margin: auto;
 }

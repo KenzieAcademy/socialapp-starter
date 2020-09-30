@@ -12,17 +12,8 @@
   margin: auto;
 }
 
-.MessageList {
-  position: relative;
-  margin: auto;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  text-align: center;
-  color: white;
-  font-size: 20px;
-}
-
 .MessageHeader {
-  top: 12px;
+  top: 6px;
   left: -2px;
   position: relative;
   margin: auto;
@@ -49,9 +40,40 @@
 }
 
 .PostAMessageButton {
-  font-size: 25px;
-  color: white;
-  width: 200px;
+  width: 250px;
+  height: 70px;
+  background-image: url(../assets/images/Clear_Red_Dark.png);
+  border: 3px solid black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  left: 4px;
+  padding: 10px;
+  font-size: 27px;
+  color: black;
   position: relative;
   margin: auto;
+}
+
+.MiniProfileBox {
+  top: 15px;
+  width: 828px;
+  height: 75px;
+  position: relative;
+  margin: auto;
+}
+
+.TheFeed {
+  top: 10px;
+  position: relative;
+  margin: auto;
+}
+
+.MessageList {
+  position: relative;
+  margin: auto;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  text-align: center;
+  color: white;
+  font-size: 20px;
 }

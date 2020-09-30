@@ -65,20 +65,25 @@ class MessageFeed extends React.Component {
     }
     return (
       <div className="Body">
-        <MiniProfile user={this.state.currentUser} />
         <div className="MessageList">
           <Menu isAuthenticated={this.props.isAuthenticated} />
           <div className="MessageHeader">Message Feed</div>
-          <br></br>
           <OverlayTrigger
             trigger="click"
             placement="bottom"
             overlay={this.popover}
             rootClose={true}
           >
-            <Button className="PostAMessageButto" variant="dark" size="lg">
-              POST A MESSAGE
-            </Button>
+            <div className="MiniProfileBox">
+              <div className="MemberInfo">
+                <MiniProfile user={this.state.currentUser} />
+              </div>
+              <div className="PostButtonBox">
+                <Button className="PostAMessageButton" variant="dark" size="lg">
+                  POST A MESSAGE
+                </Button>
+              </div>
+            </div>
           </OverlayTrigger>
           <div className="TheFeed">
             <ul>

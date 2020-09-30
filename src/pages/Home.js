@@ -2,7 +2,6 @@ import React from "react";
 import LoginForm from "../components/loginForm/LoginForm";
 import RegistrationForm from "../components/registrationForm/RegistrationForm";
 import { userIsNotAuthenticated } from "../redux/HOCs";
-// import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import "../pages/Home.css";
 
@@ -11,24 +10,18 @@ class Home extends React.Component {
     super(props);
     this.state = {
       isRegistered: true,
-      // loginActive: "outline-dark",
-      // registerActive: "dark",
     };
   }
 
   loginButton = () => {
     this.setState({
       isRegistered: true,
-      // registerActive: "dark",
-      // loginActive: "outline-dark",
     });
   };
 
   registerButton = () => {
     this.setState({
       isRegistered: false,
-      // registerActive: "outline-dark",
-      // loginActive: "dark",
     });
   };
 
@@ -47,14 +40,6 @@ class Home extends React.Component {
             <Link to="/" onClick={() => this.loginButton()}>
               Home
             </Link>
-            {/* <Button
-              variant={this.state.loginActive}
-              size="sm"
-              disabled={this.state.isRegistered}
-              onClick={() => this.loginButton()}
-            >
-              LOGIN
-            </Button> */}
           </div>
           <div className="Welcome">Welcome!</div>
           <div className="RegisterLink">
@@ -64,14 +49,6 @@ class Home extends React.Component {
                 Register
               </Link>
             </div>
-            {/* <Button
-              variant={this.state.registerActive}
-              size="sm"
-              disabled={!this.state.isRegistered}
-              onClick={() => this.registerButton()}
-            >
-              REGISTER
-            </Button> */}
           </div>
         </div>
         <div className="FormBody">{form}</div>
