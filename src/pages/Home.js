@@ -10,7 +10,8 @@ class Home extends React.Component {
     return (
       <div className="Home">
         <Menu />
-        <h2>Beyond here, there be Dragons~ </h2>
+        <h2>Welcome to The Dragon's Den</h2>
+        <p>Beyond here, there be dragons...</p>
         <LoginForm />
         <br />New user?<br />
         <Link to="/registration">Register an account here!</Link>

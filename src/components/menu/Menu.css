@@ -1,10 +1,10 @@
-span{
+span {
   display: block;
   background-image: url(https://cdn.pixabay.com/photo/2015/12/01/08/43/banner-1071790_960_720.jpg);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-animation: fire 10s linear infinite;
-  -webkit-backface-visibility:hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 @keyframes fire{
@@ -21,7 +21,7 @@ span{
   padding: 0 2em;
   border-radius: 2em;
   font-style: inherit;
-  font-size: larger;
+  font-size: x-large;
   font-weight: bold;
 }
 
@@ -32,8 +32,12 @@ span{
 
 #menu-links a {
   padding-right: 0.5em;
-  color: rgb(20, 20, 20);
-  text-decoration: underline;
+  color: black;
+  text-decoration: none;
   cursor: pointer;
+}
+
+#menu-links a:hover {
+  color: darkred;
 }
 
