@@ -1,6 +1,7 @@
 import React from 'react'
 import './MessageList.css'
 import Message from "../message/Message"
+import InfiniteScroll from 'react-infinite-scroller'
 
 
 function MessageList(props) {
@@ -8,7 +9,7 @@ function MessageList(props) {
     return (
         <div>
             <h1>Message List</h1>
-            {listItems}
+            <InfiniteScroll loadMore={props.loadMoreMessages} hasMore={true} >{listItems}</InfiniteScroll>
         </div>
     )
     //    <li key={i}>{NewMessage.received}</li>
