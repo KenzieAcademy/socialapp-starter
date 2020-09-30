@@ -1,21 +1,10 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
-
-// import Image from "react-bootstrap/Image";
 import { userIsAuthenticated } from "../../redux/HOCs";
 import "../../components/profileContent/ProfileContent.css";
 import MiniProfileIMG from "../../assets/images/Placeholder_Image.gif";
 import Form from "react-bootstrap/Form";
-// const styles = {
-//   paperContainer: {
-//     height: 120,
-//     width: 120,
-//     maxwidth: 20,
-//     maxheight: 20,
-//     backgroundImage: `url(${"static/src/img/main.jpg"})`,
-//   },
-// };
 
 const ProfileContent = (props) => {
   let joinedOn = new Date(props.user.createdAt);
@@ -23,12 +12,7 @@ const ProfileContent = (props) => {
   return (
     <div className="ProfileBody">
       <div className="ProfileContent">
-        <img
-          alt="Profile Pic"
-          src={MiniProfileIMG}
-          // style={styles.paperContainer}
-          // className="btn btn-primary"
-        />
+        <img alt="Profile Pic" src={MiniProfileIMG} />
         <Form>
           <Form.Label>{props.user.displayName}</Form.Label>
           <br></br>

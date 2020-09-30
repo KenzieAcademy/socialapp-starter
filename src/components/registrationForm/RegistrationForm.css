@@ -12,6 +12,8 @@
   border-width: 3px;
   border-style: dashed;
   background-image: url(../../assets/images/Coupon_Background_Dark.png);
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font: italic small-caps bold 12px/30px Georgia, serif;
 }
 
 #registration-form {
@@ -21,10 +23,8 @@
   display: flex;
   flex-direction: column;
   text-align: center;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  font: italic small-caps bold 12px/30px Georgia, serif;
-  font-size: 25px;
-  color: white;
+  font-size: 30px;
+  color: black;
   width: 340px;
 }
 
@@ -103,20 +103,10 @@
   border-style: dashed;
 }
 
-input[type="button"],
-input[type="submit"] {
-  /* background-color: black; */
-  background-image: url(../../assets/images/Join_Us_Button.png);
-  width: 99px;
-  height: 48px;
-  cursor: pointer;
-}
-
 .EnterButtonBox {
   padding: 40px;
   position: relative;
   margin: auto;
-  font: italic small-caps bold 12px/30px Georgia, serif;
 }
 
 .EnterButton {

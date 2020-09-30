@@ -11,6 +11,7 @@
 }
 
 .ProfileHeader {
+  padding: 10px;
   top: 12px;
   left: -2px;
   position: relative;
