@@ -32,12 +32,28 @@ class DataService {
     return this.client.get(this.url + "/users?limit=" + number);
   }
 
+  patchuser(password, about, displayName, username) {
+    const requestBody = { password, about, displayName };
+    let token = this.getToken();
+    const config = {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    };
+    console.log(requestBody);
+    console.log(token);
+    console.log(config);
+    return this.client
+      .patch(this.url + "/users/" + username, requestBody, config)
+      .then((response) => response.data);
+  }
+
   postMessages(text) {
     const requestBody = { text };
     let token = this.getToken();
     const config = {
       headers: {
-        Authorzation: `Bearer ${token}`,
+        Authorization: `Bearer ${token}`,
       },
     };
     console.log(requestBody);

@@ -71,6 +71,11 @@ class SideBar extends React.Component {
               </Menu.Item>
               <Menu.Item key="location2">
                 <Route>
+                  <Link to="/createmessage">Create Message</Link>
+                </Route>
+              </Menu.Item>
+              <Menu.Item key="location3">
+                <Route>
                   <Link to="/editprofile">Edit Profile</Link>
                 </Route>
               </Menu.Item>
