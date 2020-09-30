@@ -50,6 +50,10 @@ class DataService {
         return this.client.get(this.url + "/messages?limit=50")  //Limit 100 messages
     }
 
+    getMoreMessages(offset) {
+        return this.client.get(this.url + "/messages?offset=" + offset)
+    }
+
     deleteMessage(messageID) {
         const loginData = JSON.parse(localStorage.getItem('login')).result
         let token = loginData.token
