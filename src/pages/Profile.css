@@ -3,7 +3,6 @@
 }
 
 .Body {
-  /* width: 850px; */
   position: relative;
   margin: auto;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
@@ -11,8 +10,7 @@
 }
 
 .ProfileHeader {
-  padding: 10px;
-  top: 12px;
+  top: 6px;
   left: -2px;
   position: relative;
   margin: auto;
@@ -21,10 +19,16 @@
   border-width: 3px;
   border-style: dashed;
   width: 830px;
-  /* background-color: #b80c12; */
+  height: 55px;
   background-image: url(../assets/images/Clear_Red.png);
   font-size: 45px;
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
   color: black;
   text-align: center;
+}
+
+.ProfileHeaderText {
+  top: -10px;
+  position: relative;
+  margin: auto;
 }

@@ -13,7 +13,6 @@
 }
 
 .MessageHeader {
-  padding: 10px;
   top: 6px;
   left: -2px;
   position: relative;
@@ -23,11 +22,18 @@
   border-width: 3px;
   border-style: dashed;
   width: 830px;
+  height: 55px;
   background-image: url(../assets/images/Clear_Red.png);
-  font-size: 45px;
   font-size: 45px;
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
   color: black;
+  text-align: center;
+}
+
+.MessageHeaderText {
+  top: -10px;
+  position: relative;
+  margin: auto;
 }
 
 .MessageLoading {

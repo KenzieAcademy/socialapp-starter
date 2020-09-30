@@ -59,7 +59,9 @@ class Profile extends React.Component {
       <div className="Body">
         <div className="Profile">
           <Menu isAuthenticated={this.props.isAuthenticated} />
-          <div className="ProfileHeader">My Profile</div>
+          <div className="ProfileHeader">
+            <div className="ProfileHeaderText">My Profile</div>
+          </div>
           <ProfileContent
             user={this.state.user}
             change={this.handleChange}

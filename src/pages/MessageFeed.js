@@ -67,7 +67,9 @@ class MessageFeed extends React.Component {
       <div className="Body">
         <div className="MessageList">
           <Menu isAuthenticated={this.props.isAuthenticated} />
-          <div className="MessageHeader">Message Feed</div>
+          <div className="MessageHeader">
+            <div className="MessageHeaderText">Message Feed</div>
+          </div>
           <OverlayTrigger
             trigger="click"
             placement="bottom"

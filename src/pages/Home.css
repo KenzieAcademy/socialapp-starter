@@ -16,42 +16,45 @@
   border-style: dashed;
   background-image: url(../assets/images/Clear_Red_Dark.png);
   width: 850px;
-  height: 45px;
+  height: 55px;
+  font: italic small-caps bold 12px/30px Georgia, serif;
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
   color: black;
   font-size: 12px;
 }
 
 .HomeLink a {
-  top: 5px;
+  top: 15px;
   left: 5px;
   position: relative;
   margin: auto;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  /* font: italic small-caps bold 12px/30px Georgia, serif; */
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
   color: black;
-  font-size: 30px;
+  font-size: 25px;
   padding: 5px;
   text-decoration: underline;
   cursor: pointer;
-  font-weight: bolder;
 }
 
-.HomeLink a:hover {
+.RegisterLink a:hover {
   color: white;
 }
 
 .RegisterLink a {
-  top: -87px;
-  left: 729px;
+  top: -81px;
+  left: 740px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  /* font: italic small-caps bold 12px/30px Georgia, serif; */
   position: relative;
   margin: auto;
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
   color: black;
-  font-size: 30px;
+  font-size: 25px;
   padding: 5px;
   text-decoration: underline;
   cursor: pointer;
-  font-weight: bolder;
 }
 
 .RegisterLink a:hover {
@@ -59,8 +62,6 @@
 }
 
 .FormBody {
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  font: italic small-caps bold 12px/30px Georgia, serif;
   top: 5px;
   position: relative;
   margin: auto;
@@ -69,17 +70,17 @@
 .Welcome {
   position: relative;
   margin: auto;
-  top: -28px;
-  left: 345px;
+  top: -27px;
+  left: 340px;
   font-size: 45px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
   color: black;
-  font-weight: bolder;
 }
 
 .NotMemberYet {
-  top: -54px;
-  left: 603px;
+  top: -44px;
+  left: 612px;
   position: relative;
   margin: auto;
 }

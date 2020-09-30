@@ -12,18 +12,17 @@
   border-width: 3px;
   border-style: dashed;
   background-image: url(../../assets/images/Coupon_Background_Dark.png);
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  font: italic small-caps bold 12px/30px Georgia, serif;
 }
 
 #registration-form {
+  left: -14px;
   position: relative;
   margin: auto;
   top: 35px;
   display: flex;
   flex-direction: column;
   text-align: center;
-  font-size: 30px;
+  font-size: 25px;
   color: black;
   width: 340px;
 }
@@ -37,8 +36,8 @@
   text-align: left;
   position: relative;
   margin: auto;
-  width: 380px;
-  height: 470px;
+  width: 445px;
+  height: 500px;
 }
 
 .UserNameInput {
@@ -110,6 +109,8 @@
 }
 
 .EnterButton {
+  left: 18px;
+  top: -5px;
   position: relative;
   margin: auto;
   border: 3px solid black;
