@@ -95,7 +95,8 @@ class Profile extends React.Component {
         <Grid columns={2} divided>
     <Grid.Row>
       <Grid.Column Align='center'>
-      <Image src='https://images.pexels.com/photos/2846814/pexels-photo-2846814.jpeg?cs=srgb&dl=pexels-oziel-g%C3%B3mez-2846814.jpg&fm=jpg' size = 'small' />
+      <Image src={'https://socialapp-api.herokuapp.com/users/' + this.state.user.username +"/picture" }/>
+      
       </Grid.Column>
       <Grid.Column>
                 <Segment>
