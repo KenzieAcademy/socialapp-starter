@@ -3,17 +3,18 @@ import { Switch, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import MessageFeed from "./pages/MessageFeed"
+import CreateMessage from "./pages/CreateMessage"
 import NotFound from "./components/notfound/NotFound";
 
+import UserFeed from "./pages/UserFeed";
 
 class App extends React.Component {
   render() {
-    
     return (
-     // <div>
+      // <div>
       //  <h2>Javamaniacs</h2>
       //  <img src="/images/logo.png" alt=""/>
-     // </div>
+      // </div>
       <Switch>
         <Route
           exact
@@ -31,6 +32,21 @@ class App extends React.Component {
           component={MessageFeed}
         />
         <Route
+        exact
+        path="/userFeed"
+        component={UserFeed}
+        />
+        <Route
+        exact
+        path="/createmessage"
+        component={CreateMessage}
+        />
+        <Route
+          exact
+          path="/createmessage"
+          component={CreateMessage}
+        />
+        <Route
           exact
           path="*"
           component={NotFound}
@@ -39,5 +55,4 @@ class App extends React.Component {
     );
   }
 }
-
 export default App;

@@ -1,8 +1,8 @@
 import React from "react";
 import Spinner from "react-spinkit";
 import { withAsyncAction } from "../../redux/HOCs";
-import "./LoginForm.css";
-
+// import "./LoginForm.css";
+import { Button, Form} from 'semantic-ui-react'
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -26,7 +26,8 @@ class LoginForm extends React.Component {
     const { loading, error } = this.props;
     return (
       <div className="LoginForm">
-        <form id="login-form" onSubmit={this.handleLogin}>
+        <Form onSubmit={this.handleLogin}>
+          <Form.Field>
           <label htmlFor="username">Username</label>
           <input
             type="text"
@@ -35,6 +36,8 @@ class LoginForm extends React.Component {
             required
             onChange={this.handleChange}
           />
+          </Form.Field>
+          <Form.Field>
           <label htmlFor="password">Password</label>
           <input
             type="password"
@@ -42,10 +45,11 @@ class LoginForm extends React.Component {
             required
             onChange={this.handleChange}
           />
-          <button type="submit" disabled={loading}>
+          </Form.Field>
+          <Button type="submit" disabled={loading}>
             Login
-          </button>
-        </form>
+          </Button>
+        </Form>
         {loading && <Spinner name="circle" color="blue" />}
         {error && <p style={{ color: "red" }}>{error.message}</p>}
       </div>
