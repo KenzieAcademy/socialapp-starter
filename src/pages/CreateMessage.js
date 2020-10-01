@@ -15,7 +15,7 @@ class CreateMessage extends React.Component {
     //   .postMessages()
     //   .then((response) => this.setState({ text: response.data.messages }));
   }
-  vcx;
+  // vcx;
 
   //axios to the header bearer to the token
 
@@ -39,7 +39,7 @@ class CreateMessage extends React.Component {
 
   handleChange = (event) => {
     event.preventDefault();
-    console.log(event.target);
+    // console.log(event.target);
     this.setState({ messageInput: event.target.value });
   };
 

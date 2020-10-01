@@ -32,6 +32,10 @@ class DataService {
     return this.client.get(this.url + "/users?limit=" + number);
   }
 
+  getPicture(username) {
+    return this.client.get(this.url + "/users/" + username + "/picture");
+  }
+
   patchuser(password, about, displayName, username) {
     const requestBody = { password, about, displayName };
     let token = this.getToken();
@@ -99,5 +103,30 @@ class DataService {
   //     .post(this.url + "/likes", requestBody, config)
   //     .then((response) => response.data.like);
   // }
+  putUsers(username) {
+    const requestBody = { username };
+    let token = this.getToken();
+    const config = {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    };
+    return this.client
+      .put(this.url + "/users/" + username + "/picture", requestBody, config)
+      .then((response) => response.data);
+  }
+
+  deleteUser(username) {
+    const requestBody = { username };
+    let token = this.getToken();
+    const config = {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    };
+    return this.client
+      .delete(this.url + "/users/" + username, requestBody, config)
+      .then((response) => response.data);
+  }
 }
 export default DataService;
