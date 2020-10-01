@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Spinner from "react-spinkit";
 import DataService from "../../pages/dataService";
-import Logout from "../logoutButton/LogoutButton";
 
 class MessageFeed extends Component {
   constructor(props) {
