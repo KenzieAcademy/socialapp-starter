@@ -10,14 +10,21 @@ class MessagePage extends React.Component {
   constructor(props) {
     super(props)
     this.client = new DataService()
-    this.state = { messages: [], offset: 100 }
+
+    this.state = { messages: [] }
+    //this.state = { likeCount: this.props.likes.length }
+
+//     this.state = { messages: [], offset: 100 }
+
   }
+ 
   componentDidMount() {
     this.client.getMessages().then(response => {
       console.log(response.data.messages)
       this.setState({ messages: response.data.messages })
     })
   }
+
 
 
   loadMoreMessages = () => {
@@ -38,17 +45,15 @@ class MessagePage extends React.Component {
         <MessageList messages={this.state.messages} loadMoreMessages={this.loadMoreMessages} />
 
         <h2>New Message</h2>
+
+//         <MessageList messages={this.state.messages} />
+
         <ul></ul>
 
-      
-
       </div>
-    );
+    )
   }
 }
 
+export default userIsAuthenticated(MessagePage) 
 
-
-
-
-export default userIsAuthenticated(MessagePage);
