@@ -33,7 +33,10 @@ class Message extends React.Component {
             At {new Date(this.props.createdAt).toDateString()}{" "}
             <GetDisplayName username={this.props.username} /> posted:
             <div className="message-text">{this.props.text} </div>
-            <LikeButton messageId={this.props.id} />
+            <LikeButton
+              messageId={this.props.id}
+              handleSubmit={this.props.handleSubmit}
+            />
             <div className="likes">Likes: {this.props.likes.length}</div>
           </li>
         );
@@ -55,9 +58,15 @@ class Message extends React.Component {
             At {new Date(this.props.createdAt).toDateString()}{" "}
             <GetDisplayName username={this.props.username} /> posted:
             <div className="message-text">{this.props.text} </div>
-            <LikeButton messageId={this.props.id} />
+            <LikeButton
+              messageId={this.props.id}
+              handleSubmit={this.props.handleSubmit}
+            />
             <div className="likes">Likes: {this.props.likes.length}</div>
-            <DeleteMessage messageId={this.props.id} />
+            <DeleteMessage
+              messageId={this.props.id}
+              handleSubmit={this.props.handleSubmit}
+            />
           </li>
         );
       } else {
@@ -68,7 +77,10 @@ class Message extends React.Component {
             <div className="message-text">{this.props.text} </div>
             <button>unlike</button>
             <div className="likes">Likes: {this.props.likes.length}</div>
-            <DeleteMessage messageId={this.props.id} />
+            <DeleteMessage
+              messageId={this.props.id}
+              handleSubmit={this.props.handleSubmit}
+            />
           </li>
         );
       }

@@ -46,7 +46,6 @@ class MessageList extends React.Component {
       );
     }
 
-
     if (!this.state.isSubmitted) {
       return (
         <div className="MessageList">
@@ -57,7 +56,11 @@ class MessageList extends React.Component {
           />
           <ul>
             {this.state.messages.map((msgObj) => (
-              <Message keyId={msgObj.id} {...msgObj} />
+              <Message
+                keyId={msgObj.id}
+                {...msgObj}
+                handleSubmit={this.handleSubmit}
+              />
             ))}
           </ul>
         </div>
@@ -72,12 +75,15 @@ class MessageList extends React.Component {
           />
           <ul>
             {this.state.messages.map((msgObj) => (
-              <Message keyId={msgObj.id} {...msgObj} />
+              <Message
+                keyId={msgObj.id}
+                {...msgObj}
+                handleSubmit={this.handleSubmit}
+              />
             ))}
           </ul>
         </div>
       );
-
   }
 }
 
