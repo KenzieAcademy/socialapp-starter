@@ -149,18 +149,7 @@ class Profile extends React.Component {
           />
         </Form.Field>
 
-
-        
-          <Form.Field>
-            <label htmlFor="displayName">Display Name</label>
-            <input
-              type="text"
-              name="displayName"
-              autoFocus
-              required
-              onChange={this.handleChange}
-            />
-          </Form.Field>
+           
           <Form.Field>
             <label htmlFor="password">Password</label>
             <input
@@ -180,13 +169,6 @@ class Profile extends React.Component {
             />
           </Form.Field>
 
-          <Button primary  onClick={this.handleUpdateUser}>
-            Update User
-          </Button>
-
-          <Button secondary  onClick={this.handleDeleteUser}>
-            Delete User
-          </Button>
         </Form>
       </Grid.Column>
       <Grid.Column>
@@ -206,12 +188,7 @@ class Profile extends React.Component {
     </Grid.Row>
 
     <Grid.Row>
-      <Grid.Column>
-              <Segment>
-                  UPLOAD IMAGE 
-                  CHANGE IMAGE  GOES HERE 
-              </Segment>
-      </Grid.Column>
+     
       <Grid.Column>
       <Header as='h3' textAlign = 'center' color='black'>Current Book Clubs</Header>
       <List bulleted>
