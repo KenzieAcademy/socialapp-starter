@@ -240,7 +240,11 @@ class Profile extends React.Component {
           <Button type="primary" onClick={this.handleDeleteUser}>
             Delete User
           </Button>
+<<<<<<< HEAD
       
+=======
+
+>>>>>>> ca360fbdd3507a5090df7eb4a3159787fdc3b536
 
         <Form>
           <Form.Field>

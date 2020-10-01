@@ -1,5 +1,6 @@
 import React from "react"
 import UserItem from "../userItem/UserItem"
+import { List, Image } from 'semantic-ui-react'
 class UserList extends React.Component {
     render() {
         return (
