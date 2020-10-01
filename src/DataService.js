@@ -90,6 +90,18 @@ class DataService {
             }
         )
     }
+    
+    setUserPicture(userPicture) {
+        const loginData = JSON.parse(localStorage.getItem('login')).result
+        let token = loginData.token
+        const username = loginData.username
+        let url = this.url + `/users/${username}/picture`
+        return this.client.put(url, userPicture,
+            {
+                headers: { Authorization: `Bearer ${token}` }
+            }
+        )
+    }
 
 
 }
