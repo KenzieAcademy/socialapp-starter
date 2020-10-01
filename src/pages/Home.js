@@ -11,17 +11,16 @@ import WelcomePage from "../components/welcomePage/WelcomePage";
 class Home extends React.Component {
   render() {
     return (
-     
+
       <div>
-        <WelcomePage/>
+        <WelcomePage />
         <Menu />
         <LoginForm />
-        <hr/>
+        <hr />
         <RegistrationForm />
 
       </div>
-     
-      
+
     );
   }
 }
