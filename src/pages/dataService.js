@@ -95,12 +95,6 @@ class DataService {
   getUser(username) {
     console.log(username);
     return this.client.get(this.url + "/users/" + username);
-<<<<<<< HEAD
-=======
-  }
-  getMessages() {
-    return this.client.get(this.url + "/messages");
->>>>>>> 73313e551a067db728eec66cf38272c57d5e0b33
   }
   setuserphoto(formdata) {
     return this.client.put(this.url + "/users", formdata);
