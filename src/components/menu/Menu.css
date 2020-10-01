@@ -1,20 +1,33 @@
-.Menu {
+/* .Menu {
   background-color: lightskyblue;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 1em;
   border-radius: 1em;
-}
+} */
 
-#menu-links {
+/* #menu-links {
   display: flex;
   padding-left: 1em;
-}
+} */
 
-#menu-links a {
+/* #menu-links a {
   padding-right: 0.5em;
   color: darkblue;
   text-decoration: underline;
   cursor: pointer;
+} */
+
+/* .site-layout-content {
+  background: #fff;
+  padding: 24px;
+  min-height: 280px;
 }
+#components-layout-demo-top .logo {
+  width: 120px;
+  height: 31px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 16px 24px 16px 0;
+  float: left;
+} */

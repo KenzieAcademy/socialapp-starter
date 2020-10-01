@@ -4,6 +4,8 @@ import Spinner from "react-spinkit";
 import "./UpdateUser.css";
 import DataService from "../../DataService";
 
+import { Button } from "antd";
+
 class UpdateUser extends React.Component {
   constructor(props) {
     super(props);
@@ -24,6 +26,20 @@ class UpdateUser extends React.Component {
     this.client.updateUser(this.state).then((result) => {
       console.log(result.data);
     });
+  };
+
+  handleDelete = (e) => {
+    e.preventDefault();
+    this.client
+      .deleteUser()
+      .then((payload) => {
+        console.log(payload);
+        localStorage.clear();
+        window.location.reload();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   render() {
@@ -51,6 +67,9 @@ class UpdateUser extends React.Component {
             Update
           </button>
         </form>
+        <Button type="primary" danger onClick={this.handleDelete}>
+          Delete User
+        </Button>
         {loading && <Spinner name="circle" color="blue" />}
         {error && <p style={{ color: "red" }}>{error.message}</p>}
       </div>
