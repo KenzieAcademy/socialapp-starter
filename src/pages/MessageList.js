@@ -31,38 +31,50 @@ class MessageList extends React.Component {
       }
     }, 100);
   }
+
   componentDidMount() {
     this.loadMessages();
   }
 
+  pullMessages() {
+    return this.client.getMessages();
+  }
+
   loadMessages = () => {
     this.setState({ isLoading: true }, () => {
-      this.client.getMessages().then((response) => {
-        const nextMessages = this.state.messages.map((messageObject) => {
-          return (
-            <Message
-              messageId={messageObject.id}
-              key={messageObject.id}
-              {...messageObject}
-            />
-          );
-        });
+      this.pullMessages().then((response) => {
+        const messageList = response.messages;
+        if (messageList) {
+          const nextMessages = response.messages.map((messageObject) => {
+            return (
+              <Message
+                messageId={messageObject.id}
+                key={messageObject.id}
+                {...messageObject}
+              />
+            );
+          });
 
-        // Merges the next users into our existing users
-        this.setState({
-          // Note: Depending on the API you're using, this value may
-          // be returned as part of the payload to indicate that there
-          // is no additional data to be loaded
-          hasMore: this.state.messages.length < 100,
-          isLoading: false,
-          messages: [this.state.messages, nextMessages],
-        });
+          // Merges the next users into our existing users
+          this.setState({
+            // Note: Depending on the API you're using, this value may
+            // be returned as part of the payload to indicate that there
+            // is no additional data to be loaded
+            hasMore: this.state.messages.length < 100,
+            isLoading: false,
+            messages: [this.state.messages, nextMessages],
+          });
+
+          console.log(response);
+        }
       });
     });
   };
 
   render() {
-    if (this.state.messages.length === 0) {
+    const { error, hasMore, isLoading, messages } = this.state;
+
+    if (messages.length === 0) {
       return (
         <div className="MessageList">
           <Menu isAuthenticated={this.props.isAuthenticated} />
@@ -76,7 +88,7 @@ class MessageList extends React.Component {
         <Menu isAuthenticated={this.props.isAuthenticated} />
         <h1>Message Feed</h1>
         <ul>
-          {this.state.messages.map((messageObject) => {
+          {messages.map((messageObject) => {
             return (
               <Message
                 messageId={messageObject.id}
@@ -86,6 +98,9 @@ class MessageList extends React.Component {
             );
           })}
         </ul>
+        {error && <div style={{ color: "#900" }}>{this.state.error}</div>}
+        {isLoading && <div>Loading...</div>}
+        {!hasMore && <div>You did it! You reached the end!</div>}
       </div>
     );
   }
