@@ -2,12 +2,44 @@ import React from "react";
 import Card from "react-bootstrap/Card";
 import "../message/Message.css";
 import ProfilePic from "../../assets/images/Placeholder_Image.gif";
+import SocialappService from "../../socialappService";
+import { userIsAuthenticated } from "../../redux/HOCs";
 
 class Message extends React.Component {
-  LikeFunction() {
-    return <img src=""></img>; //Sometype of image thumbnail
+  constructor(props) {
+    super(props);
+    this.api = new SocialappService();
+
+    this.state = {
+      user: {},
+      date: "",
+      userPic: ProfilePic,
+      likes: this.props.likes.length,
+    };
   }
+
+  componentDidMount() {
+    this.api
+      .getUser(this.props.username)
+      .then((response) => this.setState({ user: response.data.user }));
+    const postedAt = new Date(this.props.createdAt);
+    this.setState({ date: postedAt.toUTCString() });
+    // this.api
+    //   .getProfilePic(this.props.username)
+    //   .then((response) => this.setState({ userPic: response.data.message }));
+  }
+
+  LikeFunction = () => {
+    let messageID = { messageId: this.props.id };
+    this.api
+      .addLike(messageID)
+      .then(this.setState({ likes: this.state.likes + 1 }));
+  };
+
   render() {
+    // if (this.state.userPic === "User does not have a picture") {
+    //   this.setState({ userPic: ProfilePic });
+    // }
     return (
       <div className="CardBody">
         <Card className="Card" style={{ width: "620px" }}>

@@ -3,7 +3,7 @@ import Spinner from "react-spinkit";
 import "./RegistrationForm.css";
 import SocialappService from "../../socialappService.js";
 import RegisterPopup from "../registerPopup/RegisterPopup";
-import Button from "react-bootstrap/Button";
+// import Button from "react-bootstrap/Button";
 
 class RegistrationForm extends React.Component {
   constructor(props) {
