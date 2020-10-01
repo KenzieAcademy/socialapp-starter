@@ -14,13 +14,18 @@ const styles = {
 const MiniProfile = (props) => {
   let joined = new Date(props.user.createdAt);
 
+  let image = MiniProfileIMG;
+  if (props.user.pictureLocation !== null) {
+    image = `https://socialapp-api.herokuapp.com${props.user.pictureLocation}`;
+  }
+
   return (
     <div className="ProfileCard">
       <Card class="card" className="Miniprofile">
         <Card-Body class="card-body">
           <img
             alt="profile"
-            src={MiniProfileIMG}
+            src={image}
             style={styles.paperContainer}
             class="btn btn-primary"
           />

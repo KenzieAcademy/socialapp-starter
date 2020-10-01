@@ -13,7 +13,7 @@ import MiniProfile from "../components/miniProfile/MiniProfile";
 class MessageFeed extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { messages: [], text: "", currentUser: {} };
+    this.state = { messages: [], text: "", currentUser: {}, selectedUser: "" };
     this.api = new SocialappService();
     this.popover = (
       <Popover id="newPost">

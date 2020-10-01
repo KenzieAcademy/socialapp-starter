@@ -1,8 +1,6 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
-
-// import Image from "react-bootstrap/Image";
 import { userIsAuthenticated } from "../../redux/HOCs";
 import "../../components/profileContent/ProfileContent.css";
 import MiniProfileIMG from "../../assets/images/Placeholder_Image.gif";
@@ -19,13 +17,17 @@ const styles = {
 
 const ProfileContent = (props) => {
   let joinedOn = new Date(props.user.createdAt);
+  let picture = MiniProfileIMG;
+  if (props.pic !== null) {
+    picture = props.pic;
+  }
 
   return (
     <div className="ProfileBody">
       <div className="ProfileContent">
         <img
           alt="profile"
-          src={MiniProfileIMG}
+          src={picture}
           style={styles.paperContainer}
           className="btn btn-primary"
         />
@@ -79,6 +81,20 @@ const ProfileContent = (props) => {
                   as="textarea"
                   inline="true"
                 ></Form.Control>
+              </Col>
+            </Form.Row>
+            <Form.Row>
+              <Col>
+                <Form.File
+                  id="profileImg"
+                  label="Upload Profile Image"
+                  name="image"
+                  onChange={props.changePic}
+                  accept="image/*"
+                />
+                <Button type="primary" onClick={props.upload}>
+                  Update Profile Picture
+                </Button>
               </Col>
             </Form.Row>
             <Form.Row>
