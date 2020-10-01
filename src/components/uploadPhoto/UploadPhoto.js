@@ -24,7 +24,7 @@ class UploadPhoto extends Component {
       <div>
         <div>
           <div>
-            <img src={this.state.image} />
+            <img src={this.state.image} alt={this.props.userName} />
             <h1>Upload Image</h1>
             <input type="file" name="myImage" onChange={this.onImageChange} />
           </div>
