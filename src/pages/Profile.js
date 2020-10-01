@@ -1,5 +1,4 @@
 import React from "react";
-import LikeButton from "../components/likebutton/LikeButton";
 import Menu from "../components/menu/Menu";
 import { userIsAuthenticated } from "../redux/HOCs";
 import UploadPhoto from "../components/uploadPhoto/UploadPhoto";
@@ -29,8 +28,7 @@ class Profile extends React.Component {
         <Menu isAuthenticated={this.props.isAuthenticated} />
         <h2>Profile</h2>
         {this.state.user.username}
-        <UploadPhoto userName={this.state.username} />
-        <LikeButton />
+        <UploadPhoto />
         <DeleteAcctButton />
       </div>
     );
