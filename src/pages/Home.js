@@ -35,11 +35,13 @@ class Home extends React.Component {
             </Grid.Column>
             <Grid.Column>
               <Segment>
-                The Book Nook is an interactive website where bibliophiles (book lovers)
-                can review, blog and trade ideas about their favorite books.  There are 
-                book clubs you can join or you can form your own.  Every genre is 
-                represented, from Shakespeare to Hemingway or E. M. Forster to J. K. 
-                Rowling.  This is the place to curl up with your laptop or tablet. 
+                The Book Nook is an interactive website where 
+                bibliophiles (book lovers) can review, blog and 
+                trade ideas about their favorite books.  There are 
+                book clubs you can join or you can form your own.  
+                Every genre is represented, from Shakespeare to
+                Hemingway or E. M. Forster to J. K. Rowling.  
+                This is the place to curl up with your laptop or tablet. 
                 Enjoy.  
 
               </Segment>
