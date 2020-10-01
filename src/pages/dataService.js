@@ -39,8 +39,14 @@ class DataService {
     const { token } = loginData.result;
     return token;
   }
-  getMessag(limit = 20) {
+  getMessages(limit = 20) {
     return this.client.get(this.url + "/messages?limit=" + limit);
+  }
+
+  getMoreMessages(offset = 20, limit = 20) {
+    return this.client.get(
+      this.url + "/messages?offset=" + offset + "&limit=" + limit
+    );
   }
 
   deleteuser() {
@@ -51,9 +57,6 @@ class DataService {
     });
   }
 
-  getlistMessages() {
-    return this.client.get(this.url + "/messages");
-  }
   createMessage() {
     return this.client.post(this.url + "/messages");
   }
@@ -95,9 +98,6 @@ class DataService {
   getUser(username) {
     console.log(username);
     return this.client.get(this.url + "/users/" + username);
-  }
-  getMessages() {
-    return this.client.get(this.url + "/messages");
   }
   setuserphoto(formdata) {
     return this.client.put(this.url + "/users", formdata);
