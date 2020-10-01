@@ -3,23 +3,29 @@
 }
 
 .ProfileBody {
+  background-image: url(../../assets/images/Clear_Red.png);
   top: 19px;
-  border-radius: 5px;
-  width: 830;
+  width: 828px;
   height: 340px;
   position: relative;
   margin: auto;
-}
-
-.ProfileContent {
-  left: -3px;
-  top: -3px;
+  border: 3px solid black;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
-  position: relative;
+}
+
+.ProfileContent {
+  background-image: url(../../assets/images/Coupon_Background_Dark.png);
+  left: -3px;
+  top: -3px;
+  border: 3px solid black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
   margin: auto;
-  width: 830px;
+  width: 800px;
+  height: 240px;
   position: relative;
   margin: auto;
 }
@@ -27,6 +33,12 @@
 .ProfilePic {
   width: 125px;
   height: 125px;
+  position: relative;
+  margin: auto;
+}
+
+.FormBody {
+  background-image: url(../../assets/images/Clear_Red.png);
   position: relative;
   margin: auto;
 }
