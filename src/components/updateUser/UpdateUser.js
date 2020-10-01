@@ -36,6 +36,7 @@ class UpdateUser extends React.Component {
         console.log(payload);
         localStorage.clear();
         window.location.reload();
+        //window.location.reload() is only necessary due to the way redux is set up for this project. This is bad practice and should be avoided otherwise.
       })
       .catch((error) => {
         console.log(error);
