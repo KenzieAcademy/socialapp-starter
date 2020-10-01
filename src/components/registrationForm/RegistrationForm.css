@@ -3,3 +3,12 @@
   flex-direction: column;
   max-width: 20em;
 }
+.Menu {
+  background-image: url(theme.png);
+  background-size: 192px 100px;
+  height: 200px;
+}
+.Menu h1 {
+  margin-left: 490px;
+  font-size: 50px;
+}
