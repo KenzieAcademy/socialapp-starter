@@ -11,43 +11,12 @@ import "../menu/Menu.css";
 const { Sider } = Layout;
 
 class SideBar extends React.Component {
-  handleLogout = (event) => {
-    event.preventDefault();
+  handleLogout = (e) => {
+    e.preventDefault();
     this.props.logout();
   };
   render() {
     return (
-      // <Sider>
-      //   <Menu defaultSelectedKeys={["Dashboard"]} mode="inline">
-      //     <Menu.Item key="Dashboard">
-      //       <Route>
-      //         <Link to="/"> Profile</Link>
-      //       </Route>
-      //     </Menu.Item>
-      //     <SubMenu
-      //       title={
-      //         <span>
-      //           <Icon type="mail" />
-      //           <span>User</span>
-      //         </span>
-      //       }
-      //     >
-      //       <Menu.ItemGroup key="AboutUS" title="About Me">
-      //         <Menu.Item key="location1">
-      //           <Route>
-      //             <Link to="/messagefeed"> MessageFeed</Link>
-      //           </Route>
-      //         </Menu.Item>
-      //         <Menu.Item key="location2">
-      //           <Route>
-      //             <Link to="/editprofile">Edit Profile</Link>
-      //           </Route>
-      //         </Menu.Item>
-      //       </Menu.ItemGroup>
-      //     </SubMenu>
-      //   </Menu>
-      // </Sider>
-
       <Sider style={{ backgroundColor: "dark" }}>
         <Menu defaultSelectedKeys={["Dashboard"]} mode="inline">
           <Menu.Item key="Dashboard">
@@ -77,6 +46,16 @@ class SideBar extends React.Component {
               <Menu.Item key="location3">
                 <Route>
                   <Link to="/editprofile">Edit Profile</Link>
+                </Route>
+              </Menu.Item>
+              <Menu.Item key="location4">
+                <Route>
+                  <Link to="/searchuser"> Search User</Link>
+                </Route>
+              </Menu.Item>
+              <Menu.Item key="DeleteUser">
+                <Route>
+                  <Link to="/deleteprofile">Delete profile</Link>
                 </Route>
               </Menu.Item>
               <Menu.Item id="menu-links">

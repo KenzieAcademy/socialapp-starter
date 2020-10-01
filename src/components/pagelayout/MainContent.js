@@ -4,10 +4,13 @@ import Home from "../../pages/Home";
 import Profile from "../../pages/Profile";
 import CreateMessage from "../../pages/CreateMessage";
 import MessageFeed from "../../pages/MessageFeed";
+import SearchUser from "../../pages/SearchUser";
+import DeleteUser from "../../pages/DeleteProfile";
 import NotFound from "../../pages/NotFound";
 
 import { Layout, Breadcrumb } from "antd";
 import EditProfile from "../../pages/EditProfile";
+import Search from "antd/lib/input/Search";
 
 const { Footer, Content } = Layout;
 class MainContent extends React.Component {
@@ -41,6 +44,8 @@ class MainContent extends React.Component {
               <Route exact path="/profile/:username" component={Profile} />
               <Route exact path="/editprofile" component={EditProfile} />
               <Route exact path="/createmessage" component={CreateMessage} />
+              <Route exact path="/searchuser" component={SearchUser} />
+              <Route exact path="/deleteprofile" component={DeleteUser} />
               <Route exact path="*" component={NotFound} />
               {/* <Route exact path="*" component={Button} /> */}
             </Switch>
