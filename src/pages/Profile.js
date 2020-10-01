@@ -188,7 +188,7 @@ class Profile extends React.Component {
     </Grid.Row>
 
     <Grid.Row>
-     
+     <Grid.Column></Grid.Column>
       <Grid.Column>
       <Header as='h3' textAlign = 'center' color='black'>Current Book Clubs</Header>
       <List bulleted>
@@ -220,11 +220,11 @@ class Profile extends React.Component {
 
        
 
-          <Button type="primary" onClick={this.handleUpdateUser}>
+          <Button primary onClick={this.handleUpdateUser}>
             Update User
           </Button>
 
-          <Button type="primary" onClick={this.handleDeleteUser}>
+          <Button secondary onClick={this.handleDeleteUser}>
             Delete User
           </Button>
 
