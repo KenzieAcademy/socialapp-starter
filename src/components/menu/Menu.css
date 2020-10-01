@@ -5,11 +5,16 @@
   align-items: center;
   padding: 0 1em;
   border-radius: 1em;
+  font-style: inherit;
+
+  
 }
 
 #menu-links {
   display: flex;
   padding-left: 1em;
+  align-items: center;
+
 }
 
 #menu-links a {
@@ -17,4 +22,14 @@
   color: darkblue;
   text-decoration: underline;
   cursor: pointer;
+
+  
 }
+
+.Menu .logo {
+  width: 60%;
+  margin: auto;
+  height: 120px;
+}
+
+
