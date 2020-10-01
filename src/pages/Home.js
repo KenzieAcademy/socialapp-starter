@@ -1,7 +1,7 @@
 import React from "react";
 import "./Home.css";
 import LoginForm from "../components/loginForm/LoginForm";
-import Menu from "../components/menu/Menu";
+// import Menu from "../components/menu/Menu";
 import { userIsNotAuthenticated } from "../redux/HOCs";
 import RegistrationForm from "../components/RegisterForm/RegisterForm";
 
@@ -16,16 +16,15 @@ class Home extends React.Component {
 
   render() {
     return (
-      <div className="Home">
-        <Menu />
-        <h2>Your favorite microblogging platform</h2>
-        <br />
+      <div>
+        <h1>Kwitter</h1>
+        <h2>Blog Away</h2>
         <LoginForm />
 
-        <br />
-        <br />
+        <br/>
 
-        <h2>Create New User</h2>
+
+        <h2>Register</h2>
         <RegistrationForm />
       </div>
     );

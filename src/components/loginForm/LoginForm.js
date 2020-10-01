@@ -1,7 +1,8 @@
 import React from "react";
-import { Container, Form, Button } from "react-bootstrap";
+import {  Form, Button } from "react-bootstrap";
 import Spinner from "react-spinkit";
 import { withAsyncAction } from "../../redux/HOCs";
+
 
 import "./LoginForm.css";
 
@@ -50,7 +51,7 @@ class LoginForm extends React.Component {
       //   {loading && <Spinner name="circle" color="blue" />}
       //   {error && <p style={{ color: "red" }}>{error.message}</p>}
       // </div>
-      <Container>
+      <div>
         <Form id="login-form" onSubmit={this.handleLogin}>
           <Form.Group controlid="loginForm">
             <Form.Label>Username</Form.Label>
@@ -62,7 +63,7 @@ class LoginForm extends React.Component {
               onChange={this.handleChange}
             />
           </Form.Group>
-          <Form.Group controlid="loginForm">
+          <Form.Group controlid="password">
             <Form.Label>Password</Form.Label>
             <Form.Control
               type="password"
@@ -77,7 +78,7 @@ class LoginForm extends React.Component {
           {loading && <Spinner name="circle" color="blue" />}
           {error && <p style={{ color: "red" }}>{error.message}</p>}
         </Form>
-      </Container>
+      </div>
     );
   }
 }

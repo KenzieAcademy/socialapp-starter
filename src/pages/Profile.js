@@ -1,9 +1,9 @@
 import React from "react";
-import { userIsAuthenticated } from "../redux/HOCs"
+import { userIsAuthenticated } from "../redux/HOCs";
 import DataService from "../services/DataService";
 import Menu from "../components/menu/Menu";
-import ProfileContent from "../components/profileContent/ProfileContent"
-import Button from 'react-bootstrap/Button'
+import ProfileContent from "../components/profileContent/ProfileContent";
+import Button from "react-bootstrap/Button";
 import "./Profile.css";
 
 class Profile extends React.Component {
@@ -32,10 +32,10 @@ class Profile extends React.Component {
           <Menu isAuthenticated={this.props.isAuthenticated} />
           <h2>My Profile</h2>
           <ProfileContent />
-        <Button className="DeleteUser" onClick={this.handleDelete}>
-          {" "}
-          Delete User
-        </Button>
+          <Button className="DeleteUser" onClick={this.handleDelete}>
+            {" "}
+            Delete User
+          </Button>
         </div>
       </div>
     );

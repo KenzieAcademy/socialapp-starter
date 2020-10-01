@@ -7,8 +7,8 @@ import "../../components/profileContent/ProfileContent.css";
 class ProfileContent extends React.Component {
   render() {
     return (
-      <div ClassName="card">
-        <Card ClassName="ProfileMain" style={{ width: "25rem" }}>
+      <div className="card">
+        <Card className="ProfileMain" style={{ width: "25rem" }}>
           <Card.Img
             variant="top"
             src="https://image.shutterstock.com/image-vector/avatar-vector-male-profile-gray-260nw-538707355.jpg"
