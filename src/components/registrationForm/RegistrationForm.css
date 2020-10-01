@@ -104,7 +104,7 @@ input[type="submit"] {
   margin: auto;
   background: none;
   border: none;
-  background-image: url(../../assets/images/Register_Button.png);
+  background-image: url(../../assets/images/Coupon_Background_Dark.png);
   padding: 5px;
   border: 3px solid black;
   border-radius: 5px;
@@ -120,6 +120,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
+  background-image: url(../../assets/images/Clear_Red_Dark.png);
   border: 3px solid white;
   border-radius: 5px;
   border-width: 3px;

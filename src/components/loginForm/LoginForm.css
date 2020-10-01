@@ -80,9 +80,9 @@ input[type="submit"] {
   top: -13px;
   left: 18px;
   position: relative;
-  margin: auto;
+  /* margin: auto;
   background: none;
-  border: none;
+  border: none; */
   background-image: url(../../assets/images/Register_Button.png);
   padding: 5px;
   border: 3px solid black;
@@ -99,6 +99,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
+  background-image: url(../../assets/images/Clear_Red_Dark.png);
   border: 3px solid white;
   border-radius: 5px;
   border-width: 3px;

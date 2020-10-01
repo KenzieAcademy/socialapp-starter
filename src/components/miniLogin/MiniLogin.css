@@ -12,3 +12,34 @@
   position: relative;
   margin: auto;
 }
+
+.LoginButton {
+  position: relative;
+  margin: auto;
+}
+
+input[type="submit"] {
+  position: relative;
+  margin: auto;
+  padding: 5px;
+  border: 3px solid black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  width: 130px;
+  height: 50;
+  font: italic small-caps bold 27px/45px Impact, Haettenschweiler,
+    "Arial Narrow Bold", sans-serif;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  -webkit-text-stroke: 0.25px white;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  border: 3px solid white;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  color: white;
+  -webkit-text-stroke: 0.25px black;
+}
