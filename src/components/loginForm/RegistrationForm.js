@@ -33,6 +33,7 @@ class RegistrationForm extends React.Component {
       <div className="RegistrationForm">
         <form id="registration-form" onSubmit={this.handleRegistration}>
           <label htmlFor="username">Username</label>
+
           <input
             type="text"
             name="username"
