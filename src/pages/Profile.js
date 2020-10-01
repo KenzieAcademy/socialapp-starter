@@ -48,7 +48,16 @@ class Profile extends React.Component {
 
   handleUpdateUser = event => {
     event.preventDefault()
-    this.client.updateUser(this.state.user.username, this.state.formData)
+    let formDataCopy = this.state.formData
+    for(let property in formDataCopy){
+      if(formDataCopy[property] === ""){
+
+        delete formDataCopy[property]
+      }
+    }
+ 
+
+    this.client.updateUser(this.state.user.username, formDataCopy)
       .then(updateUserData => {
         this.setState({
           user: updateUserData.user
@@ -128,17 +137,18 @@ class Profile extends React.Component {
     <Grid.Row>
       <Grid.Column>
       <Form onSubmit={this.handleUpdateUser}>
-              
-          <Form.Field>
-            <label htmlFor="displayName">Display Name</label>
-            <input
-              type="text"
-              name="displayName"
-              autoFocus
-              required
-              onChange={this.handleChange}
-            />
-          </Form.Field>
+        <Form.Field>
+          <label htmlFor="displayName">Display Name</label>
+          <input
+            type="text"
+            name="displayName"
+            autoFocus
+            required
+            onChange={this.handleChange}
+          />
+        </Form.Field>
+
+           
           <Form.Field>
             <label htmlFor="password">Password</label>
             <input
@@ -196,7 +206,7 @@ class Profile extends React.Component {
     </Grid.Row>
 
     <Grid.Row>
-     
+     <Grid.Column></Grid.Column>
       <Grid.Column>
       <Header as='h3' textAlign = 'center' color='black'>Current Book Clubs</Header>
       <List bulleted>
