@@ -9,6 +9,7 @@ class MessageFeed extends React.Component {
     constructor(props) {
         super(props)
         this.client = new FetchService()
+        this.interval = setInterval(() => this.getMessage(), 5000)
         this.state = {
             messages: [],
             submitted: false,
@@ -22,7 +23,13 @@ class MessageFeed extends React.Component {
     componentDidMount() {
         this.getMessage()
     }
+
+    componentWillUnmount(){
+
+        clearInterval(this.interval)
+    }
     getMessage() {
+        console.log("hello")
         this.client.userMessage().then(messageData => {
             this.setState({
                 messages: messageData.messages
