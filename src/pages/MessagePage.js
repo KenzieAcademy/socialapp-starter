@@ -11,11 +11,10 @@ class MessagePage extends React.Component {
     super(props)
     this.client = new DataService()
 
-    this.state = { messages: [] }
-    //this.state = { likeCount: this.props.likes.length }
-
-//     this.state = { messages: [], offset: 100 }
-
+    this.state = { 
+      messages: [],
+      offset: 100
+    }
   }
  
   componentDidMount() {
@@ -45,8 +44,6 @@ class MessagePage extends React.Component {
         <MessageList messages={this.state.messages} loadMoreMessages={this.loadMoreMessages} />
 
         <h2>New Message</h2>
-
-//         <MessageList messages={this.state.messages} />
 
         <ul></ul>
 
