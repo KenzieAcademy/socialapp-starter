@@ -1,7 +1,9 @@
 import React from "react";
+import DataService from "../../services/DataService";
 import PostLikeService from "../../services/PostLikeService";
 import DeleteLikeService from "../../services/DeleteLikeService";
 import { Button, Icon, Label } from "semantic-ui-react";
+import "./LikeButton.css"
 
 class LikeButton extends React.Component {
   constructor(props) {
@@ -16,13 +18,13 @@ class LikeButton extends React.Component {
         likeId: {},
       },
     };
-    this.loginData = JSON.parse(localStorage.getItem("login"));
+    this.loggedInUser = new DataService().getUsername();
   }
 
   componentDidMount() {
     let likesArray = this.state.likesArray;
     likesArray.forEach((likeObject) => {
-      if (this.loginData.result.username === likeObject.username) {
+      if (this.loggedInUser === likeObject.username) {
         this.setState({ isLiked: true });
         this.setState({ deleteRequestData: { likeId: likeObject.id } });
       }
@@ -36,7 +38,7 @@ class LikeButton extends React.Component {
           console.log(result);
           let likesArrayCopy = [...this.state.likesArray];
           likesArrayCopy.forEach((likeObject) => {
-            if (this.loginData.result.username === likeObject.username) {
+            if (this.loggedInUser === likeObject.username) {
               likesArrayCopy.pop(likeObject);
             }
           });

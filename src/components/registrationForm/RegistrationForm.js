@@ -2,7 +2,7 @@ import React from "react";
 import Spinner from "react-spinkit";
 import "./RegistrationForm.css";
 import dataService from "../../services/DataService";
-import { Form, Button, Header, Label, Input } from "semantic-ui-react";
+import { Form, Button, Label, Input, Message } from "semantic-ui-react";
 
 class RegistrationForm extends React.Component {
   constructor(props) {
@@ -60,34 +60,38 @@ class RegistrationForm extends React.Component {
     if (this.state.responseCode === 200 && this.state.submitted) {
       return (
         <div className="RegistrationForm">
-          <Header as="h3">You have Created an Account Successfully!</Header>
-          <br />
-          <Button onClick={this.handleReset}>Reset Form</Button>
+          <Message
+            success
+            header="You have Created an Account Successfully!"
+            onDismiss={this.handleReset}
+          />
         </div>
       );
     }
 
-    if (this.state.responseCode === 400 && this.state.submitted) {
+    if (this.state.responseCode === 400) {
       return (
         <div className="RegistrationForm">
-          <Form id="registration-form" onSubmit={this.handleRegistration}>
+          <Form id="registration-form" onSubmit={this.handleRegistration} error>
             <Form.Field>
               <Label size="large" color="blue" htmlFor="username">
                 Username
               </Label>
-              <Input
+              <Form.Input
                 type="text"
                 name="username"
+                error="This Username is Unavailable."
                 autoFocus
                 required
                 minLength="3"
                 maxLength="20"
                 onChange={this.handleChange}
-                error={{
-                  content:
-                    "This Username is Already Taken. Please Create a Unique Username.",
-                  pointing: "below",
-                }}
+              />
+              <Message
+                error
+                header="Registration Error!"
+                content="This Username is Unavailable. Please Create a Unique Username"
+                attached="bottom"
               />
             </Form.Field>
             {/* Inserted Display Name */}
@@ -95,7 +99,7 @@ class RegistrationForm extends React.Component {
               <Label size="large" color="blue" htmlFor="displayName">
                 Display Name
               </Label>
-              <Input
+              <Form.Input
                 type="text"
                 name="displayName"
                 required
@@ -108,7 +112,7 @@ class RegistrationForm extends React.Component {
               <Label size="large" color="blue" htmlFor="password">
                 Password
               </Label>
-              <Input
+              <Form.Input
                 type="password"
                 name="password"
                 required
