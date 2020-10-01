@@ -3,13 +3,10 @@ import Menu from "../components/menu/Menu";
 import Api from "../pages/dataService";
 import { userIsAuthenticated } from "../redux/HOCs";
 import Message from "../components/message/Message";
-<<<<<<< HEAD
 import MessageFeed from "../components/messagefeed/MessageFeed";
 import MessageInbox from "../components/messageinbox/MessageInbox";
-=======
-import debounce from "lodash.debounce";
+
 import InfiniteScroll from "react-infinite-scroller";
->>>>>>> 14ee854346711ddc27b5aeccec64f99c3f536603
 
 class MessageList extends React.Component {
   constructor(props) {
