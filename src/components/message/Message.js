@@ -10,6 +10,12 @@ class Message extends React.Component {
     this.state = { isLiked: false, likeId: 0, didCreate: false };
   }
 
+  handleLikeStatus = (likeId) => {
+    this.setState((state) => {
+      return { isLiked: !state.isLiked, likeId };
+    });
+  };
+
   componentDidMount() {
     let loginData = JSON.parse(localStorage.getItem("login"));
     {
@@ -36,7 +42,7 @@ class Message extends React.Component {
             <div className="message-text">{this.props.text} </div>
             <LikeButton
               messageId={this.props.id}
-              handleSubmit={this.props.handleSubmit}
+              handleLikeStatus={this.handleLikeStatus}
             />
             <div className="likes">Likes: {this.props.likes.length}</div>
           </li>
@@ -47,7 +53,10 @@ class Message extends React.Component {
             At {new Date(this.props.createdAt).toDateString()}{" "}
             <GetDisplayName username={this.props.username} /> posted:
             <div className="message-text">{this.props.text} </div>
-            <UnlikeButton likeId={this.state.likeId} />
+            <UnlikeButton
+              likeId={this.state.likeId}
+              handleLikeStatus={this.handleLikeStatus}
+            />
             <div className="likes">Likes: {this.props.likes.length}</div>
           </li>
         );
@@ -61,13 +70,10 @@ class Message extends React.Component {
             <div className="message-text">{this.props.text} </div>
             <LikeButton
               messageId={this.props.id}
-              handleSubmit={this.props.handleSubmit}
+              handleLikeStatus={this.handleLikeStatus}
             />
             <div className="likes">Likes: {this.props.likes.length}</div>
-            <DeleteMessage
-              messageId={this.props.id}
-              handleSubmit={this.props.handleSubmit}
-            />
+            <DeleteMessage messageId={this.props.id} />
           </li>
         );
       } else {
@@ -76,12 +82,12 @@ class Message extends React.Component {
             At {new Date(this.props.createdAt).toDateString()}{" "}
             <GetDisplayName username={this.props.username} /> posted:
             <div className="message-text">{this.props.text} </div>
-            <UnlikeButton likeId={this.state.likeId} />
-            <div className="likes">Likes: {this.props.likes.length}</div>
-            <DeleteMessage
-              messageId={this.props.id}
-              handleSubmit={this.props.handleSubmit}
+            <UnlikeButton
+              likeId={this.state.likeId}
+              handleLikeStatus={this.handleLikeStatus}
             />
+            <div className="likes">Likes: {this.props.likes.length}</div>
+            <DeleteMessage messageId={this.props.id} />
           </li>
         );
       }

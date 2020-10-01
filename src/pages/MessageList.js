@@ -9,6 +9,7 @@ class MessageList extends React.Component {
     this.state = {
       message: [],
       isSubmitted: false,
+      refresh: false,
     };
     this.client = new DataService();
   }
@@ -30,6 +31,16 @@ class MessageList extends React.Component {
         messages: response.data.messages,
       });
     });
+  };
+
+  handleRefresh = () => {
+    this.setState({ refresh: !this.state.refresh });
+    this.client.getAllMessagesData().then((response) => {
+      this.setState({
+        messages: response.data.messages,
+      });
+    });
+    console.log(this.state.refresh);
   };
 
   render() {
@@ -60,6 +71,8 @@ class MessageList extends React.Component {
                 keyId={msgObj.id}
                 {...msgObj}
                 handleSubmit={this.handleSubmit}
+                handleRefresh={this.handleRefresh}
+                refresh={this.state.refresh}
               />
             ))}
           </ul>
@@ -79,6 +92,8 @@ class MessageList extends React.Component {
                 keyId={msgObj.id}
                 {...msgObj}
                 handleSubmit={this.handleSubmit}
+                handleRefresh={this.handleRefresh}
+                refresh={this.state.refresh}
               />
             ))}
           </ul>

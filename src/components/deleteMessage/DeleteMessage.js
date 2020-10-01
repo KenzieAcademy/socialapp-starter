@@ -12,6 +12,7 @@ class DeleteMessage extends React.Component {
     e.preventDefault();
     this.client.deleteMessage(this.props.messageId).then((result) => {
       console.log(result.data);
+      this.props.handleRefresh();
     });
   };
 
