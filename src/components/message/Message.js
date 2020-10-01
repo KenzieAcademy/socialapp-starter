@@ -18,21 +18,29 @@ class Message extends React.Component {
             }));
         });
     };
-    handleDeleteLike = () => {
-        const loggedInUsername = this.client.getUsername();
-        const userHasLiked = this.props.likes.some(
-            (likeObject) => likeObject.username === loggedInUsername
-        )
-        if (userHasLiked) return;
 
-        this.client.deleteLike(this.props.id).then((response) => {
-            if (response.data.statusCode !== 200) return;
 
-            this.setState((latestState) => ({
-                likeCount: latestState.likeCount - 1,
-            }));
-        });
-    };
+    //     Search the list of likes in state for a like object with a matching username: you can reuse the callback you're passing to .some() and instead pass it to .find()
+    // Find() will return the like object you want to delete, so assign that to a variable, like doomedLike. Then pass doomedLike.id to this.client.deleteLike.
+
+    // handleDeleteLike = () => {
+    //     const loggedInUsername = this.client.getUsername();
+    //     const userHasLiked = this.props.likes.find(
+    //         (likeObject) => likeObject.username === loggedInUsername
+    //     )
+    //     // const doomedLike = this.props.likes.find(
+    //     //     (likeObject) => likeObject.username === loggedInUsername
+    //     // )
+    //     if (userHasLiked) return;
+
+    //     this.client.deleteLike(this.props.id).then((response) => {
+    //         if (response.data.statusCode !== 200) return;
+
+    //         this.setState((latestState) => ({
+    //             likeCount: latestState.likeCount - 1,
+    //         }));
+    //     });
+    // };
 
     render() {
         return (

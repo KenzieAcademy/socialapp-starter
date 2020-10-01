@@ -64,6 +64,7 @@ class socialAppService {
       }
     );
   }
+  nop
 }
 
 export default socialAppService;
