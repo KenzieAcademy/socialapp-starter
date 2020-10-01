@@ -4,10 +4,10 @@ import MessageService from "../../services/MessageService";
 import Message from "./Message";
 
 class GetMessages extends React.Component {
-  state = { messages: [] };
-
-  rerenderMessages = () => {
-      this.forceUpdate()
+  constructor(props) {
+    super(props);
+    this.state = { messages: [] };
+    this.loginData = JSON.parse(localStorage.getItem("login"));
   }
 
   componentDidMount() {
@@ -32,7 +32,11 @@ class GetMessages extends React.Component {
         <ul>
           <Feed>
             {this.state.messages.map((messageObject) => (
-              <Message key={messageObject.id} {...messageObject} />
+              <Message
+                key={messageObject.id}
+                {...messageObject}
+                loginData={this.loginData}
+              />
             ))}
           </Feed>
         </ul>

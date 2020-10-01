@@ -2,6 +2,7 @@ import React from "react";
 import LikeButton from "../likeButton/LikeButton";
 import { displayName } from "react-spinkit";
 import { Link } from "react-router-dom";
+import DeleteUserMessages from "../deleteUserMessage/DeleteUserMessages";
 import {
   Feed,
   FeedContent,
@@ -17,13 +18,40 @@ import {
 
 class Message extends React.Component {
   render() {
+    if (this.props.loginData.result.username === this.props.username) {
+      return (
+        <Feed.Event>
+          <FeedContent>
+            <FeedSummary>
+              <Link to={`/profile/${this.props.username}`}>
+                {this.props.username}
+              </Link>
+              <FeedDate>
+                at {new Date(this.props.createdAt).toDateString()}
+              </FeedDate>
+            </FeedSummary>
+            <FeedExtra text>{this.props.text}</FeedExtra>
+            <FeedMeta>
+              <FeedLike>
+                <LikeButton
+                  className="likeButton"
+                  likesArray={this.props.likes}
+                  messageId={this.props.id}
+                />
+              </FeedLike>
+              <DeleteUserMessages messageId={this.props.id} />
+            </FeedMeta>
+          </FeedContent>
+        </Feed.Event>
+      );
+    }
     return (
       <Feed.Event>
         <FeedContent>
           <FeedSummary>
-              <Link to={`/profile/${this.props.username}`}>
-                {this.props.username}
-              </Link>
+            <Link to={`/profile/${this.props.username}`}>
+              {this.props.username}
+            </Link>
             <FeedDate>
               at {new Date(this.props.createdAt).toDateString()}
             </FeedDate>
