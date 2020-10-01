@@ -1,9 +1,5 @@
 import React from "react";
 
-<<<<<<< HEAD
-
-=======
->>>>>>> dt-davis
 import Menu from "../components/menu/Menu";
 import UserCard from "../components/userCard/UserCard";
 import { userIsAuthenticated } from "../redux/HOCs";
@@ -23,20 +19,6 @@ class Profile extends React.Component {
     this.setState({ loading: false });
   }
   render() {
-<<<<<<< HEAD
-    return (
-      <div className="Profile">
-        <Menu isAuthenticated={this.props.isAuthenticated} />
-        <h2>Profile</h2>
-        <br />
-        <UserCard />
-
-
-        <MessageList />
-        <br />
-      </div>
-    );
-=======
     if (this.state.loading) {
       return <div className="profile">loading</div>;
     } else {
@@ -52,7 +34,6 @@ class Profile extends React.Component {
         </div>
       );
     }
->>>>>>> dt-davis
   }
 }
 
