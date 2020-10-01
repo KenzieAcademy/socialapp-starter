@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-class ProfileService {
+class ProfilePicService {
     constructor(url = 'https://socialapp-api.herokuapp.com', client = axios.create()){
     this.url = url;
     this.client = client
@@ -10,4 +10,4 @@ class ProfileService {
     }   
 }
 
-export default ProfileService
+export default ProfilePicService
