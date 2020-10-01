@@ -3,6 +3,8 @@ import Menu from "../components/menu/Menu";
 import Api from "../pages/dataService";
 import { userIsAuthenticated } from "../redux/HOCs";
 import Message from "../components/message/Message";
+import MessageFeed from "../components/messagefeed/MessageFeed";
+import MessageInbox from "../components/messageinbox/MessageInbox";
 
 class MessageList extends React.Component {
   constructor(props) {
@@ -30,6 +32,7 @@ class MessageList extends React.Component {
       <div className="MessageList">
         <Menu isAuthenticated={this.props.isAuthenticated} />
         <h1>Message Feed</h1>
+        <MessageInbox />
         <ul>
           {this.state.messages.map((messageObject) => {
             return (
