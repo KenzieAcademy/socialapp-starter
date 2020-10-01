@@ -1,0 +1,17 @@
+.Message
+
+
+
+button {
+    display: block;
+    margin-top: 1rem;
+    width: 100%;
+  padding: 0.5rem;
+  background-color: #fc0;
+  border: 0;
+  font-family: Oswald, sans-serif;
+  text-transform: uppercase;
+  font-size: 1.2em;
+  box-shadow: 2px 2px 0 black;
+}
+

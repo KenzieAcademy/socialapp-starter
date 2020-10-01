@@ -16,6 +16,18 @@ class UpdateUserForm extends React.Component {
 
   }
 
+  getUserData() {
+    return this.client.getUser().then(result => {
+      this.setState({
+        data: result.data.user
+      })
+    })
+  }
+
+  componentDidMount() {
+    this.getUserData()
+  }
+
   handleUpdateUser = e => {
     e.preventDefault();
     const updateData = {}
@@ -29,8 +41,12 @@ class UpdateUserForm extends React.Component {
       updateData.displayName = this.state.displayName
     }
     this.client.updateUser(updateData).then(result => {
-      alert(result.data)
+      if (result.data.statusCode === 200) {
+        alert("You have successfully updated your profile")
+        window.location.href = "/profile/:username"
+      }
     })
+
   };
 
   handleChange = e => {
@@ -42,6 +58,9 @@ class UpdateUserForm extends React.Component {
     return (
       <div className="UpdateUserForm">
         <h1>Update Profile</h1>
+        <h3>All fields are optional</h3>
+        <h5>If you would like to update your password you may do it here:</h5>
+        <h6><strong>ONLY ENTER TEXT YOU WISH TO BE YOUR NEW PASSWORD</strong></h6>
         <form id="updateUser-form" onSubmit={this.handleUpdateUser}>
           <label htmlFor="password">Password </label>
           <input
@@ -52,7 +71,8 @@ class UpdateUserForm extends React.Component {
             maxLength='20'
             onChange={this.handleChange}
           />
-          <br />
+          <hr />
+          <div>Current Display Name: {this.props.displayName}</div>
           <label htmlFor="displayName">Display Name </label>
           <input
             type="text"
@@ -61,14 +81,16 @@ class UpdateUserForm extends React.Component {
             maxLength='20'
             onChange={this.handleChange}
           />
-          <br />
+          <hr />
+          <div>Current About: {this.props.about}</div>
           <label htmlFor="about">About </label>
           <input
             type="text"
             name="about"
             onChange={this.handleChange}
           />
-
+          <hr />
+          <br />
           <button type="submit" disabled={loading}>
             Update
           </button>
