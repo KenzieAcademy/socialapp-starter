@@ -1,5 +1,4 @@
 import React from "react";
-import "./DeleteUserModal.css"
 import { propTypes } from "react-spinkit";
 import { Button, Modal } from "semantic-ui-react";
 
@@ -14,7 +13,7 @@ function exampleReducer(state, action) {
   }
 }
 
-function DeleteUserModal(props) {
+function DeleteUserMessageModal(props) {
   const [state, dispatch] = React.useReducer(exampleReducer, {
     open: false,
     dimmer: undefined,
@@ -23,15 +22,18 @@ function DeleteUserModal(props) {
   const { open, dimmer, size } = state;
 
   return (
-    <div className = "DeleteUserModal">
+    <div>
       <Button
         negative
-        className = "DeleteUserButton"
         onClick={() =>
-          dispatch({ type: "OPEN_MODAL", size: "tiny", dimmer: "blurring" })
+          dispatch({
+            type: "OPEN_MODAL",
+            dimmer: "blurring",
+            size: "mini",
+          })
         }
       >
-        Delete User
+        Delete Message
       </Button>
 
       <Modal
@@ -40,17 +42,15 @@ function DeleteUserModal(props) {
         open={open}
         onClose={() => dispatch({ type: "CLOSE_MODAL" })}
       >
-        <Modal.Header>Delete User Account</Modal.Header>
+        <Modal.Header>Delete Your Message</Modal.Header>
         <Modal.Content>
-          If you wish to delete this user account, all the information for the
-          user account will be lost and you will need to register a new user
-          account!
+          Are you sure you want to delete your message?
         </Modal.Content>
         <Modal.Actions>
           <Button positive onClick={() => dispatch({ type: "CLOSE_MODAL" })}>
             Cancel
           </Button>
-          <Button negative onClick={props.handleDelete}>
+          <Button negative onClick={props.handleDeleteUserMessage}>
             Delete
           </Button>
         </Modal.Actions>
@@ -59,4 +59,4 @@ function DeleteUserModal(props) {
   );
 }
 
-export default DeleteUserModal;
+export default DeleteUserMessageModal;
