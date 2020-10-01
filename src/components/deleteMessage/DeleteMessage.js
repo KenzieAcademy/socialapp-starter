@@ -7,7 +7,7 @@ class DeleteMessage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      Id: "",
+      message: "",
     };
     this.handleDelete = this.handleDelete.bind(this);
     this.client = new Dataservice();

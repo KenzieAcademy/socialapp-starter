@@ -20,11 +20,27 @@ class DataService {
   getLogout() {
     return this.client.post(`${this.url}/logout`);
   }
-  postlike(userdata) {
-    return this.client.post(this.url + "/likes", userdata);
+
+  posttlike(messageId) {
+    const data = { messageId };
+    const config = {
+      headers: {
+        Authorization: `Bearer ${this.getToken()}`,
+      },
+    };
+    return this.client
+      .post(this.url + "/likes", data, config)
+      .then((respose) => {
+        return respose.data;
+      });
+  }
+  getToken() {
+    const loginData = JSON.parse(localStorage.getItem("login"));
+    const { token } = loginData.result;
+    return token;
   }
   getMessages(limit = 20) {
-    return this.client.get(this.url + "/messages?limit=" + limit).then;
+    return this.client.get(this.url + "/messages?limit=" + limit);
   }
 
   deleteuser() {
@@ -60,6 +76,7 @@ class DataService {
       headers: { Authorization: `Bearer ${loginData.token}` },
     });
   }
+
   getPicture(username) {
     const loginData = JSON.parse(localStorage.getItem("login")).result;
     return this.client.get(this.url + "/users/" + username + "/picture", {
@@ -78,6 +95,12 @@ class DataService {
   getUser(username) {
     console.log(username);
     return this.client.get(this.url + "/users/" + username);
+<<<<<<< HEAD
+=======
+  }
+  getMessages() {
+    return this.client.get(this.url + "/messages");
+>>>>>>> 73313e551a067db728eec66cf38272c57d5e0b33
   }
   setuserphoto(formdata) {
     return this.client.put(this.url + "/users", formdata);
