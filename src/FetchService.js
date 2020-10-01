@@ -107,9 +107,9 @@ class FetchService {
             .then(response => response.json())
     }
 
-    deleteMessage() {
+    deleteMessage(messageId) {
         let endpoint = "/messages"
-        let URL = this.domain + endpoint
+        let URL = this.domain + endpoint + messageId
         let token = JSON.parse(localStorage.getItem('login')).result.token
 
         return fetch(URL, {
