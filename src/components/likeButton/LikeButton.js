@@ -14,7 +14,7 @@ class LikeButton extends React.Component {
 
   handleLike = (e) => {
     e.preventDefault();
-    console.log(this.state);
+    console.log(this.state.messageId);
     this.client.handleLike(this.state).then((result) => {
       console.log(result);
       return result;
