@@ -1,6 +1,7 @@
 import React from "react";
 import { Feed, Icon, Button } from "semantic-ui-react";
 import DeleteUserMessagesService from "../../services/DeleteUserMessagesService";
+import DeleteUserMessageModal from "../deleteUserMessageModal/DeleteUserMessageModal";
 
 class DeleteUserMessages extends React.Component {
   constructor(props) {
@@ -11,21 +12,17 @@ class DeleteUserMessages extends React.Component {
     this.messageId = this.props.messageId;
   }
 
-  // componentDidMount() {
-  //   MessageService.obtainMessages().then((response) => {
-  //     this.setState({ messages: response.data.messages });
-  //     console.log(response.data.messages);
-  //   });
-  // }
-
-  handleDeleteUserMessage = () => {
-    console.log(this.messageId);
-    this.deleteService.deleteUserMessage(String(this.messageId));
+  handleDeleteUserMessage = (e) => {
+    this.deleteService.deleteUserMessage(String(this.messageId)).then(() => {
+      window.location.reload();
+    });
   };
 
   render() {
     return (
-      <Button onClick={this.handleDeleteUserMessage}>Delete Message</Button>
+      <DeleteUserMessageModal
+        handleDeleteUserMessage={this.handleDeleteUserMessage}
+      />
     );
   }
 }
