@@ -3,7 +3,9 @@ import Menu from "../components/menu/Menu";
 import Api from "../pages/dataService";
 import { userIsAuthenticated } from "../redux/HOCs";
 import Message from "../components/message/Message";
-import debounce from "lodash.debounce";
+import MessageFeed from "../components/messagefeed/MessageFeed";
+import MessageInbox from "../components/messageinbox/MessageInbox";
+
 import InfiniteScroll from "react-infinite-scroller";
 
 class MessageList extends React.Component {
@@ -58,6 +60,7 @@ class MessageList extends React.Component {
       <div className="MessageList">
         <Menu isAuthenticated={this.props.isAuthenticated} />
         <h1>Message Feed</h1>
+        <MessageInbox />
         <ul>
           <InfiniteScroll
             pageStart={0}

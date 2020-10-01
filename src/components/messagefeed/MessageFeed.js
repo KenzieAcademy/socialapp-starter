@@ -28,7 +28,6 @@ class MessageFeed extends Component {
     const { loading, error } = this.props;
     return (
       <div className="newsFeed">
-        <Logout />
         {this.state.data}
         {loading && <Spinner name="circle" color="blue" />}
         {error && <p style={{ color: "red" }}>{error.message}</p>}
