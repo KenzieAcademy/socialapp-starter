@@ -1,5 +1,131 @@
-#login-form {
-  display: flex;
-  flex-direction: column;
-  max-width: 20em;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+#login-form {
+  width: 320px;
+  height: 300px;
+  position: relative;
+  left: 230px;
+  /* bottom:140px; */
+  /* display: flex;
+  flex-direction: column; */
+  background-image:url("./11.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  align-items: center;
+  padding:10px;
+  margin-bottom:10px;
+  font-family: 'Raleway', sans-serif;
+  color:#FFF;
+  /* height:100%;
+  width: 100%; */
+  border-radius: 20px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-transform: uppercase;
+}
+#login-form label {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 5px;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+#login-form input{
+  padding: 5px;
+  font-size: 15px;
+  width: 100%;
+  background: rgba(255,255,255,);
+  border: none;
+  border-bottom: 1px solid #333;
+  outline:none;
+  text-align: center;
+  border-radius: 5px;
+  color: black;
+}
+#login-form Button{
+ padding: 6px 30px;
+ width: 100%;
+ margin-top: 37px;
+ /* background:darkgoldenrod; */
+ color: #FFF;
+ border: none;
+ border-radius: 5px;
+ text-transform: uppercase;
+ font-size: 20px;
+ cursor: pointer;
+ transition: 0. 5s;
+ 
+}
+   #login-form Button :hover{
+     color: red;
+   }
+   
+
+
+   *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  #registration-form{
+    width: 320px;
+    height: 300px;
+    position: relative;
+     left: 580px;
+     bottom: 310px;
+    /* display: flex;
+    flex-direction: column; */
+    background-image:url("./11.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-items: center;
+    padding:10px;
+    margin-bottom:10px;
+    /* background:lightblue; */
+    font-family: 'Raleway', sans-serif;
+    color:#FFF;
+    border-radius: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-transform: uppercase;
+  }
+  #registration-form label {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 5px;
+    color: #ffffff;
+    text-transform: uppercase;
+  }
+  #registration-form input{
+    padding: 5px;
+    font-size: 15px;
+    width: 100%;
+    background: rgba(255,255,255,);
+    border: none;
+    border-bottom: 1px solid #333;
+    outline:none;
+    text-align: center;
+    border-radius: 5px;
+    color: black;
+  }
+  #registration-form button{
+   padding: 4px 15px;
+   width: 100%;
+   margin-top: 30px;
+   background-color: rgb(39, 36, 233);;
+   color: rgb(255, 255, 255);
+   border: none;
+   border-radius: 5px;
+   text-transform: uppercase;
+   font-size: 20px;
+   cursor: pointer;
+   transition: 0. 5s;
+   
+   
+  }
+     #registration-form button:hover{
+       color: rgb(209, 50, 50);
+     }
+  

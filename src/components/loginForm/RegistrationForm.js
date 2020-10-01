@@ -1,22 +1,26 @@
 import React from "react";
 import Spinner from "react-spinkit";
-import { withAsyncAction } from "../../redux/HOCs";
+import "./RegistrationForm.css";
 import "./LoginForm.css";
+import DataService from "../../dataService";
 import Button from "antd/lib/button";
-// import { Button } from 'antd';
 
-class LoginForm extends React.Component {
+class RegistrationForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       username: "",
       password: "",
+      displayName: "",
     };
+    this.client = new DataService();
   }
 
-  handleLogin = (e) => {
+  handleRegistration = (e) => {
     e.preventDefault();
-    this.props.login(this.state);
+    this.client.registerUser(this.state).then((result) => {
+      console.log(result.data);
+    });
   };
 
   handleChange = (e) => {
@@ -26,11 +30,9 @@ class LoginForm extends React.Component {
   render() {
     const { loading, error } = this.props;
     return (
-      <div className="LoginForm">
-        <h2 style={{ textAlign: "center", fontFamily: "fantasy", fontSize: "70px" }}>Your favorite microblogging platform</h2>
-        <form id="login-form">
+      <div className="RegistrationForm">
+        <form id="registration-form" onSubmit={this.handleRegistration}>
           <label htmlFor="username">Username</label>
-
           <input
             type="text"
             name="username"
@@ -45,12 +47,16 @@ class LoginForm extends React.Component {
             required
             onChange={this.handleChange}
           />
-          <Button type="primary" disabled={loading} onClick={this.handleLogin}>
-            Login
+          <label htmlFor="displayName">Display Name</label>
+          <input
+            type="text"
+            name="displayName"
+            required
+            onChange={this.handleChange}
+          />
+          <Button type="submit" disabled={loading}>
+            Sign Up
           </Button>
-          {/* <button type="submit" disabled={loading}>
-            Login
-          </button> */}
         </form>
         {loading && <Spinner name="circle" color="blue" />}
         {error && <p style={{ color: "red" }}>{error.message}</p>}
@@ -59,4 +65,4 @@ class LoginForm extends React.Component {
   }
 }
 
-export default withAsyncAction("auth", "login")(LoginForm);
+export default RegistrationForm;

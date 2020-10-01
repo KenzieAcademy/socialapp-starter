@@ -4,7 +4,7 @@ import { withAsyncReducer } from "../../HORs";
 const initialState = {
   result: null,
   loading: false,
-  error: null
+  error: null,
 };
 
 const logout = (state = initialState, action) => {
