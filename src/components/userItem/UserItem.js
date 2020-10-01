@@ -1,32 +1,36 @@
 import React from "react"
-import { List, Image } from 'semantic-ui-react'
-const UserItem = () => (
-    <List>
-      <List.Item>
-        <Image avatar src='/images/avatar/small/rachel.png' />
-        <List.Content>
-          <List.Header as='a'>Rachel</List.Header>
-          <List.Description>
-            Last seen watching{' '}
-            <a>
-              <b>Arrested Development</b>
-            </a>{' '}
-            just now.
-          </List.Description>
-        </List.Content>
-      </List.Item>
-      </List>
-)
-      
-//function UserItem(props) {
+import { Image, Feed } from 'semantic-ui-react'
+import moment from 'moment'
 
-   // return (
-    //<div className="UserItem">
-       // <br/>
-       // UserName: {props.username}
-      //  <br/>
-      //  DisplayName: {props.displayName}
-   // </div>
-   // )
-//}
+
+
+function UserItem(props) {
+
+    return (
+        <Feed.Event className="UserItem">
+            <Feed.Label>
+
+                <Image src={'https://socialapp-api.herokuapp.com/users/' + props.username + "/picture"} />
+
+            </Feed.Label>
+            <Feed.Content>
+                <Feed.User>
+
+
+     {props.displayName}
+                    
+                </Feed.User>
+                <Feed.Date>
+
+                {moment(props.createdAt).format('MMMM Do YYYY, h:mm:ss a')}
+                </Feed.Date>
+
+            </Feed.Content>
+            <br />
+            <br />
+            <br />
+
+        </Feed.Event>
+    )
+}
 export default UserItem

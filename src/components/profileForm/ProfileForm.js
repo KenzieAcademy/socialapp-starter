@@ -1,7 +1,7 @@
 import React from 'react'
 
 function ProfileForm(props){
-    return 
+    return (
     <form id="Profile-form" onSubmit={this.handleUpdateUser}>
 <label htmlFor="displayName">displayName</label>
 <input
@@ -30,7 +30,7 @@ function ProfileForm(props){
   Update User Info
 </button>
 </form>
-
+    )
 
 }
 export default ProfileForm;

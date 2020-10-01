@@ -95,7 +95,7 @@ class Profile extends React.Component {
         <Grid columns={2} divided>
     <Grid.Row>
       <Grid.Column Align='center'>
-      <Image src='https://images.pexels.com/photos/2846814/pexels-photo-2846814.jpeg?cs=srgb&dl=pexels-oziel-g%C3%B3mez-2846814.jpg&fm=jpg' size = 'small' />
+      <Image src={'https://socialapp-api.herokuapp.com' + this.state.user.pictureLocation }/>
       </Grid.Column>
       <Grid.Column>
                 <Segment>
@@ -177,6 +177,18 @@ class Profile extends React.Component {
           <Button secondary  onClick={this.handleDeleteUser}>
             Delete User
           </Button>
+         
+            <Button type="primary" onClick={this.handleSubmitPhoto}>
+              Submit Photo
+            </Button>
+            <input
+              type="file"
+              name="picture"
+              required
+              onChange={this.onFileChange}
+            />
+         
+       
         </Form>
       </Grid.Column>
       <Grid.Column>
@@ -196,12 +208,7 @@ class Profile extends React.Component {
     </Grid.Row>
 
     <Grid.Row>
-      <Grid.Column>
-              <Segment>
-                  UPLOAD IMAGE 
-                  CHANGE IMAGE  GOES HERE 
-              </Segment>
-      </Grid.Column>
+     
       <Grid.Column>
       <Header as='h3' textAlign = 'center' color='black'>Current Book Clubs</Header>
       <List bulleted>
@@ -230,36 +237,8 @@ class Profile extends React.Component {
       
     </Grid.Row>
   </Grid>
-
-       
-
-          <Button type="primary" onClick={this.handleUpdateUser}>
-            Update User
-          </Button>
-
-          <Button type="primary" onClick={this.handleDeleteUser}>
-            Delete User
-          </Button>
-<<<<<<< HEAD
-      
-=======
-
->>>>>>> ca360fbdd3507a5090df7eb4a3159787fdc3b536
-
-        <Form>
-          <Form.Field>
-            <Button type="primary" onClick={this.handleSubmitPhoto}>
-              Submit Photo
-            </Button>
-            <input
-              type="file"
-              name="picture"
-              required
-              onChange={this.onFileChange}
-            />
-          </Form.Field>
-        </Form>
-      </div>
+           
+ </div>
     );
   }
 }
