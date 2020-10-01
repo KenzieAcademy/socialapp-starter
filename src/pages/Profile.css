@@ -3,6 +3,7 @@
 }
 
 .Body {
+  height: 482px;
   position: relative;
   margin: auto;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;

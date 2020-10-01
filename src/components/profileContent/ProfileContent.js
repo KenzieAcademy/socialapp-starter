@@ -12,31 +12,39 @@ const ProfileContent = (props) => {
   return (
     <div className="ProfileBody">
       <div className="ProfileContent">
-        <div className="ProfilePic">
+        <div className="ProfilePicBox">
           <img alt="Profile Pic" src={MiniProfileIMG} />
         </div>
         <div className="FormBody">
           <Form>
-            <div className="MemberInfo">
-              <Form.Label>Display Name: {props.user.displayName}</Form.Label>
-              <br></br>
-              <Form.Label>Joined On: {joinedOn.toUTCString()}</Form.Label>
+            <div className="MemberInfoBox">
+              <div className="MemberInfoText">
+                <Form.Label>Display Name: {props.user.displayName}</Form.Label>
+                <br></br>
+                <Form.Label>Joined On: {joinedOn.toUTCString()}</Form.Label>
+              </div>
               <Form.Row>
-                <Form.Label>
-                  About Me: Lorem ipsum dolor sit amet, consectetur adipiscing
-                  elit.
-                </Form.Label>
-                <Col>
-                  <Form.Text>{props.user.about}</Form.Text>
-                </Col>
+                <div className="AboutMeBox">
+                  <div className="AboutMeText">
+                    <Form.Label>
+                      About Me: Lorem ipsum dolor sit amet, consectetur
+                      adipiscing elit.
+                    </Form.Label>
+                    <Col>
+                      <Form.Text>{props.user.about}</Form.Text>
+                    </Col>
+                  </div>
+                </div>
               </Form.Row>
-              <Form.Check
-                type="switch"
-                id="custom-switch"
-                label="Update Profile"
-                checked={props.checked}
-                onChange={props.clickSwitch}
-              />
+              <div className="UpdateSwitch">
+                <Form.Check
+                  type="switch"
+                  id="custom-switch"
+                  label="Update"
+                  checked={props.checked}
+                  onChange={props.clickSwitch}
+                />
+              </div>
             </div>
           </Form>
         </div>

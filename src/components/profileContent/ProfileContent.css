@@ -3,8 +3,10 @@
 }
 
 .ProfileBody {
+  padding: 15px;
   background-image: url(../../assets/images/Clear_Red.png);
-  top: 19px;
+  top: 17px;
+  left: -2px;
   width: 828px;
   height: 340px;
   position: relative;
@@ -16,13 +18,9 @@
 }
 
 .ProfileContent {
-  background-image: url(../../assets/images/Coupon_Background_Dark.png);
+  color: black;
   left: -3px;
   top: -3px;
-  border: 3px solid black;
-  border-radius: 5px;
-  border-width: 3px;
-  border-style: dashed;
   margin: auto;
   width: 800px;
   height: 240px;
@@ -30,9 +28,14 @@
   margin: auto;
 }
 
-.ProfilePic {
-  width: 125px;
-  height: 125px;
+.ProfilePicBox {
+  left: -333px;
+  border: 3px solid black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  width: 131px;
+  height: 131px;
   position: relative;
   margin: auto;
 }
@@ -43,17 +46,81 @@
   margin: auto;
 }
 
-.MemberInfo {
+.MemberInfoBox {
+  width: 652px;
+  height: 100px;
+  left: 70px;
+  top: -135px;
+  border: 3px solid black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  background-image: url(../../assets/images/Coupon_Background_Dark.png);
+  position: relative;
+  margin: auto;
+}
+
+.MemberInfoText {
+  padding: 5px;
+  position: relative;
+  margin: auto;
+}
+
+.AboutMeBox {
+  width: 652px;
+  height: 193px;
+  top: 10px;
+  border: 3px solid black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  background-image: url(../../assets/images/Coupon_Background_Dark.png);
+  position: relative;
+  margin: auto;
+}
+
+.AboutMeText {
+  padding: 5px;
+  position: relative;
+  margin: auto;
+}
+
+.UpdateSwitch {
+  padding: 5px;
+  width: 131px;
+  height: 50px;
+  left: -404px;
+  top: -40px;
+  border: 3px solid black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  background-image: url(../../assets/images/Coupon_Background_Dark.png);
   position: relative;
   margin: auto;
 }
 
 .MemberInfoEdit {
+  width: 300px;
+  height: 125px;
+  left: -324px;
+  top: -10px;
+  border: 3px solid black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  background-image: url(../../assets/images/Clear_Red.png);
   position: relative;
   margin: auto;
 }
 
 .SaveButton {
+  left: -324px;
+  top: -10px;
+  border: 3px solid black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
   left: 350px;
   top: -25px;
   position: relative;
