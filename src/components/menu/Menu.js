@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./Menu.css";
 import { withAsyncAction } from "../../redux/HOCs";
 import LogoFile from "../../images/book glasses.jpg"
+import { Button } from 'semantic-ui-react'
 
 class Menu extends React.Component {
   constructor(props) {
@@ -22,18 +23,24 @@ class Menu extends React.Component {
         <img className="logo" src={LogoFile} />
         {this.props.isAuthenticated && (
           <div id="menu-links">
-            <Link to="/messagefeed">Message Feed</Link>
-            <Link to=
-              "/createmessage">
-              Create Message
-                </Link>
-            <Link to="/" onClick={this.handleLogout}>
-              Logout
-            </Link>
+            <Button color ='orange'>
             <Link to={"/profile/" + this.username}>
               Profile
               </Link>
-            <Link to="/userFeed">UserFeed</Link>
+              </Button>
+            <Button color ='yellow'>
+            <Link to="/messagefeed">Message Feed</Link>
+            </Button>
+            <Button color ='blue'>
+            <Link to="/userFeed">User Feed</Link>
+            </Button>
+
+            <Button color ="green">
+            <Link to="/" onClick={this.handleLogout}>
+              Logout
+            </Link>
+            </Button>
+            
           </div>
         )}
       </div>

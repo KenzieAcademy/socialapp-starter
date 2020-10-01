@@ -107,9 +107,9 @@ class FetchService {
             .then(response => response.json())
     }
 
-    deleteMessage() {
+    deleteMessage(messageId) {
         let endpoint = "/messages"
-        let URL = this.domain + endpoint
+        let URL = this.domain + endpoint + messageId
         let token = JSON.parse(localStorage.getItem('login')).result.token
 
         return fetch(URL, {
@@ -130,6 +130,24 @@ class FetchService {
         return fetch(URL)
             .then(response => response.json())
     }
+   
+     
+      getUserPicture(userName, pictureObject){
+        let URL = this.domain + "/users/" + userName + "/picture"
+        let token = JSON.parse(localStorage.getItem('login')).result.token 
+        return fetch(URL, {
+            method: "PUT",
+            headers: {
+                "Authorization": "Bearer " + token
+            },
+            body: pictureObject
+           
+        }).then(response => response.json())
+
+
+
+    }
+
 
 }
 export default FetchService;

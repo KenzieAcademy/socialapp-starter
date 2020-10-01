@@ -3,11 +3,9 @@ import { Switch, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import MessageFeed from "./pages/MessageFeed"
-import CreateMessage from "./pages/CreateMessage"
 import NotFound from "./components/notfound/NotFound";
-import CreateMessage from "./pages/CreateMessage"
-import UserFeed from "./pages/UserFeed";
 
+import UserFeed from "./pages/UserFeed";
 
 class App extends React.Component {
   render() {
@@ -36,16 +34,6 @@ class App extends React.Component {
         exact
         path="/userFeed"
         component={UserFeed}
-        />
-        <Route
-        exact
-        path="/createmessage"
-        component={CreateMessage}
-        />
-        <Route
-          exact
-          path="/createmessage"
-          component={CreateMessage}
         />
         <Route
           exact
