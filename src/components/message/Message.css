@@ -1,11 +1,7 @@
-.Message
-
-
-
-button {
-    display: block;
-    margin-top: 1rem;
-    width: 100%;
+.deleteButton {
+  display: block;
+  margin-top: 1rem;
+  width: 50%;
   padding: 0.5rem;
   background-color: #fc0;
   border: 0;
@@ -15,3 +11,12 @@ button {
   box-shadow: 2px 2px 0 black;
 }
 
+.poster {
+  font-size: 16px;
+  padding-bottom: 2px;
+}
+
+.message-text {
+  font-size: 14px;
+  padding-bottom: 2px;
+}

@@ -39,7 +39,7 @@ class Profile extends React.Component {
       displayName = this.state.data.displayName
       about = this.state.data.about
     }
-    
+
     let src = whoops
     console.log(this.state.data)
     if (this.state.data.pictureLocation) {
@@ -47,28 +47,32 @@ class Profile extends React.Component {
       console.log(src)
     }
     return (
+
+
+
       <div className="Profile">
         <Menu isAuthenticated={this.props.isAuthenticated} />
 
         <img className="cowboy3" src={cowboy3} alt="cowboy3" />
         <img className="cowboy4" src={cowboy4} alt="cowboy4" />
         <img className="cowgirl1" src={cowgirl1} alt="cowgirl1" />
-        
+
         <h2>{loginData.username}'s Profile</h2>
         <h4>Profile Photo: </h4>
         <img className="profile-picture" src={src} alt="profile pic" />
-        
+
         <br />
-        
+
         <Link to="/updatephoto/:username">Change Profile Photo</Link>
-        
-        <hr/>
-        
+
+        <hr />
+
         <h4>Display Name: {displayName}</h4>
         <h4>About: {about}</h4>
         <Link to="/updateprofile/:username">Update Profile</Link>
-        
+
         <hr />
+
 
       </div>
     );

@@ -1,5 +1,7 @@
 import React from 'react'
 import DataService from "../../DataService"
+import { Card } from "antd"
+import "./Message.css"
 
 
 class Message extends React.Component {
@@ -14,8 +16,9 @@ class Message extends React.Component {
     handleDelete = (e) => {
         e.preventDefault();
         this.client.deleteMessage(this.props.message.id).then(result => {
-            alert(result.data)
-            // console.log("delete")
+            if (result.data.statusCode === 200) {
+                alert("You have successfully deleted your message")
+            }
         })
     }
 
@@ -23,17 +26,19 @@ class Message extends React.Component {
         const username = JSON.parse(localStorage.getItem("login")).result.username
         let deleteButton
         if (username === this.props.message.username) {
-            deleteButton = (<button onClick={this.handleDelete}>
-                Delete Message</button>)
+            deleteButton = (<button className="deleteButton" onClick={this.handleDelete}>
+                Delete Message?</button>)
         }
         return (
 
             <li className="Message">
-                {new Date(this.props.message.createdAt).toDateString()} at {""}
-                {this.props.message.username} posted:
-                <div className="message-text">{this.props.message.text}</div>
-                {/* <div classNAme="likes">Likes:{this.props.likes.length}</div> */}
-                {deleteButton}
+                <Card>
+                    <div className="poster">{this.props.message.username} posted:</div>
+                    <div className="message-text">{this.props.message.text}</div>
+                    {new Date(this.props.message.createdAt).toLocaleString()} {""}
+                    {deleteButton}
+                </Card>
+
             </li>)
         {/* /* {this.handleDelete={this.handleDelete.bind(this)}} */ }
         {/* {messageID={this.state.messageID}} */ }

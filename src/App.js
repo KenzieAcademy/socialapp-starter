@@ -8,7 +8,10 @@ import UpdateProfile from "./pages/UpdateProfile"
 import UpdatePhoto from "./pages/UpdatePhoto"
 
 class App extends React.Component {
+  
   render() {
+   
+
     return (
       <Switch>
         <Route
@@ -18,7 +21,7 @@ class App extends React.Component {
         />
         <Route
           exact
-          path="/profile/:username"
+          path= "/profile/:username"
           component={Profile}
         />
         <Route

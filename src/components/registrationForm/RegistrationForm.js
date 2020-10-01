@@ -56,7 +56,7 @@ class RegistrationForm extends React.Component {
             maxLength='20'
             onChange={this.handleChange}
           />
-          <button type="submit" disabled={loading}>
+          <button className="registerButton"type="submit" disabled={loading}>
             Register
           </button>
         </form>

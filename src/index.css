@@ -6,13 +6,18 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 30px;
+  font-size: 14px;
 
   display: flex;
   height: 100vh;
   align-items: top-center;
   justify-content: center;
   background-image: linear-gradient(to top, #7a2c15 30%, #d36f48 50%);
+}
+
+.profile-picture {
+  max-width: 420px;
+  max-height: 520px;
 }
 
 code {

@@ -10,20 +10,24 @@ class Menu extends React.Component {
   };
 
   render() {
-      return (
-        <div className="Menu">
-          <h1>Convo-Looters</h1>
-          {this.props.isAuthenticated && (
-            <div id="menu-links">
-              <Link to="/profile/:username">Profile</Link>
-              <Link to="/messagefeed">Message Feed</Link>
-              <Link to="/" onClick={this.handleLogout}>
-                Logout
+    let username = false
+    if(JSON.parse(localStorage.getItem('login')).result != null){
+      username = JSON.parse(localStorage.getItem('login')).result.username
+    }
+    return (
+      <div className="Menu">
+        <h1>Convo-Looters</h1>
+        {this.props.isAuthenticated && (
+          <div id="menu-links">
+            {username && <Link to={'/profile/' + username}>Profile</Link>}
+            <Link to="/messagefeed">Message Feed</Link>
+            <Link to="/" onClick={this.handleLogout}>
+              Logout
             </Link>
-            </div>
-          )}
-        </div>
-      );
+          </div>
+        )}
+      </div>
+    );
   }
 }
 

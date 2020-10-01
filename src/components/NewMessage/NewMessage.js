@@ -3,7 +3,7 @@ import Spinner from "react-spinkit";
 import "./NewMessage.css";
 import DataService from "../../DataService"
 import { Input } from 'antd';
-import { withAsyncAction } from "../../redux/HOCs";
+// import { withAsyncAction } from "../../redux/HOCs";
 
 class NewMessage extends React.Component {
   constructor(props) {
@@ -17,9 +17,7 @@ class NewMessage extends React.Component {
   handleMessage = e => {
     e.preventDefault();
     if (this.state.message.length < 256) {
-      this.client.postMessages({ text: this.state.message }).then(result => {
-        alert(result.data)
-      });
+      this.client.postMessages({ text: this.state.message })
     } else {
       alert("Your message is too long, please limit to 255 characters.")
     }

@@ -23,4 +23,8 @@
   flex-direction: column;
 }
 
+button {
+  width: 300px;
+}
+
 /* This one ^^^ is the div with everything inside it. Also you use the . when it's a class. In React a className is the same as a class in practice, so not really too different. Also also classes and components get the two-hump CamelCase but it gets regular camelCase when it is any other variable. */
