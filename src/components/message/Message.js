@@ -2,11 +2,12 @@ import React from "react";
 import GetDisplayName from "../getDisplayName/GetDisplayName";
 import LikeButton from "../likeButton/LikeButton";
 import DeleteMessage from "../deleteMessage/DeleteMessage";
+import UnlikeButton from "../unlikeButton/UnlikeButton";
 class Message extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { isLiked: false, likes: [], didCreate: false };
+    this.state = { isLiked: false, likeId: 0, didCreate: false };
   }
 
   componentDidMount() {
@@ -14,7 +15,7 @@ class Message extends React.Component {
     {
       this.props.likes.forEach((likeObj) => {
         if (likeObj.username === loginData.result.username) {
-          this.setState({ isLiked: true });
+          this.setState({ isLiked: true, likeId: likeObj.id });
         }
       });
     }
@@ -46,7 +47,7 @@ class Message extends React.Component {
             At {new Date(this.props.createdAt).toDateString()}{" "}
             <GetDisplayName username={this.props.username} /> posted:
             <div className="message-text">{this.props.text} </div>
-            <button>unlike</button>
+            <UnlikeButton likeId={this.state.likeId} />
             <div className="likes">Likes: {this.props.likes.length}</div>
           </li>
         );
@@ -75,7 +76,7 @@ class Message extends React.Component {
             At {new Date(this.props.createdAt).toDateString()}{" "}
             <GetDisplayName username={this.props.username} /> posted:
             <div className="message-text">{this.props.text} </div>
-            <button>unlike</button>
+            <UnlikeButton likeId={this.state.likeId} />
             <div className="likes">Likes: {this.props.likes.length}</div>
             <DeleteMessage
               messageId={this.props.id}
