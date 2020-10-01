@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { store } from "./redux"
 
 class DataService {
     constructor(url = 'http://socialapp-api.herokuapp.com', client = axios.create()) {
@@ -6,6 +7,11 @@ class DataService {
         this.client = client;
     }
 
+
+    getUsername() {
+        const { username } = store.getState().auth.login.result
+        return username
+    }
     registerUser(userData) {
         return this.client.post(this.url + "/users", userData);
     }
@@ -22,6 +28,12 @@ class DataService {
         )
     }
 
+
+    getUser() {
+        const loginData = JSON.parse(localStorage.getItem('login')).result
+        const username = loginData.username
+        return this.client.get(this.url + "/users/" + username)
+    }
     deleteUser() {
         console.log("attempting to delete user")
         const loginData = JSON.parse(localStorage.getItem('login')).result
@@ -50,6 +62,10 @@ class DataService {
         return this.client.get(this.url + "/messages?limit=50")  //Limit 100 messages
     }
 
+    getMoreMessages(offset) {
+        return this.client.get(this.url + "/messages?offset=" + offset)
+    }
+
     deleteMessage(messageID) {
         const loginData = JSON.parse(localStorage.getItem('login')).result
         let token = loginData.token
@@ -75,24 +91,8 @@ class DataService {
         )
     }
 
-    setUserPicture(userPicture) {
-        const loginData = JSON.parse(localStorage.getItem('login')).result
-        let token = loginData.token
-        const username = loginData.username
-        let url = this.url + `/users/${username}/picture`
-        return this.client.put(url, userPicture,
-            {
-                headers: { Authorization: `Bearer ${token}` }
-            }
-        )
-    }
-
-    getUser() {
-        const loginData = JSON.parse(localStorage.getItem('login')).result
-        const username = loginData.username
-        return this.client.get(this.url + "/users/" + username)
-    }
 
 }
+
 
 export default DataService

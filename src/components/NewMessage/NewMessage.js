@@ -38,6 +38,7 @@ class NewMessage extends React.Component {
           <Input.TextArea
             maxLength={255}
             name="message"
+            autoFocus
             required
             onChange={this.handleChange}
           />
