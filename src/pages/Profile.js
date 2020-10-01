@@ -240,7 +240,7 @@ class Profile extends React.Component {
           <Button type="primary" onClick={this.handleDeleteUser}>
             Delete User
           </Button>
-        </Form>
+        
 
         <Form>
           <Form.Field>
