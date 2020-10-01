@@ -4,7 +4,7 @@ import { userIsAuthenticated } from "../redux/HOCs";
 import UploadPhoto from "../components/uploadPhoto/UploadPhoto";
 import DeleteAcctButton from "../components/deleteacct/DeleteAcct";
 import DataService from "./dataService";
-
+import AboutMe from "../components/About Me/AboutMe"
 
 //import ConfirmProp from "../components/comfimPrompt/ConfirmProp";
 
@@ -31,9 +31,11 @@ class Profile extends React.Component {
         {this.state.user.username}
         <UploadPhoto />
         <DeleteAcctButton />
+        <AboutMe />
       </div>
     );
   }
+
 
 
 }
