@@ -52,7 +52,7 @@ class RegistrationForm extends React.Component {
         return (
         <div className = "successReg">
         <h1>You're IN!</h1>
-        <Link to = "/"> Log In </Link>
+        <Link to = "/"> Home </Link>
         </div>)
 
       }
