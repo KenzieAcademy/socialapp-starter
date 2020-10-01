@@ -21,9 +21,7 @@ class ProfileOptions extends React.Component {
         <h2>Settings</h2>
         <br />
         <h3>Update About :</h3>
-        <UpdateAbout 
-        
-        />
+        <UpdateAbout />
         <br />
         <Card
           style={{ textAlign: "left", width: "50%", margin: "left" }}

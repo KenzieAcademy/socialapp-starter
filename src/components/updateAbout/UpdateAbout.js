@@ -18,32 +18,35 @@ class UpdateAbout extends React.Component {
       statusCode: 0,
     };
   }
-  handleSubmit = (event)=>{
-    let about ={}
-    let loginData = JSON.parse(localStorage.getItem("login"))
-    this.client.updateAbout(loginData.result.username,this.state.userData).then(res => console.log(res))
+
+  handleChange = (event) => {
+    const userData = { ...this.state.userData };
+    userData[event.target.name] = event.target.value;
+    this.setState({
+      userData,
+    });
+  };
+  handleSubmit = (event) => {
+    let about = {};
+    let loginData = JSON.parse(localStorage.getItem("login"));
+    this.client
+      .updateAbout(loginData.result.username, this.state.userData)
+      .then((res) => console.log(res));
     event.preventDefault();
     console.log(this.state.userData);
     this.setState({
-      isSubmitted : true
-   
-   });
-  
-   this.setState({
-    userData:{
-    password:"",
-        about:"",
-     displayName:"",
-    }
-  });
+      isSubmitted: true,
+    });
 
-};
-  componentDidMount() {
-    
-    }
-
-  
-  
+    this.setState({
+      userData: {
+        password: "",
+        about: "",
+        displayName: "",
+      },
+    });
+  };
+  componentDidMount() {}
 
   handleChange = (event) => {
     const userData = { ...this.state.userData };

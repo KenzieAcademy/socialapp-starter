@@ -8,7 +8,6 @@ import RegistrationPage from "./pages/RegistrationPage";
 import ProfileOptions from "./pages/ProfileOptions";
 import MessageList from "./pages/MessageList";
 
-
 class App extends React.Component {
   render() {
     return (

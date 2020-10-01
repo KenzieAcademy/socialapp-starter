@@ -1,5 +1,6 @@
 import React from "react";
 import DataService from "../../DataService";
+import { Popconfirm } from 'antd';
 
 
 class DeleteUserButton extends React.Component {
@@ -20,7 +21,10 @@ class DeleteUserButton extends React.Component {
     this.setState({ [e.target.name]: e.target.value });
   };
   render() {
-    return <button onClick={this.handleDelete} className="DeleteUserButton">Delete</button>;
+    return <Popconfirm title="Are you sure？" okText="Yes" cancelText="No">
+      <button onClick={this.handleDelete} className="DeleteUserButton">Delete</button>;
+  </Popconfirm>
+    
     
 
   }

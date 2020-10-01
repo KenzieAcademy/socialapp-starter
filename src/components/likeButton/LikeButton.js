@@ -30,6 +30,7 @@ class LikeButton extends React.Component {
           console.log(res));
     console.log(this.state.likeData)
     e.preventDefault();
+<<<<<<< HEAD
    
    this.setState({
      
@@ -41,6 +42,13 @@ class LikeButton extends React.Component {
     //   console.log(result);
     //   return result;
     // });
+=======
+    console.log(this.state.messageId);
+    this.client.handleLike(this.state).then((result) => {
+      console.log(result);
+      return result;
+    });
+>>>>>>> 1f5b516cd1d050ca61f5f9d9488d56a975fd3b70
   };
 
   render() {

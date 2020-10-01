@@ -5,8 +5,6 @@ import { Link } from "react-router-dom";
 import { userIsNotAuthenticated } from "../redux/HOCs";
 import RegistrationForm from "../components/registrationForm/RegistrationForm";
 
-
-
 class Home extends React.Component {
   onChange = (date, dateString) => {
     console.log(date, dateString);
