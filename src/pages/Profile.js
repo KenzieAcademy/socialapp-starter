@@ -48,7 +48,16 @@ class Profile extends React.Component {
 
   handleUpdateUser = event => {
     event.preventDefault()
-    this.client.updateUser(this.state.user.username, this.state.formData)
+    let formDataCopy = this.state.formData
+    for(let property in formDataCopy){
+      if(formDataCopy[property] === ""){
+
+        delete formDataCopy[property]
+      }
+    }
+ 
+
+    this.client.updateUser(this.state.user.username, formDataCopy)
       .then(updateUserData => {
         this.setState({
           user: updateUserData.user
