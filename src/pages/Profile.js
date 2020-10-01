@@ -251,7 +251,6 @@ class Profile extends React.Component {
             Delete User
           </Button>
 
-
         <Form>
           <Form.Field>
             <Button type="primary" onClick={this.handleSubmitPhoto}>

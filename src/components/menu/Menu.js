@@ -28,9 +28,6 @@ class Menu extends React.Component {
               Profile
               </Link>
               </Button>
-            <Button color ='teal'>
-            <Link to="/createmessage">Create Message</Link>
-            </Button>
             <Button color ='yellow'>
             <Link to="/messagefeed">Message Feed</Link>
             </Button>
