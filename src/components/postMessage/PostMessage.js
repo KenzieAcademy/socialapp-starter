@@ -1,55 +1,31 @@
-import React from "react"
-import { userIsAuthenticated } from "../../redux/HOCs"
-import Service from "../../services/Service"
-import "./PostMessage.css"
-
+import React from "react";
+import { userIsAuthenticated } from "../../redux/HOCs";
+import {Container, Form, Button } from "react-bootstrap"
 
 class PostMessage extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            text: "",
-        };
-
-        this.client = new Service()
-    }
-
-    handleChange = (event) => {
-        this.setState({
-            [event.target.name]: event.target.value,
-        });
-    };
-
-    handleMessagePost = (event) => {
-        event.preventDefault();
-        this.client.postMessage(this.state)
-        .then((result) => {
-            console.log(result.data);
-        });
-        console.log("Post Button Pressed")
-    };
-
-    render() {
-        return (
-            <div className="Message">
-                <div className="postMessageForm">
-                    <form className="postMessageFormForm" onSubmit={this.handleMessagePost}>
-                        <input
-                            type="text"
-                            name="text"
-                            required
-                            onChange={this.handleChange}
-                        />
-                        <button type="submit">Post Message</button>
-                    </form>
-                </div>
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div className="Message">
+        <Container>
+          <Form id="postMessageForm" onSubmit={this.props.handleMessagePost}>
+            <Form.Group>
+              <Form.Control
+                type="text"
+                name="text"
+                placeholder = "What's On Your Mind?"
+                required
+                onChange={this.props.handleChange}
+                value = {this.props.text}
+              />
+            </Form.Group>
+            <Button variant="dark" type="submit">
+              Post Message
+            </Button>
+          </Form>
+        </Container>
+      </div>
+    );
+  }
 }
-
-
-
-
 
 export default userIsAuthenticated(PostMessage);
