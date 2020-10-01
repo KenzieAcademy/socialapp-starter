@@ -34,7 +34,7 @@ class Message extends React.Component {
       });
   };
 
-  getpic(username) {}
+  getpic(username) { }
   componentDidMount() {
     const usrnme = this.props.username;
     // console.log(usrnme);
