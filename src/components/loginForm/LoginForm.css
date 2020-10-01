@@ -48,6 +48,7 @@
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
+  -webkit-text-stroke: 0.25px white;
 }
 
 .UserNameInputBox {
@@ -69,6 +70,7 @@
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
+  -webkit-text-stroke: 0.25px white;
 }
 
 .PasswordInputBox {
@@ -80,9 +82,6 @@ input[type="submit"] {
   top: -13px;
   left: 18px;
   position: relative;
-  /* margin: auto;
-  background: none;
-  border: none; */
   background-image: url(../../assets/images/Register_Button.png);
   padding: 5px;
   border: 3px solid black;

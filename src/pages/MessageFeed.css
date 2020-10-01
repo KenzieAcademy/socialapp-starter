@@ -26,6 +26,7 @@
   background-image: url(../assets/images/Clear_Red.png);
   font-size: 45px;
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  -webkit-text-stroke: 0.25px white;
   color: black;
   text-align: center;
 }
@@ -40,6 +41,7 @@
   color: #b80c12;
   font-size: 60px;
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  -webkit-text-stroke: 0.25px black;
   position: relative;
   margin: auto;
   top: 100px;
@@ -59,6 +61,7 @@
   font: italic small-caps bold 30px/48px Impact, Haettenschweiler,
     "Arial Narrow Bold", sans-serif;
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  -webkit-text-stroke: 0.25px white;
   text-align: center;
   color: black;
   position: relative;

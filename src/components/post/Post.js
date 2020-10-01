@@ -1,7 +1,6 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
 import Tooltip from "react-bootstrap/Tooltip";
 import { userIsAuthenticated } from "../../redux/HOCs";
 import { OverlayTrigger } from "react-bootstrap";
@@ -46,9 +45,7 @@ const Post = (props) => {
             </Form>
             <br></br>
             <div className="PostAwayButton">
-              <Button variant="dark" size="lg" onClick={props.post}>
-                POST AWAY!
-              </Button>
+              <input type="submit" value="Post" onClick={props.post}></input>
             </div>
           </Card.Body>
         </Card>

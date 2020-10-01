@@ -34,4 +34,5 @@
 
 #menu-links a:hover {
   color: white;
+  -webkit-text-stroke: 0.25px black;
 }
