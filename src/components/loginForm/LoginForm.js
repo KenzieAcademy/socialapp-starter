@@ -30,9 +30,9 @@ class LoginForm extends React.Component {
       <div className="Body">
         <div className="LoginForm">
           <form id="login-form" onSubmit={this.handleLogin}>
-            <div className="UserNameInput2">
+            <div className="UserNameInput">
               <label htmlFor="username">Username</label>
-              <div className="UserNameInputBox2">
+              <div className="UserNameInputBox">
                 <input
                   type="text"
                   name="username"
@@ -57,14 +57,7 @@ class LoginForm extends React.Component {
             </div>
             <div className="EnterButtonBox">
               <div className="EnterButton">
-                <Button
-                  variant="dark"
-                  size="lg"
-                  type="submit"
-                  disabled={loading}
-                >
-                  ENTER
-                </Button>
+                <input type="submit" value="Enter" disabled={loading}></input>
               </div>
             </div>
           </form>

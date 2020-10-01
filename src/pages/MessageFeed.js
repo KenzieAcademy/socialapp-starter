@@ -82,7 +82,7 @@ class MessageFeed extends React.Component {
               </div>
               <div className="PostButtonBox">
                 <Button className="PostAMessageButton" variant="dark" size="lg">
-                  POST A MESSAGE
+                  Post A Message
                 </Button>
               </div>
             </div>

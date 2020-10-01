@@ -39,7 +39,7 @@
   height: 390px;
 }
 
-.UserNameInput2 {
+.UserNameInput {
   background-image: url(../../assets/images/Coupon_Background_Dark.png);
   padding: 10px;
   position: relative;
@@ -50,7 +50,7 @@
   border-style: dashed;
 }
 
-.UserNameInputBox2 {
+.UserNameInputBox {
   position: relative;
   margin: auto;
   border: 3px solid black;
@@ -74,8 +74,35 @@
 .PasswordInputBox {
   position: relative;
   margin: auto;
+}
+
+input[type="submit"] {
+  top: -13px;
+  left: 18px;
+  position: relative;
+  margin: auto;
+  background: none;
+  border: none;
+  background-image: url(../../assets/images/Register_Button.png);
+  padding: 5px;
   border: 3px solid black;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
+  width: 130px;
+  height: 50;
+  font: italic small-caps bold 27px/45px Impact, Haettenschweiler,
+    "Arial Narrow Bold", sans-serif;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  -webkit-text-stroke: 0.25px white;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  border: 3px solid white;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  color: white;
+  -webkit-text-stroke: 0.25px black;
 }

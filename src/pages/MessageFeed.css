@@ -56,10 +56,23 @@
   border-style: dashed;
   left: 4px;
   padding: 10px;
-  font-size: 27px;
+  font: italic small-caps bold 30px/48px Impact, Haettenschweiler,
+    "Arial Narrow Bold", sans-serif;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  text-align: center;
   color: black;
   position: relative;
   margin: auto;
+}
+
+.PostAMessageButton:hover {
+  color: white;
+  -webkit-text-stroke: 0.25px black;
+  background-image: url(../assets/images/Post_Button.png);
+  border: 3px solid white;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
 }
 
 .MiniProfileBox {
@@ -69,6 +82,7 @@
   position: relative;
   margin: auto;
 }
+
 .TheFeed {
   top: 10px;
   position: relative;

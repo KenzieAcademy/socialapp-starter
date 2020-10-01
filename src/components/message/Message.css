@@ -72,14 +72,14 @@
 }
 
 .LikeButton:hover {
-  border: 3px solid black;
+  border: 3px solid white;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
   background-image: url(../../assets/images/Thumgs_Up.png);
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
-  -webkit-text-stroke: 0.25px white;
-  color: black;
+  -webkit-text-stroke: 0.25px black;
+  color: white;
 }
 
 .ProfilePic {

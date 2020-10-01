@@ -37,7 +37,7 @@
   position: relative;
   margin: auto;
   width: 445px;
-  height: 500px;
+  height: 505px;
 }
 
 .UserNameInput {
@@ -52,12 +52,9 @@
 }
 
 .UserNameInputBox {
+  border: none;
   position: relative;
   margin: auto;
-  border: 3px solid black;
-  border-radius: 5px;
-  border-width: 3px;
-  border-style: dashed;
 }
 
 .PasswordInput {
@@ -75,10 +72,6 @@
 .PasswordInputBox {
   position: relative;
   margin: auto;
-  border: 3px solid black;
-  border-radius: 5px;
-  border-width: 3px;
-  border-style: dashed;
 }
 
 .DisplayNameInput {
@@ -96,10 +89,6 @@
 .DisplayNameInputBox {
   position: relative;
   margin: auto;
-  border: 3px solid black;
-  border-radius: 5px;
-  border-width: 3px;
-  border-style: dashed;
 }
 
 .EnterButtonBox {
@@ -108,13 +97,77 @@
   margin: auto;
 }
 
-.EnterButton {
+input[type="submit"] {
+  top: -13px;
   left: 18px;
-  top: -5px;
   position: relative;
   margin: auto;
+  background: none;
+  border: none;
+  background-image: url(../../assets/images/Register_Button.png);
+  padding: 5px;
   border: 3px solid black;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
+  width: 130px;
+  height: 50;
+  font: italic small-caps bold 27px/45px Impact, Haettenschweiler,
+    "Arial Narrow Bold", sans-serif;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  -webkit-text-stroke: 0.25px white;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  border: 3px solid white;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  color: white;
+  -webkit-text-stroke: 0.25px black;
+}
+
+input[type="text"] {
+  border: 3px solid black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  background-image: url(../../assets/images/Clear_Red_Dark.png);
+  color: black;
+  font: italic small-caps bold 25px/43px Impact, Haettenschweiler,
+    "Arial Narrow Bold", sans-serif;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  -webkit-text-stroke: 0.25px white;
+}
+
+input[type="text"]:hover {
+  border: 3px solid white;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  color: white;
+  -webkit-text-stroke: 0.25px black;
+}
+
+input[type="password"] {
+  border: 3px solid black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  background-image: url(../../assets/images/Clear_Red_Dark.png);
+  color: black;
+  font: italic small-caps bold 25px/43px Impact, Haettenschweiler,
+    "Arial Narrow Bold", sans-serif;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  -webkit-text-stroke: 0.25px white;
+}
+
+input[type="password"]:hover {
+  border: 3px solid white;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  color: white;
+  -webkit-text-stroke: 0.25px black;
 }

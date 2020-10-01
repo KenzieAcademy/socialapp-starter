@@ -87,14 +87,17 @@ class RegistrationForm extends React.Component {
             </div>
             <div className="EnterButtonBox">
               <div className="EnterButton">
-                <Button
+                {/* <Button
                   variant="dark"
                   size="lg"
                   type="submit"
                   disabled={loading}
-                >
-                  REGISTER
-                </Button>
+                >Register</Button> */}
+                <input
+                  type="submit"
+                  value="Register"
+                  disabled={loading}
+                ></input>
               </div>
             </div>
           </form>
