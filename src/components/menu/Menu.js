@@ -28,7 +28,7 @@ class Menu extends React.Component {
             <Link to="/mainHub">
               <Icon name="home" size="large" />
             </Link>
-            <Link to={`/profile/${this.loginData.result.username}`}>
+            <Link to={`/profile/${this.loggedInUser}`}>
               <Icon name="user" size="large" />
             </Link>
             <Link to="/" onClick={this.handleLogout}>
