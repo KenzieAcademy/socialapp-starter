@@ -22,6 +22,7 @@ class App extends React.Component {
       <div className="App">
         <TwitHeader />
         <Layout>
+
           <SideBar />
           <MainContent />
         </Layout>
