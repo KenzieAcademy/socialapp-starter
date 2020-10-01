@@ -9,15 +9,13 @@ import InfiniteScroll from 'react-infinite-scroller';
 class MessagePage extends React.Component {
   constructor(props) {
     super(props)
+    this.state = {
+      messages: [],
+      offset: 100
+    }
     this.client = new DataService()
-
-    this.state = { messages: [] }
-    //this.state = { likeCount: this.props.likes.length }
-
-//     this.state = { messages: [], offset: 100 }
-
   }
- 
+
   componentDidMount() {
     this.client.getMessages().then(response => {
       console.log(response.data.messages)
@@ -46,8 +44,6 @@ class MessagePage extends React.Component {
 
         <h2>New Message</h2>
 
-//         <MessageList messages={this.state.messages} />
-
         <ul></ul>
 
       </div>
@@ -55,5 +51,5 @@ class MessagePage extends React.Component {
   }
 }
 
-export default userIsAuthenticated(MessagePage) 
+export default userIsAuthenticated(MessagePage)
 

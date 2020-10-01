@@ -2,6 +2,7 @@ import React from "react";
 import DataService from "../../DataService";
 
 class UsersPic extends React.Component {
+    
     handlePic = (event) => {
         event.preventDefault()
         console.log("click")
