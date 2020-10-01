@@ -59,13 +59,36 @@ class Profile extends React.Component {
   handleDeleteUser = (event) => {
     let token = JSON.parse(localStorage.getItem('login')).result.token
     this.props.logout().then(this.client.deleteUser(this.state.user.username, token))
-    
+
+  }
+  handleSubmitPhoto = (event) => {
+    event.preventDefault()
+    let pictureFormData = this.fileUpload(this.state.picture)
+    this.client.getUserPicture(this.state.user.username, pictureFormData).then(()=>{
+      this.client.getUser(this.props.match.params.username).then((userData)=>{
+        this.setState({
+          user:userData.user
+        })
+      })
+    })
+  }
+  onFileChange = event => {
+    if (event.target.files === undefined) return
+    this.setState({
+      picture: event.target.files[0]
+    })
+  }
+  fileUpload(file) {
+    let formData = new FormData()
+    formData.append("picture", file)
+    return formData
   }
 
   render() {
     return (
       <div className="Profile">
         <Menu isAuthenticated={this.props.isAuthenticated} />
+
         
         <Header as='h2' textAlign = 'center' color='blue'>Your Profile Page</Header>
  
@@ -115,24 +138,38 @@ class Profile extends React.Component {
             onChange={this.handleChange}
           />
         </Form.Field>
+
+
+        
           <Form.Field>
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            name="password"
-            required
-            onChange={this.handleChange}
-          />
+            <label htmlFor="displayName">Display Name</label>
+            <input
+              type="text"
+              name="displayName"
+              autoFocus
+              required
+              onChange={this.handleChange}
+            />
           </Form.Field>
           <Form.Field>
-          <label htmlFor="about">About</label>
-          <input
-            type="text"
-            name="about"
-            required
-            onChange={this.handleChange}
-          />
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              name="password"
+              required
+              onChange={this.handleChange}
+            />
           </Form.Field>
+          <Form.Field>
+            <label htmlFor="about">About</label>
+            <input
+              type="text"
+              name="about"
+              required
+              onChange={this.handleChange}
+            />
+          </Form.Field>
+
           <Button primary  onClick={this.handleUpdateUser}>
             Update User
           </Button>
@@ -195,6 +232,29 @@ class Profile extends React.Component {
   </Grid>
 
        
+
+          <Button type="primary" onClick={this.handleUpdateUser}>
+            Update User
+          </Button>
+
+          <Button type="primary" onClick={this.handleDeleteUser}>
+            Delete User
+          </Button>
+        </Form>
+
+        <Form>
+          <Form.Field>
+            <Button type="primary" onClick={this.handleSubmitPhoto}>
+              Submit Photo
+            </Button>
+            <input
+              type="file"
+              name="picture"
+              required
+              onChange={this.onFileChange}
+            />
+          </Form.Field>
+        </Form>
       </div>
     );
   }
