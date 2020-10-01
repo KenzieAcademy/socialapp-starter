@@ -2,11 +2,8 @@ import React from "react";
 import LoginForm from "../components/loginForm/LoginForm";
 import Menu from "../components/menu/Menu";
 import { userIsNotAuthenticated } from "../redux/HOCs";
-import RegistrationForm from "../components/registrationForm/RegistrationForm";
-import LikeButton from "../components/likebutton/LikeButton";
-import UpdateUser from "../components/updateuser/UpdateUser";
-import LogoutButton from "../components/logoutButton/Logout";
-import FollowButton from "../components/followbutton/FollowButton";
+
+import RegisterButton from "../components/registerbutton/RegisterButton";
 
 class Home extends React.Component {
   render() {
@@ -15,12 +12,8 @@ class Home extends React.Component {
         <Menu />
         <h2>Your favorite microblogging platform</h2>
         <LoginForm />
-        <hr />
-        <RegistrationForm />
-        <LikeButton />
-        <LogoutButton />
-        <UpdateUser />
-        <FollowButton />
+        <br></br>
+        <RegisterButton />
       </div>
     );
   }

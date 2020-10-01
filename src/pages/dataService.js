@@ -20,8 +20,24 @@ class DataService {
   getLogout() {
     return this.client.post(`${this.url}/logout`);
   }
-  postlike(userdata) {
-    return this.client.post(this.url + "/likes", userdata);
+
+  posttlike(messageId) {
+    const data = { messageId };
+    const config = {
+      headers: {
+        Authorization: `Bearer ${this.getToken()}`,
+      },
+    };
+    return this.client
+      .post(this.url + "/likes", data, config)
+      .then((respose) => {
+        return respose.data;
+      });
+  }
+  getToken() {
+    const loginData = JSON.parse(localStorage.getItem("login"));
+    const { token } = loginData.result;
+    return token;
   }
   getMessages(limit = 20) {
     return this.client.get(this.url + "/messages?limit=" + limit);
@@ -63,6 +79,7 @@ class DataService {
       headers: { Authorization: `Bearer ${loginData.token}` },
     });
   }
+
   getPicture(username) {
     const loginData = JSON.parse(localStorage.getItem("login")).result;
     return this.client.get(this.url + "/users/" + username + "/picture", {
