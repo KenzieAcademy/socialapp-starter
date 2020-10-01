@@ -1,0 +1,7 @@
+.DeleteUserModal .DeleteUserButton {
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+    font-weight: bold;
+    font-size: 1.1em;
+}

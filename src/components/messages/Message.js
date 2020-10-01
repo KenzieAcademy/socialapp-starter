@@ -18,7 +18,7 @@ import {
 
 class Message extends React.Component {
   render() {
-    if (this.props.loginData.result.username === this.props.username) {
+    if (this.props.loggedInUser === this.props.username) {
       return (
         <Feed.Event>
           <FeedContent>

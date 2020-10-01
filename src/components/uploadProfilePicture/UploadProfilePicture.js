@@ -134,6 +134,7 @@ class UploadProfilePicture extends React.Component {
               capture="user"
               onChange={this.handleChange}
               required
+              fluid
             />
           </Form.Field>
         </Form>

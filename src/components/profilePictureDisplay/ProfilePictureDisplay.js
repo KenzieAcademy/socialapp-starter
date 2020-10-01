@@ -36,10 +36,9 @@ class ProfilePictureDisplay extends React.Component {
       return (
         <div width className="ProfilePictureDisplay">
           <Image
+            className="profileImage"
             src={profilePlaceholder}
             alt="Profile Picture"
-            style={{ height: 200, width: 200 }}
-            wrapped
             ui={false}
           />
         </div>
@@ -50,9 +49,9 @@ class ProfilePictureDisplay extends React.Component {
       return (
         <div className="ProfilePictureDisplay">
           <Image
+            className="profileImage"
             src={this.state.imageData}
             alt="Profile Picture"
-            style={{ height: 200, width: 200 }}
           />
         </div>
       );
@@ -61,7 +60,7 @@ class ProfilePictureDisplay extends React.Component {
     return (
       <div className="ProfilePictureDisplay">
         <Placeholder>
-          <Placeholder.Image style={{ height: 200, width: 200 }} />
+          <Placeholder.Image className="profileImage" />
         </Placeholder>
       </div>
     );

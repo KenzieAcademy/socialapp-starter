@@ -1,5 +1,5 @@
 import React from "react";
-import "./DeleteUser.js"
+import "./DeleteUser.css"
 import DeleteUserService from "../../services/DeleteUserService";
 import DeleteUserModal from "../deleteUserModal/DeleteUserModal";
 
@@ -19,7 +19,7 @@ class DeleteUser extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className = "DeleteUser">
         <DeleteUserModal handleDelete={this.handleDelete} />
       </div>
     );
