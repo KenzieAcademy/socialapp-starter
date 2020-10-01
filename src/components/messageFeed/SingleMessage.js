@@ -35,12 +35,18 @@ class SingleMessage extends Component {
             });
         
         
-            this.client.deleteLike()
+            
     };
-
+    handleDelete = (event) => {
+      this.client.deleteMessage(this.state.messageId)
+    }
     
-
+    
+    
+    
+    
     render() {
+        
         return (
             <MessageList className="messagefeed">
                 <ul>
@@ -56,6 +62,13 @@ class SingleMessage extends Component {
                     content="Like"
                     onClick={this.handleLike}
                 />
+                
+                <Button 
+                    size="mini"
+                    content="Delete"
+                    inverted color='red'
+                    onClick={this.handleDelete}
+                    />
             </MessageList>
         );
     }

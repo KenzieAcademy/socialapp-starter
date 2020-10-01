@@ -22,9 +22,7 @@ class Messages extends React.Component {
     this.setState({ [event.target.name]: event.target.value });
   };
 
-  handleChange = (event) => {
-    this.setState({ [event.target.name]: event.target.value });
-  };
+  
 
   handleSubmit = (event) => {
     event.preventDefault();

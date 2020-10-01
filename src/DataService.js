@@ -52,6 +52,14 @@ class DataService {
 
     }
 
+    deleteMessage(messageId) {
+        return this.client.delete(this.url + '/messages/' +  messageId , {
+            headers: {
+                Authorization: "Bearer " + this.token.result.token
+            }
+        })
+    }
+
 
 
     //likes
