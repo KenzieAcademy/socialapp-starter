@@ -48,6 +48,7 @@ class DataService {
       }
     );
   }
+
   postMessage(message) {
     console.log("posting", message);
     let loginData = JSON.parse(localStorage.getItem("login"));
@@ -97,6 +98,7 @@ class DataService {
         headers: { Authorization: `Bearer ${loginData.result.token} ` },
       })
       .then((response) => {
+        console.log(response);
         return response.data.like;
       });
   }
