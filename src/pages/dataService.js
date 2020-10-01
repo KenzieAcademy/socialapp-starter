@@ -24,7 +24,13 @@ class DataService {
     return this.client.post(this.url + "/likes", userdata);
   }
   getMessages(limit = 20) {
-    return this.client.get(this.url + "/messages?limit=" + limit).then;
+    return this.client.get(this.url + "/messages?limit=" + limit);
+  }
+
+  getMoreMessages(offset = 20, limit = 20) {
+    return this.client.get(
+      this.url + "/messages?offset=" + offset + "&limit=" + limit
+    );
   }
 
   deleteuser() {

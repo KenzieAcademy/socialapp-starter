@@ -4,6 +4,7 @@ import Api from "../pages/dataService";
 import { userIsAuthenticated } from "../redux/HOCs";
 import Message from "../components/message/Message";
 import debounce from "lodash.debounce";
+import InfiniteScroll from "react-infinite-scroller";
 
 class MessageList extends React.Component {
   constructor(props) {
@@ -14,65 +15,35 @@ class MessageList extends React.Component {
       error: false,
       hasMore: true,
       isLoading: false,
+      offset: 20,
     };
-    window.onscroll = debounce(() => {
-      const {
-        loadMessages,
-        state: { error, isLoading, hasMore },
-      } = this;
-
-      if (error || isLoading || !hasMore) return;
-
-      if (
-        window.innerHeight + document.documentElement.scrollTop ===
-        document.documentElement.offsetHeight
-      ) {
-        loadMessages();
-      }
-    }, 100);
   }
 
   componentDidMount() {
-    this.loadMessages();
+    this.client.getMessages().then((response) => {
+      const messages = response.data.messages;
+      this.setState({ messages });
+      console.log(response);
+    });
   }
 
-  pullMessages() {
-    return this.client.getMessages();
-  }
+  // pullMessages() {
+  //   return this.client.getMessages();
+  // }
 
   loadMessages = () => {
-    this.setState({ isLoading: true }, () => {
-      this.pullMessages().then((response) => {
-        const messageList = response.messages;
-        if (messageList) {
-          const nextMessages = response.messages.map((messageObject) => {
-            return (
-              <Message
-                messageId={messageObject.id}
-                key={messageObject.id}
-                {...messageObject}
-              />
-            );
-          });
-
-          // Merges the next users into our existing users
-          this.setState({
-            // Note: Depending on the API you're using, this value may
-            // be returned as part of the payload to indicate that there
-            // is no additional data to be loaded
-            hasMore: this.state.messages.length < 100,
-            isLoading: false,
-            messages: [this.state.messages, nextMessages],
-          });
-
-          console.log(response);
-        }
+    this.client.getMoreMessages(this.state.offset).then((response) => {
+      const newMessages = response.data.messages;
+      this.setState((currentState) => {
+        let offset = currentState.offset + 20;
+        let messages = [...currentState.messages, ...newMessages];
+        return { offset, messages };
       });
     });
   };
 
   render() {
-    const { error, hasMore, isLoading, messages } = this.state;
+    const { messages } = this.state;
 
     if (messages.length === 0) {
       return (
@@ -88,19 +59,27 @@ class MessageList extends React.Component {
         <Menu isAuthenticated={this.props.isAuthenticated} />
         <h1>Message Feed</h1>
         <ul>
-          {messages.map((messageObject) => {
-            return (
-              <Message
-                messageId={messageObject.id}
-                key={messageObject.id}
-                {...messageObject}
-              />
-            );
-          })}
+          <InfiniteScroll
+            pageStart={0}
+            loadMore={this.loadMessages}
+            hasMore={true || false}
+            loader={
+              <div className="loader" key={0}>
+                Loading ...
+              </div>
+            }
+          >
+            {messages.map((messageObject) => {
+              return (
+                <Message
+                  messageId={messageObject.id}
+                  key={messageObject.id}
+                  {...messageObject}
+                />
+              );
+            })}
+          </InfiniteScroll>
         </ul>
-        {error && <div style={{ color: "#900" }}>{this.state.error}</div>}
-        {isLoading && <div>Loading...</div>}
-        {!hasMore && <div>You did it! You reached the end!</div>}
       </div>
     );
   }
