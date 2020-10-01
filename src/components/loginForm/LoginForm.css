@@ -2,7 +2,27 @@
   display: flex;
   flex-direction: column;
   max-width: 20em;
+  margin-left: 450px;
 }
 .login {
-  background-color: cornflowerblue;
+  background-color: rgb(154, 181, 231);
+}
+h2 {
+  margin-left: 300px;
+}
+a button {
+  width: 100px;
+  height: 40px;
+  margin-left: 470px;
+  margin: auto;
+}
+
+.login {
+  font-size: 25px;
+}
+#login-form label {
+  font-size: 25px;
+}
+#login-form input {
+  font-size: 25px;
 }

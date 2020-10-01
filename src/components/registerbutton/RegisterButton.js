@@ -1,11 +1,17 @@
 import React from "react";
-import { withRouter, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import "./register.css";
 
 const RegisterButton = (props) => {
   return (
     <Link to={`/register`}>
-      First time user
-      <button role="link">Sign up</button>
+      <h2>
+        {" "}
+        First time user? &nbsp;
+        <a className="signup" role="link">
+          Register Here
+        </a>
+      </h2>
     </Link>
   );
 };
