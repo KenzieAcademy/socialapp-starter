@@ -1,6 +1,6 @@
 import axios from "axios";
 
-class PostMessageService {
+class MessageService {
   constructor(
     url = "https://socialapp-api.herokuapp.com",
     client = axios.create()
@@ -27,6 +27,12 @@ class PostMessageService {
       config
     );
   }
+
+  getMessage(messageId) {
+    console.log(messageId)
+    return this.client.get(this.url + `/messages/${messageId}`)
+  }
+
 }
 
-export default PostMessageService;
+export default MessageService;
