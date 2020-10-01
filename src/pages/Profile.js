@@ -128,19 +128,7 @@ class Profile extends React.Component {
     <Grid.Row>
       <Grid.Column>
       <Form onSubmit={this.handleUpdateUser}>
-        <Form.Field>
-          <label htmlFor="displayName">Display Name</label>
-          <input
-            type="text"
-            name="displayName"
-            autoFocus
-            required
-            onChange={this.handleChange}
-          />
-        </Form.Field>
-
-
-        
+              
           <Form.Field>
             <label htmlFor="displayName">Display Name</label>
             <input

@@ -4,10 +4,12 @@ import moment from 'moment'
 
 
 
+
 function UserItem(props) {
 
     return (
         <Feed.Event className="UserItem">
+           
             <Feed.Label>
 
                 <Image src={'https://socialapp-api.herokuapp.com/users/' + props.username + "/picture"} />
@@ -15,6 +17,7 @@ function UserItem(props) {
             </Feed.Label>
             <Feed.Content>
                 <Feed.User>
+           
 
 
      {props.displayName}
