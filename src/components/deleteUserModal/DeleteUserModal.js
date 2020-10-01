@@ -5,7 +5,7 @@ import { Button, Modal } from "semantic-ui-react";
 function exampleReducer(state, action) {
   switch (action.type) {
     case "OPEN_MODAL":
-      return { open: true, dimmer: action.dimmer };
+      return { open: true, dimmer: action.dimmer, size: action.size };
     case "CLOSE_MODAL":
       return { open: false };
     default:
@@ -17,24 +17,28 @@ function DeleteUserModal(props) {
   const [state, dispatch] = React.useReducer(exampleReducer, {
     open: false,
     dimmer: undefined,
+    size: undefined,
   });
-  const { open, dimmer } = state;
+  const { open, dimmer, size } = state;
 
   return (
     <div>
       <Button
         negative
-        onClick={() => dispatch({ type: "OPEN_MODAL", dimmer: "blurring" })}
+        onClick={() =>
+          dispatch({ type: "OPEN_MODAL", size: "tiny", dimmer: "blurring" })
+        }
       >
         Delete User
       </Button>
 
       <Modal
+        size={size}
         dimmer={dimmer}
         open={open}
         onClose={() => dispatch({ type: "CLOSE_MODAL" })}
       >
-        <Modal.Header>Delete this user account?</Modal.Header>
+        <Modal.Header>Delete User Account</Modal.Header>
         <Modal.Content>
           If you wish to delete this user account, all the information for the
           user account will be lost and you will need to register a new user
