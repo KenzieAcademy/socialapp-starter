@@ -53,9 +53,9 @@ class Profile extends React.Component {
       <div className="Profile">
         <Menu isAuthenticated={this.props.isAuthenticated} />
 
-        <img className="cowboy3" src={cowboy3} alt="cowboy3" />
+        {/* <img className="cowboy3" src={cowboy3} alt="cowboy3" />
         <img className="cowboy4" src={cowboy4} alt="cowboy4" />
-        <img className="cowgirl1" src={cowgirl1} alt="cowgirl1" />
+        <img className="cowgirl1" src={cowgirl1} alt="cowgirl1" /> */}
 
         <h2>{loginData.username}'s Profile</h2>
         <h4>Profile Photo: </h4>
