@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-// import 'semantic-ui-css/semantic.min.css'
-import 'semantic-ui-less/semantic.less'
+import "semantic-ui-less/semantic.less";
 import "./index.css";
 import * as serviceWorker from "./serviceWorker";
 import { Provider } from "react-redux";
