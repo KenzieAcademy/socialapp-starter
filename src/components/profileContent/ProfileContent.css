@@ -5,19 +5,38 @@
 .ProfileBody {
   top: 19px;
   border-radius: 5px;
-  height: 640px;
+  width: 830;
+  height: 340px;
   position: relative;
   margin: auto;
 }
 
 .ProfileContent {
-  left: -13px;
+  left: -3px;
+  top: -3px;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
   position: relative;
   margin: auto;
   width: 830px;
+  position: relative;
+  margin: auto;
+}
+
+.ProfilePic {
+  width: 125px;
+  height: 125px;
+  position: relative;
+  margin: auto;
+}
+
+.MemberInfo {
+  position: relative;
+  margin: auto;
+}
+
+.MemberInfoEdit {
   position: relative;
   margin: auto;
 }
@@ -29,5 +48,3 @@
   margin: auto;
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
 }
-/* font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif; */
-/* font: italic small-caps bold 12px/30px Georgia, serif; */

@@ -57,7 +57,9 @@ class Message extends React.Component {
             <footer>
               {" "}
               <div className="LikesNumber">
-                <div className="Likes">Likes: {this.props.likes.length}</div>{" "}
+                <div className="Likes">
+                  Thumbs Up: {this.props.likes.length}
+                </div>{" "}
               </div>
               <button className="LikeButton" onClick={this.LikeFunction}>
                 Thumbs Up!
