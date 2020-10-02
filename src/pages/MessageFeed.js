@@ -41,6 +41,7 @@ class MessageFeed extends React.Component {
 
   tick = () => {
     this.retrieveMessages();
+    console.log("check for new messages");
   };
 
   componentWillUnmount() {
