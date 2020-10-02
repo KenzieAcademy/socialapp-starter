@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@ant-design/dark-theme": "^2.0.2",
     "antd": "^4.6.4",
     "axios": "^0.20.0",
     "connected-react-router": "^6.8.0",
