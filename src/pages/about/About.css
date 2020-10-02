@@ -1,0 +1,9 @@
+.About {
+  background-image: url("../../components/assets/images/backgrounds/Outer_space.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 200vh;
+  width: 100vw;
+  color: white;
+  font-family: Kufam;
+}
