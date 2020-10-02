@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Layout, Menu as Menu2 } from "antd";
 import "./Menu.css";
 import { withAsyncAction } from "../../redux/HOCs";
-import { Layout, Menu as Menu2 } from "antd";
 
 class Menu extends React.Component {
   handleLogout = (event) => {
@@ -17,7 +17,7 @@ class Menu extends React.Component {
             <div className="logo" />
             <Layout.Header>
               <Menu2 theme="dark" mode="horizontal">
-                <Menu2.Item>
+                <Menu2.Item className="home-button">
                   {" "}
                   <Link to="/">Home</Link>
                 </Menu2.Item>
