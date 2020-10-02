@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Layout, Menu as Menu2 } from "antd";
 import "./Menu.css";
 import { withAsyncAction } from "../../redux/HOCs";
 
@@ -11,22 +12,32 @@ class Menu extends React.Component {
   render() {
     return (
       <div className="Menu">
-        <h1>Observit</h1>
         {this.props.isAuthenticated && (
-          <div id="menu-links">
-            <Link to="/">Home</Link>
-
-            <Link
-              to={`/profile/${
-                JSON.parse(localStorage.getItem("login")).result.username
-              }`}
-            >
-              Profile
-            </Link>
-            <Link to="/" onClick={this.handleLogout}>
-              Logout
-            </Link>
-          </div>
+          <Layout className="layout">
+            <div className="logo" />
+            <Layout.Header>
+              <Menu2 theme="dark" mode="horizontal">
+                <Menu2.Item className="home-button">
+                  {" "}
+                  <Link to="/">Home</Link>
+                </Menu2.Item>
+                <Menu2.Item>
+                  <Link
+                    to={`/profile/${
+                      JSON.parse(localStorage.getItem("login")).result.username
+                    }`}
+                  >
+                    Profile
+                  </Link>
+                </Menu2.Item>
+                <Menu2.Item>
+                  <Link to="/" onClick={this.handleLogout}>
+                    Logout
+                  </Link>
+                </Menu2.Item>
+              </Menu2>
+            </Layout.Header>
+          </Layout>
         )}
       </div>
     );

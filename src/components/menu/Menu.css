@@ -1,4 +1,4 @@
-.Menu {
+/* .Menu {
   background-color: lightskyblue;
   display: flex;
   justify-content: space-between;
@@ -10,7 +10,7 @@
 #menu-links {
   display: flex;
   padding-left: 1em;
-}
+} */
 
 #menu-links a {
   padding-right: 0.5em;
@@ -18,3 +18,21 @@
   text-decoration: underline;
   cursor: pointer;
 }
+
+.site-layout-content {
+  background: #fff;
+  padding: 24px;
+  min-height: 280px;
+}
+#components-layout-demo-top .logo {
+  width: 120px;
+  height: 31px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 16px 24px 16px 0;
+  float: right;
+}
+/* .home-button {
+  display: block;
+  align-items: center;
+  background-color: aqua;
+} */
