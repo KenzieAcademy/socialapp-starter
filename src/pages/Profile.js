@@ -2,13 +2,43 @@ import React from "react";
 import { userIsAuthenticated } from "../redux/HOCs"
 import DataService from "../services/DataService";
 import Menu from "../components/menu/Menu";
+import ProfileContent from "../components/profileContent/ProfileContent";
+import { Button, Card } from "react-bootstrap";
 import "./Profile.css";
+import UserInfo from "../components/userInfo/UserInfo";
+
 
 class Profile extends React.Component {
   constructor(props) {
     super(props);
     this.client = new DataService();
+
+    this.state = {
+      user: {},
+      username: "",
+      displayName: "",
+      createdAt: "",
+    };
   }
+
+  componentDidMount = () => {
+    this.getUser();
+  };
+
+  getUser() {
+    this.client.getUser(this.client.getUsername()).then((response) =>
+      this.setState({
+        user: response.data.user,
+        username: response.data.user.username,
+        displayName: response.data.user.displayName,
+        createdAt: response.data.user.createdAt,
+      })
+    );
+  }
+  handleChange = (e) => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
+
   handleDelete = (e) => {
     e.preventDefault();
     this.client
@@ -24,28 +54,32 @@ class Profile extends React.Component {
   };
 
   render() {
-    return (
-      <div className="Profile">
-        <Menu />
-        <h2>Profile Name</h2>
-        <img
-          src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1152887/beasley.png"
-          alt="Beasley the Bard"
-        />
+    const Username = this.state.user.username;
+    const DisplayName = this.state.user.displayName;
+    const CreatedAt = this.state.user.createdAt;
 
-        <dl>
-          <dt>Bio</dt>
-          <dd></dd>
-          <br />
-          <dt>Location</dt>
-          <br />
-          <dd></dd>
-          <dt>Date Joined</dt>
-        </dl>
-        <button className="DeleteUser" onClick={this.handleDelete}>
+    return (
+      <div className="Body">
+        <Menu isAuthenticated={this.props.isAuthenticated} />
+        <div className="Profile">
+          <h3>My Profile</h3>
+          <Card style={{ height: "70rem" }}>
+            <ProfileContent />
+            <UserInfo
+              username={Username}
+              displayName={DisplayName}
+              createdAt={CreatedAt}
+            />
+          </Card>
+        </div>
+        <Button
+          variant="dark"
+          className="DeleteUser"
+          onClick={this.handleDelete}
+        >
           {" "}
           Delete User
-        </button>
+        </Button>
       </div>
     );
   }

@@ -1,9 +1,10 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
-// import PostMessage from "./services/PostMessageService"
+
 import RegistrationForm from "./components/RegisterForm/RegisterForm"
 import MessageList from "./pages/MessageList"
 import PostMessage from "./components/PostMessage";

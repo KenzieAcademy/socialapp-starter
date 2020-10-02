@@ -1,7 +1,6 @@
 import React from "react";
 import LikeService from "../../services/LikeService";
 import DeleteMessageService from "../../services/DeleteMessageService";
-// import userIsAuthenticated from "../../redux/HOCs"
 class Message extends React.Component {
   constructor(props) {
     super(props);
