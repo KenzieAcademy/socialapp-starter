@@ -4,6 +4,7 @@ import { userIsAuthenticated } from "../redux/HOCs";
 
 // import { message, Result } from "antd";
 import Message from "../components/message/Message";
+import CreateMessage from "./CreateMessage";
 
 class MessageFeed extends React.Component {
   constructor(props) {
@@ -31,6 +32,7 @@ class MessageFeed extends React.Component {
     }
     return (
       <div className="messagefeed">
+        <CreateMessage />
         {/* <Menu isAuthenticated={this.props.isAuthenticated} /> */}
         {/* messages go here test */}
         <ul>

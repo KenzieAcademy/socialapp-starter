@@ -7,6 +7,7 @@ class CreateMessage extends React.Component {
     this.client = new DataService();
     this.state = {
       messageInput: "",
+      count: 0,
     };
   }
 
@@ -33,7 +34,10 @@ class CreateMessage extends React.Component {
     // console.log(data)
     this.client.postMessages(this.state.messageInput).then((response) => {
       console.log("message sent");
-      this.setState((newState) => ({ messageInput: newState.messageInput }));
+      this.setState((newState) => ({
+        messageInput: newState.messageInput,
+        count: newState.count + 1,
+      }));
     });
   };
 

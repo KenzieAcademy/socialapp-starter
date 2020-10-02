@@ -1,6 +1,8 @@
+import { message } from "antd";
 import React from "react";
 import DataService from "../dataService";
 import "./searchUser.css";
+import profilepic from "../components/defualtpicture/freeiconlibrary.jpg";
 
 class SearchUser extends React.Component {
   constructor(props) {
@@ -8,10 +10,14 @@ class SearchUser extends React.Component {
     this.client = new DataService();
 
     this.state = {
-      username: "",
-      displayname: "",
-      aboutme: "",
-      picture: "",
+      userdata: {
+        username: "",
+        displayname: "",
+        about: "",
+        picture: profilepic,
+        password: "",
+        searchedUser: false,
+      },
     };
   }
   handleChange = (e) => {
@@ -23,22 +29,30 @@ class SearchUser extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault();
     console.log(this.state.username);
-    this.client
-      .getUser(this.state.username)
-      .then((result) => {
-        console.log("user got");
-        console.log(result.data);
-        this.setState({
-          username: result.data.user.username,
-          displayname: result.data.user.displayName,
-          aboutme: result.data.user.aboutme,
-          picture: result.data.user.pictureLocation,
-        });
-      })
-      .catch(alert("User doesn't Exist"));
+    this.client.getUser(this.state.username).then((result) => {
+      console.log("user got");
+      console.log(result.data);
+      this.setState({
+        username: result.data.user.username,
+        displayname: result.data.user.displayName,
+        about: result.data.user.about,
+        picture:
+          "https://socialapp-api.herokuapp.com" +
+          result.data.user.pictureLocation,
+        searchedUser: true,
+      });
+    });
+    // .catch(alert("User doesn't Exist"));
   };
 
   render() {
+    // if (searchedUser) {
+    //   {
+    //     messagefeed <messagefeed>
+    //   }
+    // } else {
+    //   messagefeed = "";
+    // }
     return (
       <div>
         <p className="searchHeader">Search User</p>
@@ -52,10 +66,17 @@ class SearchUser extends React.Component {
           />
           <button>Search</button>
         </form>
-        {this.state.displayName}
-        {this.state.aboutme}
-        {this.state.username}
-        {/* {this.state.picture} */}
+        {console.log(this.state)}
+        {this.state.userdisplayName}
+        <br></br>
+        <div className="">
+          {this.state.about}
+          {this.state.username}
+          {/* {this.state.picture} */}
+          <br></br>
+
+          <img alt="userimage" width={200} src={this.state.picture} />
+        </div>
       </div>
     );
   }
