@@ -1,6 +1,5 @@
 import React from "react";
 import DataService from "../../pages/dataService"
-import "./components/AboutMe.css";
 class AboutMe extends React.Component {
     constructor(props) {
         super(props);
