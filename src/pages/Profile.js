@@ -3,9 +3,8 @@ import DeleteAcctButton from "../components/deleteacct/DeleteAcct";
 import Menu from "../components/menu/Menu";
 import { userIsAuthenticated } from "../redux/HOCs";
 import UploadPhoto from "../components/uploadPhoto/UploadPhoto";
-import DeleteAcctButton from "../components/deleteacct/DeleteAcct";
 import DataService from "./dataService";
-import AboutMe from "../components/About Me/AboutMe"
+import AboutMe from "./components/About Me/AboutMe"
 
 class Profile extends React.Component {
   constructor(props) {

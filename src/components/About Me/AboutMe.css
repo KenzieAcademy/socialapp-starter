@@ -1,0 +1,6 @@
+.About-me {
+    display: flex;
+    flex-direction: column;
+    max-width: 20em;
+    margin-left: 450px;
+  }
