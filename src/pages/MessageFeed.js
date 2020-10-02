@@ -3,18 +3,23 @@ import Menu from "../components/menu/Menu";
 import Service from "../services/Service";
 import Message from "../components/message/Message";
 import PostMessage from "../components/postMessage/PostMessageForm"
+import GetUsersService from "../services/GetUsersService"
 
 class MessageFeed extends React.Component {
     client = new Service();
 
     state = {
-        message: [],
+        message: [], users: [],
         text: "",
     };
 
     componentDidMount() {
         this.client.getAllMessages().then((response) => {
             this.setState({ message: response.data.messages });
+        });
+        new GetUsersService().getUsers().then((response) => {
+            this.setState({ users: response.data.users });
+            console.log(response.data);
         });
     }
 
@@ -39,7 +44,7 @@ class MessageFeed extends React.Component {
     };
 
     render() {
-        if (this.state.message.length === 0) {
+        if (this.state.message.length === 0 || this.state.users.length === 0) {
             return (
                 <div className="MessageList">
                     <Menu />
@@ -58,6 +63,11 @@ class MessageFeed extends React.Component {
                 <ul>
                     {this.state.message.map((messageObject) => (
                         <Message key={messageObject.id} {...messageObject} />
+                    ))}
+                </ul>
+                <ul>
+                    {this.state.users.map((userObject) => (
+                        <li>{userObject.username}</li>
                     ))}
                 </ul>
             </div>
