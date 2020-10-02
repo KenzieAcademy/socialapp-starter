@@ -12,6 +12,8 @@
   width: 850px;
   position: relative;
   margin: auto;
+  font: italic small-caps 25px/30px Impact;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
 }
 
 .MessageLoading {
@@ -33,7 +35,7 @@
 .MessageMenuText {
   position: relative;
   margin: auto;
-  font: italic small-caps bolder 12px/30px Impact;
+  font: italic small-caps 12px/30px Impact;
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
   -webkit-text-stroke: 0.25px white;
 }

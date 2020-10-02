@@ -5,6 +5,7 @@
 .RegistrationFormBody {
   padding: 10px;
   width: 850px;
+  height: 492px;
   position: relative;
   margin: auto;
 }
@@ -117,7 +118,7 @@
 
 .EnterButtonBox input[type="submit"]:hover {
   background-image: url(../../assets/images/Clear_Red_Dark.png);
-  border: 3px solid white;
+  border: white;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
@@ -125,21 +126,20 @@
   -webkit-text-stroke: 0.25px black;
 }
 
-input[type="text"] {
-  border: 3px solid black;
+.RegistrationForm input[type="text"] {
+  border: black;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
-  background-image: url(../../assets/images/Clear_Red_Dark.png);
+  background-image: url(../../assets/images/Coupon_Background_Light.png);
   color: black;
-  font: italic small-caps bold 25px/43px Impact, Haettenschweiler,
-    "Arial Narrow Bold", sans-serif;
+  font: italic small-caps bold 25px/43px Impact;
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
   -webkit-text-stroke: 0.25px white;
 }
 
-input[type="text"]:hover {
-  border: 3px solid white;
+.RegistrationForm input[type="text"]:hover {
+  border: #b80c12;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
@@ -147,21 +147,20 @@ input[type="text"]:hover {
   -webkit-text-stroke: 0.25px black;
 }
 
-input[type="password"] {
-  border: 3px solid black;
+.RegistrationForm input[type="password"] {
+  border: black;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
-  background-image: url(../../assets/images/Clear_Red_Dark.png);
+  background-image: url(../../assets/images/Coupon_Background_Light.png);
   color: black;
-  font: italic small-caps bold 25px/43px Impact, Haettenschweiler,
-    "Arial Narrow Bold", sans-serif;
+  font: italic small-caps bold 25px/43px Impact;
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
   -webkit-text-stroke: 0.25px white;
 }
 
-input[type="password"]:hover {
-  border: 3px solid white;
+.RegistrationForm input[type="password"]:hover {
+  border: #b80c12;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;

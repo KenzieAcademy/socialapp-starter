@@ -48,45 +48,47 @@ const ProfileContent = (props) => {
           </Form>
         </div>
         {props.checked && (
-          <div className="MemberInfoEdit">
+          <div className="EditInfoBody">
             <Form.Group>
-              <Form.Row>
-                <Form.Label>Display Name: </Form.Label>
-                <Col xs="auto">
-                  <Form.Control
-                    onChange={props.change}
-                    name="displayName"
-                    inline="true"
-                  ></Form.Control>
-                </Col>
-              </Form.Row>
-              <Form.Row>
-                <Form.Label>Password: </Form.Label>
-                <Col xs="auto">
-                  <Form.Control
-                    onChange={props.change}
-                    name="password"
-                    type="password"
-                    inline="true"
-                  ></Form.Control>
-                </Col>
-              </Form.Row>
-              <Form.Row>
-                <Form.Label>About Me: </Form.Label>
-                <Col xs="auto">
-                  <Form.Control
-                    onChange={props.change}
-                    name="about"
-                    as="textarea"
-                    inline="true"
-                  ></Form.Control>
-                </Col>
-              </Form.Row>
-              <Form.Row>
-                <Button type="primary" onClick={props.submitButton}>
-                  Save Changes
-                </Button>
-              </Form.Row>
+              <div className="EditInfoText">
+                <Form.Row>
+                  <Form.Label>Display Name: </Form.Label>
+                  <Col xs="auto">
+                    <Form.Control
+                      onChange={props.change}
+                      name="displayName"
+                      inline="true"
+                    ></Form.Control>
+                  </Col>
+                </Form.Row>
+                <Form.Row>
+                  <Form.Label>Password: </Form.Label>
+                  <Col xs="auto">
+                    <Form.Control
+                      onChange={props.change}
+                      name="password"
+                      type="password"
+                      inline="true"
+                    ></Form.Control>
+                  </Col>
+                </Form.Row>
+                <Form.Row>
+                  <Form.Label>About Me: </Form.Label>
+                  <Col xs="auto">
+                    <Form.Control
+                      onChange={props.change}
+                      name="about"
+                      as="textarea"
+                      inline="true"
+                    ></Form.Control>
+                  </Col>
+                </Form.Row>
+                <Form.Row>
+                  <Button variant="dark" size="lg" onClick={props.submitButton}>
+                    Save Changes
+                  </Button>
+                </Form.Row>
+              </div>
             </Form.Group>
           </div>
         )}

@@ -3,21 +3,22 @@
 }
 
 .NotFoundPageBody {
+  top: 75px;
   position: relative;
   margin: auto;
   width: 850px;
   height: 250px;
   text-align: center;
-  font: italic small-caps bold 12px/30px Georgia, serif;
 }
 
 .NotFound {
-  top: 50px;
+  top: 100px;
   position: relative;
   margin: auto;
-  font-size: 55px;
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  font: italic small-caps bold 55px/60px Impact;
   color: black;
+  text-align: center;
 }
 
 .Link a {
@@ -25,7 +26,6 @@
   text-decoration: none;
   position: relative;
   margin: auto;
-  font-size: 55px;
   color: #b80c12;
   text-decoration: underline;
   cursor: pointer;

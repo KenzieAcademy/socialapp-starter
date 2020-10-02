@@ -5,15 +5,15 @@
 .ProfilePageBody {
   padding: 10px;
   background-image: url(../assets/images/Coupon_Background_Dark.png);
-  border: 3px solid black;
+  border: black;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
   width: 850px;
-  height: 432px;
+  height: 452px;
   position: relative;
   margin: auto;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font: italic small-caps 12px/30px Impact;
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
 }
 
@@ -23,9 +23,7 @@
 }
 
 .ProfileMenuText {
-  position: relative;
-  margin: auto;
-  font: italic small-caps bolder 12px/30px Impact;
+  font: italic small-caps 12px/25px Impact;
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
   -webkit-text-stroke: 0.25px white;
 }
@@ -36,7 +34,7 @@
   left: -2px;
   position: relative;
   margin: auto;
-  border: 3px solid black;
+  border: black;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;

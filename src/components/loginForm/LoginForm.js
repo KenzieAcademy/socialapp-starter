@@ -2,7 +2,6 @@ import React from "react";
 import Spinner from "react-spinkit";
 import { withAsyncAction } from "../../redux/HOCs";
 import "./LoginForm.css";
-// import Button from "react-bootstrap/Button";
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -30,9 +29,9 @@ class LoginForm extends React.Component {
       <div className="LoginFormBody">
         <div className="LoginForm">
           <form id="login-form" onSubmit={this.handleLogin}>
-            <div className="UserNameInput">
+            <div className="LogUserNameInput">
               <label htmlFor="username">Username</label>
-              <div className="UserNameInputBox">
+              <div className="LogUserNameInputBox">
                 <input
                   type="text"
                   name="username"
@@ -43,9 +42,9 @@ class LoginForm extends React.Component {
                 />
               </div>
             </div>
-            <div className="PasswordInput">
+            <div className="LogPasswordInput">
               <label htmlFor="password">Password</label>
-              <div className="PasswordInputBox">
+              <div className="LogPasswordInputBox">
                 <input
                   type="password"
                   name="password"
@@ -55,8 +54,8 @@ class LoginForm extends React.Component {
                 />
               </div>
             </div>
-            <div className="EnterButtonBox">
-              <div className="EnterButton">
+            <div className="LogEnterButtonBox">
+              <div className="LogEnterButton">
                 <input
                   type="submit"
                   value="Enter"

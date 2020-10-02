@@ -39,7 +39,8 @@
   border-width: 3px;
   border-style: dashed;
   background-image: url(../../assets/images/Coupon_Background_Dark.png);
-  color: black;
+  color: white;
+  -webkit-text-stroke: 0.25px black;
   font-size: 25px;
   width: 468px;
   height: 185px;
