@@ -2,13 +2,16 @@ import React from "react";
 import Menu from "../components/menu/Menu";
 import Service from "../services/Service";
 import Message from "../components/message/Message";
-import PostMessage from "../components/postMessage/PostMessage"
+import PostMessage from "../components/postMessage/PostMessage";
+import GetUsersService from "../services/GetUsersService";
+import "./MessageFeed.css"
 
 class MessageFeed extends React.Component {
   client = new Service();
 
   state = {
     message: [],
+    users: [],
     text: "",
   };
 
@@ -16,27 +19,31 @@ class MessageFeed extends React.Component {
     this.client.getAllMessages().then((response) => {
       this.setState({ message: response.data.messages });
     });
+
+    new GetUsersService().getUsers().then((response) => {
+      this.setState({ users: response.data.users });
+      console.log(response.data);
+    });
   }
 
   handleMessagePost = (event) => {
     event.preventDefault();
-    this.client.postMessage({ text: this.state.text })
-    .then((result) => {
-       this.setState((currentState) => {
-          return {
-            message: [result.data.message, ...currentState.message],
-            text: ""
-          }
-       })
+    this.client.postMessage({ text: this.state.text }).then((result) => {
+      this.setState((currentState) => {
+        return {
+          message: [result.data.message, ...currentState.message],
+          text: "",
+        };
       });
+    });
     console.log("Post Button Pressed");
   };
 
   handleChange = (event) => {
     this.setState({
-        [event.target.name]: event.target.value,
+      [event.target.name]: event.target.value,
     });
-};
+  };
 
   render() {
     if (this.state.message.length === 0) {
@@ -53,13 +60,25 @@ class MessageFeed extends React.Component {
       <div className="MessageList">
         <Menu />
         <h1>Message Feed</h1>
-        <PostMessage handleChange={this.handleChange} handleMessagePost={this.handleMessagePost} text={this.state.text} />
-
-        <ul>
+        <PostMessage
+          handleChange={this.handleChange}
+          handleMessagePost={this.handleMessagePost}
+          text={this.state.text}
+        />
+        <div className = "messageContainer" >
+        <ul className = "messageList" >
           {this.state.message.map((messageObject) => (
             <Message key={messageObject.id} {...messageObject} />
           ))}
         </ul>
+
+        <ul className="usersList">
+          <h1>Follow These Users</h1>
+          {this.state.users.map((userObject) => (
+            <li>{userObject.username}</li>
+          ))}
+        </ul>
+        </div>
       </div>
     );
   }
