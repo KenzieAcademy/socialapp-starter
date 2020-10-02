@@ -19,8 +19,8 @@
 .ProfileContent {
   font: italic small-caps bolder 30px/35px Impact;
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
-  -webkit-text-stroke: 0.25px black;
-  color: white;
+  -webkit-text-stroke: 0.25px white;
+  color: black;
   left: -3px;
   top: -3px;
   width: 800px;
@@ -56,7 +56,8 @@
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
-  background-image: url(../../assets/images/Coupon_Background_Dark.png);
+  background-color: white;
+  background-image: url(../../assets/images/Coupon_Background_Light.png);
   position: relative;
   margin: auto;
 }
@@ -75,7 +76,8 @@
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
-  background-image: url(../../assets/images/Coupon_Background_Dark.png);
+  background-color: white;
+  background-image: url(../../assets/images/Coupon_Background_Light.png);
   position: relative;
   margin: auto;
 }

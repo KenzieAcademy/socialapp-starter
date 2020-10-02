@@ -38,6 +38,7 @@
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
+  background-color: white;
   background-image: url(../../assets/images/Coupon_Background_Dark.png);
   color: white;
   -webkit-text-stroke: 0.25px black;
