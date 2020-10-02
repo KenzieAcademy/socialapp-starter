@@ -5,10 +5,6 @@ import { userIsAuthenticated } from "../redux/HOCs";
 import UploadPicture from "../components/getUserPicture/GetUserPicture";
 
 import { Button } from "antd";
-<<<<<<< HEAD
-import { UserOutlined } from "@ant-design/icons";
-=======
->>>>>>> master
 
 class Profile extends React.Component {
   render() {
