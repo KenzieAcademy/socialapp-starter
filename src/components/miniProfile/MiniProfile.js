@@ -11,7 +11,7 @@ const styles = {
     maxwidth: 20,
     maxheight: 20,
   },
-
+};
 
 const MiniProfile = (props) => {
   let joined = new Date(props.user.createdAt);
@@ -43,13 +43,10 @@ const MiniProfile = (props) => {
   }
 
   return (
-
     <div className="MiniProfileBody">
       <Card className="Miniprofile">
         <Card-Body className="MiniProfCardBody">
-          <div className="ProfilePicThumb">
-            {profileImage}
-          </div>
+          <div className="ProfilePicThumb">{profileImage}</div>
           <Card.Subtitle className="card-Subtitle">
             <div className="MiniMemberInfo">
               <div className="MemberName">

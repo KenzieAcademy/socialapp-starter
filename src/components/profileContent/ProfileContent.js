@@ -6,6 +6,16 @@ import "../../components/profileContent/ProfileContent.css";
 import MiniProfileIMG from "../../assets/images/Placeholder_Image.gif";
 import Form from "react-bootstrap/Form";
 
+const styles = {
+  paperContainer: {
+    height: 120,
+    width: 120,
+    maxwidth: 20,
+    maxheight: 20,
+    backgroundImage: `url(${"static/src/img/main.jpg"})`,
+  },
+};
+
 const ProfileContent = (props) => {
   let joinedOn = new Date(props.user.createdAt);
   let picture = MiniProfileIMG;
