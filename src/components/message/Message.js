@@ -56,7 +56,7 @@ class Message extends React.Component {
       <li className="Message">
         <Route>
           <Link to="/SearchUser">
-            <img
+            <img style={{ width: "60px", height: "60px", borderRadius: "50px", listStyleType: "none" }}
               className="userprofile"
               alt="user-pic"
               src={this.state.picture}
@@ -64,16 +64,15 @@ class Message extends React.Component {
           </Link>
         </Route>
         {/* <img className="userprofile" alt="user-pic" src={this.state.pic} /> */}
-        At {this.props.createdAt},{this.props.username} posted:
-        {console.log(this.prop)}
+    At { this.props.createdAt}, { this.props.username} posted:
+        { console.log(this.prop)}
         <br />
-        {this.props.text}
+        { this.props.text}
         <br />
-        <div className="like-counter">Likes {this.props.likes.length}</div>
-        {/* <form> */}
-        <button onClick={this.handleLike}>Button</button>
+        <div className="like-counter">😊{this.props.likes.length}</div> {/* <form> */}
+        <button onClick={this.handleLike}>👍</button>
         {/* </form> */}
-      </li>
+      </li >
     );
   }
 }

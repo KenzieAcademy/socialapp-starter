@@ -21,44 +21,46 @@ class SideBar extends React.Component {
         <Menu defaultSelectedKeys={["Dashboard"]} mode="inline">
           <Menu.Item key="Dashboard">
             <Route>
-              <Link to="/"> Profile</Link>
+              <Link to="/"> 🎭  Profile</Link>
             </Route>
           </Menu.Item>
           <SubMenu
             title={
               <span>
                 <Icon type="mail" />
-                <span>User Information</span>
+                <span>👇 User Info</span>
               </span>
             }
           >
             <Menu.ItemGroup key="AboutUS" title="About Me">
               <Menu.Item key="location1">
-                <Route>
-                  <Link to="/messagefeed"> MessageFeed</Link>
+                <Route >
+                  <Link to="/messagefeed">📩  MessageFeed</Link>
                 </Route>
               </Menu.Item>
               <Menu.Item key="location2">
                 <Route>
-                  <Link to="/createmessage">Create Message</Link>
+                  <Link to="/createmessage">✍ Create Message</Link>
                 </Route>
               </Menu.Item>
               <SubMenu
                 title={
                   <span>
                     <Icon type="mail1" />
-                    <span>More Info</span>
+                    <span> 👇 More Info</span>
                   </span>
                 }
               >
                 <Menu.ItemGroup key="AboutUS1" title="More">
                   <Menu.Item key="location5">
-                    <Button>You Want</Button>
+                    <Link to="/Delete" onClick={this.handleChange}>
+                      {" "}
+                      Delete Profile</Link>
                   </Menu.Item>
 
                   <Menu.Item key="location3">
                     <Route>
-                      <Link to="/editprofile">Edit Profile</Link>
+                      <Link to="/editprofile"> 🎭 Profile</Link>
                     </Route>
                   </Menu.Item>
                 </Menu.ItemGroup>
@@ -66,7 +68,7 @@ class SideBar extends React.Component {
 
               <Menu.Item key="location4">
                 <Route>
-                  <Link to="/searchuser"> Search User</Link>
+                  <Link to="/searchuser">⌛ Search User</Link>
                 </Route>
               </Menu.Item>
               <Menu.Item key="DeleteUser">
@@ -74,12 +76,9 @@ class SideBar extends React.Component {
                   <Link to="/deleteprofile">Delete profile</Link>
                 </Route>
               </Menu.Item>
-              <Menu.Item
-                id="menu-links"
-                style={{ backgroundColor: "red", borderRadius: "90px" }}
-              >
+              <Menu.Item id="menu-links" style={{ backgroundColor: "red", borderRadius: "50px" }}>
                 <Link to="/" onClick={this.handleLogout}>
-                  <SettingOutlined /> Logout
+                  <SettingOutlined /> LOGOUT
                 </Link>
               </Menu.Item>
               <div className="Menu">
