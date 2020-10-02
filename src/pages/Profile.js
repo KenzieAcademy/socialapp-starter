@@ -44,8 +44,8 @@ class Profile extends React.Component {
     return (
       <div className="Profile">
         {/* <Menu isAuthenticated={this.props.isAuthenticated} /> */}
-        <h2 style={{ color: "darkblue" }}>Welcome {this.state.displayname}</h2>
-        <h1 style={{ color: "darkblue" }}>Profile</h1>
+        <h1 style={{ color: "darkblue" }}>Welcome {this.state.displayname}</h1>
+        <h2 style={{ color: "darkblue" }}>Profile</h2>
         <p> {this.state.aboutme}</p>
         <img
           src={profilepic}
@@ -54,7 +54,6 @@ class Profile extends React.Component {
           width={100}
           class="center"
         />
-        <input type="file" onChange={this.profilePicHandler} />
       </div>
     );
   }

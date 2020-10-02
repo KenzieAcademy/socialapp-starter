@@ -23,18 +23,19 @@ class Message extends React.Component {
     // const client = new DataService();
     const username = this.client.getUsername();
     if (this.props.likes.some((like) => like.username === username)) return;
-    this.client
-      .postLike(this.props.id)
-      .then((like) => {
-        // console.log("liked");
-        this.setState((newState) => ({ likeCount: newState.likeCount + 1 }));
-      })
-      .catch(() => {
-        alert("Already liked");
-      });
+    this.client.postLike(this.props.id).then((like) => {
+      // console.log("liked");
+      this.setState((newState) => ({ likeCount: newState.likeCount + 1 }));
+    });
+    // .catch(() => {
+    //   alert("Already liked");
+    // });
   };
 
+<<<<<<< HEAD
+=======
   getpic(username) { }
+>>>>>>> 28a39248ef0c39d4aa1db4d9bc8f148c69e71493
   componentDidMount() {
     const usrnme = this.props.username;
     // console.log(usrnme);
@@ -46,19 +47,13 @@ class Message extends React.Component {
         this.setState({
           pic: result.data,
         });
-        // const client = new DataService();
-        //   .getPicture(username)
-        //   .then((response) => this.setState({ picture: response.data.picture }));
       })
       .catch(this.setState({ pic: profilepic }));
   }
+
   render() {
     return (
       <li className="Message">
-        {/* {console.log(this.props)} */}
-        {/* {console.log(this.state.pic)} */}
-        {/* {getpic()}({this.state.pic}) =>{" "}
-        <img src={`data:image/jpeg;base64,${this.state.pic}`} /> */}
         <Route>
           <Link to="/SearchUser">
             <img className="userprofile" alt="user-pic" src={this.state.pic} />
