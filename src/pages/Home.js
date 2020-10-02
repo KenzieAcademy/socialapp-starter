@@ -3,6 +3,8 @@ import LoginForm from "../components/loginForm/LoginForm";
 import Menu from "../components/menu/Menu";
 import { userIsNotAuthenticated } from "../redux/HOCs";
 
+import RegisterButton from "../components/registerbutton/RegisterButton";
+
 class Home extends React.Component {
   render() {
     return (
@@ -10,6 +12,8 @@ class Home extends React.Component {
         <Menu />
         <h2>Your favorite microblogging platform</h2>
         <LoginForm />
+        <br></br>
+        <RegisterButton />
       </div>
     );
   }
