@@ -7,7 +7,7 @@ class MessageList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      message: [],
+      messages: [],
       isSubmitted: false,
       refresh: false,
     };

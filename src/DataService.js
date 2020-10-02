@@ -22,6 +22,10 @@ class DataService {
     return this.client.get(this.url + "messages/" + messageId);
   }
 
+  getUserList() {
+    return this.client.get(this.url + "users");
+  }
+
   deleteMessage(messageId) {
     let loginData = JSON.parse(localStorage.getItem("login"));
     return this.client.delete(this.url + "messages/" + messageId, {

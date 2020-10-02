@@ -3,9 +3,10 @@ import Spinner from "react-spinkit";
 import "./RegistrationForm.css";
 import DataService from "../../DataService";
 import { Button } from "antd";
+import { Link } from "react-router-dom";
 class RegistrationForm extends React.Component {
   state = {
-    ModalText: 'Content of the modal',
+    ModalText: "Content of the modal",
     visible: false,
     confirmLoading: false,
   };
@@ -13,10 +14,8 @@ class RegistrationForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      
-      username: "",
-      password: "",
-      displayName: "",
+      userData: { username: "", password: "", displayName: "" },
+      isSubmitted: false,
     };
 
     this.client = new DataService();
@@ -24,17 +23,30 @@ class RegistrationForm extends React.Component {
 
   handleRegistration = (e) => {
     e.preventDefault();
-    this.client.registerUser(this.state).then((result) => {
+    this.client.registerUser(this.state.userData).then((result) => {
       console.log(result.data);
+      this.setState({ isSubmitted: true });
     });
   };
 
   handleChange = (e) => {
-    this.setState({ [e.target.name]: e.target.value });
+    let userData = this.state.userData;
+    userData[e.target.name] = e.target.value;
+    this.setState({ userData });
   };
 
   render() {
     const { loading, error } = this.props;
+    if (this.state.isSubmitted) {
+      return (
+        <div>
+          user is created return to{" "}
+          <Link to="/">
+            <button>Login</button>
+          </Link>
+        </div>
+      );
+    }
     return (
       <div className="RegistrationForm">
         <form id="Registration-form" onSubmit={this.handleRegistration}>
