@@ -2,7 +2,7 @@ import React from "react";
 import DataService from "../../dataService";
 import { Link, Route } from "react-router-dom";
 import profilepic from "../defualtpicture/freeiconlibrary.jpg";
-import "./Message.css"
+import "./Message.css";
 class Message extends React.Component {
   constructor(props) {
     super(props);
@@ -11,7 +11,7 @@ class Message extends React.Component {
     this.client = new DataService();
     this.state = {
       likeCount: this.props.likes.length,
-      pic: "",
+      picture: null,
       // username: this.props.username,
       // picture: "",
     };
@@ -32,10 +32,6 @@ class Message extends React.Component {
     // });
   };
 
-<<<<<<< HEAD
-=======
-  getpic(username) { }
->>>>>>> 28a39248ef0c39d4aa1db4d9bc8f148c69e71493
   componentDidMount() {
     const usrnme = this.props.username;
     // console.log(usrnme);
@@ -45,10 +41,14 @@ class Message extends React.Component {
       .then((result) => {
         console.log(result);
         this.setState({
-          pic: result.data,
+          picture: `https://socialapp-api.herokuapp.com/users/${usrnme}/picture`,
         });
       })
-      .catch(this.setState({ pic: profilepic }));
+      .catch((result) => {
+        this.setState({
+          picture: profilepic,
+        });
+      });
   }
 
   render() {
@@ -56,7 +56,11 @@ class Message extends React.Component {
       <li className="Message">
         <Route>
           <Link to="/SearchUser">
-            <img className="userprofile" alt="user-pic" src={this.state.pic} />
+            <img
+              className="userprofile"
+              alt="user-pic"
+              src={this.state.picture}
+            />
           </Link>
         </Route>
         {/* <img className="userprofile" alt="user-pic" src={this.state.pic} /> */}

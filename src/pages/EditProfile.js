@@ -110,13 +110,16 @@ class EditProfile extends React.Component {
           />
           <br></br>
           <button>Post</button>
+          <br></br>
           <img
+            className="Current profilepic"
             src={`https://socialapp-api.herokuapp.com/users/${this.client.getUsername()}/picture`}
             alt="profile pic"
-            height={100}
-            width={100}
+            height={150}
+            width={150}
             class="center"
           />
+          <br></br>
           <div className="Fileupload">
             <input
               type="file"
@@ -125,11 +128,11 @@ class EditProfile extends React.Component {
               accept="images/jpeg,images/png"
               capture="user"
             />
-            <br></br>
+            {/* <br></br> */}
             <button onClick={this.handleUpload}>Upload</button>
 
             <div>
-              <img alt="user" src={this.state.imageURL} width={200} />
+              {/* <img alt="user" src={this.state.imageURL} width={200} /> */}
             </div>
           </div>
           ;

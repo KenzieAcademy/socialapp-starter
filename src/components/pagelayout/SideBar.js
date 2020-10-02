@@ -34,7 +34,7 @@ class SideBar extends React.Component {
           >
             <Menu.ItemGroup key="AboutUS" title="About Me">
               <Menu.Item key="location1">
-                <Route >
+                <Route>
                   <Link to="/messagefeed"> MessageFeed</Link>
                 </Route>
               </Menu.Item>
@@ -47,7 +47,7 @@ class SideBar extends React.Component {
                 title={
                   <span>
                     <Icon type="mail1" />
-                    <span>More Infor</span>
+                    <span>More Info</span>
                   </span>
                 }
               >
@@ -58,7 +58,7 @@ class SideBar extends React.Component {
 
                   <Menu.Item key="location3">
                     <Route>
-                      <Link to="/editprofile">Profile</Link>
+                      <Link to="/editprofile">Edit Profile</Link>
                     </Route>
                   </Menu.Item>
                 </Menu.ItemGroup>
@@ -74,7 +74,10 @@ class SideBar extends React.Component {
                   <Link to="/deleteprofile">Delete profile</Link>
                 </Route>
               </Menu.Item>
-              <Menu.Item id="menu-links" style={{ backgroundColor: "red", borderRadius: "90px" }}>
+              <Menu.Item
+                id="menu-links"
+                style={{ backgroundColor: "red", borderRadius: "90px" }}
+              >
                 <Link to="/" onClick={this.handleLogout}>
                   <SettingOutlined /> Logout
                 </Link>
@@ -89,7 +92,6 @@ class SideBar extends React.Component {
                 )}
               </div>
             </Menu.ItemGroup>
-
           </SubMenu>
         </Menu>
       </Sider>

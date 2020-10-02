@@ -32,14 +32,10 @@ class MessageFeed extends React.Component {
         </div>
       );
     }
+
     return (
-      <div className="messagefeed" style={{ fontFamily: "sans-serif" }}>
-        {/* <Menu isAuthenticated={this.props.isAuthenticated} /> */}
-        {/* messages go here test */}
       <div className="messagefeed">
         <CreateMessage />
-        {/* <Menu isAuthenticated={this.props.isAuthenticated} /> */}
-        {/* messages go here test */}
         <ul>
           {this.state.messages.map((messageObject) => (
             <Message key={messageObject.id} {...messageObject} />
