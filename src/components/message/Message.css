@@ -3,23 +3,21 @@
 }
 div {
   padding: 5px;
+  background-color: #94b1af;
 }
 .avatar {
   display: block;
   margin-right: auto;
 }
 .message-feed {
-  background-image: linear-gradient(
-    to left,
-    rgba(255, 0, 0, 0),
-    rgb(199, 79, 255)
-  );
+  /* background-image: linear-gradient(to left, rgba(255, 0, 0, 0), #274b69); */
   text-align: center;
   list-style: none;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  border: solid black 2px;
+  color: #e6e6ea;
+
   border-radius: 25px;
-  background-color: whitesmoke;
+  background-color: #204d55;
   padding: 15px;
   margin: 15px;
 }
@@ -27,9 +25,16 @@ div {
   text-align: center;
   width: 45px;
   border-radius: 15px;
+  color: #0a3051;
 }
 .delete-button {
   text-align: center;
   justify-content: flex-start;
   width: 130px;
+}
+.username {
+  font-size: large;
+}
+.date-created {
+  font-size: smaller;
 }

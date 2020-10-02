@@ -18,7 +18,6 @@ class Menu extends React.Component {
             <Layout.Header>
               <Menu2 theme="dark" mode="horizontal">
                 <Menu2.Item className="home-button">
-                  {" "}
                   <Link to="/">Home</Link>
                 </Menu2.Item>
                 <Menu2.Item>
