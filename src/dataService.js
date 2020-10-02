@@ -139,9 +139,5 @@ class DataService {
     };
     return this.client.put(url, formData, config);
   }
-  /*Dmg picture
-
-
-  */
 }
 export default DataService;

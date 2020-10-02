@@ -15,13 +15,19 @@ class MessageFeed extends React.Component {
   state = { messages: [] };
 
   componentDidMount() {
-    // const test = this.client.getMessages();
-    // console.log(test);
-
-    this.client
-      .getMessages()
-      .then((response) => this.setState({ messages: response.data.messages }));
+    this.interval = setInterval(() => {
+      this.client.getMessages().then((response) =>
+        this.setState({
+          messages: response.data.messages,
+        })
+      );
+    }, 5000);
   }
+
+  // this.client
+  // .getMessages()
+  // .then((response) => this.setState({ messages: response.data.messages }));
+  //}
 
   // setInterval(componentDidMount(), 5000);
   render() {
