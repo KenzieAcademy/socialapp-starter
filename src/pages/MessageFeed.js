@@ -42,12 +42,6 @@ class MessageFeed extends React.Component {
       );
   }
 
-  handleSelectUser = (e) => {
-    this.api
-      .getUser(e.target.name)
-      .then((response) => this.setState({ selectedUser: response.data.user }));
-  };
-
   handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };
@@ -58,7 +52,7 @@ class MessageFeed extends React.Component {
     setTimeout(() => {
       this.retrieveMessages();
       document.body.click();
-    }, 750);
+    }, 500);
   };
 
   render() {
@@ -69,16 +63,9 @@ class MessageFeed extends React.Component {
         </div>
       );
     }
-    let popupProfile = <div></div>;
-    if (this.state.selectedUser !== "") {
-      popupProfile = <MiniProfile user={this.state.selectedUser} />;
-    }
     return (
       <div className="Body">
-        <div className="leftColumn">
-          <MiniProfile user={this.state.currentUser} />
-        </div>
-        <div className="rightColumn">{popupProfile}</div>
+        <MiniProfile user={this.state.currentUser} />
         <div className="MessageList">
           <Menu isAuthenticated={this.props.isAuthenticated} />
           <div className="MessageHeader">Message Feed</div>
@@ -96,13 +83,7 @@ class MessageFeed extends React.Component {
           <div className="TheFeed">
             <ul>
               {this.state.messages.map((messageObject) => {
-                return (
-                  <Message
-                    {...messageObject}
-                    selectUserToDisplay={this.handleSelectUser}
-                    api={this.api}
-                  />
-                );
+                return <Message {...messageObject} />;
               })}
             </ul>
           </div>

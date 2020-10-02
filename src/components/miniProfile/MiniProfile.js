@@ -1,8 +1,12 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
+<<<<<<< HEAD
 import "../miniProfile/MiniProfile.css";
 import MiniProfileIMG from "../../assets/images/Placeholder_Image_Thumb.gif";
 import { Link } from "react-router-dom";
+=======
+import MiniProfileIMG from "../../assets/images/Placeholder_Image.gif";
+>>>>>>> parent of 7b5762f... Merge pull request #60 from BenLynch87/Ben
 
 const styles = {
   paperContainer: {
@@ -21,32 +25,23 @@ const MiniProfile = (props) => {
     image = `https://socialapp-api.herokuapp.com${props.user.pictureLocation}`;
   }
 
-  let profileImage = (
-    <img
-      alt="profile"
-      src={image}
-      style={styles.paperContainer}
-      class="btn btn-primary"
-    />
-  );
-  if (props.user.username === localStorage.getItem("user")) {
-    profileImage = (
-      <Link to={"profile/" + localStorage.getItem("user")}>
-        <img
-          alt="profile"
-          src={image}
-          style={styles.paperContainer}
-          class="btn btn-primary"
-        />
-      </Link>
-    );
-  }
-
   return (
+<<<<<<< HEAD
     <div className="MiniProfileBody">
       <Card className="Miniprofile">
         <Card-Body className="MiniProfCardBody">
           <div className="ProfilePicThumb">{profileImage}</div>
+=======
+    <div className="ProfileCard">
+      <Card class="card" className="Miniprofile">
+        <Card-Body class="card-body">
+          <img
+            alt="profile"
+            src={image}
+            style={styles.paperContainer}
+            class="btn btn-primary"
+          />
+>>>>>>> parent of 7b5762f... Merge pull request #60 from BenLynch87/Ben
           <Card.Subtitle className="card-Subtitle">
             <div className="MiniMemberInfo">
               <div className="MemberName">
