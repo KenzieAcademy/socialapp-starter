@@ -92,8 +92,12 @@ class DataService {
       headers: { Authorization: `Bearer ${loginData.token}` },
     });
   }
-  userUpdate(userId) {
-    return this.client.patch(this.url + "/users/" + userId);
+  userUpdate(userData) {
+    const loginData = JSON.parse(localStorage.getItem("login")).result;
+    const username = loginData.username
+    return this.client.patch(this.url + "/users/" + username, userData, {
+      headers: { Authorization: `Bearer ${loginData.token}` },
+    });
   }
   getUser(username) {
     console.log(username);

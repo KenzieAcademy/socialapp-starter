@@ -34,6 +34,7 @@ class MessageFeed extends Component {
       </div>
     );
   }
+
 }
 
 export default MessageFeed;
