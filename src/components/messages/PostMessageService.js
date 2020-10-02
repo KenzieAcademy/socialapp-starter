@@ -1,5 +1,7 @@
 import axios from "axios";
 
+
+
 class PostMessageService {
   constructor(
     url = "https://socialapp-api.herokuapp.com",
@@ -14,7 +16,28 @@ class PostMessageService {
     const { token } = loginData.result;
     return token;
   }
+  getMessageID(){
+    const id = (this.props.id)
+    return id
+  }
 
+  postLike(props){
+    const config = {
+      headers: {Authorization: `Bearer ${this.getToken()}`}
+    }
+    const messageID = {
+      messageID : this.getMessageID()
+    }
+    return this.client.post(
+      this.url + "/likes",
+      config,
+      messageID
+      
+    )
+  
+}
+  
+  
   postMessage(text) {
     const config = {
         headers: {Authorization: `Bearer ${this.getToken()}`, 
