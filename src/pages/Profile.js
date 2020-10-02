@@ -15,9 +15,7 @@ class Profile extends React.Component {
         <UploadPicture />
         <div></div>
         <br />
-        <Button type="primary" danger onClick={this.handleDelete}>
-          Delete User
-        </Button>
+
         <UpdateUser />
       </div>
     );
