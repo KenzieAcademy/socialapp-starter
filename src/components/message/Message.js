@@ -62,7 +62,7 @@ class Message extends React.Component {
         <img src={`data:image/jpeg;base64,${this.state.pic}`} /> */}
         <Route>
           <Link to="/SearchUser">
-            <img className="userprofile" alt="user-pic" src={this.state.pic} />
+            <img style={{ width: "60px", height: "60px", borderImage: 'repeat' }} className="userprofile" alt="user-pic" src={this.state.pic} />
           </Link>
         </Route>
         {/* <img className="userprofile" alt="user-pic" src={this.state.pic} /> */}
@@ -71,9 +71,8 @@ class Message extends React.Component {
         <br />
         {this.props.text}
         <br />
-        <div className="like-counter">Likes {this.props.likes.length}</div>
-        {/* <form> */}
-        <button onClick={this.handleLike}>Button</button>
+        <div className="like-counter">😊{this.props.likes.length}</div> {/* <form> */}
+        <button onClick={this.handleLike}>👍</button>
         {/* </form> */}
       </li>
     );

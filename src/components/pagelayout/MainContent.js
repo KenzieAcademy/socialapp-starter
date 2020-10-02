@@ -17,7 +17,7 @@ class MainContent extends React.Component {
   render() {
     return (
       <Layout>
-        <Content style={{ padding: "0 35px" }}>
+        <Content style={{ padding: "0px 35px" }}>
           <Breadcrumb style={{ margin: "10px 0" }}>
             <Breadcrumb.Item>Dashboard</Breadcrumb.Item>
           </Breadcrumb>
@@ -38,7 +38,7 @@ class MainContent extends React.Component {
               backgroundRepeat: "no-repeat",
             }}
           >
-            <Switch style={{ backgroundColor: "red" }}>
+            <Switch>
               <Route exact path="/messagefeed" component={MessageFeed} />
               <Route exact path="/" component={Home} />
               <Route exact path="/profile/:username" component={Profile} />

@@ -1,6 +1,8 @@
 import React from "react";
 import DataService from "../dataService";
 import { userIsAuthenticated } from "../redux/HOCs";
+// import './MessageFeed.css'
+
 
 
 // import { message, Result } from "antd";
@@ -26,12 +28,13 @@ class MessageFeed extends React.Component {
     if (this.state.messages.length === 0) {
       return (
         <div className="loading">
-          <h3>loading</h3>
+          <h3 >loading</h3>
+
         </div>
       );
     }
     return (
-      <div className="messagefeed" style={{ fontFamily: "sans-serif" }}>
+      <div style={{ fontSize: "25px", fontStyle: "inherit", fontFamily: "revert" }} className="messagefeed" >
         {/* <Menu isAuthenticated={this.props.isAuthenticated} /> */}
         {/* messages go here test */}
 
