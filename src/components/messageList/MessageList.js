@@ -46,7 +46,23 @@ class MessageList extends React.Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
+  poller() {
+    this.client.getMessageList().then((response) => {
+      if (this.state.messages.length !== response.data.messages.length) {
+        this.setState({ messages: response.data.messages });
+      }
+    });
+  }
+
+  handlePoll = () => {
+    setInterval(this.poller, 1000);
+  };
+
   render() {
+    if (this.state.messages === []) {
+      return;
+    }
+    console.log(this.state.messages);
     return (
       <div className="messageList">
         <PostMessage
