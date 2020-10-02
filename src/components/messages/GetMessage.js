@@ -1,5 +1,8 @@
 import React from "react";
 import MessageService from "./MessageService"
+import { Button } from '@material-ui/core';
+import Container from '@material-ui/core/Container';
+
 
 class GetMessage extends React.Component {
     constructor(props) {
@@ -22,6 +25,7 @@ class GetMessage extends React.Component {
     render() { 
         return (
             <div className="searchMessage">
+                
                 <form id="search-message" onSubmit={this.handleSearch}>
                 <label htmlFor="id">Search For Post:</label>
                 <input 
@@ -29,8 +33,9 @@ class GetMessage extends React.Component {
                 name="id"
                 onChange={this.handleChange}
                 />
-                <button type="submit">Search!</button>
+                <Button color="secondary" type="submit">Search!</Button>
                 </form>
+                
             </div>
         );
     }

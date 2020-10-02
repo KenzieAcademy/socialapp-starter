@@ -1,6 +1,9 @@
 import React from "react"
 import { withAsyncAction } from "../../redux/HOCs"
 import MessageService from "./MessageService"
+import { Button } from '@material-ui/core';
+import Container from '@material-ui/core/Container';
+
 
 class PostMessage extends React.Component {
     constructor(props) {
@@ -27,11 +30,13 @@ class PostMessage extends React.Component {
     render() {
         return (
             <div className="postMessage">
+                <Container maxWidth = "sm">
                 <form id="text" onSubmit={this.handlePost}>
                     <label htmlFor="text">Post Message:</label>
                     <input type="text" name="text" onChange={this.handleChange}/>
-                    <button type="submit">Post!</button>
+                    <Button color= "secondary" type="submit">Post!</Button>
                 </form>
+                </Container>
             </div>
         )
     }

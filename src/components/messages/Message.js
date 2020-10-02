@@ -1,36 +1,38 @@
 import React from 'react';
-import PostMessageService from './PostMessageService'
+import MessageService from './MessageService'
+import { Button } from '@material-ui/core';
+import Container from '@material-ui/core/Container';
+
 
 class Message extends React.Component {
-    constructor(props){
-        super(props)
     
-    this.state = {likeCount: this.props.likes.length}
-    this.client = new PostMessageService ()
-    }
+        state = {likeCount: this.props.likes.length}
     
     handleLike = () => {
-        const messageID = this.props.id
-        console.log(messageID)
-        // this.client.postLike(messageID)
-        // this.setState(latestState => ({likeCount: latestState.likeCount + 1}))
+        const messageService = new MessageService()
+        const username = messageService.getUsername()
+        if (this.props.likes.some(like => like.username === username))return;
+        messageService.postLike(this.props.id)
+        .then
+        (this.setState(latestState => ({likeCount: latestState.likeCount + 1})))
     }
-    
     render() { 
         return ( 
-            
             <div>
+                <Container maxWidth = "sm">
         <li className="messageList">
         at {new Date(this.props.createdAt).toDateString()}
         {this.props.username}
         <div className="textDiv">{this.props.text}</div>
         <div className="messageId">PostId: {this.props.id}</div>
-        <div className="like-Thumb">Likes: {this.state.likeThumb}</div>
+        <div className="like-count">Likes: {this.state.likeCount}</div>
         <button onClick={this.handleLike}>
             <img className="image" src="https://opticalprism.ca/wp-content/uploads/2019/09/likes.png" alt="100" width="25px" height="25px" />
              
         </button>
-        </li></div>
+        </li>
+        </Container>
+        </div>
          );
     }
 }
