@@ -1,0 +1,17 @@
+.ChooseFile {
+    position: relative;
+    margin: 0px auto;
+    bottom: -190px;
+  }
+  
+  .FileUploader {
+    position: relative;
+    margin: 0px auto;
+    bottom: -50px;
+  }
+  
+  h6 {
+    position: relative;
+    margin: 0px auto;
+    bottom: -180px;
+  }

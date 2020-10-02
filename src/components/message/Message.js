@@ -1,7 +1,5 @@
 import React from "react";
-import { Button, Card } from "react-bootstrap";
-import "./Message.css"
-
+import {Card, Button} from "react-bootstrap"
 class Message extends React.Component {
   render() {
     return (

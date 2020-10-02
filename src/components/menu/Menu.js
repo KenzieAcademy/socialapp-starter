@@ -17,7 +17,11 @@ class Menu extends React.Component {
         <div id="menu-links">
           <Link to="/profile/:username">Profile</Link>
           <Link to="/messagefeed">Message Feed</Link>
-          <Link to="/" onClick = {this.handleLogout}> Logout</Link>
+          
+          <Link to="/" onClick={this.handleLogout}>
+            Logout
+            </Link>
+
         </div>
 
       </div>

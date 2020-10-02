@@ -1,10 +1,11 @@
-import React from "react";
+import React, { Component } from "react";
 import Spinner from "react-spinkit";
-import "./RegistrationForm.css";
-import Service from "../../services/Service";
 import { Container, Form, Button } from "react-bootstrap";
+import CreateUser from "../../APIService";
+import { withAsyncAction } from "../../redux/HOCs";
+import "./RegisterForm.css";
 
-class RegistrationForm extends React.Component {
+class RegisterForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -12,18 +13,23 @@ class RegistrationForm extends React.Component {
       password: "",
       displayName: "",
     };
-    this.client = new Service();
+
+    this.client = new CreateUser();
   }
 
-  handleRegistration = (e) => {
-    e.preventDefault();
-    this.client.registerUser(this.state).then((result) => {
-      console.log(result.data);
-    });
+  handleChange = (event) => {
+    this.setState({ [event.target.name]: event.target.value });
   };
 
-  handleChange = (e) => {
-    this.setState({ [e.target.name]: e.target.value });
+  // On Submit, Register And Log In New User
+  handleRegister = (event) => {
+    event.preventDefault();
+    this.client.registerUser(this.state).then((response) => {
+      this.props.login({
+        username: this.state.username,
+        password: this.state.password,
+      });
+    });
   };
 
   render() {
@@ -69,5 +75,4 @@ class RegistrationForm extends React.Component {
     );
   }
 }
-
-export default RegistrationForm;
+export default withAsyncAction("auth", "login")(RegisterForm);
