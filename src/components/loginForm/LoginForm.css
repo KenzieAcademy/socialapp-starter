@@ -1,9 +1,12 @@
-*{
+/* *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-#login-form {
+   */
+
+#login-form  {
+
   width: 320px;
   height: 300px;
   position: relative;

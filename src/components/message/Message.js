@@ -2,7 +2,7 @@ import React from "react";
 import DataService from "../../dataService";
 import { Link, Route } from "react-router-dom";
 import profilepic from "../defualtpicture/freeiconlibrary.jpg";
-
+import "./Message.css"
 class Message extends React.Component {
   constructor(props) {
     super(props);
@@ -32,6 +32,10 @@ class Message extends React.Component {
     // });
   };
 
+<<<<<<< HEAD
+=======
+  getpic(username) { }
+>>>>>>> 28a39248ef0c39d4aa1db4d9bc8f148c69e71493
   componentDidMount() {
     const usrnme = this.props.username;
     // console.log(usrnme);
