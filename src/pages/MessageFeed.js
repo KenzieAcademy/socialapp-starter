@@ -35,7 +35,11 @@ class MessageFeed extends React.Component {
   retrieveMessages() {
     this.api
       .getMessages()
-      .then((response) => this.setState({ messages: response.data.messages }));
+      .then((response) =>
+        this.setState({ messages: response.data.messages }, () =>
+          console.log(response.data.messages)
+        )
+      );
   }
 
   handleSelectUser = (e) => {

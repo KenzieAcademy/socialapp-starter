@@ -11,7 +11,29 @@ class Message extends React.Component {
 
     this.state = {
       likes: this.props.likes.length,
+      user: this.props.username,
+      displayName: "loading",
+      profilePic: ProfilePic,
     };
+  }
+  componentDidMount() {
+    this.updateUser();
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.username !== this.props.username) {
+      this.updateUser();
+    }
+  }
+
+  updateUser() {
+    this.props.api.getUser(this.props.username).then((response) =>
+      this.setState({
+        user: response.data.user.username,
+        displayName: response.data.user.displayName,
+        profilePic: response.data.user.pictureLocation,
+      })
+    );
   }
 
   LikeFunction = () => {
@@ -24,13 +46,9 @@ class Message extends React.Component {
   render() {
     let postedAt = new Date(this.props.createdAt);
     postedAt = postedAt.toUTCString();
-    let user = {};
-    this.props.api
-      .getUser(this.props.username)
-      .then((response) => (user = response.data.user));
     let picture = ProfilePic;
-    if (user.pictureLocation !== undefined && user.pictureLocation !== null) {
-      picture = `https://socialapp-api.herokuapp.com${user.pictureLocation}`;
+    if (this.state.profilePic !== null) {
+      picture = `https://socialapp-api.herokuapp.com${this.state.profilePic}`;
     }
 
     return (
@@ -45,7 +63,7 @@ class Message extends React.Component {
               onClick={this.props.selectUserToDisplay}
             />
             <div className="MemberTitle">
-              <Card.Title> Member: {user.displayName}</Card.Title>
+              <Card.Title> Member: {this.state.displayName}</Card.Title>
             </div>
             <div className="PostedTitle">
               <Card.Subtitle className="mb-2 text-muted">
