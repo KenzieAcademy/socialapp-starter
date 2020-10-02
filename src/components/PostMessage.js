@@ -1,6 +1,6 @@
 import React from "react"
 import { userIsAuthenticated } from "../redux/HOCs"
-// import PostMessageService from "../services/PostMessageService"
+import PostMessageService from "../services/PostMessageService"
 
 
 class PostMessage extends React.Component {
@@ -21,6 +21,7 @@ class PostMessage extends React.Component {
                         />
 
                         <button type="submit">Post Message</button>
+                      
                     </form>
                 </div>
             </div>

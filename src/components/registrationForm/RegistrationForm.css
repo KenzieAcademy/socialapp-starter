@@ -1,0 +1,15 @@
+#registration-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 20em;
+  max-width: 500px;
+  margin: auto;
+}
+/* greg's css */
+/* #register-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 20em;
+  max-width: 500px;
+  margin: auto;
+} */

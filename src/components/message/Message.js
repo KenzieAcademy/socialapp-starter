@@ -1,5 +1,5 @@
 import React from "react";
-import {Card, Button} from "react-bootstrap"
+import { Card, Button } from "react-bootstrap"
 import LikeService from "../../services/LikeService";
 import DeleteMessageService from "../../services/DeleteMessageService";
 
@@ -28,10 +28,10 @@ class Message extends React.Component {
   render() {
     let deleteButton;
     if (this.props.username === this.client.getUserName()) {
-      deleteButton = <button onClick={this.handleDelete}>delete</button>;
+      deleteButton = <Button onClick={this.handleDelete}>delete</Button>;
     }
     return (
-      <div className = "card" >
+      <div className="card" >
         <Card bg="secondary" style={{ width: "30rem" }}>
           <Card.Body>
             <Card.Header> {this.props.username} </Card.Header>
@@ -43,6 +43,7 @@ class Message extends React.Component {
             <Button className="like-button" variant="primary">
               Like
             </Button>
+            {deleteButton}
           </Card.Body>
         </Card>
       </div>

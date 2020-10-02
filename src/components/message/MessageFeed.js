@@ -1,27 +1,20 @@
 import React from "react";
 import Menu from "../components/menu/Menu";
-import DataService from "../services/DataService";
+import DataService from "../../services/DataService";
 import Message from "../components/message/Message";
-import PostMessage from "../components/postMessage/PostMessageForm"
-import GetUsersService from "../services/GetUsersService"
-import "./MessageList.css";
+import PostMessage from "../components/PostMessage";
 
-
-class MessageList extends React.Component {
+class MessageFeed extends React.Component {
     client = new DataService();
 
     state = {
-        message: [], users: [],
+        message: [],
         text: "",
     };
 
     componentDidMount() {
         this.client.getAllMessages().then((response) => {
             this.setState({ message: response.data.messages });
-        });
-        new GetUsersService().getUsers().then((response) => {
-            this.setState({ users: response.data.users });
-            console.log(response.data);
         });
     }
 
@@ -38,6 +31,17 @@ class MessageList extends React.Component {
             });
         console.log("Post Button Pressed");
     };
+    handleDeleteMesssage = (messageId) => {
+        this.client.deleteMessage(messageId).then((response) => {
+          console.log(response.data);
+          this.client
+            .getMessageList()
+            .then((response) =>
+              this.setState({ messages: response.data.messages })
+            );
+        });
+      };
+
 
     handleChange = (event) => {
         this.setState({
@@ -46,11 +50,10 @@ class MessageList extends React.Component {
     };
 
     render() {
-        if (this.state.message.length === 0 || this.state.users.length === 0) {
+        if (this.state.message.length === 0) {
             return (
                 <div className="MessageList">
                     <Menu />
-
                     <h1>MessageList</h1>
                     <h3>LOADING...</h3>
                 </div>
@@ -62,31 +65,17 @@ class MessageList extends React.Component {
                 <Menu />
                 <h1>Message Feed</h1>
                 <PostMessage handleChange={this.handleChange} handleMessagePost={this.handleMessagePost} text={this.state.text} />
-                <div className="messageContainer">
-                    <ul className="messageList">
-                        {this.state.message.map((messageObject) => (
-                            <Message key={messageObject.id} {...messageObject} />
-                        ))}
-                    </ul>
 
-
-                    <ul className="usersList">
-
-                        <h1>Follow These Users</h1>
-
-                        {this.state.users.map((userObject) => (
-                            <li key={userObject.id}>{userObject.username}</li>
-                        ))}
-
-                    </ul>
-                </div>
+                <ul>
+                    {this.state.message.map((messageObject) => (
+                        <Message 
+                        handleDeleteMesssage={this.handleDeleteMesssage}
+                        key={messageObject.id} {...messageObject} />
+                    ))}
+                </ul>
             </div>
-
         );
     }
-
-
 }
 
-
-export default MessageList;
+export default MessageFeed;
