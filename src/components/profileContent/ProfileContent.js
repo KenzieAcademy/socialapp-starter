@@ -19,8 +19,8 @@ const styles = {
 const ProfileContent = (props) => {
   let joinedOn = new Date(props.user.createdAt);
   let picture = MiniProfileIMG;
-  if (props.pic !== null) {
-    picture = props.pic;
+  if (props.user.pictureLocation !== null) {
+    picture = `https://socialapp-api.herokuapp.com${props.user.pictureLocation}`;
   }
 
   return (

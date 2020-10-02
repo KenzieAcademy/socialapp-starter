@@ -112,7 +112,6 @@ class MessageFeed extends React.Component {
                   <Message
                     {...messageObject}
                     selectUserToDisplay={this.handleSelectUser}
-                    api={this.api}
                   />
                 );
               })}

@@ -2,12 +2,13 @@ import React from "react";
 import Card from "react-bootstrap/Card";
 import "../message/Message.css";
 import ProfilePic from "../../assets/images/Placeholder_Image.gif";
-// import Image from "react-bootstrap/Image";
-// import { userIsAuthenticated } from "../../redux/HOCs";
+import SocialappService from "../../socialappService";
 
 class Message extends React.Component {
   constructor(props) {
     super(props);
+
+    this.api = new SocialappService();
 
     this.state = {
       likes: this.props.likes.length,
@@ -27,7 +28,7 @@ class Message extends React.Component {
   }
 
   updateUser() {
-    this.props.api.getUser(this.props.username).then((response) =>
+    this.api.getUser(this.props.username).then((response) =>
       this.setState({
         user: response.data.user.username,
         displayName: response.data.user.displayName,
@@ -60,11 +61,9 @@ class Message extends React.Component {
               <div className="MessageMemberTitle">
                 <Card.Title> Member: {this.props.username}</Card.Title>
               </div>
-              {/* <div className="PostInfo"> */}
               <Card.Subtitle className="mb-2 text-muted">
                 {new Date(this.props.createdAt).toDateString}{" "}
               </Card.Subtitle>
-              {/* </div> */}
               <Card.Text className="MessageTextBox">
                 {this.props.text}
               </Card.Text>
