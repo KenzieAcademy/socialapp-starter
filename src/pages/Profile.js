@@ -1,5 +1,5 @@
 import React from "react";
-import { userIsAuthenticated } from "../redux/HOCs"
+import { userIsAuthenticated } from "../redux/HOCs";
 import DataService from "../services/DataService";
 import Menu from "../components/menu/Menu";
 import ProfileContent from "../components/profileContent/ProfileContent";

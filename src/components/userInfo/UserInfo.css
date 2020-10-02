@@ -1,13 +1,13 @@
 h2 {
-  position: relative;
-  margin: 0px auto;
-  bottom: -35px;
-}
-
-h5{
     position: relative;
-  margin: 0px auto;
-  bottom: -35px;
+    margin: 0px auto;
+    bottom: -35px;
+  }
   
-  text-align: center;
-}
+  h5{
+      position: relative;
+    margin: 0px auto;
+    bottom: -35px;
+    
+    text-align: center;
+  }

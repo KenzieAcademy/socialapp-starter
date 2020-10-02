@@ -4,10 +4,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
-
 import RegistrationForm from "./components/RegisterForm/RegisterForm"
 import MessageList from "./pages/MessageList"
-import PostMessage from "./components/PostMessage";
+
 
 class App extends React.Component {
   handleLogout = (event) => {
@@ -45,9 +44,6 @@ class App extends React.Component {
             path="*"
             component={NotFound}
           />
-          <Route exact 
-          path="/postmessage" 
-          component={PostMessage} />
         </Switch>
       </div>
     );

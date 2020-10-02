@@ -2,7 +2,6 @@ import React from "react";
 import { Form, Button } from "react-bootstrap";
 import Spinner from "react-spinkit";
 import { withAsyncAction } from "../../redux/HOCs";
-
 import "./LoginForm.css";
 
 class LoginForm extends React.Component {
