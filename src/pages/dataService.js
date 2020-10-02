@@ -57,8 +57,15 @@ class DataService {
     });
   }
 
-  createMessage() {
-    return this.client.post(this.url + "/messages");
+  createMessage(text) {
+    const loginData = JSON.parse(localStorage.getItem("login")).result;
+    return this.client.post(
+      this.url + "/messages",
+      { text },
+      {
+        headers: { Authorization: `Bearer ${loginData.token}` },
+      }
+    );
   }
 
   deleteMessage(messageId) {
