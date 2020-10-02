@@ -8,7 +8,7 @@ import RegistrationForm from "./components/registrationForm/RegistrationForm"
 import MessageFeed from "./pages/MessageFeed"
 import MessageList from "./pages/MessageList"
 import PostMessage from "./components/postMessage/PostMessageForm"
-
+import InfiniteScroll from "../src/components/InfiniteScroll"
 class App extends React.Component {
 
   handleLogout = event => {
@@ -20,6 +20,7 @@ class App extends React.Component {
 
     return (
       <div className="root" >
+        
         <Switch>
           <Route
             exact
@@ -54,7 +55,9 @@ class App extends React.Component {
           path="/postmessage" 
           component={PostMessage} 
           />
+
         </Switch>
+        
       </div>
 
     )

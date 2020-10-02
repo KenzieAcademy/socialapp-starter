@@ -4,6 +4,8 @@ import Service from "../services/Service";
 import Message from "../components/message/Message";
 import PostMessage from "../components/postMessage/PostMessageForm"
 import GetUsersService from "../services/GetUsersService"
+import "./MessageList.css";
+
 
 class MessageFeed extends React.Component {
     client = new Service();
@@ -48,6 +50,7 @@ class MessageFeed extends React.Component {
             return (
                 <div className="MessageList">
                     <Menu />
+                    
                     <h1>MessageList</h1>
                     <h3>LOADING...</h3>
                 </div>
@@ -59,18 +62,26 @@ class MessageFeed extends React.Component {
                 <Menu />
                 <h1>Message Feed</h1>
                 <PostMessage handleChange={this.handleChange} handleMessagePost={this.handleMessagePost} text={this.state.text} />
+                <div className="messageContainer">
+                    <ul className="messageList">
+                        {this.state.message.map((messageObject) => (
+                            <Message key={messageObject.id} {...messageObject} />
+                        ))}
+                    </ul>
 
-                <ul>
-                    {this.state.message.map((messageObject) => (
-                        <Message key={messageObject.id} {...messageObject} />
-                    ))}
-                </ul>
-                <ul>
-                    {this.state.users.map((userObject) => (
-                        <li>{userObject.username}</li>
-                    ))}
-                </ul>
+
+                    <ul className="usersList">
+
+                        <h1>Follow These Users</h1>
+
+                        {this.state.users.map((userObject) => (
+                            <li>{userObject.username}</li>
+                        ))}
+
+                    </ul>
+                </div>
             </div>
+
         );
     }
 }

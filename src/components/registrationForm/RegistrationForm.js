@@ -1,10 +1,11 @@
-import React from "react";
+
+import React, { Component } from "react";
 import Spinner from "react-spinkit";
 import "./RegistrationForm.css";
 import Service from "../../services/Service";
 import { Container, Form, Button } from "react-bootstrap";
 
-class RegistrationForm extends React.Component {
+class RegistrationForm extends Component {
   constructor(props) {
     super(props);
     this.state = {

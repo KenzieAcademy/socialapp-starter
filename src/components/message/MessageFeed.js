@@ -31,6 +31,17 @@ class MessageFeed extends React.Component {
             });
         console.log("Post Button Pressed");
     };
+    handleDeleteMesssage = (messageId) => {
+        this.client.deleteMessage(messageId).then((response) => {
+          console.log(response.data);
+          this.client
+            .getMessageList()
+            .then((response) =>
+              this.setState({ messages: response.data.messages })
+            );
+        });
+      };
+
 
     handleChange = (event) => {
         this.setState({
@@ -57,7 +68,9 @@ class MessageFeed extends React.Component {
 
                 <ul>
                     {this.state.message.map((messageObject) => (
-                        <Message key={messageObject.id} {...messageObject} />
+                        <Message 
+                        handleDeleteMesssage={this.handleDeleteMesssage}
+                        key={messageObject.id} {...messageObject} />
                     ))}
                 </ul>
             </div>

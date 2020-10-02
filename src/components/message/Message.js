@@ -11,7 +11,11 @@ class Message extends React.Component {
   // };
 
   render() {
+
     return (
+
+
+
       <div className="card" >
         <Card bg="secondary" style={{ width: "30rem" }}>
           <Card.Body>
