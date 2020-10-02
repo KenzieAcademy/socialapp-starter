@@ -1,6 +1,6 @@
 import React from "react"
 import { withAsyncAction } from "../../redux/HOCs"
-import PostMessageService from "./PostMessageService"
+import MessageService from "./MessageService"
 
 class PostMessage extends React.Component {
     constructor(props) {
@@ -9,7 +9,7 @@ class PostMessage extends React.Component {
             text: ""
     }
 
-        this.client = new PostMessageService()
+        this.client = new MessageService()
 
     }
 
