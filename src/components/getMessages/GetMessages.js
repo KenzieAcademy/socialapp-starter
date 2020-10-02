@@ -20,7 +20,7 @@ class GetMessage extends Component {
   }
   forMessages(item) {
     document.getElementById("test").innerHTML +=
-      "Username says " + item.text + "<br>";
+      "usernanme says " + item.text + "<br>";
   }
   componentDidMount() {
     this.getAllMessages();

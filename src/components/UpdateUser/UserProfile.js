@@ -37,7 +37,6 @@ class UserProfile extends Component {
       });
   }
   handleSubmit = (event) => {
-    event.preventDefault();
     let displayNameInput = event.target.elements.displayName.value;
     let aboutInput = event.target.elements.about.value;
     if (displayNameInput.length <= 1) {
