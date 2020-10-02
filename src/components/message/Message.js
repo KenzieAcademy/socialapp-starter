@@ -3,6 +3,13 @@ import { Button, Card } from "react-bootstrap";
 import "./Message.css"
 
 class Message extends React.Component {
+  likeHandler = (e) => {
+    new LikeService().createLike(this.props.id).then((response) => {
+      console.log(response);
+    });
+    console.log("like");
+  };
+
   render() {
     return (
       <div className="card" >

@@ -24,13 +24,16 @@ class Profile extends React.Component {
 
   render() {
     return (
-      <div className="Profile">
-        <Menu />
-        <h2>Profile</h2>
-        <button onClick={this.handleDelete}> Delete User</button>
-
-
-
+      <div className="Body">
+        <div className="Profile">
+          <Menu userIsAuthenticated={this.props.isAuthenticated} />
+          <h2>My Profile</h2>
+          <ProfileContent />
+          <Button className="DeleteUser" onClick={this.handleDelete}>
+            {" "}
+          Delete User
+        </Button>
+        </div>
       </div>
     );
   }
