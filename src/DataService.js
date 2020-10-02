@@ -9,6 +9,11 @@ class DataService {
     this.client = client;
   }
 
+  getUserName() {
+    const username = JSON.parse(localStorage.getItem("login")).result.username;
+    return username;
+  }
+
   registerUser(userData) {
     return this.client.post(this.url + "/users", userData);
   }
@@ -31,13 +36,13 @@ class DataService {
     });
   }
 
-  postUserPicture(picObj) {
+  postUserPicture(formData) {
     let loginData = JSON.parse(localStorage.getItem("login")).result;
     let token = loginData.token;
     let userName = loginData.username;
     return this.client.put(
       this.url + "/users/" + userName + "/picture",
-      picObj,
+      formData,
       {
         headers: { Authorization: `Bearer ${token}` },
       }

@@ -1,16 +1,17 @@
 import { Modal, Button } from "antd";
 import React from "react";
 import RegistrationForm from "./registrationForm";
+import { withAsyncAction } from "../../redux/HOCs";
 import DataService from "../../DataService";
 
-class App extends React.Component {
+class RegistrationButton extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      visible: false,
       username: "",
       password: "",
       displayName: "",
+      visible: false,
     };
     this.client = new DataService();
   }
@@ -29,6 +30,7 @@ class App extends React.Component {
     e.preventDefault();
     this.client.registerUser(this.state).then((result) => {
       console.log(result.data);
+      this.props.login(this.state);
     });
   };
 
@@ -56,11 +58,35 @@ class App extends React.Component {
           onCancel={this.handleCancel}
         >
           <div>
-            <RegistrationForm onOk={this.state.onSubmit} />
+            <label htmlFor="username">Username</label>
+            <input
+              type="text"
+              name="username"
+              autoFocus
+              required
+              onChange={this.handleChange}
+            />
+            <br />
+            <label htmlFor="displayName">Display Name</label>
+            <input
+              type="text"
+              name="displayName"
+              required
+              onChange={this.handleChange}
+            />
+            <br />
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              name="password"
+              required
+              onChange={this.handleChange}
+            />
           </div>
         </Modal>
       </>
     );
   }
 }
-export default App;
+// export default App;
+export default withAsyncAction("auth", "login")(RegistrationButton);
