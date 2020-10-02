@@ -36,11 +36,11 @@ class MessageService {
     const url = this.url + `/users/${this.getUsername()}/picture`;
     const config = {
       headers: {
-        Authorization: `Bearer ${this.getToken}`,
+        Authorization: `Bearer ${this.getToken()}`,
       },
     };
 
-    this.client.put(url, formData, config);
+    return this.client.put(url, formData, config);
   }
 
   getMessage(messageId) {
