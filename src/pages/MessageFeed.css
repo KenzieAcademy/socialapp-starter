@@ -2,64 +2,127 @@
   box-sizing: border-box;
 }
 
-.Body {
-  border: 3px solid black;
+.MessageFeedPageBody {
+  padding: 10px;
+  background-image: url(../assets/images/Coupon_Background_Dark.png);
+  border: black;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
   width: 850px;
   position: relative;
   margin: auto;
-}
-
-.MessageList {
-  position: relative;
-  margin: auto;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  text-align: center;
-  color: white;
-  font-size: 20px;
-}
-
-.MessageHeader {
-  top: 12px;
-  left: -2px;
-  position: relative;
-  margin: auto;
-  border: 3px solid black;
-  border-radius: 5px;
-  border-width: 3px;
-  border-style: dashed;
-  width: 830px;
-  /* background-color: #b80c12; */
-  background-image: url(../assets/images/Clear_Red.png);
-  font-size: 45px;
-  font-size: 45px;
+  font: italic small-caps 25px/30px Impact;
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
-  color: black;
 }
 
 .MessageLoading {
   color: #b80c12;
-  font-size: 60px;
+  font: italic small-caps bolder 60px/65px Impact;
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  -webkit-text-stroke: 0.25px black;
+  text-align: center;
   position: relative;
   margin: auto;
-  top: 100px;
-  font-size: 45px;
+  top: 75px;
 }
 
-.PostButton {
-  border: 3px solid black;
+.MessageMenuBox {
+  position: relative;
+  margin: auto;
+}
+
+.MessageMenuText {
+  position: relative;
+  margin: auto;
+  font: italic small-caps 12px/30px Impact;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  -webkit-text-stroke: 0.25px white;
+}
+
+.MessageHeaderBox {
+  padding: 10px;
+  top: 6px;
+  left: -2px;
+  position: relative;
+  margin: auto;
+  border: black;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
-  /* background-color: #b80c12; */
-  /* background-image: url(../assets/images/); */
-  font-size: 25px;
+  width: 830px;
+  height: 55px;
+  background-image: url(../assets/images/Clear_Red.png);
+}
+
+.MessageFeedHeaderText {
+  font: italic small-caps bolder 45px/50px Impact;
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  -webkit-text-stroke: 0.25px white;
   color: black;
-  width: 200px;
+  text-align: center;
+  top: -11px;
   position: relative;
   margin: auto;
+}
+
+.MiniProfileFeed {
+  position: relative;
+  margin: auto;
+}
+
+.MiniProfile-PostButtonBox {
+  left: -130px;
+  top: 14px;
+  width: 828px;
+  height: 75px;
+  position: relative;
+  margin: auto;
+}
+
+.PostButtonBox {
+  left: 703px;
+  top: -70px;
+  position: relative;
+  margin: auto;
+}
+
+.PostAMessageButton {
+  width: 250px;
+  height: 70px;
+  left: 4px;
+  background-image: url(../assets/images/Clear_Red_Dark.png);
+  border: black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  padding: 10px;
+  font: italic small-caps bold 30px/35px Impact;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  -webkit-text-stroke: 0.25px white;
+  text-align: center;
+  color: black;
+  position: relative;
+  margin: auto;
+  cursor: pointer;
+}
+
+.PostAMessageButton:hover {
+  color: white;
+  -webkit-text-stroke: 0.5px black;
+  background-image: url(../assets/images/Post_Button.png);
+  border: white;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+}
+
+.TheFeed {
+  left: -23px;
+  top: 10px;
+  position: relative;
+  margin: auto;
+  font: italic small-caps bold 27px/45px Impact;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  -webkit-text-stroke: 0.25px white;
 }

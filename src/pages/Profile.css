@@ -2,28 +2,54 @@
   box-sizing: border-box;
 }
 
-.Body {
-  /* width: 850px; */
+.ProfilePageBody {
+  padding: 10px;
+  background-image: url(../assets/images/Coupon_Background_Dark.png);
+  border: black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  width: 850px;
+  height: 452px;
   position: relative;
   margin: auto;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font: italic small-caps 12px/30px Impact;
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
 }
 
-.ProfileHeader {
-  top: 12px;
+.ProfileMenuBox {
+  position: relative;
+  margin: auto;
+}
+
+.ProfileMenuText {
+  font: italic small-caps 12px/25px Impact;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  -webkit-text-stroke: 0.25px white;
+}
+
+.ProfileHeaderBox {
+  padding: 10px;
+  top: 6px;
   left: -2px;
   position: relative;
   margin: auto;
-  border: 3px solid black;
+  border: black;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
   width: 830px;
-  /* background-color: #b80c12; */
+  height: 55px;
   background-image: url(../assets/images/Clear_Red.png);
-  font-size: 45px;
+}
+
+.ProfileHeaderText {
+  font: italic small-caps bold 45px Impact;
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  -webkit-text-stroke: 0.25px white;
   color: black;
   text-align: center;
+  top: -12px;
+  position: relative;
+  margin: auto;
 }

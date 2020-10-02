@@ -26,36 +26,43 @@ class LoginForm extends React.Component {
   render() {
     const { loading, error } = this.props;
     return (
-      <div className="Body">
+      <div className="LoginFormBody">
         <div className="LoginForm">
           <form id="login-form" onSubmit={this.handleLogin}>
-            <label htmlFor="username">Username</label>
-            <div className="UsernameInput">
-              <input
-                type="text"
-                name="username"
-                value={this.props.username}
-                autoFocus
-                required
-                onChange={this.handleChange}
-              />
+            <div className="LogUserNameInput">
+              <label htmlFor="username">Username</label>
+              <div className="LogUserNameInputBox">
+                <input
+                  type="text"
+                  name="username"
+                  value={this.props.username}
+                  autoFocus
+                  required
+                  onChange={this.handleChange}
+                />
+              </div>
             </div>
-            <br></br>
-            <div>- - - - - - - - - - - - - - - - - - - - - - - - -</div>
-            <label htmlFor="password">Password</label>
-            <div className="PasswordInput">
-              <input
-                type="password"
-                name="password"
-                value={this.props.password}
-                required
-                onChange={this.handleChange}
-              />
+            <div className="LogPasswordInput">
+              <label htmlFor="password">Password</label>
+              <div className="LogPasswordInputBox">
+                <input
+                  type="password"
+                  name="password"
+                  value={this.props.password}
+                  required
+                  onChange={this.handleChange}
+                />
+              </div>
             </div>
-            <br></br>
-            <div>- - - - - - - - - - - - - - - - - - - - - - - - -</div>
-            <div className="LoginButton">
-              <input type="submit" value="Enter" disabled={loading} />
+            <div className="LogEnterButtonBox">
+              <div className="LogEnterButton">
+                <input
+                  type="submit"
+                  value="Enter"
+                  onClick={this.handleLogin}
+                  disabled={loading}
+                ></input>
+              </div>
             </div>
           </form>
           {loading && <Spinner name="circle" color="red" />}

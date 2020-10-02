@@ -2,16 +2,15 @@
   box-sizing: border-box;
 }
 
-.Menu {
+.MenuBody {
   position: relative;
   margin: auto;
-  top: 6px;
+  top: -2px;
   left: -2px;
-  border: 3px solid black;
+  border: black;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
-  /* background-color: #b80c12; */
   background-image: url(../../assets/images/Clear_Red.png);
   width: 830px;
 }
@@ -31,4 +30,9 @@
   padding: 5px;
   text-decoration: underline;
   cursor: pointer;
+}
+
+#menu-links a:hover {
+  color: white;
+  -webkit-text-stroke: 0.25px black;
 }

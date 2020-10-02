@@ -2,17 +2,61 @@
   box-sizing: border-box;
 }
 
-.ProfileCardBody {
+.MiniProfileBody {
   position: relative;
   margin: auto;
+  font: italic small-caps bold 27px/45px Impact;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  -webkit-text-stroke: 0.25px white;
 }
 
 .Miniprofile {
+  width: 570px;
+  height: 70px;
+  border: black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  position: relative;
+  margin: auto;
+  background-image: url(../../assets/images/Clear_Red_Dark.png);
+}
+
+.ProfilePicThumb {
+  left: -249px;
+  top: 5px;
+  width: 55px;
+  height: 56px;
+  position: relative;
+  margin: auto;
+  border: black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+}
+
+.MiniMemberInfo {
+  float: left;
   position: relative;
   margin: auto;
 }
 
-.ProfilePic {
+.MemberName {
+  font-size: 25px;
+  color: black;
+  top: -49px;
+  left: 75px;
+  text-align: left;
+  position: relative;
+  margin: auto;
+}
+
+.MemberSince {
+  font-size: 25px;
+  color: black;
+  top: -49px;
+  left: 75px;
+  text-align: left;
   position: relative;
   margin: auto;
 }

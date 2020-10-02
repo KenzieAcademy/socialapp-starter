@@ -2,7 +2,7 @@ import React from "react";
 import LoginForm from "../components/loginForm/LoginForm";
 import RegistrationForm from "../components/registrationForm/RegistrationForm";
 import { userIsNotAuthenticated } from "../redux/HOCs";
-import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom";
 import "../pages/Home.css";
 
 class Home extends React.Component {
@@ -10,24 +10,18 @@ class Home extends React.Component {
     super(props);
     this.state = {
       isRegistered: true,
-      loginActive: "light",
-      registerActive: "dark",
     };
   }
 
   loginButton = () => {
     this.setState({
       isRegistered: true,
-      registerActive: "dark",
-      loginActive: "light",
     });
   };
 
   registerButton = () => {
     this.setState({
       isRegistered: false,
-      registerActive: "light",
-      loginActive: "dark",
     });
   };
 
@@ -40,21 +34,25 @@ class Home extends React.Component {
     }
 
     return (
-      <div className="Home">
-        {form}
+      <div className="HomePageBody">
         <div className="JoinUs">
-          <div>Not A Member Yet?</div>
-          <div className="JoinButton">
-            <Button
-              variant={this.state.registerActive}
-              size="lg"
-              disabled={!this.state.isRegistered}
-              onClick={() => this.registerButton()}
-            >
-              JOIN US!
-            </Button>
+          <div className="HomeLink">
+            <Link to="/" onClick={() => this.loginButton()}>
+              Home
+            </Link>
+          </div>
+          <div className="Welcome">Welcome!</div>
+          <div className="RegisterLink">
+            <div>
+              <div className="NotMemberYet">Not A Member Yet?</div>
+              <Link to="/" onClick={() => this.registerButton()}>
+                Register
+              </Link>
+            </div>
           </div>
         </div>
+        <div className="HomeLogFormBody">{form}</div>
+        <br></br>
       </div>
     );
   }

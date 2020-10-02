@@ -2,37 +2,155 @@
   box-sizing: border-box;
 }
 
-.ProfileBody {
-  top: 19px;
+.ProfileContentBody {
+  padding: 15px;
+  background-image: url(../../assets/images/Clear_Red.png);
+  border: black;
   border-radius: 5px;
-
-  width: 850px; 
-  height: 640px;
-
+  border-width: 3px;
+  border-style: dashed;
+  top: 17px;
+  left: -2px;
+  width: 828px;
   position: relative;
   margin: auto;
 }
 
 .ProfileContent {
-  left: -13px;
+  font: italic small-caps bolder 30px/35px Impact;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  -webkit-text-stroke: 0.25px white;
+  color: black;
+  left: -3px;
+  top: -3px;
+  width: 800px;
+  height: 248px;
+  position: relative;
+  margin: auto;
+}
+
+.ProfilePicBox {
+  left: -333px;
+  border: black;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
+  width: 131px;
+  height: 131px;
   position: relative;
   margin: auto;
-  width: 830px;
+}
+
+.MemberInfoFormBody {
+  background-image: url(../../assets/images/Clear_Red.png);
+  position: relative;
+  margin: auto;
+}
+
+.MemberInfoBox {
+  width: 652px;
+  height: 100px;
+  left: 70px;
+  top: -130px;
+  border: black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  background-color: white;
+  background-image: url(../../assets/images/Coupon_Background_Light.png);
+  position: relative;
+  margin: auto;
+}
+
+.MemberInfoText {
+  padding: 5px;
+  position: relative;
+  margin: auto;
+}
+
+.AboutMeBox {
+  width: 652px;
+  height: 168px;
+  top: 15px;
+  border: black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  background-color: white;
+  background-image: url(../../assets/images/Coupon_Background_Light.png);
+  position: relative;
+  margin: auto;
+}
+
+.AboutMeText {
+  padding: 5px;
+  position: relative;
+  margin: auto;
+  font: italic small-caps bolder 30px/35px Impact;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  -webkit-text-stroke: 0.25px black;
+}
+
+.AboutMeUserText {
+  position: relative;
+  margin: auto;
+  font: italic small-caps bolder 20px/25px Impact;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  -webkit-text-stroke: 0.25px black;
+}
+
+.UpdateSwitch {
+  padding: 5px;
+  width: 131px;
+  height: 50px;
+  left: -404px;
+  top: -35px;
+  border: black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  background-image: url(../../assets/images/Coupon_Background_Dark.png);
+  position: relative;
+  margin: auto;
+  color: black;
+  font: italic small-caps bolder 25px/30px Impact;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  -webkit-text-stroke: 0.25px white;
+}
+
+.EditInfoBody {
+  padding: 15px;
+  width: 550px;
+  height: 300px;
+  border: black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  background-image: url(../../assets/images/Clear_Red.png);
+  position: relative;
+  margin: auto;
+}
+
+.EditInfoBox {
+  padding: 15px;
+  width: 550px;
+  height: 400px;
+  position: relative;
+  margin: auto;
+}
+
+.EditInfoText {
   position: relative;
   margin: auto;
 }
 
 .SaveButton {
-  left: 350px;
-  top: -25px;
+  left: 0px;
+  top: 0px;
+  border: black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
   position: relative;
   margin: auto;
-  /* padding: 10px; */
-  /* font-size: 25px; */
-  /* font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif; */
-  /* font: italic small-caps bold 12px/30px Georgia, serif; */
-  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
 }

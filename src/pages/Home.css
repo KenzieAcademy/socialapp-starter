@@ -2,16 +2,92 @@
   box-sizing: border-box;
 }
 
-.Home {
+.HomePageBody {
+  padding: 10px;
   position: relative;
   margin: auto;
-  text-align: center;
+  background-image: url(../assets/images/Coupon_Background_Dark.png);
+  border: black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  width: 850px;
 }
 
 .JoinUs {
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  font: italic small-caps bold 12px/30px Georgia, serif;
-  font-size: 25px;
+  position: relative;
+  margin: auto;
+  border: black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  background-image: url(../assets/images/Clear_Red_Dark.png);
+  width: 830px;
+  height: 55px;
+  font: italic small-caps bold 25px/30px Impact;
+  color: black;
+}
+
+.HomeLink a {
+  top: 13px;
+  left: 5px;
+  position: relative;
+  margin: auto;
+  font: italic small-caps bold 25px/30px Impact;
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
-  color: #b80c12;
+  -webkit-text-stroke: 0.25px white;
+  color: black;
+  padding: 5px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.HomeLink a:hover {
+  color: white;
+  -webkit-text-stroke: 0.25px black;
+}
+
+.RegisterLink a {
+  top: -88px;
+  left: 725px;
+  position: relative;
+  margin: auto;
+  font: italic small-caps bold 25px/30px Impact;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  -webkit-text-stroke: 0.25px white;
+  color: black;
+  padding: 5px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.RegisterLink a:hover {
+  color: white;
+  -webkit-text-stroke: 0.25px black;
+}
+
+.Welcome {
+  position: relative;
+  margin: auto;
+  top: -32px;
+  left: 345px;
+  font: italic small-caps bold 45px/50px Impact;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  -webkit-text-stroke: 0.25px white;
+  color: black;
+}
+
+.NotMemberYet {
+  top: -58px;
+  left: 615px;
+  position: relative;
+  margin: auto;
+  font: italic small-caps bold 15px/20px Impact;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  -webkit-text-stroke: 0.15px white;
+}
+
+.HomeLogFormBody {
+  position: relative;
+  margin: auto;
 }

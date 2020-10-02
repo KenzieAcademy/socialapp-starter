@@ -5,6 +5,7 @@ import { userIsAuthenticated } from "../../redux/HOCs";
 import "../../components/profileContent/ProfileContent.css";
 import MiniProfileIMG from "../../assets/images/Placeholder_Image.gif";
 import Form from "react-bootstrap/Form";
+
 const styles = {
   paperContainer: {
     height: 120,
@@ -23,7 +24,7 @@ const ProfileContent = (props) => {
   }
 
   return (
-    <div className="ProfileBody">
+    <div className="ProfileContentBody">
       <div className="ProfileContent">
         <img
           alt="profile"

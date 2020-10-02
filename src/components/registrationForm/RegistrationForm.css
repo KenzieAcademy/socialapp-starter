@@ -2,66 +2,168 @@
   box-sizing: border-box;
 }
 
-.Body {
+.RegistrationFormBody {
   padding: 10px;
   width: 850px;
+  height: 492px;
   position: relative;
   margin: auto;
-  border: 3px solid black;
-  border-radius: 5px;
-  border-width: 3px;
-  border-style: dashed;
-  background-image: url(../../assets/images/Coupon_Background_Dark.png);
-  width: 850px;
 }
 
 #registration-form {
+  left: -14px;
   position: relative;
   margin: auto;
   top: 35px;
   display: flex;
   flex-direction: column;
   text-align: center;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  font: italic small-caps bold 12px/30px Georgia, serif;
-  font-size: 25px;
-  color: #b80c12;
+  color: black;
+  font: italic small-caps bold 30px/35px Impact;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  -webkit-text-stroke: 0.25px black;
   width: 340px;
 }
 
 .RegistrationForm {
-  border: 3px solid #b80c12;
+  border: black;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
-  background-color: black;
+  background-image: url(../../assets/images/Clear_Red.png);
   text-align: left;
+  position: relative;
+  margin: auto;
+  width: 445px;
+  height: 505px;
+}
+
+.UserNameInput {
+  background-image: url(../../assets/images/Coupon_Background_Dark.png);
   padding: 10px;
   position: relative;
   margin: auto;
-  width: 475px;
-  height: 490px;
+  border: black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  -webkit-text-stroke: 0.25px white;
 }
 
-input[type="button"],
-input[type="submit"] {
-  background-color: #343a40;
-  border: 3px solid #b80c12;
-  border-radius: 2px;
+.UserNameInputBox {
+  border: none;
+  position: relative;
+  margin: auto;
+}
+
+.PasswordInput {
+  top: 10px;
+  background-image: url(../../assets/images/Coupon_Background_Dark.png);
+  padding: 10px;
+  position: relative;
+  margin: auto;
+  border: black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  -webkit-text-stroke: 0.25px white;
+}
+
+.PasswordInputBox {
+  position: relative;
+  margin: auto;
+}
+
+.DisplayNameInput {
+  top: 20px;
+  background-image: url(../../assets/images/Coupon_Background_Dark.png);
+  padding: 10px;
+  position: relative;
+  margin: auto;
+  border: black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  -webkit-text-stroke: 0.25px white;
+}
+
+.DisplayNameInputBox {
+  position: relative;
+  margin: auto;
+}
+
+.EnterButtonBox {
+  position: relative;
+  margin: auto;
+}
+
+.EnterButtonBox input[type="submit"] {
+  top: 32px;
+  left: 18px;
+  position: relative;
+  margin: auto;
+  background-image: url(../../assets/images/Coupon_Background_Dark.png);
+  padding: 5px;
+  border: black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  width: 130px;
+  height: 50;
+  font: italic small-caps bold 27px/45px Impact;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  -webkit-text-stroke: 0.25px white;
+  cursor: pointer;
+}
+
+.EnterButtonBox input[type="submit"]:hover {
+  background-image: url(../../assets/images/Clear_Red_Dark.png);
+  border: white;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
   color: white;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  font: italic small-caps bold 12px/30px Georgia, serif;
-  font-size: 25px;
-  padding: 10px;
-  cursor: pointer;
+  -webkit-text-stroke: 0.25px black;
 }
 
-.RegisterButton {
-  position: relative;
-  margin: auto;
-  width: 100px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  cursor: pointer;
+.RegistrationForm input[type="text"] {
+  border: black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  background-image: url(../../assets/images/Coupon_Background_Light.png);
+  color: black;
+  font: italic small-caps bold 25px/43px Impact;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  -webkit-text-stroke: 0.25px white;
+}
+
+.RegistrationForm input[type="text"]:hover {
+  border: #b80c12;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  color: white;
+  -webkit-text-stroke: 0.25px black;
+}
+
+.RegistrationForm input[type="password"] {
+  border: black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  background-image: url(../../assets/images/Coupon_Background_Light.png);
+  color: black;
+  font: italic small-caps bold 25px/43px Impact;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  -webkit-text-stroke: 0.25px white;
+}
+
+.RegistrationForm input[type="password"]:hover {
+  border: #b80c12;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  color: white;
+  -webkit-text-stroke: 0.25px black;
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import MiniLogin from "../miniLogin/MiniLogin";
 import Modal from "react-bootstrap/Modal";
+import "../registerPopup/RegisterPopup.css";
 
 class RegisterPopup extends React.Component {
   constructor(props) {
@@ -12,17 +13,19 @@ class RegisterPopup extends React.Component {
 
   render() {
     return (
-      <Modal show={this.state.show} onHide={this.handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Thank You for Registering!</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <MiniLogin
-            username={this.props.username}
-            password={this.props.password}
-          />
-        </Modal.Body>
-      </Modal>
+      <div className="RegisterPopupBody">
+        <Modal show={this.state.show} onHide={this.handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Thank You For Registering!</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <MiniLogin
+              username={this.props.username}
+              password={this.props.password}
+            />
+          </Modal.Body>
+        </Modal>
+      </div>
     );
   }
 }
