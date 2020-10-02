@@ -18,17 +18,17 @@ class MainContent extends React.Component {
     return (
       <Layout>
         <Content style={{ padding: "0 35px" }}>
-          <Breadcrumb style={{ margin: "8px 0" }}>
+          <Breadcrumb style={{ margin: "10px 0" }}>
             <Breadcrumb.Item>Dashboard</Breadcrumb.Item>
           </Breadcrumb>
           <div
             style={{
               // background: "#fff",
-              padding: 300,
-              minHeight: 700,
+              padding: "30px",
+              minHeight: 350,
               borderRadius: "20px",
-              MozBackgroundSize: "no-repeat",
-              backgroundColor: "lightblue",
+              // MozBackgroundSize: "no-repeat",
+              // backgroundColor: "lightblue",
               backgroundImage:
                 "url(" +
                 "https://i.pinimg.com/originals/81/16/88/811688d44a9906c2b1db6cde2304168b.gif" +
@@ -38,7 +38,7 @@ class MainContent extends React.Component {
               backgroundRepeat: "no-repeat",
             }}
           >
-            <Switch>
+            <Switch style={{ backgroundColor: "red" }}>
               <Route exact path="/messagefeed" component={MessageFeed} />
               <Route exact path="/" component={Home} />
               <Route exact path="/profile/:username" component={Profile} />
