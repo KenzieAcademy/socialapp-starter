@@ -4,6 +4,8 @@ import Menu from "../components/menu/Menu";
 import { userIsAuthenticated } from "../redux/HOCs";
 import UploadPhoto from "../components/uploadPhoto/UploadPhoto";
 import DataService from "./dataService";
+import AboutMe from "../components/About Me/AboutMe"
+
 
 
 class Profile extends React.Component {
@@ -24,11 +26,14 @@ class Profile extends React.Component {
     return (
       <div className="Profile">
         <Menu isAuthenticated={this.props.isAuthenticated} />
-        <h2>Profile</h2>
-        {this.state.user.username}
-        <UploadPhoto />
-        <DeleteAcctButton />
-        <AboutMe />
+        <center>
+          <b><h1>{this.state.user.username}</h1></b>
+          <UploadPhoto />
+          <br></br>
+          <AboutMe />
+          <br></br>
+          <DeleteAcctButton />
+        </center>
       </div>
     );
   }
