@@ -14,7 +14,7 @@ class TwitHeader extends React.Component {
             size={48}
             src="https://cdn.dribbble.com/users/1525393/screenshots/6484130/comp_1.gif"
           />
-          <h2
+          <p
             style={{
               color: "lightblue",
               fontFamily: "Brush Script MT",
@@ -22,7 +22,7 @@ class TwitHeader extends React.Component {
             }}
           >
             Twitter
-          </h2>
+          </p>
         </Title>
       </Header>
     );

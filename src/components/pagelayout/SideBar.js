@@ -91,7 +91,6 @@ class SideBar extends React.Component {
                 )}
               </div>
             </Menu.ItemGroup>
-
           </SubMenu>
         </Menu>
       </Sider>

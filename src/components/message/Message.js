@@ -2,8 +2,7 @@ import React from "react";
 import DataService from "../../dataService";
 import { Link, Route } from "react-router-dom";
 import profilepic from "../defualtpicture/freeiconlibrary.jpg";
-// import "./Message.css"
-
+import "./Message.css";
 class Message extends React.Component {
   constructor(props) {
     super(props);
@@ -12,7 +11,7 @@ class Message extends React.Component {
     this.client = new DataService();
     this.state = {
       likeCount: this.props.likes.length,
-      pic: "",
+      picture: null,
       // username: this.props.username,
       // picture: "",
     };
@@ -24,18 +23,15 @@ class Message extends React.Component {
     // const client = new DataService();
     const username = this.client.getUsername();
     if (this.props.likes.some((like) => like.username === username)) return;
-    this.client
-      .postLike(this.props.id)
-      .then((like) => {
-        // console.log("liked");
-        this.setState((newState) => ({ likeCount: newState.likeCount + 1 }));
-      })
-      .catch(() => {
-        alert("Already liked");
-      });
+    this.client.postLike(this.props.id).then((like) => {
+      // console.log("liked");
+      this.setState((newState) => ({ likeCount: newState.likeCount + 1 }));
+    });
+    // .catch(() => {
+    //   alert("Already liked");
+    // });
   };
 
-  getpic(username) { }
   componentDidMount() {
     const usrnme = this.props.username;
     // console.log(usrnme);
@@ -45,36 +41,38 @@ class Message extends React.Component {
       .then((result) => {
         console.log(result);
         this.setState({
-          pic: result.data,
+          picture: `https://socialapp-api.herokuapp.com/users/${usrnme}/picture`,
         });
-        // const client = new DataService();
-        //   .getPicture(username)
-        //   .then((response) => this.setState({ picture: response.data.picture }));
       })
-      .catch(this.setState({ pic: profilepic }));
+      .catch((result) => {
+        this.setState({
+          picture: profilepic,
+        });
+      });
   }
+
   render() {
     return (
       <li className="Message">
-        {/* {console.log(this.props)} */}
-        {/* {console.log(this.state.pic)} */}
-        {/* {getpic()}({this.state.pic}) =>{" "}
-        <img src={`data:image/jpeg;base64,${this.state.pic}`} /> */}
         <Route>
           <Link to="/SearchUser">
-            <img style={{ width: "60px", height: "60px", borderImage: 'repeat' }} className="userprofile" alt="user-pic" src={this.state.pic} />
+            <img style={{ width: "60px", height: "60px", borderRadius: "50px", listStyleType: "none" }}
+              className="userprofile"
+              alt="user-pic"
+              src={this.state.picture}
+            />
           </Link>
         </Route>
         {/* <img className="userprofile" alt="user-pic" src={this.state.pic} /> */}
-        At {this.props.createdAt},{this.props.username} posted:
-        {console.log(this.prop)}
+    At { this.props.createdAt}, { this.props.username} posted:
+        { console.log(this.prop)}
         <br />
-        {this.props.text}
+        { this.props.text}
         <br />
         <div className="like-counter">😊{this.props.likes.length}</div> {/* <form> */}
         <button onClick={this.handleLike}>👍</button>
         {/* </form> */}
-      </li>
+      </li >
     );
   }
 }

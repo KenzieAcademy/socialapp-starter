@@ -7,41 +7,29 @@ class EditProfile extends React.Component {
     this.client = new DataService();
 
     this.state = {
+      formData: null,
+      imageURL: `https://socialapp-api.herokuapp.com/users/${this.client.getUsername()}/picture`,
       userdata: {
         username: "",
-        displayname: "",
-        aboutme: "",
+        displayName: "",
+        about: "",
         picture: null,
-        password: "1234",
+        password: "",
       },
     };
   }
 
-  // handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   const data = this.state;
-  //   // console.log(data)
-  //   this.client.postMessages(this.state.messageInput).then((response) => {
-  //     console.log("message sent");
-  //     this.setState((newState) => ({ messageInput: newState.messageInput }));
-  //   });
-  // };
   handleSubmit = (e) => {
     e.preventDefault();
-    this.client.patchuser(
-      this.state.password,
-      this.state.aboutme,
-      this.state.displayname,
-      this.state.username
-    );
+    this.client
+      .patchuser(
+        this.state.password,
+        this.state.about,
+        this.state.displayName,
+        this.state.username
+      )
+      .then(console.log("sucessful"));
   };
-
-  // password, about, displayName, username
-  // handleChange = (event) => {
-  //   event.preventDefault();
-  //   console.log(event.target);
-  //   this.setState({ messageInput: event.target.value });
-  // };
 
   handleChange = (e) => {
     e.preventDefault();
@@ -50,40 +38,54 @@ class EditProfile extends React.Component {
 
   handleChange2 = (e) => {
     e.preventDefault();
-    this.setState({ aboutme: e.target.value });
+    this.setState({ about: e.target.value });
   };
 
   handleChange3 = (e) => {
     e.preventDefault();
-    this.setState({ displayname: e.target.value });
+    this.setState({ displayName: e.target.value });
   };
 
   componentDidMount() {
     let temp = this.client.getUsername();
     this.setState({ username: temp });
+    this.client.getUser(temp).then((response) => {
+      this.setState({
+        username: response.data.user.username,
+        displayname: response.data.user.displayName,
+        aboutme: response.data.user.about,
+        picture: response.data.user.pictureLocation,
+      });
+    });
   }
-  // getuserdata() {
-  //   this.client.getUser(this.props.match.params.username).then((result) => {
-  //     console.log(result.data);
-  //     this.setState({
-  //       username: result.data.user.username,
-  //       displayname: result.data.user.displayName,
-  //       aboutme: result.data.user.aboutme,
-  //       picture: result.data.user.pictureLocation,
-  //     });
-  //   });
-  // }
 
-  // componentDidMount() {
-  //   this.getuserdata();
-  // }
-  // }
+  handlefile = (e) => {
+    const file = e.target.files[0];
+    const formData = new FormData();
+    formData.append("picture", file);
+    this.setState({ formData });
+  };
+
+  handleUpload = () => {
+    this.client.uploadPicture(this.state.formData).then((response) => {
+      if (response.data.stausCode === 200) {
+        this.updatePicture();
+      }
+    });
+  };
+
+  updatePicture() {
+    const timestamp = Date.now();
+    const newpic = `https://socialapp-api.herokuapp.com/users/${this.client.getUsername()}/picture?t=${timestamp}`;
+    this.setState({ imageURL: newpic });
+  }
+
   render() {
     return (
       <div>
-        <p>Edit Profile</p>
-        <h1>In the Process of being set up</h1>
+        <h1>Edit Profile</h1>
         <form onSubmit={this.handleSubmit}>
+          Change Your Password:
           <input
             type="text"
             name="NewAboutMe"
@@ -91,30 +93,53 @@ class EditProfile extends React.Component {
             onChange={this.handleChange}
           />
           <br></br>
+          Change Your About Me:
           <input
             type="text"
             name="about"
             placeholder="about me"
             onChange={this.handleChange2}
           />
+          <br></br>
+          Change Your Display Name:
           <input
             type="text"
             name="newDisplayName"
             placeholder="Change displayname"
             onChange={this.handleChange3}
           />
-          {/* <input
-            type="text"
-            name="username"
-            placeholder="Change username"
-            onChange={this.handleChange4}
-          /> */}
+          <br></br>
           <button>Post</button>
-          {/* // {this.state.password}
-          // {this.state.aboutme}
-          // {this.state.displayname}
-          // {this.state.username} */}
+          <br></br>
+          <img
+            className="Current profilepic"
+            src={`https://socialapp-api.herokuapp.com/users/${this.client.getUsername()}/picture`}
+            alt="profile pic"
+            height={150}
+            width={150}
+            class="center"
+          />
+          <br></br>
+          <div className="Fileupload">
+            <input
+              type="file"
+              name="picture"
+              onChange={this.handlefile}
+              accept="images/jpeg,images/png"
+              capture="user"
+            />
+            {/* <br></br> */}
+            <button onClick={this.handleUpload}>Upload</button>
+
+            <div>
+              {/* <img alt="user" src={this.state.imageURL} width={200} /> */}
+            </div>
+          </div>
+          ;
         </form>
+        {this.state.about}
+        {this.state.displayName}
+        {this.state.password}
       </div>
     );
   }

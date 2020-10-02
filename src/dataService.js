@@ -126,7 +126,22 @@ class DataService {
     };
     return this.client
       .delete(this.url + "/users/" + username, requestBody, config)
-      .then((response) => response.data);
+      .then(console.log("deleted"));
   }
+
+  uploadPicture(formData) {
+    let token = this.getToken();
+    const url = this.url + `/users/${this.getUsername()}/picture`;
+    const config = {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    };
+    return this.client.put(url, formData, config);
+  }
+  /*Dmg picture
+
+
+  */
 }
 export default DataService;

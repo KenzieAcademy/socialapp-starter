@@ -4,9 +4,9 @@ import { userIsAuthenticated } from "../redux/HOCs";
 // import './MessageFeed.css'
 
 
-
 // import { message, Result } from "antd";
 import Message from "../components/message/Message";
+import CreateMessage from "./CreateMessage";
 
 class MessageFeed extends React.Component {
   constructor(props) {
@@ -24,6 +24,8 @@ class MessageFeed extends React.Component {
       .getMessages()
       .then((response) => this.setState({ messages: response.data.messages }));
   }
+
+  // setInterval(componentDidMount(), 5000);
   render() {
     if (this.state.messages.length === 0) {
       return (
@@ -33,11 +35,14 @@ class MessageFeed extends React.Component {
         </div>
       );
     }
-    return (
-      <div style={{ fontSize: "25px", fontStyle: "inherit", fontFamily: "revert" }} className="messagefeed" >
-        {/* <Menu isAuthenticated={this.props.isAuthenticated} /> */}
-        {/* messages go here test */}
+    // return (
+    //   <div style={{ fontSize: "25px", fontStyle: "inherit", fontFamily: "revert" }} className="messagefeed" >
+    //     {/* <Menu isAuthenticated={this.props.isAuthenticated} /> */}
+    //     {/* messages go here test */}
 
+    return (
+      <div className="messagefeed">
+        <CreateMessage />
         <ul>
           {this.state.messages.map((messageObject) => (
             <Message key={messageObject.id} {...messageObject} />
