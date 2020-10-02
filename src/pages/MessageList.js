@@ -1,6 +1,6 @@
 import React from "react";
 import Menu from "../components/menu/Menu";
-import Service from "../services/Service";
+import DataService from "../services/DataService";
 import Message from "../components/message/Message";
 import PostMessage from "../components/postMessage/PostMessageForm"
 import GetUsersService from "../services/GetUsersService"
@@ -8,7 +8,7 @@ import "./MessageList.css";
 
 
 class MessageList extends React.Component {
-    client = new Service();
+    client = new DataService();
 
     state = {
         message: [], users: [],
@@ -50,7 +50,7 @@ class MessageList extends React.Component {
             return (
                 <div className="MessageList">
                     <Menu />
-                    
+
                     <h1>MessageList</h1>
                     <h3>LOADING...</h3>
                 </div>
@@ -75,7 +75,7 @@ class MessageList extends React.Component {
                         <h1>Follow These Users</h1>
 
                         {this.state.users.map((userObject) => (
-                            <li>{userObject.username}</li>
+                            <li key={userObject.id}>{userObject.username}</li>
                         ))}
 
                     </ul>
@@ -84,6 +84,9 @@ class MessageList extends React.Component {
 
         );
     }
+
+
 }
+
 
 export default MessageList;

@@ -1,6 +1,8 @@
 import React from "react";
+import { Card, Button } from "react-bootstrap"
 import LikeService from "../../services/LikeService";
-import DeleteMessageService from "../../services/DeleteUserService";
+import DeleteMessageService from "../../services/DeleteMessageService";
+
 class Message extends React.Component {
   constructor(props) {
     super(props);
@@ -26,29 +28,45 @@ class Message extends React.Component {
   render() {
     let deleteButton;
     if (this.props.username === this.client.getUserName()) {
-      deleteButton = <button onClick={this.handleDelete}>delete</button>;
+      deleteButton = <Button onClick={this.handleDelete}>delete</Button>;
     }
     return (
-      <li className="Message">
-        <img
-          width={100}
-          height={100}
-          src={
-            "https://socialapp-api.herokuapp.com/users/" +
-            this.props.username +
-            "/picture"
-          }
-          alt="Profile"
-          onError={this.handleError}
-        />
-        At {new Date(this.props.createdAt).toDateString()},{this.props.username}{" "}
-        posted:
-        <div className="message-text">{this.props.text}</div>
-        <button className="likes" onClick={this.likeHandler}>
-          Likes: {this.props.likes.length}
-        </button>
-        {deleteButton}
-      </li>
+      <div className="card" >
+        <Card bg="secondary" style={{ width: "30rem" }}>
+          <Card.Body>
+            <Card.Header> {this.props.username} </Card.Header>
+            <Card.Title> {this.props.text} </Card.Title>
+            <Card.Text>
+              At {new Date(this.props.createdAt).toDateString()}
+            </Card.Text>
+            <Card.Text>Likes: {this.props.likes.length} </Card.Text>
+            <Button className="like-button" variant="primary">
+              Like
+            </Button>
+            {deleteButton}
+          </Card.Body>
+        </Card>
+      </div>
+      // <li className="Message">
+      //   <img
+      //     width={100}
+      //     height={100}
+      //     src={
+      //       "https://socialapp-api.herokuapp.com/users/" +
+      //       this.props.username +
+      //       "/picture"
+      //     }
+      //     alt="Profile"
+      //     onError={this.handleError}
+      //   />
+      //   At {new Date(this.props.createdAt).toDateString()},{this.props.username}{" "}
+      //   posted:
+      //   <div className="message-text">{this.props.text}</div>
+      //   <button className="likes" onClick={this.likeHandler}>
+      //     Likes: {this.props.likes.length}
+      //   </button>
+      //   {deleteButton}
+      // </li>
     );
   }
 }

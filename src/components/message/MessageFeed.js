@@ -1,11 +1,11 @@
 import React from "react";
 import Menu from "../components/menu/Menu";
-import Service from "../services/Service";
+import DataService from "../../services/DataService";
 import Message from "../components/message/Message";
 import PostMessage from "../components/PostMessage";
 
 class MessageFeed extends React.Component {
-    client = new Service();
+    client = new DataService();
 
     state = {
         message: [],

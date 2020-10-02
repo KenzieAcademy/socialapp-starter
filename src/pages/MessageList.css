@@ -1,10 +1,7 @@
 .messageContainer {
-    display: flex;
-  }
-  .messageList {
-    max-width: 60%;
-  }
-  .usersList {
-      
-      display: flex;
-  }
+  display: flex;
+}
+.messageList {
+  max-width: 60%;
+}
+
