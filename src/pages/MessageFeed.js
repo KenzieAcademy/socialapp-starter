@@ -13,7 +13,13 @@ import MiniProfile from "../components/miniProfile/MiniProfile";
 class MessageFeed extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { messages: [], text: "", currentUser: {}, selectedUser: "" };
+    this.state = {
+      messages: [],
+      text: "",
+      currentUser: {},
+      selectedUser: "",
+      delay: 20000,
+    };
     this.api = new SocialappService();
     this.popover = (
       <Popover id="newPost">
@@ -30,16 +36,21 @@ class MessageFeed extends React.Component {
     this.api
       .getUser(localStorage.getItem("user"))
       .then((response) => this.setState({ currentUser: response.data.user }));
+    this.interval = setInterval(this.tick, this.state.delay);
+  }
+
+  tick = () => {
+    this.retrieveMessages();
+  };
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
   }
 
   retrieveMessages() {
     this.api
       .getMessages()
-      .then((response) =>
-        this.setState({ messages: response.data.messages }, () =>
-          console.log(response.data.messages)
-        )
-      );
+      .then((response) => this.setState({ messages: response.data.messages }));
   }
 
   handleSelectUser = (e) => {
