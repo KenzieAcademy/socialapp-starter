@@ -23,9 +23,10 @@ function DeleteUserModal(props) {
   const { open, dimmer, size } = state;
 
   return (
-    <div>
+    <div className = "DeleteUserModal">
       <Button
         negative
+        className = "DeleteUserButton"
         onClick={() =>
           dispatch({ type: "OPEN_MODAL", size: "tiny", dimmer: "blurring" })
         }

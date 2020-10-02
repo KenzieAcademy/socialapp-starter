@@ -1,5 +1,6 @@
 import React from "react";
 import { Container } from "semantic-ui-react";
+import "./UserAboutDisplay.css"
 
 class UserAboutDisplay extends React.Component {
   constructor(props) {
@@ -22,7 +23,7 @@ class UserAboutDisplay extends React.Component {
   render() {
     return (
       <div className="UserAboutDisplay">
-        <Container style={{ padding: 5 }}>{this.state.userAboutInfo}</Container>
+        <Container id = "userAboutDisplay">{this.state.userAboutInfo}</Container>
       </div>
     );
   }

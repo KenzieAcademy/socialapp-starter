@@ -3,7 +3,10 @@ import ProfilePictureDisplay from "../profilePictureDisplay/ProfilePictureDispla
 import UserAboutDisplay from "../userAboutDisplay/UserAboutDisplay";
 import UserDataService from "../../services/UserDataService";
 import { Card } from "semantic-ui-react";
-import "./ProfilePictureParent.css"
+import UploadProfilePicture from "../uploadProfilePicture/UploadProfilePicture";
+import "./ProfilePictureParent.css";
+import UpdateUserInfoForm from "../updateUserInfoForm/UpdateUserInfoForm";
+import DeleteUser from "../deleteUser/DeleteUser";
 
 class ProfilePictureParent extends React.Component {
   constructor(props) {
@@ -14,6 +17,7 @@ class ProfilePictureParent extends React.Component {
       userUsername: null,
       userDisplayname: null,
     };
+
     //Gets the User's info, set's it in state
     this.userInfo = UserDataService.getDirectUser(
       this.props.usernameFromURL
@@ -30,17 +34,48 @@ class ProfilePictureParent extends React.Component {
   updateImage() {}
 
   render() {
+    if (this.state.userUsername === this.props.loggedInUser) {
+      return (
+        <div className="ProfilePictureParent">
+          <Card className="ProfileParentCard">
+            <Card.Content className="ProfileCardContentImage">
+              <ProfilePictureDisplay
+                usernameFromURL={this.props.usernameFromURL}
+                imageData={this.state.imageData}
+              />
+            </Card.Content>
+            <Card.Content className="ProfileCardContentBody" extra>
+              <Card.Header className="cardHeader">
+                {this.state.userDisplayname}
+              </Card.Header>
+              <Card.Description>
+                <UserAboutDisplay userAboutInfo={this.state.userAboutInfo} />
+              </Card.Description>
+            </Card.Content>
+            <Card.Content className="ProfileCardUserControls">
+              <Card.Header>User Controls</Card.Header>
+              <UploadProfilePicture />
+              <UpdateUserInfoForm />
+              <DeleteUser />
+            </Card.Content>
+          </Card>
+        </div>
+      );
+    }
+
     return (
-      <div className="ProfileParent">
-        <Card className = "ProfileParentCard" >
-          <Card.Content>
-            <Card.Header className="cardHeader" style={{ padding: 5 }}>
-              {this.state.userDisplayname}
-            </Card.Header>
+      <div className="ProfilePictureParent">
+        <Card className="ProfileParentCard">
+          <Card.Content className="ProfileCardContentImage">
             <ProfilePictureDisplay
               usernameFromURL={this.props.usernameFromURL}
               imageData={this.state.imageData}
             />
+          </Card.Content>
+          <Card.Content className="ProfileCardContentBody" extra>
+            <Card.Header id="cardHeader">
+              {this.state.userDisplayname}
+            </Card.Header>
             <Card.Description>
               <UserAboutDisplay userAboutInfo={this.state.userAboutInfo} />
             </Card.Description>
@@ -52,24 +87,3 @@ class ProfilePictureParent extends React.Component {
 }
 
 export default ProfilePictureParent;
-
-{
-  /* <Card>
-    <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
-    <Card.Content>
-      <Card.Header>Matthew</Card.Header>
-      <Card.Meta>
-        <span className='date'>Joined in 2015</span>
-      </Card.Meta>
-      <Card.Description>
-        Matthew is a musician living in Nashville.
-      </Card.Description>
-    </Card.Content>
-    <Card.Content extra>
-      <a>
-        <Icon name='user' />
-        22 Friends
-      </a>
-    </Card.Content>
-  </Card> */
-}
