@@ -3,7 +3,6 @@ import DataService from "../../dataService";
 import { Link, Route } from "react-router-dom";
 import profilepic from "../defualtpicture/freeiconlibrary.jpg";
 import "./Message.css"
-
 class Message extends React.Component {
   constructor(props) {
     super(props);

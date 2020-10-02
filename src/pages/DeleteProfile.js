@@ -1,4 +1,5 @@
-import { Button } from "antd";
+
+// import { Button } from "antd";
 import React from "react";
 import DataService from "../dataService";
 class DeletePage extends React.Component {
@@ -31,9 +32,11 @@ class DeletePage extends React.Component {
       <div className="loading">
         {console.log(this.props)}
         <form onSubmit={this.handleSubmit}>
+
           <p>We are going to miss you, you are welcome back whenever u want</p>
           <p>⇩</p>
           <button className="Delete" onClick={this.handleChange} style={{ backgroundColor: "red", fontFamily: "monospace" }}>
+          <button className="Delete" onClick={this.handleChange}>
             {" "}
             DELETE YOUR PROFILE
           </button>
