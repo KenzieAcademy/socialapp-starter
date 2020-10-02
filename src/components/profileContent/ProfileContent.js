@@ -9,11 +9,8 @@ class ProfileContent extends React.Component {
   render() {
     return (
       <div className="card">
-        <Card className="ProfileMain" style={{ width: "25rem" }}>
+        <Card style={{ width: "30rem" , height: "30rem"}}>
           <FileUploader />
-          <Card.Body>
-            
-          </Card.Body>
         </Card>
       </div>
     );

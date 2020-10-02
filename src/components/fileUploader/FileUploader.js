@@ -1,5 +1,7 @@
 import React from "react";
 import DataService from "../../services/DataService";
+import "./FileUploader.css";
+import { Button } from "react-bootstrap";
 
 class FileUploader extends React.Component {
   client = new DataService();
@@ -41,12 +43,6 @@ class FileUploader extends React.Component {
   render() {
     return (
       <div className="FileUploader">
-        <input
-          type="file"
-          accept="image/*"
-          name="picture"
-          onChange={this.createFormData}
-        />
         <div className="image-Preview">
           <img
             alt="user"
@@ -54,6 +50,20 @@ class FileUploader extends React.Component {
             onError={this.setFallbackImage}
             width={200}
           />
+
+          <h6>Upload Picture</h6>
+          <div className="ChooseFile">
+            <Button
+              size="sm"
+              variant="dark"
+              as="input"
+              type="file"
+              accept="image/*"
+              name="picture"
+              onChange={this.createFormData}
+            />
+          </div>
+
         </div>
       </div>
     );

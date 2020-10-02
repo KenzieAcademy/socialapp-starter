@@ -3,9 +3,10 @@ import { userIsAuthenticated } from "../redux/HOCs";
 import DataService from "../services/DataService";
 import Menu from "../components/menu/Menu";
 import ProfileContent from "../components/profileContent/ProfileContent";
-import Button from "react-bootstrap/Button";
+import { Button, Card } from "react-bootstrap";
 import "./Profile.css";
 import UserInfo from "../components/userInfo/UserInfo";
+
 
 class Profile extends React.Component {
   constructor(props) {
@@ -35,7 +36,6 @@ class Profile extends React.Component {
     );
   }
   handleChange = (e) => {
-    
     this.setState({ [e.target.name]: e.target.value });
   };
 
@@ -60,21 +60,26 @@ class Profile extends React.Component {
 
     return (
       <div className="Body">
+        <Menu isAuthenticated={this.props.isAuthenticated} />
         <div className="Profile">
-          <Menu isAuthenticated={this.props.isAuthenticated} />
-          <h2>My Profile</h2>
-          <ProfileContent />
-          <UserInfo
-            username={Username}
-            displayName={DisplayName}
-            createdAt={CreatedAt}
-          />
-
-          <Button className="DeleteUser" onClick={this.handleDelete}>
-            {" "}
-            Delete User
-          </Button>
+          <h3>My Profile</h3>
+          <Card style={{ height: "55rem" }}>
+            <ProfileContent />
+            <UserInfo
+              username={Username}
+              displayName={DisplayName}
+              createdAt={CreatedAt}
+            />
+          </Card>
         </div>
+        <Button
+          variant="dark"
+          className="DeleteUser"
+          onClick={this.handleDelete}
+        >
+          {" "}
+          Delete User
+        </Button>
       </div>
     );
   }
