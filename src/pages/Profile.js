@@ -19,9 +19,9 @@ import { UpOutlined } from '@ant-design/icons';
 
 // comment section 
 
-const questboardService = new QuestboardService
-const username = questboardService.getUsername(MenuAuthenticated)
-const loggedInUsername = questboardService.getUsername()
+// const questboardService = new QuestboardService
+// const username = questboardService.getUsername()
+// const loggedInUsername = questboardService.getUsername()
 
 
 

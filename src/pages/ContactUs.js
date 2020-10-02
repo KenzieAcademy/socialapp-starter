@@ -16,7 +16,7 @@ class ContactUs extends React.Component {
   }
   
   componentDidMount (){
-    const questboardService = new QuestboardService
+    const questboardService = new QuestboardService()
     const loggedInUsername = questboardService.getUsername()
 
     questboardService.GetPicture(loggedInUsername)
@@ -40,7 +40,7 @@ class ContactUs extends React.Component {
         <Header className="subHeader" ><h2>Contact Us!</h2> </Header>
         <Content style={{ margin: '24px auto auto', overflow: 'initial' }}>
           <div className="site-layout-background" style={{ padding: 24, textAlign: 'center' }}>
-<div><img className="displayPicture"src={this.state.pictureUrl} alt="picture"/></div>
+<div><img className="displayPicture"src={this.state.pictureUrl} alt="user"/></div>
 
 <Dice />
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Viverra adipiscing at in tellus integer. Lectus proin nibh nisl condimentum id venenatis a condimentum. Amet consectetur adipiscing elit duis tristique sollicitudin. Egestas quis ipsum suspendisse ultrices gravida dictum. Eu sem integer vitae justo. Faucibus purus in massa tempor nec feugiat. Sodales ut etiam sit amet nisl. Urna molestie at elementum eu. Eleifend mi in nulla posuere. Quam pellentesque nec nam aliquam sem et. Tellus at urna condimentum mattis pellentesque id nibh tortor id.

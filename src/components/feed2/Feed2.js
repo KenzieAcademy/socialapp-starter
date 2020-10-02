@@ -12,7 +12,6 @@ class MessageFeed2 extends React.Component {
     }
 
     this.interval = setInterval(() =>  new QuestboardService().GetMessageList().then(messages => {
-        console.log(this.interval)
         this.setState({ messages })
     }), 5000)
 
@@ -34,7 +33,6 @@ class MessageFeed2 extends React.Component {
       }
   
       componentWillUnmount() {
-        console.log(this.interval)
         clearInterval(this.interval)
       }
 

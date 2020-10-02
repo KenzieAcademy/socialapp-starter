@@ -1,33 +1,35 @@
 import React from "react"
+import { store } from '../../redux'
+import { withAsyncAction } from "../../redux/HOCs";
+import { Button } from 'antd';
 
 class GoogleAuth extends React.Component {
 constructor(props){
     super(props)
     this.state = {
-        loginWindow: null,
+        loginWindow: null
     }
 }
 
-
-
 handleMessage = (event) => {
     if (window.event.origin === undefined) {
-        console.log("this works.")
         window.event = window.event.originalEvent;
     }
 
-    if (window.event.origin !== window.location.origin) {
-        console.log("this works.")
+    if (window.event.origin !== "https://socialapp-api.herokuapp.com") {
         return;
     }
 
     if (window.event.data.statusCode === 200) {
-        console.log("this status thing works.")
-        this.username = window.event.data.username;
-        this.token = window.event.data.token;
+        const { username, token} = event.data
+        store.dispatch({
+            type: "LOGIN.SUCCESS",
+            payload: { username, token }
+        })
+        
 
         if (this.state.loginWindow !== null) {
-            this.loginWindow.close();
+            this.state.loginWindow.close();
             this.setState({
                 loginWindow: null 
             })
@@ -49,11 +51,10 @@ this.setState({loginWindow: window.open("https://socialapp-api.herokuapp.com/aut
         return(
         <div>
 
-
-        <button onClick={this.handleClick}>Login with Google</button>
+        <Button onClick={this.handleClick}>Login with Google</Button>
         </div>
         )
     }
 }
 
-export default GoogleAuth 
+export default withAsyncAction("auth", "login")(GoogleAuth)
