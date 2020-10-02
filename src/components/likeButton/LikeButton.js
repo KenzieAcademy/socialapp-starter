@@ -17,7 +17,7 @@ class LikeButton extends React.Component {
     console.log(this.state.messageId);
     this.client.handleLike(this.state).then((result) => {
       console.log(result);
-      return result;
+      this.props.handleLikeStatus(result.data.like.id);
     });
   };
 

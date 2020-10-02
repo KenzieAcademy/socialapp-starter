@@ -9,6 +9,7 @@ class MessageList extends React.Component {
     this.state = {
       message: [],
       isSubmitted: false,
+      refresh: false,
     };
     this.client = new DataService();
   }
@@ -23,12 +24,27 @@ class MessageList extends React.Component {
   }
 
   handleSubmit = () => {
-    this.setState({ isSubmitted: !this.state.isSubmitted });
+    this.setState((state) => {
+      return { isSubmitted: !state.isSubmitted };
+    });
+  };
+
+  handleRefresh = () => {
+    this.setState((state) => {
+      return { refresh: !state.refresh };
+    });
     this.client.getAllMessagesData().then((response) => {
-      console.log(response);
       this.setState({
         messages: response.data.messages,
       });
+    });
+    console.log(this.state.refresh);
+  };
+
+  handleCreationStatus = (messageData) => {
+    console.log(this.state.messages);
+    this.setState((state) => {
+      return { message: [messageData] };
     });
   };
 
@@ -39,13 +55,14 @@ class MessageList extends React.Component {
           <CreateMessage
             isSubmitted={this.state.isSubmitted}
             handleSubmit={this.handleSubmit}
+            handleRefresh={this.handleRefresh}
+            handleCreationStatus={this.handleCreationStatus}
           />
           <h1>MessageList</h1>
           <h3>Loading...</h3>
         </div>
       );
     }
-
 
     if (!this.state.isSubmitted) {
       return (
@@ -54,10 +71,19 @@ class MessageList extends React.Component {
           <CreateMessage
             isSubmitted={this.state.isSubmitted}
             handleSubmit={this.handleSubmit}
+            handleRefresh={this.handleRefresh}
+            handleCreationStatus={this.handleCreationStatus}
           />
           <ul>
             {this.state.messages.map((msgObj) => (
-              <Message keyId={msgObj.id} {...msgObj} />
+              <Message
+                keyId={msgObj.id}
+                {...msgObj}
+                handleSubmit={this.handleSubmit}
+                handleRefresh={this.handleRefresh}
+                handleCreationStatus={this.handleCreationStatus}
+                refresh={this.state.refresh}
+              />
             ))}
           </ul>
         </div>
@@ -69,15 +95,23 @@ class MessageList extends React.Component {
           <CreateMessage
             isSubmitted={this.state.isSubmitted}
             handleSubmit={this.handleSubmit}
+            handleRefresh={this.handleRefresh}
+            handleCreationStatus={this.handleCreationStatus}
           />
           <ul>
             {this.state.messages.map((msgObj) => (
-              <Message keyId={msgObj.id} {...msgObj} />
+              <Message
+                keyId={msgObj.id}
+                {...msgObj}
+                handleSubmit={this.handleSubmit}
+                handleRefresh={this.handleRefresh}
+                handleCreationStatus={this.handleCreationStatus}
+                refresh={this.state.refresh}
+              />
             ))}
           </ul>
         </div>
       );
-
   }
 }
 
