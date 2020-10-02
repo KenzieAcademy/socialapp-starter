@@ -2,7 +2,7 @@ import React from "react";
 import Spinner from "react-spinkit";
 import { withAsyncAction } from "../../redux/HOCs";
 import "./LoginForm.css";
-import Button from "react-bootstrap/Button";
+// import Button from "react-bootstrap/Button";
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -27,7 +27,7 @@ class LoginForm extends React.Component {
   render() {
     const { loading, error } = this.props;
     return (
-      <div className="Body">
+      <div className="LoginFormBody">
         <div className="LoginForm">
           <form id="login-form" onSubmit={this.handleLogin}>
             <div className="UserNameInput">
@@ -57,7 +57,12 @@ class LoginForm extends React.Component {
             </div>
             <div className="EnterButtonBox">
               <div className="EnterButton">
-                <input type="submit" value="Enter" disabled={loading}></input>
+                <input
+                  type="submit"
+                  value="Enter"
+                  onClick={this.handleLogin}
+                  disabled={loading}
+                ></input>
               </div>
             </div>
           </form>

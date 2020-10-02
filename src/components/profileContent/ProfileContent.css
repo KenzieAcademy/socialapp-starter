@@ -2,19 +2,18 @@
   box-sizing: border-box;
 }
 
-.ProfileBody {
+.ProfileContentBody {
   padding: 15px;
   background-image: url(../../assets/images/Clear_Red.png);
-  top: 17px;
-  left: -2px;
-  width: 828px;
-  height: 340px;
-  position: relative;
-  margin: auto;
   border: 3px solid black;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
+  top: 17px;
+  left: -2px;
+  width: 828px;
+  position: relative;
+  margin: auto;
 }
 
 .ProfileContent {
@@ -40,7 +39,7 @@
   margin: auto;
 }
 
-.FormBody {
+.MemberInfoFormBody {
   background-image: url(../../assets/images/Clear_Red.png);
   position: relative;
   margin: auto;
@@ -64,12 +63,15 @@
   padding: 5px;
   position: relative;
   margin: auto;
+  font: italic small-caps bolder 20px/25px Impact;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  -webkit-text-stroke: 0.25px white;
 }
 
 .AboutMeBox {
   width: 652px;
-  height: 193px;
-  top: 10px;
+  height: 168px;
+  top: 32px;
   border: 3px solid black;
   border-radius: 5px;
   border-width: 3px;
@@ -83,6 +85,17 @@
   padding: 5px;
   position: relative;
   margin: auto;
+  font: italic small-caps bolder 20px/25px Impact;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  -webkit-text-stroke: 0.25px white;
+}
+
+.AboutMeUserText {
+  position: relative;
+  margin: auto;
+  font: italic small-caps bolder 20px/25px Impact;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  -webkit-text-stroke: 0.25px white;
 }
 
 .UpdateSwitch {
@@ -90,7 +103,7 @@
   width: 131px;
   height: 50px;
   left: -404px;
-  top: -40px;
+  top: -30px;
   border: 3px solid black;
   border-radius: 5px;
   border-width: 3px;
@@ -98,13 +111,14 @@
   background-image: url(../../assets/images/Coupon_Background_Dark.png);
   position: relative;
   margin: auto;
+  font: italic small-caps bolder 25px/30px Impact;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  -webkit-text-stroke: 0.25px white;
 }
 
-.MemberInfoEdit {
+.EditInfoBody {
   width: 300px;
-  height: 125px;
-  left: -324px;
-  top: -10px;
+  height: 200px;
   border: 3px solid black;
   border-radius: 5px;
   border-width: 3px;
@@ -115,15 +129,12 @@
 }
 
 .SaveButton {
-  left: -324px;
-  top: -10px;
+  left: 0px;
+  top: 0px;
   border: 3px solid black;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
-  left: 350px;
-  top: -25px;
   position: relative;
   margin: auto;
-  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
 }

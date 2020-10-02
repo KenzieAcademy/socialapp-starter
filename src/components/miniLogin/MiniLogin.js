@@ -21,7 +21,7 @@ class MiniLogin extends React.Component {
   render() {
     const { loading, error } = this.props;
     return (
-      <div className="PopUp">
+      <div className="MiniLoginBody">
         <div className="LoginButton">
           <input
             type="submit"

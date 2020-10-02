@@ -10,12 +10,12 @@ const ProfileContent = (props) => {
   let joinedOn = new Date(props.user.createdAt);
 
   return (
-    <div className="ProfileBody">
+    <div className="ProfileContentBody">
       <div className="ProfileContent">
         <div className="ProfilePicBox">
           <img alt="Profile Pic" src={MiniProfileIMG} />
         </div>
-        <div className="FormBody">
+        <div className="MemberInfoFormBody">
           <Form>
             <div className="MemberInfoBox">
               <div className="MemberInfoText">
@@ -26,13 +26,12 @@ const ProfileContent = (props) => {
               <Form.Row>
                 <div className="AboutMeBox">
                   <div className="AboutMeText">
-                    <Form.Label>
-                      About Me: Lorem ipsum dolor sit amet, consectetur
-                      adipiscing elit.
-                    </Form.Label>
-                    <Col>
-                      <Form.Text>{props.user.about}</Form.Text>
-                    </Col>
+                    <Form.Label>About Me: </Form.Label>
+                    <div className="AboutMeUserText">
+                      <Col>
+                        <Form.Text>{props.user.about}</Form.Text>
+                      </Col>
+                    </div>
                   </div>
                 </div>
               </Form.Row>

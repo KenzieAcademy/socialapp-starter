@@ -2,15 +2,22 @@
   box-sizing: border-box;
 }
 
-.Body {
+.LoginFormBody {
   width: 850px;
+  /* height: 600px; */
   position: relative;
   margin: auto;
   border: 3px solid black;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
-  background-image: url(../../assets/images/Coupon_Background_Dark.png);
+  /* background-image: url(../../assets/images/Coupon_Background_Dark.png); */
+  font-size: 25px;
+  color: black;
+  font: italic small-caps bold 22px/40px Impact, Haettenschweiler,
+    "Arial Narrow Bold", sans-serif;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  -webkit-text-stroke: 0.25px black;
 }
 
 #login-form {
@@ -21,8 +28,6 @@
   display: flex;
   flex-direction: column;
   text-align: center;
-  font-size: 25px;
-  color: black;
   width: 340px;
 }
 
@@ -48,7 +53,6 @@
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
-  -webkit-text-stroke: 0.25px white;
 }
 
 .UserNameInputBox {
@@ -70,7 +74,6 @@
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
-  -webkit-text-stroke: 0.25px white;
 }
 
 .PasswordInputBox {
@@ -78,9 +81,14 @@
   margin: auto;
 }
 
+.EnterButtonBox {
+  position: relative;
+  margin: auto;
+}
+
 input[type="submit"] {
-  top: -13px;
-  left: 18px;
+  top: -113px;
+  /* left: 18px; */
   position: relative;
   background-image: url(../../assets/images/Register_Button.png);
   padding: 5px;
@@ -90,10 +98,10 @@ input[type="submit"] {
   border-style: dashed;
   width: 130px;
   height: 50;
-  font: italic small-caps bold 27px/45px Impact, Haettenschweiler,
+  /* font: italic small-caps bold 27px/45px Impact, Haettenschweiler,
     "Arial Narrow Bold", sans-serif;
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
-  -webkit-text-stroke: 0.25px white;
+  -webkit-text-stroke: 0.25px white; */
   cursor: pointer;
 }
 

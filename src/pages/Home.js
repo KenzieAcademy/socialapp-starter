@@ -34,7 +34,7 @@ class Home extends React.Component {
     }
 
     return (
-      <div className="Home">
+      <div className="HomePageBody">
         <div className="JoinUs">
           <div className="HomeLink">
             <Link to="/" onClick={() => this.loginButton()}>
@@ -51,7 +51,7 @@ class Home extends React.Component {
             </div>
           </div>
         </div>
-        <div className="FormBody">{form}</div>
+        <div className="HomePageLoginFormBody">{form}</div>
         <br></br>
       </div>
     );

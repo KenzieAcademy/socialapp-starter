@@ -2,7 +2,9 @@
   box-sizing: border-box;
 }
 
-.Body {
+.MessageFeedPageBody {
+  padding: 10px;
+  background-image: url(../assets/images/Coupon_Background_Dark.png);
   border: 3px solid black;
   border-radius: 5px;
   border-width: 3px;
@@ -12,7 +14,32 @@
   margin: auto;
 }
 
-.MessageHeader {
+.MessageLoading {
+  color: #b80c12;
+  font: italic small-caps bold 60px Impact;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  -webkit-text-stroke: 0.25px black;
+  text-align: center;
+  position: relative;
+  margin: auto;
+  top: 75px;
+}
+
+.MessageMenuBox {
+  position: relative;
+  margin: auto;
+}
+
+.MessageMenuText {
+  position: relative;
+  margin: auto;
+  font: italic small-caps bolder 12px/30px Impact;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  -webkit-text-stroke: 0.25px white;
+}
+
+.MessageHeaderBox {
+  padding: 10px;
   top: 6px;
   left: -2px;
   position: relative;
@@ -24,39 +51,49 @@
   width: 830px;
   height: 55px;
   background-image: url(../assets/images/Clear_Red.png);
-  font-size: 45px;
+}
+
+.MessageFeedHeaderText {
+  font: italic small-caps bold 45px Impact;
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
   -webkit-text-stroke: 0.25px white;
   color: black;
   text-align: center;
-}
-
-.MessageHeaderText {
-  top: -10px;
+  top: -12px;
   position: relative;
   margin: auto;
 }
 
-.MessageLoading {
-  color: #b80c12;
-  font-size: 60px;
-  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
-  -webkit-text-stroke: 0.25px black;
+.MiniProfileFeed {
   position: relative;
   margin: auto;
-  top: 100px;
-  font-size: 45px;
+}
+
+.MiniProfile-PostButtonBox {
+  left: -130px;
+  top: 14px;
+  width: 828px;
+  height: 75px;
+  position: relative;
+  margin: auto;
+}
+
+.PostButtonBox {
+  left: 703px;
+  top: -70px;
+  position: relative;
+  margin: auto;
 }
 
 .PostAMessageButton {
   width: 250px;
   height: 70px;
+  left: 4px;
   background-image: url(../assets/images/Clear_Red_Dark.png);
   border: 3px solid black;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
-  left: 4px;
   padding: 10px;
   font: italic small-caps bold 30px/48px Impact, Haettenschweiler,
     "Arial Narrow Bold", sans-serif;
@@ -78,25 +115,9 @@
   border-style: dashed;
 }
 
-.MiniProfileBox {
-  top: 15px;
-  width: 828px;
-  height: 75px;
-  position: relative;
-  margin: auto;
-}
-
 .TheFeed {
+  left: -23px;
   top: 10px;
   position: relative;
   margin: auto;
-}
-
-.MessageList {
-  position: relative;
-  margin: auto;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  text-align: center;
-  color: white;
-  font-size: 20px;
 }

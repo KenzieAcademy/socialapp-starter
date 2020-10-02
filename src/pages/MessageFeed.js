@@ -58,42 +58,44 @@ class MessageFeed extends React.Component {
   render() {
     if (this.state.messages.length === 0) {
       return (
-        <div className="MessageList">
+        <div className="MessageLoading">
           <div className="MessageLoading">Message Feed Is Loading......</div>
         </div>
       );
     }
     return (
-      <div className="Body">
-        <div className="MessageList">
-          <Menu isAuthenticated={this.props.isAuthenticated} />
-          <div className="MessageHeader">
-            <div className="MessageHeaderText">Message Feed</div>
+      <div className="MessageFeedPageBody">
+        <div className="MessageMenuBox">
+          <div className="MessageMenuText">
+            <Menu isAuthenticated={this.props.isAuthenticated} />
           </div>
-          <OverlayTrigger
-            trigger="click"
-            placement="bottom"
-            overlay={this.popover}
-            rootClose={true}
-          >
-            <div className="MiniProfileBox">
-              <div className="MemberInfo">
-                <MiniProfile user={this.state.currentUser} />
-              </div>
-              <div className="PostButtonBox">
-                <Button className="PostAMessageButton" variant="dark" size="lg">
-                  Post A Message
-                </Button>
-              </div>
+        </div>
+        <div className="MessageHeaderBox">
+          <div className="MessageFeedHeaderText">Message Feed</div>
+        </div>
+        <OverlayTrigger
+          trigger="click"
+          placement="bottom"
+          overlay={this.popover}
+          rootClose={true}
+        >
+          <div className="MiniProfile-PostButtonBox">
+            <div className="MiniProfileFeed">
+              <MiniProfile user={this.state.currentUser} />
             </div>
-          </OverlayTrigger>
-          <div className="TheFeed">
-            <ul>
-              {this.state.messages.map((messageObject) => {
-                return <Message {...messageObject} />;
-              })}
-            </ul>
+            <div className="PostButtonBox">
+              <Button className="PostAMessageButton" variant="dark" size="lg">
+                Post A Message
+              </Button>
+            </div>
           </div>
+        </OverlayTrigger>
+        <div className="TheFeed">
+          <ul>
+            {this.state.messages.map((messageObject) => {
+              return <Message {...messageObject} />;
+            })}
+          </ul>
         </div>
       </div>
     );

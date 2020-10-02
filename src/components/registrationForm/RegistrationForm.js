@@ -47,7 +47,7 @@ class RegistrationForm extends React.Component {
     }
 
     return (
-      <div className="Body">
+      <div className="RegistrationFormBody">
         {popup}
         <div className="RegistrationForm">
           <form id="registration-form" onSubmit={this.handleRegistration}>

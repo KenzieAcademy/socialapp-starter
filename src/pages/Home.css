@@ -2,9 +2,16 @@
   box-sizing: border-box;
 }
 
-.Home {
+.HomePageBody {
+  padding: 10px;
   position: relative;
   margin: auto;
+  background-image: url(../assets/images/Coupon_Background_Dark.png);
+  border: 3px solid black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  width: 850px;
 }
 
 .JoinUs {
@@ -63,12 +70,6 @@
   -webkit-text-stroke: 0.25px black;
 }
 
-.FormBody {
-  top: 5px;
-  position: relative;
-  margin: auto;
-}
-
 .Welcome {
   position: relative;
   margin: auto;
@@ -89,4 +90,10 @@
   font: italic small-caps bold 17px/35px Impact, Haettenschweiler,
     "Arial Narrow Bold", sans-serif;
   -webkit-text-stroke: 0.15px white;
+}
+
+.HomePageLoginFormBody {
+  padding: 10px;
+  position: relative;
+  margin: auto;
 }

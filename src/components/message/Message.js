@@ -41,32 +41,36 @@ class Message extends React.Component {
     //   this.setState({ userPic: ProfilePic });
     // }
     return (
-      <div className="CardBody">
-        <Card className="Card" style={{ width: "620px" }}>
-          <Card.Body className="Message">
-            <img className="ProfilePic" src={ProfilePic} alt="Profile Pic" />
-            <div className="MemberTitle">
-              <Card.Title> Member: {this.props.username}</Card.Title>
-            </div>
-            <div className="PostedTitle">
-              <Card.Subtitle className="mb-2 text-muted">
-                {new Date(this.props.createdAt).toDateString}{" "}
-              </Card.Subtitle>
-            </div>
-            <Card.Text className="MessageText">{this.props.text}</Card.Text>
-            <footer>
-              {" "}
-              <div className="LikesNumber">
-                <div className="Likes">
-                  Thumbs Up: {this.props.likes.length}
-                </div>{" "}
+      <div className="MessageBody">
+        <div className="MessageCardBody">
+          <Card className="MessageCard" style={{ width: "620px" }}>
+            <Card.Body className="Message">
+              <img className="ProfilePic" src={ProfilePic} alt="Profile Pic" />
+              <div className="MessageMemberTitle">
+                <Card.Title> Member: {this.props.username}</Card.Title>
+                {/* </div> */}
+                {/* <div className="PostInfo"> */}
+                <Card.Subtitle className="mb-2 text-muted">
+                  {new Date(this.props.createdAt).toDateString}{" "}
+                </Card.Subtitle>
               </div>
-              <button className="LikeButton" onClick={this.LikeFunction}>
-                Thumbs Up!
-              </button>{" "}
-            </footer>
-          </Card.Body>
-        </Card>
+              <Card.Text className="MessageTextBox">
+                {this.props.text}
+              </Card.Text>
+              <footer>
+                {" "}
+                <div className="ThumbsUpNumber">
+                  <div className="ThumbsUp">
+                    Thumbs Up: {this.props.likes.length}
+                  </div>{" "}
+                </div>
+                <button className="ThumbsUpButton" onClick={this.LikeFunction}>
+                  Thumbs Up!
+                </button>{" "}
+              </footer>
+            </Card.Body>
+          </Card>
+        </div>
       </div>
     );
   }

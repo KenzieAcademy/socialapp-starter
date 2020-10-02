@@ -7,14 +7,14 @@ const MiniProfile = (props) => {
   let joined = new Date(props.user.createdAt);
 
   return (
-    <div className="ProfileCard">
+    <div className="MiniProfileBody">
       <Card className="Miniprofile">
-        <Card-Body className="card-body">
+        <Card-Body className="MiniProfCardBody">
           <div className="ProfilePicThumb">
             <img alt="profile" src={MiniProfileIMG} />
           </div>
           <Card.Subtitle className="card-Subtitle">
-            <div className="MemberInfo">
+            <div className="MiniMemberInfo">
               <div className="MemberName">
                 Logged In As: {props.user.displayName}
               </div>

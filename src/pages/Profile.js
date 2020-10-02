@@ -56,20 +56,20 @@ class Profile extends React.Component {
 
   render() {
     return (
-      <div className="Body">
-        <div className="Profile">
+      <div className="ProfilePageBody">
+        <div className="ProfileMenu">
           <Menu isAuthenticated={this.props.isAuthenticated} />
-          <div className="ProfileHeader">
-            <div className="ProfileHeaderText">My Profile</div>
-          </div>
-          <ProfileContent
-            user={this.state.user}
-            change={this.handleChange}
-            checked={this.state.checked}
-            clickSwitch={this.handleSwitch}
-            submitButton={this.handleUpdateUser}
-          />
         </div>
+        <div className="ProfileHeaderBox">
+          <div className="ProfileHeaderText">My Profile</div>
+        </div>
+        <ProfileContent
+          user={this.state.user}
+          change={this.handleChange}
+          checked={this.state.checked}
+          clickSwitch={this.handleSwitch}
+          submitButton={this.handleUpdateUser}
+        />
       </div>
     );
   }

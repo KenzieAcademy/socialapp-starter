@@ -8,7 +8,7 @@ import "./Post.css";
 
 const Post = (props) => {
   return (
-    <div className="PostForm">
+    <div className="PostFormBody">
       <div className="PostBody">
         <Card>
           <Card.Body>

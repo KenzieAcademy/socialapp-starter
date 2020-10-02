@@ -2,10 +2,10 @@
   box-sizing: border-box;
 }
 
-.Body {
+.MessageBody {
+  padding: 10px;
   position: relative;
   margin: auto;
-  font-size: 25px;
 }
 
 .Message {
@@ -17,24 +17,24 @@
   border-width: 3px;
   border-style: dashed;
   text-align: left;
-  padding: 10px;
+  /* padding: 10px; */
 }
 
-.CardBody {
+/* .MessageCardBody {
   width: 654px;
   position: relative;
   margin: auto;
   margin: 10px;
   left: 32px;
-}
+} */
 
-.Card {
+.MessageCard {
   background: none;
   position: relative;
   margin: auto;
 }
 
-.MessageText {
+.MessageTextBox {
   position: relative;
   margin: auto;
   padding: 5px;
@@ -43,35 +43,35 @@
   border-width: 3px;
   border-style: dashed;
   background-image: url(../../assets/images/Coupon_Background_Dark.png);
-  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
   color: black;
   font-size: 25px;
   width: 468px;
   height: 185px;
-  top: -130px;
+  top: -140px;
   left: 68px;
 }
 
-.LikeButton {
+.ThumbsUpButton {
   border: 3px solid black;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
   width: 125px;
   height: 53px;
+  left: -12px;
+  top: -233px;
   background: none;
   background-image: url(../../assets/images/Thumgs_Up.png);
   background-repeat: no-repeat;
   position: relative;
   margin: auto;
-  top: -213px;
   font: italic small-caps bold 22px/40px Impact, Haettenschweiler,
     "Arial Narrow Bold", sans-serif;
   color: rgba(0, 0, 0, 0);
   cursor: pointer;
 }
 
-.LikeButton:hover {
+.ThumbsUpButton:hover {
   border: 3px solid white;
   border-radius: 5px;
   border-width: 3px;
@@ -87,26 +87,37 @@
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
-  top: 25px;
+  top: 14px;
+  left: -11px;
   width: 125px;
   height: 125px;
   position: relative;
   margin: auto;
 }
 
-.MemberTitle {
+.MessageMemberTitle {
+  /* font: italic small-caps bold 30px/48px Impact, Haettenschweiler,
+    "Arial Narrow Bold", sans-serif; */
   color: black;
-  top: -130px;
+  top: -140px;
+  left: -3px;
   position: relative;
   margin: auto;
-  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
 }
 
-.LikesNumber {
+.PostTimeStamp {
+  width: 100px;
+  height: 50px;
+  position: relative;
+  margin: auto;
+}
+
+.ThumbsUpNumber {
+  font: italic small-caps bold 22px/40px Impact, Haettenschweiler,
+    "Arial Narrow Bold", sans-serif;
   color: black;
   position: relative;
   margin: auto;
-  top: -348px;
-  left: 502px;
-  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  top: -363px;
+  left: 475px;
 }

@@ -13,7 +13,7 @@ class RegisterPopup extends React.Component {
 
   render() {
     return (
-      <div className="PopupBody">
+      <div className="RegisterPopupBody">
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
             <Modal.Title>Thank You For Registering!</Modal.Title>

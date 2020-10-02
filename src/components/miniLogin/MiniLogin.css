@@ -2,18 +2,13 @@
   box-sizing: border-box;
 }
 
+.MiniLoginBody {
+  position: relative;
+  margin: auto;
+}
+
 .LoginButton {
   position: relative;
   margin: auto;
   text-align: center;
-}
-
-.PopUp {
-  position: relative;
-  margin: auto;
-}
-
-.LoginButton {
-  position: relative;
-  margin: auto;
 }
