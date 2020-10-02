@@ -51,7 +51,7 @@ class FileUploader extends React.Component {
             width={200}
           />
 
-          <h6>Upload Picture</h6>
+          <h6>Upload Picture - RESTRICTED TO 200kb-</h6>
           <div className="ChooseFile">
             <Button
               size="sm"

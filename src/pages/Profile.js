@@ -63,7 +63,7 @@ class Profile extends React.Component {
         <Menu isAuthenticated={this.props.isAuthenticated} />
         <div className="Profile">
           <h3>My Profile</h3>
-          <Card style={{ height: "55rem" }}>
+          <Card style={{ height: "70rem" }}>
             <ProfileContent />
             <UserInfo
               username={Username}
