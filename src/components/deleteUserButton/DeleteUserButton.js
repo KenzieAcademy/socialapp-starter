@@ -1,38 +1,55 @@
 import React from "react";
 import DataService from "../../DataService";
-import { Popconfirm } from 'antd';
-
+import { Popconfirm } from "antd";
 
 class DeleteUserButton extends React.Component {
   constructor() {
     super();
 
-    this.client = new DataService()
+    this.state = {
+      userData: { username: "" },
+      isSubmitted: false,
+    };
+
+    this.client = new DataService();
   }
 
   handleDelete = (e) => {
     e.preventDefault();
     this.client.deleteUser(this.state).then((result) => {
       console.log(result.data);
-    })
-      window.localStorage.removeItem('login')
-      window.location.reload()
-    
+      this.setState({ isSubmitted: true });
+    });
+  };
+
+  handleHome = (e) => {
+    window.localStorage.removeItem("login");
+    window.location.pathname = "/";
   };
 
   handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };
   render() {
-    return <Popconfirm title="Are you sure？" okText="Yes" cancelText="No" onConfirm={this.handleDelete}>
-      <button className="DeleteUserButton">Delete</button>;
-  </Popconfirm>
-    
-    
-
+    if (this.state.isSubmitted) {
+      return (
+        <div>
+          Your User Profile was Deleted please return to{" "}
+          <button onClick={this.handleHome}>Login</button>
+        </div>
+      );
+    }
+    return (
+      <Popconfirm
+        title="Are you sure？"
+        okText="Yes"
+        cancelText="No"
+        onConfirm={this.handleDelete}
+      >
+        <button className="DeleteUserButton">Delete</button>;
+      </Popconfirm>
+    );
   }
 }
 
 export default DeleteUserButton;
-
-

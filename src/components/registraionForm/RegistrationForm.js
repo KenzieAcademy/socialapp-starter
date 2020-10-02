@@ -2,9 +2,8 @@ import React from "react";
 import Spinner from "react-spinkit";
 import "./RegistrationForm.css";
 import DataService from "../../DataService";
-import {Link, link} from "react-router-dom"
-import { Button } from "antd";
 import { Link } from "react-router-dom";
+import { Button } from "antd";
 class RegistrationForm extends React.Component {
   state = {
     ModalText: "Content of the modal",
@@ -73,11 +72,9 @@ class RegistrationForm extends React.Component {
             required
             onChange={this.handleChange}
           />
-          <Link to="/">
           <button type="submit" disabled={loading}>
             Register
           </button>
-          </Link>
         </form>
         {loading && <Spinner name="circle" color="blue" />}
         {error && <p style={{ color: "red" }}>{error.message}</p>}
