@@ -2,6 +2,7 @@ import React from "react";
 import DataService from "../../DataService";
 import { Avatar } from "antd";
 import { UserOutlined } from "@ant-design/icons";
+import { Upload, message } from "antd";
 
 // const username = JSON.parse(localStorage.getItem("login")).result.username;
 const client = new DataService();
@@ -36,7 +37,7 @@ class UploadPicture extends React.Component {
   render() {
     return (
       <div className="FileUploader">
-        <Avatar size={264} icon={<UserOutlined />} src={this.state.imageURL} />
+        <Avatar size={150} icon={<UserOutlined />} src={this.state.imageURL} />
         <br />
         <input
           type="file"
