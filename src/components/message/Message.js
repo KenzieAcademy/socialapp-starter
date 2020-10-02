@@ -2,56 +2,72 @@ import React from "react";
 import Card from "react-bootstrap/Card";
 import "../message/Message.css";
 import ProfilePic from "../../assets/images/Placeholder_Image.gif";
-import SocialappService from "../../socialappService";
+import Image from "react-bootstrap/Image";
 import { userIsAuthenticated } from "../../redux/HOCs";
 
 class Message extends React.Component {
   constructor(props) {
     super(props);
-    this.api = new SocialappService();
 
     this.state = {
-      user: {},
-      date: "",
-      userPic: ProfilePic,
       likes: this.props.likes.length,
+      user: this.props.username,
+      displayName: "loading",
+      profilePic: ProfilePic,
     };
   }
-
   componentDidMount() {
-    this.api
-      .getUser(this.props.username)
-      .then((response) => this.setState({ user: response.data.user }));
-    const postedAt = new Date(this.props.createdAt);
-    this.setState({ date: postedAt.toUTCString() });
-    // this.api
-    //   .getProfilePic(this.props.username)
-    //   .then((response) => this.setState({ userPic: response.data.message }));
+    this.updateUser();
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.username !== this.props.username) {
+      this.updateUser();
+    }
+  }
+
+  updateUser() {
+    this.props.api.getUser(this.props.username).then((response) =>
+      this.setState({
+        user: response.data.user.username,
+        displayName: response.data.user.displayName,
+        profilePic: response.data.user.pictureLocation,
+      })
+    );
   }
 
   LikeFunction = () => {
     let messageID = { messageId: this.props.id };
-    this.api
+    this.props.api
       .addLike(messageID)
       .then(this.setState({ likes: this.state.likes + 1 }));
   };
 
   render() {
-    // if (this.state.userPic === "User does not have a picture") {
-    //   this.setState({ userPic: ProfilePic });
-    // }
+    let postedAt = new Date(this.props.createdAt);
+    postedAt = postedAt.toUTCString();
+    let picture = ProfilePic;
+    if (this.state.profilePic !== null) {
+      picture = `https://socialapp-api.herokuapp.com${this.state.profilePic}`;
+    }
+
     return (
-      <div className="MessageBody">
-        <div className="MessageCardBody">
-          <Card className="MessageCard" style={{ width: "620px" }}>
-            <Card.Body className="Message">
-              <img className="ProfilePic" src={ProfilePic} alt="Profile Pic" />
-              <div className="MessageMemberTitle">
-                <Card.Title> Member: {this.props.username}</Card.Title>
-              </div>
-              {/* <div className="PostInfo"> */}
+      <div className="CardBody">
+        <Card style={{ width: "575px" }}>
+          <Card.Body className="Message">
+            <Image
+              className="ProfilePic"
+              src={picture}
+              alt="Profile Pic"
+              name={this.props.username}
+              onClick={this.props.selectUserToDisplay}
+            />
+            <div className="MemberTitle">
+              <Card.Title> Member: {this.state.displayName}</Card.Title>
+            </div>
+            <div className="PostedTitle">
               <Card.Subtitle className="mb-2 text-muted">
-                {new Date(this.props.createdAt).toDateString}{" "}
+                {postedAt}
               </Card.Subtitle>
               {/* </div> */}
               <Card.Text className="MessageTextBox">
