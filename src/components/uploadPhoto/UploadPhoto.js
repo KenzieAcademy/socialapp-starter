@@ -1,14 +1,24 @@
 import React, { Component } from "react";
-
+import { UserOutlined } from "@ant-design/icons";
+import { Avatar } from "antd";
+import Dataservice from "../../pages/dataService";
 class UploadPhoto extends Component {
   constructor(props) {
     super(props);
     this.state = {
       image: null,
+      picture: "",
     };
 
     this.onImageChange = this.onImageChange.bind(this);
+    this.setPicture = this.setPicture.bind(this);
+    this.client = new Dataservice();
   }
+  setPicture = () => {
+    this.client.setPicture(this.props.messageId).then((response) => {
+      console.log(response.data);
+    });
+  };
 
   onImageChange = (event) => {
     if (event.target.files && event.target.files[0]) {
@@ -24,9 +34,20 @@ class UploadPhoto extends Component {
       <div>
         <div>
           <div>
-            <img src={this.state.image} alt={this.props.userName} />
             <h1>Upload Image</h1>
-            <input type="file" name="myImage" onChange={this.onImageChange} />
+
+            <Avatar
+              size={150}
+              src={this.state.image}
+              alt={this.props.userName}
+              icon={<UserOutlined />}
+            />
+            <input
+              type="file"
+              name="myImage"
+              onChange={this.onImageChange}
+              src={this.setPicture}
+            />
           </div>
         </div>
       </div>
