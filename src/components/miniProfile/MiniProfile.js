@@ -3,6 +3,7 @@ import Card from "react-bootstrap/Card";
 <<<<<<< HEAD
 import "../miniProfile/MiniProfile.css";
 import MiniProfileIMG from "../../assets/images/Placeholder_Image_Thumb.gif";
+<<<<<<< HEAD
 import { Link } from "react-router-dom";
 =======
 import MiniProfileIMG from "../../assets/images/Placeholder_Image.gif";
@@ -16,10 +17,13 @@ const styles = {
     maxheight: 20,
   },
 };
+=======
+>>>>>>> parent of a015c11... Merge branch 'master' into Mark
 
 const MiniProfile = (props) => {
   let joined = new Date(props.user.createdAt);
 
+<<<<<<< HEAD
   let image = MiniProfileIMG;
   if (props.user.pictureLocation !== null) {
     image = `https://socialapp-api.herokuapp.com${props.user.pictureLocation}`;
@@ -42,6 +46,15 @@ const MiniProfile = (props) => {
             class="btn btn-primary"
           />
 >>>>>>> parent of 7b5762f... Merge pull request #60 from BenLynch87/Ben
+=======
+  return (
+    <div className="MiniProfileBody">
+      <Card className="Miniprofile">
+        <Card-Body className="MiniProfCardBody">
+          <div className="ProfilePicThumb">
+            <img alt="profile" src={MiniProfileIMG} />
+          </div>
+>>>>>>> parent of a015c11... Merge branch 'master' into Mark
           <Card.Subtitle className="card-Subtitle">
             <div className="MiniMemberInfo">
               <div className="MemberName">

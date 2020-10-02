@@ -15,14 +15,11 @@ class Profile extends React.Component {
       about: "loading",
       displayName: "loading",
       checked: false,
-      image: {},
-      pictureLocation: null,
     };
   }
 
   componentDidMount() {
     this.getUser();
-    setTimeout(() => this.updatePicture(), 500);
   }
 
   getUser() {
@@ -32,31 +29,9 @@ class Profile extends React.Component {
         password: localStorage.getItem("password"),
         about: response.data.user.about,
         displayName: response.data.user.displayName,
-        pictureLoction: response.data.user.pictureLocation,
       })
     );
   }
-
-  createFormData = (event) => {
-    const file = event.target.files[0];
-    const formData = new FormData();
-    formData.append("picture", file);
-    this.setState({ image: formData });
-  };
-
-  updatePicture() {
-    const timestamp = Date.now();
-    const imageURL = `https://socialapp-api.herokuapp.com/users/${this.state.user.username}/picture?t=${timestamp}`;
-    this.setState({ pictureLocation: imageURL });
-  }
-
-  handleUploadPic = () => {
-    this.api.setProfilePic(this.state.user.username, this.state.image).then(
-      setTimeout(() => {
-        this.updatePicture();
-      }, 250)
-    );
-  };
 
   handleUpdateUser = () => {
     let updateData = {
@@ -64,12 +39,11 @@ class Profile extends React.Component {
       about: this.state.about,
       displayName: this.state.displayName,
     };
-
     this.api.updateUser(this.state.user.username, updateData);
     this.setState({ checked: false });
     setTimeout(() => {
       this.getUser();
-    }, 250);
+    }, 500);
   };
 
   handleChange = (e) => {

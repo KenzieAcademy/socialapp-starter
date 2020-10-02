@@ -6,11 +6,15 @@ import { Link } from "react-router-dom";
 import "../message/Message.css";
 import ProfilePic from "../../assets/images/Placeholder_Image.gif";
 <<<<<<< HEAD
+<<<<<<< HEAD
 // import Image from "react-bootstrap/Image";
 // import { userIsAuthenticated } from "../../redux/HOCs";
 =======
 import SocialappService from "../../socialappService";
 import Image from "react-bootstrap/Image";
+=======
+import SocialappService from "../../socialappService";
+>>>>>>> parent of a015c11... Merge branch 'master' into Mark
 import { userIsAuthenticated } from "../../redux/HOCs";
 >>>>>>> parent of 7b5762f... Merge pull request #60 from BenLynch87/Ben
 
@@ -22,6 +26,10 @@ class Message extends React.Component {
     this.state = {
       user: {},
       date: "",
+<<<<<<< HEAD
+=======
+      userPic: ProfilePic,
+>>>>>>> parent of a015c11... Merge branch 'master' into Mark
       likes: this.props.likes.length,
     };
   }
@@ -45,6 +53,7 @@ class Message extends React.Component {
   };
 
   render() {
+<<<<<<< HEAD
     let picture = ProfilePic;
     if (this.state.user.pictureLocation !== null) {
       picture = `https://socialapp-api.herokuapp.com${this.state.user.pictureLocation}`;
@@ -52,6 +61,12 @@ class Message extends React.Component {
 
     return (
 <<<<<<< HEAD
+=======
+    // if (this.state.userPic === "User does not have a picture") {
+    //   this.setState({ userPic: ProfilePic });
+    // }
+    return (
+>>>>>>> parent of a015c11... Merge branch 'master' into Mark
       <div className="MessageBody">
         <div className="MessageCardBody">
           <Card className="MessageCard" style={{ width: "620px" }}>
@@ -61,6 +76,7 @@ class Message extends React.Component {
                 <Card.Title> Member: {this.props.username}</Card.Title>
               </div>
               {/* <div className="PostInfo"> */}
+<<<<<<< HEAD
               <Card.Subtitle className="mb-2 text-muted">
                 {new Date(this.props.createdAt).toDateString}{" "}
 =======
@@ -75,6 +91,10 @@ class Message extends React.Component {
               <Card.Subtitle className="mb-2 text-muted">
                 {this.state.date}
 >>>>>>> parent of 7b5762f... Merge pull request #60 from BenLynch87/Ben
+=======
+              <Card.Subtitle className="mb-2 text-muted">
+                {new Date(this.props.createdAt).toDateString}{" "}
+>>>>>>> parent of a015c11... Merge branch 'master' into Mark
               </Card.Subtitle>
               {/* </div> */}
               <Card.Text className="MessageTextBox">

@@ -23,8 +23,13 @@ class Menu extends React.Component {
       <div className="MenuBody">
         {this.props.isAuthenticated && (
           <div id="menu-links">
+<<<<<<< HEAD
             <Link to={this.state.link}>PROFILE</Link>
             <Link to="/messagefeed">MESSAGE FEED</Link>
+=======
+            <Link to={this.state.link}>Profile</Link>
+            <Link to="/messagefeed">Message Feed</Link>
+>>>>>>> parent of a015c11... Merge branch 'master' into Mark
             <Link to="/" onClick={this.handleLogout}>
               Logout
             </Link>

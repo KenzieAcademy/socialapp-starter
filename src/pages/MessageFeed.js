@@ -13,7 +13,7 @@ import MiniProfile from "../components/miniProfile/MiniProfile";
 class MessageFeed extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { messages: [], text: "", currentUser: {}, selectedUser: "" };
+    this.state = { messages: [], text: "", currentUser: {} };
     this.api = new SocialappService();
     this.popover = (
       <Popover id="newPost">
@@ -64,6 +64,7 @@ class MessageFeed extends React.Component {
       );
     }
     return (
+<<<<<<< HEAD
       <div className="Body">
         <MiniProfile user={this.state.currentUser} />
         <div className="MessageList">
@@ -86,6 +87,12 @@ class MessageFeed extends React.Component {
                 return <Message {...messageObject} />;
               })}
             </ul>
+=======
+      <div className="MessageFeedPageBody">
+        <div className="MessageMenuBox">
+          <div className="MessageMenuText">
+            <Menu isAuthenticated={this.props.isAuthenticated} />
+>>>>>>> parent of a015c11... Merge branch 'master' into Mark
           </div>
         </div>
         <div className="MessageHeaderBox">
