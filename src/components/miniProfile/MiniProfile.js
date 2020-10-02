@@ -30,14 +30,14 @@ const MiniProfile = (props) => {
   );
   if (props.user.username === localStorage.getItem("user")) {
     profileImage = (
-      <Link to={"profile/" + localStorage.getItem("user")}>
+      <a href={"profile/" + localStorage.getItem("user")}>
         <img
           alt="profile"
           src={image}
           style={styles.paperContainer}
           class="btn btn-primary"
         />
-      </Link>
+      </a>
     );
   }
 
