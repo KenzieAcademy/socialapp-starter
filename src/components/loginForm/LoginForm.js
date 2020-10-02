@@ -1,8 +1,7 @@
 import React from "react";
-import {  Form, Button } from "react-bootstrap";
+import { Form, Button } from "react-bootstrap";
 import Spinner from "react-spinkit";
 import { withAsyncAction } from "../../redux/HOCs";
-
 
 import "./LoginForm.css";
 
@@ -27,30 +26,6 @@ class LoginForm extends React.Component {
   render() {
     const { loading, error } = this.props;
     return (
-      // <div className="LoginForm">
-      //   <form id="login-form" onSubmit={this.handleLogin}>
-      //     <label htmlFor="username">Username</label>
-      //     <input
-      //       type="text"
-      //       name="username"
-      //       autoFocus
-      //       required
-      //       onChange={this.handleChange}
-      //     />
-      //     <label htmlFor="password">Password</label>
-      //     <input
-      //       type="password"
-      //       name="password"
-      //       required
-      //       onChange={this.handleChange}
-      //     />
-      //     <button type="submit" disabled={loading}>
-      //       Login
-      //     </button>
-      //   </form>
-      //   {loading && <Spinner name="circle" color="blue" />}
-      //   {error && <p style={{ color: "red" }}>{error.message}</p>}
-      // </div>
       <div>
         <Form id="login-form" onSubmit={this.handleLogin}>
           <Form.Group controlid="loginForm">
