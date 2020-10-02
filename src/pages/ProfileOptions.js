@@ -16,7 +16,7 @@ class ProfileOptions extends React.Component {
   render() {
     return (
       <div className="ProfileOptions">
-        <Link to="/">Go Home</Link>
+        <Link to="/">Go Home/Login</Link>
         <Menu />
         <h2>Settings</h2>
         <br />
