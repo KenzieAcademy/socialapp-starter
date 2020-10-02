@@ -3,10 +3,9 @@ import Menu from "../components/menu/Menu";
 import Api from "../pages/dataService";
 import { userIsAuthenticated } from "../redux/HOCs";
 import Message from "../components/message/Message";
-import MessageFeed from "../components/messagefeed/MessageFeed";
-import MessageInbox from "../components/messageinbox/MessageInbox";
 
 import InfiniteScroll from "react-infinite-scroller";
+import MessageForm from "../components/messageForm/MessageForm";
 
 class MessageList extends React.Component {
   constructor(props) {
@@ -18,6 +17,7 @@ class MessageList extends React.Component {
       hasMore: true,
       isLoading: false,
       offset: 20,
+      text: "",
     };
   }
 
@@ -25,13 +25,22 @@ class MessageList extends React.Component {
     this.client.getMessages().then((response) => {
       const messages = response.data.messages;
       this.setState({ messages });
-      console.log(response);
     });
   }
 
-  // pullMessages() {
-  //   return this.client.getMessages();
-  // }
+  createMessage = (event) => {
+    event.preventDefault();
+    this.client.createMessage(this.state.text).then((response) => {
+      console.log(response.data.message);
+      this.setState((currentState) => {
+        let messages = [response.data.message, ...currentState.messages];
+        return { messages };
+      });
+    });
+  };
+  handleChange = (event) => {
+    this.setState({ text: event.target.value });
+  };
 
   loadMessages = () => {
     this.client.getMoreMessages(this.state.offset).then((response) => {
@@ -60,9 +69,16 @@ class MessageList extends React.Component {
       <div className="MessageList">
         <Menu isAuthenticated={this.props.isAuthenticated} />
         <h1>Message Feed</h1>
-        <MessageInbox />
+        <p>Message</p>
+
+        <MessageForm
+          text={this.state.text}
+          handleChange={this.handleChange}
+          createMessage={this.createMessage}
+        />
         <ul>
           <InfiniteScroll
+            text={this.state.text}
             pageStart={0}
             loadMore={this.loadMessages}
             hasMore={true || false}
