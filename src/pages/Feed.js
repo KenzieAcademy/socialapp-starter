@@ -9,15 +9,18 @@ const { Content, Footer } = Layout;
 class Feed extends React.Component {
   render() {
     return (
-      <Layout className="layout">
+      <Layout>
         <div className="Feed">
           <Affix>
             <Menu isAuthenticated={this.props.isAuthenticated} />
           </Affix>
         </div>
 
-        <Content style={{ padding: "0 50px" }}>
-          <div className="site-layout-content">
+        <Content style={{ padding: "0 50px", background: "#060b1b" }}>
+          <div
+            className="site-layout-content"
+            style={{ background: "#0a3051" }}
+          >
             <MessageList />
           </div>
         </Content>

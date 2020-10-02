@@ -5,10 +5,11 @@ const { TextArea } = Input;
 function PostMessage(props) {
   return (
     <Affix offsetTop={79}>
-      <div className="messageForm">
+      <div className="messageForm" style={{ background: "#e6e6ea" }}>
         <form id="message-form" onSubmit={props.handlePostMessage}>
           <label htmlFor="text">Tell us what you're thinking!</label>
           <TextArea
+            style={{ background: "#e6e6ea" }}
             rows={4}
             maxLength={255}
             onPressEnter={props.handlePostMessage}
