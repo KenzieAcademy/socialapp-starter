@@ -1,6 +1,5 @@
-import { message } from "antd";
 import axios from "axios";
-import { register } from "./serviceWorker";
+import { store } from "../src/redux";
 
 class DataService {
   constructor(
@@ -9,6 +8,16 @@ class DataService {
   ) {
     this.url = url;
     this.client = client;
+  }
+
+  getUsername() {
+    const { username } = store.getState().auth.login.result;
+    return username;
+  }
+
+  getToken() {
+    const { token } = store.getState().auth.login.result;
+    return token;
   }
 
   registerUser(registrationData) {
@@ -23,41 +32,101 @@ class DataService {
     return this.client.get(this.url + "/users?limit=" + number);
   }
 
-  postMessages() {
-    return this.client.post(this.url + "messages");
+  getPicture(username) {
+    return this.client.get(this.url + "/users/" + username + "/picture");
+  }
+
+  patchuser(password, about, displayName, username) {
+    const requestBody = { password, about, displayName };
+    let token = this.getToken();
+    const config = {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    };
+    console.log(requestBody);
+    console.log(token);
+    console.log(config);
+    return this.client
+      .patch(this.url + "/users/" + username, requestBody, config)
+      .then((response) => response.data);
+  }
+
+  postMessages(text) {
+    const requestBody = { text };
+    let token = this.getToken();
+    const config = {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    };
+    console.log(requestBody);
+    console.log(token);
+    console.log(config);
+    return this.client
+      .post(this.url + "/messages", requestBody, config)
+      .then((response) => response.data.message);
   }
 
   getMessages(limit = 20) {
     return this.client.get(this.url + "/messages?limit=" + limit);
   }
 
-  updateUser(username) {
-    return this.client.patch(this.url + "/users/" + username);
-  }
-
-  // get
-  //pass a method into the end
-
-  //   getMessages() {
-  //     return this.client.get(this.url + "/messages");
-  //   }
-
-  //  look up axios api token
-  //  postMessage(){
-  //       let authData = JSON.parse(localStorage.getItem("login"))
-  //       return this.client.post(this.url +"/users",){
-  //           Headers: {Authori}
-  //       }
-  //   }
-  //   getUsername() {
-  //     const { username} = JSON.parse(localStorage.getItem("login")).result;
-  //     return username;
-  //   }
+  // updateUser(username) {
+  //   return this.client.patch(this.url + "/users/" + username);
   // }
 
-  //   getToken() {
-  //     const { token } = JSON.parse(localStorage.getItem("login")).result;
-  //     return token;
-  //   }
+  postLike(messageId) {
+    const requestBody = { messageId };
+    let token = this.getToken();
+    const config = {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    };
+    console.log(config);
+    return this.client
+      .post(this.url + "/likes", requestBody, config)
+      .then((response) => response.data.like);
+  }
+
+  // postLike(messageId) {
+  //   const requestBody = { messageId };
+  //   let token = this.getToken();
+  //   const config = {
+  //     headers: {
+  //       Authorization: `Bearer ${token}`,
+  //     },
+  //   };
+  //   console.log(config);
+  //   return this.client
+  //     .post(this.url + "/likes", requestBody, config)
+  //     .then((response) => response.data.like);
+  // }
+  putUsers(username) {
+    const requestBody = { username };
+    let token = this.getToken();
+    const config = {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    };
+    return this.client
+      .put(this.url + "/users/" + username + "/picture", requestBody, config)
+      .then((response) => response.data);
+  }
+
+  deleteUser(username) {
+    const requestBody = { username };
+    let token = this.getToken();
+    const config = {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    };
+    return this.client
+      .delete(this.url + "/users/" + username, requestBody, config)
+      .then((response) => response.data);
+  }
 }
 export default DataService;

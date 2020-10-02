@@ -2,53 +2,21 @@ import React from "react";
 
 import SubMenu from "antd/lib/menu/SubMenu";
 import Icon from "@ant-design/icons";
-import { Layout, Avatar, Menu, Breadcrumb, Button, message } from "antd";
-import Title from "antd/lib/typography/Title";
+import { Layout, Menu, Button } from "antd";
 import { Link, Route } from "react-router-dom";
 import { SettingOutlined } from "@ant-design/icons";
 import { withAsyncAction } from "../../redux/HOCs";
 import "../menu/Menu.css";
 
-const { Header, Footer, Sider, Content } = Layout;
+const { Sider } = Layout;
 
 class SideBar extends React.Component {
-  handleLogout = (event) => {
-    event.preventDefault();
+  handleLogout = (e) => {
+    e.preventDefault();
     this.props.logout();
   };
   render() {
     return (
-      // <Sider>
-      //   <Menu defaultSelectedKeys={["Dashboard"]} mode="inline">
-      //     <Menu.Item key="Dashboard">
-      //       <Route>
-      //         <Link to="/"> Profile</Link>
-      //       </Route>
-      //     </Menu.Item>
-      //     <SubMenu
-      //       title={
-      //         <span>
-      //           <Icon type="mail" />
-      //           <span>User</span>
-      //         </span>
-      //       }
-      //     >
-      //       <Menu.ItemGroup key="AboutUS" title="About Me">
-      //         <Menu.Item key="location1">
-      //           <Route>
-      //             <Link to="/messagefeed"> MessageFeed</Link>
-      //           </Route>
-      //         </Menu.Item>
-      //         <Menu.Item key="location2">
-      //           <Route>
-      //             <Link to="/editprofile">Edit Profile</Link>
-      //           </Route>
-      //         </Menu.Item>
-      //       </Menu.ItemGroup>
-      //     </SubMenu>
-      //   </Menu>
-      // </Sider>
-
       <Sider style={{ backgroundColor: "dark" }}>
         <Menu defaultSelectedKeys={["Dashboard"]} mode="inline">
           <Menu.Item key="Dashboard">
@@ -66,30 +34,62 @@ class SideBar extends React.Component {
           >
             <Menu.ItemGroup key="AboutUS" title="About Me">
               <Menu.Item key="location1">
-                <Route>
+                <Route >
                   <Link to="/messagefeed"> MessageFeed</Link>
                 </Route>
               </Menu.Item>
               <Menu.Item key="location2">
                 <Route>
-                  <Link to="/editprofile">Edit Profile</Link>
+                  <Link to="/createmessage">Create Message</Link>
                 </Route>
               </Menu.Item>
-              <Menu.Item id="menu-links">
+              <SubMenu
+                title={
+                  <span>
+                    <Icon type="mail1" />
+                    <span>More Infor</span>
+                  </span>
+                }
+              >
+                <Menu.ItemGroup key="AboutUS1" title="More">
+                  <Menu.Item key="location5">
+                    <Button>You Want</Button>
+                  </Menu.Item>
+
+                  <Menu.Item key="location3">
+                    <Route>
+                      <Link to="/editprofile">Profile</Link>
+                    </Route>
+                  </Menu.Item>
+                </Menu.ItemGroup>
+              </SubMenu>
+
+              <Menu.Item key="location4">
+                <Route>
+                  <Link to="/searchuser"> Search User</Link>
+                </Route>
+              </Menu.Item>
+              <Menu.Item key="DeleteUser">
+                <Route>
+                  <Link to="/deleteprofile">Delete profile</Link>
+                </Route>
+              </Menu.Item>
+              <Menu.Item id="menu-links" style={{ backgroundColor: "red", borderRadius: "90px" }}>
                 <Link to="/" onClick={this.handleLogout}>
                   <SettingOutlined /> Logout
-            </Link>
+                </Link>
               </Menu.Item>
               <div className="Menu">
                 {this.props.isAuthenticated && (
                   <div id="menu-links">
                     <Link to="/" onClick={this.handleLogout}>
                       Logout
-            </Link>
+                    </Link>
                   </div>
                 )}
               </div>
             </Menu.ItemGroup>
+
           </SubMenu>
         </Menu>
       </Sider>

@@ -12,7 +12,6 @@ import { SettingOutlined } from "@ant-design/icons";
 import Icon from "@ant-design/icons";
 import TwitHeader from "./components/pagelayout/Header";
 import SideBar from "./components/pagelayout/SideBar";
-import EditProfile from "./pages/EditProfile";
 import MainContent from "./components/pagelayout/MainContent";
 
 const { Header, Footer, Sider, Content } = Layout;

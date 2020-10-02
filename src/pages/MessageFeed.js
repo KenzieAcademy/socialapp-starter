@@ -1,9 +1,9 @@
 import React from "react";
 import DataService from "../dataService";
-import Menu from "../components/menu/Menu";
 import { userIsAuthenticated } from "../redux/HOCs";
 
-import { message, Result } from "antd";
+
+// import { message, Result } from "antd";
 import Message from "../components/message/Message";
 
 class MessageFeed extends React.Component {
@@ -13,8 +13,6 @@ class MessageFeed extends React.Component {
   }
 
   state = { messages: [] };
-
-  //   state = { messages: [] };
 
   componentDidMount() {
     // const test = this.client.getMessages();
@@ -33,13 +31,14 @@ class MessageFeed extends React.Component {
       );
     }
     return (
-      <div className="messagefeed">
-        <Menu isAuthenticated={this.props.isAuthenticated} />
-        messages go here test
+      <div className="messagefeed" style={{ fontFamily: "sans-serif" }}>
+        {/* <Menu isAuthenticated={this.props.isAuthenticated} /> */}
+        {/* messages go here test */}
+
         <ul>
-          {this.state.messages.map((messageObject) => {
-            return <Message {...messageObject} />;
-          })}
+          {this.state.messages.map((messageObject) => (
+            <Message key={messageObject.id} {...messageObject} />
+          ))}
         </ul>
       </div>
     );
