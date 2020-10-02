@@ -1,0 +1,7 @@
+.messageContainer {
+  display: flex;
+}
+.messageList {
+  max-width: 60%;
+}
+
