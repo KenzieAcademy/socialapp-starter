@@ -4,6 +4,7 @@ import api from "../services/BackendService";
 import Message from "../components/message/Message";
 import PostMessage from "../components/PostMessage";
 import GetUsersService from "../services/GetUsersService";
+import "./MessageList.css";
 
 class MessageList extends React.Component {
   state = { messages: [], users: [] };
@@ -33,16 +34,19 @@ class MessageList extends React.Component {
         <Menu />
         <h1>Message Feed</h1>
         <PostMessage />
-        <ul>
-          {this.state.messages.map((messageObject) => (
-            <Message key={messageObject.id} {...messageObject} />
-          ))}
-        </ul>
-        <ul>
-          {this.state.users.map((userObject) => (
-            <li>{userObject.username}</li>
-          ))}
-        </ul>
+        <div className="messageContainer">
+          <ul className="messageList">
+            {this.state.messages.map((messageObject) => (
+              <Message key={messageObject.id} {...messageObject} />
+            ))}
+          </ul>
+          <ul className="usersList">
+            <h1>Follow These Users</h1>
+            {this.state.users.map((userObject) => (
+              <li>{userObject.username}</li>
+            ))}
+          </ul>
+        </div>
       </div>
     );
   }
