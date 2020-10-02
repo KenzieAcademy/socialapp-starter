@@ -69,7 +69,6 @@ class MessageList extends React.Component {
       <div className="MessageList">
         <Menu isAuthenticated={this.props.isAuthenticated} />
         <h1>Message Feed</h1>
-        <p>Message</p>
 
         <MessageForm
           text={this.state.text}
