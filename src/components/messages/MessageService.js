@@ -9,6 +9,21 @@ class MessageService {
     this.client = client;
   }
 
+  postLike(messageId){
+   const requestBody = {messageId}
+    const config = {
+      headers: {Authorization: `Bearer ${this.getToken()}`}
+    }
+    
+    
+    return this.client.post(
+      this.url + "/likes",
+      config,
+      requestBody)
+      
+  
+}
+  
   getToken() {
     const loginData = JSON.parse(localStorage.getItem("login"));
     const { token } = loginData.result;
