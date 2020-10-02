@@ -2,7 +2,7 @@ import React from "react";
 import Message from "../message/Message";
 import DataService from "../../DataService";
 import PostMessage from "../postMessage/PostMessage";
-
+import "./messageList.css";
 class MessageList extends React.Component {
   constructor(props) {
     super(props);
@@ -18,6 +18,19 @@ class MessageList extends React.Component {
     this.client
       .getMessageList()
       .then((response) => this.setState({ messages: response.data.messages }));
+    this.interval = setInterval(() => this.handlePollUpdate(), 1000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
+
+  handlePollUpdate() {
+    this.client.getMessageList().then((response) => {
+      if (this.state.messages[0] !== response.data.messages[0]) {
+        this.setState({ messages: response.data.messages });
+      }
+    });
   }
 
   handleDeleteMesssage = (messageId) => {
@@ -47,6 +60,10 @@ class MessageList extends React.Component {
   };
 
   render() {
+    if (this.state.messages === []) {
+      return <h1>loading...</h1>;
+    }
+
     return (
       <div className="messageList">
         <PostMessage
