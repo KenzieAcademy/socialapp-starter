@@ -51,7 +51,7 @@ class Home extends React.Component {
             </div>
           </div>
         </div>
-        <div className="HomePageLoginFormBody">{form}</div>
+        <div className="HomeLogFormBody">{form}</div>
         <br></br>
       </div>
     );

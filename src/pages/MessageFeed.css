@@ -5,7 +5,7 @@
 .MessageFeedPageBody {
   padding: 10px;
   background-image: url(../assets/images/Coupon_Background_Dark.png);
-  border: 3px solid black;
+  border: black;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
@@ -16,7 +16,7 @@
 
 .MessageLoading {
   color: #b80c12;
-  font: italic small-caps bold 60px Impact;
+  font: italic small-caps bolder 60px/65px Impact;
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
   -webkit-text-stroke: 0.25px black;
   text-align: center;
@@ -44,7 +44,7 @@
   left: -2px;
   position: relative;
   margin: auto;
-  border: 3px solid black;
+  border: black;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
@@ -54,12 +54,12 @@
 }
 
 .MessageFeedHeaderText {
-  font: italic small-caps bold 45px Impact;
+  font: italic small-caps bolder 45px/50px Impact;
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
   -webkit-text-stroke: 0.25px white;
   color: black;
   text-align: center;
-  top: -12px;
+  top: -11px;
   position: relative;
   margin: auto;
 }
@@ -90,13 +90,12 @@
   height: 70px;
   left: 4px;
   background-image: url(../assets/images/Clear_Red_Dark.png);
-  border: 3px solid black;
+  border: black;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
   padding: 10px;
-  font: italic small-caps bold 30px/48px Impact, Haettenschweiler,
-    "Arial Narrow Bold", sans-serif;
+  font: italic small-caps bold 30px/35px Impact;
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
   -webkit-text-stroke: 0.25px white;
   text-align: center;
@@ -109,7 +108,7 @@
   color: white;
   -webkit-text-stroke: 0.5px black;
   background-image: url(../assets/images/Post_Button.png);
-  border: 3px solid white;
+  border: white;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;

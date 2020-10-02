@@ -7,7 +7,7 @@
   position: relative;
   margin: auto;
   background-image: url(../assets/images/Coupon_Background_Dark.png);
-  border: 3px solid black;
+  border: black;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
@@ -17,29 +17,26 @@
 .JoinUs {
   position: relative;
   margin: auto;
-  border: 3px solid black;
+  border: black;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
   background-image: url(../assets/images/Clear_Red_Dark.png);
-  width: 850px;
+  width: 830px;
   height: 55px;
-  font: italic small-caps bold 12px/30px Georgia, serif;
-  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  font: italic small-caps bold 25px/30px Impact;
   color: black;
-  font-size: 12px;
 }
 
 .HomeLink a {
-  top: 15px;
+  top: 13px;
   left: 5px;
   position: relative;
   margin: auto;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font: italic small-caps bold 25px/30px Impact;
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
   -webkit-text-stroke: 0.25px white;
   color: black;
-  font-size: 25px;
   padding: 5px;
   text-decoration: underline;
   cursor: pointer;
@@ -51,15 +48,14 @@
 }
 
 .RegisterLink a {
-  top: -86px;
-  left: 740px;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  top: -88px;
+  left: 725px;
   position: relative;
   margin: auto;
+  font: italic small-caps bold 25px/30px Impact;
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
   -webkit-text-stroke: 0.25px white;
   color: black;
-  font-size: 25px;
   padding: 5px;
   text-decoration: underline;
   cursor: pointer;
@@ -73,26 +69,26 @@
 .Welcome {
   position: relative;
   margin: auto;
-  top: -27px;
-  left: 342px;
-  font-size: 45px;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  top: -32px;
+  left: 345px;
+  font: italic small-caps bold 45px/50px Impact;
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
   -webkit-text-stroke: 0.25px white;
   color: black;
 }
 
 .NotMemberYet {
-  top: -50px;
-  left: 617px;
+  top: -58px;
+  left: 615px;
   position: relative;
   margin: auto;
-  font: italic small-caps bold 17px/35px Impact, Haettenschweiler,
-    "Arial Narrow Bold", sans-serif;
+  font: italic small-caps bold 15px/20px Impact;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
   -webkit-text-stroke: 0.15px white;
 }
 
-.HomePageLoginFormBody {
+.HomeLogFormBody {
+  left: -23px;
   padding: 10px;
   position: relative;
   margin: auto;

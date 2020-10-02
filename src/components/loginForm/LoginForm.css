@@ -4,18 +4,10 @@
 
 .LoginFormBody {
   width: 850px;
-  /* height: 600px; */
   position: relative;
   margin: auto;
-  border: 3px solid black;
-  border-radius: 5px;
-  border-width: 3px;
-  border-style: dashed;
-  /* background-image: url(../../assets/images/Coupon_Background_Dark.png); */
-  font-size: 25px;
   color: black;
-  font: italic small-caps bold 22px/40px Impact, Haettenschweiler,
-    "Arial Narrow Bold", sans-serif;
+  font: italic small-caps bold 30px/35px Impact;
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
   -webkit-text-stroke: 0.25px black;
 }
@@ -44,7 +36,7 @@
   height: 390px;
 }
 
-.UserNameInput {
+.LogUserNameInput {
   background-image: url(../../assets/images/Coupon_Background_Dark.png);
   padding: 10px;
   position: relative;
@@ -55,7 +47,7 @@
   border-style: dashed;
 }
 
-.UserNameInputBox {
+.LogUserNameInputBox {
   position: relative;
   margin: auto;
   border: 3px solid black;
@@ -64,7 +56,7 @@
   border-style: dashed;
 }
 
-.PasswordInput {
+.LogPasswordInput {
   top: 10px;
   background-image: url(../../assets/images/Coupon_Background_Light.png);
   padding: 10px;
@@ -73,22 +65,20 @@
   border: 3px solid black;
   border-radius: 5px;
   border-width: 3px;
-  border-style: dashed;
+  /* border-style: dashed; */
 }
 
-.PasswordInputBox {
+.logPasswordInputBox {
   position: relative;
   margin: auto;
 }
 
-.EnterButtonBox {
+.LogEnterButtonBox {
   position: relative;
   margin: auto;
 }
 
-input[type="submit"] {
-  top: -113px;
-  /* left: 18px; */
+.LogEnterButtonBox input[type="submit"] {
   position: relative;
   background-image: url(../../assets/images/Register_Button.png);
   padding: 5px;
@@ -98,14 +88,9 @@ input[type="submit"] {
   border-style: dashed;
   width: 130px;
   height: 50;
-  /* font: italic small-caps bold 27px/45px Impact, Haettenschweiler,
-    "Arial Narrow Bold", sans-serif;
-  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
-  -webkit-text-stroke: 0.25px white; */
-  cursor: pointer;
 }
 
-input[type="submit"]:hover {
+.LogEnterButtonBox input[type="submit"]:hover {
   background-image: url(../../assets/images/Clear_Red_Dark.png);
   border: 3px solid white;
   border-radius: 5px;
