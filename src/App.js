@@ -5,8 +5,8 @@ import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
 import RegistrationForm from "./components/registrationForm/RegistrationForm"
-import MessageFeed from "./pages/MessageFeed"
 import MessageList from "./pages/MessageList"
+// import MessageList from "./pages/MessageList2"
 import PostMessage from "./components/postMessage/PostMessageForm"
 
 class App extends React.Component {
@@ -35,12 +35,12 @@ class App extends React.Component {
           <Route
             exact
             path="/messagefeed"
-            component={MessageFeed}
-          />
-          <Route exact
-            path="messagefeed"
             component={MessageList}
           />
+          {/* <Route exact
+            path="messagefeed"
+            component={MessageList}
+          /> */}
           <Route
             exact
             path="/signup"
