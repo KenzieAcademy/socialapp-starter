@@ -4,9 +4,11 @@ import UpdateUser from "../components/updateUser/UpdateUser";
 import { userIsAuthenticated } from "../redux/HOCs";
 import UploadPicture from "../components/getUserPicture/GetUserPicture";
 
-import DataService from "../DataService";
 import { Button } from "antd";
+<<<<<<< HEAD
 import { UserOutlined } from "@ant-design/icons";
+=======
+>>>>>>> master
 
 class Profile extends React.Component {
   render() {
