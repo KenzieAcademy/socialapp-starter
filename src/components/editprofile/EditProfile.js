@@ -2,7 +2,7 @@ import React from "react";
 import Menu from "../menu/Menu";
 import { userIsAuthenticated } from "../../redux/HOCs";
 import DataService from '../../DataService'
-
+import './EditProfile.css'
 import { Input, Button, TextArea, Form, FormField  } from 'semantic-ui-react'
 
 
@@ -77,16 +77,16 @@ class Profile extends React.Component {
       
 
       
-      
+      <div>
+      <Menu isAuthenticated={this.props.isAuthenticated} />
       <div className="profileInput">
-        <Menu isAuthenticated={this.props.isAuthenticated} />
         <h2>Profile</h2>
 
           
           
            
-      <Form onSubmit={this.handleSubmit}>
-        <Form.Group>
+      <Form className='updateForm' onSubmit={this.handleSubmit}>
+        
           <FormField>
             <label htmlFor="username">  Enter user name</label>
               <Input
@@ -131,7 +131,7 @@ class Profile extends React.Component {
             <br/>
             <Button content='save' primary size='tiny'/>
 
-        </Form.Group>
+        
       </Form>
             
           
@@ -148,9 +148,11 @@ class Profile extends React.Component {
             </div>
         
         <h3><em>THIS CAN NOT BE UNDONE!</em></h3>
-        <Button  onClick={this.handleDelete} 
+        <Button  onClick={this.handleDelete} size='medium'
         content='DELETE PROFILE' inverted color="red"/>
       </div>
+      </div>
+      
     );
     
   }

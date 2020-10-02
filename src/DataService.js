@@ -35,6 +35,11 @@ class DataService {
 
     }
 
+    getUser(userName){
+        return this.client.delete(this.url + '/users/' + userName)
+
+    }
+
     //messages
 
     createMessage(message) {
@@ -80,6 +85,8 @@ class DataService {
         })
 
     }
+
+
 
 
 

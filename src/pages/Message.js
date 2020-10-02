@@ -47,14 +47,15 @@ class Messages extends React.Component {
           <div>
             <TextArea
               placeholer="Enter Message"
-              style={{ minHeight: 200, minWidth: 400 }}
+              style={{ minHeight: 200, maxWidth: 500 }}
               type="text"
               name="text"
               required
               onChange={this.handleChange}
             />
             <br />
-            <Button size="big" content="Post" />
+            <br />
+            <Button size="large" content="Post it!" />
           </div>
         </Form>
       </div>

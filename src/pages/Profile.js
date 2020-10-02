@@ -2,9 +2,9 @@ import React from "react";
 
 import { userIsAuthenticated } from "../redux/HOCs";
 import { displayName } from "react-spinkit";
-import DataService from "../components/DataService";
+import DataService from "../DataService";
 
-
+import '../components/editprofile/EditProfile.css'
 import EditProfile from '../components/editprofile/EditProfile'
 import ProfilePageMain from "./ProfilePageMain";
 
@@ -19,12 +19,33 @@ class Profile extends React.Component {
 
      
     this.state={
-      isClicked:false
+      isClicked:false,
+      
 
       }
     
-    
+    this.client = new DataService()
   }
+  
+  
+  componentDidMount(){
+    const currentUser = JSON.parse(localStorage.getItem("login"));
+
+        const { username } = currentUser.result;
+       
+        this.client.getUser(username).then(result => this.setState({aboutMe:result}))
+        console.log(this.state.aboutMe)
+
+    
+
+    
+
+  }
+  
+
+
+
+
 
   
   EditProfileButton =(event) => {
@@ -33,6 +54,12 @@ class Profile extends React.Component {
     )
       
     }
+
+
+
+    
+
+
   
   
   
@@ -44,16 +71,20 @@ class Profile extends React.Component {
 
   
   render() {
+    console.log(this.state.aboutMe)
+    
+    
    let content =(
      <>
      
      
       <ProfilePageMain/>
-      
 
-      
+      <div className='profilePicture'>Profile picture field</div>
+      <div className='aboutMe'></div>
+      <br/>
 
-      <Button onClick={this.EditProfileButton} content='Edit Profile' primary  size='small'/>
+      <Button className='editButton' onClick={this.EditProfileButton} content='Edit Profile' primary  size='small'/>
        
       </>
    )

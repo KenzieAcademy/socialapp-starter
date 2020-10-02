@@ -3,7 +3,7 @@ import { render } from "react-dom";
 import DataService from "../components/DataService";
 import { withRouter } from "react-router-dom";
 import { Input, Button } from "semantic-ui-react";
-
+import '../components/loginForm/LoginForm.css'
 class Register extends Component {
   constructor(props) {
     super(props);
@@ -61,8 +61,8 @@ class Register extends Component {
             required
             onChange={this.handleChange}
           />
-
-          <Button type="submit">Register </Button>
+          <br/>
+          <Button content='Register' type='submit' size='medium' />
         </form>
       </div>
     );

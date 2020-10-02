@@ -1,0 +1,25 @@
+*{
+    box-sizing: border-box;
+}
+
+.profilePicture{
+    border:2px solid grey;
+    width: 200px;
+    height: 300px;
+    margin: 10px;
+}
+
+.profileInput{
+    display:flex;
+    flex-direction: column;
+   
+    justify-content: center;
+    align-items: center;
+}
+
+.updateForm{
+
+    
+    width: 400px;
+}
+
