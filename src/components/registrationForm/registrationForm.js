@@ -1,20 +1,24 @@
 import React from "react";
 import Spinner from "react-spinkit";
-import { withAsyncAction } from "../../redux/HOCs";
-import "./LoginForm.css";
+import "./registrationForm.css";
+import DataService from "../../DataService";
 
-class LoginForm extends React.Component {
+class RegistrationForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       username: "",
+      displayName: "",
       password: "",
     };
+    this.client = new DataService();
   }
 
-  handleLogin = (e) => {
+  handleRegistration = (e) => {
     e.preventDefault();
-    this.props.login(this.state);
+    this.client.registerUser(this.state).then((result) => {
+      console.log(result.data);
+    });
   };
 
   handleChange = (e) => {
@@ -24,13 +28,20 @@ class LoginForm extends React.Component {
   render() {
     const { loading, error } = this.props;
     return (
-      <div className="LoginForm">
-        <form id="login-form" onSubmit={this.handleLogin}>
+      <div className="RegistrationForm">
+        <form id="registration-form" onSubmit={this.handleRegistration}>
           <label htmlFor="username">Username</label>
           <input
             type="text"
             name="username"
             autoFocus
+            required
+            onChange={this.handleChange}
+          />
+          <label htmlFor="displayName">Display Name</label>
+          <input
+            type="text"
+            name="displayName"
             required
             onChange={this.handleChange}
           />
@@ -42,7 +53,7 @@ class LoginForm extends React.Component {
             onChange={this.handleChange}
           />
           <button type="submit" disabled={loading}>
-            Login
+            Register
           </button>
         </form>
         {loading && <Spinner name="circle" color="blue" />}
@@ -52,4 +63,4 @@ class LoginForm extends React.Component {
   }
 }
 
-export default withAsyncAction("auth", "login")(LoginForm);
+export default RegistrationForm;
