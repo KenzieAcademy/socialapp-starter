@@ -48,12 +48,12 @@ class Message extends React.Component {
               <img className="ProfilePic" src={ProfilePic} alt="Profile Pic" />
               <div className="MessageMemberTitle">
                 <Card.Title> Member: {this.props.username}</Card.Title>
-                {/* </div> */}
-                {/* <div className="PostInfo"> */}
-                <Card.Subtitle className="mb-2 text-muted">
-                  {new Date(this.props.createdAt).toDateString}{" "}
-                </Card.Subtitle>
               </div>
+              {/* <div className="PostInfo"> */}
+              <Card.Subtitle className="mb-2 text-muted">
+                {new Date(this.props.createdAt).toDateString}{" "}
+              </Card.Subtitle>
+              {/* </div> */}
               <Card.Text className="MessageTextBox">
                 {this.props.text}
               </Card.Text>

@@ -24,10 +24,9 @@
 }
 
 .LoginForm {
-  border: 3px solid black;
+  border: black;
   border-radius: 5px;
   border-width: 3px;
-  border-style: dashed;
   background-image: url(../../assets/images/Clear_Red.png);
   text-align: left;
   position: relative;
@@ -41,7 +40,7 @@
   padding: 10px;
   position: relative;
   margin: auto;
-  border: 3px solid black;
+  border: black;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
@@ -50,7 +49,7 @@
 .LogUserNameInputBox {
   position: relative;
   margin: auto;
-  border: 3px solid black;
+  border: black;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
@@ -62,10 +61,9 @@
   padding: 10px;
   position: relative;
   margin: auto;
-  border: 3px solid black;
+  border: black;
   border-radius: 5px;
   border-width: 3px;
-  /* border-style: dashed; */
 }
 
 .logPasswordInputBox {
@@ -82,20 +80,18 @@
   position: relative;
   background-image: url(../../assets/images/Register_Button.png);
   padding: 5px;
-  border: 3px solid black;
+  border: black;
   border-radius: 5px;
   border-width: 3px;
-  border-style: dashed;
   width: 130px;
   height: 50;
 }
 
 .LogEnterButtonBox input[type="submit"]:hover {
   background-image: url(../../assets/images/Clear_Red_Dark.png);
-  border: 3px solid white;
+  border: black;
   border-radius: 5px;
   border-width: 3px;
-  border-style: dashed;
   color: white;
   -webkit-text-stroke: 0.25px black;
 }
