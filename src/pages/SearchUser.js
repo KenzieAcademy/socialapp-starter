@@ -29,21 +29,52 @@ class SearchUser extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault();
     console.log(this.state.username);
-    this.client.getUser(this.state.username).then((result) => {
-      console.log("user got");
-      console.log(result.data);
-      this.setState({
-        username: result.data.user.username,
-        displayname: result.data.user.displayName,
-        about: result.data.user.about,
-        picture:
-          "https://socialapp-api.herokuapp.com" +
-          result.data.user.pictureLocation,
-        searchedUser: true,
+    this.client
+      .getUser(this.state.username)
+      .then((result) => {
+        console.log("user got");
+        console.log(result.data);
+        if (result.data.picture === null) {
+          this.setState({
+            username: result.data.user.username,
+            displayname: result.data.user.displayName,
+            about: result.data.user.about,
+            picture: profilepic,
+          });
+        } else {
+          this.setState({
+            username: result.data.user.username,
+            displayname: result.data.user.displayName,
+            about: result.data.user.about,
+            picture:
+              "https://socialapp-api.herokuapp.com" +
+              result.data.user.pictureLocation,
+          });
+        }
+      })
+      .catch((result) => {
+        this.setState({
+          username: "USER DOES NOT EXIST",
+          picture: profilepic,
+          about: "",
+        });
       });
-    });
-    // .catch(alert("User doesn't Exist"));
   };
+
+  componentDidMount() {
+    this.setState({
+      picture: profilepic,
+    });
+  }
+  // .catch((result) =>
+  //   this.setState({
+  //     username: "USER DOES NOT EXIST"
+
+  //   })
+  // )
+  // alert("User doesn't Exist"));
+  // .catch(alert("User doesn't Exist"));
+  // };
 
   render() {
     // if (searchedUser) {
