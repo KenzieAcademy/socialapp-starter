@@ -62,11 +62,9 @@ class Message extends React.Component {
           src={`https://socialapp-api.herokuapp.com/users/${this.props.username}/picture`}
           alt="user"
         />
-        <br />
-        {this.props.username} posted: <br />
+        <span className="username">{this.props.username}</span> posted:
         <br />
         {this.props.text}
-        <br />
         <br />
         <button className="like-button" onClick={this.handleLike}>
           <span role="img" aria-label="dino">
@@ -74,7 +72,8 @@ class Message extends React.Component {
           </span>
         </button>
         <br />
-        {deleteMessageButton} {this.props.createdAt}
+        {deleteMessageButton}{" "}
+        <span className="date-created">{this.props.createdAt}</span>
       </div>
     );
   }
