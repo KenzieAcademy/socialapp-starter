@@ -4,10 +4,11 @@ import api from "../services/BackendService";
 import Message from "../components/message/Message";
 import PostMessage from "../components/PostMessage";
 import GetUsersService from "../services/GetUsersService";
+import PostMessageService from "../services/PostMessageService";
 import "./MessageList.css";
 
 class MessageList extends React.Component {
-  state = { messages: [], users: [] };
+  state = { messages: [], users: [], text: "" };
 
   componentDidMount() {
     api.getAllMessages().then((response) => {
@@ -18,7 +19,20 @@ class MessageList extends React.Component {
       console.log(response.data);
     });
   }
-
+  handleMessagePost = (event) => {
+    event.preventDefault();
+    new PostMessageService()
+      .postMessage({ text: this.state.text })
+      .then((result) => {
+        console.log(result.data);
+      });
+    console.log("Post Button Pressed");
+  };
+  handleChange = (event) => {
+    this.setState({
+      [event.target.name]: event.target.value,
+    });
+  };
   render() {
     if (this.state.messages.length === 0 || this.state.users.length === 0) {
       return (
@@ -33,7 +47,11 @@ class MessageList extends React.Component {
       <div className="MessageList">
         <Menu />
         <h1>Message Feed</h1>
-        <PostMessage />
+        <PostMessage
+          handleChange={this.handleChange}
+          handleMessagePost={this.handleMessagePost}
+          text={this.state.text}
+        />
         <div className="messageContainer">
           <ul className="messageList">
             {this.state.messages.map((messageObject) => (

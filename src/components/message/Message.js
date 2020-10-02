@@ -1,12 +1,11 @@
 import React from "react";
-
+// import userIsAuthenticated from "../../redux/HOCs"
 class Message extends React.Component {
   handleError = (event) => {
     event.target.src =
       "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F4.bp.blogspot.com%2F-ZzOpik5sFZg%2FUleI27zMJyI%2FAAAAAAAAHgs%2FnQEZnjiSn9M%2Fs1600%2Fprofileicon.jpg&f=1&nofb=1";
   };
   render() {
-    console.log(this.props.pictureLocation);
     return (
       <li className="Message">
         <img
