@@ -1,6 +1,6 @@
 import React, { Component } from "react";
+import { Form, Button } from "react-bootstrap";
 import Spinner from "react-spinkit";
-import { Container, Form, Button } from "react-bootstrap";
 import CreateUser from "../../APIService";
 import { withAsyncAction } from "../../redux/HOCs";
 import "./RegisterForm.css";
@@ -35,9 +35,9 @@ class RegisterForm extends Component {
   render() {
     const { loading, error } = this.props;
     return (
-      <Container>
-        <Form id="registration-form" onSubmit={this.handleRegistration}>
-          <Form.Group controlid="loginForm">
+      <div>
+        <Form id="register-form" onSubmit={this.handleRegister}>
+          <Form.Group controlId="resgisterform">
             <Form.Label>Username</Form.Label>
             <Form.Control
               type="text"
@@ -47,7 +47,7 @@ class RegisterForm extends Component {
               onChange={this.handleChange}
             />
           </Form.Group>
-          <Form.Group controlid="loginForm">
+          <Form.Group controlId="displayname">
             <Form.Label>Display Name</Form.Label>
             <Form.Control
               type="text"
@@ -56,22 +56,22 @@ class RegisterForm extends Component {
               onChange={this.handleChange}
             />
           </Form.Group>
-          <Form.Group controlid="loginForm">
+          <Form.Group controlId="password">
             <Form.Label>Password</Form.Label>
             <Form.Control
-              type="password"
+              type="text"
               name="password"
               required
               onChange={this.handleChange}
             />
           </Form.Group>
-          <Button variant="dark" type="submit" disabled={loading}>
+          <Button variant="dark" type="submit">
             Register
           </Button>
           {loading && <Spinner name="circle" color="blue" />}
           {error && <p style={{ color: "red" }}>{error.message}</p>}
         </Form>
-      </Container>
+      </div>
     );
   }
 }

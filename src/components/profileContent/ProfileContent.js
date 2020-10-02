@@ -2,7 +2,7 @@ import React from "react";
 import Card from "react-bootstrap/Card";
 import FileUploader from "../../components/fileUploader/FileUploader";
 import { userIsAuthenticated } from "../../redux/HOCs";
-import "./ProfileContent.css";
+import "../../components/profileContent/ProfileContent.css";
 
 
 class ProfileContent extends React.Component {
