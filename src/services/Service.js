@@ -5,8 +5,8 @@ class DataService {
         this.url = url;
         this.client = client;
     }
-    
-    
+
+
 
     registerUser(userData) {
         return this.client.post(this.url + "/users", userData);
@@ -19,7 +19,6 @@ class DataService {
             headers: { Authorization: `Bearer ${token}` },
         });
     }
-    
     postMessage(message) {
         let loginData = JSON.parse(localStorage.getItem("login"));
         return this.client.post(this.url + "/messages", message, {
@@ -28,5 +27,12 @@ class DataService {
             },
         });
     }
+    getAllMessages(limit = 1000) {
+        return this.client.get(this.url + `/messages?limit=${limit}`)
+    }
+    getUserMessages(username, limit = 20) {
+        return this.client.get(`/messages?username=${username}limit=${limit}`)
+    }
+
 }
 export default DataService;
