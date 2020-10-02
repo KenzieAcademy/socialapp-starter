@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "antd": "^4.6.6",
     "axios": "^0.20.0",
     "connected-react-router": "^6.8.0",
     "history": "^4.10.1",

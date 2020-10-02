@@ -5,19 +5,19 @@ import "./LoginForm.css";
 
 class LoginForm extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       username: "",
-      password: ""
+      password: "",
     };
   }
 
-  handleLogin = e => {
+  handleLogin = (e) => {
     e.preventDefault();
     this.props.login(this.state);
   };
 
-  handleChange = e => {
+  handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };
 
@@ -30,6 +30,7 @@ class LoginForm extends React.Component {
           <input
             type="text"
             name="username"
+            autoComplete="off"
             autoFocus
             required
             onChange={this.handleChange}

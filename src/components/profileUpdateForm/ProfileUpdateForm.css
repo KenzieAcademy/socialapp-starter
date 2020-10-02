@@ -1,3 +1,7 @@
-.aboutyou {
-  height: 100px;
+.profileUpdatePage {
+  background: lightcyan;
+  padding: 5px;
+  border-radius: 1em;
+  border: 5px solid gold;
+  width: fit-content;
 }

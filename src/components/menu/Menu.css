@@ -5,11 +5,20 @@
   align-items: center;
   padding: 0 1em;
   border-radius: 1em;
+  border: 3px solid rebeccapurple;
+  margin-bottom: 10px;
 }
 
+.menu-title {
+  font-size: 50px;
+  background-image: url("https://cdn.pixabay.com/photo/2014/04/02/10/14/hibiscus-303191_1280.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
 #menu-links {
   display: flex;
   padding-left: 1em;
+  font-size: 20px;
 }
 
 #menu-links a {

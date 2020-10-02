@@ -19,7 +19,9 @@ class RegistrationForm extends React.Component {
   handleRegistration = (e) => {
     e.preventDefault();
     this.client.RegisterUser(this.state).then((result) => {
-      console.log("Registration Successful");
+      return this.setState({
+        registered: true,
+      });
     });
   };
 
@@ -29,6 +31,14 @@ class RegistrationForm extends React.Component {
 
   render() {
     const { loading, error } = this.props;
+    if (this.state.registered) {
+      return (
+        <div>
+          <h3>Thank you for registering!</h3>
+        </div>
+      );
+    }
+
     return (
       <div className="RegistrationForm">
         <form id="Registration-form" onSubmit={this.handleRegistration}>
@@ -36,7 +46,7 @@ class RegistrationForm extends React.Component {
           <input
             type="text"
             name="username"
-            autoFocus
+            autoComplete="off"
             required
             onChange={this.handleChange}
           />
@@ -44,6 +54,7 @@ class RegistrationForm extends React.Component {
           <input
             type="password"
             name="password"
+            autoComplete="off"
             required
             onChange={this.handleChange}
           />
@@ -51,10 +62,11 @@ class RegistrationForm extends React.Component {
           <input
             type="text"
             name="displayName"
+            autoComplete="off"
             required
             onChange={this.handleChange}
           />
-          <button type="submit" disabled={loading}>
+          <button className="registerButton" type="submit" disabled={loading}>
             Register
           </button>
         </form>

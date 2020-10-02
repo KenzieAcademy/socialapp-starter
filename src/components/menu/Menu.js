@@ -28,7 +28,7 @@ class Menu extends React.Component {
     let profileLink = "/profile/" + this.state.username;
     return (
       <div className="Menu">
-        <h1>Kwitter</h1>
+        <h1 className="menu-title">Ohana-Connect</h1>
         {this.props.isAuthenticated && (
           <div id="menu-links">
             <Link to={profileLink}>Profile</Link>

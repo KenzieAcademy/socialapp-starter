@@ -6,18 +6,93 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  font-family: "Indie Flower", cursive;
+  background-image: url("https://cdn.pixabay.com/photo/2013/03/09/00/29/napali-coast-91676__340.jpg");
+  background-repeat: repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.endOfMessages {
+  background: lightgray;
+  width: fit-content;
+  padding: 10px;
+  border-radius: 15px;
+  text-align: center;
+  border: 3px solid firebrick;
+}
+.profilespace {
+  background: lightcyan;
+  width: 30%;
+  border: 5px solid orange;
+  border-radius: 15px;
+  padding: 10px;
+}
+.messageHeader {
+  background: lightcyan;
+  display: flex;
+  justify-content: center;
+  width: 10em;
+  border-radius: 2em;
+  padding: 8px;
+  border: 5px solid gold;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.home-page {
+  display: flex;
+  background: lightcyan;
+  width: 30%;
+  border-radius: 15px;
+  border: 5px solid orange;
+  padding: 3px;
+}
+#deleteUserButton {
+  margin: 5px;
+  color: white;
+  background: rgba(255, 0, 0, 0.623);
+}
+
+/* .homepageimg {
+  border-radius: 10px;
+  border: 7px solid orange;
+  margin: auto;
+  opacity: 50%;
+} */
 
 .message-field {
   display: flex;
 }
 img {
-  height: 150px;
   border-radius: 50%;
   border: 3px solid slateblue;
+}
+
+.messages {
+  width: 50%;
+}
+.NewMessage {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+.messageForm {
+  background: lightcyan;
+  width: fit-content;
+  height: fit-content;
+  padding: 15px;
+  border: 4px solid orange;
+  border-radius: 15px;
+}
+
+.profilePic {
+  height: 150px;
+  border: 7px solid slateblue;
+}
+
+.hide {
+  display: none;
 }

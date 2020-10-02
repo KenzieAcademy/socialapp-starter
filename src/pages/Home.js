@@ -7,13 +7,21 @@ import RegistrationForm from "../components/registrationForm/RegistrationForm";
 class Home extends React.Component {
   render() {
     return (
-      <div className="Home">
-        <Menu />
-        <h2>Your favorite microblogging platform</h2>
-        <LoginForm />
-        <hr />
-        <h3>Register Below:</h3>
-        <RegistrationForm />
+      <div className="ohana-page">
+        <div className="Home">
+          <Menu />
+          <div className="home-page">
+            <div>
+              <h2>A place for people to find and connect to their family.</h2>
+              <h3>Login:</h3>
+              <LoginForm />
+              <hr />
+              <h2>Not family yet?</h2>
+              <h3>Register Below:</h3>
+              <RegistrationForm />
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

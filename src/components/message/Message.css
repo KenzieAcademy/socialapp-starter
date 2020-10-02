@@ -1,0 +1,65 @@
+.avatar {
+  height: 30px;
+  width: 30px;
+  margin: 2px;
+}
+
+.messageUser {
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid grey;
+  background: lavender;
+  border-radius: 2em 2em 0 0;
+  padding: 8px;
+}
+.profileLinkSpace {
+  max-width: fit-content;
+}
+a {
+  color: blue;
+}
+.messageLikeZone {
+  display: flex;
+  padding: 8px;
+}
+.messageText {
+  padding: 8px;
+}
+.messageButtonZones {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.messageUsername {
+  font-size: large;
+  margin: 0;
+}
+.messageCard {
+  width: fit-content;
+  background: lightcyan;
+  border: 3px solid orange;
+  border-radius: 2em;
+}
+.deleteMessageButton {
+  font-size: 10px;
+  font-weight: bold;
+  border-radius: 1em;
+}
+
+.likebutton {
+  color: red;
+  margin: 3px;
+  font-size: larger;
+  border-radius: 0.5em;
+}
+.likestext {
+  font-weight: bolder;
+  font-size: smaller;
+}
+a :visited {
+  color: initial;
+}
+
+.message {
+  margin: 10px;
+}

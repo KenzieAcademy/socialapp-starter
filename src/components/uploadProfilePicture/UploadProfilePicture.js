@@ -1,6 +1,7 @@
 import React from "react";
 import { userIsAuthenticated } from "../../redux/HOCs";
 import Menu from "../menu/Menu";
+import "./UploadProfilePicture.css";
 import DataService from "../../services/DataService/DataService";
 
 class UploadProfilePicture extends React.Component {
@@ -13,35 +14,31 @@ class UploadProfilePicture extends React.Component {
   }
   handleUpload = (event) => {
     event.preventDefault();
-    console.log(this.state);
+    let user = JSON.parse(localStorage.getItem("login")).result;
+    let userPath = "/profile/" + user.username;
     let newFile = new FormData();
     newFile.append("picture", this.state.picture);
 
     return this.client
       .changeProfilePic(newFile)
-      .then((result) => console.log(result));
+      .then((result) => this.props.history.push(userPath));
   };
 
   handleChange = (e) => {
-    console.log(e.target.files[0]);
     this.setState({ picture: e.target.files.item(0) });
   };
   render() {
     return (
       <div>
         <Menu isAuthenticated={this.props.isAuthenticated} />
-        <form
-          encType="multipart/form-data"
-          method="put"
-          onSubmit={this.handleUpload}
-        >
+        <form className="profilePicForm" onSubmit={this.handleUpload}>
           <input
             onChange={this.handleChange}
             type="file"
             accept="image/jpeg, image/png, image/gif"
           />
           <br />
-          <button>Change picture</button>
+          <button className="pictureButton">Change picture</button>
         </form>
       </div>
     );

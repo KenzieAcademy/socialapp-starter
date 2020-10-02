@@ -1,0 +1,10 @@
+.profilePicForm {
+  background: lightcyan;
+  padding: 10px;
+  width: fit-content;
+  border-radius: 1em;
+  border: 3px solid gold;
+}
+.pictureButton {
+  margin: 5px 0;
+}
