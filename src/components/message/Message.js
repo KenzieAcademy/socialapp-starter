@@ -16,6 +16,12 @@ class Message extends React.Component {
     });
   };
 
+  handleCreationStatus = () => {
+    this.setState((state) => {
+      return { didCreate: !state.didCreate };
+    });
+  };
+
   componentDidMount() {
     let loginData = JSON.parse(localStorage.getItem("login"));
     {
@@ -26,7 +32,9 @@ class Message extends React.Component {
       });
     }
     if (this.props.username === loginData.result.username) {
-      this.setState({ didCreate: true });
+      this.setState((state) => {
+        return { didCreate: !state.didCreate };
+      });
     }
   }
   render() {
@@ -43,6 +51,7 @@ class Message extends React.Component {
             <LikeButton
               messageId={this.props.id}
               handleLikeStatus={this.handleLikeStatus}
+              handleRefresh={this.props.handleRefresh}
             />
             <div className="likes">Likes: {this.props.likes.length}</div>
           </li>
@@ -73,7 +82,11 @@ class Message extends React.Component {
               handleLikeStatus={this.handleLikeStatus}
             />
             <div className="likes">Likes: {this.props.likes.length}</div>
-            <DeleteMessage messageId={this.props.id} />
+            <DeleteMessage
+              messageId={this.props.id}
+              handleCreationStatus={this.handleCreationStatus}
+              handleRefresh={this.props.handleRefresh}
+            />
           </li>
         );
       } else {
@@ -87,7 +100,11 @@ class Message extends React.Component {
               handleLikeStatus={this.handleLikeStatus}
             />
             <div className="likes">Likes: {this.props.likes.length}</div>
-            <DeleteMessage messageId={this.props.id} />
+            <DeleteMessage
+              messageId={this.props.id}
+              handleCreationStatus={this.handleCreationStatus}
+              handleRefresh={this.props.handleRefresh}
+            />
           </li>
         );
       }
