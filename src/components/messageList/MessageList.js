@@ -14,14 +14,14 @@ class MessageList extends React.Component {
   }
 
   componentDidMount() {
+    // As soon as the app loads we get our message list and set our state to that array of objects.
     this.client
       .getMessageList()
       .then((response) => this.setState({ messages: response.data.messages }));
   }
 
   handleDeleteMesssage = (messageId) => {
-    const dataService = new DataService();
-    dataService.deleteMessage(messageId).then((response) => {
+    this.client.deleteMessage(messageId).then((response) => {
       console.log(response.data);
       this.client
         .getMessageList()
