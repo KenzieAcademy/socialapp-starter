@@ -15,24 +15,38 @@ class MessageService {
     return token;
   }
 
+  getUsername() {
+    const loginData = JSON.parse(localStorage.getItem("login"));
+    const { username } = loginData.result;
+    return username;
+  }
+
   postMessage(text) {
     const config = {
-        headers: {Authorization: `Bearer ${this.getToken()}`, 
-        "Content-Type": "application/json"
-    }}
+      headers: {
+        Authorization: `Bearer ${this.getToken()}`,
+        "Content-Type": "application/json",
+      },
+    };
 
-    return this.client.post(
-      this.url + "/messages",
-      text,
-      config
-    );
+    return this.client.post(this.url + "/messages", text, config);
+  }
+
+  uploadImage(formData) {
+    const url = this.url + `/users/${this.getUsername()}/picture`;
+    const config = {
+      headers: {
+        Authorization: `Bearer ${this.getToken}`,
+      },
+    };
+
+    this.client.put(url, formData, config);
   }
 
   getMessage(messageId) {
-    console.log(messageId)
-    return this.client.get(this.url + `/messages/${messageId}`)
+    console.log(messageId);
+    return this.client.get(this.url + `/messages/${messageId}`);
   }
-
 }
 
 export default MessageService;

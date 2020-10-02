@@ -13,7 +13,7 @@ class BackEndServices {
     }
 
     getUsers(limit= 10) {
-        return this.client.get(`/users?limit=${limit}`);
+        return this.client.get(`users?limit=${limit}`);
     }
 
 }
