@@ -1,5 +1,7 @@
 import React from "react";
 import DataService from "../../DataService";
+import { Avatar } from "antd";
+import "./Message.css";
 
 class Message extends React.Component {
   constructor(props) {
@@ -44,23 +46,36 @@ class Message extends React.Component {
     let userName = JSON.parse(localStorage.getItem("login")).result;
     if (this.props.username === userName.username) {
       deleteMessageButton = (
-        <button onClick={() => this.props.handleDeleteMesssage(this.props.id)}>
+        <button
+          className="delete-button"
+          onClick={() => this.props.handleDeleteMesssage(this.props.id)}
+        >
           Delete Message
         </button>
       );
     }
     return (
-      <li>
-        {this.props.createdAt}, {this.props.username} posted: <br />
+      <div className="message-feed">
+        <Avatar
+          className="avatar"
+          size={100}
+          src={`https://socialapp-api.herokuapp.com/users/${this.props.username}/picture`}
+          alt="user"
+        />
+        <br />
+        {this.props.username} posted: <br />
+        <br />
         {this.props.text}
-        <div className="like-count">likes: {this.state.likeCount}</div>
-        <button onClick={this.handleLike}>
-          <span role="img" aria-label="fire">
-            🦕
+        <br />
+        <br />
+        <button className="like-button" onClick={this.handleLike}>
+          <span role="img" aria-label="dino">
+            🦕{this.state.likeCount}
           </span>
         </button>
-        {deleteMessageButton}
-      </li>
+        <br />
+        {deleteMessageButton} {this.props.createdAt}
+      </div>
     );
   }
 }
