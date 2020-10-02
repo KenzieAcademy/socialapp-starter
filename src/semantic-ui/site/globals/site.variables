@@ -1,4 +1,26 @@
 /*******************************
      User Global Variables
 *******************************/
-@pageBackground: #D8D8D8;
+.ui.feed .event .content {
+    padding: 10px 10px 10px 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 3px 3px lightgray;
+}
+
+.ui.feed .event .content .ui.negative.button {
+     float: right;
+}
+
+.ProfilePictureParent .card {
+  margin-bottom: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 3px 3px lightgray;
+}
+
+.ui.feed .event:last-child .content {
+     padding-bottom: 10px;
+}
