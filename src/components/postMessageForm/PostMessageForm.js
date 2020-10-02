@@ -96,7 +96,9 @@ class PostMessageForm extends React.Component {
               value={this.state.messageData.text}
             />
           </Form.Field>
-          <Button type="submit">Post Message!</Button>
+          <Button positive type="submit">
+            Post Message!
+          </Button>
         </Form>
       </div>
     );

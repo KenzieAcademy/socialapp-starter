@@ -149,7 +149,9 @@ class UpdateUserInfoForm extends React.Component {
               maxLength="255"
             />
           </Form.Field>
-          <Button type="submit">Update User Information</Button>
+          <Button positive type="submit">
+            Update User Information
+          </Button>
         </Form>
       </div>
     );

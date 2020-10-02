@@ -11,7 +11,10 @@
 }
 
 .ui.feed .event .content .ui.negative.button {
-     float: right;
+     margin-left: -9px;
+     margin-top: 10px;
+     font-size: 10px;
+     width: 110px;
 }
 
 .ProfilePictureParent .card {
