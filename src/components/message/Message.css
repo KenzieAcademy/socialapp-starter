@@ -9,11 +9,7 @@ div {
   margin-right: auto;
 }
 .message-feed {
-  background-image: linear-gradient(
-    to left,
-    rgba(255, 0, 0, 0),
-    rgb(199, 79, 255)
-  );
+  background-image: linear-gradient(to left, rgba(255, 0, 0, 0), #8ea2b4);
   text-align: center;
   list-style: none;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
