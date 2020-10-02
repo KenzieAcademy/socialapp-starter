@@ -2,7 +2,7 @@ import React from "react";
 import Spinner from "react-spinkit";
 import "./RegistrationForm.css";
 import dataService from "../../services/DataService";
-import { Form, Button, Header, Label, Input } from "semantic-ui-react";
+import { Form, Button, Label, Input, Message } from "semantic-ui-react";
 
 class RegistrationForm extends React.Component {
   constructor(props) {
@@ -14,6 +14,7 @@ class RegistrationForm extends React.Component {
         password: "string",
       },
       submitted: false,
+      responseCode: null,
     };
 
     this.client = new dataService();
@@ -24,13 +25,19 @@ class RegistrationForm extends React.Component {
     this.client
       .registerUser(this.state.formData)
       .then((result) => {
-        console.log(result.data);
+        console.log(result);
+        this.setState({
+          responseCode: 200,
+          formData: { username: "", displayName: "", password: "" },
+          submitted: true,
+        });
       })
-      .catch((error) => console.log(error));
-    this.setState({
-      formData: { username: "", displayName: "", password: "" },
-      submitted: true,
-    });
+      .catch((error) => {
+        console.log(error);
+        if (error.response.data.statusCode === 400) {
+          this.setState({ responseCode: 400 });
+        }
+      });
   };
 
   handleChange = (event) => {
@@ -50,12 +57,74 @@ class RegistrationForm extends React.Component {
   render() {
     const { loading, error } = this.props;
 
-    if (this.state.submitted) {
+    if (this.state.responseCode === 200 && this.state.submitted) {
       return (
         <div className="RegistrationForm">
-          <Header as="h3">You have Created an Account Successfully!</Header>
-          <br />
-          <Button onClick={this.handleReset}>Reset Form</Button>
+          <Message
+            success
+            header="You have Created an Account Successfully!"
+            onDismiss={this.handleReset}
+          />
+        </div>
+      );
+    }
+
+    if (this.state.responseCode === 400) {
+      return (
+        <div className="RegistrationForm">
+          <Form id="registration-form" onSubmit={this.handleRegistration} error>
+            <Form.Field>
+              <Label size="large" color="blue" htmlFor="username">
+                Username
+              </Label>
+              <Form.Input
+                type="text"
+                name="username"
+                error="This Username is Unavailable."
+                autoFocus
+                required
+                minLength="3"
+                maxLength="20"
+                onChange={this.handleChange}
+              />
+              <Message
+                error
+                header="Registration Error!"
+                content="This Username is Unavailable. Please Create a Unique Username"
+                attached="bottom"
+              />
+            </Form.Field>
+            {/* Inserted Display Name */}
+            <Form.Field>
+              <Label size="large" color="blue" htmlFor="displayName">
+                Display Name
+              </Label>
+              <Form.Input
+                type="text"
+                name="displayName"
+                required
+                minLength="3"
+                maxLength="20"
+                onChange={this.handleChange}
+              />
+            </Form.Field>
+            <Form.Field>
+              <Label size="large" color="blue" htmlFor="password">
+                Password
+              </Label>
+              <Form.Input
+                type="password"
+                name="password"
+                required
+                onChange={this.handleChange}
+              />
+            </Form.Field>
+            <Button type="submit" disabled={loading}>
+              Register
+            </Button>
+          </Form>
+          {loading && <Spinner name="circle" color="blue" />}
+          {error && <p style={{ color: "red" }}>{error.message}</p>}
         </div>
       );
     }

@@ -3,17 +3,16 @@ import { Link } from "react-router-dom";
 import { Icon } from "semantic-ui-react";
 import "./Menu.css";
 import { withAsyncAction } from "../../redux/HOCs";
+import DataService from "../../services/DataService";
 
 class Menu extends React.Component {
   constructor(props) {
     super(props);
     this.state = { activeItem: null };
     if (this.props.isAuthenticated) {
-      this.loginData = JSON.parse(localStorage.getItem("login"));
+      this.loggedInUser = new DataService().getUsername();
     }
   }
-
-  componentDidMount() {}
 
   handleLogout = (event) => {
     event.preventDefault();
@@ -29,7 +28,7 @@ class Menu extends React.Component {
             <Link to="/mainHub">
               <Icon name="home" size="large" />
             </Link>
-            <Link to={`/profile/${this.loginData.result.username}`}>
+            <Link to={`/profile/${this.loggedInUser}`}>
               <Icon name="user" size="large" />
             </Link>
             <Link to="/" onClick={this.handleLogout}>

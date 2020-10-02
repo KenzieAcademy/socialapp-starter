@@ -1,5 +1,5 @@
 import React from "react";
-import { Feed, Icon } from "semantic-ui-react";
+import { Feed, Icon, Loader } from "semantic-ui-react";
 import MessageService from "../../services/MessageService";
 import Message from "./Message";
 
@@ -22,6 +22,7 @@ class GetMessages extends React.Component {
       return (
         <div className="messageList">
           <h1>Message List</h1>
+          <Loader size="massive" active />
           <h3>Loading...</h3>
         </div>
       );

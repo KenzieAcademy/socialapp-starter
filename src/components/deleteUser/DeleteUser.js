@@ -1,4 +1,5 @@
 import React from "react";
+import "./DeleteUser.js"
 import DeleteUserService from "../../services/DeleteUserService";
 import DeleteUserModal from "../deleteUserModal/DeleteUserModal";
 

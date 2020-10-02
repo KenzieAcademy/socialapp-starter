@@ -1,5 +1,13 @@
 import React from "react";
-import { Form, Button, Header, Input, Label, TextArea} from "semantic-ui-react";
+import {
+  Form,
+  Button,
+  Header,
+  Input,
+  Label,
+  TextArea,
+  Message,
+} from "semantic-ui-react";
 import UpdateUserInfoService from "../../services/UpdateUserInfoService";
 import "./UpdateUserInfoForm.css";
 
@@ -7,37 +15,45 @@ class UpdateUserInfoForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      submitted: false,
-      updateUserInfoObject: {
-        password: "",
-        about: "",
-        displayName: "",
-      },
+      responseCode: null,
+      updateUserInfoObject: {},
     };
 
     this.UpdateUserInfoService = new UpdateUserInfoService();
   }
 
   handleChange = (e) => {
+    let formData = { ...this.state.updateUserInfoObject };
+    formData[e.target.name] = e.target.value;
     this.setState({
-      updateUserInfoObject: { [e.target.name]: e.target.value },
+      updateUserInfoObject: formData,
     });
   };
 
   handleUpdateUserInfo = (event) => {
     event.preventDefault();
-    this.UpdateUserInfoService.updateInfo(this.state.updateUserInfoObject).then(
-      (result) => {
-        console.log(result);
+    //Evaluates the updateUserInfoObject, and if a key has an empty string as it's value, that key is deleted
+    for (let property in this.state.updateUserInfoObject) {
+      if (this.state.updateUserInfoObject[property].length === 0) {
+        delete this.state.updateUserInfoObject.property;
       }
-    )
-    .catch((error) => console.log(error));
-    this.setState({ submitted: true });
+    }
+
+    this.UpdateUserInfoService.updateInfo(this.state.updateUserInfoObject)
+      .then((result) => {
+        console.log(result);
+        this.setState({
+          responseCode: result.data.statusCode,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   handleReset = (event) => {
     this.setState({
-      submitted: false,
+      statusCode: null,
       formData: {
         firstName: "",
         lastName: "",
@@ -46,12 +62,53 @@ class UpdateUserInfoForm extends React.Component {
   };
 
   render() {
-    if (this.state.submitted) {
+    if (this.state.statusCode === 200) {
       return (
         <div className="UpdateUserInfoForm">
-          <Header as="h3">Thank You for Updating Your User Information!</Header>
-          <br />
-          <Button onClick={this.handleReset}>Reset Form</Button>
+          <Form onSubmit={this.handleUpdateUserInfo}>
+            <Form.Field>
+              <Label size="large" color="blue">
+                Create a New Password
+              </Label>
+              <Form.Input
+                type="password"
+                name="password"
+                required
+                onChange={this.handleChange}
+              />
+            </Form.Field>
+            <Form.Field>
+              <Label size="large" color="blue">
+                Chose a New Display Name!
+              </Label>
+              <Form.Input
+                type="text"
+                name="displayName"
+                required
+                onChange={this.handleChange}
+                minLength="3"
+                maxLength="20"
+              />
+            </Form.Field>
+            <Form.Field>
+              <Label size="large" color="blue">
+                Update Your "About" Information!
+              </Label>
+              <Form.TextArea
+                type="text"
+                name="about"
+                required
+                onChange={this.handleChange}
+                maxLength="255"
+              />
+            </Form.Field>
+          </Form>
+          <Message
+            success
+            header="Form Completed!"
+            content="You have Successfully Updated Your User Information!"
+            onDismiss={this.handleReset}
+          />
         </div>
       );
     }
@@ -60,32 +117,35 @@ class UpdateUserInfoForm extends React.Component {
       <div className="UpdateUserInfoForm">
         <Form onSubmit={this.handleUpdateUserInfo}>
           <Form.Field>
-            <Label size="large" color="blue">Create a New Password</Label>
-            <Input
+            <Label size="large" color="blue">
+              Create a New Password
+            </Label>
+            <Form.Input
               type="password"
               name="password"
               onChange={this.handleChange}
-              required
             />
           </Form.Field>
           <Form.Field>
-            <Label size="large" color="blue">Chose a New Display Name!</Label>
-            <Input
+            <Label size="large" color="blue">
+              Chose a New Display Name!
+            </Label>
+            <Form.Input
               type="text"
               name="displayName"
               onChange={this.handleChange}
-              required
               minLength="3"
               maxLength="20"
             />
           </Form.Field>
           <Form.Field>
-            <Label size="large" color="blue">Update Your "About" Information!</Label>
+            <Label size="large" color="blue">
+              Update Your "About" Information!
+            </Label>
             <TextArea
               type="text"
               name="about"
               onChange={this.handleChange}
-              required
               maxLength="255"
             />
           </Form.Field>

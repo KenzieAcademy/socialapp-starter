@@ -1,5 +1,7 @@
 //import the axios HTTP client to communicate with the API
 import axios from "axios";
+import { store } from "../redux";
+
 class DataService {
   constructor(
     url = "https://socialapp-api.herokuapp.com",
@@ -7,6 +9,11 @@ class DataService {
   ) {
     this.url = url;
     this.client = client;
+  }
+
+  getUsername() {
+    const { username } = store.getState().auth.login.result;
+    return username;
   }
 
   registerUser(registrationData) {

@@ -1,0 +1,8 @@
+.ProfileParent {
+    padding: 0px;
+    width: 200px;
+}
+
+.ProfileParent .card .content {
+    padding: 0px;
+}

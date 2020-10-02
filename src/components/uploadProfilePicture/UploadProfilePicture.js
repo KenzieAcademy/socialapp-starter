@@ -7,15 +7,15 @@ class UploadProfilePicture extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      picture: null,
-      responseCode: null,
+      uploadPicture: null,
+      uploadResponseCode: null,
     };
 
     this.UploadProfilePictureService = new UploadProfilePictureService();
   }
 
   handleReset = (event) => {
-    this.setState({ responseCode: null });
+    this.setState({ uploadResponseCode: null });
   };
 
   handleChange = (event) => {
@@ -24,19 +24,27 @@ class UploadProfilePicture extends React.Component {
   };
 
   handleUpload = (event) => {
-    if (this.state.picture) {
-      this.UploadProfilePictureService.uploadProfilePicture(this.state.picture)
+    if (this.state.uploadPicture) {
+      this.UploadProfilePictureService.uploadProfilePicture(
+        this.state.uploadPicture
+      )
         .then((result) => {
           console.log(result);
-          if ((result.data.statusCode = 200))
-            this.setState({ responseCode: 200 });
+          if (result.data.statusCode)
+            this.setState({ uploadResponseCode: result.data.statusCode });
         })
-        .catch((error) => console.log(error));
+        .catch((error) => {
+          console.log(error);
+          if (error.response.data.statusCode)
+            this.setState({
+              uploadResponseCode: error.response.data.statusCode,
+            });
+        });
     }
   };
 
   render() {
-    if (this.state.responseCode === 200) {
+    if (this.state.uploadResponseCode === 200) {
       return (
         <div className="UploadProfilePicture">
           <Form
@@ -61,6 +69,56 @@ class UploadProfilePicture extends React.Component {
       );
     }
 
+    if (this.state.uploadResponseCode === 413) {
+      return (
+        <div className="UploadProfilePicture">
+          <Form
+            encType="multipart/form-data"
+            onSubmit={this.handleUpload}
+            error
+          >
+            <Form.Field>
+              <Label size="large" color="blue">
+                Upload A New Profile Picture
+              </Label>
+              <Message
+                error
+                attached="bottom"
+                header="Upload Failed!"
+                content="The Image You Selected is Too Large!"
+                onDismiss={this.handleReset}
+              />
+            </Form.Field>
+          </Form>
+        </div>
+      );
+    }
+
+    if (this.state.uploadResponseCode === 415) {
+      return (
+        <div className="UploadProfilePicture">
+          <Form
+            encType="multipart/form-data"
+            onSubmit={this.handleUpload}
+            error
+          >
+            <Form.Field>
+              <Label size="large" color="blue">
+                Upload A New Profile Picture
+              </Label>
+              <Message
+                error
+                attached="bottom"
+                header="Upload Failed!"
+                content="Unsupported Media Type! Please Choose a .gif, .jpeg, or .png File!"
+                onDismiss={this.handleReset}
+              />
+            </Form.Field>
+          </Form>
+        </div>
+      );
+    }
+
     return (
       <div className="UploadProfilePicture">
         <Form encType="multipart/form-data" onSubmit={this.handleUpload}>
@@ -71,7 +129,9 @@ class UploadProfilePicture extends React.Component {
             <Input
               action="Upload"
               type="file"
-              name="picture"
+              name="uploadPicture"
+              accept="image/jpeg, image/gif, image/png"
+              capture="user"
               onChange={this.handleChange}
               required
             />
