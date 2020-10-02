@@ -1,0 +1,23 @@
+.ProfilePictureParent {
+  padding: 0px;
+}
+
+.ProfilePictureParent .card {
+  width: 300px;
+}
+
+.ProfilePictureParent .card .content {
+  padding: 0px;
+}
+
+.ProfilePictureParent .card .ProfileCardContentBody{
+    padding: 5%;
+  }
+
+.ProfilePictureParent .card .content .cardHeader {
+  font-size: 1.5em;
+}
+
+.ProfilePictureParent .card .ProfileCardUserControls {
+    padding: 5%;
+}
