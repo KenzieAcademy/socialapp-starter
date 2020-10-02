@@ -23,6 +23,16 @@ class MessageService {
       
   
 }
+
+removeLike(likeId){
+  const config = {
+    headers: {
+      Authorization: `Bearer ${this.getToken()}`,
+    }}
+  return this.client.delete(
+    this.url + `/likes/${likeId}`, config
+  )
+}
   
   getToken() {
     const loginData = JSON.parse(localStorage.getItem("login"));
