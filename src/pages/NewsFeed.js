@@ -15,9 +15,22 @@ class NewsFeed extends React.Component {
       .getMessages()
       .then((response) => this.setState({ messages: response.data.messages }));
   }
+  componentWillUnmount() {
+    //this.timer=null
+  }
   render() {
     const { Header, Content, Footer } = Layout;
     if (this.state.messages.length === 0) {
+      //   setInterval(() => {
+      //     fetch("GetMessages.js").then((response){
+      //       return response.json()
+      //     }).then((data){
+      //       textViewCount.textContent = data.textViewCount
+      //     }).catch((error){
+      //         console.log(error);
+      //     })
+      //   }, 3000);
+      // }
       return (
         <div className="NewsFeed">
           <h1>Timeline</h1>
@@ -26,7 +39,6 @@ class NewsFeed extends React.Component {
         </div>
       );
     }
-
     return (
       <div className="NewsFeed">
         <Menu />

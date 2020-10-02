@@ -24,6 +24,9 @@ class GetMessage extends Component {
   }
   componentDidMount() {
     this.getAllMessages();
+    setInterval(() => {
+      this.getAllMessages();
+    }, 3000);
   }
 
   render() {
