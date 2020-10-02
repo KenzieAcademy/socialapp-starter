@@ -70,8 +70,8 @@ class MessageList extends React.Component {
           handleChange={this.handleChange}
           handlePostMessage={this.handlePostMessage}
         />
-        <h1>Message feed</h1>
-        <ul>
+        <br />
+        <div>
           {this.state.messages.map((messageObject) => (
             <Message
               handleDeleteMesssage={this.handleDeleteMesssage}
@@ -79,7 +79,7 @@ class MessageList extends React.Component {
               {...messageObject}
             />
           ))}
-        </ul>
+        </div>
       </div>
     );
   }

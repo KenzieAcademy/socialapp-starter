@@ -2,10 +2,9 @@ import React from "react";
 import Menu from "../components/menu/Menu";
 import UpdateUser from "../components/updateUser/UpdateUser";
 import { userIsAuthenticated } from "../redux/HOCs";
-// import GetUserPicture from "../components/getUserPi
+import UploadPicture from "../components/getUserPicture/GetUserPicture";
 
-import { Avatar } from "antd";
-import { UserOutlined } from "@ant-design/icons";
+import { Button } from "antd";
 
 class Profile extends React.Component {
   render() {
@@ -13,13 +12,12 @@ class Profile extends React.Component {
       <div className="Profile">
         <Menu isAuthenticated={this.props.isAuthenticated} />
         <h2>Profile</h2>
-        <div>
-          <Avatar
-            size={264}
-            icon={<UserOutlined />}
-            // src={InputFile.props.state.imgUrl}
-          />
-        </div>
+        <UploadPicture />
+        <div></div>
+        <br />
+        <Button type="primary" danger onClick={this.handleDelete}>
+          Delete User
+        </Button>
         <UpdateUser />
       </div>
     );
