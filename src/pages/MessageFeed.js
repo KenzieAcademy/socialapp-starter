@@ -97,6 +97,7 @@ class MessageFeed extends React.Component {
                 name="text"
                 onChange={this.handleChange}
                 autoComplete="off"
+                required
                 cols="30"
                 rows="5"
               ></textarea>
