@@ -10,8 +10,7 @@ import { UpOutlined } from '@ant-design/icons';
 import QuestboardService from "../components/servicesPage/ServicePage"
 // comment section 
 
-const questboardService = new QuestboardService
-const username = questboardService.getUsername()
+
 
 class Profile extends React.Component {
   constructor (props) {
@@ -19,7 +18,8 @@ class Profile extends React.Component {
     this.state = {
       picture: "",
     }
-    
+  const questboardService = new QuestboardService()
+  const userName = questboardService.getUsername()
   }
   render() {
     const { Header, Content } = Layout;
@@ -42,7 +42,7 @@ class Profile extends React.Component {
           <Header className="mainHeader" style={{ padding: 0, textAlign: 'center' }}> <img className="theQuestBoardHeader" src={theQuestBoardHeader} alt="QuestBoard Header" /> </Header>
 
           <Content>
-            <div>Username: {username}</div>
+            <div>Username: {this.userName}</div>
             <div>Character:</div>
       </Content>
           

@@ -2,28 +2,32 @@ import React from "react"
 import { Form, Input, Button } from 'antd';
 import QuestboardService from "../servicesPage/ServicePage"
 
-const Questboard = new QuestboardService()
-
 class ProfileForms extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            username:`https://socialapp-api.herokuapp.com/users/${Questboard.getUsername()}`,
+            displayName:"",
             about: "",
-            password: ""
-        }
-    }
-
+            // password:""
+        } 
+        this.Questboard = new QuestboardService()
+    
+      }
+        handleChange = e => {
+        this.setState({ [e.target.name]: e.target.value });
+      };
+       handleNameUpdate = () => {
+        console.log(this.state)
+        this.Questboard.UpdateUser(this.state).then(response => (console.log(response)))
+      }
+      
 render () {
     const layout = {
         labelCol: { span: 8 },
         wrapperCol: { span: 16 },
       };
       
-      const tailLayout = {
-        wrapperCol: { offset: 8, span: 16 },
-      };
-    
+      
   const onFinish = values => {
     console.log('Success:', values);
     };
@@ -31,14 +35,7 @@ render () {
   const onFinishFailed = errorInfo => {
     console.log('Failed:', errorInfo);
   }
-  // const handleUserName = () => {
-  //   const name = (event.target)
-  //   FormData.append()
-  //   this.setState({formData})
-  // }
-  // const handleNameUpdate = () => {
-  //   Questboard.UpdateUser(this.state.formData)
-  // }
+  
   
   return (
     <Form
@@ -48,29 +45,36 @@ render () {
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
     >
-      <Form.Item
-        label="Username"
-        name="username"
-        // onChange={}
-        rules={[{ required: true, message: 'Please input your display name!' }]}
-      >
-        <Input />
-      </Form.Item>
-
-      <Form.Item
-        label="Password"
-        name="password"
-        rules={[{ required: true, message: 'Please input your character!' }]}
-      >
-        <Input.Password />
-      </Form.Item>
-<Form.Item>
-       <Button type="primary" htmlType="submit" 
-      //  onClick={}
+      <form>
+        <input 
+        placeholder="Input your name here!"
+        label="displayName"
+        name="displayName"
+        onChange={this.handleChange}
+        />
+      </form>
+      <form>
+        <input 
+        placeholder="Tell us about you!"
+        label="about"
+        name="about"
+        onChange={this.handleChange}
+       />
+      </form>
+      {/* <form>
+      <input 
+      label="password"
+      name="password"
+      onchange={this.handleChange}
+      rules={[{required: true, message: 'Please update your password!'}]} />
+      </form> */}
+<form>
+       <button type="primary" htmlType="submit" 
+        onClick={this.handleNameUpdate}
       >
           Submit
-        </Button>
-      </Form.Item>
+        </button>
+      </form>
     </Form>
    
     );

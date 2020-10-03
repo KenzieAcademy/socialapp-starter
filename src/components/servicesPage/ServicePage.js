@@ -14,8 +14,8 @@ class QuestboardService {
     }
 
     getUsername (){
-        const loginData = JSON.parse(localStorage.getItem("login"))
-        const {username} = loginData.result
+        
+        const {username} = store.getState().auth.login.result
         return username
     }
 
@@ -47,10 +47,10 @@ class QuestboardService {
                 Authorization: `Bearer ${this.getToken()}`
             }
         }
-        return this.client.patch(this.url + `/users/{username}`, user, config);
+        return this.client.patch(this.url + "/users/" + this.getUsername(), user, config);
     }
     DeleteUser(){
-        return this.client.delete(this.url + `/users/{username}`);
+        return this.client.delete(this.url + "/users/{username}");
     }
     GetPicture() {
         return this.client.get(this.url + "/users/" + this.getUsername() + "/picture");
