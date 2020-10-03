@@ -2,6 +2,7 @@ import React from "react";
 import Messages from "../components/messages/Messages";
 import Menu from "../components/menu/Menu";
 import DataService from "../services/dataService";
+import UserList from "../components/listUsers/ListUsers";
 
 
 
@@ -33,6 +34,8 @@ return (
                 <Messages key={msg.id}{...msg}/>
                 ))}
             </ul>
+
+            <ul><UserList/></ul>
           
         </div>
     )

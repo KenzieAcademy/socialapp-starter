@@ -9,7 +9,9 @@ class Messages extends React.Component {
         const dataService = new DataService()
         const username = dataService.getUsername()
 
-        if (this.props.likes.some(like => like.username === username)) return
+        if (this.props.likes.some(like => like.username === username)) 
+        
+        return
 
         dataService
             .postLike(this.props.id)

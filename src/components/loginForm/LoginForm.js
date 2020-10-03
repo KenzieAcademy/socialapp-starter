@@ -48,7 +48,7 @@ class LoginForm extends React.Component {
                 required
                 onChange={this.handleChange}
               />
-              <button className="loginButton" type="submit" disabled={loading}>
+              <button className="loginButton" type="submit" disabled={loading} >
                 Login
           </button>
 
