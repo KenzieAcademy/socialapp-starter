@@ -17,9 +17,13 @@ class DeleteUserButton extends React.Component {
   handleDelete = (e) => {
     e.preventDefault();
     this.client.deleteUser(this.state).then((result) => {
-      console.log(result.data);
+      this.props.handleDeleteUserUpdate();
+
       this.setState({ isSubmitted: true });
-      window.localStorage.removeItem("login");
+      let emptyTokenObj = {
+        login: { result: null, loading: true, error: null },
+      };
+      localStorage.setItem("login", JSON.stringify(emptyTokenObj));
     });
   };
 
