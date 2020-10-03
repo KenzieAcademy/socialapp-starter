@@ -4,7 +4,7 @@ import { userIsAuthenticated } from "../redux/HOCs"
 
 
 class PostMessage extends React.Component {
-   
+
     render() {
         return (
             <div className="Message">

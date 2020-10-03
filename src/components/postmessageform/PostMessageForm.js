@@ -20,6 +20,7 @@ class PostMessageForm extends React.Component {
     handleMessagePost = (event) => {
         event.preventDefault();
         this.PostMessageService.postMessage(this.state).then((result) => {
+            
             console.log(result.data);
         });
         console.log("Post Button Pressed")
