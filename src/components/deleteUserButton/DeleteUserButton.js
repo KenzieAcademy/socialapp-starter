@@ -50,7 +50,7 @@ class DeleteUserButton extends React.Component {
         cancelText="No"
         onConfirm={this.handleDelete}
       >
-        <button className="DeleteUserButton">Delete</button>;
+        <button className="DeleteUserButton">Delete</button>
       </Popconfirm>
     );
   }
