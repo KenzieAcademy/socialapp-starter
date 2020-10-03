@@ -19,11 +19,11 @@ class DeleteUserButton extends React.Component {
     this.client.deleteUser(this.state).then((result) => {
       console.log(result.data);
       this.setState({ isSubmitted: true });
+      window.localStorage.removeItem("login");
     });
   };
 
   handleHome = (e) => {
-    window.localStorage.removeItem("login");
     window.location.pathname = "/";
   };
 

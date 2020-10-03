@@ -13,11 +13,14 @@ class ProfileOptions extends React.Component {
       userData: [],
     };
   }
+  handleHome = (e) => {
+    window.location.pathname = "/";
+  };
   render() {
     return (
       <div className="ProfileOptions">
-        <Link to="/">Go Home/Login</Link>
         <Menu />
+        <button onClick={this.handleHome}>Home</button>
         <h2>Settings</h2>
         <br />
         <h3>Update About :</h3>
