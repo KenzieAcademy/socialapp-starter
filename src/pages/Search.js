@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import GetUserList from "../components/getUserList/GetUserList";
 
 class Search extends React.Component {
   constructor(props) {
@@ -25,7 +26,7 @@ class Search extends React.Component {
           />
         </form>
         <ul>
-          <li>Item 1</li>
+          <GetUserList />
           <li>Item 2</li>
         </ul>
       </div>

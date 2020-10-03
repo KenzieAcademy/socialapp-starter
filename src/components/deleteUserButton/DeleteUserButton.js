@@ -1,7 +1,6 @@
 import React from "react";
 import DataService from "../../DataService";
-import { Popconfirm } from 'antd';
-
+import { Popconfirm } from "antd";
 
 class DeleteUserButton extends React.Component {
   constructor(props) {
@@ -52,5 +51,3 @@ handleLoginRemoval = (e) => {
 }
 
 export default DeleteUserButton;
-
-

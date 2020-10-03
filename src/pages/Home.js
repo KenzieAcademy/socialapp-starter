@@ -3,7 +3,7 @@ import LoginForm from "../components/loginForm/LoginForm";
 import Menu from "../components/menu/Menu";
 import { Link } from "react-router-dom";
 import { userIsNotAuthenticated } from "../redux/HOCs";
-import RegistrationForm from "../components/registrationForm/RegistrationForm";
+import RegistrationForm from "../components/registraionForm/RegistrationForm";
 
 class Home extends React.Component {
   onChange = (date, dateString) => {
