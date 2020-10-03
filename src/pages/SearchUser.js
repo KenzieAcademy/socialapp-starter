@@ -105,8 +105,9 @@ class SearchUser extends React.Component {
         {this.state.userdisplayName}
         <br></br>
         <div className="">
-          {this.state.about}
           {this.state.username}
+          <br></br>
+          {this.state.about}
           <br></br>
 
           {console.log(this.state.userdata.showMessageFeed)}

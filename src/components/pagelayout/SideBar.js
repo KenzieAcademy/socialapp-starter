@@ -47,7 +47,7 @@ class SideBar extends React.Component {
                 title={
                   <span>
                     <Icon type="mail1" />
-                    <span> 👇 More Info</span>
+                    <span> 👇 More Options</span>
                   </span>
                 }
               >
@@ -58,15 +58,10 @@ class SideBar extends React.Component {
                     </Route>
                   </Menu.Item>
                   <Menu.Item key="location5">
-<<<<<<< HEAD
-                    <Route>
-                      <Link to="/deleteprofile">Delete profile</Link>
-                    </Route>
-=======
                     <Link to="/Delete" onClick={this.handleChange}>
                       {" "}
-                      ❎ Delete Profile</Link>
->>>>>>> 9a219b0ccbabc88e77bc2ea04e7a521255f1357c
+                      ❎ Delete Profile
+                    </Link>
                   </Menu.Item>
 
                   {/* <Menu.Item key="location3">
@@ -77,7 +72,7 @@ class SideBar extends React.Component {
                 </Menu.ItemGroup>
               </SubMenu>
 
-              <Menu.Item key="location4">
+              {/* <Menu.Item key="location4">
                 <Route>
                   <Link to="/searchuser">⌛ Search User</Link>
                 </Route>
@@ -86,13 +81,16 @@ class SideBar extends React.Component {
                 <Route>
                   <Link to="/deleteprofile"> ❎ Delete profile</Link>
                 </Route>
-              </Menu.Item>
-              <Menu.Item id="menu-links" style={{ backgroundColor: "red", borderRadius: "50px" }}>
+              </Menu.Item> */}
+              {/* <Menu.Item
+                id="menu-links"
+                style={{ backgroundColor: "red", borderRadius: "50px" }}
+              >
                 <Link to="/" onClick={this.handleLogout}>
                   <SettingOutlined /> LOGOUT
                 </Link>
-              </Menu.Item>
-              <div className="Menu">
+              </Menu.Item> */}
+              {/* <div className="Menu">
                 {this.props.isAuthenticated && (
                   <div id="menu-links">
                     <Link to="/" onClick={this.handleLogout}>
@@ -100,7 +98,7 @@ class SideBar extends React.Component {
                     </Link>
                   </div>
                 )}
-              </div>
+              </div> */}
             </Menu.ItemGroup>
           </SubMenu>
 

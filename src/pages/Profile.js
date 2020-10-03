@@ -3,7 +3,7 @@ import { userIsAuthenticated } from "../redux/HOCs";
 // import { domain, jsonHeaders, handleJsonResponse } from "./constants";
 import DataService from "../dataService";
 import profilepic from "../components/defualtpicture/freeiconlibrary.jpg";
-import './Profile.css'
+import "./Profile.css";
 
 class Profile extends React.Component {
   constructor(props) {
@@ -45,8 +45,27 @@ class Profile extends React.Component {
     return (
       <div className="Profile">
         {/* <Menu isAuthenticated={this.props.isAuthenticated} /> */}
-        <h2 style={{ color: "crystal black", textAlign: "center", fontFamily: "fantasy", fontStyle: "italic", fontSize: "40px" }}>🆆🅴🅻🅲🅾🅼🅴 {this.state.displayname}</h2>
-        <h1 style={{ color: "crystal black", textAlign: "center", fontFamily: "fantasy", fontSize: "40px" }}>🅿🆁🅾🅵🅸🅻🅴</h1>
+        <h2
+          style={{
+            color: "crystal black",
+            textAlign: "center",
+            fontFamily: "fantasy",
+            fontStyle: "italic",
+            fontSize: "40px",
+          }}
+        >
+          🆆🅴🅻🅲🅾🅼🅴 {this.state.displayname}
+        </h2>
+        <h1
+          style={{
+            color: "crystal black",
+            textAlign: "center",
+            fontFamily: "fantasy",
+            fontSize: "40px",
+          }}
+        >
+          🅿🆁🅾🅵🅸🅻🅴
+        </h1>
         <img
           src={this.state.picture}
           alt="profile pic"
@@ -54,13 +73,8 @@ class Profile extends React.Component {
           width={250}
           class="center"
         />
-<<<<<<< HEAD
-        <p> {this.state.aboutme}</p>
-        {/* <input style={{ fontFamily: "serif" }} type="file" onChange={this.profilePicHandler} /> */}
-=======
         {/* <p> {this.state.aboutme}</p>
         <input style={{ fontFamily: "serif" }} type="file" onChange={this.profilePicHandler} /> */}
->>>>>>> 9a219b0ccbabc88e77bc2ea04e7a521255f1357c
       </div>
     );
   }
