@@ -13,7 +13,7 @@ class Home extends React.Component {
   render() {
     return (
       <div className="Home">
-        <Menu isAuthenticated={this.props.isAuthenticated} />
+        <Menu />
         <h2>Home of Lady Lucky</h2>
         <LoginForm />
         <br />
