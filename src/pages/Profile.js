@@ -4,7 +4,7 @@ import Menu from "../components/menu/Menu";
 import UserCard from "../components/userCard/UserCard";
 import DataService from "../DataService";
 import { userIsAuthenticated } from "../redux/HOCs";
-import MessageList from "./MessageList";
+import MessageList from "../components/messageList/MessageList";
 
 class Profile extends React.Component {
   constructor(props) {

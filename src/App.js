@@ -6,7 +6,7 @@ import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
 import RegistrationPage from "./pages/RegistrationPage";
 import ProfileOptions from "./pages/ProfileOptions";
-import MessageList from "./pages/MessageList";
+
 import Search from "./pages/Search";
 
 class App extends React.Component {
@@ -17,7 +17,7 @@ class App extends React.Component {
         <Route exact path="/profile/:username" component={Profile} />
         <Route exact path="/registerUser" component={RegistrationPage} />
         <Route exact path="/profileoptions" component={ProfileOptions} />
-        <Route exact path="/messagefeed" component={MessageList} />
+
         <Route exact path="/search" component={Search} />
         <Route exact path="*" component={NotFound} />
       </Switch>

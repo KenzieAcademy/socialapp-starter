@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { userIsAuthenticated } from "../redux/HOCs";
+import Menu from "../components/menu/Menu";
 import GetUserList from "../components/getUserList/GetUserList";
 
 class Search extends React.Component {
@@ -15,7 +17,7 @@ class Search extends React.Component {
   render() {
     return (
       <div className="Search">
-        <Link to="/">Home</Link>
+        <Menu isAuthenticated={this.props.isAuthenticated} />
         <form>
           <label htmlFor="Search">Search</label>
           <input
@@ -34,4 +36,4 @@ class Search extends React.Component {
   }
 }
 
-export default Search;
+export default userIsAuthenticated(Search);

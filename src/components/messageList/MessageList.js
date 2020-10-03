@@ -1,7 +1,7 @@
 import React from "react";
-import Message from "../components/message/Message";
-import DataService from "../DataService";
-import CreateMessage from "../components/createMessage/CreateMessage";
+import Message from "../message/Message";
+import DataService from "../../DataService";
+import CreateMessage from "../createMessage/CreateMessage";
 
 class MessageList extends React.Component {
   constructor(props) {

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { userIsAuthenticated } from "../redux/HOCs";
 import Menu from "../components/menu/Menu";
 import DeleteUserButton from "../components/deleteUserButton/DeleteUserButton";
 import UpdateAbout from "../components/updateAbout/UpdateAbout";
@@ -19,7 +20,7 @@ class ProfileOptions extends React.Component {
   render() {
     return (
       <div className="ProfileOptions">
-        <Menu />
+        <Menu isAuthenticated={this.props.isAuthenticated} />
         <button onClick={this.handleHome}>Home</button>
         <h2>Settings</h2>
         <br />
@@ -42,4 +43,4 @@ class ProfileOptions extends React.Component {
   }
 }
 
-export default ProfileOptions;
+export default userIsAuthenticated(ProfileOptions);
