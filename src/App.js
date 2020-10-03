@@ -13,6 +13,7 @@ import Icon from "@ant-design/icons";
 import TwitHeader from "./components/pagelayout/Header";
 import SideBar from "./components/pagelayout/SideBar";
 import MainContent from "./components/pagelayout/MainContent";
+import UseWindowSize from "./UseWindowSize";
 
 const { Header, Footer, Sider, Content } = Layout;
 
@@ -20,6 +21,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <UseWindowSize />
         <TwitHeader />
         <Layout>
 

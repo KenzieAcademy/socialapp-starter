@@ -38,7 +38,6 @@ class DeletePage extends React.Component {
             onClick={this.handleChange}
             style={{ backgroundColor: "red", fontFamily: "monospace" }}
           >
-            {/* <button className="Delete" onClick={this.handleChange}> */}{" "}
             DELETE YOUR PROFILE
           </button>
         </form>
