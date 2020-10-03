@@ -1,7 +1,7 @@
 import React from "react";
 import DataService from "../dataService";
 import { userIsAuthenticated } from "../redux/HOCs";
-// import './MessageFeed.css'
+import './MessageFeed.css'
 
 
 // import { message, Result } from "antd";

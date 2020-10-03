@@ -82,41 +82,42 @@ class EditProfile extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>Edit Profile</h1>
+      <div style={{ textAlign: "center", fontSize: "20px", fontFamily: "sans-serif", }}>
+        <h1 style={{ fontFamily: "fantasy", fontSize: "40px" }}>Edit Profile</h1>
         <form onSubmit={this.handleSubmit}>
           Change Your Password:
-          <input
+          <input style={{ textAlign: "center", fontFamily: "fantasy", fontSize: "20px", background: "none", borderColor: "silver", borderRadius: "30px", }}
             type="text"
             name="NewAboutMe"
-            placeholder="password"
+            placeholder=" password"
             onChange={this.handleChange}
           />
           <br></br>
+          <br></br>
           Change Your About Me:
-          <input
+          <input style={{ textAlign: "center", fontFamily: "fantasy", fontSize: "20px", background: "none", borderColor: "silver", borderRadius: "30px", }}
             type="text"
             name="about"
-            placeholder="about me"
+            placeholder=" about me"
             onChange={this.handleChange2}
           />
           <br></br>
+          <br></br>
           Change Your Display Name:
-          <input
+          <input style={{ textAlign: "center", fontFamily: "fantasy", fontSize: "20px", background: "none", borderColor: "silver", borderRadius: "30px", }}
             type="text"
             name="newDisplayName"
-            placeholder="Change displayname"
+            placeholder="Change display name"
             onChange={this.handleChange3}
           />
           <br></br>
-          <button>Post</button>
           <br></br>
           <img
             className="Current profilepic"
             src={`https://socialapp-api.herokuapp.com/users/${this.client.getUsername()}/picture`}
             alt="profile pic"
-            height={150}
-            width={150}
+            height={250}
+            width={250}
             class="center"
           />
           <br></br>
@@ -128,8 +129,9 @@ class EditProfile extends React.Component {
               accept="images/jpeg,images/png"
               capture="user"
             />
-            {/* <br></br> */}
-            <button onClick={this.handleUpload}>Upload</button>
+
+            <button style={{ background: "none", borderRadius: "20px", color: "whitesmoke", }} onClick={this.handleUpload}>Upload Photo</button>
+            <button style={{ background: "none", borderRadius: "20px", color: "whitesmoke", }}>Post</button>
 
             <div>
               {/* <img alt="user" src={this.state.imageURL} width={200} /> */}
