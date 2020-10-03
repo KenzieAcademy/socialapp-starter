@@ -1,1 +1,11 @@
-/* 
+/* .messagefeed{
+
+}
+*, ::after, ::before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+
+}
+.div {
+    display: block;
+} */
