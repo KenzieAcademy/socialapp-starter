@@ -53,10 +53,14 @@ class Message extends React.Component {
 
   render() {
     return (
-      <li style={{ paddingTop: "20px", fontSize: "20px", fontFamily: "serif" }} className="Message">
+      <li
+        style={{ paddingTop: "20px", fontSize: "20px", fontFamily: "serif" }}
+        className="Message"
+      >
         <Route>
           <Link to="/SearchUser">
-            <img style={{ width: "50px", height: "50px", borderRadius: "60px", }}
+            <img
+              style={{ width: "50px", height: "50px", borderRadius: "60px" }}
               className="userprofile"
               alt="user-pic"
               src={this.state.picture}
@@ -64,15 +68,31 @@ class Message extends React.Component {
           </Link>
         </Route>
         {/* <img className="userprofile" alt="user-pic" src={this.state.pic} /> */}
-    At { this.props.createdAt}, { this.props.username} posted:
-        { console.log(this.prop)}
+        {this.props.username} Posted:
+        {console.log(this.prop)}
         <br />
-        { this.props.text}
+        {this.props.text}
         <br />
-        <div style={{ fontSize: "30px", textAlign: "right" }} className="like-counter">😊{this.props.likes.length}</div> {/* <form> */}
-        <button style={{ background: "transparent", border: "none", fontSize: "30px", textAlign: "right" }} onClick={this.handleLike}>👍</button>
+        <div
+          style={{ fontSize: "30px", textAlign: "right" }}
+          className="like-counter"
+        >
+          😊{this.props.likes.length}
+        </div>{" "}
+        {/* <form> */}
+        <button
+          style={{
+            background: "transparent",
+            border: "none",
+            fontSize: "30px",
+            textAlign: "right",
+          }}
+          onClick={this.handleLike}
+        >
+          👍
+        </button>
         {/* </form> */}
-      </li >
+      </li>
     );
   }
 }
