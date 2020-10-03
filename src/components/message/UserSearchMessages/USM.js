@@ -22,14 +22,7 @@ class MessageFeed extends React.Component {
           messages: response.data.messages,
         })
       );
-    } else
-      this.interval = setInterval(() => {
-        this.client.getMessages().then((response) =>
-          this.setState({
-            messages: response.data.messages,
-          })
-        );
-      }, 5000);
+    }
   }
 
   // this.client
@@ -54,7 +47,6 @@ class MessageFeed extends React.Component {
     return (
       <div className="messagefeed">
         {console.log(this.props)}
-        <CreateMessage />
         <ul>
           {this.state.messages.map((messageObject) => (
             <Message key={messageObject.id} {...messageObject} />

@@ -54,7 +54,7 @@ class Profile extends React.Component {
           class="center"
         />
         <p> {this.state.aboutme}</p>
-        <input style={{ fontFamily: "serif" }} type="file" onChange={this.profilePicHandler} />
+        {/* <input style={{ fontFamily: "serif" }} type="file" onChange={this.profilePicHandler} /> */}
       </div>
     );
   }

@@ -3,6 +3,7 @@ import React from "react";
 import DataService from "../dataService";
 import "./searchUser.css";
 import profilepic from "../components/defualtpicture/freeiconlibrary.jpg";
+import MessageFeed from "./MessageFeed";
 
 class SearchUser extends React.Component {
   constructor(props) {
@@ -16,7 +17,7 @@ class SearchUser extends React.Component {
         about: "",
         picture: profilepic,
         password: "",
-        searchedUser: false,
+        showMessageFeed: false,
       },
     };
   }
@@ -40,6 +41,7 @@ class SearchUser extends React.Component {
             displayname: result.data.user.displayName,
             about: result.data.user.about,
             picture: profilepic,
+            showMessageFeed: true,
           });
         } else {
           this.setState({
@@ -49,6 +51,7 @@ class SearchUser extends React.Component {
             picture:
               "https://socialapp-api.herokuapp.com" +
               result.data.user.pictureLocation,
+            showMessageFeed: true,
           });
         }
       })
@@ -57,6 +60,7 @@ class SearchUser extends React.Component {
           username: "USER DOES NOT EXIST",
           picture: profilepic,
           about: "",
+          showMessageFeed: false,
         });
       });
   };
@@ -103,10 +107,15 @@ class SearchUser extends React.Component {
         <div className="">
           {this.state.about}
           {this.state.username}
-          {/* {this.state.picture} */}
           <br></br>
 
+          {console.log(this.state.userdata.showMessageFeed)}
           <img alt="userimage" width={200} src={this.state.picture} />
+          {/* <messagefeed limit="10" mesasgeid={this.state.userdata.username} /> */}
+          {/* <MessageFeed limit={5} username={this.state.userdata.username} /> */}
+          {/* {this.state.showMessageFeed ? (
+            <MessageFeed limit={5} username={this.state.userdata.username} />
+          ) : null} */}
         </div>
       </div>
     );
