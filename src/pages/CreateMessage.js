@@ -50,17 +50,17 @@ class CreateMessage extends React.Component {
   render() {
     //event syntax for onClick and handleCHange
     return (
-      <div className="CreateMessage">
-        <h1>What's on your mind?</h1>
+      <div style={{ textAlign: "center" }} className="CreateMessage">
+        <h1 style={{ textAlign: "center", fontSize: "30px", fontFamily: "fantasy" }}>🆆🅷🅰🆃❜🆂 🅾🅽 🆈🅾🆄🆁 🅼🅸🅽🅳❓</h1>
         <form onSubmit={this.handleSubmit}>
-          <input
+          <input style={{ textAlign: "center", fontSize: "30px", fontFamily: "normal", WebkitBorderRadius: "10px", paddingBottom: "10px" }}
             type="text"
             name="messageInput"
             placeholder="Write what's on your mind"
             // value={this.state.messageInput}
             onChange={this.handleChange}
           />
-          <button>Post</button>
+          <button style={{ background: "blue", fontFamily: "fantasy", border: "none", fontSize: "17px", borderRadius: "20px" }}>Tweet</button>
         </form>
         {/* <button onClick={handleSubmit}>Submit</button> */}
       </div>
