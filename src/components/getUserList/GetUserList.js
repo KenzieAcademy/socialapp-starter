@@ -12,7 +12,7 @@ class GetUserList extends React.Component {
       userNumber: 0,
       limit: 10,
       offset: 0,
-      prevY: 0,
+      prevVert: 0,
     };
     this.client = new DataService();
   }
@@ -40,7 +40,7 @@ class GetUserList extends React.Component {
 
   handleObserver(entities, observer) {
     const y = entities[0].boundingClientRect.y;
-    if (this.state.prevY > y) {
+    if (this.state.prevVert > y) {
       const lastOffset = this.state.users.length;
       const curOffset = lastOffset + 10;
       this.setState({ loading: true });
@@ -52,7 +52,7 @@ class GetUserList extends React.Component {
       });
       this.setState({ offset: curOffset });
     }
-    this.setState({ prevY: y });
+    this.setState({ prevVert: y });
   }
 
   render() {

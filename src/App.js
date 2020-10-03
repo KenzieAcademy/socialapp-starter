@@ -7,7 +7,7 @@ import NotFound from "./pages/NotFound";
 import RegistrationPage from "./pages/RegistrationPage";
 import ProfileOptions from "./pages/ProfileOptions";
 
-import Search from "./pages/Search";
+import SearchPage from "./pages/SearchPage";
 
 class App extends React.Component {
   render() {
@@ -18,7 +18,7 @@ class App extends React.Component {
         <Route exact path="/registerUser" component={RegistrationPage} />
         <Route exact path="/profileoptions" component={ProfileOptions} />
 
-        <Route exact path="/search" component={Search} />
+        <Route exact path="/search" component={SearchPage} />
         <Route exact path="*" component={NotFound} />
       </Switch>
     );
