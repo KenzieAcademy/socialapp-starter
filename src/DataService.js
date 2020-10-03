@@ -22,8 +22,8 @@ class DataService {
     return this.client.get(this.url + "messages/" + messageId);
   }
 
-  getUserList() {
-    return this.client.get(this.url + "users");
+  getUserList(limit, offset) {
+    return this.client.get(`${this.url}users?limit=${limit}&offset=${offset}`);
   }
 
   deleteMessage(messageId) {

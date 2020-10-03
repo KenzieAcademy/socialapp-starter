@@ -8,23 +8,64 @@ class GetUserList extends React.Component {
 
     this.state = {
       users: [{ username: "", displayName: "", about: "" }],
+      loading: false,
+      userNumber: 0,
+      limit: 10,
+      offset: 0,
+      prevY: 0,
     };
     this.client = new DataService();
   }
 
   componentDidMount() {
-    this.client.getUserList().then((result) => {
-      this.setState({ users: result.data.users });
-      console.log(this.state);
-    });
+    this.client
+      .getUserList(this.state.limit, this.state.offset)
+      .then((result) => {
+        this.setState({ users: result.data.users });
+        console.log(this.state);
+      });
+
+    let options = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.1,
+    };
+
+    this.observer = new IntersectionObserver(
+      this.handleObserver.bind(this),
+      options
+    );
+    this.observer.observe(this.loadingRef);
+  }
+
+  handleObserver(entities, observer) {
+    const y = entities[0].boundingClientRect.y;
+    if (this.state.prevY > y) {
+      const lastOffset = this.state.users.length;
+      const curOffset = lastOffset + 10;
+      this.setState({ loading: true });
+      this.client.getUserList(this.state.limit, curOffset).then((response) => {
+        response.data.users.forEach((userObj) => {
+          this.state.users.push(userObj);
+        });
+        this.setState({ loading: false });
+      });
+      this.setState({ offset: curOffset });
+    }
+    this.setState({ prevY: y });
   }
 
   render() {
     return (
-      <div>
-        {this.state.users.map((userObj) => (
-          <UserCard {...userObj} />
-        ))}
+      <div className="getUserList">
+        <div>
+          {this.state.users.map((userObj) => (
+            <UserCard {...userObj} />
+          ))}
+        </div>
+        <div ref={(loadingRef) => (this.loadingRef = loadingRef)}>
+          <span>Loading...</span>
+        </div>
       </div>
     );
   }
