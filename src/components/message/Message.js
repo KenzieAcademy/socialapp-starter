@@ -56,7 +56,7 @@ class Message extends React.Component {
       <li className="Message">
         <Route>
           <Link to="/SearchUser">
-            <img style={{ width: "60px", height: "60px", borderRadius: "50px", listStyleType: "none" }}
+            <img style={{ width: "60px", height: "60px", borderRadius: "50px", listStyleType: "initial" }}
               className="userprofile"
               alt="user-pic"
               src={this.state.picture}
