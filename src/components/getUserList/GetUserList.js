@@ -7,10 +7,9 @@ class GetUserList extends React.Component {
     super(props);
 
     this.state = {
-      users: [{ username: "", displayName: "", about: "" }],
+      users: [],
       loading: false,
-      userNumber: 0,
-      limit: 2,
+      limit: 3,
       offset: 0,
       prevVert: 0,
       photoOnlyMode: false,
@@ -59,13 +58,34 @@ class GetUserList extends React.Component {
 
   handlePhotoMode = () => {
     this.setState({ loading: true });
+
     this.setState((state) => {
       return {
         photoOnlyMode: !state.photoOnlyMode,
         limit: 30,
+        offset: 0,
       };
     });
+    this.client
+      .getUserList(this.state.limit, this.state.offset)
+      .then((result) => {
+        this.setState({ users: result.data.users });
+        console.log(this.state);
+      });
   };
+
+  componentWillUnmount() {
+    this.setState({
+      users: [],
+      loading: false,
+      userNumber: 0,
+      limit: 10,
+      offset: 0,
+      prevVert: 0,
+      photoOnlyMode: false,
+      limitAmount: 10,
+    });
+  }
 
   render() {
     if (this.state.photoOnlyMode) {
@@ -76,7 +96,7 @@ class GetUserList extends React.Component {
             {this.state.users
               .filter((userObj) => userObj.pictureLocation !== null)
               .map((userObj) => (
-                <UserCard {...userObj} />
+                <UserCard {...userObj} loading={this.state.loading} />
               ))}
           </div>
           <div ref={(loadingRef) => (this.loadingRef = loadingRef)}>
@@ -91,7 +111,7 @@ class GetUserList extends React.Component {
         <button onClick={this.handlePhotoMode}>BOOOOOM</button>
         <div>
           {this.state.users.map((userObj) => (
-            <UserCard {...userObj} />
+            <UserCard {...userObj} loading={this.state.loading} />
           ))}
         </div>
         <div ref={(loadingRef) => (this.loadingRef = loadingRef)}>

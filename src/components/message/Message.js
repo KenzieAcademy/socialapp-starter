@@ -7,13 +7,27 @@ class Message extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { isLiked: false, likeId: 0, didCreate: false };
+    this.state = {
+      isLiked: false,
+      likeId: 0,
+      didCreate: false,
+      likeAmount: 0,
+    };
   }
 
   handleLikeStatus = (likeId) => {
     this.setState((state) => {
       return { isLiked: !state.isLiked, likeId };
     });
+    if (this.state.isLiked) {
+      this.setState((state) => {
+        return { likeAmount: state.likeAmount + 1 };
+      });
+    } else {
+      this.setState((state) => {
+        return { likeAmount: state.likeAmount - 1 };
+      });
+    }
   };
 
   handleCreationStatus = () => {
@@ -31,12 +45,12 @@ class Message extends React.Component {
         }
       });
     }
+    this.setState({ likeAmount: this.props.likes.length });
     if (this.props.username === loginData.result.username) {
-      this.setState((state) => {
-        return { didCreate: !state.didCreate };
-      });
+      this.setState({ didCreate: true });
     }
   }
+
   render() {
     if (this.props.key) {
       return <div>LOADING</div>;
@@ -53,7 +67,7 @@ class Message extends React.Component {
               handleLikeStatus={this.handleLikeStatus}
               handleRefresh={this.props.handleRefresh}
             />
-            <div className="likes">Likes: {this.props.likes.length}</div>
+            <div className="likes">Likes: {this.state.likeAmount}</div>
           </li>
         );
       } else {
@@ -66,7 +80,7 @@ class Message extends React.Component {
               likeId={this.state.likeId}
               handleLikeStatus={this.handleLikeStatus}
             />
-            <div className="likes">Likes: {this.props.likes.length}</div>
+            <div className="likes">Likes: {this.state.likeAmount}</div>
           </li>
         );
       }
@@ -81,7 +95,7 @@ class Message extends React.Component {
               messageId={this.props.id}
               handleLikeStatus={this.handleLikeStatus}
             />
-            <div className="likes">Likes: {this.props.likes.length}</div>
+            <div className="likes">Likes: {this.state.likeAmount}</div>
             <DeleteMessage
               messageId={this.props.id}
               handleCreationStatus={this.handleCreationStatus}
@@ -99,7 +113,7 @@ class Message extends React.Component {
               likeId={this.state.likeId}
               handleLikeStatus={this.handleLikeStatus}
             />
-            <div className="likes">Likes: {this.props.likes.length}</div>
+            <div className="likes">Likes: {this.state.likeAmount}</div>
             <DeleteMessage
               messageId={this.props.id}
               handleCreationStatus={this.handleCreationStatus}
