@@ -51,7 +51,9 @@ class RegistrationForm extends React.Component {
         {popup}
         <form onSubmit={this.handleRegistration}>
           <div className="RegUserBox">
-            <label htmlFor="username">Username</label>
+            <div className="RegUserHeader">
+              <label htmlFor="username">Username</label>
+            </div>
             <div className="RegUserInput">
               <input
                 type="text"
@@ -63,7 +65,9 @@ class RegistrationForm extends React.Component {
             </div>
           </div>
           <div className="RegPassBox">
-            <label htmlFor="password">Password</label>
+            <div className="RegPassHeader">
+              <label htmlFor="password">Password</label>
+            </div>
             <div className="RegPassInput">
               <input
                 type="password"
@@ -74,7 +78,9 @@ class RegistrationForm extends React.Component {
             </div>
           </div>
           <div className="RegDisplayBox">
-            <label htmlFor="displayName">Display Name</label>
+            <div className="RegDisplayHeader">
+              <label htmlFor="displayName">Display Name</label>
+            </div>
             <div className="RegDisplayInput">
               <input
                 type="text"

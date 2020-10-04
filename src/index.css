@@ -2,6 +2,7 @@ body {
   position: relative;
   margin: auto;
   background-image: url(../src/assets/images/Coupon_Background.png);
+  padding-bottom: 20px;
 }
 
 code {

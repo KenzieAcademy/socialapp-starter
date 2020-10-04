@@ -3,90 +3,47 @@
 }
 
 .RegistrationFormBody {
-  width: 450px;
   text-align: center;
-  padding: 10px;
-  width: 850px;
-  height: 492px;
   position: relative;
-  margin: auto;
 }
 
 .RegUserBox {
   background-image: url(../../assets/images/Coupon_Background_Dark.png);
-  padding: 10px;
-  position: relative;
-  margin: auto;
-  border: black;
-  border-radius: 5px;
-  border-width: 3px;
-  border-style: dashed;
-  text-align: center;
-  color: black;
-  font: italic small-caps bold 25px/43px Impact;
-  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
-  -webkit-text-stroke: 0.25px white;
-}
-
-.RegUserInput {
-  border: none;
-  position: relative;
-  margin: auto;
-}
-
-.RegPassBox {
-  top: 10px;
-  background-image: url(../../assets/images/Coupon_Background_Dark.png);
-  padding: 10px;
+  margin: 10px;
   position: relative;
   border: black;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
-  text-align: center;
   color: black;
-  font: italic small-caps bold 25px/43px Impact;
+  text-align: center;
+  font: italic small-caps bold 30px/35px Impact;
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
   -webkit-text-stroke: 0.25px white;
 }
 
-.RegPassInput {
+.RegUserHeader {
   position: relative;
 }
 
-.RegDisplayBox {
-  top: 20px;
-  background-image: url(../../assets/images/Coupon_Background_Dark.png);
-  padding: 10px;
+.RegUserInput input[type="text"] {
+  width: 350px;
+  margin: 10px;
   position: relative;
-  border: black;
-  border-radius: 5px;
-  border-width: 3px;
-  border-style: dashed;
-  text-align: center;
-  color: black;
-  font: italic small-caps bold 25px/43px Impact;
-  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
-  -webkit-text-stroke: 0.25px white;
-}
-
-.RegDisplayInput {
-  position: relative;
-}
-
-.RegistrationFormBody input[type="text"] {
+  margin: 10px;
   border: black;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
   background-image: url(../../assets/images/Coupon_Background_Light.png);
   color: black;
-  font: italic small-caps bold 25px/43px Impact;
+  text-align: center;
+  font: italic small-caps bold 30px/35px Impact;
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
   -webkit-text-stroke: 0.25px white;
 }
 
-.RegistrationFormBody input[type="text"]:hover {
+.RegUserInput input[type="text"]:hover {
   border: #b80c12;
   border-radius: 5px;
   border-width: 3px;
@@ -95,19 +52,88 @@
   -webkit-text-stroke: 0.25px black;
 }
 
-.RegistrationFormBody input[type="password"] {
+.RegPassBox {
+  background-image: url(../../assets/images/Coupon_Background_Dark.png);
+  margin: 10px;
+  position: relative;
+  border: black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  color: black;
+  text-align: center;
+  font: italic small-caps bold 30px/35px Impact;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  -webkit-text-stroke: 0.25px white;
+}
+
+.RegPassHeader {
+  position: relative;
+}
+
+.RegPassBox input[type="password"] {
+  width: 350px;
+  margin: 10px;
+  position: relative;
+  margin: 10px;
   border: black;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
   background-image: url(../../assets/images/Coupon_Background_Light.png);
   color: black;
-  font: italic small-caps bold 25px/43px Impact;
+  text-align: center;
+  font: italic small-caps bold 30px/35px Impact;
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
   -webkit-text-stroke: 0.25px white;
 }
 
-.RegistrationFormBody input[type="password"]:hover {
+.RegPassBox input[type="password"]:hover {
+  border: #b80c12;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  color: white;
+  -webkit-text-stroke: 0.25px black;
+}
+
+.RegDisplayBox {
+  background-image: url(../../assets/images/Coupon_Background_Dark.png);
+  margin: 10px;
+  position: relative;
+  border: black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  color: black;
+  text-align: center;
+  font: italic small-caps bold 30px/35px Impact;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  -webkit-text-stroke: 0.25px white;
+}
+
+.RegDisplayHeader {
+  position: relative;
+}
+
+.RegDisplayBox input[type="text"] {
+  width: 350px;
+  margin: 10px;
+  position: relative;
+  margin: 10px;
+  border: black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  background-image: url(../../assets/images/Coupon_Background_Light.png);
+  color: black;
+  text-align: center;
+  font: italic small-caps bold 30px/35px Impact;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  -webkit-text-stroke: 0.25px white;
+}
+
+.RegDisplayBox input[type="text"]:hover {
   border: #b80c12;
   border-radius: 5px;
   border-width: 3px;
@@ -117,22 +143,22 @@
 }
 
 .RegButtonBox {
+  margin: 10px;
   position: relative;
 }
 
-.RegistrationFormBody input[type="submit"] {
+.RegButtonBox input[type="submit"] {
+  padding: 10px;
+  left: 15px;
   position: relative;
   background: none;
-  background-image: url(../../assets/images/Join_Us_Button.png);
+  background-image: url(../../assets/images/Enter_Button.png);
   background-repeat: no-repeat;
-  padding: 10px;
   border: none;
-  width: 130px;
-  height: 60;
-  top: 32px;
-  left: 18px;
+  width: 150px;
+  height: 50px;
 }
 
-.RegistrationFormBody input[type="submit"]:hover {
+.RegButtonBox input[type="submit"]:hover {
   background-image: url(../../assets/images/Join_Us_Button_Hover.png);
 }
