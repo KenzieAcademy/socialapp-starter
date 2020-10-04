@@ -30,7 +30,15 @@ a:hover {
   height: 32px;
   margin: 16px;
 }
-
+#AllProfilesBox {
+  height: 600px;
+  width: 20%;
+  background-color: #e0d8c0;
+  position: fixed;
+  left: 76%;
+  bottom: 19%;
+  overflow: scroll;
+}
 .logo {
   background-color: #e0d8c0;
   font-size: 25px;

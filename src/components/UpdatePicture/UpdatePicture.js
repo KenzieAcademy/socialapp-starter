@@ -2,7 +2,7 @@ import { WindowsFilled } from "@ant-design/icons"
 import { notification } from "antd"
 import React from "react"
 import QuestboardService from "../servicesPage/ServicePage"
-import ProfileImage from "../ProfileImage"
+import ProfileImage from "./ProfileImage"
 
 
 class FileUploader extends React.Component {
