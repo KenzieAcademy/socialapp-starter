@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { withAsyncAction } from "../../redux/HOCs";
-import "./MsgNavBar.css";
 
 class MsgNavBar extends React.Component {
   handleLogout = (event) => {

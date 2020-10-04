@@ -1,0 +1,8 @@
+.Header {
+  padding: 5px;
+  background: rgb(77, 74, 74);
+  /* border-image-source: url("https://s.clipartkey.com/mpngs/s/7-74523_race-car-clipart-flame-flame-clip-art.png")
+    200 stretch; */
+  border-image-outset: 10px;
+  border: 2px solid rgb(63, 61, 61);
+}

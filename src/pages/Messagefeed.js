@@ -4,6 +4,7 @@ import DataServices from "../dataService";
 import MsgNavBar from "../components/msgnavbar/MsgNavBar";
 import Comment from "../components/Comments/Comment";
 //import Post from "../components/Post/Post";
+import "./Messagefeed.css";
 
 import { userIsAuthenticated } from "../redux/HOCs";
 
@@ -68,7 +69,9 @@ class Messagefeed extends Component {
     return (
       <Layout className>
         <MsgNavBar isAuthenticated={this.props.isAuthenticated} />
-        <Header></Header>
+        <Header>
+          <div className="Header"></div>
+        </Header>
 
         <Layout>
           <Content>
