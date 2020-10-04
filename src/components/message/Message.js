@@ -26,20 +26,27 @@ class Message extends React.Component {
     // handleDeleteLike = () => {
     //     const loggedInUsername = this.client.getUsername();
     //     const userHasLiked = this.props.likes.find(
-    //         (likeObject) => likeObject.username === loggedInUsername
+    //         (likeObject) => likeObject.like === loggedInUsername
     //     )
-    //     // const doomedLike = this.props.likes.find(
-    //     //     (likeObject) => likeObject.username === loggedInUsername
-    //     // )
-    //     if (userHasLiked) return;
-
-    //     this.client.deleteLike(this.props.id).then((response) => {
-    //         if (response.data.statusCode !== 200) return;
-
+    // const doomedLike = this.props.likes.find(
+    //     (likeObject) => likeObject.username === loggedInUsername
+    // )
+    // if (userHasLiked) {
+    //     return
+    //     this.client.deleteLike(this.props.id).then((like) => {
     //         this.setState((latestState) => ({
     //             likeCount: latestState.likeCount - 1,
-    //         }));
-    //     });
+    //         }))
+    //     })
+
+    // }
+
+    // this.client.deleteLike(this.props.id).then((response) => {
+    // if (response.data.statusCode !== 200) return; 
+    // }
+    //         )
+    //         );
+    // });
     // };
 
     render() {
