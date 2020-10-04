@@ -54,37 +54,34 @@ class Message extends React.Component {
 
     return (
       <div className="MessageBody">
-        <div className="MessageCardBody">
-          <Card className="MessageCard" style={{ width: "620px" }}>
-            <Card.Body className="Message">
-              <img className="ProfilePic" src={ProfilePic} alt="Profile Pic" />
-              <div className="MessageMemberTitle">
-                <Card.Title> Member: {this.props.username}</Card.Title>
-              </div>
-              <Card.Subtitle className="mb-2 text-muted">
-                {new Date(this.props.createdAt).toDateString}{" "}
-              </Card.Subtitle>
-              <Card.Text className="MessageTextBox">
-                {this.props.text}
-              </Card.Text>
-              <footer>
-                {" "}
-                <div className="ThumbsUpNumber">
-                  <div className="ThumbsUp">
-                    Thumbs Up: {this.props.likes.length}
-                  </div>{" "}
-                </div>
-                <button
-                  className="ThumbsUpButton"
-                  onClick={this.LikeFunction}
-                  title="Give My Post A Thumbs Up!"
-                >
-                  Thumbs Up!
-                </button>{" "}
-              </footer>
-            </Card.Body>
-          </Card>
-        </div>
+        <Card style={{ width: "620px" }}>
+          <Card.Body>
+            <img className="MessProfPic" src={ProfilePic} alt="Profile Pic" />
+            <Card.Title className="MessMembHeader">
+              {" "}
+              Member: {this.props.username}
+            </Card.Title>
+            <Card.Subtitle className="MessSinceHeader">
+              {" "}
+              Member Since:
+              {new Date(this.props.createdAt).toDateString}{" "}
+            </Card.Subtitle>
+            <Card.Text className="MessTextBox">{this.props.text}</Card.Text>
+            <footer>
+              {" "}
+              <div className="ThumbsUp">
+                Thumbs Ups: {this.props.likes.length}
+              </div>{" "}
+              <button
+                className="ThumbsUpButton"
+                onClick={this.LikeFunction}
+                title="Give My Post A Thumbs Up!"
+              >
+                Thumbs Up!
+              </button>{" "}
+            </footer>
+          </Card.Body>
+        </Card>
       </div>
     );
   }

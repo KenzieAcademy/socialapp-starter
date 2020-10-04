@@ -87,37 +87,35 @@ class MessageFeed extends React.Component {
     }
     return (
       <div className="MessageFeedPageBody">
-        <div className="HeaderContainer">
-          <div className="MessageMenuBox">
-            <div className="MessageMenuText">
-              <Menu isAuthenticated={this.props.isAuthenticated} />
-            </div>
+        <div className="MessageMenuBox">
+          <div className="MessageMenuText">
+            <Menu isAuthenticated={this.props.isAuthenticated} />
           </div>
-          <div className="MessageHeaderBox">
-            <div className="MessageFeedHeaderText">Message Feed</div>
-          </div>
-          <OverlayTrigger
-            trigger="click"
-            placement="bottom"
-            overlay={this.popover}
-            rootClose={true}
-          >
-            <div className="MiniProfile-PostButtonBox">
-              <div className="MiniProfileFeed">
-                <MiniProfile user={this.state.currentUser} />
-              </div>
+        </div>
+        <div className="MessageHeaderBox">
+          <div className="MessageFeedHeaderText">Message Feed</div>
+        </div>
+        <OverlayTrigger
+          trigger="click"
+          placement="bottom"
+          overlay={this.popover}
+          rootClose={true}
+        >
+          <div className="MiniProfileBox-PostButtonBox">
+            <div className="MiniProfileBox">
+              <MiniProfile user={this.state.currentUser} />
               <div className="PostButtonBox">
                 <Button
-                  className="PostAMessageButton"
+                  className="PostButton"
                   variant="dark"
                   size="lg"
                   title="Post A Message"
                 ></Button>
               </div>
             </div>
-          </OverlayTrigger>
-        </div>
-        <div className="TheFeed">
+          </div>
+        </OverlayTrigger>
+        <div className="PostFeedBody">
           <ul>
             {this.state.messages.map((messageObject) => {
               return <Message {...messageObject} />;

@@ -49,62 +49,54 @@ class RegistrationForm extends React.Component {
     return (
       <div className="RegistrationFormBody">
         {popup}
-        <div className="RegistrationForm">
-          <form id="registration-form" onSubmit={this.handleRegistration}>
-            <div className="UserNameInput">
-              <label htmlFor="username">Username</label>
-              <div className="UserNameInputBox">
-                <input
-                  type="text"
-                  name="username"
-                  autoFocus
-                  required
-                  onChange={this.handleChange}
-                />
-              </div>
+        <form onSubmit={this.handleRegistration}>
+          <div className="RegUserBox">
+            <label htmlFor="username">Username</label>
+            <div className="RegUserInput">
+              <input
+                type="text"
+                name="username"
+                autoFocus
+                required
+                onChange={this.handleChange}
+              />
             </div>
-            <div className="PasswordInput">
-              <label htmlFor="password">Password</label>
-              <div className="PasswordInputBox">
-                <input
-                  type="password"
-                  name="password"
-                  required
-                  onChange={this.handleChange}
-                />
-              </div>
+          </div>
+          <div className="RegPassBox">
+            <label htmlFor="password">Password</label>
+            <div className="RegPassInput">
+              <input
+                type="password"
+                name="password"
+                required
+                onChange={this.handleChange}
+              />
             </div>
-            <div className="DisplayNameInput">
-              <label htmlFor="displayName">Display Name</label>
-              <div className="DisplayNameInputBox">
-                <input
-                  type="text"
-                  name="displayName"
-                  required
-                  onChange={this.handleChange}
-                />
-              </div>
+          </div>
+          <div className="RegDisplayBox">
+            <label htmlFor="displayName">Display Name</label>
+            <div className="RegDisplayInput">
+              <input
+                type="text"
+                name="displayName"
+                required
+                onChange={this.handleChange}
+              />
             </div>
-            <div className="EnterButtonBox">
-              <div className="EnterButton">
-                {/* <Button
-                  variant="dark"
-                  size="lg"
-                  type="submit"
-                  disabled={loading}
-                >Register</Button> */}
-                <input
-                  type="submit"
-                  value=""
-                  title="Register"
-                  disabled={loading}
-                ></input>
-              </div>
+          </div>
+          <div className="EnterButtonBox">
+            <div className="EnterButton">
+              <input
+                type="submit"
+                value=""
+                title="Register"
+                disabled={loading}
+              ></input>
             </div>
-          </form>
-          {loading && <Spinner name="circle" color="blue" />}
-          {error && <p style={{ color: "red" }}>{error.message}</p>}
-        </div>
+          </div>
+        </form>
+        {loading && <Spinner name="circle" color="blue" />}
+        {error && <p style={{ color: "red" }}>{error.message}</p>}
       </div>
     );
   }

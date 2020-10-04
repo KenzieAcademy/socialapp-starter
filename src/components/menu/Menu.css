@@ -15,14 +15,14 @@
   width: 830px;
 }
 
-#menu-links {
+.MenuLinks {
   text-align: right;
   position: relative;
   margin: auto;
   left: -10px;
 }
 
-#menu-links a {
+.MenuLinks a {
   padding-right: 0.5em;
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
   color: black;
@@ -32,7 +32,7 @@
   cursor: pointer;
 }
 
-#menu-links a:hover {
+.MenuLinks a:hover {
   color: white;
   -webkit-text-stroke: 0.25px black;
 }

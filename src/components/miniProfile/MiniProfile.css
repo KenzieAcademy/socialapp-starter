@@ -3,32 +3,22 @@
 }
 
 .MiniProfileBody {
+  width: 255px;
   position: relative;
-  margin: auto;
+  margin: 10px;
   font: italic small-caps bold 27px/45px Impact;
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
   -webkit-text-stroke: 0.25px white;
-}
-
-.Miniprofile {
-  width: 570px;
-  height: 70px;
-  border: black;
-  border-radius: 5px;
-  border-width: 3px;
-  border-style: dashed;
-  position: relative;
-  margin: auto;
-  background-image: url(../../assets/images/Clear_Red_Dark.png);
+  /* border: 3px solid yellowgreen; */
 }
 
 .ProfilePicThumb {
-  left: -249px;
-  top: 5px;
+  /* left: px; */
+  /* top: px; */
   width: 55px;
-  height: 56px;
+  height: 55px;
   position: relative;
-  margin: auto;
+  margin: 10px;
   border: black;
   border-radius: 5px;
   border-width: 3px;
@@ -41,31 +31,32 @@
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
-  cursor: pointer;
 }
 
-.MiniMemberInfo {
-  float: left;
+.MiniMemberInfoBox {
   position: relative;
-  margin: auto;
+  margin: 10px;
+  border: 3px solid yellowgreen;
+}
+
+.MemberNameBox {
+  position: relative;
 }
 
 .MemberName {
-  font-size: 25px;
+  font-size: 20px;
   color: black;
-  top: -49px;
-  left: 75px;
   text-align: left;
   position: relative;
-  margin: auto;
+}
+
+.MemberSinceBox {
+  position: relative;
 }
 
 .MemberSince {
-  font-size: 25px;
+  font-size: 20px;
   color: black;
-  top: -49px;
-  left: 75px;
   text-align: left;
   position: relative;
-  margin: auto;
 }

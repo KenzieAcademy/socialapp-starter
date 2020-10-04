@@ -41,12 +41,6 @@
   margin: auto;
 }
 
-.MemberInfoFormBody {
-  background-image: url(../../assets/images/Clear_Red.png);
-  position: relative;
-  margin: auto;
-}
-
 .MemberInfoBox {
   width: 652px;
   height: 100px;
@@ -61,10 +55,8 @@
   margin: auto;
 }
 
-.MemberInfoText {
-  padding: 5px;
+.MemberInfoHeader {
   position: relative;
-  margin: auto;
 }
 
 .AboutMeBox {

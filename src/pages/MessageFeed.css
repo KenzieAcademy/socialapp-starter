@@ -3,8 +3,7 @@
 }
 
 .MessageFeedPageBody {
-  top: -6px;
-  padding: 10px;
+  top: 6px;
   background-image: url(../assets/images/Coupon_Background_Dark.png);
   border: black;
   border-radius: 5px;
@@ -24,23 +23,18 @@
   -webkit-text-stroke: 0.25px black;
   text-align: center;
   position: relative;
-  margin: auto;
   top: 75px;
 }
 
-.HeaderContainer {
-  background-image: url(../assets/images/Coupon_Background_Dark.png);
-  position: relative;
-}
-
 .MessageMenuBox {
+  left: 2px;
+  top: 12px;
   position: relative;
   margin: auto;
 }
 
 .MessageMenuText {
   position: relative;
-  margin: auto;
   font: italic small-caps 12px/30px Impact;
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
   -webkit-text-stroke: 0.25px white;
@@ -48,10 +42,9 @@
 
 .MessageHeaderBox {
   padding: 10px;
-  top: 6px;
-  left: -2px;
+  top: 18px;
+  left: 7px;
   position: relative;
-  margin: auto;
   border: black;
   border-radius: 5px;
   border-width: 3px;
@@ -69,59 +62,54 @@
   text-align: center;
   top: -11px;
   position: relative;
-  margin: auto;
 }
 
-.MiniProfileFeed {
+.MiniProfileBox {
+  /* width: 320px; */
+  border: 3px solid black;
   position: relative;
-  margin: auto;
+  /* margin: auto; */
 }
 
-.MiniProfile-PostButtonBox {
-  left: -130px;
+.MiniProfileBox-PostButtonBox {
+  left: 540px;
   top: 14px;
-  width: 828px;
-  height: 75px;
   position: relative;
-  margin: auto;
 }
 
 .PostButtonBox {
-  left: 703px;
-  top: -70px;
-  /* position: relative; */
+  left: 850px;
+  top: 150px;
   position: fixed;
-  margin: auto;
   z-index: 1;
 }
 
-.PostAMessageButton {
+.PostButton {
   width: 125px;
   height: 55px;
   left: 4px;
-  top: 310px;
+  top: 3auto;
   left: 250px;
   background: none;
   border: none;
   background-image: url(../assets/images/Post_Button.png);
-  padding: 10px;
   position: relative;
-  margin: auto;
   cursor: pointer;
 }
 
-.PostAMessageButton:hover {
+.PostButton:hover {
   background: none;
   border: none;
   background-image: url(../assets/images/Post_Button_Hover.gif);
 }
 
-.TheFeed {
-  left: -23px;
-  top: 10px;
+.PostFeedBody {
+  /* width: 850px; */
+  top: -14px;
   position: relative;
   margin: auto;
   font: italic small-caps bold 27px/45px Impact;
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
   -webkit-text-stroke: 0.25px white;
+  /* border: 3px solid black; */
 }

@@ -19,6 +19,17 @@
   font-size: 20px;
 }
 
+.PostInputBox {
+  border: black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  position: relative;
+  margin: auto;
+  font: italic small-caps bold 22px/40px Impact;
+  -webkit-text-stroke: 0.25px black;
+}
+
 .PhotoUpload {
   background-image: url(../../assets/images/Coupon_Background_Dark.png);
   border: black;
@@ -30,17 +41,6 @@
   font: italic small-caps bold 30px/30px Impact;
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
   -webkit-text-stroke: 0.5px black;
-}
-
-.PostBox {
-  border: black;
-  border-radius: 5px;
-  border-width: 3px;
-  border-style: dashed;
-  position: relative;
-  margin: auto;
-  font: italic small-caps bold 22px/40px Impact;
-  -webkit-text-stroke: 0.25px black;
 }
 
 .PostAwayButton input[type="submit"] {

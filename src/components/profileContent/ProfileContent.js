@@ -23,54 +23,52 @@ const ProfileContent = (props) => {
 
   return (
     <div className="ProfileContentBody">
-      <div className="ProfileContent">
-        <div className="ProfilePicBox">
-          <img
-            alt="Profile Pic"
-            src={picture}
-            style={styles.paperContainer}
-            class="img-fluid"
-            variant="dark"
-            title="Profile Pic"
-          />
-        </div>
-        <div className="MemberInfoFormBody">
-          <Form>
-            <div className="MemberInfoBox">
-              <div className="MemberInfoText">
-                <Form.Label>Display Name: {props.user.displayName}</Form.Label>
-                <br></br>
-                <Form.Label>Joined On: {joinedOn.toUTCString()}</Form.Label>
-              </div>
-              <Form.Row>
-                <div className="AboutMeBox">
-                  <div className="AboutMeText">
-                    <Form.Label>About Me: </Form.Label>
-                    <div className="AboutMeUserText">
-                      <Col>
-                        <Form.Text>{props.user.about}</Form.Text>
-                      </Col>
-                    </div>
-                  </div>
+      <div className="ProfilePicBox">
+        <img
+          alt="Profile Pic"
+          src={picture}
+          style={styles.paperContainer}
+          class="img-fluid"
+          variant="dark"
+          title="Profile Pic"
+        />
+      </div>
+      <Form>
+        <div className="MemberInfoBox">
+          <div className="MemberInfoHeader">
+            <Form.Label>Display Name: {props.user.displayName}</Form.Label>
+            <br></br>
+            <Form.Label>Joined On: {joinedOn.toUTCString()}</Form.Label>
+          </div>
+          <Form.Row>
+            <div className="AboutMeBox">
+              <div className="AboutMeText">
+                <Form.Label>About Me: </Form.Label>
+                <div className="AboutMeUserText">
+                  <Col>
+                    <Form.Text>{props.user.about}</Form.Text>
+                  </Col>
                 </div>
-              </Form.Row>
-              <div className="UpdateSwitch">
-                <Form.Check
-                  type="switch"
-                  id="custom-switch"
-                  label="Update"
-                  title="Update Your Profile"
-                  checked={props.checked}
-                  onChange={props.clickSwitch}
-                />
               </div>
             </div>
-          </Form>
+          </Form.Row>
+          <div className="UpdateSwitch">
+            <Form.Check
+              type="switch"
+              id="custom-switch"
+              label="Update"
+              title="Update Your Profile"
+              checked={props.checked}
+              onChange={props.clickSwitch}
+            />
+          </div>
         </div>
-        {props.checked && (
+      </Form>
+      {props.checked && (
+        <div className="EditInfoBody">
           <Form.Group>
             <Form.Row>
-              <Form.Label>Display Name: </Form.Label>
+              <Form.Label className="DisplayHeader">Display Name: </Form.Label>
               <Col xs="auto">
                 <Form.Control
                   onChange={props.change}
@@ -121,8 +119,8 @@ const ProfileContent = (props) => {
               </Button>
             </Form.Row>
           </Form.Group>
-        )}
-      </div>
+        </div>
+      )}
       <br></br>
     </div>
   );

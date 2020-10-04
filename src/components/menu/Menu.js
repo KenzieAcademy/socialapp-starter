@@ -22,7 +22,7 @@ class Menu extends React.Component {
     return (
       <div className="MenuBody">
         {this.props.isAuthenticated && (
-          <div id="menu-links">
+          <div className="MenuLinks">
             <Link to={this.state.link} title="Go To Profile">
               Profile
             </Link>

@@ -22,7 +22,7 @@ class MiniLogin extends React.Component {
     const { loading, error } = this.props;
     return (
       <div className="MiniLoginBody">
-        <div className="LoginButton">
+        <div className="MiniLoginButton">
           <input
             type="submit"
             value="Login"
