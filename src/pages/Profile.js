@@ -63,13 +63,15 @@ class Profile extends React.Component {
         <div className="ProfileHeaderBox">
           <div className="ProfileHeaderText">My Profile</div>
         </div>
-        <ProfileContent
-          user={this.state.user}
-          change={this.handleChange}
-          checked={this.state.checked}
-          clickSwitch={this.handleSwitch}
-          submitButton={this.handleUpdateUser}
-        />
+        <div className="ProfPageContent">
+          <ProfileContent
+            user={this.state.user}
+            change={this.handleChange}
+            checked={this.state.checked}
+            clickSwitch={this.handleSwitch}
+            submitButton={this.handleUpdateUser}
+          />
+        </div>
       </div>
     );
   }

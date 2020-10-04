@@ -4,15 +4,15 @@
 
 .MenuBody {
   position: relative;
-  margin: auto;
-  top: -2px;
-  left: -2px;
   border: black;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
   background-image: url(../../assets/images/Clear_Red.png);
-  width: 830px;
+  width: 825px;
+  position: relative;
+  margin: auto;
+  padding: 5px;
 }
 
 .MenuLinks {

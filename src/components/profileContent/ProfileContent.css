@@ -3,34 +3,22 @@
 }
 
 .ProfileContentBody {
-  padding: 15px;
   background-image: url(../../assets/images/Clear_Red.png);
   border: black;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
-  top: 17px;
-  left: -2px;
-  width: 828px;
+  width: 825px;
   position: relative;
   margin: auto;
 }
 
 .ProfileContent {
-  font: italic small-caps bolder 30px/35px Impact;
-  text-shadow: -3px -3px 3px rgb(151, 148, 148), 3px 3px 3px #000;
-  -webkit-text-stroke: 0.25px black;
-  color: white;
-  left: -3px;
-  top: -3px;
-  width: 800px;
-  height: 248px;
   position: relative;
-  margin: auto;
+  /* margin: 10px; */
 }
 
 .ProfilePicBox {
-  left: -333px;
   border: black;
   border-radius: 5px;
   border-width: 3px;
@@ -38,45 +26,46 @@
   width: 125px;
   height: 125px;
   position: relative;
-  margin: auto;
+  margin: 10px;
 }
 
 .MemberInfoBox {
-  width: 652px;
+  width: 650px;
   height: 100px;
-  left: 70px;
-  top: -130px;
   border: black;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
   background-image: url(../../assets/images/Coupon_Background_Dark.png);
   position: relative;
-  margin: auto;
+  margin: 10px;
+  padding: 10px;
 }
 
-.MemberInfoHeader {
+.MemberInfoText {
   position: relative;
+  color: white;
+  font: italic small-caps bolder 25px/30px Impact;
+  text-shadow: -2px -2px 2px rgb(128, 114, 114), 2px 2px 2px #000;
+  -webkit-text-stroke: 0.25px black;
 }
 
 .AboutMeBox {
-  width: 652px;
-  height: 168px;
-  top: 15px;
+  width: 650px;
+  height: 175px;
   border: black;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
   background-image: url(../../assets/images/Coupon_Background_Dark.png);
   position: relative;
-  margin: auto;
+  margin: 10px;
+  padding: 10px;
 }
 
-.AboutMeText {
-  padding: 5px;
+.AboutMeHeader {
   position: relative;
-  margin: auto;
-  font: italic small-caps bolder 30px/35px Impact;
+  font: italic small-caps bolder 25px/30px Impact;
   text-shadow: -3px -3px 3px rgb(128, 114, 114), 3px 3px 3px #000;
   color: white;
   -webkit-text-stroke: 0.3px black;
@@ -84,7 +73,6 @@
 
 .AboutMeUserText {
   position: relative;
-  margin: auto;
   font: italic small-caps bolder 25px/30px Impact;
   text-shadow: -2px -2px 2px rgb(128, 114, 114), 2px 2px 2px #000;
   -webkit-text-stroke: 0.25px black;
@@ -94,15 +82,15 @@
   padding: 5px;
   width: 131px;
   height: 50px;
-  left: -404px;
-  top: -35px;
+  /* left: -404px; */
+  /* top: -35px; */
   border: black;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
   background-image: url(../../assets/images/Coupon_Background_Dark.png);
   position: relative;
-  margin: auto;
+  margin: 10px;
   color: black;
   font: italic small-caps bolder 30px/35px Impact;
   text-shadow: -3px -3px 3px rgb(128, 114, 114), 3px 3px 3px #000;
@@ -111,29 +99,33 @@
 }
 
 .EditInfoBody {
-  padding: 15px;
-  width: 550px;
-  height: 300px;
+  left: 200px;
+  top: 25px;
+  width: 400px;
   border: black;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
   background-image: url(../../assets/images/Clear_Red.png);
   position: relative;
-  margin: auto;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
 }
 
 .EditInfoBox {
-  padding: 15px;
   width: 550px;
   height: 400px;
   position: relative;
   margin: auto;
+  padding: 10px;
 }
 
 .EditInfoText {
   position: relative;
-  margin: auto;
+  /* margin: 10px; */
+  /* margin: auto; */
+  text-align: center;
 }
 
 .SaveButton {
@@ -144,5 +136,5 @@
   border-width: 3px;
   border-style: dashed;
   position: relative;
-  margin: auto;
+  margin: 10px;
 }

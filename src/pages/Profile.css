@@ -10,7 +10,7 @@
   border-width: 3px;
   border-style: dashed;
   width: 850px;
-  height: 452px;
+  /* height: 452px; */
   position: relative;
   margin: auto;
   font: italic small-caps 12px/30px Impact;
@@ -22,23 +22,15 @@
   margin: auto;
 }
 
-.ProfileMenuText {
-  font: italic small-caps 12px/25px Impact;
-  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
-  -webkit-text-stroke: 0.25px white;
-}
-
 .ProfileHeaderBox {
   padding: 10px;
-  top: 6px;
-  left: -2px;
   position: relative;
   margin: auto;
   border: black;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
-  width: 830px;
+  width: 825px;
   height: 55px;
   background-image: url(../assets/images/Clear_Red.png);
 }

@@ -35,14 +35,14 @@ const ProfileContent = (props) => {
       </div>
       <Form>
         <div className="MemberInfoBox">
-          <div className="MemberInfoHeader">
+          <div className="MemberInfoText">
             <Form.Label>Display Name: {props.user.displayName}</Form.Label>
             <br></br>
             <Form.Label>Joined On: {joinedOn.toUTCString()}</Form.Label>
           </div>
           <Form.Row>
             <div className="AboutMeBox">
-              <div className="AboutMeText">
+              <div className="AboutMeHeader">
                 <Form.Label>About Me: </Form.Label>
                 <div className="AboutMeUserText">
                   <Col>

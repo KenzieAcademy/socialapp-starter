@@ -3,7 +3,6 @@
 }
 
 .MessageFeedPageBody {
-  top: 6px;
   background-image: url(../assets/images/Coupon_Background_Dark.png);
   border: black;
   border-radius: 5px;
@@ -27,29 +26,19 @@
 }
 
 .MessageMenuBox {
-  left: 2px;
-  top: 12px;
   position: relative;
   margin: auto;
 }
 
-.MessageMenuText {
-  position: relative;
-  font: italic small-caps 12px/30px Impact;
-  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
-  -webkit-text-stroke: 0.25px white;
-}
-
 .MessageHeaderBox {
   padding: 10px;
-  top: 18px;
-  left: 7px;
   position: relative;
+  margin: auto;
   border: black;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
-  width: 830px;
+  width: 825px;
   height: 55px;
   background-image: url(../assets/images/Clear_Red.png);
 }
@@ -64,16 +53,14 @@
   position: relative;
 }
 
-.MiniProfileBox {
-  /* width: 320px; */
-  border: 3px solid black;
-  position: relative;
-  /* margin: auto; */
-}
-
 .MiniProfileBox-PostButtonBox {
   left: 540px;
   top: 14px;
+  position: relative;
+}
+
+.MiniProfileBox {
+  border: 3px solid black;
   position: relative;
 }
 
