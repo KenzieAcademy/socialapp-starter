@@ -3,6 +3,8 @@ import "../components/menu/Menu.css";
 import DataServices from "../dataService";
 import MsgNavBar from "../components/msgnavbar/MsgNavBar";
 import Comment from "../components/Comments/Comment";
+//import Post from "../components/Post/Post";
+
 import { userIsAuthenticated } from "../redux/HOCs";
 
 import { Layout } from "antd";
@@ -35,25 +37,38 @@ class Messagefeed extends Component {
 
   submitHandler = (event) => {
     event.preventDefault();
-    this.setState({
-      submitted: true,
-    });
+    this.setState(
+      {
+        submitted: true,
+      } /*() => {
+            if (this.state.submitted) {
+                return this.state.messages.shift(...this.state.author)
+            }
+
+        }*/
+    );
   };
-  handleChange = (event) => {
-    let comment = event.target.value;
-    console.log(comment);
-    this.setState({ children: comment });
+
+  authorChangehandler = (event) => {
+    let authorName = event.target.value;
+    this.setState({ author: authorName });
+  };
+
+  childrenChangehandler = (event) => {
+    let childrenText = event.target.value;
+    this.setState({ children: childrenText });
   };
 
   buttonHandler = (event) => {
-    console.log(this.state.messages[0].text);
+    //console.log(this.state.messages[0].text)
+    console.log(this.state.author);
   };
 
   render() {
     return (
       <Layout className>
         <MsgNavBar isAuthenticated={this.props.isAuthenticated} />
-        <Header>Hello</Header>
+        <Header></Header>
 
         <Layout>
           <Content>
@@ -65,25 +80,54 @@ class Messagefeed extends Component {
           </Content>
 
           <Sider>
-            <form>
-              <label>Comment Section</label>
+            <div className="container">
+              <form onSubmit={this.submitHandler}>
+                <span>
+                  <label>Post Fury Comments</label>
+                </span>
+                <div>
+                  <input
+                    onChange={this.authorChangehandler}
+                    className="author"
+                    placeholder="Your name"
+                    type="text"
+                    name="author"
+                    value={this.state.author}
+                  />
+                </div>
 
-              <textarea
-                onChange={this.handleChange}
-                row="1"
-                cols="20"
-              ></textarea>
-              <button
-                onClick={this.buttonHandler}
-                id="submitComment"
-                type="button"
-                value="post"
-              >
-                Submit
-              </button>
-            </form>
+                <div>
+                  <textarea
+                    onChange={this.childrenChangehandler}
+                    placeholder="Post your thoughts"
+                    row="1"
+                    cols="16"
+                    name="children"
+                    value={this.state.children}
+                  ></textarea>
+                </div>
+
+                <button
+                  onClick={this.buttonHandler}
+                  id="submitComment"
+                  type="button"
+                >
+                  Submit
+                </button>
+              </form>
+            </div>
+
+            <span>
+              {this.state.author} {this.state.children}
+            </span>
           </Sider>
         </Layout>
+
+        <Footer>
+          <p>Facebook</p>
+          <p>Instagram</p>
+          <p>Twitter</p>
+        </Footer>
       </Layout>
     );
   }
