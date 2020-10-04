@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { userIsNotAuthenticated } from "../redux/HOCs";
 import Registration from "../components/registraionForm/RegistrationForm";
 import Menu from "../components/menu/Menu";
-
+import "./PageStyles.css";
 function CreateUserPage() {
   return (
     <div className="CreateUserPage">

@@ -5,6 +5,7 @@ import Menu from "../components/menu/Menu";
 import DeleteUserButton from "../components/deleteUserButton/DeleteUserButton";
 import UpdateAbout from "../components/updateAbout/UpdateAbout";
 import { Card } from "antd";
+import "./PageStyles.css";
 
 class ProfileOptions extends React.Component {
   constructor(props) {

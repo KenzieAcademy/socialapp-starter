@@ -9,7 +9,7 @@ class GetUserList extends React.Component {
 
     this.state = {
       users: [],
-      loading: false,
+      loading: true,
       limit: 1,
       offset: 0,
       prevVert: 0,
@@ -23,6 +23,7 @@ class GetUserList extends React.Component {
     this.client.getUserList(10, this.state.offset).then((result) => {
       this.setState({ users: result.data.users });
       console.log(this.state);
+      this.setState({ loading: false });
     });
 
     let options = {
@@ -62,8 +63,8 @@ class GetUserList extends React.Component {
       return {
         photoOnlyMode: !state.photoOnlyMode,
         limit: 50,
-        offset: 0,
-        users: [],
+        offset: 1,
+        users: [{}],
       };
     });
     this.client
@@ -71,6 +72,7 @@ class GetUserList extends React.Component {
       .then((result) => {
         this.setState({ users: result.data.users });
         console.log(this.state);
+        this.setState({ loading: false });
       });
   };
 
@@ -80,11 +82,11 @@ class GetUserList extends React.Component {
         <div className="getUserList">
           <button onClick={this.handlePhotoMode}> </button>
           <div>
-            <Row gutter={16}>
+            <Row gutter={20}>
               {this.state.users
                 .filter((userObj) => userObj.pictureLocation !== null)
                 .map((userObj) => (
-                  <Col span={6}>
+                  <Col span={10}>
                     <UserCard {...userObj} />
                   </Col>
                 ))}
@@ -101,9 +103,9 @@ class GetUserList extends React.Component {
       <div className="getUserList">
         <button onClick={this.handlePhotoMode}>BOOOOOM</button>
 
-        <Row gutter={16}>
+        <Row gutter={20}>
           {this.state.users.map((userObj) => (
-            <Col span={6}>
+            <Col span={10}>
               <UserCard {...userObj} />
             </Col>
           ))}

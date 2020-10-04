@@ -14,6 +14,7 @@ class Menu extends React.Component {
     return (
       <div className="Menu">
         <h1>Lucky</h1>
+        <br />
         {this.props.isAuthenticated && (
           <div id="menu-links">
             <Link to="/">Home</Link>
