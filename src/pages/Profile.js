@@ -7,11 +7,14 @@ import theQuestBoardHeader from '../media/theQuestBoardHeader.png'
 import Footer from "../components/footer/Footer";
 import { userIsAuthenticated } from "../redux/HOCs"; 
 
-
-import { BackTop, TimePicker } from 'antd';
-
+import QuestBoardService from "../components/servicesPage/ServicePage"
 
 import { UpOutlined } from '@ant-design/icons';
+import MenuAuthenticated from "../components/menu/MenuAuthenticated";
+
+const questBoardService = new QuestBoardService
+const username = questBoardService.getUsername(MenuAuthenticated) 
+const loggedInUsername = questBoardService.getUsername()
 
 // comment section 
 class Profile extends React.Component {
@@ -25,10 +28,7 @@ class Profile extends React.Component {
   }
   render() {
 
-
-
     const { Header, Content } = Layout;
-
 
     // for backtop
     const style = {
@@ -52,20 +52,20 @@ class Profile extends React.Component {
       
     <h2>Welcome, {username} </h2>
         <hr/>
-      <Upload
+      {/* <Upload
          name="avatar" 
          listType="picture-card" 
          className="avatar-uploader" 
          accept=".png" >
             {imageUrl ? <img src={imageUrl} alt="avatar" style={{ width: '100%' }} /> : uploadButton }
            {/* <Button Icon type="Upload">Upload Profile picture here!</Button> */}
-           </Upload>
+           {/* </Upload> */} */
         </div>
         </Layout>
       
-{/* <Footer /> */}
-</Layout>
-    );
+      {/* <Footer /> */}
+        </Layout>
+  );
   }
 }
 export default userIsAuthenticated(Profile);
