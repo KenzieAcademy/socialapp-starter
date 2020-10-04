@@ -16,7 +16,7 @@ class SearchPage extends React.Component {
     return (
       <div className="SearchPage">
         <Menu isAuthenticated={this.props.isAuthenticated} />
-        <SearchInput />
+
         <ul>
           <GetUserList />
           <li>Item 2</li>
