@@ -12,7 +12,7 @@ class DeleteAccount extends React.Component {
   render() {
     return (
       <div className="DeleteAccount">
-        <button className="button-link" onClick={this.clickHandler}>Delete Account</button>
+        <button className="button-link" onClick={this.clickHandler}>Delete account</button>
       </div>
     );
   }

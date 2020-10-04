@@ -4,7 +4,6 @@ import Menu from "../components/menu/Menu";
 import UpdateUser from "../components/updateUser/UpdateUser";
 import { userIsAuthenticated } from "../redux/HOCs";
 import "../components/updateUser/UpdateUser.css";
-import DeleteAccount from "../components/deleteAccount/DeleteAccount";
 import DataService from "../dataService"
 
 class Profile extends React.Component {
@@ -25,6 +24,10 @@ class Profile extends React.Component {
   }
   
   render() {
+    if (this.state.user.about === "") {
+      this.state.user.about = "No information given."
+    }
+    
     return (
       <div className="Profile" id="profile">
         <Menu isAuthenticated={this.props.isAuthenticated} />
@@ -36,11 +39,7 @@ class Profile extends React.Component {
           <h2>About Me</h2>
           <p>{this.state.user.about}</p>
           <h2>Messages</h2>
-          <p>
-            The component for this user's own messages will go here.
-            <br />
-            They should also be able to post a new message from here too.
-          </p>
+          <p>Message component go here.</p>
         </div>
       </div>
     );

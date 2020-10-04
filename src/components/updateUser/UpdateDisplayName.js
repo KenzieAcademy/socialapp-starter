@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './UpdateUser.css';
 import DataService from "../../dataService"
 
@@ -7,10 +7,21 @@ class UpdateDisplayName extends React.Component {
         displayName: ""
     }
 
-    handleSubmit = () => {
-        new DataService().updateUser(this.state).then(response => {
-            console.log(response)
-        })
+    pageRefresh() {
+        window.location.reload()
+    }
+
+    handleSubmit = (userData) => {
+        if (this.state.displayName.length < 3) {
+            alert("Error: Display name is too short.")
+        } else if (this.state.displayName.length > 20) {
+            alert("Error: Display name is too long.")
+        } else {
+            new DataService().updateUser(this.state).then(response => {
+                console.log(response)
+                this.pageRefresh()
+            })
+        }
     }
 
     handleChange = e => {
@@ -28,8 +39,6 @@ class UpdateDisplayName extends React.Component {
                             name="displayName"
                             value={this.state.displayName}
                             size="30"
-                            minLength="3"
-                            maxLength="20"
                             required
                             placeholder="Enter a new display name"
                             onChange={this.handleChange}

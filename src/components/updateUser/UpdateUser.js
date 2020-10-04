@@ -65,7 +65,7 @@ class UpdateUser extends React.Component {
                 <button className="button-link" onClick={this.toggleBioPopup.bind(this)}>Update bio</button>
                 {this.state.showBioPopup ? <UpdateBio 
                     text="Update Bio" 
-                    description="This is what other users will see on your profile under the &quot;About Me&quot; section." 
+                    description="This information is displayed on your profile under the &quot;About Me&quot; section (255 character limit)." 
                     closePopup={this.toggleBioPopup.bind(this)} 
                 /> : null }
 

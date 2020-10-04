@@ -8,9 +8,14 @@ class UpdatePassword extends React.Component {
         password: ""
     }
 
+    pageRefresh() {
+        window.location.reload()
+    }
+
     handleSubmit = () => {
         new DataService().updateUser(this.state).then(response => {
             console.log(response)
+            this.pageRefresh()
         })
     }
 
@@ -30,8 +35,8 @@ class UpdatePassword extends React.Component {
                             type="password"
                             value={this.state.password}
                             size="30"
-                            minLength="3"
-                            maxLength="20"
+                            minLength={3}
+                            maxLength={20}
                             required
                             placeholder="Enter a new password"
                             onChange={this.handleChange}
