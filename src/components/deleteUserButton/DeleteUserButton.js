@@ -4,14 +4,16 @@ import { Popconfirm } from "antd";
 
 class DeleteUserButton extends React.Component {
   constructor() {
-    super();
-
+    super()
+  
+    
     this.state = {
       userData: { username: "" },
       isSubmitted: false,
     };
 
-    this.client = new DataService();
+    this.client = new DataService()
+
   }
 
   handleDelete = (e) => {
