@@ -10,7 +10,7 @@ class GetUserList extends React.Component {
     this.state = {
       users: [],
       loading: false,
-      limit: 10,
+      limit: 1,
       offset: 0,
       prevVert: 0,
       photoOnlyMode: false,
@@ -20,12 +20,10 @@ class GetUserList extends React.Component {
   }
 
   componentDidMount() {
-    this.client
-      .getUserList(this.state.limit, this.state.offset)
-      .then((result) => {
-        this.setState({ users: result.data.users });
-        console.log(this.state);
-      });
+    this.client.getUserList(10, this.state.offset).then((result) => {
+      this.setState({ users: result.data.users });
+      console.log(this.state);
+    });
 
     let options = {
       root: null,
