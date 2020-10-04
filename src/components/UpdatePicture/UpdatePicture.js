@@ -1,49 +1,55 @@
+import { WindowsFilled } from "@ant-design/icons"
+import { notification } from "antd"
 import React from "react"
 import QuestboardService from "../servicesPage/ServicePage"
+import ProfileImage from "../ProfileImage"
 
-const Questboard = new QuestboardService
 
-class FileUploader extends React.Component{
-    
-    state = {
-        imageURL: `https://socialapp-api.herokuapp.com/users/${Questboard.getUsername()}/picture`,
-        formData: null,}
+class FileUploader extends React.Component {
+    constructor(props) {
+        super(props)
+        this.Questboard = new QuestboardService();
+        const username = this.Questboard.getUsername();
 
-    setFallbackImage = event => {
-        event.target.src = "https://www.flaticon.com/free-icon/no-war_3456704"
+        this.defaultProfileImage = `https://socialapp-api.herokuapp.com/users/${username}/picture`;
+        this.state = {
+            imageURL: this.defaultProfileImage,
+            formData: null,
+        }
     }
+
     createFormData = event => {
         const file = (event.target.files[0])
-        const formData = new FormData ()
+        const formData = new FormData()
         formData.append("picture", file)
-        this.setState({formData})
+        this.setState({ formData })
     }
-    
-    handleUpload = () => {
-        Questboard.SetPicture(this.state.formData)
-            if (Response.statusCode === 200) {
-                alert("Image change successful!")
-            }}
-        
-    // updatePicture = () => {
-    //     const timestamp = Date.now()
-    //     const imageURL = `https://www.socialapp-api.herokuapp.com/users/${Questboard.getUsername}/picture?t=${timestamp}`
-    //     this.setState({imageURL})}
-    
-    
+
+    handleUpload = event => {
+        event.preventDefault()
+
+        this.Questboard.SetPicture(this.state.formData)
+            .then(response => {
+                const timestamp = Date.now()
+                this.setState({ imageURL: `${this.defaultProfileImage}?t=${timestamp}` })
+
+                notification.open({
+                    message: "Upload successful!",
+                })
+            })
+    }
+
     render() {
         return (
             <div className="FileUploader">
-                <input type="file" 
-                name="picture" 
-                onChange={this.createFormData}/>
+                <input type="file"
+                    name="picture"
+                    onChange={this.createFormData} />
                 <button onClick={this.handleUpload}>Upload</button>
-                
                 <div className="image-preview">
-                    <img alt="user" src={this.state.imageURL}
-                    onError={this.setFallbackImage}/>
+                    <ProfileImage imageURL={this.state.imageURL} />
                 </div>
-                </div>
+            </div>
         )
     }
 

@@ -9,23 +9,24 @@ import MessageFeed from "./pages/MessageFeed";
 import ContactUs from "./pages/ContactUs";
 import Registration from "./pages/Registration"
 import UpdateProfile from "./pages/UpdateProfile"
+import DiceRoller from "./pages/DiceRoller";
 
 
 class App extends React.Component {
   render() {
     return (
       <div>
-      <Switch>
-        <Route
-          exact
-          path="/"
-          component={Home}
-        />
-        <Route
-          exact
-          path="/profile/:username"
-          component={Profile}
-        />
+        <Switch>
+          <Route
+            exact
+            path="/"
+            component={Home}
+          />
+          <Route
+            exact
+            path="/profile/:username"
+            component={Profile}
+          />
           <Route
             exact
             path="/NewUser"
@@ -37,27 +38,33 @@ class App extends React.Component {
             component={MessageFeed}
           />
           <Route
-          exact
-          path="/ContactUs"
-          component={ContactUs}
-        />
-        <Route
-          exact
-          path="/Registration"
-          component={Registration}
-        
-        />
-        <Route 
-        exact
-        path="/UpdateProfile"
-        component={UpdateProfile} />
-        <Route
-          exact
-          path="*"
-          component={NotFound}
-        />
-        
-      </Switch>
+            exact
+            path="/ContactUs"
+            component={ContactUs}
+          />
+          <Route
+            exact
+            path="/Registration"
+            component={Registration}
+
+          />
+          <Route
+            exact
+            path="/UpdateProfile"
+            component={UpdateProfile} />
+
+          <Route
+            exact
+            path="/DiceRoller"
+            component={DiceRoller} />
+
+          <Route
+            exact
+            path="*"
+            component={NotFound}
+          />
+
+        </Switch>
       </div>
     );
   }

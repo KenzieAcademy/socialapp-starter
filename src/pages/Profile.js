@@ -1,62 +1,59 @@
 import React from "react";
-import {Link} from "react-router-dom"
-import { Image, Layout,BackTop} from 'antd';
-import "antd/dist/antd.css"
+import { Link } from "react-router-dom";
+import "antd/dist/antd.css";
 import Menu from "../components/menu/MenuAuthenticated";
-import theQuestBoardHeader from '../media/theQuestBoardHeader.png'
-import Footer from "../components/footer/Footer";
-import { userIsAuthenticated } from "../redux/HOCs"; 
+import theQuestBoardHeader from '../media/theQuestBoardHeader.png';
+import Foot from "../components/foot/Foot";
+import { userIsAuthenticated } from "../redux/HOCs";
+import { Layout } from 'antd';
+import ProfileImage from '../components/ProfileImage'
 
-import QuestBoardService from "../components/servicesPage/ServicePage"
 
-import { UpOutlined } from '@ant-design/icons';
-import MenuAuthenticated from "../components/menu/MenuAuthenticated";
-
-const questBoardService = new QuestBoardService
-const username = questBoardService.getUsername(MenuAuthenticated) 
-const loggedInUsername = questBoardService.getUsername()
-
-// comment section 
-
-// const questboardService = new QuestboardService
-// const username = questboardService.getUsername()
-// const loggedInUsername = questboardService.getUsername()
-
+// comment Content 
 
 
 class Profile extends React.Component {
-  constructor (props) {
-  super(props) 
+
+  constructor(props) {
+    super(props)
+
+
+
     this.state = {
-      username: [],
-      picture: "",
+      userName: ""
     }
-    const questboardService = new QuestboardService
-    const username = questboardService.getUsername()
+
   }
-    
+
   render() {
-    const {  Content, Footer} = Layout;
+
+    const { Header, Content } = Layout;
+
     return (
-      <Layout className="site-layout" style={{ marginLeft: 190 }}>
-      <Menu isAuthenticated={this.props.isAuthenticated} />
-      <Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>
-        <div className="site-layout-background" style={{ padding: 24, textAlign: 'center' }}>
-        <div className="Profile">
-      
-    <h2>Welcome, {this.username} </h2>
-        <hr/>
-      <Link to="/UpdateProfile">Update your Character Sheet!</Link>
-    </div>
-        </div>
-      </Content>
-      <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
-    </Layout>
-    
-   
+
+      <div class="container">
+        <Menu isAuthenticated={this.props.isAuthenticated} />
+
+        <Layout className="site-layout" >
+          <Header className="mainHeader" style={{ padding: 0, textAlign: 'center' }}> <img className="theQuestBoardHeader" src={theQuestBoardHeader} alt="QuestBoard Header" /> </Header>
+          <Content style={{ width: '100%', overflow: 'initial' }} >
+            <div className="site-layout-background" style={{ padding: 24, textAlign: 'center', }}>
+              <div>Username: {this.userName}</div>
+              <div>Character:</div>
+              <h2>Welcome, {this.username} </h2>
+              <hr />
+              <div><ProfileImage /></div>
+              <Link to="/UpdateProfile">Update your Character Sheet!</Link>
+
+            </div>
+          </Content>
+          <Foot />
+
+        </Layout>
+
+      </div>
+
     );
   }
 }
 export default userIsAuthenticated(Profile);
-
-

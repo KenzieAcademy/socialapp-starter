@@ -77,18 +77,25 @@ a:hover {
   margin-top: -6px;
 }
 
-.ant-carousel {
+/* .ant-carousel {
   width: 100%;
   position: absolute;
-  height: 256px;
+  height:9px;
   bottom: 0px;
-}
+} */
 
 .ant-layout-header {
-  background-color: #11ffee00;
-  width: 640px;
-  height: 150px;
+  /* background-image: url(./media/theQuestBoardHeader.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: local; */
+  background-color: #47170e;
+  width: 100%;
+  height:200px;
   margin: auto;
+  /* border-radius: 3px; */
+  border: 5px solid #47170e;
 }
 
 .subHeader {
@@ -120,7 +127,7 @@ Menu.Item, .ant-menu-item-selected {
 }
 
 .ant-menu.ant-menu-light.ant-menu-root.ant-menu-inline {
-  width:150px;
+  width:200px;
   max-width: 600px;
 }
 
@@ -132,63 +139,46 @@ Menu.Item, .ant-menu-item-selected {
   border-radius: 5px;
   box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.75);
   color: #b3b8cd;
-  padding-top: 30px;
   position: relative;
   max-width: 100%;
   text-align: center;
-  
+  border: solid 1px black;
 }
-
-
-
-p {
-  font-size: 14px;
-  line-height: 21px;
-}
-
-h3 {
-  margin: 5px 0;
-  text-transform: uppercase;
-}
-
 .card-container .Dev {
-    border: 1px solid purple;
     border-radius: 35%;
     padding: 5px;
-    width: 70px;
-    height:21px;
+    width: 180px;
 }
-
 .skills {
     background-color: greenyellow;
     text-align: center;
     padding: 15px;
-    margin-top: 30px;
+    margin-top: 15px;
+    line-height: 13px;
 }
-
 .skills ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    text-align: center;
     
 }
-
 .skills ul li {
     border: 2px solid #2D2747;
-    border-radius: 5px;
+    border-radius: 2px;
     display: inline-block;
     font-size: 15px;
-    margin: 0 7px;
+    margin: 0 7px  0 7px;
     padding: 7px;
-
-
-  width: 195px;
-  max-width: 195px;
+    
+}
+#components-layout-demo-fixed-sider .logo {
+  height: 32px;
+  background: red;
+  margin: 16px;
+}
+.site-layout .site-layout-background {
+  background: #e0d8c0;
 }
 
-.displayPicture {
-  width: 200px;
-  height: 200px;
-}
+
 

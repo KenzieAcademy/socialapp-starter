@@ -4,7 +4,7 @@ import { store } from "../../redux"
 
 class QuestboardService {
     constructor(
-        url = 'https://socialapp-api.herokuapp.com', client = axios.create()){
+        url = 'https://socialapp-api.herokuapp.com', client = axios.create()) {
         this.url = url;
         this.client = client;
         // const loginData = JSON.parse(localStorage.getItem("login"));
@@ -13,39 +13,42 @@ class QuestboardService {
         // });
     }
 
-    getUsername (){
+    getUsername() {
         const loginData = JSON.parse(localStorage.getItem("login"))
-        const { username } = loginData.result
 
-        return username
+        if (loginData.result !== null) {
+            const { username } = loginData.result
+            return username
+        }
+        return null
     }
 
-    getToken (){
+    getToken() {
         const { token } = store.getState().auth.login.result
 
         return token
     }
 
-    Register(userData){
+    Register(userData) {
         return this.client.post(this.url + "/users", userData);
     }
-    Login(){
+    Login() {
         return this.client.post(this.url + "/auth/login");
     }
-    Logout(){
+    Logout() {
         return this.client.get(this.url + "/auth/logout");
     }
-    Users(){
-       
+    Users() {
+
         return this.client.get(this.url + "/users");
     }
     NameUser() {
-        return this.client.get(this.url +"/users/{username}");
+        return this.client.get(this.url + "/users/{username}");
     }
-    UpdateUser(){
+    UpdateUser() {
         return this.client.patch(this.url + "/users/{username}");
     }
-    DeleteUser(){
+    DeleteUser() {
         return this.client.delete(this.url + "/users/{username}");
     }
     GetPicture() {
@@ -55,46 +58,47 @@ class QuestboardService {
         const config = {
             headers: {
                 Authorization: `Bearer ${this.getToken()}`
-            }}
-        return this.client.put(this.url + "/users/" + this.getUsername() +"/picture", imageUrl, config)
-        ;
+            }
+        }
+        return this.client.put(this.url + "/users/" + this.getUsername() + "/picture", imageUrl, config)
+            ;
     }
-    GetMessageList(){
+    GetMessageList() {
         return this.client
-            .get(this.url + "/messages?limit=20" )
+            .get(this.url + "/messages?limit=20")
             .then(response => {
                 return response.data.messages
-        })
+            })
     }
-    PostMessages(){
-        return this.client.post(this.url +"/messages");
+    PostMessages() {
+        return this.client.post(this.url + "/messages");
     }
-    GetMessage(){
-        return this.client.get(this.url + "/messages/{messageId}").then(response => {return response.data.messages});
+    GetMessage() {
+        return this.client.get(this.url + "/messages/{messageId}").then(response => { return response.data.messages });
     }
-    DeleteMessage(){
+    DeleteMessage() {
         return this.client.delete(this.url + "/messages/{messageId}");
     }
-    Like(messageId){
+    Like(messageId) {
         const requestBody = { messageId }
         const config = {
             headers: {
                 Authorization: `Bearer ${this.getToken()}`
             }
         }
-       return this.client
-        .post(this.url + "/likes", requestBody, config)
-        .then(response => response.data.like)
+        return this.client
+            .post(this.url + "/likes", requestBody, config)
+            .then(response => response.data.like)
     }
-    Dislike(){
-        return this.client.delete(this.url +"/likes/{likeId}")
+    Dislike() {
+        return this.client.delete(this.url + "/likes/{likeId}")
     }
 
     GoogleCallback() {
         return this.client.get(this.url + "auth/google/callback")
     }
 
-    GoogleLogin(){
+    GoogleLogin() {
         return this.client.get(this.url + "auth/google/login")
     }
 }
