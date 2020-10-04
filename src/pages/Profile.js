@@ -2,8 +2,9 @@ import React from "react";
 
 import Menu from "../components/menu/Menu";
 import UserCard from "../components/userCard/UserCard";
+import DataService from "../DataService";
 import { userIsAuthenticated } from "../redux/HOCs";
-import MessageList from "./MessageList";
+import MessageList from "../components/messageList/MessageList";
 
 class Profile extends React.Component {
   constructor(props) {
@@ -12,11 +13,17 @@ class Profile extends React.Component {
     this.state = {
       username: authData.result.username,
       loading: true,
+      userObj: {},
     };
+    this.client = new DataService();
   }
 
   componentDidMount() {
     this.setState({ loading: false });
+    this.client.getUser(this.state.username).then((result) => {
+      this.setState({ userObj: result.data.user });
+      console.log(result.data.user);
+    });
   }
   render() {
     if (this.state.loading) {
@@ -27,7 +34,7 @@ class Profile extends React.Component {
           <Menu isAuthenticated={this.props.isAuthenticated} />
           <h2>Profile</h2>
           <br />
-          <UserCard username={this.state.username} />
+          <UserCard {...this.state.userObj} />
 
           <MessageList />
           <br />

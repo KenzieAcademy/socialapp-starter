@@ -12,10 +12,7 @@ class CreateMessage extends React.Component {
   handleCreateMessage = (e) => {
     e.preventDefault();
     this.client.createMessage(this.state.messageDataOut).then((response) => {
-      console.log(response);
-      this.setState((state) => {
-        return { messageData: response.data.message };
-      });
+      this.setState({ messageData: response.data.message });
       this.props.handleSubmit();
       this.props.handleRefresh();
     });
@@ -30,7 +27,6 @@ class CreateMessage extends React.Component {
   handleClear = (e) => {
     this.setState({ messageDataOut: { text: "" } });
     this.props.handleSubmit();
-    this.props.handleRefresh();
   };
 
   render() {

@@ -41,12 +41,16 @@ handleLoginRemoval = (e) => {
         </button>
       )
     }
-    return <Popconfirm title="Are you sure？" okText="Yes" cancelText="No" onConfirm={this.handleDelete}>
-      <button className="DeleteUserButton">Delete</button>;
-  </Popconfirm>
-    
-    
-
+    return (
+      <Popconfirm
+        title="Are you sure？"
+        okText="Yes"
+        cancelText="No"
+        onConfirm={this.handleDelete}
+      >
+        <button className="DeleteUserButton">Delete</button>
+      </Popconfirm>
+    );
   }
 }
 
