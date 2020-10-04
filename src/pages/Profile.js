@@ -4,6 +4,7 @@ import "antd/dist/antd.css";
 import Menu from "../components/menu/MenuAuthenticated";
 import theQuestBoardHeader from '../media/theQuestBoardHeader.png';
 import Foot from "../components/foot/Foot";
+import QuestboardService from "../components/servicesPage/ServicePage"
 import { userIsAuthenticated } from "../redux/HOCs";
 import { Carousel, Layout,BackTop,Image} from 'antd';
 import { createFromIconfontCN,AppstoreOutlined,
@@ -29,7 +30,6 @@ class Profile extends React.Component {
 
   const questboardService = new QuestboardService()
   const userName = questboardService.getUsername()
-
   }
     
   render() {
@@ -52,9 +52,9 @@ class Profile extends React.Component {
        <Header className="mainHeader" style={{ padding: 0, textAlign: 'center' }}> <img className="theQuestBoardHeader" src={theQuestBoardHeader} alt="QuestBoard Header" /> </Header>
       <Content style={{ width: '100%', overflow: 'initial' }} >
         <div className="site-layout-background" style={{ padding:24, textAlign: 'center', }}>
-          <div>Username: {this.userName}</div>
+          <div>Username: </div>
             <div>Character:</div>
-         <h2>Welcome, {this.username} </h2>
+         <h2>Welcome, User! </h2>
         <hr/>
       <Link to="/UpdateProfile">Update your Character Sheet!</Link>
        

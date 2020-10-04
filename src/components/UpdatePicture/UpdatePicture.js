@@ -3,8 +3,7 @@ import { notification } from "antd"
 import React from "react"
 import QuestboardService from "../servicesPage/ServicePage"
 
-const Questboard = new QuestboardService()
-const username = Questboard.getUsername()
+
 
 class FileUploader extends React.Component{
     constructor (props) {
@@ -13,7 +12,8 @@ class FileUploader extends React.Component{
         imageURL: `https://socialapp-api.herokuapp.com/users/${username}/picture`,
         formData: null,}
 
-    
+    const Questboard = new QuestboardService();
+    const username = Questboard.getUsername()
 }
     setFallbackImage = event => {
         event.target.src = "https://www.flaticon.com/free-icon/no-war_3456704"
@@ -38,7 +38,7 @@ class FileUploader extends React.Component{
 // // 
     handleUpload = event => {
         event.preventDefault()
-        Questboard.SetPicture(this.state.formData)
+        this.Questboard.SetPicture(this.state.formData)
         .then( response => {
             (notification.open({
             message: "Upload successful!",

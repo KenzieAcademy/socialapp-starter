@@ -11,21 +11,21 @@ class ContactUs extends React.Component {
   super(props)
 
   this.state = {
-    pictureUrl:"" }
-
+    pictureUrl:"" 
+  }
+     
   }
   
-  componentDidMount (){
-    const questboardService = new QuestboardService()
-    const loggedInUsername = questboardService.getUsername()
-
-    questboardService.GetPicture(loggedInUsername)
-  .then(pictureObject => {
-    console.log(pictureObject.request.responseURL)
-    console.log(pictureObject)
-    this.setState(latestState => ({pictureUrl: latestState.pictureUrl + pictureObject.config.url}))
-  })
-  }
+  // componentDidMount (){ 
+  //   const questboardService = new QuestboardService();
+  //   const loggedInUsername = questboardService.getUsername()
+  //   questboardService.GetPicture(loggedInUsername)
+  //   .then(pictureObject => {
+  //   console.log(pictureObject.request.responseURL)
+  //   console.log(pictureObject)
+  //   this.setState(latestState => ({pictureUrl: latestState.pictureUrl + pictureObject.config.url}))
+  // })
+  // }
 
   render() {
 
