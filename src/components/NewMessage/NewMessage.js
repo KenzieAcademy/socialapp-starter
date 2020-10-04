@@ -23,9 +23,13 @@ class NewMessage extends React.Component {
       this.setState({
         message: ""
       })
+      // setTimeout(
+      //   console.log(this.props.getMessages),
+      //   10000)
     } else {
       alert("Your message is too long, please limit to 255 characters.")
     }
+    this.props.getMessages()
   };
 
   handleChange = e => {
@@ -40,21 +44,23 @@ class NewMessage extends React.Component {
       <div className="NewMessage">
         <h2>New Message</h2>
         <form id="new-message" onSubmit={this.handleMessage}>
-            <Input.TextArea
-              maxLength={255}
-              name="message"
-              autoFocus
-              required
-              onChange={this.handleChange}
-            />
-  
-            <button
-              type="submit"
-              disabled={loading}
-            >
-              Submit
+          <Input.TextArea
+            value={this.state.message}
+            minLength={2}
+            maxLength={255}
+            name="message"
+            autoFocus
+            required
+            onChange={this.handleChange}
+          />
+
+          <button
+            type="submit"
+            disabled={loading}
+          >
+            Submit
           </button>
-         
+          <div>Character Count: {this.state.message.length}/255</div>
         </form>
         {loading && <Spinner name="circle" color="blue" />}
         {error && <p style={{ color: "red" }}>{error.message}</p>}

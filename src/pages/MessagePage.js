@@ -15,21 +15,21 @@ class MessagePage extends React.Component {
     this.client = new DataService()
   }
 
-  
-  getMessages() {
+
+  getMessages = () => {
+    this.client.getMessages().then(response => {
+      this.setState({ messages: response.data.messages, offset: 100 })
+      console.log("this is running")
+    })
+  }
+
+  componentDidMount() {
     this.client.getMessages().then(response => {
       this.setState({ messages: response.data.messages })
     })
   }
-  
-  componentDidMount() {
-    setInterval(
-      () => this.getMessages(),
-      1000
-    )
-  }
 
-    
+
   loadMoreMessages = () => {
     this.client.getMoreMessages(this.state.offset).then(response => {
       this.setState(currentState => {
@@ -43,7 +43,11 @@ class MessagePage extends React.Component {
     return (
       <div className="MessagePage">
         <Menu className="message-page-menu" isAuthenticated={this.props.isAuthenticated} />
-        <NewMessage className="new-message" isAuthenticated={this.props.isAuthenticated} />
+        <NewMessage
+          getMessages={this.getMessages}
+          className="new-message"
+          isAuthenticated={this.props.isAuthenticated}
+        />
 
         <MessageList className="message-list" messages={this.state.messages} loadMoreMessages={this.loadMoreMessages} />
 

@@ -10,7 +10,10 @@ import UpdatePhoto from "./pages/UpdatePhoto"
 class App extends React.Component {
   
   render() {
-   
+    let username = false
+    if(JSON.parse(localStorage.getItem('login')).result != null){
+      username = JSON.parse(localStorage.getItem('login')).result.username
+    }
 
     return (
       <Switch>
