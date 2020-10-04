@@ -3,6 +3,10 @@ import Spinner from "react-spinkit";
 import { withAsyncAction } from "../../redux/HOCs";
 import { Link } from "react-router-dom";
 import "./LoginForm.css";
+import GoogleAuth from "./GoogleAuth";
+import { Button, Input, Space } from 'antd';
+import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
+
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -28,8 +32,10 @@ class LoginForm extends React.Component {
 
     return (
 <div className="LoginForm">
+
         <form id="login-form" onSubmit={this.handleLogin}>
-          <input
+        <Space direction="vertical" size="middle">
+          <Input
             type="text"
             name="username"
             placeholder="Insert Username"
@@ -37,18 +43,21 @@ class LoginForm extends React.Component {
             required
             onChange={this.handleChange}
           />
-          <input
+          <Input.Password
             type="password"
             name="password"
             placeholder="Insert Password"
+            iconRender={visible => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
             required
             onChange={this.handleChange}
           />
-          <br />
-          <button type="submit" disabled={loading}>
+          <Button type="submit" disabled={loading}>
             Login
-          </button>
+          </Button>
+          <GoogleAuth />
+
           Or <Link to="/Registration">Register now!</Link>
+          </Space >
         </form>
         {loading && <Spinner name="circle" color="blue" />}
         {error && <p style={{ color: "red" }}>{error.message}</p>}

@@ -6,10 +6,10 @@ import Menu from "../components/menu/MenuAuthenticated";
 import theQuestBoardHeader from '../media/theQuestBoardHeader.png'
 import Footer from "../components/footer/Footer";
 import { userIsAuthenticated } from "../redux/HOCs"; 
+
 import { UpOutlined } from '@ant-design/icons';
 import QuestboardService from "../components/servicesPage/ServicePage"
 // comment section 
-
 
 
 class Profile extends React.Component {
@@ -18,10 +18,14 @@ class Profile extends React.Component {
     this.state = {
       picture: "",
     }
+
   const questboardService = new QuestboardService()
   const userName = questboardService.getUsername()
+
   }
+    
   render() {
+
     const { Header, Content } = Layout;
     // for backtop
     const style = {
@@ -47,9 +51,14 @@ class Profile extends React.Component {
       </Content>
           
         </Layout>
+
       
-{/* <Footer /> */}
-</Layout>
+    <h2>Welcome, {this.username} </h2>
+        <hr/>
+      <Link to="/UpdateProfile">Update your Character Sheet!</Link>
+    </Layout>
+    
+   
     );
   }
 }
