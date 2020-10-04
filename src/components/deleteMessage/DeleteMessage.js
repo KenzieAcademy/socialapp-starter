@@ -4,7 +4,9 @@ import DataService from "../../DataService";
 class DeleteMessage extends React.Component {
   constructor(props) {
     super(props);
-
+    this.state = {
+      message: [],
+    };
     this.client = new DataService();
   }
 
@@ -12,6 +14,8 @@ class DeleteMessage extends React.Component {
     e.preventDefault();
     this.client.deleteMessage(this.props.messageId).then((result) => {
       console.log(result.data);
+      this.props.handleRefresh();
+      this.props.handleCreationStatus(this.state);
     });
   };
 
