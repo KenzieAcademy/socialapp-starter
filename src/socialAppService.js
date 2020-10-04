@@ -42,13 +42,13 @@ class socialAppService {
       .then(response => response.data.like)
   }
   deleteLike(likeId) {
-    const endpoint = `${this.url}/likes/${likeId}`
+    const endpoint = `${this.url}/likes/`
     const config = {
       headers: {
         Authorization: "Bearer " + this.getToken(),
       },
     }
-    return this.client.delete(endpoint, config)
+    return this.client.delete(endpoint, {likeId},config)
 
   }
 
