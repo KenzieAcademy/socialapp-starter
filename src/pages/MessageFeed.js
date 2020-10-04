@@ -7,7 +7,7 @@ import "../components/feed2/feed2.css"
 import theQuestBoardHeader from '../media/theQuestBoardHeader.png';
 import { Layout } from 'antd';
 import Foot from "../components/foot/Foot";
-
+import ScrollBar from "../components/infiniteScroll/InfiniteScroll"
 
 class MessageFeed extends React.Component {
   constructor(props) {
