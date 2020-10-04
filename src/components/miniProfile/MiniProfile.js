@@ -1,15 +1,15 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import "../miniProfile/MiniProfile.css";
-import MiniProfileIMG from "../../assets/images/Placeholder_Image_Thumb.gif";
+import MiniProfileIMG from "../../assets/images/Placeholder_Image.png";
 import { Link } from "react-router-dom";
 
 const styles = {
   paperContainer: {
-    height: 120,
-    width: 120,
-    maxwidth: 20,
-    maxheight: 20,
+    // height: 120,
+    // width: 120,
+    maxwidth: 125,
+    maxheight: 125,
   },
 };
 
@@ -23,20 +23,24 @@ const MiniProfile = (props) => {
 
   let profileImage = (
     <img
-      alt="profile"
+      alt="Profile Pic"
       src={image}
       style={styles.paperContainer}
-      class="btn btn-primary"
+      class="img-fluid"
+      variant="dark"
+      title="Profile Pic"
     />
   );
   if (props.user.username === localStorage.getItem("user")) {
     profileImage = (
       <a href={"profile/" + localStorage.getItem("user")}>
         <img
-          alt="profile"
+          alt="Profile Pic"
           src={image}
           style={styles.paperContainer}
-          class="btn btn-primary"
+          class="img-fluid"
+          variant="dark"
+          title="Profile Pic"
         />
       </a>
     );
@@ -46,7 +50,13 @@ const MiniProfile = (props) => {
     <div className="MiniProfileBody">
       <Card className="Miniprofile">
         <Card-Body className="MiniProfCardBody">
-          <div className="ProfilePicThumb">{profileImage}</div>
+          <div
+            className="ProfilePicThumb"
+            alt="Profile Pic"
+            title="Go To Profile"
+          >
+            {profileImage}
+          </div>
           <Card.Subtitle className="card-Subtitle">
             <div className="MiniMemberInfo">
               <div className="MemberName">

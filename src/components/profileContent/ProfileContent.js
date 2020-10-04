@@ -3,15 +3,13 @@ import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import { userIsAuthenticated } from "../../redux/HOCs";
 import "../../components/profileContent/ProfileContent.css";
-import MiniProfileIMG from "../../assets/images/Placeholder_Image.gif";
+import MiniProfileIMG from "../../assets/images/Placeholder_Image.png";
 import Form from "react-bootstrap/Form";
 
 const styles = {
   paperContainer: {
-    height: 120,
-    width: 120,
-    maxwidth: 20,
-    maxheight: 20,
+    maxwidth: 125,
+    maxheight: 125,
     backgroundImage: `url(${"static/src/img/main.jpg"})`,
   },
 };
@@ -26,34 +24,53 @@ const ProfileContent = (props) => {
   return (
     <div className="ProfileContentBody">
       <div className="ProfileContent">
-        <img
-          alt="profile"
-          src={picture}
-          style={styles.paperContainer}
-          className="btn btn-primary"
-        />
-        <Form>
-          <Form.Label>{props.user.displayName}</Form.Label>
-          <br></br>
-          <Form.Label>Joined On: {joinedOn.toUTCString()}</Form.Label>
-          <Form.Row>
-            <Form.Label>Bio </Form.Label>
-            <Col>
-              <Form.Text>{props.user.about}</Form.Text>
-            </Col>
-          </Form.Row>
-          <Form.Check
-            type="switch"
-            id="custom-switch"
-            label="Update Profile"
-            checked={props.checked}
-            onChange={props.clickSwitch}
+        <div className="ProfilePicBox">
+          <img
+            alt="Profile Pic"
+            src={picture}
+            style={styles.paperContainer}
+            class="img-fluid"
+            variant="dark"
+            title="Profile Pic"
           />
-        </Form>
+        </div>
+        <div className="MemberInfoFormBody">
+          <Form>
+            <div className="MemberInfoBox">
+              <div className="MemberInfoText">
+                <Form.Label>Display Name: {props.user.displayName}</Form.Label>
+                <br></br>
+                <Form.Label>Joined On: {joinedOn.toUTCString()}</Form.Label>
+              </div>
+              <Form.Row>
+                <div className="AboutMeBox">
+                  <div className="AboutMeText">
+                    <Form.Label>About Me: </Form.Label>
+                    <div className="AboutMeUserText">
+                      <Col>
+                        <Form.Text>{props.user.about}</Form.Text>
+                      </Col>
+                    </div>
+                  </div>
+                </div>
+              </Form.Row>
+              <div className="UpdateSwitch">
+                <Form.Check
+                  type="switch"
+                  id="custom-switch"
+                  label="Update"
+                  title="Update Your Profile"
+                  checked={props.checked}
+                  onChange={props.clickSwitch}
+                />
+              </div>
+            </div>
+          </Form>
+        </div>
         {props.checked && (
           <Form.Group>
             <Form.Row>
-              <Form.Label>Display Name</Form.Label>
+              <Form.Label>Display Name: </Form.Label>
               <Col xs="auto">
                 <Form.Control
                   onChange={props.change}
@@ -63,7 +80,7 @@ const ProfileContent = (props) => {
               </Col>
             </Form.Row>
             <Form.Row>
-              <Form.Label>Password</Form.Label>
+              <Form.Label>Password: </Form.Label>
               <Col xs="auto">
                 <Form.Control
                   onChange={props.change}
@@ -74,7 +91,7 @@ const ProfileContent = (props) => {
               </Col>
             </Form.Row>
             <Form.Row>
-              <Form.Label>Bio</Form.Label>
+              <Form.Label>About Me: </Form.Label>
               <Col xs="auto">
                 <Form.Control
                   onChange={props.change}

@@ -121,22 +121,15 @@
 
 .LogEnterButtonBox input[type="submit"] {
   position: relative;
-  background-image: url(../../assets/images/Register_Button.png);
-  padding: 5px;
-  border: black;
-  border-radius: 5px;
-  border-width: 3px;
-  border-style: dashed;
+  background: none;
+  background-image: url(../../assets/images/Enter_Button.png);
+  background-repeat: no-repeat;
+  padding: 10px;
+  border: none;
   width: 130px;
-  height: 50;
+  height: 60;
 }
 
 .LogEnterButtonBox input[type="submit"]:hover {
-  background-image: url(../../assets/images/Clear_Red_Dark.png);
-  border: white;
-  border-radius: 5px;
-  border-width: 3px;
-  border-style: dashed;
-  color: white;
-  -webkit-text-stroke: 0.25px black;
+  background-image: url(../../assets/images/Enter_Button_Hover.png);
 }

@@ -87,31 +87,36 @@ class MessageFeed extends React.Component {
     }
     return (
       <div className="MessageFeedPageBody">
-        <div className="MessageMenuBox">
-          <div className="MessageMenuText">
-            <Menu isAuthenticated={this.props.isAuthenticated} />
-          </div>
-        </div>
-        <div className="MessageHeaderBox">
-          <div className="MessageFeedHeaderText">Message Feed</div>
-        </div>
-        <OverlayTrigger
-          trigger="click"
-          placement="bottom"
-          overlay={this.popover}
-          rootClose={true}
-        >
-          <div className="MiniProfile-PostButtonBox">
-            <div className="MiniProfileFeed">
-              <MiniProfile user={this.state.currentUser} />
-            </div>
-            <div className="PostButtonBox">
-              <Button className="PostAMessageButton" variant="dark" size="lg">
-                Post A Message
-              </Button>
+        <div className="HeaderContainer">
+          <div className="MessageMenuBox">
+            <div className="MessageMenuText">
+              <Menu isAuthenticated={this.props.isAuthenticated} />
             </div>
           </div>
-        </OverlayTrigger>
+          <div className="MessageHeaderBox">
+            <div className="MessageFeedHeaderText">Message Feed</div>
+          </div>
+          <OverlayTrigger
+            trigger="click"
+            placement="bottom"
+            overlay={this.popover}
+            rootClose={true}
+          >
+            <div className="MiniProfile-PostButtonBox">
+              <div className="MiniProfileFeed">
+                <MiniProfile user={this.state.currentUser} />
+              </div>
+              <div className="PostButtonBox">
+                <Button
+                  className="PostAMessageButton"
+                  variant="dark"
+                  size="lg"
+                  title="Post A Message"
+                ></Button>
+              </div>
+            </div>
+          </OverlayTrigger>
+        </div>
         <div className="TheFeed">
           <ul>
             {this.state.messages.map((messageObject) => {

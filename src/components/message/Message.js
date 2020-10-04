@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import "../message/Message.css";
-import ProfilePic from "../../assets/images/Placeholder_Image.gif";
+import ProfilePic from "../../assets/images/Placeholder_Image.png";
 import SocialappService from "../../socialappService";
 
 class Message extends React.Component {
@@ -74,7 +74,11 @@ class Message extends React.Component {
                     Thumbs Up: {this.props.likes.length}
                   </div>{" "}
                 </div>
-                <button className="ThumbsUpButton" onClick={this.LikeFunction}>
+                <button
+                  className="ThumbsUpButton"
+                  onClick={this.LikeFunction}
+                  title="Give My Post A Thumbs Up!"
+                >
                   Thumbs Up!
                 </button>{" "}
               </footer>

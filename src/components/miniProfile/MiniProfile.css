@@ -33,6 +33,15 @@
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
+  cursor: pointer;
+}
+
+.ProfilePicThumb:hover {
+  border: white;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  cursor: pointer;
 }
 
 .MiniMemberInfo {

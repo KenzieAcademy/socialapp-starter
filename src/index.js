@@ -6,13 +6,20 @@ import { Provider } from "react-redux";
 import { ConnectedRouter } from "connected-react-router";
 import App from "./App";
 import { store, history } from "./redux";
+import Image from "../src/assets/images/Header_Logo.gif";
 
 ReactDOM.render(
-  <Provider store={store}>
-    <ConnectedRouter history={history}>
-      <App />
-    </ConnectedRouter>
-  </Provider>,
+  <div>
+    <div className="HeaderLogo">
+      <img src={Image} alt="Header Logo"></img>
+    </div>
+    <Provider store={store}>
+      <ConnectedRouter history={history}>
+        <App />
+      </ConnectedRouter>
+    </Provider>
+  </div>,
+
   document.getElementById("root")
 );
 

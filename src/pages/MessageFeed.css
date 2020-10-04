@@ -3,6 +3,7 @@
 }
 
 .MessageFeedPageBody {
+  top: -6px;
   padding: 10px;
   background-image: url(../assets/images/Coupon_Background_Dark.png);
   border: black;
@@ -25,6 +26,11 @@
   position: relative;
   margin: auto;
   top: 75px;
+}
+
+.HeaderContainer {
+  background-image: url(../assets/images/Coupon_Background_Dark.png);
+  position: relative;
 }
 
 .MessageMenuBox {
@@ -83,38 +89,31 @@
 .PostButtonBox {
   left: 703px;
   top: -70px;
-  position: relative;
+  /* position: relative; */
+  position: fixed;
   margin: auto;
+  z-index: 1;
 }
 
 .PostAMessageButton {
-  width: 250px;
-  height: 70px;
+  width: 125px;
+  height: 55px;
   left: 4px;
-  background-image: url(../assets/images/Clear_Red_Dark.png);
-  border: black;
-  border-radius: 5px;
-  border-width: 3px;
-  border-style: dashed;
+  top: 310px;
+  left: 250px;
+  background: none;
+  border: none;
+  background-image: url(../assets/images/Post_Button.png);
   padding: 10px;
-  font: italic small-caps bold 30px/35px Impact;
-  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
-  -webkit-text-stroke: 0.25px white;
-  text-align: center;
-  color: black;
   position: relative;
   margin: auto;
   cursor: pointer;
 }
 
 .PostAMessageButton:hover {
-  color: white;
-  -webkit-text-stroke: 0.5px black;
-  background-image: url(../assets/images/Post_Button.png);
-  border: white;
-  border-radius: 5px;
-  border-width: 3px;
-  border-style: dashed;
+  background: none;
+  border: none;
+  background-image: url(../assets/images/Post_Button_Hover.gif);
 }
 
 .TheFeed {

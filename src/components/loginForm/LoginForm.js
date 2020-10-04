@@ -58,7 +58,8 @@ class LoginForm extends React.Component {
               <div className="LogEnterButton">
                 <input
                   type="submit"
-                  value="Enter"
+                  value=""
+                  title="Enter"
                   onClick={this.handleLogin}
                   disabled={loading}
                 ></input>

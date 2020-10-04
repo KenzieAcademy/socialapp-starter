@@ -18,7 +18,7 @@
 
 .ProfileContent {
   font: italic small-caps bolder 30px/35px Impact;
-  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  text-shadow: -3px -3px 3px rgb(151, 148, 148), 3px 3px 3px #000;
   -webkit-text-stroke: 0.25px black;
   color: white;
   left: -3px;
@@ -35,8 +35,8 @@
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
-  width: 131px;
-  height: 131px;
+  width: 125px;
+  height: 125px;
   position: relative;
   margin: auto;
 }
@@ -85,15 +85,16 @@
   position: relative;
   margin: auto;
   font: italic small-caps bolder 30px/35px Impact;
-  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
-  -webkit-text-stroke: 0.25px black;
+  text-shadow: -3px -3px 3px rgb(128, 114, 114), 3px 3px 3px #000;
+  color: white;
+  -webkit-text-stroke: 0.3px black;
 }
 
 .AboutMeUserText {
   position: relative;
   margin: auto;
-  font: italic small-caps bolder 20px/25px Impact;
-  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  font: italic small-caps bolder 25px/30px Impact;
+  text-shadow: -2px -2px 2px rgb(128, 114, 114), 2px 2px 2px #000;
   -webkit-text-stroke: 0.25px black;
 }
 
@@ -111,8 +112,9 @@
   position: relative;
   margin: auto;
   color: black;
-  font: italic small-caps bolder 25px/30px Impact;
-  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  font: italic small-caps bolder 30px/35px Impact;
+  text-shadow: -3px -3px 3px rgb(128, 114, 114), 3px 3px 3px #000;
+  color: black;
   -webkit-text-stroke: 0.25px white;
 }
 

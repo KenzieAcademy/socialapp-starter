@@ -37,7 +37,7 @@ class Home extends React.Component {
       <div className="HomePageBody">
         <div className="JoinUs">
           <div className="HomeLink">
-            <Link to="/" onClick={() => this.loginButton()}>
+            <Link to="/" onClick={() => this.loginButton()} title="Go To Home">
               Home
             </Link>
           </div>
@@ -45,7 +45,11 @@ class Home extends React.Component {
           <div className="RegisterLink">
             <div>
               <div className="NotMemberYet">Not A Member Yet?</div>
-              <Link to="/" onClick={() => this.registerButton()}>
+              <Link
+                to="/"
+                onClick={() => this.registerButton()}
+                title="Register"
+              >
                 Register
               </Link>
             </div>

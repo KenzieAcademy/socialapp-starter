@@ -38,9 +38,10 @@
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
-  background-image: url(../../assets/images/Coupon_Background_Dark.png);
-  color: white;
-  -webkit-text-stroke: 0.25px black;
+  background-color: white;
+  background-image: url(../../assets/images/Coupon_Background_Light.png);
+  color: black;
+  -webkit-text-stroke: 0.25px white;
   font-size: 25px;
   width: 468px;
   height: 185px;

@@ -98,32 +98,20 @@
 }
 
 .EnterButtonBox input[type="submit"] {
+  position: relative;
+  background: none;
+  background-image: url(../../assets/images/Join_Us_Button.png);
+  background-repeat: no-repeat;
+  padding: 10px;
+  border: none;
+  width: 130px;
+  height: 60;
   top: 32px;
   left: 18px;
-  position: relative;
-  margin: auto;
-  background-image: url(../../assets/images/Coupon_Background_Dark.png);
-  padding: 5px;
-  border: black;
-  border-radius: 5px;
-  border-width: 3px;
-  border-style: dashed;
-  width: 130px;
-  height: 50;
-  font: italic small-caps bold 27px/45px Impact;
-  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
-  -webkit-text-stroke: 0.25px white;
-  cursor: pointer;
 }
 
 .EnterButtonBox input[type="submit"]:hover {
-  background-image: url(../../assets/images/Clear_Red_Dark.png);
-  border: white;
-  border-radius: 5px;
-  border-width: 3px;
-  border-style: dashed;
-  color: white;
-  -webkit-text-stroke: 0.25px black;
+  background-image: url(../../assets/images/Join_Us_Button_Hover.png);
 }
 
 .RegistrationForm input[type="text"] {

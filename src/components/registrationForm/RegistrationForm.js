@@ -95,7 +95,8 @@ class RegistrationForm extends React.Component {
                 >Register</Button> */}
                 <input
                   type="submit"
-                  value="Register"
+                  value=""
+                  title="Register"
                   disabled={loading}
                 ></input>
               </div>
