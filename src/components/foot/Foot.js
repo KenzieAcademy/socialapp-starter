@@ -55,8 +55,8 @@ class Foot extends React.Component {
 
 
                         />
-                        <h3><b>Tim Terry</b></h3>
-                        <h2>Ohio</h2>
+                        <h3 class="name"><b>Tim Terry</b></h3>
+                        <h2 class="location">Ohio</h2>
                         <p>
                             Casual Gamer and front-end developer
                                

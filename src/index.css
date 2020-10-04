@@ -68,6 +68,8 @@ a:hover {
 
 .ant-layout-content {
   width: 1000px;
+  
+
 }
 
 
@@ -90,11 +92,13 @@ a:hover {
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: local;
+  background-color: #e0d8c0;
   width: 100%;
   height:200px;
   margin: auto;
   border-radius: 3px;
-  border: 1px solid #47170e;
+  border: 2px solid #47170e;
+
 }
 
 .subHeader {
@@ -177,6 +181,7 @@ Menu.Item, .ant-menu-item-selected {
 }
 .site-layout .site-layout-background {
   background: #e0d8c0;
+  
 }
 
 
