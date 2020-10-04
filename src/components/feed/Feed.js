@@ -1,6 +1,5 @@
 import React from "react"
 import "../feed/feed.css"
-import TextInput from "../TextInput/TextInput"
 
 class Feed extends React.Component {
     constructor(props) {

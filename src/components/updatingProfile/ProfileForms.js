@@ -1,5 +1,5 @@
 import React from "react"
-import { Form, Input, Button } from 'antd';
+import { Form } from 'antd';
 import QuestboardService from "../servicesPage/ServicePage"
 
 class ProfileForms extends React.Component{

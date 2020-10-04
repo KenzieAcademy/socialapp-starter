@@ -3,6 +3,7 @@ import { Layout, Menu } from 'antd';
 import "./Menu.css";
 import { Link } from "react-router-dom";
 import theQuestBoard from './theQuestBoardIcon.png'
+
 class MenuUnauthenticated extends React.Component {
 
   render() {

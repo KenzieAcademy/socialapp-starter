@@ -1,10 +1,8 @@
 import React from "react";
-import {message, Upload,  Layout,} from 'antd';
+import { Layout,} from 'antd';
 import "antd/dist/antd.css"
 import FileUploader from "../components/UpdatePicture/UpdatePicture"
-import {LoadingOutlined, PlusOutlined} from '@ant-design/icons'
 import Menu from "../components/menu/MenuAuthenticated";
-import QuestboardService from "../components/servicesPage/ServicePage"
 import { userIsAuthenticated } from "../redux/HOCs";
 import ProfileForms from "../components/updatingProfile/ProfileForms"
 
@@ -16,9 +14,7 @@ class Profile extends React.Component {
       username: [],
       picture: null,
     }
-    const questboardService = new QuestboardService()
-    const loggedInUsername = questboardService.getUsername()
-
+    
   }
   render() {
     const {  Content, Footer} = Layout;
