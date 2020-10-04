@@ -1,6 +1,6 @@
 import axios from 'axios';
-
 import { store } from "../../redux"
+
 
 class QuestboardService {
     constructor(
@@ -14,9 +14,8 @@ class QuestboardService {
     }
 
     getUsername (){
-        const loginData = JSON.parse(localStorage.getItem("login"))
-        const { username } = loginData.result
-
+        
+        const {username} = store.getState().auth.login.result
         return username
     }
 
@@ -40,10 +39,15 @@ class QuestboardService {
         return this.client.get(this.url + "/users");
     }
     NameUser() {
-        return this.client.get(this.url +"/users/{username}");
+        return this.client.get(this.url + `/users/{username}`);
     }
-    UpdateUser(){
-        return this.client.patch(this.url + "/users/{username}");
+    UpdateUser(user){
+        const config ={
+            headers: {
+                Authorization: `Bearer ${this.getToken()}`
+            }
+        }
+        return this.client.patch(this.url + "/users/" + this.getUsername(), user, config);
     }
     DeleteUser(){
         return this.client.delete(this.url + "/users/{username}");
@@ -51,12 +55,13 @@ class QuestboardService {
     GetPicture() {
         return this.client.get(this.url + "/users/" + this.getUsername() + "/picture");
     }
-    SetPicture(imageUrl) {
+    SetPicture(pictureFormData) {
         const config = {
             headers: {
                 Authorization: `Bearer ${this.getToken()}`
             }}
-        return this.client.put(this.url + "/users/" + this.getUsername() +"/picture", imageUrl, config)
+        return this.client.put(this.url + "/users/" + this.getUsername() + "/picture", pictureFormData, config)
+       
         ;
     }
     GetMessageList(){
@@ -70,10 +75,10 @@ class QuestboardService {
         return this.client.post(this.url +"/messages");
     }
     GetMessage(){
-        return this.client.get(this.url + "/messages/{messageId}").then(response => {return response.data.messages});
+        return this.client.get(this.url + `/messages/{messageId}`).then(response => {return response.data.messages});
     }
     DeleteMessage(){
-        return this.client.delete(this.url + "/messages/{messageId}");
+        return this.client.delete(this.url + `/messages/{messageId}`);
     }
     Like(messageId){
         const requestBody = { messageId }
@@ -87,7 +92,7 @@ class QuestboardService {
         .then(response => response.data.like)
     }
     Dislike(){
-        return this.client.delete(this.url +"/likes/{likeId}")
+        return this.client.delete(this.url +`/likes/{likeId}`)
     }
 
     GoogleCallback() {

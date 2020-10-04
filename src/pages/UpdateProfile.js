@@ -8,9 +8,6 @@ import QuestboardService from "../components/servicesPage/ServicePage"
 import { userIsAuthenticated } from "../redux/HOCs";
 import ProfileForms from "../components/updatingProfile/ProfileForms"
 
-
-
-
 class Profile extends React.Component {
   constructor(props) {
   super(props) 
@@ -19,20 +16,13 @@ class Profile extends React.Component {
       username: [],
       picture: null,
     }
-    const questboardService = new QuestboardService
+    const questboardService = new QuestboardService()
     const loggedInUsername = questboardService.getUsername()
 
   }
-  
-
-  
   render() {
-    
-
     const {  Content, Footer} = Layout;
     const { loading, imageUrl } = this.state;
-    
-
     return (
       <Layout className="site-layout" style={{ marginLeft: 190 }}>
       <Menu isAuthenticated={this.props.isAuthenticated} />
@@ -41,9 +31,10 @@ class Profile extends React.Component {
         <div className="Profile">
       
        <h2>Update your character sheet!</h2>
+       <hr/>
       <FileUploader/>
       <hr/>
-      
+     <ProfileForms/>
         </div>
         </div>
       </Content>
