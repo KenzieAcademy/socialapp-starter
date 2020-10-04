@@ -85,7 +85,7 @@ a:hover {
 } */
 
 .ant-layout-header {
-  background-image: url(./media/theQuestBoardHeader.png);
+  /* background-image: url(./media/theQuestBoardHeader.png); */
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;

@@ -10,15 +10,6 @@ class QuestboardService {
 
     }
 
-<<<<<<< HEAD
-    getUsername () {
-        const {username} = store.getState().auth.login.result;
-        return username
-    }
-
-    getToken (){
-        const { token } = store.getState().auth.login.result;
-=======
     getUsername() {
         const loginData = JSON.parse(localStorage.getItem("login"))
 
@@ -31,7 +22,6 @@ class QuestboardService {
 
     getToken() {
         const { token } = store.getState().auth.login.result
->>>>>>> b727e228bef0c838999e977cbb9ba47a19420cbb
 
         return token
     }

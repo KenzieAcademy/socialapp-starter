@@ -25,8 +25,8 @@ class ProfileImage extends React.Component {
         }
     }
 
-    componentDidUpdate(prevProps) {
-        if (this.props.imageURL !== undefined && this.state.imageURL !== prevProps.imageURL) {
+    componentDidUpdate() {
+        if (this.props.imageURL !== undefined && this.state.imageURL !== this.props.imageURL) {
             this.setState({ imageURL: this.props.imageURL });
         }
     }
