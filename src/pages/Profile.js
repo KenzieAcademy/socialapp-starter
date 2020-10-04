@@ -39,7 +39,8 @@ class Profile extends React.Component {
       <Layout>
         <Menu />
         <Layout className="site-layout" style={{ marginLeft: 190 }}>
-          <Header className="mainHeader" style={{ padding: 0, textAlign: 'center' }}> <img className="theQuestBoardHeader" src={theQuestBoardHeader} alt="QuestBoard Header" /> </Header>
+          <Header className="mainHeader" style={{ padding: 0, textAlign: 'center' }}> 
+          <img className="theQuestBoardHeader" src={theQuestBoardHeader} alt="QuestBoard Header" /> </Header>
 
           <Content>
             <div>Username: {this.userName}</div>
