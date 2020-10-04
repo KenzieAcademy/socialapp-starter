@@ -6,54 +6,84 @@ import UploadImage from "../addPhoto/AddPhoto";
 import EditProfile from "../editProfile/EditProfile";
 import SocialAppService from "../../socialAppService";
 import "./SideBar.css";
+import socialAppService from '../../socialAppService';
 
-const socialAppService = new SocialAppService()
 
 
-const SideBar = () => (
-    <Grid colums={1}>
-        <Grid.Column>
-            <Sidebar.Pushable as={Segment.Group} raised>
-                <Sidebar
-                    as={Menu}
-                    animation='push'
-                    icon='labeled'
-                    inverted
-                    vertical
-                    visible
-                    width='thin'
-                >
 
-                    <Clock />
+class SideBar extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            displayName: "",
 
-                    <Menu.Item as='a'>
-                        <Icon name='space shuttle' />
-                        <Link to="/Visit">Visit the Planets!</Link>
+        }
+        this.client = new SocialAppService()
+    }
 
-                    </Menu.Item>
+    // componentDidMount() {
+    //     this.getUserDetails();
+    // }
 
-                    <Menu.Item as='a'>
-                        <Icon name='rocket' />
-                        <Link to="/Style">Create your style!</Link>
-                    </Menu.Item>
+    // getUserDetails = (e) => {
+    //     this.client.getUser(this.state).then(response => {
+    //         this.setState({
 
-                </Sidebar>
+    //             displayName: response.data.user.displayName,
 
-                <Sidebar.Pusher>
+    //         })
+    //         console.log(response);
+    //     });
 
-                    <div className="edit-profile">
-                        <h3>{socialAppService.getUserName() || "Profile"}</h3>
-                        <UploadImage />
-                        <br />
-                        <EditProfile />
+    // }
 
-                    </div>
-                </Sidebar.Pusher>
-            </Sidebar.Pushable>
-        </Grid.Column>
+    render() {
+        return (
+            <Grid colums={1}>
+                <Grid.Column>
+                    <Sidebar.Pushable as={Segment.Group} raised>
+                        <Sidebar
+                            as={Menu}
+                            animation='push'
+                            icon='labeled'
+                            inverted
+                            vertical
+                            visible
+                            width='thin'
+                        >
 
-    </Grid >
-)
+                            <Clock />
+
+                            <Menu.Item as='a'>
+                                <Icon name='space shuttle' />
+                                <Link to="/Visit">Visit the Planets!</Link>
+
+                            </Menu.Item>
+
+                            <Menu.Item as='a'>
+                                <Icon name='rocket' />
+                                <Link to="/Style">Create your style!</Link>
+                            </Menu.Item>
+
+                        </Sidebar>
+
+                        <Sidebar.Pusher>
+
+                            <div className="edit-profile">
+                                <h3>{this.client.getUserName() || "Profile"}</h3>
+                                <UploadImage />
+                                <br />
+                                <EditProfile />
+
+                            </div>
+                        </Sidebar.Pusher>
+                    </Sidebar.Pushable>
+                </Grid.Column>
+
+            </Grid >
+        )
+    }
+}
 export default SideBar
 
 

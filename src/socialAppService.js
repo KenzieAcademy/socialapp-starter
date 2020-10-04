@@ -14,6 +14,10 @@ class socialAppService {
     return this.client.post(this.url + "/users", userData);
   }
 
+  getUser(username) {
+    return this.client.get(this.url + "/users/" + username).then(response => response.data.user.displayName)
+  }
+
   getUsers() {
     return this.client.get(this.url + "/users");
   }
@@ -23,6 +27,7 @@ class socialAppService {
     return username
 
   }
+
   updateUser(userData) {
     let loginData = JSON.parse(localStorage.getItem("login"))
     return this.client.patch(this.url + `/users/${loginData.result.username}`, userData,
@@ -35,10 +40,10 @@ class socialAppService {
       picObject, { headers: { Authorization: `Bearer ${loginData.result.token}` } })
   }
 
-  getUserData(userData) {
+  getUserData() {
     let loginData = JSON.parse(localStorage.getItem("login"))
-    return this.client.get(this.url + `/users/${loginData.result}`,
-      userData, { headers: { Authorization: `Bearer ${loginData.result.token}` } })
+    return this.client.get(this.url + `/users/${loginData.result.username}`,
+      { headers: { Authorization: `Bearer ${loginData.result.token}` } })
   }
   // deleteMessage() {
   //   let loginData = JSON.parse(localStorage.getItem("login"))
