@@ -1,6 +1,7 @@
 import React from "react";
 import DataService from "../../DataService";
 import UserCard from "../userCard/UserCard";
+import { Col, Row } from "antd";
 
 class GetUserList extends React.Component {
   constructor(props) {
@@ -9,7 +10,7 @@ class GetUserList extends React.Component {
     this.state = {
       users: [],
       loading: false,
-      limit: 3,
+      limit: 10,
       offset: 0,
       prevVert: 0,
       photoOnlyMode: false,
@@ -62,7 +63,7 @@ class GetUserList extends React.Component {
     this.setState((state) => {
       return {
         photoOnlyMode: !state.photoOnlyMode,
-        limit: 30,
+        limit: 50,
         offset: 0,
         users: [],
       };
@@ -81,11 +82,15 @@ class GetUserList extends React.Component {
         <div className="getUserList">
           <button onClick={this.handlePhotoMode}> </button>
           <div>
-            {this.state.users
-              .filter((userObj) => userObj.pictureLocation !== null)
-              .map((userObj) => (
-                <UserCard {...userObj} />
-              ))}
+            <Row gutter={16}>
+              {this.state.users
+                .filter((userObj) => userObj.pictureLocation !== null)
+                .map((userObj) => (
+                  <Col span={6}>
+                    <UserCard {...userObj} />
+                  </Col>
+                ))}
+            </Row>
           </div>
           <div ref={(loadingRef) => (this.loadingRef = loadingRef)}>
             <span>Loading...</span>
@@ -97,11 +102,15 @@ class GetUserList extends React.Component {
     return (
       <div className="getUserList">
         <button onClick={this.handlePhotoMode}>BOOOOOM</button>
-        <div>
+
+        <Row gutter={16}>
           {this.state.users.map((userObj) => (
-            <UserCard {...userObj} />
+            <Col span={6}>
+              <UserCard {...userObj} />
+            </Col>
           ))}
-        </div>
+        </Row>
+
         <div ref={(loadingRef) => (this.loadingRef = loadingRef)}>
           <span>Loading...</span>
         </div>

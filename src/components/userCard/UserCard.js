@@ -16,13 +16,12 @@ class UserCard extends React.Component {
     } else {
       return (
         <div className="UserCard">
-          <GetUserPhoto username={this.props.username} />
-          <Card title="User Information" style={{ width: 300 }}>
-            <strong>Display Name: </strong>
+          <Card title="User" style={{ width: 300 }}>
+            <GetUserPhoto username={this.props.username} />
             <h3>{this.props.displayName}</h3>
             <br />
             <strong>
-              About Me : <p>{this.props.about}</p>
+              About Me <br /> <p>{this.props.about}</p>
             </strong>
           </Card>
         </div>

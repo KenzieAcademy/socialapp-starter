@@ -23,7 +23,6 @@ class GetUserPhoto extends React.Component {
     if (this.state.hasImage) {
       return (
         <div>
-          <h2>photo</h2>
           <img
             className="userPhoto"
             src={this.state.imgSrc}
@@ -34,7 +33,6 @@ class GetUserPhoto extends React.Component {
     } else {
       return (
         <div>
-          <h2>photo</h2>
           <img className="userPhoto" src={NoDisplayPhoto} alt={"userphoto"} />
         </div>
       );

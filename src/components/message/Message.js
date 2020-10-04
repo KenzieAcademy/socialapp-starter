@@ -3,6 +3,7 @@ import GetDisplayName from "../getDisplayName/GetDisplayName";
 import LikeButton from "../likeButton/LikeButton";
 import DeleteMessage from "../deleteMessage/DeleteMessage";
 import UnlikeButton from "../unlikeButton/UnlikeButton";
+import "./Message.css";
 class Message extends React.Component {
   constructor(props) {
     super(props);
@@ -72,7 +73,7 @@ class Message extends React.Component {
         );
       } else {
         return (
-          <li key={this.props.keyId} className="Message">
+          <li key={this.props.keyId} className="MessageIsLiked">
             At {new Date(this.props.createdAt).toDateString()} posted:
             <GetDisplayName username={this.props.username} />
             <div className="message-text">{this.props.text} </div>
@@ -87,7 +88,7 @@ class Message extends React.Component {
     } else {
       if (!this.state.isLiked) {
         return (
-          <li key={this.props.keyId} className="Message">
+          <li key={this.props.keyId} className="MessageIsCreated">
             At {new Date(this.props.createdAt).toDateString()} posted:
             <GetDisplayName username={this.props.username} />
             <div className="message-text">{this.props.text} </div>
@@ -105,7 +106,7 @@ class Message extends React.Component {
         );
       } else {
         return (
-          <li key={this.props.keyId} className="Message">
+          <li key={this.props.keyId} className="MessageIsCreatedIsLiked">
             At {new Date(this.props.createdAt).toDateString()} posted:
             <GetDisplayName username={this.props.username} />
             <div className="message-text">{this.props.text} </div>
