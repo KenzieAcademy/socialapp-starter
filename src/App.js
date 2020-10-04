@@ -7,7 +7,7 @@ import About from "./pages/about/About";
 import Visit from "./pages/visit/Visit";
 import Style from "./pages/style/Style";
 import Play from "./pages/play/Play";
-import Meet from "./pages/meet/Meet"
+import Meet from "./pages/meet/Meet";
 import Logoff from "./pages/logoff/Logoff";
 import NotFound from "./pages/notFound/NotFound";
 
@@ -63,7 +63,6 @@ class App extends React.Component {
             component={NotFound}
           />
         </Switch>
-
       </div>
     );
   }

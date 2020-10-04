@@ -1,18 +1,35 @@
 import React from "react";
-import './Profile.css';
-import Menu from "../../components/menu/Menu";
-import SideBar from "../../components/sideBar/SideBar";
 import { userIsAuthenticated } from "../../redux/HOCs";
+import Menu from "../../components/menu/Menu";
+import FootNavBar from "../../components/footNavBar/FootNavBar";
+import SideBar from "../../components/sideBar/SideBar";
+import "./Profile.css";
+
+
+
+
 
 class Profile extends React.Component {
+
+
   render() {
     return (
-      <div className="Profile">
+      <div className="profile">
         <Menu isAuthenticated={this.props.isAuthenticated} />
-        <h2>Profile</h2>
-        <SideBar />
+
+
+
+        <SideBar isAuthenticated={this.props.isAuthenticated} />
+
+
+
+
+        <FootNavBar isAuthenticated={this.props.isAuthenticated} />
+
+
 
       </div>
+
     );
   }
 }
