@@ -1,23 +1,29 @@
 import React from "react";
-import {Link} from "react-router-dom"
-import { Image, Layout,BackTop} from 'antd';
-import "antd/dist/antd.css"
+import { Link } from "react-router-dom";
+import "antd/dist/antd.css";
 import Menu from "../components/menu/MenuAuthenticated";
-import theQuestBoardHeader from '../media/theQuestBoardHeader.png'
-import Footer from "../components/footer/Footer";
-import { userIsAuthenticated } from "../redux/HOCs"; 
+import theQuestBoardHeader from '../media/theQuestBoardHeader.png';
+import Foot from "../components/foot/Foot";
+import { userIsAuthenticated } from "../redux/HOCs";
 
 
 
 
-import { UpOutlined } from '@ant-design/icons';
+import { Carousel, Layout,BackTop,Image} from 'antd';
+import { createFromIconfontCN,AppstoreOutlined,
+  BarChartOutlined,
+  CloudOutlined,
+  ShopOutlined,
+  TeamOutlined,
+  UserOutlined,
+  UploadOutlined,
+  VideoCameraOutlined, } from '@ant-design/icons';
 
 
 
 
 
-
-// comment section 
+// comment Content 
 
 // const questboardService = new QuestboardService
 // const username = questboardService.getUsername(MenuAuthenticated)
@@ -26,54 +32,155 @@ import { UpOutlined } from '@ant-design/icons';
 
 
 class Profile extends React.Component {
-  constructor (props) {
-  super(props) 
-    this.state = {
-      username: [],
-      picture: "",
-    }
-    
+
+  state = {
+    dotPosition: 'top',
+
   }
   render() {
+
+    // for the icons
+    const IconFont = createFromIconfontCN({
+      scriptUrl: '//at.alicdn.com/t/font_8d5l8fzk5b87iudi.js',
+    });
+
+
+
+    const { dotPosition } = this.state;
+
 
 
 
     const { Header, Content } = Layout;
 
 
-    // for backtop
-    const style = {
-      height: 40,
-      width: 40,
-      lineHeight: '40px',
-      borderRadius: 4,
-      backgroundColor: '#1088e9',
-      color: '#fff',
-      textAlign: 'center',
-      fontSize: 14,
-    };
+    
+   
+    
+   
 
     return (
-      <Layout>
-        <Menu />
-        <Layout className="site-layout" style={{ marginLeft: 190 }}>
-          <Header className="mainHeader" style={{ padding: 0, textAlign: 'center' }}> <img className="theQuestBoardHeader" src={theQuestBoardHeader} alt="QuestBoard Header" /> </Header>
 
-          <Content>
-            vsdfsdfsdfsdfsd
-      </Content>
-          
-        </Layout>
+      <div class="container">
+        <Menu isAuthenticated={this.props.isAuthenticated} />
+
+
+
       
-{/* <Footer /> */}
-</Layout>
+      
+        <Layout className="site-layout" >
+      <Header><img scr="./media/will.jpg" alt="help"/></Header>
+      <Content style={{ width: '100%', overflow: 'initial' }} >
+        <div className="site-layout-background" style={{ padding:24, textAlign: 'center', }}>
+          ...
+          <br />
+          Really
+          <br />
+          ...
+          <br />
+          ...
+          <br />
+          ...
+          <br />
+          long
+          <br />
+          ...
+          <br />
+          ...
+          <br />
+          ...
+          <br />
+          ...
+          <br />
+          ...
+          <br />
+          ...
+          <br />
+          ...
+          <br />
+          ...
+          <br />
+          ...
+          <br />
+          ...
+          <br />
+          ...
+          <br />
+          ...
+          <br />
+          ...
+          <br />
+          ...
+          <br />
+          ...
+          <br />
+          ...
+          <br />
+          ...
+          <br />
+          ...
+          <br />
+          ...
+          <br />
+          ...
+          <br />
+          ...
+          <br />
+          ...
+          <br />
+          ...
+          <br />
+          ...
+          <br />
+          ...
+          <br />
+          ...
+          <br />
+          ...
+          <br />
+          ...
+          <br />
+          ...
+          <br />
+          ...
+          <br />
+          ...
+          <br />
+          ...
+          <br />
+          ...
+          <br />
+          ...
+          <br />
+          ...
+          <br />
+          ...
+          <br />
+          ...
+          <br />
+          ...
+          <br />
+          ...
+          <br />
+          ...
+          <br />
+          ...
+          <br />
+          content
+        </div>
+      </Content>
+      <Foot />
+    </Layout>
+  
+
+
+   
+       
+      </div>
+
     );
   }
 }
 export default userIsAuthenticated(Profile);
 
 
-{/* 
- <BackTop>
-      <div style={style}>UP</div>
-    </BackTop>  */}

@@ -2,7 +2,7 @@ import React from "react";
 
 
 import { Carousel, } from 'antd';
-import { createFromIconfontCN, } from '@ant-design/icons';
+import Icon, { createFromIconfontCN, } from '@ant-design/icons';
 
 
 
@@ -58,12 +58,13 @@ class Foot extends React.Component {
                         <h3><b>Tim Terry</b></h3>
                         <h2>Ohio</h2>
                         <p>
-                            Casual Gamer and <br />
-                               front-end developer
+                            Casual Gamer and front-end developer
+                               
                          </p>
                         <p>
-                            advent anime fan
-                         </p>
+                            Big anime fan <IconFont type="icon-twitter"></IconFont>
+                        </p>
+
                         <div class="media links">
                             <a href="https://www.twitter.com/" target="_blank"><IconFont type="icon-twitter" style={{ fontSize: '40px', color: '#067c89' }} />  </a>
                             <a href="https://www.facebook.com/" target="_blank"><IconFont type="icon-facebook" style={{ fontSize: '40px', color: 'blue' }} />  </a>

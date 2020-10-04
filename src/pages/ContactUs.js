@@ -33,8 +33,8 @@ class ContactUs extends React.Component {
 
       <Layout className="site-layout" style={{ marginLeft: 190 }}
       ><MenuUnauthenticated />
-        <Header className="mainHeader" style={{ padding: 0, textAlign: 'center' }}> <img className="theQuestBoardHeader" src={theQuestBoardHeader} alt="QuestBoard Header" /> </Header>
-        <Header className="subHeader" ><h2>Contact Us!</h2> </Header>
+        <Header className="mainHeader" style={{ padding: 0, textAlign: 'center' }}> </Header>
+        <div className="subHeader" ><h2>Contact Us!</h2> </div>
         <Content style={{ margin: '24px auto auto', overflow: 'initial' }}>
           <div className="site-layout-background" style={{ padding: 24, textAlign: 'center' }}>
 <div><img className="displayPicture"src={this.state.pictureUrl} alt="picture"/></div>
