@@ -22,6 +22,8 @@ class Messagefeed extends Component {
             submitted: false,
             author: '',
             children: ''
+
+
         }
     }
 
@@ -45,23 +47,28 @@ class Messagefeed extends Component {
         event.preventDefault();
         this.setState({
             submitted: true
-        }, () => {
+        }, /*() => {
             if (this.state.submitted) {
                 return this.state.messages.shift(...this.state.author)
             }
 
-        })
+        }*/
+        )
     }
 
-    changeHandler = (event) => {
-        let state = { ...this.state };
-        state[event.target.name] = event.target.value;
-        this.setState({ state })
+    authorChangehandler = (event) => {
+        let authorName = event.target.value;
+        this.setState({ author: authorName })
+    }
+
+    childrenChangehandler = (event) => {
+        let childrenText = event.target.value;
+        this.setState({ children: childrenText })
     }
 
     buttonHandler = (event) => {
-        console.log(this.state.messages[0].text)
-        console.log()
+        //console.log(this.state.messages[0].text)
+        console.log(this.state.author)
     }
 
     render() {
@@ -84,15 +91,16 @@ class Messagefeed extends Component {
 
                             ))}
                         </div>
+
                     </Content>
 
                     <Sider>
-                        <div>
+                        <div className="container">
                             <form onSubmit={this.submitHandler} >
                                 <span><label>Post Fury Comments</label></span>
                                 <div>
                                     <input
-                                        onChange={this.changeHandler}
+                                        onChange={this.authorChangehandler}
                                         className="author"
                                         placeholder="Your name"
                                         type="text"
@@ -103,7 +111,7 @@ class Messagefeed extends Component {
 
                                 <div>
                                     <textarea
-                                        onChange={this.changeHandler}
+                                        onChange={this.childrenChangehandler}
                                         placeholder="Post your thoughts"
                                         row="1"
                                         cols="16"
@@ -121,16 +129,16 @@ class Messagefeed extends Component {
                                     type="button"
                                 >
                                     Submit
-                    </button>
+                                </button>
 
                             </form>
 
 
 
-                            <span>{this.state.author} {this.state.children}</span>
+
                         </div>
 
-
+                        <span>{this.state.author} {this.state.children}</span>
                     </Sider>
                 </Layout>
 
