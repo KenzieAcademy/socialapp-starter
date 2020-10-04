@@ -48,7 +48,7 @@ class MenuAuthenticated extends React.Component {
       </Menu> 
      
     </Sider>
-    <Footer />
+    {/* <Footer /> */}
     </Layout>
     );
   }
