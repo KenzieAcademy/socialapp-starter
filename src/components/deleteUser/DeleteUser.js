@@ -36,7 +36,10 @@ class DeleteUser extends React.Component {
         return (
             <div className="DeletionForm">
                 <form id="deletion-form" onSubmit={this.deleteUser}>
-                    <button type="primary" danger>
+                    <button 
+                    type="primary" 
+                    // danger
+                    >
                         DELETE your Profile?
                     </button>
                     <img className="WarningSign" src={WarningSign} alt="WarningSign" />

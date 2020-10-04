@@ -61,8 +61,6 @@ class Message extends React.Component {
                 </Card>
 
             </li>)
-        {/* /* {this.handleDelete={this.handleDelete.bind(this)}} */ }
-        {/* {messageID={this.state.messageID}} */ }
 
     }
 }

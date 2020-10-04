@@ -3,6 +3,8 @@ import Spinner from "react-spinkit";
 import "./NewMessage.css";
 import DataService from "../../DataService"
 import { Input } from 'antd';
+import { Form } from 'antd'
+import { Button } from 'antd'
 // import { withAsyncAction } from "../../redux/HOCs";
 
 class NewMessage extends React.Component {
@@ -18,6 +20,9 @@ class NewMessage extends React.Component {
     e.preventDefault();
     if (this.state.message.length < 256) {
       this.client.postMessages({ text: this.state.message })
+      this.setState({
+        message: ""
+      })
     } else {
       alert("Your message is too long, please limit to 255 characters.")
     }
@@ -35,17 +40,21 @@ class NewMessage extends React.Component {
       <div className="NewMessage">
         <h2>New Message</h2>
         <form id="new-message" onSubmit={this.handleMessage}>
-          <Input.TextArea
-            maxLength={255}
-            name="message"
-            autoFocus
-            required
-            onChange={this.handleChange}
-          />
-
-          <button type="submit" disabled={loading}>
-            Submit
+            <Input.TextArea
+              maxLength={255}
+              name="message"
+              autoFocus
+              required
+              onChange={this.handleChange}
+            />
+  
+            <button
+              type="submit"
+              disabled={loading}
+            >
+              Submit
           </button>
+         
         </form>
         {loading && <Spinner name="circle" color="blue" />}
         {error && <p style={{ color: "red" }}>{error.message}</p>}

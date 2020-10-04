@@ -60,7 +60,9 @@ class UpdateUserForm extends React.Component {
         <h1>Update Profile</h1>
         <h3>All fields are optional</h3>
         <h5>If you would like to update your password you may do it here:</h5>
-        <h6><strong>ONLY ENTER TEXT YOU WISH TO BE YOUR NEW PASSWORD</strong></h6>
+        <h6><strong>ONLY ENTER TEXT YOU WISH TO BE YOUR NEW PASSWORD
+          <br />
+          MINIMUM 8 CHARACTERS</strong></h6>
         <form id="updateUser-form" onSubmit={this.handleUpdateUser}>
           <label htmlFor="password">Password </label>
           <input

@@ -4,7 +4,6 @@ import { userIsAuthenticated } from "../redux/HOCs";
 import MessageList from "../components/messageList/MessageList"
 import DataService from "../DataService"
 import Menu from "../components/menu/Menu"
-import InfiniteScroll from 'react-infinite-scroller';
 
 class MessagePage extends React.Component {
   constructor(props) {
@@ -16,15 +15,21 @@ class MessagePage extends React.Component {
     this.client = new DataService()
   }
 
-  componentDidMount() {
+  
+  getMessages() {
     this.client.getMessages().then(response => {
-      console.log(response.data.messages)
       this.setState({ messages: response.data.messages })
     })
   }
+  
+  componentDidMount() {
+    setInterval(
+      () => this.getMessages(),
+      1000
+    )
+  }
 
-
-
+    
   loadMoreMessages = () => {
     this.client.getMoreMessages(this.state.offset).then(response => {
       this.setState(currentState => {
@@ -37,10 +42,10 @@ class MessagePage extends React.Component {
   render() {
     return (
       <div className="MessagePage">
-        <Menu isAuthenticated={this.props.isAuthenticated} />
-        <NewMessage isAuthenticated={this.props.isAuthenticated} />
+        <Menu className="message-page-menu" isAuthenticated={this.props.isAuthenticated} />
+        <NewMessage className="new-message" isAuthenticated={this.props.isAuthenticated} />
 
-        <MessageList messages={this.state.messages} loadMoreMessages={this.loadMoreMessages} />
+        <MessageList className="message-list" messages={this.state.messages} loadMoreMessages={this.loadMoreMessages} />
 
         <h2>New Message</h2>
 

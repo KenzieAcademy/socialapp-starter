@@ -11,8 +11,9 @@
   align-items: stretch;
   display: -webkit-flex;
   min-width: 20em;
-  min-height: 1em;
-  max-width: 20em;
+  min-height: 20em;
+  max-width: 100em;
+  /* max-height: 200px; */
   max-height: fit-content;
 }
 
@@ -25,6 +26,7 @@
 
 button {
   width: 300px;
+  height: 35px;
 }
 
 /* This one ^^^ is the div with everything inside it. Also you use the . when it's a class. In React a className is the same as a class in practice, so not really too different. Also also classes and components get the two-hump CamelCase but it gets regular camelCase when it is any other variable. */

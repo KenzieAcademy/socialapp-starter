@@ -9,10 +9,13 @@ class UsersPic extends React.Component {
         const formData = new FormData(event.target)
         const dataService = new DataService()
         dataService.setUserPicture(formData).then(response => {
+            // console.log(formData)
             if (response.data.statusCode === 200) {
                 alert("You have successfully updated your profile picture")
                 window.location.href = "/profile/:username"
-              }
+            } else {
+                alert("Something went wrong, please try again")
+            }
         })
     }
     render() {

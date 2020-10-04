@@ -5,6 +5,7 @@ import Menu from "../components/menu/Menu"
 import UsersPic from "../components/usersPic/UsersPic";
 import whoops from "../components/assets/images/whoops.png"
 import { Link } from "react-router-dom"
+import "../index.css"
 
 class UpdatePhoto extends React.Component {
     constructor(props) {
@@ -36,7 +37,7 @@ class UpdatePhoto extends React.Component {
             <div>
                 <Menu isAuthenticated={this.props.isAuthenticated} />
                 <div>Current Profile Picture:</div>
-                <img src={src} alt="Profile" />
+                <img className="update-picture" src={src} alt="Profile" />
                 <UsersPic />
                 <hr />
                 <Link to="/updateprofile/:username">Update Profile</Link>

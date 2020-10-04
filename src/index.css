@@ -20,6 +20,21 @@ body {
   max-height: 520px;
 }
 
+.update-picture {
+  max-width: 420px;
+  max-height: 520px;
+}
+
+.MessagePage {
+  display: flex;
+  flex-direction: column;
+}
+
+.new-message {
+  align-self: stretch;
+}
+
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
