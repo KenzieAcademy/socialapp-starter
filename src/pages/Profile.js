@@ -26,7 +26,7 @@ import { createFromIconfontCN,AppstoreOutlined,
 // comment Content 
 
 // const questboardService = new QuestboardService
-// const username = questboardService.getUsername(MenuAuthenticated)
+// const username = questboardService.getUsername()
 // const loggedInUsername = questboardService.getUsername()
 
 
@@ -37,6 +37,7 @@ class Profile extends React.Component {
     dotPosition: 'top',
 
   }
+    
   render() {
 
     // for the icons
