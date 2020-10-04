@@ -1,0 +1,15 @@
+.header {
+  padding: 60px;
+  text-align: left-center;
+  background: rgb(156, 155, 155);
+  font-style: inherit;
+  font-weight: bold;
+  color: orange;
+  font-size: 30px;
+}
+
+borderimg {
+  border-image-source: url("https://s.clipartkey.com/mpngs/s/7-74523_race-car-clipart-flame-flame-clip-art.png")
+    200 stretch;
+  border-image-outset: 10px;
+}
