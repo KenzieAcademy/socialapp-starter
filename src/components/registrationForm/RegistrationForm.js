@@ -84,8 +84,8 @@ class RegistrationForm extends React.Component {
               />
             </div>
           </div>
-          <div className="EnterButtonBox">
-            <div className="EnterButton">
+          <div className="RegButtonBox">
+            <div className="RegButton">
               <input
                 type="submit"
                 value=""

@@ -88,6 +88,13 @@
 }
 
 .HomeLogFormBody {
+  margin: 10px;
+  background-image: url(../assets/images/Clear_Red.png);
+  width: 450px;
   position: relative;
   margin: auto;
+  border: black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
 }

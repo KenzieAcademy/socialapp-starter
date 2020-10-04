@@ -3,42 +3,13 @@
 }
 
 .RegistrationFormBody {
-  display: flex;
-  flex-direction: column;
+  width: 450px;
   text-align: center;
   padding: 10px;
   width: 850px;
   height: 492px;
   position: relative;
   margin: auto;
-}
-
-#registration-form {
-  left: -14px;
-  position: relative;
-  margin: auto;
-  top: 35px;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  color: black;
-  font: italic small-caps bold 30px/35px Impact;
-  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
-  -webkit-text-stroke: 0.25px black;
-  width: 340px;
-}
-
-.RegistrationForm {
-  border: black;
-  border-radius: 5px;
-  border-width: 3px;
-  border-style: dashed;
-  background-image: url(../../assets/images/Clear_Red.png);
-  text-align: left;
-  position: relative;
-  margin: auto;
-  width: 445px;
-  height: 505px;
 }
 
 .RegUserBox {
@@ -50,6 +21,10 @@
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
+  text-align: center;
+  color: black;
+  font: italic small-caps bold 25px/43px Impact;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
   -webkit-text-stroke: 0.25px white;
 }
 
@@ -64,17 +39,19 @@
   background-image: url(../../assets/images/Coupon_Background_Dark.png);
   padding: 10px;
   position: relative;
-  margin: auto;
   border: black;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
+  text-align: center;
+  color: black;
+  font: italic small-caps bold 25px/43px Impact;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
   -webkit-text-stroke: 0.25px white;
 }
 
 .RegPassInput {
   position: relative;
-  margin: auto;
 }
 
 .RegDisplayBox {
@@ -86,6 +63,10 @@
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
+  text-align: center;
+  color: black;
+  font: italic small-caps bold 25px/43px Impact;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
   -webkit-text-stroke: 0.25px white;
 }
 
@@ -135,11 +116,11 @@
   -webkit-text-stroke: 0.25px black;
 }
 
-.EnterButtonBox {
+.RegButtonBox {
   position: relative;
 }
 
-.EnterButtonBox input[type="submit"] {
+.RegistrationFormBody input[type="submit"] {
   position: relative;
   background: none;
   background-image: url(../../assets/images/Join_Us_Button.png);
@@ -152,6 +133,6 @@
   left: 18px;
 }
 
-.EnterButtonBox input[type="submit"]:hover {
+.RegistrationFormBody input[type="submit"]:hover {
   background-image: url(../../assets/images/Join_Us_Button_Hover.png);
 }
