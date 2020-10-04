@@ -46,6 +46,11 @@ class Profile extends React.Component {
       src = "http://socialapp-api.herokuapp.com" + this.state.data.pictureLocation
       console.log(src)
     }
+
+    let username = false
+    if(JSON.parse(localStorage.getItem('login')).result != null){
+      username = JSON.parse(localStorage.getItem('login')).result.username
+    }
     return (
 
 
@@ -63,13 +68,13 @@ class Profile extends React.Component {
 
         <br />
 
-        <Link to="/updatephoto/:username">Change Profile Photo</Link>
+        <Link to={"/updatephoto/" + username}>Change Profile Photo</Link>
 
         <hr />
 
         <h4>Display Name: {displayName}</h4>
         <h4>About: {about}</h4>
-        <Link to="/updateprofile/:username">Update Profile</Link>
+        <Link to={"/updateprofile/" + username}>Update Profile</Link>
 
         <hr />
 

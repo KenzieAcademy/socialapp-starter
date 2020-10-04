@@ -13,16 +13,24 @@ class RegistrationForm extends React.Component {
     };
     this.client = new DataService();
   }
+  
   handleRegistration = e => {
     e.preventDefault();
     this.client.registerUser(this.state).then(result => {
-      alert(result.data)
+      if (result.data.statusCode === 200) {
+        alert("You have successfully registered with Convo-Looters!")
+        this.setState({username: "", password: "", displayName: ""})
+      }
     }
     )
   }
+
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   }
+
+
+
   render() {
     const { loading, error } = this.props;
     return (
@@ -30,6 +38,7 @@ class RegistrationForm extends React.Component {
         <form id="registration-form" onSubmit={this.handleRegistration}>
           <label htmlFor="username">Username</label>
           <input
+            value={this.state.username}
             type="text"
             name="username"
             autoFocus
@@ -40,6 +49,7 @@ class RegistrationForm extends React.Component {
           />
           <label htmlFor="password">Password</label>
           <input
+            value={this.state.password}
             type="password"
             name="password"
             required
@@ -49,6 +59,7 @@ class RegistrationForm extends React.Component {
           />
           <label htmlFor="displayName">Display Name</label>
           <input
+            value={this.state.displayName}
             type="text"
             name="displayName"
             required

@@ -33,6 +33,11 @@ class UpdatePhoto extends React.Component {
         if (this.state.data.pictureLocation) {
             src = "http://socialapp-api.herokuapp.com" + this.state.data.pictureLocation
         }
+
+        let username = false
+        if (JSON.parse(localStorage.getItem('login')).result != null) {
+            username = JSON.parse(localStorage.getItem('login')).result.username
+        }
         return (
             <div>
                 <Menu isAuthenticated={this.props.isAuthenticated} />
@@ -40,7 +45,7 @@ class UpdatePhoto extends React.Component {
                 <img className="update-picture" src={src} alt="Profile" />
                 <UsersPic />
                 <hr />
-                <Link to="/updateprofile/:username">Update Profile</Link>
+                <Link to={"/updateprofile/" + username}>Update Profile</Link>
                 <hr />
             </div>
         )

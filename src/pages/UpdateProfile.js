@@ -29,12 +29,17 @@ class UpdateProfile extends React.Component {
     }
 
     render() {
+        let username = false
+        if (JSON.parse(localStorage.getItem('login')).result != null) {
+            username = JSON.parse(localStorage.getItem('login')).result.username
+        }
+
         return (
             <div>
                 <Menu isAuthenticated={this.props.isAuthenticated} />
-                <UpdateUserForm displayName={this.state.data.displayName} about ={this.state.data.about} />
+                <UpdateUserForm displayName={this.state.data.displayName} about={this.state.data.about} />
                 <hr />
-                <Link to="/updatephoto/:username">Update Profile Photo</Link>
+                <Link to={"/updatephoto/" + username}>Update Profile Photo</Link>
                 <hr />
                 <DeleteUser />
             </div>
