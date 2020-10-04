@@ -13,6 +13,7 @@ class GetUserList extends React.Component {
       limit: 10,
       offset: 0,
       prevVert: 0,
+      photoOnlyMode: false,
     };
     this.client = new DataService();
   }
@@ -55,9 +56,37 @@ class GetUserList extends React.Component {
     this.setState({ prevVert: y });
   }
 
+  handlePhotoMode = () => {
+    this.setState({ loading: true });
+    this.setState((state) => {
+      return {
+        photoOnlyMode: !state.photoOnlyMode,
+      };
+    });
+  };
+
   render() {
+    if (this.state.photoOnlyMode) {
+      return (
+        <div className="getUserList">
+          <button onClick={this.handlePhotoMode}>BOOOOOM</button>
+          <div>
+            {this.state.users
+              .filter((userObj) => userObj.pictureLocation !== null)
+              .map((userObj) => (
+                <UserCard {...userObj} />
+              ))}
+          </div>
+          <div ref={(loadingRef) => (this.loadingRef = loadingRef)}>
+            <span>Loading...</span>
+          </div>
+        </div>
+      );
+    }
+
     return (
       <div className="getUserList">
+        <button onClick={this.handlePhotoMode}>BOOOOOM</button>
         <div>
           {this.state.users.map((userObj) => (
             <UserCard {...userObj} />
