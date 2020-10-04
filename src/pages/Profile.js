@@ -57,7 +57,7 @@ class Profile extends React.Component {
   render() {
     return (
       <div className="ProfilePageBody">
-        <div className="ProfileMenu">
+        <div className="ProfileMenuBox">
           <Menu isAuthenticated={this.props.isAuthenticated} />
         </div>
         <div className="ProfileHeaderBox">

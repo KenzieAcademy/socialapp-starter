@@ -3,7 +3,6 @@
 }
 
 .ProfilePageBody {
-  padding: 10px;
   background-image: url(../assets/images/Coupon_Background_Dark.png);
   border: black;
   border-radius: 5px;
@@ -20,6 +19,7 @@
 .ProfileMenuBox {
   position: relative;
   margin: auto;
+  padding: 10px;
 }
 
 .ProfileHeaderBox {
@@ -44,4 +44,10 @@
   top: -12px;
   position: relative;
   margin: auto;
+}
+
+.ProfPageContent {
+  position: relative;
+  margin: auto;
+  padding: 10px;
 }
