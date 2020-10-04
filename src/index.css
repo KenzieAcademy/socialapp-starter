@@ -30,7 +30,15 @@ a:hover {
   height: 32px;
   margin: 16px;
 }
-
+#AllProfilesBox {
+  height: 600px;
+  width: fit-content;
+  background-color: #e0d8c0;
+  /* position: relative;
+  left: 80%;
+  bottom:30%; */
+  overflow: scroll;
+}
 .logo {
   background-color: #e0d8c0;
   font-size: 25px;
@@ -65,10 +73,10 @@ a:hover {
 .ant-menu-vertical .ant-menu-item::after, .ant-menu-vertical-left .ant-menu-item::after, .ant-menu-vertical-right .ant-menu-item::after, .ant-menu-inline .ant-menu-item::after {
   border-right: 3px solid #000;
 }
-
+/* 
 .ant-layout-content {
   width: 1000px;
-}
+} */
 
 
 
@@ -85,16 +93,19 @@ a:hover {
 } */
 
 .ant-layout-header {
-  /* background-image: url(./media/theQuestBoardHeader.png); */
+
+  /* background-image: url(./media/theQuestBoardHeader.png);
+
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  background-attachment: local;
+  background-attachment: local; */
+  background-color: #47170e;
   width: 100%;
   height:200px;
   margin: auto;
-  border-radius: 3px;
-  border: 1px solid #47170e;
+  /* border-radius: 3px; */
+  border: 5px solid #47170e;
 }
 
 .subHeader {
@@ -178,5 +189,8 @@ Menu.Item, .ant-menu-item-selected {
   background: #e0d8c0;
 }
 
-
+#feedAndInput {
+  display: flex;
+  flex-wrap: wrap;
+}
 
