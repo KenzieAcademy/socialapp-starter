@@ -31,11 +31,11 @@ class LoginForm extends React.Component {
     const { loading, error } = this.props;
 
     return (
-<div className="LoginForm">
+      <div className="LoginForm">
 
         <form id="login-form" onSubmit={this.handleLogin}>
-        <Space direction="vertical" size="middle">
-          <Input
+          {/* <Space direction="vertical" size="middle"> */}
+          <input
             type="text"
             name="username"
             placeholder="Insert Username"
@@ -43,26 +43,27 @@ class LoginForm extends React.Component {
             required
             onChange={this.handleChange}
           />
-          <Input.Password
+          <input
             type="password"
             name="password"
             placeholder="Insert Password"
-            iconRender={visible => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
+            // iconRender={visible => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
             required
             onChange={this.handleChange}
           />
-          <Button type="submit" disabled={loading}>
+          <button type="submit" disabled={loading}>
             Login
-          </Button>
+          </button>
           <GoogleAuth />
 
           Or <Link to="/Registration">Register now!</Link>
-          </Space >
+          {/* </Space > */}
         </form>
         {loading && <Spinner name="circle" color="blue" />}
         {error && <p style={{ color: "red" }}>{error.message}</p>}
       </div>
     );
-      }}
+  }
+}
 
 export default withAsyncAction("auth", "login")(LoginForm)
