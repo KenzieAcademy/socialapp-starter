@@ -1,48 +1,18 @@
 import React from "react";
-
-
 import { Carousel, } from 'antd';
 import Icon, { createFromIconfontCN, } from '@ant-design/icons';
-
-
-
-
-
-
-
-
 class Foot extends React.Component {
-
     state = {
         dotPosition: 'top',
-
     }
-
-
-
     render() {
-
         // for the icons
         const IconFont = createFromIconfontCN({
             scriptUrl: '//at.alicdn.com/t/font_8d5l8fzk5b87iudi.js',
         });
-
-
-
         const { dotPosition } = this.state;
-
-
-
-
-
-
-
-
-
-
         return (
             <div>
-
                 {/* take to make one for yourself */}
                 <Carousel autoplay dotPosition={dotPosition}>
                     {/* start of the dev card  */}
@@ -52,8 +22,6 @@ class Foot extends React.Component {
                             class="Dev"
                             src="https://randomuser.me/api/portraits/women/79.jpg"
                             alt="user"
-
-
                         />
                         <h3><b>Tim Terry</b></h3>
                         <h2>Ohio</h2>
@@ -117,12 +85,6 @@ class Foot extends React.Component {
     </ul>
 </div>
 </div>
-
-
-
-
-
-
                 </Carousel>
             </div>
         );

@@ -1,10 +1,9 @@
 import React from 'react';
-// import of some lib for making http calls
-// let's say you are using axios
+
 import axios from "axios";
  
 const fetchData = () => {
-  // return a promise
+  
   return axios.get("https://socialapp-api.herokuapp.com/messages");
 }
 
@@ -17,11 +16,11 @@ render = () => {
   return (
     <ReactPolling
       url={'url to poll'}
-      interval= {3000} // in milliseconds(ms)
-      retryCount={3} // this is optional
+      interval= {3000} 
+      retryCount={3} 
       onSuccess={() => console.log('handle success')}
-      onFailure={() => console.log('handle failure')} // this is optional
-      promise={fetchData} // custom api calling function that should return a promise
+      onFailure={() => console.log('handle failure')} 
+      promise={fetchData} 
       render={({ startPolling, stopPolling, isPolling }) => {
         if(isPolling) {
           return (

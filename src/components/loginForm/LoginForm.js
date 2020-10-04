@@ -34,7 +34,7 @@ class LoginForm extends React.Component {
       <div className="LoginForm">
 
         <form id="login-form" onSubmit={this.handleLogin}>
-          {/* <Space direction="vertical" size="middle"> */}
+          
           <input
             type="text"
             name="username"
@@ -47,7 +47,7 @@ class LoginForm extends React.Component {
             type="password"
             name="password"
             placeholder="Insert Password"
-            // iconRender={visible => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
+
             required
             onChange={this.handleChange}
           />
@@ -57,7 +57,7 @@ class LoginForm extends React.Component {
           <GoogleAuth />
 
           Or <Link to="/Registration">Register now!</Link>
-          {/* </Space > */}
+
         </form>
         {loading && <Spinner name="circle" color="blue" />}
         {error && <p style={{ color: "red" }}>{error.message}</p>}

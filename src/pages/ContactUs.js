@@ -5,10 +5,7 @@ import theQuestBoardHeader from '../media/theQuestBoardHeader.png'
 import Dice from '../components/dice/Dice'
 import Foot from "../components/foot/Foot";
 
-
-
 class ContactUs extends React.Component {
-
   render() {
 
     const { Header, Content } = Layout;

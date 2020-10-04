@@ -21,7 +21,6 @@ handleLike = () => {
     
     })
 }
-
     render () {
         return (
             <div className="Message">

@@ -41,7 +41,7 @@ class MessageFeed2 extends React.Component {
             return (
                 <div id="feedBackground">
                     <div className="messageFeed">
-                        {/* <Menu /> */}
+                        
                         <h1>Message Feed</h1>
                         <h3>loading...</h3>
                     </div>

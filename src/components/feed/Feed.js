@@ -11,8 +11,7 @@ class Feed extends React.Component {
         }
     }
     toHTML(){
-        // document.querySelector("body").innerHTML += "<div ID='appendToThis'/>"
-        // document.getElementById("appendToThis").innerHTML += "<div ID='messagesAndInput'/>" 
+        
         document.getElementById("messagesAndInput").innerHTML += "<div ID='messagesBlock'/>"
         for (let i = 0; i < this.state.items.messages.length; i +=1) {
             let JSONMessage = JSON.stringify(this.state.items.messages[i].text)

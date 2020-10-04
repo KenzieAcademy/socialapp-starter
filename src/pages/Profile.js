@@ -7,11 +7,7 @@ import Foot from "../components/foot/Foot";
 import QuestboardService from "../components/servicesPage/ServicePage"
 import { userIsAuthenticated } from "../redux/HOCs";
 import { Layout } from 'antd';
-import ProfileImage from '../components/UpdatePicture/ProfileImage'
-
-
-// comment Content 
-
+import ProfileImage from '../components/UpdatePicture/ProfileImage' 
 
 class Profile extends React.Component {
 
