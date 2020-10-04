@@ -3,13 +3,16 @@ import { Link } from "react-router-dom";
 import Menu from "../components/menu/Menu";
 import DeleteUserButton from "../components/deleteUserButton/DeleteUserButton";
 import UpdateAbout from "../components/updateAbout/UpdateAbout";
+import PhotoUpload from "../components/photoUpload/PhotoUpload"
 import { Card } from "antd";
 
 class ProfileOptions extends React.Component {
   constructor(props) {
     super(props);
-
+    let loginData = JSON.parse(localStorage.getItem("login"));
+    
     this.state = {
+      username: loginData.result.username,
       userData: [],
     };
   }
@@ -26,8 +29,11 @@ class ProfileOptions extends React.Component {
         <Card
           style={{ textAlign: "left", width: "50%", margin: "left" }}
         ></Card>
+
         <h3>Update Picture :</h3>
-        <button className="update-pic">update</button>
+        <PhotoUpload username={this.state.username}/>
+
+        
         <br />
         <br />
 

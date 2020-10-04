@@ -97,7 +97,18 @@ class DataService {
       headers: { Authorization: `Bearer ${loginData.result.token}` },
     });
   }
-}
+  uploadPhoto(username,formdata){
+    let loginData = JSON.parse(localStorage.getItem("login"));
+    return this.client.put(this.url + "users/" + username + "/picture", formdata,{
+      
+      headers: { Authorization: `Bearer ${loginData.result.token}` },
+
+    })
+  
+  
+    }
+  }
+
 
 
 export default DataService;

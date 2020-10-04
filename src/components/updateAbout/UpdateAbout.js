@@ -11,7 +11,7 @@ class UpdateAbout extends React.Component {
     this.state = {
       isSubmitted: false,
       userData: {
-        password: "string",
+        password: "",
         about: "",
         displayName: "",
       },
