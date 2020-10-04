@@ -33,6 +33,7 @@ class Comment extends React.Component {
           <button onClick={this.handleLike}>
             Like <LikeOutlined />
           </button>
+          <button>Like</button>
         </div>
       </div>
     );
