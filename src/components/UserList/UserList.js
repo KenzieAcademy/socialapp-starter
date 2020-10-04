@@ -27,7 +27,7 @@ constructor(props){
             
             <div>
                 <div id="AllProfilesBox">
-                    <h1>{numberOfUsers} Users Online</h1>
+                    <h1>{numberOfUsers} Adventurers!  </h1>
                     {this.state.AllProfiles.map(msg => <IndividualProfile key={msg.id} {...msg}/>)}
                     
                 </div>

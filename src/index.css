@@ -32,11 +32,11 @@ a:hover {
 }
 #AllProfilesBox {
   height: 600px;
-  width: 20%;
+  width: fit-content;
   background-color: #e0d8c0;
-  position: fixed;
-  left: 76%;
-  bottom: 19%;
+  /* position: relative;
+  left: 80%;
+  bottom:30%; */
   overflow: scroll;
 }
 .logo {
@@ -73,10 +73,10 @@ a:hover {
 .ant-menu-vertical .ant-menu-item::after, .ant-menu-vertical-left .ant-menu-item::after, .ant-menu-vertical-right .ant-menu-item::after, .ant-menu-inline .ant-menu-item::after {
   border-right: 3px solid #000;
 }
-
+/* 
 .ant-layout-content {
   width: 1000px;
-}
+} */
 
 
 
@@ -93,11 +93,7 @@ a:hover {
 } */
 
 .ant-layout-header {
-<<<<<<< HEAD
-  /* background-image: url(./media/theQuestBoardHeader.png); */
-=======
   /* background-image: url(./media/theQuestBoardHeader.png);
->>>>>>> 3ca06561b395d10ada86e3700b29a91324d202a0
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -192,5 +188,8 @@ Menu.Item, .ant-menu-item-selected {
   background: #e0d8c0;
 }
 
-
+#feedAndInput {
+  display: flex;
+  flex-wrap: wrap;
+}
 

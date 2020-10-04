@@ -6,31 +6,8 @@ import Dice from '../components/dice/Dice'
 import Foot from "../components/foot/Foot";
 
 
-<<<<<<< HEAD
-class ContactUs extends React.Component {
-  constructor(props){
-  super(props)
-
-  this.state = {
-    pictureUrl:"" 
-  }
-     
-  }
-  
-  // componentDidMount (){ 
-  //   const questboardService = new QuestboardService();
-  //   const loggedInUsername = questboardService.getUsername()
-  //   questboardService.GetPicture(loggedInUsername)
-  //   .then(pictureObject => {
-  //   console.log(pictureObject.request.responseURL)
-  //   console.log(pictureObject)
-  //   this.setState(latestState => ({pictureUrl: latestState.pictureUrl + pictureObject.config.url}))
-  // })
-  // }
-=======
 
 class ContactUs extends React.Component {
->>>>>>> 3ca06561b395d10ada86e3700b29a91324d202a0
 
   render() {
 

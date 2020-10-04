@@ -7,7 +7,7 @@ import Foot from "../components/foot/Foot";
 import QuestboardService from "../components/servicesPage/ServicePage"
 import { userIsAuthenticated } from "../redux/HOCs";
 import { Layout } from 'antd';
-import ProfileImage from '../components/ProfileImage'
+import ProfileImage from '../components/UpdatePicture/ProfileImage'
 
 
 // comment Content 
@@ -17,11 +17,9 @@ class Profile extends React.Component {
 
   constructor(props) {
     super(props)
-
-
-
     this.state = {
-      userName: ""
+      picture: "",
+      pictureURL: ""
     }
 
   }
