@@ -3,6 +3,7 @@ import MenuAuthenticated from "../components/menu/MenuAuthenticated";
 import { userIsAuthenticated } from "../redux/HOCs";
 import MessageFeed2 from "../components/feed2/Feed2"
 import TextInput from "../components/TextInput/TextInput"
+import UserList from "../components/UserList/UserList"
 import "../components/feed2/feed2.css"
 import theQuestBoardHeader from '../media/theQuestBoardHeader.png';
 import { Layout } from 'antd';
@@ -43,10 +44,12 @@ class MessageFeed extends React.Component {
               <MenuAuthenticated isAuthenticated={this.props.isAuthenticated} />
               <div id="feedAndInput">
                 <MessageFeed2 />
+                <UserList className="UserList"/>
                 <TextInput />
-
               </div>
+              
             </div>
+            
           </Content>
           <Foot />
 

@@ -1,5 +1,5 @@
 import React from "react"
-import QuestboardService from "./servicesPage/ServicePage"
+import QuestboardService from "../servicesPage/ServicePage"
 
 const fallbackImage = "https://www.flaticon.com/svg/static/icons/svg/3456/3456704.svg";
 
