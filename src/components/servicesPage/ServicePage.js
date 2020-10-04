@@ -7,10 +7,7 @@ class QuestboardService {
         url = 'https://socialapp-api.herokuapp.com', client = axios.create()) {
         this.url = url;
         this.client = client;
-        // const loginData = JSON.parse(localStorage.getItem("login"));
-        // return this.client.patch(this.url + "/users/" + loginData.result.username, userObject, {
-        //     headers: { Authorization: `Bearer ${loginData.result.token}` }
-        // });
+
     }
 
     getUsername() {
@@ -38,9 +35,12 @@ class QuestboardService {
     Logout() {
         return this.client.get(this.url + "/auth/logout");
     }
-    Users() {
-
-        return this.client.get(this.url + "/users");
+    Users(){
+        return this.client
+            .get(this.url + "/users?limit=1000" )
+            .then(response => {
+                return response.data.users
+        })
     }
     NameUser() {
         return this.client.get(this.url + "/users/{username}");
