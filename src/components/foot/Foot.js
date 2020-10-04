@@ -2,7 +2,7 @@ import React from "react";
 
 
 import { Carousel, } from 'antd';
-import Icon, { createFromIconfontCN, } from '@ant-design/icons';
+import  {createFromIconfontCN, } from '@ant-design/icons';
 
 
 

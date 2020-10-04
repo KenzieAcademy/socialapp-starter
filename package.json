@@ -25,7 +25,6 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
     "build:graph-html": "depcruise --validate .dependency-cruiser.js --exclude '^node_modules' --output-type dot src | dot -T svg > dependencygraph.html"
   },
   "eslintConfig": {
