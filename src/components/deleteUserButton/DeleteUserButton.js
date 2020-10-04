@@ -3,8 +3,8 @@ import DataService from "../../DataService";
 import { Popconfirm } from "antd";
 
 class DeleteUserButton extends React.Component {
-  constructor(props) {
-    super(props)
+  constructor() {
+    super()
   
     
     this.state = {
