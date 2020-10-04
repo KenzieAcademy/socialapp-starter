@@ -10,10 +10,11 @@ class GetUserList extends React.Component {
       users: [{ username: "", displayName: "", about: "" }],
       loading: false,
       userNumber: 0,
-      limit: 10,
+      limit: 2,
       offset: 0,
       prevVert: 0,
       photoOnlyMode: false,
+      limitAmount: 10,
     };
     this.client = new DataService();
   }
@@ -29,7 +30,7 @@ class GetUserList extends React.Component {
     let options = {
       root: null,
       rootMargin: "0px",
-      threshold: 0.1,
+      threshold: 0.01,
     };
 
     this.observer = new IntersectionObserver(
@@ -43,7 +44,7 @@ class GetUserList extends React.Component {
     const y = entities[0].boundingClientRect.y;
     if (this.state.prevVert > y) {
       const lastOffset = this.state.users.length;
-      const curOffset = lastOffset + 10;
+      const curOffset = lastOffset + this.state.offset;
       this.setState({ loading: true });
       this.client.getUserList(this.state.limit, curOffset).then((response) => {
         response.data.users.forEach((userObj) => {
@@ -61,6 +62,7 @@ class GetUserList extends React.Component {
     this.setState((state) => {
       return {
         photoOnlyMode: !state.photoOnlyMode,
+        limit: 30,
       };
     });
   };
