@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "./Menu.css";
 import { withAsyncAction } from "../../redux/HOCs";
 import theQuestBoard from './theQuestBoardIcon.png'
-import Footer from "../footer/Footer"
+
 
 class MenuAuthenticated extends React.Component {
   handleLogout = event => {
@@ -48,7 +48,7 @@ class MenuAuthenticated extends React.Component {
       </Menu> 
      
     </Sider>
-    {/* <Footer /> */}
+   
     </Layout>
     );
   }

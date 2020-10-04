@@ -94,6 +94,14 @@ class QuestboardService {
     Dislike(){
         return this.client.delete(this.url +`/likes/{likeId}`)
     }
+
+    GoogleCallback() {
+        return this.client.get(this.url + "auth/google/callback")
+    }
+
+    GoogleLogin(){
+        return this.client.get(this.url + "auth/google/login")
+    }
 }
 
 export default QuestboardService;

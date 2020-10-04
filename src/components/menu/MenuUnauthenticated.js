@@ -3,7 +3,6 @@ import { Layout, Menu } from 'antd';
 import "./Menu.css";
 import { Link } from "react-router-dom";
 import theQuestBoard from './theQuestBoardIcon.png'
-import Footer from "../footer/Footer"
 class MenuUnauthenticated extends React.Component {
   
   render() {
@@ -24,12 +23,16 @@ class MenuUnauthenticated extends React.Component {
         <Link to="/">Home</Link>
         </Menu.Item>
         <Menu.Item key="2" >
+        <Link to="/">Dice Roller</Link>
+        </Menu.Item>
+        <Menu.Item key="3" >
         <Link to="/ContactUs">Contact Us</Link>
         </Menu.Item>
         
       </Menu>
+      
     </Sider>
-    <Footer />
+    
     </Layout>
     );
   }
