@@ -71,7 +71,7 @@ class GetUserList extends React.Component {
     if (this.state.photoOnlyMode) {
       return (
         <div className="getUserList">
-          <button onClick={this.handlePhotoMode}>BOOOOOM</button>
+          <button onClick={this.handlePhotoMode}> </button>
           <div>
             {this.state.users
               .filter((userObj) => userObj.pictureLocation !== null)
