@@ -43,9 +43,9 @@ class LoginForm extends React.Component {
             onChange={this.handleChange}
           />
           <br/>
-          <Button type="submit" size='large' disabled={loading}>
-            Login
-          </Button>
+          <Button  primary content='Login' type="submit" size='large' disabled={loading}/>
+            
+          
         </form>
         {loading && <Spinner name="circle" color="blue" />}
         {error && <p style={{ color: "red" }}>{error.message}</p>}

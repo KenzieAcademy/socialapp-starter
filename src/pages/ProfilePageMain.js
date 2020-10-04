@@ -1,5 +1,5 @@
 import React from "react";
-
+import '../components/editprofile/EditProfile.css'
 import { userIsAuthenticated } from "../redux/HOCs";
 import Menu from '../components/menu/Menu'
 

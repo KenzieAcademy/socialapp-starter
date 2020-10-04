@@ -1,5 +1,47 @@
+*{box-sizing:border-box ;
+
+}
+.LoginForm{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+  height: 500px;
+  
+}
+
+
 #login-form {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  
   max-width: 20em;
+ 
+  
+;
+  
+  
+}
+
+.Register{
+display: flex;
+margin:;
+justify-content:center;
+align-items:center;
+height: 400px;
+  
+}
+#registration{
+  display: flex;
+  flex-direction: column;
+  
+}
+.registerButton{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+ 
 }
