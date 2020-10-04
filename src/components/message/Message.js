@@ -3,6 +3,7 @@ import DataService from "../../dataService";
 import { Link, Route } from "react-router-dom";
 import profilepic from "../defualtpicture/freeiconlibrary.jpg";
 import "./Message.css";
+import { DatePicker, TimePicker } from "antd";
 class Message extends React.Component {
   constructor(props) {
     super(props);
@@ -68,7 +69,7 @@ class Message extends React.Component {
           </Link>
         </Route>
         {/* <img className="userprofile" alt="user-pic" src={this.state.pic} /> */}
-        {this.props.username} Posted:
+        Posted by: {this.props.username}
         {console.log(this.prop)}
         <br />
         {this.props.text}
@@ -80,6 +81,7 @@ class Message extends React.Component {
           😊{this.props.likes.length}
         </div>{" "}
         {/* <form> */}
+
         <button
           style={{
             background: "transparent",
@@ -91,6 +93,7 @@ class Message extends React.Component {
         >
           👍
         </button>
+
         {/* </form> */}
       </li>
     );
