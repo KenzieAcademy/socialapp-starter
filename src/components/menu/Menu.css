@@ -27,20 +27,20 @@ span {
   justify-content: space-between;
   align-items: center;
   padding: 0 2em;
-  border-radius: 2em;
-  border-color: red;
+  border: solid rgb(83, 6, 6);
+  border-inline: 5px;
   font-family: "Lucida Console", Courier, monospace;
   font-style: inherit;
   font-size: larger;
   font-weight: bold;
 }
 
-#menu-links {
+.menu-links {
   display: flex-box;
   padding-left: 2em;
 }
 
-#menu-links a {
+.menu-links2 {
   padding-right: 0.5em;
   color: rgb(20, 20, 20);
   text-decoration: underline;

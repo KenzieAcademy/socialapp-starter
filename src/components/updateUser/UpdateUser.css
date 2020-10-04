@@ -1,16 +1,16 @@
 #profile {
-    display: inline-block;
-    width: 100%;
+  display: inline-block;
+  width: 100%;
 }
 #left-column {
-    display: inline-block;
-    vertical-align: top;
-    width: 20%;
-    padding: 15px;
+  display: inline-block;
+  vertical-align: top;
+  width: 20%;
+  padding: 15px;
 }
 #right-column {
-    display: inline-block;
-    vertical-align: top;
-    width: 80%;
-    padding: 15px;
+  display: inline-block;
+  vertical-align: top;
+  width: 80%;
+  padding: 15px;
 }
