@@ -1,30 +1,30 @@
-import React from "react";
-import Clock from "../clock/Clock";
+// import React from "react";
+// import Clock from "../clock/Clock";
 
-import PlanetDropdown from "../../components/planetDropdown/PlanetDropdown";
-
-
-class SideBar extends React.Component {
-    render() {
+// import PlanetDropdown from "../../components/planetDropdown/PlanetDropdown";
 
 
-        return (
+// class SideBar extends React.Component {
+//     render() {
 
-        <div className="SideBar">
-            <h2>What Time IS It?</h2>
-            <Clock />
-            <PlanetDropdown />
-        </div>
 
-        )
+//         return (
 
-           
-        
+//         <div className="SideBar">
+//             <h2>What Time IS It?</h2>
+//             <Clock />
+//             <PlanetDropdown />
+//         </div>
 
-    }
+//         )
 
-}
 
-export default SideBar;
+
+
+//     }
+
+// }
+
+// export default SideBar;
 
 
