@@ -1,48 +1,70 @@
 body {
   background-color: white;
-  background-size: cover;
-  background-image: url(https://lh3.googleusercontent.com/proxy/bjB18lW4whN3f-xKwsPE1eWn3yV44Aq2p-UWvDt8XmGoXk8g7Y0voCL24eC38ta1dpH6BuQM6-gwFEFDOITsRnrZQP8Nv9W2OpHaau50_bZJbzuJog);
-  background-size: 600px 550px;
-  image-rendering: inherit;
+  background-image: url(./assets/images/dragon_background.png);
+  /*background-image: url("https://cdn.statically.io/img/www.jakpost.travel/wimages/large/154-1548289_blue-eyes-white-dragon-wallpapers-d-d-young.jpg");*/
+  background-size: 1000px 500px;
   background-repeat: no-repeat, repeat;
   background-position: right bottom;
   background-attachment: fixed;
+  image-rendering: inherit;
   margin: 0.5em;
   padding: 0;
-  font-family: Helvetica, Arial, Sans-Serif;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
   outline-color: red sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: larger;
   font-weight: bold;
-  background-repeat: no-repeat;
-  background-size: 1000px 500px;
-  background-position: center bottom right;
-  background-attachment: fixed;
-  background-image: url("https://cdn.statically.io/img/www.jakpost.travel/wimages/large/154-1548289_blue-eyes-white-dragon-wallpapers-d-d-young.jpg");
 }
 
 code {
-  font-family: " source-code-pro, Menlo, Monaco, Consolas, " Courier New ","
-    monospace;
+  font-family: "source-code-pro";
+}
+
+label {
+  color: darkred;
+  font-size: larger;
+  text-shadow: 1px 1px 1px orangered;
 }
 
 button {
   margin-top: 2rem;
   width: 100%;
   padding: 0.5rem;
-  float: left;
-  border: 5px darkred;
+  border-radius: 10px;
   background: linear-gradient(
     110deg,
     rgb(109, 22, 22) 40%,
     rgba(201, 92, 19, 0.726) 60%
   );
+  border: 0;
+  font-style: inherit;
+  /*text-shadow: 0 1px rgb(255, 2, 2), -1px 0 rgb(255, 2, 2), 2px 0 rgb(177, 36, 36), 0 -2px rgba(141, 17, 17, 0.993);*/
   font-size: larger;
   font-weight: bold;
-  font-family: Helvetica, Arial, Sans-Serif;
-  font-style: inherit;
-  color: rgb(100, 20, 20);
-  text-shadow: 0 1px rgb(255, 2, 2), -1px 0 rgb(255, 2, 2),
-    2px 0 rgb(177, 36, 36), 0 -2px rgba(141, 17, 17, 0.993);
+  color: white;
+}
+
+h1 {
+  font-weight: bolder;
+}
+
+#h1-title {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: orange;
+  font-size: 48px;
+}
+
+h2 {
+  font-weight: bolder;
+  color: darkred;
+  text-shadow: 1px 1px 1px orangered;
+}
+
+a {
+  color: red;
+}
+
+a:hover {
+  color: rgb(255, 134, 64);
 }

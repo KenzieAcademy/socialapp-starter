@@ -1,11 +1,8 @@
 import React, { Component } from "react";
 import "../components/menu/Menu.css";
-
-
-import CommentBox from "../components/Comments/CommentBox";
-//Pages imported below
-import Profile from "../pages/Profile";
-
+import DataServices from '../dataService';
+import MsgNavBar from "../components/msgnavbar/MsgNavBar";
+import Comment from "../components/Comments/Comment";
 import { userIsAuthenticated } from "../redux/HOCs";
 
 import { Layout } from 'antd';
@@ -15,64 +12,78 @@ const { Header, Sider, Content, Footer } = Layout;
 class Messagefeed extends Component {
     constructor(props) {
         super(props)
+        this.client = new DataServices();
         this.state =
         {
+            messages: [],
+            data: {},
+            submitted: false,
             author: '',
             children: ''
         }
-
-
-
     }
+
+
+
+
     //Below here, the(function), will reflect a change to the VALUE inside, or of an element
     //onChange attribute should contain this
-    commentHandler(event) {
-        this.setState({ comment: event.target.value });
+    componentDidMount = () => {
+        this.client.getMessages()
+            .then(data => {
+                const list = data.data.messages
+                this.setState({ ...this.state, messages: list }, () =>
+                    console.log(this.state.messages))
+
+            })
     }
 
-    authorHandler(event) {
-        this.setState({ author: event.target.value });
-    }
 
-
-    handleSubmit = (event) => {
+    submitHandler = (event) => {
         event.preventDefault();
         this.setState({
             submitted: true
         })
     }
-
+    handleChange = (event) => {
+        let comment = event.target.value;
+        console.log(comment)
+        this.setState({ children: comment });
+    }
 
     buttonHandler = (event) => {
-        console.log(event.value)
+        console.log(this.state.messages[0].text)
     }
 
     render() {
-
-
-
         return (
-            <Layout>
-
+            <Layout className>
+                <MsgNavBar isAuthenticated={this.props.isAuthenticated} />
                 <Header>
-                    <div className="">
-                        <h1><span>The Dragon's Den</span></h1>
-                    </div >
+                    Hello
+
+
                 </Header>
 
 
                 <Layout>
 
                     <Content>
-                        <Profile />
+                        <div className="Home">
+                            {this.state.messages.map((msg) => (
+                                <Comment key={msg.id} {...msg} />
+
+                            ))}
+                        </div>
                     </Content>
 
                     <Sider>
                         <form  >
                             <label>Comment Section</label>
-                            <CommentBox />
-                            <textarea row="1" cols="20"></textarea>
-                            <input onClick={this.buttonHandler} id="submitComment" type="button" value="post" ></input>
+
+
+                            <textarea onChange={this.handleChange} row="1" cols="20"></textarea>
+                            <button onClick={this.buttonHandler} id="submitComment" type="button" value="post" >Submit</button>
                         </form>
                     </Sider>
                 </Layout>
@@ -89,6 +100,8 @@ class Messagefeed extends Component {
 
         );
     }
+
 }
+
 
 export default userIsAuthenticated(Messagefeed);

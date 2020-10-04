@@ -1,7 +1,9 @@
 import React from "react";
 import Spinner from "react-spinkit";
-import "./RegistrationForm.css";
 import DataService from "../../dataService";
+import { Link } from "react-router-dom";
+import { withAsyncAction } from "../../redux/HOCs";
+import "./RegistrationForm.css";
 
 class RegistrationForm extends React.Component {
 
@@ -17,10 +19,17 @@ class RegistrationForm extends React.Component {
 
   handleRegistration = e => {
     e.preventDefault();
+    if (this.state.username.length < 3) {
+      return
+    }
     this.client.registerUser(this.state).then(result => {
       //alert(JSON.stringify(result.data))
       alert("Account registration successful")
-    })
+      this.props.login({
+        username: this.state.username,
+        password: this.state.password
+      })
+    }).catch( error => console.log(error))
   };
 
   handleChange = e => {
@@ -32,22 +41,30 @@ class RegistrationForm extends React.Component {
     return (
       <div className="RegistrationForm">
         <form id="registration-form" onSubmit={this.handleRegistration}>
+          <h2>Register a new account</h2>
           <label htmlFor="username">Username</label>
+          <h5>Username must be between 3-20 characters long.</h5>
           <input
             type="text"
             name="username"
+            minLength={3}
+            maxLength="20"
             autoFocus
             required
             onChange={this.handleChange}
           />
           <label htmlFor="password">Password</label>
+          <h5>Password must be between 3-20 characters long.</h5>
           <input
             type="password"
             name="password"
+            minLength={3}
+            maxLength="20"
             required
             onChange={this.handleChange}
           />
           <label htmlFor="displayName">Display Name</label>
+          <h5>This is the name that users will see on your profile.</h5>
           <input
             type="text"
             name="displayName"
@@ -57,6 +74,8 @@ class RegistrationForm extends React.Component {
           <button type="submit" disabled={loading} onClick={this.handleRegistration}>
             Register
           </button>
+          <br />Already registered?<br />
+          <Link to="/">Login to your account here!</Link>
         </form>
         {loading && <Spinner name="circle" color="blue" />}
         {error && <p style={{ color: "red" }}>{error.message}</p>}
@@ -65,4 +84,4 @@ class RegistrationForm extends React.Component {
   }
 }
 
-export default RegistrationForm;
+export default withAsyncAction("auth", "login")(RegistrationForm);

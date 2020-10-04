@@ -11,8 +11,15 @@ class App extends React.Component {
     return (
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/profile/:username" component={Profile} />
+        <Route
+          exact
+          path="/profile/:username"
+          render={(props) => (
+            <Profile {...props} username={props.match.params.username} />
+          )}
+        />
         <Route exact path="/registration" component={Registration} />
+        <Route exact path="/Messagefeed" component={Messagefeed} />
         <Route exact path="*" component={NotFound} />
       </Switch>
     );
