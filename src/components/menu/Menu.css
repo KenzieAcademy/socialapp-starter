@@ -7,30 +7,40 @@ span {
   -webkit-backface-visibility: hidden;
 }
 
-@keyframes fire{
-  0% {background-position:0% -50%;}
-  0% {background-position:100% -50%;}
+@keyframes fire {
+  0% {
+    background-position: 0% -50%;
+  }
+  0% {
+    background-position: 100% -50%;
+  }
 }
 
 .Menu {
-  background: linear-gradient(110deg, rgb(109, 22, 22) 40%, rgba(201, 92, 19, 0.726) 60%);
+  background: linear-gradient(
+    110deg,
+    rgb(109, 22, 22) 40%,
+    rgba(201, 92, 19, 0.726) 60%
+  );
   display: flex;
   display: flex-box;
   justify-content: space-between;
   align-items: center;
   padding: 0 2em;
-  border-radius: 2em;
+  border: solid rgb(83, 6, 6);
+  border-inline: 5px;
+  font-family: "Lucida Console", Courier, monospace;
   font-style: inherit;
   font-size: x-large;
   font-weight: bold;
 }
 
-#menu-links {
+.menu-links {
   display: flex-box;
   padding-left: 2em;
 }
 
-#menu-links a {
+.menu-links2 {
   padding-right: 0.5em;
   color: black;
   text-decoration: none;
@@ -40,4 +50,3 @@ span {
 #menu-links a:hover {
   color: darkred;
 }
-

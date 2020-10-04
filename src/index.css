@@ -28,12 +28,15 @@ label {
 }
 
 button {
-  display: block;
   margin-top: 2rem;
   width: 100%;
   padding: 0.5rem;
   border-radius: 10px;
-  background: linear-gradient(110deg, rgb(109, 22, 22) 40%, rgba(201, 92, 19, 0.726) 60%);
+  background: linear-gradient(
+    110deg,
+    rgb(109, 22, 22) 40%,
+    rgba(201, 92, 19, 0.726) 60%
+  );
   border: 0;
   font-style: inherit;
   /*text-shadow: 0 1px rgb(255, 2, 2), -1px 0 rgb(255, 2, 2), 2px 0 rgb(177, 36, 36), 0 -2px rgba(141, 17, 17, 0.993);*/
