@@ -11,8 +11,9 @@ class FileUploader extends React.Component {
         this.Questboard = new QuestboardService();
         const username = this.Questboard.getUsername();
 
+        this.defaultProfileImage = `https://socialapp-api.herokuapp.com/users/${username}/picture`;
         this.state = {
-            imageURL: `https://socialapp-api.herokuapp.com/users/${username}/picture`,
+            imageURL: this.defaultProfileImage,
             formData: null,
         }
     }
@@ -30,7 +31,7 @@ class FileUploader extends React.Component {
         this.Questboard.SetPicture(this.state.formData)
             .then(response => {
                 const timestamp = Date.now()
-                this.setState({ imageURL: `${this.state.imageURL}?t=${timestamp}` })
+                this.setState({ imageURL: `${this.defaultProfileImage}?t=${timestamp}` })
 
                 notification.open({
                     message: "Upload successful!",
