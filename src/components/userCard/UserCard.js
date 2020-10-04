@@ -1,7 +1,5 @@
 import React from "react";
-import noDisplayPhoto from "../../assests/nodisplayphoto.png";
 import DataService from "../../DataService";
-import { displayName } from "react-spinkit";
 import { Card } from "antd";
 import GetUserPhoto from "../getUserPhoto/GetUserPhoto";
 

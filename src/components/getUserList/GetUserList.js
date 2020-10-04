@@ -64,6 +64,7 @@ class GetUserList extends React.Component {
         photoOnlyMode: !state.photoOnlyMode,
         limit: 30,
         offset: 0,
+        users: [],
       };
     });
     this.client
@@ -74,19 +75,6 @@ class GetUserList extends React.Component {
       });
   };
 
-  componentWillUnmount() {
-    this.setState({
-      users: [],
-      loading: false,
-      userNumber: 0,
-      limit: 10,
-      offset: 0,
-      prevVert: 0,
-      photoOnlyMode: false,
-      limitAmount: 10,
-    });
-  }
-
   render() {
     if (this.state.photoOnlyMode) {
       return (
@@ -96,7 +84,7 @@ class GetUserList extends React.Component {
             {this.state.users
               .filter((userObj) => userObj.pictureLocation !== null)
               .map((userObj) => (
-                <UserCard {...userObj} loading={this.state.loading} />
+                <UserCard {...userObj} />
               ))}
           </div>
           <div ref={(loadingRef) => (this.loadingRef = loadingRef)}>
@@ -111,7 +99,7 @@ class GetUserList extends React.Component {
         <button onClick={this.handlePhotoMode}>BOOOOOM</button>
         <div>
           {this.state.users.map((userObj) => (
-            <UserCard {...userObj} loading={this.state.loading} />
+            <UserCard {...userObj} />
           ))}
         </div>
         <div ref={(loadingRef) => (this.loadingRef = loadingRef)}>

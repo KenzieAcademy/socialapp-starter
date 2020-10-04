@@ -18,6 +18,7 @@ class GetUserPhoto extends React.Component {
       this.setState({ imgSrc: result.config.url, hasImage: true });
     });
   }
+
   render() {
     if (this.state.hasImage) {
       return (
