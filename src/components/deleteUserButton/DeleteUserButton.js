@@ -5,41 +5,45 @@ import { Popconfirm } from "antd";
 class DeleteUserButton extends React.Component {
   constructor(props) {
     super(props)
-    let loginData = JSON.parse(localStorage.getItem("login"));
+  
     
     this.state = {
-      username: loginData.result.username,
+      userData: { username: "" },
       isSubmitted: false,
-    }
+    };
+
     this.client = new DataService()
 
   }
-handleLoginRemoval = (e) => {
-  window.localStorage.removeItem('login')
-
-}
 
   handleDelete = (e) => {
     e.preventDefault();
-    this.client.deleteUser(this.state.username).then((result) => {
-      console.log(result);
-      this.setState ({isSubmitted: true})
-    })
-    
+    this.client.deleteUser(this.state).then((result) => {
+      this.props.handleDeleteUserUpdate();
 
-    window.location.reload()
+      this.setState({ isSubmitted: true });
+      let emptyTokenObj = {
+        login: { result: null, loading: true, error: null },
+      };
+      localStorage.setItem("login", JSON.stringify(emptyTokenObj));
+    });
   };
 
-  // handleChange = (e) => {
-  //   this.setState({ [e.target.name]: e.target.value });
-  // }
+  handleHome = (e) => {
+    window.location.pathname = "/";
+  };
+
+  handleChange = (e) => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
   render() {
     if (this.state.isSubmitted) {
       return (
-        <button onClick={this.handleLoginRemoval}>
-          Login Page
-        </button>
-      )
+        <div>
+          Your User Profile was Deleted please return to{" "}
+          <button onClick={this.handleHome}>Login</button>
+        </div>
+      );
     }
     return (
       <Popconfirm
