@@ -11,7 +11,6 @@ import Registration from "./pages/Registration"
 import UpdateProfile from "./pages/UpdateProfile"
 import DiceRoller from "./pages/DiceRoller";
 
-
 class App extends React.Component {
   render() {
     return (

@@ -2,7 +2,7 @@ import React from "react";
 
 import InfiniteScroll from 'react-infinite-scroll-component';
 
-class InfiniteScroll extends Component {
+class ScrollBar extends React.Component {
 
   constructor() {
     super();
@@ -15,6 +15,8 @@ class InfiniteScroll extends Component {
   }
 
   render() {
+    return (
+
     <InfiniteScroll
         dataLength={this.state.items.length}
         next={this.fetchMoreData}
@@ -35,11 +37,11 @@ class InfiniteScroll extends Component {
             <h3 style={{ textAlign: 'center' }}>&#8593; Release to refresh</h3>
           }
         >
-          {items}
+          {/* {items} */}
           
 
       </InfiniteScroll>
-  };
+    )};
 }
 
-export default InfiniteScroll;
+export default ScrollBar;
