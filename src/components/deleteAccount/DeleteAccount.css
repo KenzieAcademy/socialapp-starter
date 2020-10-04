@@ -4,3 +4,19 @@
     max-width: 20em;
     background-image: url(https://www.clipartkey.com/mpngs/m/41-419074_transparent-realistic-fire-flames-clipart-real-fire-transparent.png);
 }
+.button-link {
+    color: red;
+    background: none;
+    width: auto;
+    height: auto;
+    border: none;
+    margin: unset;
+    padding: 0px;
+    border-radius: 0px;
+    font-size: unset;
+    font-weight: unset;
+    outline-style: none;
+}
+.button-link:hover {
+    color: rgb(255, 134, 64);
+}
