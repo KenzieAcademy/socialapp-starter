@@ -1,0 +1,88 @@
+.dice {
+    width: 100px;
+    height: 100px;
+}
+
+  .container {
+    width: 50%;
+    margin: 2em auto;
+  }
+    .header {
+      text-align: center;
+      color: #000000;
+    }
+    .results-container {
+      text-align: center;
+    }
+    .result-box {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+        text-align: center;
+        line-height: 100px;
+        font-size: 50px;
+        border-radius: 5px;
+        border: 2px solid black;
+        box-shadow: #000000;
+        color: #000000;
+        background: #ffffff;
+    }
+    .dice-container {
+      text-align: center;
+      margin: 20px 0;
+    }
+    .die {
+        color: #ffffff;
+        text-shadow: text-shadow;
+        font-size: 1.5em;
+        border-radius: 5px;
+        width: 100px;
+        height: 100px;
+        margin: 20px;
+        padding: 0px;
+        border: 2px solid #000000;
+        background:#e0d8c0;
+        box-shadow: black;
+    }
+    .die:hover {
+          box-shadow: black;
+          background-image: radial-gradient( #e0d8c0 39%, #47170e 96%);
+        }
+    
+    .multiplier-container {
+      text-align: center;
+    }
+    input.multiplier {
+        width: 100px;
+        text-align: center;
+        font-size: 1.5em;
+        padding: 0.5em 0;
+        border-radius: 5px;
+        box-shadow: black;
+        border: 2px solid black;
+        background: #ffffff;
+        transition-duration: 4s;
+        color: #000000;
+    }
+.dice {    
+    -webkit-transition-property: width height background-color font-size left top -webkit-transform color;
+    -webkit-transition-duration: 1s;
+    -webkit-transition-timing-function: ease-in-out;
+    width: 100px;
+    height: 100px;
+    transition-duration: 4s;
+    transition-property: width height background-color font-size left top transform color;
+    transition-timing-function: ease-in-out;
+}
+.dice:hover{
+    transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -webkit-transition-property: width height background-color font-size left top -webkit-transform transform color;
+    -webkit-transition-duration: 1s;
+    -webkit-transition-timing-function: ease-in-out;
+    width: 100px;
+    height: 100px;
+    transition-duration: 4s;
+    transition-property: width height background-color font-size left top transform -webkit-transform color;
+    transition-timing-function: ease-in-out;
+}

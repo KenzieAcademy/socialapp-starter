@@ -1,0 +1,183 @@
+body {
+  background-color: #e0d8c0;
+  background-image: url(./media/33591.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  color: #47170e;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+a {
+  color: #47170e;
+}
+
+a:hover {
+  color: #fff;
+}
+
+#components-layout-demo-fixed-sider .logo {
+  height: 32px;
+  margin: 16px;
+}
+
+.logo {
+  background-color: #e0d8c0;
+  font-size: 25px;
+}
+
+.site-layout-background {
+  background-color: #e0d8c0;
+  border: #47170e solid 5px;
+}
+
+.site-layout {
+  background-color: #e0d8c0;
+}
+
+.avatar-uploader > .ant-upload {
+  width: 128px;
+  height: 128px;
+}
+
+.sider {
+  background-color: #e0d8c0;
+  border: #47170e solid 0px;
+  top: 0px;
+}
+
+
+.ant-menu-item-selected a, .ant-menu-item-selected a:hover {
+  color: #e0d8c0;
+
+}
+
+.ant-menu-vertical .ant-menu-item::after, .ant-menu-vertical-left .ant-menu-item::after, .ant-menu-vertical-right .ant-menu-item::after, .ant-menu-inline .ant-menu-item::after {
+  border-right: 3px solid #000;
+}
+
+.ant-layout-content {
+  width: 1000px;
+}
+
+
+
+.ant-layout {
+  background-color: #11ffee00;
+  margin-top: -6px;
+}
+
+/* .ant-carousel {
+  width: 100%;
+  position: absolute;
+  height:9px;
+  bottom: 0px;
+} */
+
+.ant-layout-header {
+  background-image: url(./media/theQuestBoardHeader.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: local;
+  width: 100%;
+  height:200px;
+  margin: auto;
+  border-radius: 3px;
+  border: 1px solid #47170e;
+}
+
+.subHeader {
+  width: 640px;
+  margin: auto;
+  height: min-content;
+  position: relative;
+  top: 20px;
+  background-color: #e0d8c0;
+  border: 5px solid #47170e;
+  text-align: center;
+  
+}
+
+.ant-menu {
+  background-color: #e0d8c0;
+}
+
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+  background-color: #47170e;
+}
+
+Link.ant-menu-item-selected a, .ant-menu-item-active a:hover {
+  color: #fff;
+}
+
+Menu.Item, .ant-menu-item-selected {
+  color: #000;
+}
+
+.ant-menu.ant-menu-light.ant-menu-root.ant-menu-inline {
+  width:200px;
+  max-width: 600px;
+}
+
+
+
+
+.card-container {
+  background-color: #231e39;
+  border-radius: 5px;
+  box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.75);
+  color: #b3b8cd;
+  position: relative;
+  max-width: 100%;
+  text-align: center;
+  border: solid 1px black;
+}
+.card-container .Dev {
+    border-radius: 35%;
+    padding: 5px;
+    width: 180px;
+}
+.skills {
+    background-color: greenyellow;
+    text-align: center;
+    padding: 15px;
+    margin-top: 15px;
+    line-height: 13px;
+}
+.skills ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    
+}
+.skills ul li {
+    border: 2px solid #2D2747;
+    border-radius: 2px;
+    display: inline-block;
+    font-size: 15px;
+    margin: 0 7px  0 7px;
+    padding: 7px;
+    
+}
+#components-layout-demo-fixed-sider .logo {
+  height: 32px;
+  background: red;
+  margin: 16px;
+}
+.site-layout .site-layout-background {
+  background: #e0d8c0;
+}
+
+
+
