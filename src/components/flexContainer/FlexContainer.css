@@ -8,3 +8,7 @@
   text-align: justify;
   margin-right: 10px;
 }
+
+.FlexContainer {
+  width: 75% !important;
+}

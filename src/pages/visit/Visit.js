@@ -1,9 +1,9 @@
 import React from 'react';
-import { Grid, Image } from 'semantic-ui-react'
+import { Grid } from 'semantic-ui-react'
 import { userIsAuthenticated } from "../../redux/HOCs";
 import Menu from "../../components/menu/Menu";
 import FlexContainer from "../../components/flexContainer/FlexContainer";
-import Scroll from "../../components/scroll/Scroll";
+// import Scroll from "../../components/scroll/Scroll";
 import './Visit.css';
 // import FlexContainer from "../../components/flexContainer/FlexContainer";
 

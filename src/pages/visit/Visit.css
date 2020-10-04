@@ -6,12 +6,12 @@
 
 html {
   background: url("../../components/assets/images/backgrounds/Milky_Way.jpg")
-    no-repeat center center fixed;
+    no-repeat center fixed;
 }
 
 .Visit {
   background-image: url("../../components/assets/images/backgrounds/Milky_Way.jpg");
-  height: 200vh;
+  height: 2000vh;
   width: 100vw;
   background-repeat: no-repeat;
   background-size: cover;

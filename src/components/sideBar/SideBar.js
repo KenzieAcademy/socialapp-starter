@@ -2,6 +2,7 @@ import React from "react";
 import Clock from "../clock/Clock";
 
 
+
 class SideBar extends React.Component {
     render() {
 
@@ -10,6 +11,7 @@ class SideBar extends React.Component {
             <div className="SideBar">
                 What Time IS It?
                 <Clock />
+
             </div>
         );
     }
