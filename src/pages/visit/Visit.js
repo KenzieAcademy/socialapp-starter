@@ -3,7 +3,7 @@ import { Grid} from 'semantic-ui-react'
 import { userIsAuthenticated } from "../../redux/HOCs";
 import Menu from "../../components/menu/Menu";
 import FootNavBar from "../../components/footNavBar/FootNavBar"
-import FlexContainer from "../../components/flexContainer/FlexContainer";
+// import FlexContainer from "../../components/flexContainer/FlexContainer";
 import './Visit.css';
 
 
@@ -16,7 +16,7 @@ class Visit extends React.Component {
                 <div className="Visit">
                     <Menu isAuthenticated={this.props.isAuthenticated} />
 
-                    <CommentForm />
+                    {/* <CommentForm /> */}
                     </div>
                 <div className="Visit">
                     <Menu isAuthenticated={this.props.isAuthenticated} />
@@ -24,7 +24,7 @@ class Visit extends React.Component {
                     <br />
                     <Grid.Row className="VisitHeader">
                         <h1>Visit the Planets</h1>
-                        <FlexContainer />
+                        {/* <FlexContainer /> */}
                         <FootNavBar isAuthenticated={this.props.isAuthenticated} />
 
                     </Grid.Row>

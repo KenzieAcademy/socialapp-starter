@@ -4,13 +4,12 @@ import { store } from "../src/redux"
 class socialAppService {
   constructor(
     url = "https://socialapp-api.herokuapp.com",
-    client = axios.create()
-  ) {
+    client =axios.create()
+  ) {}
 
   registerUser(userData) {
     return this.client.post(this.url + "/users", userData);
   }
-
 
   getUsers() {
     return this.client.get(this.url + "/users");
