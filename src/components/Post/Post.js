@@ -6,12 +6,12 @@ function Post(props) {
         <div className="comment">
             <div>
                 <span>
-                    {this.state.post.author} posted at {props.createdAt}
+                    {props.author} posted at {props.date}
 
 
                 </span>
-                {this.state.children}
-                <span>{props.likes.length}</span>
+                {props.children}
+                <span>{props.likes}</span>
             </div>
         </div>
     )

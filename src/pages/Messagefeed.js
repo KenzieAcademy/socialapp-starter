@@ -3,12 +3,12 @@ import "../components/menu/Menu.css";
 import DataServices from '../dataService';
 import MsgNavBar from "../components/msgnavbar/MsgNavBar";
 import Comment from "../components/Comments/Comment";
+import Post from "../components/Post/Post"
 //import Post from "../components/Post/Post";
 
 import { userIsAuthenticated } from "../redux/HOCs";
 
 import { Layout } from 'antd';
-
 const { Header, Sider, Content, Footer } = Layout;
 
 class Messagefeed extends Component {
@@ -21,7 +21,8 @@ class Messagefeed extends Component {
             data: {},
             submitted: false,
             author: '',
-            children: ''
+            children: '',
+            date: ''
 
 
         }
@@ -46,7 +47,8 @@ class Messagefeed extends Component {
     submitHandler = (event) => {
         event.preventDefault();
         this.setState({
-            submitted: true
+            submitted: true,
+            date: new Date()
         }, /*() => {
             if (this.state.submitted) {
                 return this.state.messages.shift(...this.state.author)
@@ -68,7 +70,8 @@ class Messagefeed extends Component {
 
     buttonHandler = (event) => {
         //console.log(this.state.messages[0].text)
-        console.log(this.state.author)
+
+        console.log(this.state.children)
     }
 
     render() {
@@ -86,6 +89,8 @@ class Messagefeed extends Component {
 
                     <Content>
                         <div className="Home">
+                            <Post author={this.state.author} createdAt={this.state.date} />
+
                             {this.state.messages.map((msg) => (
                                 <Comment key={msg.id} {...msg} />
 
