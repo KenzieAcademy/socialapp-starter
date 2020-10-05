@@ -17,6 +17,7 @@ class ProfileOptions extends React.Component {
       isDeleted: false,
       username: loginData.result.username,
       loading: false,
+
     };
   }
 
