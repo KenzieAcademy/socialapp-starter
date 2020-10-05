@@ -22,7 +22,7 @@ class DeletePage extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault();
     console.log(this.state.username);
-    this.client.deleteUser(this.state.username).then((result) => {
+    this.client.deleteUser(this.state.username).then(() => {
       console.log("USER DELETED");
     });
   };

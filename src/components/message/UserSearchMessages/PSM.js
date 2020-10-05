@@ -1,36 +1,36 @@
 import React from "react";
-import DataService from "../dataService";
-import { userIsAuthenticated } from "../redux/HOCs";
-import "./MessageFeed.css";
+import DataService from "../../../dataService";
+import { userIsAuthenticated } from "../../../redux/HOCs";
+// import './MessageFeed.css'
 
 // import { message, Result } from "antd";
-import Message from "../components/message/Message";
-import CreateMessage from "./CreateMessage";
+import Message from "../../../components/message/Message";
+import CreateMessage from "../../../pages/CreateMessage";
+import { message } from "antd";
 
-class MessageFeed extends React.Component {
+class PSM extends React.Component {
   constructor(props) {
     super(props);
     this.client = new DataService();
   }
 
-  state = { messages: [] };
+  state = { messages: [], usersmessages: [] };
 
   componentDidMount() {
-    if (this.props.limit === 5) {
-      this.client.getMessages().then((response) =>
-        this.setState({
-          messages: response.data.messages,
-        })
-      );
-    } else
-      this.interval = setInterval(() => {
-        this.client.getMessages().then((response) =>
-          this.setState({
-            messages: response.data.messages,
-          })
-        );
-      }, 2500);
+    this.client.getMessages().then((response) =>
+      this.setState({
+        messages: response.data.messages,
+      })
+    );
   }
+
+  //   shouldComponentUpdate(){
+  //     let result = messages.filter(() => this.messages.user === this.message.usersmessages)
+  //
+  // this.setState({
+
+  // })
+  //}
 
   // this.client
   // .getMessages()
@@ -54,9 +54,9 @@ class MessageFeed extends React.Component {
     return (
       <div className="messagefeed">
         {console.log(this.props)}
-        <CreateMessage />
+        {/* <CreateMessage /> */}
         <ul>
-          {this.state.messages.map((messageObject) => (
+          {this.state.usersmessages.map((messageObject) => (
             <Message key={messageObject.id} {...messageObject} />
           ))}
           {/* {console.log(this.props)} */}
@@ -66,4 +66,4 @@ class MessageFeed extends React.Component {
   }
 }
 
-export default userIsAuthenticated(MessageFeed);
+export default userIsAuthenticated(PSM);
