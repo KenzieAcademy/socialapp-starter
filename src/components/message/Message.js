@@ -1,6 +1,6 @@
 import React from "react";
 import DataService from "../../DataService";
-import { Avatar } from "antd";
+import { Avatar, Button } from "antd";
 import "./Message.css";
 
 class Message extends React.Component {
@@ -46,12 +46,12 @@ class Message extends React.Component {
     let userName = JSON.parse(localStorage.getItem("login")).result;
     if (this.props.username === userName.username) {
       deleteMessageButton = (
-        <button
+        <Button
           className="delete-button"
           onClick={() => this.props.handleDeleteMesssage(this.props.id)}
         >
           Delete Message
-        </button>
+        </Button>
       );
     }
     return (
