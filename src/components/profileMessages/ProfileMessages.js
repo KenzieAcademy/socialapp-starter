@@ -67,7 +67,6 @@ class ProfileMessages extends React.Component {
           {this.state.messages.map(msg =>{
           if (msg.username === this.state.username)
           return <MessageProfile key={msg.id} {...msg} />;
-          
           }
           )
           }

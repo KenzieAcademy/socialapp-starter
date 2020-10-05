@@ -1,7 +1,7 @@
-import React from "./node_modules/react";
-import Spinner from "./node_modules/react-spinkit";
-import { Button, Input } from "./node_modules/antd"
-import { UserOutlined, LockOutlined } from './node_modules/@ant-design/icons';
+import React from "react";
+import Spinner from "react-spinkit";
+import { Button, Input } from "antd"
+import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import { withAsyncAction } from "../../redux/HOCs";
 import "./RegistrationForm.css";
 import DataService from '../../dataService';
