@@ -1,6 +1,8 @@
 import React from "react";
 import Menu from "../components/menu/Menu";
 import UpdateUser from "../components/updateUser/UpdateUser";
+import AboutUser from "../components/About/About";
+import UpdateAbout from "../components/updateAbout/updateAbout";
 import { userIsAuthenticated } from "../redux/HOCs";
 import UploadPicture from "../components/getUserPicture/GetUserPicture";
 import { Layout } from "antd";
@@ -17,7 +19,9 @@ class Profile extends React.Component {
             <UploadPicture />
           </Sider>
           <Layout>
-            <Content style={{ height: "100vh" }}>
+            <Content style={{ height: "500vh" }}>
+              <AboutUser />
+              <UpdateAbout />
               <UpdateUser />
             </Content>
             <Footer>Footer</Footer>
