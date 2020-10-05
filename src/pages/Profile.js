@@ -2,7 +2,7 @@
 import React from "react";
 import Menu from "../components/menu/Menu";
 import { userIsAuthenticated } from "../redux/HOCs";
-import UserList from "../components/userList/UserList"
+
 import Avatar from "../components/avatar/Avatar"
 import GetUsers from "../components/getUsers/GetUsers";
 import DeleteUser from "../components/deleteUser/DeleteUser";
@@ -19,27 +19,32 @@ class Profile extends React.Component {
     return (
       <div className="Profile">
         <Menu isAuthenticated={this.props.isAuthenticated} />
-
-        {/* <UserList /> */}
+        <br/>
+        <br/>
         <div className="profile-box-left">
-          <div className="profile-content">
-
-            <Avatar isAuthenticated={this.props.isAuthenticated} />
-
-            {/* <h2>Profile</h2> */}
-
-            {/* <GetMessages /> */}
-            {/* <h2>Profile</h2> */}
-            <GetProfile isAuthenticated={this.props.isAuthenticated} />
-            <UpdateUser isAuthenticated={this.props.isAuthenticated} />
+          {/* <div className="profile-content"> */}
+          <div className="card">
+            <div className="cardAvatar">
+              <Avatar isAuthenticated={this.props.isAuthenticated} />
+            </div>
           </div>
+          <div className="card">
+            <GetProfile isAuthenticated={this.props.isAuthenticated} />
+          </div>
+          <div className="card">
+            <UpdateUser isAuthenticated={this.props.isAuthenticated} />
+            <br />
+            <DeleteUser isAuthenticated={this.props.isAuthenticated} />
+          </div>
+          {/* </div> */}
           <br />
+          
         </div>
         <div className="profile-box-right">
           <GetUsers isAuthenticated={this.props.isAuthenticated} />
         </div>
         <br />
-        <DeleteUser isAuthenticated={this.props.isAuthenticated} />
+       
         <br />
         <ProfileMessages isAuthenticated={this.props.isAuthenticated} />
       </div>

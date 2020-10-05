@@ -60,7 +60,7 @@ class DataService {
 
     getRecentMessages() {
         return this.client
-            .get(this.url + "/messages?limit=20")
+            .get(this.url + "/messages")
             .then(response => {
                 return response.data.messages
             })

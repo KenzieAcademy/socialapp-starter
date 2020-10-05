@@ -3,7 +3,8 @@
     align-items: center;
     justify-content: center;
     float: left;
-    border: 2px solid black;
+    border: #d3d3d3 3px solid;
+    border-radius: 5px;
     margin: 2%;
     width: 60%;
     height: 350px;
@@ -12,7 +13,8 @@
 
 .profile-box-right {
     float: right;
-    border: 2px solid red;
+    border: #d3d3d3 3px solid;
+    border-radius: 5px;
     /* background-color: black; */
     margin: 2%;
     width: 28%;
@@ -21,8 +23,15 @@
     overflow-x: hidden;
     }
 
-    .profile-content {
-        display: flex;
-         align-items: center;
-        justify-content: center;
+.card {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-basis: 0;
+    }
+
+.cardAvatar {
+    display: flex;
+    justify-content: center;
+    padding-left: 80px;
     }

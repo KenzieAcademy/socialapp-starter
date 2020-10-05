@@ -1,16 +1,17 @@
 .Menu {
   background-color:slateblue;
   display: flex;
- 
-  justify-content: space-between;
+    justify-content: space-between;
   align-items: center;
   padding: 0 1em;
   border-radius: 1em;
   font-family: cursive;
-  font-size: calc(10px + 2vmin)
-  
-}
+  font-size: calc(10px + 2vmin);
+  }
 
+h1 {
+  color: rgb(156, 231, 206)
+}
 
 #menu-links {
   display: flex;
@@ -19,7 +20,7 @@
 
 #menu-links a {
   padding-right: 0.5em;
-  color: fuchsia;
+  color:  rgb(156, 231, 206);
   text-decoration: underline;
   cursor: pointer;
 }

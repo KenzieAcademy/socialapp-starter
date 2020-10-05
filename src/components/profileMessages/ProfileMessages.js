@@ -59,33 +59,50 @@ class ProfileMessages extends React.Component {
       )
     }
 
-    // if (msg.username === this.state.username) {
+
     return (
       <div className="MessageFeed">
         {/* <h2>Message Feed</h2> */}
         <ul>
-          {this.state.messages.map(msg => <MessageProfile key={msg.id} {...msg} />)
-
+          {this.state.messages.map(msg =>{
+          if (msg.username === this.state.username)
+          return <MessageProfile key={msg.id} {...msg} />;
+          
           }
-            console.log(msg)
+          )
+          }
             {/* <Message {...this.state.messages[0]} /> */}
           {/* <li>{this.state.messages[0].text}</li> */}
         </ul>
       </div>
     )
-    // }
+            // if (msg.username === this.state.username) {
+            // return (
+            //   <div className="MessageFeed">
+            //     {/* <h2>Message Feed</h2> */}
+            //     <ul>
+            //       {this.state.messages.map(msg => <MessageProfile key={msg.id} {...msg} />)
 
-    // const { loading, error } = this.props;
-    // return (
-    //   <div className="GetMessages">
-    //       <button onClick={this.handleGetMessages}>Messages</button>
-    //       <ul>
-    //        {this.state.data.map(d => <li key={d.messages}>{d.text}</li>)}
-    //        </ul>
+            //       }
+            //         console.log(msg)
+            //         {/* <Message {...this.state.messages[0]} /> */}
+            //       {/* <li>{this.state.messages[0].text}</li> */}
+            //     </ul>
+            //   </div>
+            // )
+            // }
 
-    //      </div>
-    // );
-  }
+            // const { loading, error } = this.props;
+            // return (
+            //   <div className="GetMessages">
+            //       <button onClick={this.handleGetMessages}>Messages</button>
+            //       <ul>
+            //        {this.state.data.map(d => <li key={d.messages}>{d.text}</li>)}
+            //        </ul>
+
+            //      </div>
+            // );
+          }
 }
 
 export default userIsAuthenticated(ProfileMessages);

@@ -2,6 +2,7 @@ import React from "react";
 import { userIsAuthenticated } from "../../redux/HOCs";
 import DataService from "../../dataService";
 import "./PostMessage.css"
+import GetMessages from "../getMessages/GetMessages";
 
 
 
@@ -32,7 +33,7 @@ class PostMessage extends React.Component {
                 })
             });
         this.setState({ text: "" })
-       
+
     }
 
 
@@ -40,37 +41,7 @@ class PostMessage extends React.Component {
         this.setState({ [event.target.name]: event.target.value })
     }
 
-
-    // refreshPage() {
-    //     return window.location.reload()
-    // }
-    // }
-
-    // componentDidMount() {
-    //     this.refreshPage()
-    // }
-
-    // reloadPage() {
-    //     // The last "domLoading" Time //
-    //     const currentDocumentTimestamp =
-    //         new Date(performance.timing.domLoading).getTime();
-    //     // Current Time //
-    //     const now = Date.now();
-    //     // Ten Seconds //
-    //     const tenSec = 10 * 1000;
-    //     // Plus Ten Seconds //
-    //     const plusTenSec = currentDocumentTimestamp + tenSec;
-    //     if (now > plusTenSec) {
-    //         window.location.reload();
-    //     } else { }
-    // }
-
-
-
-
-
-
-
+       
     render() {
 
         return (

@@ -15,7 +15,10 @@ class Home extends React.Component {
         {/* <h2>Your One Stop Shop For All your traveling Needs</h2> */}
 
         <LoginForm />
-        <Link id="registration" to='/registration'>New user? Register Here</Link>
+        <br/>
+        <div className="regLink">
+          <Link id="registration" to='/registration'>New user? Register Here</Link>
+        </div>
       </div>
     );
   }

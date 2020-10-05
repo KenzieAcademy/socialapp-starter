@@ -1,9 +1,9 @@
-#registration {
+#returnLogin {
     align-items: center;
     font-size: larger;
 }
 
-.regLink {
+.moveLoginLink {
     display: flex;
     justify-content: center;
 }

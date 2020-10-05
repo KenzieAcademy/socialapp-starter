@@ -15,10 +15,12 @@ class Message extends React.Component {
             token: loginData.result.token,
             username: loginData.result.username,
             likeCount: this.props.likes.length,
-            data: []
+            data: [],
+            messages: []
         }
     }
 
+   
     handleDeleteMessage = event => {
         event.preventDefault()
 
@@ -29,9 +31,10 @@ class Message extends React.Component {
             id: this.props.id,
             token: this.state.token
         })
-        // window.location.reload()
+        
     }
 
+     
     handleLike = () => {
         const username = this.state.username
         if (this.props.likes.some(like => like.username === username)) {
@@ -49,7 +52,7 @@ class Message extends React.Component {
                 )
         }
     }
-    
+
     // this.client.getRecentMessages()
 
 
