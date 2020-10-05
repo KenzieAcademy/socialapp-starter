@@ -4,12 +4,8 @@ import { Link } from "react-router-dom";
 import Clock from "../clock/Clock";
 import UploadImage from "../addPhoto/AddPhoto";
 import EditProfile from "../editProfile/EditProfile";
-import SocialAppService from "../../socialAppService";
+import SocialAppService from "../../SocialAppService";
 import "./SideBar.css";
-import socialAppService from '../../socialAppService';
-
-
-
 
 class SideBar extends React.Component {
     constructor(props) {
