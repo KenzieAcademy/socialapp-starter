@@ -7,9 +7,14 @@ class UpdateBio extends React.Component {
         about: ""
     }
 
+    pageRefresh() {
+        window.location.reload()
+    }
+
     handleSubmit = () => {
         new DataService().updateUser(this.state).then(response => {
             console.log(response)
+            this.pageRefresh()
         })
     }
 
@@ -28,8 +33,7 @@ class UpdateBio extends React.Component {
                             name="about"
                             value={this.state.about}
                             rows="7"
-                            maxLength="255" 
-                            placeholder="No information given."
+                            maxLength={255}
                             onChange={this.handleChange}
                         >
                         </textarea>
