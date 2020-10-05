@@ -1,5 +1,6 @@
 import React from "react";
 import DataService from "../../DataService";
+import "./CreateMessage.css";
 
 class CreateMessage extends React.Component {
   constructor(props) {
@@ -32,7 +33,7 @@ class CreateMessage extends React.Component {
   render() {
     if (!this.props.isSubmitted) {
       return (
-        <form id="CreateMessage-button" onSubmit={this.handleCreateMessage}>
+        <form id="CreateMessage-form" onSubmit={this.handleCreateMessage}>
           <label htmlFor="text">Your Lucky Message</label>
           <textarea
             type="text"
@@ -40,14 +41,14 @@ class CreateMessage extends React.Component {
             value={this.state.messageDataOut.text}
             onChange={this.handleChange}
           />
-          <button type="sumbit" value="true">
+          <button className="CreateMessage-button" type="sumbit" value="true">
             Send Your Luck to the World
           </button>
         </form>
       );
     } else {
       return (
-        <div>
+        <div className="CreateMessage-success">
           Looks like shared your luck
           <button onClick={this.handleClear}>Create Another Message</button>
         </div>

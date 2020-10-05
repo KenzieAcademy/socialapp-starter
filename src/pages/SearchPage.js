@@ -4,6 +4,7 @@ import { userIsAuthenticated } from "../redux/HOCs";
 import Menu from "../components/menu/Menu";
 import GetUserList from "../components/getUserList/GetUserList";
 import SearchInput from "../components/searchInput/SearchInput";
+import "./PageStyles.css";
 
 class SearchPage extends React.Component {
   constructor(props) {
@@ -15,7 +16,6 @@ class SearchPage extends React.Component {
     return (
       <div className="SearchPage">
         <Menu isAuthenticated={this.props.isAuthenticated} />
-        <SearchInput />
         <ul>
           <GetUserList />
           <li>Item 2</li>

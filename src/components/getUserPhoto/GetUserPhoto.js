@@ -14,7 +14,8 @@ class GetUserPhoto extends React.Component {
     this.client = new DataService();
   }
   componentDidMount() {
-    this.client.getUserPhoto(this.props.username).then((result) => {
+    const now = Date.now();
+    this.client.getUserPhoto(this.props.username, now).then((result) => {
       this.setState({ imgSrc: result.config.url, hasImage: true });
     });
   }

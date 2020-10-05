@@ -1,6 +1,7 @@
 .Menu {
-  background-color: #AEC957;
+  background-color: #aec957;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   padding: 0 1em;
@@ -10,6 +11,7 @@
 #menu-links {
   display: flex;
   padding-left: 1em;
+  padding-bottom: 1em;
 }
 
 #menu-links a {
@@ -18,5 +20,3 @@
   text-decoration: underline;
   cursor: pointer;
 }
-
-

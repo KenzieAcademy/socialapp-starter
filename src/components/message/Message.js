@@ -60,7 +60,7 @@ class Message extends React.Component {
       if (!this.state.isLiked) {
         return (
           <li key={this.props.keyId} className="Message">
-            At {new Date(this.props.createdAt).toDateString()} posted:
+            At {new Date(this.props.createdAt).toLocaleString()} posted:
             <GetDisplayName username={this.props.username} />
             <div className="message-text">{this.props.text} </div>
             <LikeButton
@@ -74,7 +74,7 @@ class Message extends React.Component {
       } else {
         return (
           <li key={this.props.keyId} className="MessageIsLiked">
-            At {new Date(this.props.createdAt).toDateString()} posted:
+            At {new Date(this.props.createdAt).toLocaleString()} posted:
             <GetDisplayName username={this.props.username} />
             <div className="message-text">{this.props.text} </div>
             <UnlikeButton
@@ -89,7 +89,7 @@ class Message extends React.Component {
       if (!this.state.isLiked) {
         return (
           <li key={this.props.keyId} className="MessageIsCreated">
-            At {new Date(this.props.createdAt).toDateString()} posted:
+            At {new Date(this.props.createdAt).toLocaleString()} posted:
             <GetDisplayName username={this.props.username} />
             <div className="message-text">{this.props.text} </div>
             <LikeButton
@@ -107,7 +107,7 @@ class Message extends React.Component {
       } else {
         return (
           <li key={this.props.keyId} className="MessageIsCreatedIsLiked">
-            At {new Date(this.props.createdAt).toDateString()} posted:
+            At {new Date(this.props.createdAt).toLocaleString()} posted:
             <GetDisplayName username={this.props.username} />
             <div className="message-text">{this.props.text} </div>
             <UnlikeButton

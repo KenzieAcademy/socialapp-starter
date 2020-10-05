@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./PageStyles.css";
 import Menu from "../components/menu/Menu";
 import UserCard from "../components/userCard/UserCard";
 import DataService from "../DataService";
@@ -34,10 +34,12 @@ class Profile extends React.Component {
           <Menu isAuthenticated={this.props.isAuthenticated} />
           <h2>Profile</h2>
           <br />
-          <UserCard {...this.state.userObj} />
+          <div className="ProfileBody">
+            <UserCard {...this.state.userObj} />
 
-          <MessageList />
-          <br />
+            <MessageList />
+            <br />
+          </div>
         </div>
       );
     }

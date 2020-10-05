@@ -2,6 +2,7 @@ import React from "react";
 import Message from "../message/Message";
 import DataService from "../../DataService";
 import CreateMessage from "../createMessage/CreateMessage";
+import "./MessageList.css";
 
 class MessageList extends React.Component {
   constructor(props) {
@@ -57,40 +58,46 @@ class MessageList extends React.Component {
     if (!this.state.isSubmitted) {
       return (
         <div className="MessageList">
-          <h1>Message Feed</h1>
           <CreateMessage
             isSubmitted={this.state.isSubmitted}
             handleSubmit={this.handleSubmit}
           />
-          <ul>
-            {this.state.messages.map((msgObj) => (
-              <Message
-                keyId={msgObj.id}
-                {...msgObj}
-                handleRefresh={this.handleRefresh}
-              />
-            ))}
-          </ul>
+          <h1>Message Feed</h1>
+          <div className="MessageList-body">
+            <div className="MessageList-messages">
+              <ul>
+                {this.state.messages.map((msgObj) => (
+                  <Message
+                    keyId={msgObj.id}
+                    {...msgObj}
+                    handleRefresh={this.handleRefresh}
+                  />
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
       );
     } else
       return (
         <div className="MessageList">
-          <h1>Message Feed</h1>
           <CreateMessage
             isSubmitted={this.state.isSubmitted}
             handleSubmit={this.handleSubmit}
             handleRefresh={this.handleRefresh}
           />
-          <ul>
-            {this.state.messages.map((msgObj) => (
-              <Message
-                keyId={msgObj.id}
-                {...msgObj}
-                handleRefresh={this.handleRefresh}
-              />
-            ))}
-          </ul>
+          <h1>Message Feed</h1>
+          <div className="MessageList-body">
+            <ul>
+              {this.state.messages.map((msgObj) => (
+                <Message
+                  keyId={msgObj.id}
+                  {...msgObj}
+                  handleRefresh={this.handleRefresh}
+                />
+              ))}
+            </ul>
+          </div>
         </div>
       );
   }

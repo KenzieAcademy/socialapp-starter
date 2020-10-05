@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./PageStyles.css";
 
 class NotFound extends React.Component {
   render() {

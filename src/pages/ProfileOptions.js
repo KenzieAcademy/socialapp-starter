@@ -4,14 +4,19 @@ import { userIsAuthenticated } from "../redux/HOCs";
 import Menu from "../components/menu/Menu";
 import DeleteUserButton from "../components/deleteUserButton/DeleteUserButton";
 import UpdateAbout from "../components/updateAbout/UpdateAbout";
+import PhotoUpload from "../components/photoUpload/PhotoUpload";
 import { Card } from "antd";
+import "./PageStyles.css";
 
 class ProfileOptions extends React.Component {
   constructor(props) {
     super(props);
+    let loginData = JSON.parse(localStorage.getItem("login"));
 
     this.state = {
       isDeleted: false,
+      username: loginData.result.username,
+      loading: false,
     };
   }
 
@@ -36,23 +41,25 @@ class ProfileOptions extends React.Component {
       <div className="ProfileOptions">
         <Menu isAuthenticated={this.props.isAuthenticated} />
         <h2>Settings</h2>
-        <br />
-        <h3>Update About :</h3>
-        <UpdateAbout />
-        <br />
-        <Card
-          style={{ textAlign: "left", width: "50%", margin: "left" }}
-        ></Card>
-        <h3>Update Picture :</h3>
-        <button className="update-pic">update</button>
-        <br />
-        <br />
+        <div className="SettingsBody">
+          <br />
 
+          <h3>Update Picture :</h3>
+          <PhotoUpload
+            username={this.state.username}
+            loading={this.state.loading}
+          />
+
+          <br />
+          <h3>Update About :</h3>
+          <UpdateAbout />
+          <br />
+          <br />
+        </div>
         <h3>Delete User: </h3>
         <DeleteUserButton
           handleDeleteUserUpdate={this.handleDeleteUserUpdate}
         />
-        <Card />
       </div>
     );
   }
