@@ -1,5 +1,5 @@
 import React from "react";
-// import "antd/dist/antd.css";
+// imported "antd/dist/antd.css";
 import Menu from "../components/menu/Menu";
 import UpdateUser from "../components/updateUser/UpdateUser";
 import { userIsAuthenticated } from "../redux/HOCs";
@@ -28,7 +28,7 @@ class Profile extends React.Component {
     if (this.state.user.about === "") {
       this.state.user.about = "No information given."
     }
-    
+
     return (
       <div className="Profile" id="profile">
         <Menu isAuthenticated={this.props.isAuthenticated} />
