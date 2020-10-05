@@ -73,7 +73,7 @@ class Message extends React.Component {
           <br />
           <button onClick={this.handleDeleteLike}>
             <span role="img" aria-label="like">
-              👎{" "}
+              👎
             </span>
           </button>
         </div>
