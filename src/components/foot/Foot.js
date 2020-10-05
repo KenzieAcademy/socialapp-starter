@@ -1,15 +1,8 @@
 import React from "react";
 
 
-import { Carousel, } from 'antd';
+import { Carousel } from 'antd';
 import { createFromIconfontCN, } from '@ant-design/icons';
-
-
-
-
-
-
-
 
 class Foot extends React.Component {
 
@@ -27,31 +20,20 @@ class Foot extends React.Component {
             scriptUrl: '//at.alicdn.com/t/font_8d5l8fzk5b87iudi.js',
         });
 
-
-
         const { dotPosition } = this.state;
-
-
-
-
-
-
-
-
-
 
         return (
             <div>
-
+ 
                 {/* take to make one for yourself */}
                 <Carousel autoplay dotPosition={dotPosition}>
                     {/* start of the dev card  */}
                     <div class="card-container">
-                        
+                    
                        
                         <img
                             class="Dev"
-                            url="https://randomuser.me/api/portraits/women/79.jpg"
+                            scr="https://randomuser.me/api/portraits/women/79.jpg"
                             alt="user"
 
 
@@ -209,8 +191,6 @@ class Foot extends React.Component {
                         </div>
                     </div>
 
-
-
                     <div class="card-container">
                         
                        
@@ -251,11 +231,6 @@ class Foot extends React.Component {
                         </div>
                     </div>
                     
-
-
-
-
-
                 </Carousel>
             </div>
         );

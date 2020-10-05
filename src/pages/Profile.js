@@ -8,10 +8,6 @@ import { userIsAuthenticated } from "../redux/HOCs";
 import { Layout } from 'antd';
 import ProfileImage from '../components/ProfileImage'
 
-
-// comment Content 
-
-
 class Profile extends React.Component {
 
   constructor(props) {
