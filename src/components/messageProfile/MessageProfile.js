@@ -5,7 +5,7 @@ import DataService from "../../dataService";
 // import "./Message.css"
 
 
-class Message extends React.Component {
+class MessageProfile extends React.Component {
     constructor(props) {
         const loginData = JSON.parse(localStorage.getItem('login'))
         super(props)
@@ -15,12 +15,10 @@ class Message extends React.Component {
             token: loginData.result.token,
             username: loginData.result.username,
             likeCount: this.props.likes.length,
-            data: [],
-            messages: []
+            data: []
         }
     }
 
-   
     handleDeleteMessage = event => {
         event.preventDefault()
 
@@ -31,10 +29,9 @@ class Message extends React.Component {
             id: this.props.id,
             token: this.state.token
         })
-        
+        // window.location.reload()
     }
 
-     
     handleLike = () => {
         const username = this.state.username
         if (this.props.likes.some(like => like.username === username)) {
@@ -95,4 +92,4 @@ class Message extends React.Component {
     }
 }
 
-export default userIsAuthenticated(Message)
+export default userIsAuthenticated(MessageProfile)

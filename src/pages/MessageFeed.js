@@ -23,6 +23,7 @@
 import React from 'react'
 import Menu from '../components/menu/Menu';
 import GetMessages from '../components/getMessages/GetMessages';
+import PostMessage from '../components/postMessage/PostMessage'
 import DataService from '../dataService';
 import { userIsAuthenticated } from '../redux/HOCs';
 
@@ -41,18 +42,19 @@ class MessageFeed extends React.Component {
         if (this.state.messages.length === 0) {
             return (
                 <div className="MessageFeed">
-                    <Menu />
-                    {/* <GetMessages /> */}
+                    <Menu isAuthenticated={this.props.isAuthenticated} />
                     <h1>Message Feed</h1>
                     <h3>Loading...</h3>
                 </div>
             )
         }
-        
+
         return (
             <div className="MessageFeed">
-                <Menu />
-                <h1>Message Feed</h1>
+                <Menu isAuthenticated={this.props.isAuthenticated} />
+                <br/>
+                <PostMessage />
+                <br />
                 <GetMessages />
             </div>
         )

@@ -2,6 +2,7 @@ import React from "react";
 import { userIsAuthenticated } from "../../redux/HOCs";
 import DataService from "../../dataService";
 import "./PostMessage.css"
+import GetMessages from "../getMessages/GetMessages";
 
 
 
@@ -32,7 +33,7 @@ class PostMessage extends React.Component {
                 })
             });
         this.setState({ text: "" })
-        // window.location.reload()
+
     }
 
 
@@ -40,28 +41,30 @@ class PostMessage extends React.Component {
         this.setState({ [event.target.name]: event.target.value })
     }
 
+       
     render() {
 
         return (
             <div className='PostMessage'>
                 {console.log(this.state.message)}
-                <h4>What do you want to share with the world {this.state.username}?</h4>
-                <form onSubmit={this.handlePostMessage}>
-                    <div>
-                        <label htmlFor="text">Create message </label>
+                {/* <h3>What do you want to share with the world {this.state.username}?</h3> */}
+                <form onSubmit={this.handlePostMessage} >
+                    <div className="textBox">
+                        <label htmlFor="text">Create post</label>
                         <br />
                         <textarea
+                            className="textAreaStyle"
                             type="text"
                             name="text"
                             value={this.state.text}
                             placeholder="What's on your mind?"
                             maxLength="255"
-                            rows="5"
-                            cols="50"
+                            rows="4"
+                            cols="70"
                             onChange={this.handleChange}
                         />
                     </div>
-                    <button type='submit'>Post</button>
+                    <button type='submit' className="postButton" >Post</button>
                 </form>
             </div>
         )

@@ -1,0 +1,9 @@
+#returnLogin {
+    align-items: center;
+    font-size: larger;
+}
+
+.moveLoginLink {
+    display: flex;
+    justify-content: center;
+}
