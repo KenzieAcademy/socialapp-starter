@@ -4,11 +4,12 @@ import { userIsAuthenticated } from "../../redux/HOCs";
 
 class DeleteUser extends React.Component {
   constructor(props) {
- 
+    const loginData = JSON.parse(localStorage.getItem("login"));
+
     super(props)
     this.state = {
-      username: localStorage.getItem('username'),
-      token: localStorage.getItem('token')
+      username: loginData.result.username,
+      token: loginData.result.token
       
     };
     this.client = new DataService();
@@ -16,10 +17,27 @@ class DeleteUser extends React.Component {
 
   handleUserDelete = e => {
     e.preventDefault();
+    // const thisHeader = {data:
+    //   {
+    //     username: this.state.username
+    //   }, 
+    //   headers:
+    //   {
+    //     Authorization: this.state.token
+    //   }
+    // }
 
-      this.client.deleteUser(this.state.username)
+
+      this.client.deleteUser(
+        {
+          username : this.state.username,
+          token : this.state.token
+        }
+          )
         
-    
+    alert('User was deleted')
+    localStorage.clear()
+    window.location.reload()
   }
     
 
@@ -34,3 +52,4 @@ class DeleteUser extends React.Component {
 }
 
 export default userIsAuthenticated(DeleteUser);
+

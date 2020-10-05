@@ -1,3 +1,3 @@
 ## Overview
 
-Starter code for the Social App capstone project. See my.kenzie for details.
+Reversion of twitter. A popular social media website.

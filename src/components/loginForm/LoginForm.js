@@ -50,8 +50,13 @@ class LoginForm extends React.Component {
             addonBefore="Password"
             name="password"
             placeholder="Enter password here..."
+<<<<<<< HEAD
             minLength=""
             autoFocus
+=======
+            minLength="9"
+            
+>>>>>>> 5f809ffa4dd19f953c2fa5559a9468af3edcebe5
             required
             onChange={this.handleChange}
           />
@@ -63,11 +68,8 @@ class LoginForm extends React.Component {
           name="remember" valuePropName="checked"
           > <span className="remember-me">Remember Me </span>
           </Checkbox>  
-          
-          <a className="login-form-forgot" href="">
-          Forgot password
-        </a>
-          
+
+        
           <br />
 
           <Button
@@ -76,6 +78,7 @@ class LoginForm extends React.Component {
           </Button>
           
         </form>
+        
         {loading && <Spinner name="circle" color="blue" />}
         {error && <p style={{ color: "red" }}>{error.message}</p>}
       </div>
