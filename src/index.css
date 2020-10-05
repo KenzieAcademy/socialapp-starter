@@ -153,8 +153,9 @@ Menu.Item, .ant-menu-item-selected {
 }
 .card-container .Dev {
     border-radius: 35%;
-    position: relative;
-    left: 250px;
+    /* position: relative; */
+    /* left: 250px; */
+    margin: auto;
     width: 180px;
     padding-top: 12px;
 }
@@ -193,4 +194,3 @@ Menu.Item, .ant-menu-item-selected {
   display: flex;
   flex-wrap: wrap;
 }
-

@@ -9,7 +9,7 @@ class DiceRoller extends React.Component {
     render() {
         const { Header, Content } = Layout;
         return (
-            <div class="container">
+            <div className="container">
                 <Layout className="site-layout">
                     <MenuUnauthenticated />
                     <Header className="mainHeader" style={{ padding: 0, textAlign: 'center' }}> <img className="theQuestBoardHeader" src={theQuestBoardHeader} alt="QuestBoard Header" /> </Header>

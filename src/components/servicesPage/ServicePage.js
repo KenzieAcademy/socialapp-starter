@@ -42,10 +42,15 @@ class QuestboardService {
             })
     }
     NameUser() {
-        return this.client.get(this.url + "/users/{username}");
+        return this.client.get(this.url + "/users/" + this.getUsername());
     }
-    UpdateUser() {
-        return this.client.patch(this.url + "/users/{username}");
+    UpdateUser(user) {
+        const config = {
+            headers: {
+                Authorization: `Bearer ${this.getToken()}`
+            }
+        }
+        return this.client.patch(this.url + "/users/" + this.getUsername(), user, config);
     }
     DeleteUser() {
         return this.client.delete(this.url + "/users/{username}");

@@ -9,9 +9,9 @@ import Foot from "../components/foot/Foot";
 
 class Home extends React.Component {
   render() {
-    const { Header, Content, Footer } = Layout;
+    const { Header, Content } = Layout;
     return (
-      <div class="container">
+      <div className="container">
         <MenuUnauthenticated />
         <Layout className="site-layout">
           <Header className="mainHeader" style={{ padding: 0, textAlign: 'center' }}> <img className="theQuestBoardHeader" src={theQuestBoardHeader} alt="QuestBoard Header" /> </Header>

@@ -1,11 +1,8 @@
 import React from "react"
 import QuestboardService from "../servicesPage/ServicePage"
-import { domain } from "../../redux/actionCreators/constants/index"
 import "./TextInput.css"
 import { Button, Input, notification } from 'antd';
 
-let url = domain + '/messages';
-const loginData = JSON.stringify(localStorage.getItem("login"));
 
 class TextInput extends React.Component {
     constructor(props) {
@@ -31,7 +28,7 @@ class TextInput extends React.Component {
     }
 
     onTextareaChange = (event) => {
-        if (event.which == 13 && !event.shiftKey) {
+        if (event.which === 13 && !event.shiftKey) {
             var formSubmit = new CustomEvent("submit", {
                 target: event.target.form
             });
@@ -42,7 +39,6 @@ class TextInput extends React.Component {
 
     render() {
         const { TextArea } = Input;
-        console.log(loginData)
         return (
             <div id="inputTextBorderBox">
                 <div id="testing1">Your Text Here</div>
