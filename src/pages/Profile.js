@@ -8,7 +8,7 @@ import DeleteAccount from "../components/deleteAccount/DeleteAccount";
 import DataService from "../dataService"
 
 class Profile extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {
       user: {}
@@ -19,17 +19,17 @@ class Profile extends React.Component {
   componentDidMount() {
     this.client.getUser(this.props.username)
       .then(response => {
-        this.setState({user: response.data.user})
+        this.setState({ user: response.data.user })
         //console.log(response)
       })
   }
-  
+
   render() {
     return (
       <div className="Profile" id="profile">
         <Menu isAuthenticated={this.props.isAuthenticated} />
         <div id="left-column">
-        <h2>{this.state.user.displayName}</h2>
+          <h2>{this.state.user.displayName}</h2>
           <UpdateUser user={this.state.user} />
         </div>
         <div id="right-column">
