@@ -5,7 +5,9 @@ import Message from "../components/message/Message";
 import PostMessage from "../components/postMessage/PostMessageForm"
 import GetUsersService from "../services/GetUsersService"
 import "./MessageList.css";
+import { userIsAuthenticated } from "../redux/HOCs"
 
+// import InfinteScroll from "react-infinite-scroll- component";
 
 class MessageList extends React.Component {
     client = new DataService();
@@ -13,6 +15,7 @@ class MessageList extends React.Component {
     state = {
         message: [], users: [],
         text: "",
+        hasMore: true
     };
 
     componentDidMount() {
@@ -59,7 +62,30 @@ class MessageList extends React.Component {
 
         return (
             <div className="MessageList">
-                <Menu />
+                <Menu isAuthenticated={this.props.isAuthenticated} />
+                {/* <InfiniteScroll */}
+                {/* datalength={this.state.message.length}
+                loader={<h3>Loading...</h3>} */}
+                {/* hasMore={this.state.hasMore} */}
+                {/* next={() => {this.client.getAllMessages()
+                .then(response => {
+                    this.setState(state => ({
+                        message: state.message.concat(response),
+                    }))
+                    console.log(this.state.message)
+                    if (response.length === 0) {
+                        this.setState({ hasMore: false })
+                    }
+                })
+            }}
+            endMessage={
+                <p style={{ textAlign: "center"}}>
+                <b>My Old Friend, This is the End</b>
+            </p>
+        }
+         */}
+
+
                 <h1>Message Feed</h1>
                 <PostMessage handleChange={this.handleChange} handleMessagePost={this.handleMessagePost} text={this.state.text} />
                 <div className="messageContainer">
@@ -79,7 +105,9 @@ class MessageList extends React.Component {
                         ))}
 
                     </ul>
+
                 </div>
+                {/* </InfiniteScroll> */}
             </div>
 
         );
@@ -89,4 +117,4 @@ class MessageList extends React.Component {
 }
 
 
-export default MessageList;
+export default userIsAuthenticated(MessageList)

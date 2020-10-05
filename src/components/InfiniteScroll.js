@@ -1,36 +1,53 @@
-// import React from 'react'
-// import { render } from 'react-dom';
-// import InfiniteScroll from 'react-infintie-component';
+// import React from "react";
+
+// import InfiniteScroll from 'react-infinite-scroll-component';
 
 
 
-// class InfiniteScroll extends Component {
+// <div
+//     id="scrollableDiv"
+//     style={{
+//         height: 300,
+//         overflow: 'auto',
+//         display: 'flex',
+//         flexDirection: 'column-reverse',
+//     }}
+// >
+//     {/*Put the scroll bar always on the bottom*/}
+//     <InfiniteScroll
+//         dataLength={this.state.items.length}
+//         next={this.fetchMoreData}
+//         style={{ display: 'flex', flexDirection: 'column-reverse' }} //To put endMessage and loader to the top.
+//         inverse={true} //
+//         hasMore={true}
+//         loader={<h4>Loading...</h4>}
+//         scrollableTarget="scrollableDiv"
+//     >
+//         {this.state.items.map((_, index) => (
+//             <div style={style} key={index}>
+//                 div - #{index}
+//             </div>
+//         ))}
+//     </InfiniteScroll>
+// </div>
 
-// }
-// render(){
-//   <InfiniteScroll
-//     dataLength={items.length}
-//     next={fetchData}
-//     hasMore={true}
-//     loader={<h4>Loading...</h4>}
-//     endMessage={
-//       <p style={{ textAlign: 'center' }}>
-//         <b>Yay! You have seen it all</b>
-//       </p>
-//     }
 
-//     refreshFunction={this.refresh}
-//     pullDownToRefresh
-//     pullDownToRefreshThreshold={50}
-//     pullDownToRefreshContent={
-//       <h3 style={{ textAlign: 'center' }}>&#8595; Pull down to refresh</h3>
-//     }
-//     releaseToRefreshContent={
-//       <h3 style={{ textAlign: 'center' }}>&#8593; Release to refresh</h3>
-//     }
-//   >
-//     {items}
-//   </InfiniteScroll>
-// };
-// }
-// export default InfiniteScroll;
+// // import Axios from "axios";
+// // import { useEffect, useState } from "react";
+// // import Dataservice from "../services/DataService";
+// // import "./InfiniteScroll.css";
+
+// // export default function InfiniteScroll(query, pageNumber) {
+// //     useEffect(() => {
+// //         effect
+// //         Axios({
+// //             method: "GET",
+// //             url: "https://socialapp-api.herokuapp.com",
+// //             params: {},
+// //         }).then((response) => {
+// //             response.data;
+// //         })
+// //     }, [query, pageNumber]);
+// //     return null;
+
+// // }
