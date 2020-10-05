@@ -32,22 +32,4 @@
 // </div>
 
 
-// // import Axios from "axios";
-// // import { useEffect, useState } from "react";
-// // import Dataservice from "../services/DataService";
-// // import "./InfiniteScroll.css";
 
-// // export default function InfiniteScroll(query, pageNumber) {
-// //     useEffect(() => {
-// //         effect
-// //         Axios({
-// //             method: "GET",
-// //             url: "https://socialapp-api.herokuapp.com",
-// //             params: {},
-// //         }).then((response) => {
-// //             response.data;
-// //         })
-// //     }, [query, pageNumber]);
-// //     return null;
-
-// // }
