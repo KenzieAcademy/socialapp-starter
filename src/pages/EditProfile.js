@@ -82,11 +82,27 @@ class EditProfile extends React.Component {
 
   render() {
     return (
-      <div style={{ textAlign: "center", fontSize: "20px", fontFamily: "sans-serif", }}>
-        <h1 style={{ fontFamily: "fantasy", fontSize: "40px" }}>Edit Profile</h1>
+      <div
+        style={{
+          textAlign: "center",
+          fontSize: "20px",
+          fontFamily: "sans-serif",
+        }}
+      >
+        <h1 style={{ fontFamily: "fantasy", fontSize: "40px" }}>
+          Edit Profile
+        </h1>
         <form onSubmit={this.handleSubmit}>
           Change Your Password:
-          <input style={{ textAlign: "center", fontFamily: "fantasy", fontSize: "20px", background: "none", borderColor: "silver", borderRadius: "30px", }}
+          <input
+            style={{
+              textAlign: "center",
+              fontFamily: "fantasy",
+              fontSize: "20px",
+              background: "none",
+              borderColor: "silver",
+              borderRadius: "30px",
+            }}
             type="text"
             name="NewAboutMe"
             placeholder=" password"
@@ -95,7 +111,15 @@ class EditProfile extends React.Component {
           <br></br>
           <br></br>
           Change Your About Me:
-          <input style={{ textAlign: "center", fontFamily: "fantasy", fontSize: "20px", background: "none", borderColor: "silver", borderRadius: "30px", }}
+          <input
+            style={{
+              textAlign: "center",
+              fontFamily: "fantasy",
+              fontSize: "20px",
+              background: "none",
+              borderColor: "silver",
+              borderRadius: "30px",
+            }}
             type="text"
             name="about"
             placeholder=" about me"
@@ -104,7 +128,15 @@ class EditProfile extends React.Component {
           <br></br>
           <br></br>
           Change Your Display Name:
-          <input style={{ textAlign: "center", fontFamily: "fantasy", fontSize: "20px", background: "none", borderColor: "silver", borderRadius: "30px", }}
+          <input
+            style={{
+              textAlign: "center",
+              fontFamily: "fantasy",
+              fontSize: "20px",
+              background: "none",
+              borderColor: "silver",
+              borderRadius: "30px",
+            }}
             type="text"
             name="newDisplayName"
             placeholder="Change display name"
@@ -130,8 +162,25 @@ class EditProfile extends React.Component {
               capture="user"
             />
 
-            <button style={{ background: "none", borderRadius: "20px", color: "whitesmoke", }} onClick={this.handleUpload}>Upload Photo</button>
-            <button style={{ background: "none", borderRadius: "20px", color: "whitesmoke", }}>Post</button>
+            <button
+              style={{
+                background: "none",
+                borderRadius: "20px",
+                color: "whitesmoke",
+              }}
+              onClick={this.handleUpload}
+            >
+              Upload Photo
+            </button>
+            <button
+              style={{
+                background: "none",
+                borderRadius: "20px",
+                color: "whitesmoke",
+              }}
+            >
+              Post
+            </button>
 
             <div>
               {/* <img alt="user" src={this.state.imageURL} width={200} /> */}

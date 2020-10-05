@@ -25,7 +25,7 @@ class Message extends React.Component {
     const username = this.client.getUsername();
     if (this.props.likes.some((like) => like.username === username)) return;
     this.client.postLike(this.props.id).then((like) => {
-      // console.log("liked");
+      console.log("liked");
       this.setState((newState) => ({ likeCount: newState.likeCount + 1 }));
     });
     // .catch(() => {
@@ -36,7 +36,7 @@ class Message extends React.Component {
   componentDidMount() {
     const usrnme = this.props.username;
     // console.log(usrnme);
-    console.log(usrnme);
+    // console.log(usrnme);
     this.client
       .getPicture(usrnme)
       .then((result) => {
@@ -70,7 +70,7 @@ class Message extends React.Component {
         </Route>
         {/* <img className="userprofile" alt="user-pic" src={this.state.pic} /> */}
         Posted by: {this.props.username}
-        {console.log(this.prop)}
+        {/* {console.log(this.prop)} */}
         <br />
         {this.props.text}
         <br />
@@ -81,7 +81,6 @@ class Message extends React.Component {
           😊{this.props.likes.length}
         </div>{" "}
         {/* <form> */}
-
         <button
           style={{
             background: "transparent",
@@ -93,7 +92,6 @@ class Message extends React.Component {
         >
           👍
         </button>
-
         {/* </form> */}
       </li>
     );

@@ -3,6 +3,7 @@ import { userIsAuthenticated } from "../redux/HOCs";
 // import { domain, jsonHeaders, handleJsonResponse } from "./constants";
 import DataService from "../dataService";
 import profilepic from "../components/defualtpicture/freeiconlibrary.jpg";
+import PSM from "../components/message/UserSearchMessages/PSM";
 import "./Profile.css";
 
 class Profile extends React.Component {
@@ -71,8 +72,9 @@ class Profile extends React.Component {
           alt="profile pic"
           height={250}
           width={250}
-          class="center"
+          className="center"
         />
+        <PSM />
         {/* <p> {this.state.aboutme}</p>
         <input style={{ fontFamily: "serif" }} type="file" onChange={this.profilePicHandler} /> */}
       </div>

@@ -1,11 +1,11 @@
 import React from "react";
-import DataService from "../dataService";
-import { userIsAuthenticated } from "../redux/HOCs";
+import DataService from "../../../dataService";
+import { userIsAuthenticated } from "../../../redux/HOCs";
 // import './MessageFeed.css'
 
 // import { message, Result } from "antd";
-import Message from "../components/message/Message";
-import CreateMessage from "./CreateMessage";
+import Message from "../../../components/message/Message";
+import { message } from "antd";
 
 class MessageFeed extends React.Component {
   constructor(props) {
@@ -13,16 +13,14 @@ class MessageFeed extends React.Component {
     this.client = new DataService();
   }
 
-  state = { messages: [] };
+  state = { messages: [], usermessages: [] };
 
   componentDidMount() {
-    if (this.props.limit === 5) {
-      this.client.getMessages().then((response) =>
-        this.setState({
-          messages: response.data.messages,
-        })
-      );
-    }
+    this.client.getMessages(1000).then((response) =>
+      this.setState({
+        messages: response.data.messages,
+      })
+    );
   }
 
   // this.client
@@ -32,13 +30,14 @@ class MessageFeed extends React.Component {
 
   // setInterval(componentDidMount(), 5000);
   render() {
-    if (this.state.messages.length === 0) {
-      return (
-        <div className="loading">
-          <h3>loading</h3>
-        </div>
-      );
-    }
+    // if (this.state.usermessages.length === 0) {
+    //   return (
+    //     <div className="loading">
+    //       <h3>No Messages</h3>
+    //     </div>
+    //   );
+    // }
+
     // return (
     //   <div style={{ fontSize: "25px", fontStyle: "inherit", fontFamily: "revert" }} className="messagefeed" >
     //     {/* <Menu isAuthenticated={this.props.isAuthenticated} /> */}
@@ -46,12 +45,11 @@ class MessageFeed extends React.Component {
 
     return (
       <div className="messagefeed">
-        {console.log(this.props)}
+        {this.props.name}
         <ul>
-          {this.state.messages.map((messageObject) => (
+          {this.state.usermessages.map((messageObject) => (
             <Message key={messageObject.id} {...messageObject} />
           ))}
-          {/* {console.log(this.props)} */}
         </ul>
       </div>
     );
