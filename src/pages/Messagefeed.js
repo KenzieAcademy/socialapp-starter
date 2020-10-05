@@ -21,7 +21,8 @@ class Messagefeed extends Component {
             data: {},
             submitted: false,
             author: '',
-            children: ''
+            children: '',
+            date: new Date()
 
 
         }
@@ -46,13 +47,8 @@ class Messagefeed extends Component {
     submitHandler = (event) => {
         event.preventDefault();
         this.setState({
-            submitted: true
-        }, /*() => {
-            if (this.state.submitted) {
-                return this.state.messages.shift(...this.state.author)
-            }
-
-        }*/
+            submitted: true,
+        }
         )
     }
 
@@ -68,11 +64,24 @@ class Messagefeed extends Component {
 
     buttonHandler = (event) => {
         //console.log(this.state.messages[0].text)
+        console.log(this.state.author + ' posted at ' + this.state.date.toLocaleTimeString() + ' ' + this.state.children)
 
-        console.log(this.state.author + this.state.date)
+    }
+
+    resetForm = (event) => {
+        this.setState({
+            submitted: false,
+            author: '',
+            children: ''
+        })
     }
 
     render() {
+
+
+
+
+
         return (
             <Layout className>
                 <MsgNavBar isAuthenticated={this.props.isAuthenticated} />
@@ -138,7 +147,7 @@ class Messagefeed extends Component {
 
 
                         </div>
-                        <Post author={this.state.author} date={this.state.date} />
+                        <Post author={this.state.author} date={this.state.date.toLocaleTimeString()} />
                         <span>{this.state.author} {this.state.children}</span>
                     </Sider>
                 </Layout>
