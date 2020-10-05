@@ -12,7 +12,7 @@ class UpdateAvatar extends React.Component {
                     <p>{this.props.description}</p>
                     <FileUploader />
                     <button onClick={this.props.closePopup}>Back to Profile</button>
-                    <br />
+                    <br /><br />
                 </div>
             </div>
         );
