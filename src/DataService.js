@@ -57,9 +57,7 @@ class DataService {
     });
   }
   getUser(username) {
-    return this.client
-      .get(this.url + "/users/" + { username })
-      .then((response) => console.log(response.data));
+    return this.client.get(this.url + "/users/" + { username });
   }
 
   updateUser(userData) {
@@ -83,14 +81,6 @@ class DataService {
     let loginData = JSON.parse(localStorage.getItem("login")).result;
     let token = loginData.token;
     return this.client.delete(this.url + "/messages/" + messageId, {
-      headers: { Authorization: `Bearer ${token}` },
-    });
-  }
-  
-    deleteLike(likeId) {
-    let loginData = JSON.parse(localStorage.getItem("login")).result;
-    let token = loginData.token;
-    return this.client.delete(this.url + "/likes/" + likeId, {
       headers: { Authorization: `Bearer ${token}` },
     });
   }

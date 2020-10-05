@@ -47,6 +47,17 @@ class UpdateUser extends React.Component {
     const { loading, error } = this.props;
     return (
       <div className="UpdateUserForm">
+        {/* <form id="udate-about-form" onSubmit={this.handleUpdate}>
+          <label htmlFor="about">About</label>
+          <input
+            type="text"
+            name="about"
+            required
+            onChange={this.handleChange}
+          />
+          <button>update about me</button>
+        </form> */}
+
         <h2>Update userinfo</h2>
         <form id="update-form" onSubmit={this.handleUpdate}>
           <label htmlFor="username">Display Name</label>
@@ -64,13 +75,6 @@ class UpdateUser extends React.Component {
             required
             onChange={this.handleChange}
           />
-          {/* <label htmlFor="about">About</label>
-          <input
-            type="text"
-            name="about"
-            required
-            onChange={this.handleChange}
-          /> */}
           <button type="submit" disabled={loading}>
             Update
           </button>
