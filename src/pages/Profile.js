@@ -26,7 +26,7 @@ class Profile extends React.Component {
 
   render() {
     if (this.state.user.about === "") {
-      this.state.user.about = "No information given."
+      this.setState(latestState => ({ user: { ...latestState.user, about: "No information given." } }))
     }
 
     return (
