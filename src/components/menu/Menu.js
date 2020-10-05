@@ -14,8 +14,10 @@ class Menu extends React.Component {
     return (
       <div className="Menu">
         <h1>Lucky</h1>
+        <br />
         {this.props.isAuthenticated && (
           <div id="menu-links">
+            <Link to="/">Home</Link>
             <Link to="/profileoptions"> Profile Options</Link>
             <Link to="/search">Search</Link>
             <Link to="/" onClick={this.handleLogout}>

@@ -1,20 +1,19 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
-class Search extends React.Component {
+class SearchInput extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = { searchTerm: "" };
   }
-
   handleChange = (e) => {
     e.preventDefault();
     this.setState({ [e.target.name]: e.target.value });
   };
+
   render() {
     return (
-      <div className="Search">
-        <Link to="/">Home</Link>
+      <div className="searchInput">
         <form>
           <label htmlFor="Search">Search</label>
           <input
@@ -24,13 +23,9 @@ class Search extends React.Component {
             onChange={this.handleChange}
           />
         </form>
-        <ul>
-          <li>Item 1</li>
-          <li>Item 2</li>
-        </ul>
       </div>
     );
   }
 }
 
-export default Search;
+export default SearchInput;

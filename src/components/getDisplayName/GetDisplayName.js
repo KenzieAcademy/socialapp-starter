@@ -9,7 +9,7 @@ class GetDisplayName extends React.Component {
 
   componentDidMount() {
     this.client.getUser(this.props.username).then((response) => {
-      console.log(response);
+      // console.log(response);
       this.setState({ displayName: response.data.user.displayName });
     });
   }

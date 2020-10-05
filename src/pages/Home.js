@@ -3,7 +3,8 @@ import LoginForm from "../components/loginForm/LoginForm";
 import Menu from "../components/menu/Menu";
 import { Link } from "react-router-dom";
 import { userIsNotAuthenticated } from "../redux/HOCs";
-import RegistrationForm from "../components/registrationForm/RegistrationForm";
+import "./PageStyles.css";
+import RegistrationForm from "../components/registraionForm/RegistrationForm";
 
 class Home extends React.Component {
   onChange = (date, dateString) => {
@@ -14,7 +15,7 @@ class Home extends React.Component {
     return (
       <div className="Home">
         <Menu />
-        <h2>Your favorite microblogging platform</h2>
+        <h2>Home of Lady Luck</h2>
         <LoginForm />
         <br />
         <button className="RegisterButton">

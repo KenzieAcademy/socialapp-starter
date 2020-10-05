@@ -17,7 +17,7 @@ class UnlikeButton extends React.Component {
     console.log(this.state.likeId + ": this show be the id of the like");
     this.client.handleUnlike(this.state.likeId).then((result) => {
       console.log(result.data);
-      return result;
+      this.props.handleLikeStatus(0);
     });
   };
 

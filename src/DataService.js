@@ -1,26 +1,3 @@
-// //import the axios HTTP client to communicate with the API
-// import axios from 'axios';
-
-// class DataService {
-
-//     constructor(url = 'https://socialapp-api.herokuapp.com', client = axios.create()){
-//     this.url = url;
-//     this.client = client;
-//     }     
-    
-//     registerUser(registrationData){
-//         return this.client.post(this.url +"/users", registrationData);
-//     }
-//     editProfile(createBioData){
-//       return this.client.patch(this.url +"/users",createBioData);
-//  }
-//     getMessages(limit = 20){
-//         return this.client.get(`/messages?limit=${limit}`)
-//     }
-// }
-
-
-// export default DataService;
 import axios from "axios";
 
 // https://socialapp-api.herokuapp.com/docs/    for the API Documentation
@@ -38,12 +15,15 @@ class DataService {
     return this.client.post(this.url + "users", regisrationData);
   }
   getAllMessagesData() {
-
     return this.client.get(this.url + "messages?limit=15");
-}
+  }
 
   getMessageData(messageId) {
     return this.client.get(this.url + "messages/" + messageId);
+  }
+
+  getUserList(limit, offset) {
+    return this.client.get(`${this.url}users?limit=${limit}&offset=${offset}`);
   }
 
   deleteMessage(messageId) {
@@ -78,8 +58,8 @@ class DataService {
     return this.client.get(this.url + "users/" + username);
   }
 
-  getUserPhoto(username) {
-    return this.client.get(this.url + "users/" + username + "/picture");
+  getUserPhoto(username, t) {
+    return this.client.get(this.url + "users/" + username + "/picture?t=" + t);
   }
 
   deleteUser(username) {
@@ -97,6 +77,7 @@ class DataService {
       headers: { Authorization: `Bearer ${loginData.result.token}` },
     });
   }
+<<<<<<< HEAD
   uploadPhoto(username,formdata){
     let loginData = JSON.parse(localStorage.getItem("login"));
     return this.client.put(this.url + "users/" + username + "/picture", formdata,{
@@ -110,5 +91,18 @@ class DataService {
   }
 
 
+=======
+  uploadPhoto(username, formdata) {
+    let loginData = JSON.parse(localStorage.getItem("login"));
+    return this.client.put(
+      this.url + "users/" + username + "/picture",
+      formdata,
+      {
+        headers: { Authorization: `Bearer ${loginData.result.token}` },
+      }
+    );
+  }
+}
+>>>>>>> 1febe8c4029cb35d688e3074e69142dc49fe5e31
 
 export default DataService;

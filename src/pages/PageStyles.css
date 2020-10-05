@@ -1,0 +1,22 @@
+.Home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+}
+
+.Profile,
+.ProfileOptions,
+.RegistrationPage,
+.Home,
+.SearchPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.ProfileBody {
+  display: flex;
+}
