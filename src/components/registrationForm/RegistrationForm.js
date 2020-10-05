@@ -14,7 +14,7 @@ class RegistrationForm extends React.Component {
   }
 
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       username: "",
@@ -23,8 +23,7 @@ class RegistrationForm extends React.Component {
     };
     this.client = new socialAppService();
   }
-
-  handleRegistration = e => {
+  handleRegistration = (e) => {
     e.preventDefault();
     this.client.registerUser(this.state).then(result => {
       this.props.login(
@@ -36,16 +35,33 @@ class RegistrationForm extends React.Component {
     });
   };
 
-  handleChange = e => {
+  // handleRegistration = (e) => {
+  //   e.preventDefault();
+  //   this.client.registerUser(this.state).then((result) => {
+  //     this.props.login({
+  //       username: this.state.username,
+  //       password: this.state.password,
+  //     }
+  //     );
+  //   })
+  // };
+
+  handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };
+  //to clear input field on submit//
+  // handleSubmit = () => this.setState({ username: '', password: '', displayName: '' })
 
   render() {
     const { loading, error } = this.props;
     return (
       <div className="RegistrationForm">
+        <div>
+          <strong>New user? Register here!</strong>
+        </div>
         <form id="registration-form" onSubmit={this.handleRegistration}>
           <label htmlFor="username">Username</label>
+
           <input
             type="text"
             name="username"
@@ -61,13 +77,16 @@ class RegistrationForm extends React.Component {
             required
             onChange={this.handleChange}
           />
+
           <label htmlFor="password">Password</label>
+
           <input
             type="password"
             name="password"
             required
             onChange={this.handleChange}
           />
+
           <button type="submit" disabled={loading}>
             Register
           </button>

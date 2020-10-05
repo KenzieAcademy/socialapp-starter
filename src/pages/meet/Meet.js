@@ -3,6 +3,16 @@ import React from 'react';
 import { Grid, Image } from 'semantic-ui-react';
 import { userIsAuthenticated } from "../../redux/HOCs";
 import Menu from "../../components/menu/Menu";
+
+// import Arjun from "../../components/assets/images/Squirrels/Arjun.jpg";
+// import SideBar from "../../components/sideBar/SideBar";
+import FootNavBar from "../../components/footNavBar/FootNavBar";
+
+// export default class HelloArjun extends Component {
+//     render() {
+//         return <img url={Arjun} width="100" height="100" />
+//     }
+// }
 import './Meet.css';
 
 class Meet extends React.Component {
@@ -49,6 +59,7 @@ class Meet extends React.Component {
                         </Grid.Column>
                     </Grid.Row>
                 </Grid>
+                <FootNavBar />
             </div >
         );
     }
