@@ -10,6 +10,9 @@ const loginData = JSON.stringify(localStorage.getItem("login"));
 class TextInput extends React.Component {
     constructor(props) {
         super(props)
+        this.state = {
+            text: ""
+        }
         this.client = new QuestboardService();
     }
 
@@ -65,7 +68,4 @@ class TextInput extends React.Component {
 
     }
 }
-
-
-
 export default TextInput

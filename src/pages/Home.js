@@ -8,11 +8,8 @@ import Foot from "../components/foot/Foot";
 
 
 class Home extends React.Component {
-
-
   render() {
     const { Header, Content, Footer } = Layout;
-
     return (
       <div class="container">
         <MenuUnauthenticated />

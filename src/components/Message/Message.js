@@ -1,7 +1,6 @@
 import React from "react"
 import "./message.css"
 import QuestboardService from "../servicesPage/ServicePage"
-import { Button } from 'antd';
 import Dice from "../../media/Dice.png"
 
 class Message extends React.Component {
@@ -21,7 +20,6 @@ handleLike = () => {
     
     })
 }
-
     render () {
         return (
             <div className="Message">

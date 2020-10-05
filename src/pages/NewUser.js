@@ -10,9 +10,7 @@ class NewUser extends React.Component {
             displayName: "",
             password: "",
         }
-
     }
-
     render() {
         return(
             <div>

@@ -35,7 +35,7 @@ handleMessage = (event) => {
             })
         }
 
-        window.location = "/"; // wherever you want to redirect the user to
+        window.location = "/";
     }
 };
 
@@ -44,7 +44,6 @@ componentDidMount() {
 }
 
 handleClick = (event) => {
-// when user clicks login with Google....
 this.setState({loginWindow: window.open("https://socialapp-api.herokuapp.com/auth/google/login/") })
 }
     render(){

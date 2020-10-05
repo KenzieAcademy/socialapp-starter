@@ -1,20 +1,22 @@
-// import React from "react";
+// // import React from "react";
 
-// import InfiniteScroll from 'react-infinite-scroll-component';
+// // import InfiniteScroll from 'react-infinite-scroll-component';
 
-// class InfiniteScroll extends Component {
+// class ScrollBar extends React.Component {
 
-//   constructor() {
-//     super();
-//     this.state = {
-//       photos: [],
-//       loading: false,
-//       page: 0,
-//       prevY: 0
-//     };
-//   }
+// //   constructor() {
+// //     super();
+// //     this.state = {
+// //       photos: [],
+// //       loading: false,
+// //       page: 0,
+// //       prevY: 0
+// //     };
+// //   }
 
 //   render() {
+//     return (
+
 //     <InfiniteScroll
 //         dataLength={this.state.items.length}
 //         next={this.fetchMoreData}
@@ -35,11 +37,11 @@
 //             <h3 style={{ textAlign: 'center' }}>&#8593; Release to refresh</h3>
 //           }
 //         >
-//           {items}
+//           {/* {items} */}
 
 
 //       </InfiniteScroll>
-//   };
+//     )};
 // }
 
-// export default InfiniteScroll;
+// export default ScrollBar;

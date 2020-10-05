@@ -5,10 +5,7 @@ import theQuestBoardHeader from '../media/theQuestBoardHeader.png'
 import Foot from "../components/foot/Foot";
 import zach01 from '../media/zach01.jpeg'
 
-
-
 class ContactUs extends React.Component {
-
   render() {
 
     const { Header, Content } = Layout;
