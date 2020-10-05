@@ -1,9 +1,9 @@
-/* *{
+#LoginForm{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
 }
-   */
 
 #login-form  {
 
@@ -40,12 +40,12 @@
   padding: 5px;
   font-size: 15px;
   width: 100%;
-  background: rgba(255,255,255,);
+  background: rgb(61, 60, 60);
   border: none;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid rgb(223, 211, 211);
   outline:none;
   text-align: center;
-  border-radius: 5px;
+  border-radius: 30px;
   color: black;
 }
 #login-form Button{
@@ -55,7 +55,7 @@
  /* background:darkgoldenrod; */
  color: #FFF;
  border: none;
- border-radius: 5px;
+ border-radius: 30px;
  text-transform: uppercase;
  font-size: 20px;
  cursor: pointer;
@@ -66,7 +66,6 @@
      color: red;
    }
    
-
 
    *{
     margin: 0;
@@ -79,6 +78,9 @@
     position: relative;
      left: 580px;
      bottom: 310px;
+     
+
+     
     /* display: flex;
     flex-direction: column; */
     background-image:url("./11.gif");
@@ -110,7 +112,7 @@
     border-bottom: 1px solid #333;
     outline:none;
     text-align: center;
-    border-radius: 5px;
+    border-radius: 30px;
     color: black;
   }
   #registration-form button{
@@ -120,7 +122,7 @@
    background-color: rgb(39, 36, 233);;
    color: rgb(255, 255, 255);
    border: none;
-   border-radius: 5px;
+   border-radius: 30px;
    text-transform: uppercase;
    font-size: 20px;
    cursor: pointer;

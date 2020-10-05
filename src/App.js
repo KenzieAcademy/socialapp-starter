@@ -21,10 +21,9 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <UseWindowSize />
+        {/* <UseWindowSize /> */}
         <TwitHeader />
         <Layout>
-
           <SideBar />
           <MainContent />
         </Layout>
