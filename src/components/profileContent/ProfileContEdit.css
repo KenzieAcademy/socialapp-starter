@@ -37,8 +37,7 @@
   margin: auto;
   color: black;
   font: italic small-caps bolder 30px/35px Impact;
-  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
-  -webkit-text-stroke: 0.25px white;
+  -webkit-text-stroke: 0.75px #d2be1a;
 }
 
 .EditDisplayHeader {
@@ -63,8 +62,7 @@
   margin-top: 10px;
   color: black;
   font: italic small-caps bolder 30px/35px Impact;
-  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
-  -webkit-text-stroke: 0.25px white;
+  -webkit-text-stroke: 0.75px #d2be1a;
 }
 
 .EditPassHeader {
@@ -89,8 +87,7 @@
   margin-top: 10px;
   color: black;
   font: italic small-caps bolder 30px/35px Impact;
-  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
-  -webkit-text-stroke: 0.25px white;
+  -webkit-text-stroke: 0.75px #d2be1a;
 }
 
 .EditAboutHeader {
@@ -109,8 +106,7 @@
   margin: auto;
   position: relative;
   font: italic small-caps bolder 30px/35px Impact;
-  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
-  -webkit-text-stroke: 0.25px white;
+  -webkit-text-stroke: 0.75px #d2be1a;
 }
 
 .EditPicHeader {
@@ -122,6 +118,7 @@
   margin-top: 10px;
   padding: 10px;
   font: italic small-caps bolder 25px/38px Impact;
+  -webkit-text-stroke: 0.75px #d2be1a;
   border: black;
   border-radius: 5px;
   border-width: 3px;
@@ -133,18 +130,15 @@
   width: 112px;
   height: 112px;
   left: 0px;
-  /* top: 110px; */
   border: black;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
   position: relative;
   margin: 10px;
-  /* margin: auto; */
   color: black;
   font: italic small-caps bolder 30px/35px Impact;
-  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
-  -webkit-text-stroke: 0.25px white;
+  -webkit-text-stroke: 0.75px #d2be1a;
 }
 
 .UpdateButtonBox {
