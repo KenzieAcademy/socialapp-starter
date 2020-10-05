@@ -1,0 +1,9 @@
+#registration {
+    align-items: center;
+    font-size: larger;
+}
+
+.regLink {
+    display: flex;
+    justify-content: center;
+}
