@@ -8,7 +8,6 @@ import "../components/feed2/feed2.css"
 import theQuestBoardHeader from '../media/theQuestBoardHeader.png';
 import { Layout } from 'antd';
 import Foot from "../components/foot/Foot";
-import ScrollBar from "../components/infiniteScroll/InfiniteScroll"
 
 class MessageFeed extends React.Component {
   constructor(props) {
@@ -19,10 +18,7 @@ class MessageFeed extends React.Component {
   }
 
   stateChange = (event) => {
-
-
     this.setState({ post: event.target.value });
-    console.log(this.state.post)
 
   }
 
@@ -36,7 +32,7 @@ class MessageFeed extends React.Component {
     const { Header, Content } = Layout;
 
     return (
-      <div class="container">
+      <div className="container">
         <Layout className="site-layout" >
           <Header className="mainHeader" style={{ padding: 0, textAlign: 'center' }}> <img className="theQuestBoardHeader" src={theQuestBoardHeader} alt="QuestBoard Header" /> </Header>
           <Content style={{ width: '100%', overflow: 'initial' }} >

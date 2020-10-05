@@ -3,7 +3,8 @@ import MenuUnauthenticated from "../components/menu/MenuUnauthenticated";
 import { Layout } from 'antd';
 import theQuestBoardHeader from '../media/theQuestBoardHeader.png'
 import Foot from "../components/foot/Foot";
-import zach01 from '../media/zach01.jpeg'
+import zach01 from '../media/zachcollage.png'
+
 
 class ContactUs extends React.Component {
   render() {
@@ -11,13 +12,12 @@ class ContactUs extends React.Component {
     const { Header, Content } = Layout;
 
     return (
-      <div class="container">
+      <div className="container">
         <Layout className="site-layout">
           <MenuUnauthenticated />
           <Header className="mainHeader" style={{ padding: 0, textAlign: 'center' }}> <img className="theQuestBoardHeader" src={theQuestBoardHeader} alt="QuestBoard Header" /> </Header>
           <Content style={{ width: '100%', overflow: 'initial' }} >
             <div className="site-layout-background" style={{ padding: 24, textAlign: 'center' }}>
-              <h1>Ode to Zach</h1>
               <img className="zach" src={zach01} alt="zach" />
             </div>
           </Content>
