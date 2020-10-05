@@ -1,7 +1,7 @@
 import React from "react";
 import Messages from "../components/messages/Messages";
 import Menu from "../components/menu/Menu";
-import DataService from "../services/dataService";
+import DataService from "../services/DataService";
 import UserList from "../components/listUsers/ListUsers";
 
 

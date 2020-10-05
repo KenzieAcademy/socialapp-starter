@@ -1,5 +1,5 @@
 import React from "react";
-import DataService from "../../services/dataService";
+import DataService from "../../services/DataService";
 import Users from "../users/Users";
 import InfiniteScroll from "react-infinite-scroller";
 

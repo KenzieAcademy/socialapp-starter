@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "semantic-ui-react";
-import DataService from "../../services/dataService";
+import DataService from "../../services/DataService";
 
 
 class DeleteAccount extends React.Component {

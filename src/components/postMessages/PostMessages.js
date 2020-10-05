@@ -1,6 +1,6 @@
 import React from "react";
-import DataService from "../../services/dataService";
-import Messages from "../messages/Messages";
+import DataService from "../../services/DataService";
+
 
 
 class PostMessage extends React.Component {
