@@ -6,7 +6,9 @@ import InfiniteScroll from 'react-infinite-scroller'
 
 function MessageList(props) {
 
+
     const listItems = props.messages.map((message, i) => <Message {...message} key={i} message={message} handleDelete={props.handleDelete} />)
+
 
     return (
         <div>
