@@ -41,8 +41,8 @@ class DataService {
     }
 
     getProfile(userData4) {
-        
-        return this.client.get(this.url + '/users/' + userData4, {
+        console.log(userData4.token);
+        return this.client.get(this.url + '/users/' + userData4.username , {
             headers: { Authorization: "Bearer " + userData4.token}
           })
     }

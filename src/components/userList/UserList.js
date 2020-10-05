@@ -11,7 +11,9 @@ class UserList extends React.Component {
     }
     render() {
         return (
-        <h1>Users</h1>
+        <div>
+            
+        </div>
 
 
         )

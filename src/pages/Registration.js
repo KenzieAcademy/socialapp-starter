@@ -9,7 +9,7 @@ class Registration extends React.Component {
     return (
       <div className="Registration">
         <Menu />
-        <h2>Lets Travel!!!!</h2>
+        
         <RegistrationForm />
         <Link to='/'> Back to Log In</Link>
         

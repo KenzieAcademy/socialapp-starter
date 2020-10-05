@@ -5,7 +5,7 @@ import DataService from "../../dataService";
 // import "./Message.css"
 
 
-class Message extends React.Component {
+class MessageProfile extends React.Component {
     constructor(props) {
         const loginData = JSON.parse(localStorage.getItem('login'))
         super(props)
@@ -49,7 +49,7 @@ class Message extends React.Component {
                 )
         }
     }
-    
+
     // this.client.getRecentMessages()
 
 
@@ -92,4 +92,4 @@ class Message extends React.Component {
     }
 }
 
-export default userIsAuthenticated(Message)
+export default userIsAuthenticated(MessageProfile)

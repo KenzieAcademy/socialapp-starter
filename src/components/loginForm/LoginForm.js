@@ -51,7 +51,7 @@ class LoginForm extends React.Component {
             name="password"
             placeholder="Enter password here..."
             minLength="9"
-            autoFocus
+            
             required
             onChange={this.handleChange}
           />
@@ -73,6 +73,7 @@ class LoginForm extends React.Component {
           </Button>
           
         </form>
+        
         {loading && <Spinner name="circle" color="blue" />}
         {error && <p style={{ color: "red" }}>{error.message}</p>}
       </div>

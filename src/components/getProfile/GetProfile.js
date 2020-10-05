@@ -9,7 +9,8 @@ class GetProfile extends React.Component {
         super(props)
         this.state = {
           data: [],
-          username: loginData.result.username
+          username: loginData.result.username,
+          token: loginData.result.token
         };
         this.client = new DataService();
       }
@@ -20,7 +21,7 @@ class GetProfile extends React.Component {
 
     handleGetProfile(){
         
-          this.client.getProfile(this.state.username).then(response => {
+          this.client.getProfile({username:this.state.username, token:this.state.token}).then(response => {
   
             this.setState({ data: response.data.user })
           });
