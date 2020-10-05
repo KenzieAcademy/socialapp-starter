@@ -17,10 +17,8 @@ class App extends React.Component {
     this.state={
       userName:''
     }
+
     
-    const currentUser = JSON.parse(localStorage.getItem("login"));
-    this.setState({userName:currentUser.result.username})
-    console.log(currentUser.result.username)
 
     
   }
