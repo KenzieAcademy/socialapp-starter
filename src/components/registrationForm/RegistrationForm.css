@@ -152,13 +152,13 @@
   left: 15px;
   position: relative;
   background: none;
-  background-image: url(../../assets/images/Enter_Button.png);
+  background-image: url(../../assets/images/Register_Button.png);
   background-repeat: no-repeat;
   border: none;
   width: 150px;
-  height: 50px;
+  height: 60px;
 }
 
 .RegButtonBox input[type="submit"]:hover {
-  background-image: url(../../assets/images/Join_Us_Button_Hover.png);
+  background-image: url(../../assets/images/Register_Button_Hover.gif);
 }

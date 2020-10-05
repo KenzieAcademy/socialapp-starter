@@ -107,15 +107,16 @@
 .LogEnterButton input[type="submit"] {
   padding: 10px;
   left: 125px;
+  top: 5px;
   position: relative;
   background: none;
   background-image: url(../../assets/images/Enter_Button.png);
   background-repeat: no-repeat;
   border: none;
   width: 150px;
-  height: 50px;
+  height: 60px;
 }
 
 .LogEnterButton input[type="submit"]:hover {
-  background-image: url(../../assets/images/Enter_Button_Hover.png);
+  background-image: url(../../assets/images/Enter_Button_Hover.gif);
 }
