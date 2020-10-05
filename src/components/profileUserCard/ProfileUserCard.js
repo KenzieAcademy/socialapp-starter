@@ -1,5 +1,6 @@
 import React from "react";
 import DeleteAccount from "../deleteAccount/DeleteAccount";
+import PostMessages from "../postMessages/PostMessages"
 import {
   Card,
   Icon,
@@ -9,6 +10,7 @@ import {
   Form,
   Advertisement
 } from 'semantic-ui-react';
+
 
 const description = [
   'Matthew is a violinist with 2 years experience in the wedding industry.',
@@ -42,12 +44,11 @@ const ProfileUserCard = () => (
     <DeleteAccount/>
     </Card>
   </Grid.Column>
+  
 
   <Grid.Column >
-      <Form post="true">
-      <Form.TextArea />
-      <Button content='Post' labelPosition='left' icon='edit' primary />
-      </Form>
+  <PostMessages/>  
+     
   </Grid.Column>
 
   <Grid.Column >
@@ -57,6 +58,8 @@ const ProfileUserCard = () => (
   </Grid.Column>
 
   </Grid>
+  
 )
+
 
 export default ProfileUserCard;

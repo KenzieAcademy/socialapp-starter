@@ -50,5 +50,18 @@ class DataService {
             .post(this.baseURL +"/likes", requestBody,config )
             .then(response => response.data.like)
         }
+    postMessage(messageData) {
+            const requestBody = {messageData}
+            const config ={ 
+                headers: {
+                   Authorization: `Bearer ${this.getToken()+ messageData}`
+                   }
+               }
+
+            return this.client
+            .post(this.baseURL + '/messages', requestBody, config)
+            .then (response => response.data.messages)
+    }
+    
 }
 export default DataService;

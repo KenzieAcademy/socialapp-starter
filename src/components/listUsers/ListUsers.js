@@ -1,9 +1,10 @@
 import React from "react";
 //import Menu from "../components/menu/Menu";
 import DataService from "../../services/dataService";
+import Users from "./Users";
 
 
-
+//min 4.19//
 class UserList extends React.Component {
     state = { users: [] }
     componentDidMount (){
@@ -25,13 +26,13 @@ return(
 }
 return (
         <div className="ListOfUsers">
-         
-            <h1>this list</h1>
+        <h1>this list</h1>
             <ul>
-                bam
+                {this.state.users.map(users => {
+               return <Users key= {users.username}{...users}/>
+                })}
             </ul>
-          
-        </div>
+          </div>
     )
 }
 }
