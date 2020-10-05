@@ -1,5 +1,5 @@
 import React from "react"
-import QuestboardService from "./servicesPage/ServicePage"
+import QuestboardService from "../servicesPage/ServicePage"
 
 const fallbackImage = "https://www.flaticon.com/svg/static/icons/svg/3456/3456704.svg";
 
@@ -25,8 +25,8 @@ class ProfileImage extends React.Component {
         }
     }
 
-    componentDidUpdate(prevProps) {
-        if (this.props.imageURL !== undefined && this.state.imageURL !== prevProps.imageURL) {
+    componentDidUpdate() {
+        if (this.props.imageURL !== undefined && this.state.imageURL !== this.props.imageURL) {
             this.setState({ imageURL: this.props.imageURL });
         }
     }

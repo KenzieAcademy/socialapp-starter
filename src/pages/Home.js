@@ -4,30 +4,28 @@ import LoginForm from "../components/loginForm/LoginForm";
 import MenuUnauthenticated from "../components/menu/MenuUnauthenticated";
 import { userIsNotAuthenticated } from "../redux/HOCs";
 import theQuestBoardHeader from '../media/theQuestBoardHeader.png'
+import Foot from "../components/foot/Foot";
+
 
 class Home extends React.Component {
-  
-
   render() {
-    const { Header, Content, Footer } = Layout;
-
+    const { Header, Content } = Layout;
     return (
-    <Layout>
-    <MenuUnauthenticated />
-    <Layout className="site-layout" style={{ marginLeft: 190 }}>
-      <Header className="mainHeader" style={{ padding: 0, textAlign: 'center'}}> <img className="theQuestBoardHeader" src={theQuestBoardHeader} alt="QuestBoard Header" /> </Header>
-      <Header className="subHeader" ><h2>Quests will appear here!</h2> </Header>
-      <Content style={{ margin: '24px auto auto', overflow: 'initial' }}>
-        <div className="site-layout-background" style={{ padding: 24, textAlign: 'center' }}>
-       
-        <LoginForm />
-        <hr />
-        
-        </div>
-      </Content>
-      <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
-    </Layout>
-  </Layout>
+      <div className="container">
+        <MenuUnauthenticated />
+        <Layout className="site-layout">
+          <Header className="mainHeader" style={{ padding: 0, textAlign: 'center' }}> <img className="theQuestBoardHeader" src={theQuestBoardHeader} alt="QuestBoard Header" /> </Header>
+          <Content style={{ width: '100%', overflow: 'initial' }} >
+            <div className="site-layout-background" style={{ padding: 24, textAlign: 'center' }}>
+              <h1>Roll for Initiative</h1>
+              <LoginForm />
+              <hr />
+
+            </div>
+          </Content>
+          <Foot />
+        </Layout>
+      </div>
     );
   }
 }

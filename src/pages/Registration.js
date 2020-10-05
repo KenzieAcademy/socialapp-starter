@@ -5,7 +5,6 @@ import MenuUnauthenticated from "../components/menu/MenuAuthenticated";
 import { userIsNotAuthenticated } from "../redux/HOCs";
 import theQuestBoardHeader from '../media/theQuestBoardHeader.png'
 
-
 class Registration extends React.Component {
 
   render() {

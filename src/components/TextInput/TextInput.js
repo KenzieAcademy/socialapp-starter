@@ -1,87 +1,67 @@
 import React from "react"
 import QuestboardService from "../servicesPage/ServicePage"
-import axios from "axios"
-import {jsonHeaders, domain, handleJsonResponse} from "../../redux/actionCreators/constants/index"
 import "./TextInput.css"
-import { Button , Input} from 'antd';
+import { Button, Input, notification } from 'antd';
 
-let url = domain + '/messages';
-const loginData = JSON.stringify(localStorage.getItem("login"));
 
 class TextInput extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props)
         this.state = {
             text: ""
-
         }
         this.client = new QuestboardService();
-        let text = this.state.text
     }
-    
-    
-        textStateChange = (event) => {
-        this.setState({text: event.target.value});
-        console.log(this.state.text)
 
+    onFormSubmit = (event) => {
+        event.preventDefault();
+        const textarea = event.target.getElementsByTagName("textarea")[0];
+        const text = textarea.value;
+
+        this.client.PostMesage(text).then(() => {
+            textarea.value = "";
+            notification.success({
+                message: 'Passed Pursuasion Check',
+                description: 'Message Posted'
+            });
+        });
+    }
+
+    onTextareaChange = (event) => {
+        if (event.which === 13 && !event.shiftKey) {
+            var formSubmit = new CustomEvent("submit", {
+                target: event.target.form
+            });
+            event.target.form.dispatchEvent(formSubmit);
+            event.preventDefault();
         }
-    
+    }
 
-        
-        
-        
-        textInputClick = (event) => {
-            // const token = getState().auth.login.result.token;
-            let url = "https://socialapp-api.herokuapp.com/messages"
-            let text = this.state
-            const loginData = JSON.parse(localStorage.getItem("login"));
-            console.log(this.state.text)
-                fetch(url, {
-                    method: "POST",
-                    headers: { Authorization: `Bearer ${loginData.result.token}`, ...jsonHeaders },
-                    body: JSON.stringify(text)
-            }).then(handleJsonResponse)
-            .then(result => {
-                this.setState({ text: "" })
-                return result
-            })
+    render() {
+        const { TextArea } = Input;
+        return (
+            <div id="inputTextBorderBox">
+                <div id="testing1">Your Text Here</div>
 
-            
-        }
-        
+                <form onSubmit={this.onFormSubmit}>
+                    <TextArea
+                        id="feedMessageInput"
+                        name="input1"
+                        placeholder="Your Text Here..."
+                        onKeyPress={this.onTextareaChange}
+                    />
 
-        render() {
-            const { TextArea } = Input;
-            console.log(loginData)
-            return (
-                    <div id="inputTextBorderBox">
-                        <div id="testing1">Your Text Here</div>
-                    
-                        <form>
-                            
-                            <TextArea 
-                                id="feedMessageInput" 
-                                name="input1"
-                                placeholder="Your Text Here..."
-                                onChange={this.textStateChange}
-                            />
-
-                        </form>
-
-                        <Button
+                    <Button
                         id="TextSubmitButton"
-                        onClick={this.textInputClick}
-                        >
+                        htmlType="submit"
+                    >
                         Submit
                         </Button>
+                </form>
+            </div>
 
-                    </div>
+        );
 
-            );
-        
     }
 }
-
-
-
 export default TextInput

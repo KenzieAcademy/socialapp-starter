@@ -1,45 +1,43 @@
 import React from "react";
-import {message, Upload,  Layout,} from 'antd';
+import { Layout, } from 'antd';
 import "antd/dist/antd.css"
 import FileUploader from "../components/UpdatePicture/UpdatePicture"
-import {LoadingOutlined, PlusOutlined} from '@ant-design/icons'
-import Menu from "../components/menu/MenuAuthenticated";
-import QuestboardService from "../components/servicesPage/ServicePage"
+import MenuAuthenticated from "../components/menu/MenuAuthenticated";
 import { userIsAuthenticated } from "../redux/HOCs";
 import ProfileForms from "../components/updatingProfile/ProfileForms"
+import Foot from "../components/foot/Foot";
+import theQuestBoardHeader from '../media/theQuestBoardHeader.png';
+
 
 class Profile extends React.Component {
   constructor(props) {
-  super(props) 
+    super(props)
     this.state = {
-      loading:false,
+      loading: false,
       username: [],
       picture: null,
     }
-    const questboardService = new QuestboardService()
-    const loggedInUsername = questboardService.getUsername()
 
   }
   render() {
-    const {  Content, Footer} = Layout;
-    const { loading, imageUrl } = this.state;
+    const { Content, Header } = Layout;
     return (
-      <Layout className="site-layout" style={{ marginLeft: 190 }}>
-      <Menu isAuthenticated={this.props.isAuthenticated} />
-      <Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>
-        <div className="site-layout-background" style={{ padding: 24, textAlign: 'center' }}>
-        <div className="Profile">
-      
-       <h2>Update your character sheet!</h2>
-       <hr/>
-      <FileUploader/>
-      <hr/>
-     <ProfileForms/>
-        </div>
-        </div>
-      </Content>
-      <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
-    </Layout>
+      <div class="container">
+        <Layout className="site-layout" >
+          <Header className="mainHeader" style={{ padding: 0, textAlign: 'center' }}> <img className="theQuestBoardHeader" src={theQuestBoardHeader} alt="QuestBoard Header" /> </Header>
+          <Content style={{ width: '100%', overflow: 'initial' }} >
+            <div className="site-layout-background" style={{ padding: 24, textAlign: 'center', }}>
+              <MenuAuthenticated isAuthenticated={this.props.isAuthenticated} />
+              <h2>Update your character sheet!</h2>
+              <hr />
+              <FileUploader />
+              <hr />
+              <ProfileForms />
+            </div>
+          </Content>
+          <Foot />
+        </Layout>
+      </div>
     );
   }
 }
