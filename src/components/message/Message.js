@@ -31,22 +31,13 @@ class Message extends React.Component {
                 this.setState(latestState => ({ likeCount: latestState.likeCount + 1 }))
             })
     }
-
-
-    handleDelete = (e) => {
-        e.preventDefault();
-        this.client.deleteMessage(this.props.message.id).then(result => {
-            if (result.data.statusCode === 200) {
-                alert("You have successfully deleted your message")
-            }
-        })
-    }
+  
 
     render() {
         const username = JSON.parse(localStorage.getItem("login")).result.username
         let deleteButton
         if (username === this.props.message.username) {
-            deleteButton = (<button className="deleteButton" onClick={this.handleDelete}>
+            deleteButton = (<button className="deleteButton" onClick={this.props.handleDelete}>
                 Delete Message?</button>)
         }
         return (

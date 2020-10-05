@@ -10,18 +10,31 @@ class MessagePage extends React.Component {
     super(props)
     this.state = {
       messages: [],
+      message: "",
       offset: 100
     }
     this.client = new DataService()
   }
 
+  handleMessage = e => {
+    e.preventDefault();
+    if (this.state.message.length < 256) {
+      this.client.postMessages({ text: this.state.message }).then(response => {
+        this.setState(currentState => ({
+          messages: [response.data.message, ...currentState.messages] 
+        }))
+      })
+      this.setState( {
+        message: "",
+      })
+    } else {
+      alert("Your message is too long, please limit to 255 characters.")
+    }
+  };
 
-  getMessages = () => {
-    this.client.getMessages().then(response => {
-      this.setState({ messages: response.data.messages, offset: 100 })
-      console.log("this is running")
-    })
-  }
+  handleChange = e => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
 
   componentDidMount() {
     this.client.getMessages().then(response => {
@@ -39,19 +52,30 @@ class MessagePage extends React.Component {
     })
   }
 
+  handleDelete = e => {
+    e.preventDefault();
+    this.client.deleteMessage(this.props.message.id).then(result => {
+        if (result.data.statusCode === 200) {
+            alert("You have successfully deleted your message")
+        }
+    })
+}
+
   render() {
     return (
       <div className="MessagePage">
         <Menu className="message-page-menu" isAuthenticated={this.props.isAuthenticated} />
         <NewMessage
-          getMessages={this.getMessages}
+          handleMessage={this.handleMessage}
+          handleChange={this.handleChange}
+          message={this.state.message}
           className="new-message"
           isAuthenticated={this.props.isAuthenticated}
         />
 
-        <MessageList className="message-list" messages={this.state.messages} loadMoreMessages={this.loadMoreMessages} />
+        <MessageList className="message-list" handleDelete={this.handleDelete()} messages={this.state.messages} loadMoreMessages={this.loadMoreMessages} />
 
-        <h2>New Message</h2>
+       
 
         <ul></ul>
 
