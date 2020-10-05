@@ -2,8 +2,8 @@ import React from "react";
 import MenuUnauthenticated from "../components/menu/MenuUnauthenticated";
 import { Layout } from 'antd';
 import theQuestBoardHeader from '../media/theQuestBoardHeader.png'
-import Dice from '../components/dice/Dice'
 import Foot from "../components/foot/Foot";
+import zach01 from '../media/zach01.jpeg'
 
 class ContactUs extends React.Component {
   render() {
@@ -17,8 +17,8 @@ class ContactUs extends React.Component {
           <Header className="mainHeader" style={{ padding: 0, textAlign: 'center' }}> <img className="theQuestBoardHeader" src={theQuestBoardHeader} alt="QuestBoard Header" /> </Header>
           <Content style={{ width: '100%', overflow: 'initial' }} >
             <div className="site-layout-background" style={{ padding: 24, textAlign: 'center' }}>
-              <h1>Dice Roller</h1>
-              <Dice />
+              <h1>Ode to Zach</h1>
+              <img className="zach" src={zach01} alt="zach" />
             </div>
           </Content>
           <Foot />

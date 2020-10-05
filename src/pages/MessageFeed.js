@@ -43,13 +43,13 @@ class MessageFeed extends React.Component {
             <div className="site-layout-background" style={{ padding: 24, textAlign: 'center', }}>
               <MenuAuthenticated isAuthenticated={this.props.isAuthenticated} />
               <div id="feedAndInput">
-                <MessageFeed2/>
-                <UserList className="UserList"/>
+                <MessageFeed2 />
+                <UserList className="UserList" />
                 <TextInput />
               </div>
-              
+
             </div>
-            
+
           </Content>
           <Foot />
 

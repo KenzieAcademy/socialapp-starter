@@ -17,7 +17,7 @@ class Home extends React.Component {
           <Header className="mainHeader" style={{ padding: 0, textAlign: 'center' }}> <img className="theQuestBoardHeader" src={theQuestBoardHeader} alt="QuestBoard Header" /> </Header>
           <Content style={{ width: '100%', overflow: 'initial' }} >
             <div className="site-layout-background" style={{ padding: 24, textAlign: 'center' }}>
-              <h1>Halt! Who Goes there?!</h1>
+              <h1>Roll for Initiative</h1>
               <LoginForm />
               <hr />
 

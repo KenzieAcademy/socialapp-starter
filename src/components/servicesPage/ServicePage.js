@@ -7,7 +7,6 @@ class QuestboardService {
         url = 'https://socialapp-api.herokuapp.com', client = axios.create()) {
         this.url = url;
         this.client = client;
-
     }
 
     getUsername() {
@@ -35,12 +34,12 @@ class QuestboardService {
     Logout() {
         return this.client.get(this.url + "/auth/logout");
     }
-    Users(){
+    Users() {
         return this.client
-            .get(this.url + "/users?limit=1000" )
+            .get(this.url + "/users?limit=1000")
             .then(response => {
                 return response.data.users
-        })
+            })
     }
     NameUser() {
         return this.client.get(this.url + "/users/{username}");
@@ -100,6 +99,16 @@ class QuestboardService {
 
     GoogleLogin() {
         return this.client.get(this.url + "auth/google/login")
+    }
+
+    PostMesage(message) {
+        const config = {
+            headers: {
+                Authorization: `Bearer ${this.getToken()}`
+            }
+        }
+
+        return this.client.post(this.url + "/messages", { "text": message }, config)
     }
 }
 
