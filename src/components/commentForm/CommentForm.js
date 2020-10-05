@@ -8,14 +8,12 @@ import socialAppService from "../../socialAppService";
 class CommentForm extends React.Component {
   constructor(props) {
     super(props);
-
-    this.client = new socialAppService();
     this.state = {
-
       lastRefresh: Date(Date.now()).toString(),
       messages: [],
       formData: {},
-    };
+    }
+    this.client = new socialAppService()
     this.refreshScreen = this.refreshScreen.bind(this)
   }
 
