@@ -30,6 +30,10 @@ class UpdateUserForm extends React.Component {
 
   handleUpdateUser = e => {
     e.preventDefault();
+    let username = false
+        if (JSON.parse(localStorage.getItem('login')).result != null) {
+            username = JSON.parse(localStorage.getItem('login')).result.username
+        }
     const updateData = {}
     if (this.state.password.length > 7) {
       updateData.password = this.state.password
@@ -43,7 +47,7 @@ class UpdateUserForm extends React.Component {
     this.client.updateUser(updateData).then(result => {
       if (result.data.statusCode === 200) {
         alert("You have successfully updated your profile")
-        window.location.href = "/profile/:username"
+        window.location.href = "/profile/" + username
       }
     })
 

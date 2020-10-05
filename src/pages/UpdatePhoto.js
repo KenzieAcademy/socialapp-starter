@@ -38,6 +38,7 @@ class UpdatePhoto extends React.Component {
         if (JSON.parse(localStorage.getItem('login')).result != null) {
             username = JSON.parse(localStorage.getItem('login')).result.username
         }
+        
         return (
             <div>
                 <Menu isAuthenticated={this.props.isAuthenticated} />

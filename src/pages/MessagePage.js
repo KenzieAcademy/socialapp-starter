@@ -56,12 +56,13 @@ class MessagePage extends React.Component {
     e.preventDefault();
     this.client.deleteMessage(messageId).then(result => {
       if (result.data.statusCode === 200) {
-        let index = this.state.messages.findIndex(message => message.id === result.data.id)
-        let copyMessages = [...this.state.message]
-        copyMessages.splice(index, 1)
-        this.setState({
-          messages: copyMessages
+        this.setState(currentState => {
+          const index = currentState.messages.findIndex(message => message.id === result.data.id)
+          const messages = [...currentState.messages]
+          messages.splice(index, 1)
+          return { messages }
         })
+
         alert("You have successfully deleted your message")
       }
     })

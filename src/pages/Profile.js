@@ -48,7 +48,7 @@ class Profile extends React.Component {
     }
 
     let username = false
-    if(JSON.parse(localStorage.getItem('login')).result != null){
+    if (JSON.parse(localStorage.getItem('login')).result != null) {
       username = JSON.parse(localStorage.getItem('login')).result.username
     }
     return (
@@ -58,25 +58,28 @@ class Profile extends React.Component {
       <div className="Profile">
         <Menu isAuthenticated={this.props.isAuthenticated} />
 
-        {/* <img className="cowboy3" src={cowboy3} alt="cowboy3" />
+        <img className="cowboy3" src={cowboy3} alt="cowboy3" />
         <img className="cowboy4" src={cowboy4} alt="cowboy4" />
-        <img className="cowgirl1" src={cowgirl1} alt="cowgirl1" /> */}
+        <img className="cowgirl1" src={cowgirl1} alt="cowgirl1" />
 
-        <h2>{loginData.username}'s Profile</h2>
-        <h4>Profile Photo: </h4>
-        <img className="profile-picture" src={src} alt="profile pic" />
+        <div className="profile-section">
 
-        <br />
+          <h2>{loginData.username}'s Profile</h2>
+          <h4>Profile Photo: </h4>
+          <img className="profile-picture" src={src} alt="profile pic" />
 
-        <Link to={"/updatephoto/" + username}>Change Profile Photo</Link>
+          <br />
 
-        <hr />
+          <Link to={"/updatephoto/" + username}>Change Profile Photo</Link>
 
-        <h4>Display Name: {displayName}</h4>
-        <h4>About: {about}</h4>
-        <Link to={"/updateprofile/" + username}>Update Profile</Link>
+          <hr />
 
-        <hr />
+          <h4>Display Name: {displayName}</h4>
+          <h4>About: {about}</h4>
+          <Link to={"/updateprofile/" + username}>Update Profile</Link>
+
+          <hr />
+        </div>
 
 
       </div>

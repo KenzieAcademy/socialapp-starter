@@ -57,22 +57,3 @@ class Message extends React.Component {
 }
 
 export default Message
-
-
- // handleDelete = e => {
-    //     e.preventDefault();
-    //     this.client.deleteMessage(this.state.messageID).then(result => {
-    //         alert(result.data)
-    //     });
-    // };
-
-
-
-    // handleDelete(messageToBeDeleted) {
-    //     var newMessageID = this.state.filter((_messageID) => {
-    //         return _messageID != messageToBeDeleted
-    //     });
-
-    //     this.setState({ messageID: newMessageID });
-    // }
-

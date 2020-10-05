@@ -15,6 +15,12 @@ body {
   background-image: linear-gradient(to top, #7a2c15 30%, #d36f48 50%);
 }
 
+.registration {
+  position: relative;
+  top: -250px;
+  left: 150px;
+}
+
 .profile-picture {
   max-width: 420px;
   max-height: 520px;
@@ -23,15 +29,6 @@ body {
 .update-picture {
   max-width: 420px;
   max-height: 520px;
-}
-
-.MessagePage {
-  display: flex;
-  flex-direction: column;
-}
-
-.new-message {
-  align-self: stretch;
 }
 
 
@@ -57,7 +54,7 @@ code {
 .cowboy4 {
   position: relative;
   /* top: 50px; */
-  left: -600px;
+  left: -650px;
 }
 
 .cowboy3 {
@@ -71,5 +68,16 @@ code {
   width: 250px;
   position: relative;
   top: 500px;
-  left: 50px;
+  left: 150px;
+}
+
+.profile-section {
+  position: relative;
+  top: -375px;
+}
+
+.profile-section hr {
+  position: relative;
+  width: 400px;
+  left: -200px;
 }

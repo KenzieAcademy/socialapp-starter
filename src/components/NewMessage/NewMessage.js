@@ -1,11 +1,7 @@
 import React from "react";
 import Spinner from "react-spinkit";
 import "./NewMessage.css";
-import DataService from "../../DataService"
 import { Input } from 'antd';
-import { Form } from 'antd'
-import { Button } from 'antd'
-// import { withAsyncAction } from "../../redux/HOCs";
 
 class NewMessage extends React.Component {
   render() {
@@ -24,7 +20,7 @@ class NewMessage extends React.Component {
             onChange={this.props.handleChange}
           />
 
-          <button
+          <button className="new-message-button"
             type="submit"
             disabled={loading}
           >

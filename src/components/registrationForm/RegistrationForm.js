@@ -19,9 +19,11 @@ class RegistrationForm extends React.Component {
     e.preventDefault();
     this.client.registerUser(this.state).then(result => {
       if (result.data.statusCode === 200) {
-        alert("You have successfully registered with Convo-Looters!")
+        alert("You have successfully registered with Convo-Looters! YeeeeeHawwwww!!!")
         this.handleLogin()
         this.setState({username: "", password: "", displayName: ""})
+      } else {
+        alert("Hmm, something went wrong. Please try again partner.")
       }
     }
     )

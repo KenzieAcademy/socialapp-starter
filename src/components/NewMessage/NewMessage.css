@@ -24,7 +24,7 @@
   flex-direction: column;
 }
 
-button {
+.new-message-button {
   width: 300px;
   height: 35px;
 }
