@@ -9,11 +9,14 @@ class PostMessageService {
 
     postMessage(messageBody) {
         const loginData = JSON.parse(localStorage.getItem("login"));
+        let fetchBody = {
+            text: messageBody
+        }
 
         fetch(this.url, {
             method: "POST",
             headers: { Authorization: `Bearer ${loginData.result.token}`, ...jsonHeaders },
-            body: JSON.stringify(messageBody)
+            body: JSON.stringify(fetchBody)
         })
         .then(handleJsonResponse)
         .then(result => {
