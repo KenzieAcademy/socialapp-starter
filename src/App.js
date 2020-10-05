@@ -18,8 +18,6 @@ class App extends React.Component {
       <div className="App">
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/commentForm" component={CommentForm} />
-          
           <Route exact path="/profile/:username" component={Profile} />
           <Route exact path="/about" component={About} />
           <Route exact path="/visit" component={Visit} />

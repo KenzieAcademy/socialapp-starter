@@ -4,7 +4,6 @@ import Message from "../message/Message";
 import socialAppService from "../../socialAppService";
 
 
-
 class CommentForm extends React.Component {
   constructor(props) {
     super(props);

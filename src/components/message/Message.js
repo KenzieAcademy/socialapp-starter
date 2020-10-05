@@ -1,9 +1,28 @@
 import React from "react";
-import SocialAppService from "../../socialAppService";
+import socialAppService from "../../socialAppService";
 
 class Message extends React.Component {
-  state = { likeCount: this.props.likes.length };
-  client = new SocialAppService();
+
+
+  constructor(props) {
+    super(props)
+    this.state = {
+
+      // lastRefresh: Date(Date.now()).toString(),
+      // messages: [],
+      // formData: {},
+
+      likeCount: this.props.likes.length,
+    }
+
+    this.client = new socialAppService()
+  }
+
+
+
+  //   state = { likeCount: this.props.likes.length };
+  //   client = new SocialAppService();
+  // }
 
   handleLike = () => {
     const loggedInUsername = this.client.getUsername();
@@ -19,54 +38,21 @@ class Message extends React.Component {
     });
   };
 
-  //     Search the list of likes in state for a like object with a matching username: you can reuse the callback you're passing to .some() and instead pass it to .find()
-  // Find() will return the like object you want to delete, so assign that to a variable, like doomedLike. Then pass doomedLike.id to this.client.deleteLike.
-
-  // handleDeleteLike = () => {
-  //   const loggedInUsername = this.client.getUsername();
-  // const userHasLiked = this.props.likes.find(
-  //     (likeObject) => likeObject.username === loggedInUsername
-  // )
-  // const doomedLike = this.props.likes.find(
-  //   (likeObject) => likeObject.username === loggedInUsername
-  // );
-  // if (doomedLike) return;
-
-  // handleDeleteLike = () => {
-  //     const loggedInUsername = this.client.getUsername();
-  //     const userHasLiked = this.props.likes.find(
-  //         (likeObject) => likeObject.like === loggedInUsername
-  //     )
-  // const doomedLike = this.props.likes.find(
-  //     (likeObject) => likeObject.username === loggedInUsername
-  // )
-  // if (userHasLiked) {
-  //     return
-  //     this.client.deleteLike(this.props.id).then((like) => {
-  //         this.setState((latestState) => ({
-  //             likeCount: latestState.likeCount - 1,
-  //         }))
-  //     })
-
-  // }
-
-  // this.client.deleteLike(this.props.id).then((response) => {
-  // if (response.data.statusCode !== 200) return; 
-  // }
-  //         )
-  //         );
-  // });
-  // };
-  //    this.client.deleteLike(this.props.id).then((response) => {
-  //     if (response.data.statusCode !== 200) return;
-
-  //     this.setState((latestState) => ({
-  //       likeCount: latestState.likeCount - 1,
-  //     }));
-  //   });
-  // };
-
-
+  handleDeleteLike = () => {
+    const loggedInUsername = this.client.getUsername();
+    // const userHasLiked = this.props.likes.find(
+    //     (likeObject) => likeObject.username === loggedInUsername
+    // )
+    const doomedLike = this.props.likes.find(
+      (likeObject) => likeObject.username === loggedInUsername
+    );
+    if (doomedLike) return;
+    this.client.deleteLike(this.props.id).then((like) => {
+      this.setState((latestState) => ({
+        likeCount: latestState.likeCount - 1,
+      }));
+    });
+  };
 
   render() {
     return (
@@ -95,3 +81,35 @@ class Message extends React.Component {
 }
 
 export default Message;
+
+    //     Search the list of likes in state for a like object with a matching username: you can reuse the callback you're passing to .some() and instead pass it to .find()
+    // Find() will return the like object you want to delete, so assign that to a variable, like doomedLike. Then pass doomedLike.id to this.client.deleteLike.
+
+
+
+      // handleDeleteLike = () => {
+      //     const loggedInUsername = this.client.getUsername();
+      //     const userHasLiked = this.props.likes.find(
+      //         (likeObject) => likeObject.like === loggedInUsername
+      //     )
+      // const doomedLike = this.props.likes.find(
+      //     (likeObject) => likeObject.username === loggedInUsername
+      // )
+      // if (userHasLiked) {
+      //     return
+
+    // this.client.deleteLike(this.props.id).then((response) => {
+    // if (response.data.statusCode !== 200) return; 
+    // }
+    //         )
+    //         );
+    // });
+    // };
+    //    this.client.deleteLike(this.props.id).then((response) => {
+    //     if (response.data.statusCode !== 200) return;
+
+    //     this.setState((latestState) => ({
+    //       likeCount: latestState.likeCount - 1,
+    //     }));
+    //   });
+    // };
