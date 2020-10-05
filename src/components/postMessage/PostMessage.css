@@ -2,10 +2,30 @@
     box-sizing: border-box;
 }
 
-.postBox {
-    border: 2px solid purple;
-    width: 300px;
-    height: 100px;
-    border-radius: 1.5px;
+.PostMessage {
+    display: flex;
+    justify-content: center;
+    margin-left: 36px;
+}
+
+
+.textBox {
+    font-size: 20px;
+    
+}
+
+.textAreaStyle {
+    border: 3px solid slateblue;
+    /* width: 500px;
+    height: 100px; */
+    border-radius: 5px;
     color: black;
+}
+
+.postButton {
+    font-size: 20px;
+    width: 80px;
+    height: 40px;
+    background-color:slateblue;
+    color: mediumaquamarine;
 }

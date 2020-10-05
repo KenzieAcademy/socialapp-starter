@@ -28,11 +28,9 @@ class App extends React.Component {
         />
         <Route
           exact
-          path="/messagefeed"
+          path="/messageFeed"
           component={MessageFeed}
         />
-
-        
         <Route
           exact
           path="*"

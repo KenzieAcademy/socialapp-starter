@@ -1,10 +1,10 @@
 import React from "react";
 import DataService from "../../dataService";
-import "./GetMessages.css";
-import Message from "../message/Message";
-import { userIsAuthenticated} from '../../redux/HOCs';
+import "./ProfileMessages.css";
+import MessageProfile from "../messageProfile/MessageProfile";
+import { userIsAuthenticated } from '../../redux/HOCs';
 
-class GetMessages extends React.Component {
+class ProfileMessages extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -12,15 +12,16 @@ class GetMessages extends React.Component {
     };
     this.client = new DataService();
   }
-  
+
 
   componentDidMount() {
     new DataService()
       .getRecentMessages()
       .then(messages => {
+        console.log(messages)
         this.setState({ messages })
       })
-    }
+  }
   //     new DataService()
   //         .getMessages()
   //         .then(messages => {
@@ -57,17 +58,22 @@ class GetMessages extends React.Component {
         </div>
       )
     }
+
+    // if (msg.username === this.state.username) {
     return (
       <div className="MessageFeed">
         {/* <h2>Message Feed</h2> */}
         <ul>
-          {this.state.messages.map(msg => <Message key={msg.id} {...msg} />)}
-         
-          {/* <Message {...this.state.messages[0]} /> */}
+          {this.state.messages.map(msg => <MessageProfile key={msg.id} {...msg} />)
+
+          }
+            console.log(msg)
+            {/* <Message {...this.state.messages[0]} /> */}
           {/* <li>{this.state.messages[0].text}</li> */}
         </ul>
       </div>
     )
+    // }
 
     // const { loading, error } = this.props;
     // return (
@@ -82,4 +88,4 @@ class GetMessages extends React.Component {
   }
 }
 
-export default userIsAuthenticated(GetMessages);
+export default userIsAuthenticated(ProfileMessages);

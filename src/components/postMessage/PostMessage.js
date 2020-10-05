@@ -32,7 +32,7 @@ class PostMessage extends React.Component {
                 })
             });
         this.setState({ text: "" })
-        // window.location.reload()
+       
     }
 
 
@@ -40,28 +40,60 @@ class PostMessage extends React.Component {
         this.setState({ [event.target.name]: event.target.value })
     }
 
+
+    // refreshPage() {
+    //     return window.location.reload()
+    // }
+    // }
+
+    // componentDidMount() {
+    //     this.refreshPage()
+    // }
+
+    // reloadPage() {
+    //     // The last "domLoading" Time //
+    //     const currentDocumentTimestamp =
+    //         new Date(performance.timing.domLoading).getTime();
+    //     // Current Time //
+    //     const now = Date.now();
+    //     // Ten Seconds //
+    //     const tenSec = 10 * 1000;
+    //     // Plus Ten Seconds //
+    //     const plusTenSec = currentDocumentTimestamp + tenSec;
+    //     if (now > plusTenSec) {
+    //         window.location.reload();
+    //     } else { }
+    // }
+
+
+
+
+
+
+
     render() {
 
         return (
             <div className='PostMessage'>
                 {console.log(this.state.message)}
-                <h4>What do you want to share with the world {this.state.username}?</h4>
-                <form onSubmit={this.handlePostMessage}>
-                    <div>
-                        <label htmlFor="text">Create message </label>
+                {/* <h3>What do you want to share with the world {this.state.username}?</h3> */}
+                <form onSubmit={this.handlePostMessage} >
+                    <div className="textBox">
+                        <label htmlFor="text">Create post</label>
                         <br />
                         <textarea
+                            className="textAreaStyle"
                             type="text"
                             name="text"
                             value={this.state.text}
                             placeholder="What's on your mind?"
                             maxLength="255"
-                            rows="5"
-                            cols="50"
+                            rows="4"
+                            cols="70"
                             onChange={this.handleChange}
                         />
                     </div>
-                    <button type='submit'>Post</button>
+                    <button type='submit' className="postButton" >Post</button>
                 </form>
             </div>
         )

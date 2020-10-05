@@ -1,0 +1,28 @@
+.profile-box-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    border: 2px solid black;
+    margin: 2%;
+    width: 60%;
+    height: 350px;
+
+}
+
+.profile-box-right {
+    float: right;
+    border: 2px solid red;
+    /* background-color: black; */
+    margin: 2%;
+    width: 28%;
+    height: 350px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    }
+
+    .profile-content {
+        display: flex;
+         align-items: center;
+        justify-content: center;
+    }

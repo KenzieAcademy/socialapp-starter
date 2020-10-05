@@ -28,7 +28,7 @@ class DeleteMessage extends React.Component {
     render() {
         return (
             <div className='DeleteMessage'>
-                <button type='submit' onClick={this.handleDeleteMessage} >Delete 🗑️</button>
+                <button onClick={()=>props.removePosts(index)}><span>Delete 🗑️</span></button>
             </div>
         )
     }

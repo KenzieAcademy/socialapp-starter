@@ -1,0 +1,18 @@
+/* #message-list {
+list-style-type: none;
+
+} */
+
+.Message {
+    border: #d3d3d3 3px solid;
+    width: 500px;
+    margin: 15px auto;
+    padding: 2%;
+    background-color:whitesmoke;
+    list-style-type: none;
+    border-radius: 5px;
+    }
+
+span.spanlike {
+    float: right;
+}
