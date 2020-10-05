@@ -4,15 +4,20 @@ import { userIsAuthenticated } from "../redux/HOCs";
 import Menu from "../components/menu/Menu";
 import DeleteUserButton from "../components/deleteUserButton/DeleteUserButton";
 import UpdateAbout from "../components/updateAbout/UpdateAbout";
+import PhotoUpload from "../components/photoUpload/PhotoUpload";
 import { Card } from "antd";
 import "./PageStyles.css";
 
 class ProfileOptions extends React.Component {
   constructor(props) {
     super(props);
+    let loginData = JSON.parse(localStorage.getItem("login"));
 
     this.state = {
       isDeleted: false,
+      username: loginData.result.username,
+      loading: false,
+
     };
   }
 
@@ -44,8 +49,13 @@ class ProfileOptions extends React.Component {
         <Card
           style={{ textAlign: "left", width: "50%", margin: "left" }}
         ></Card>
+
         <h3>Update Picture :</h3>
-        <button className="update-pic">update</button>
+        <PhotoUpload
+          username={this.state.username}
+          loading={this.state.loading}
+        />
+
         <br />
         <br />
 

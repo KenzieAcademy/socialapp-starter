@@ -1,5 +1,6 @@
 import React from "react";
 import DataService from "../../DataService";
+import { LikeOutlined } from "@ant-design/icons";
 
 class LikeButton extends React.Component {
   constructor(props) {
@@ -24,7 +25,9 @@ class LikeButton extends React.Component {
   render() {
     return (
       <div className="Like Button">
-        <button onClick={this.handleLike}>Like</button>
+        <button onClick={this.handleLike}>
+          Like <LikeOutlined />
+        </button>
       </div>
     );
   }
