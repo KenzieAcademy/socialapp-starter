@@ -24,7 +24,6 @@ class App extends React.Component {
         {/* <UseWindowSize /> */}
         <TwitHeader />
         <Layout>
-
           <SideBar />
           <MainContent />
         </Layout>
