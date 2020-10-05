@@ -11,7 +11,7 @@ class UpdateDisplayName extends React.Component {
         window.location.reload()
     }
 
-    handleSubmit = (userData) => {
+    handleSubmit = () => {
         if (this.state.displayName.length < 3) {
             alert("Error: Display name is too short.")
         } else if (this.state.displayName.length > 20) {

@@ -5,6 +5,7 @@ import UpdateUser from "../components/updateUser/UpdateUser";
 import { userIsAuthenticated } from "../redux/HOCs";
 import "../components/updateUser/UpdateUser.css";
 import DataService from "../dataService"
+import Messagefeed from "./Messagefeed";
 
 class Profile extends React.Component {
   constructor (props) {
@@ -39,7 +40,8 @@ class Profile extends React.Component {
           <h2>About Me</h2>
           <p>{this.state.user.about}</p>
           <h2>Messages</h2>
-          <p>Message component go here.</p>
+          <p>Message component goes here.</p>
+          <Messagefeed />
         </div>
       </div>
     );

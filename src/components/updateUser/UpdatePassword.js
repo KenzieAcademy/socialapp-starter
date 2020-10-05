@@ -13,10 +13,16 @@ class UpdatePassword extends React.Component {
     }
 
     handleSubmit = () => {
-        new DataService().updateUser(this.state).then(response => {
-            console.log(response)
-            this.pageRefresh()
-        })
+        if (this.state.password.length < 3) {
+            alert("Error: Password is too short.")
+        } else if (this.state.password.length > 20) {
+            alert("Error: Password is too long.")
+        } else {
+            new DataService().updateUser(this.state).then(response => {
+                console.log(response)
+                this.pageRefresh()
+            })
+        }
     }
 
     handleChange = e => {
@@ -35,8 +41,6 @@ class UpdatePassword extends React.Component {
                             type="password"
                             value={this.state.password}
                             size="30"
-                            minLength={3}
-                            maxLength={20}
                             required
                             placeholder="Enter a new password"
                             onChange={this.handleChange}
