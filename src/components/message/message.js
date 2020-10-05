@@ -1,12 +1,17 @@
 import React from "react";
+import { withAsyncAction } from "../../redux/HOCs";
 import SocialAppService from "../../socialAppService";
 
 class Message extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { likeCount: this.props.likes.length };
+    this.client = new SocialAppService();
 
-  state = { likeCount: this.props.likes.length };
-  client = new SocialAppService();
+  }
+
   handleLike = () => {
-    const loggedInUsername = this.client.getUsername();
+    const loggedInUsername = this.client.getUserName();
     const userHasLiked = this.props.likes.some(
       (likeObject) => likeObject.username === loggedInUsername
     );
@@ -15,48 +20,24 @@ class Message extends React.Component {
       this.setState((latestState) => ({
         likeCount: latestState.likeCount + 1,
       }));
-    });
+    })
+
   };
-  // handleDeleteLike = () => {
-  //   const loggedInUsername = this.client.getUsername();
-  // const userHasLiked = this.props.likes.find(
-  //     (likeObject) => likeObject.username === loggedInUsername
-  // )
-  // const doomedLike = this.props.likes.find(
-  //   (likeObject) => likeObject.username === loggedInUsername
-  // );
-  // if (doomedLike) return;
-  // handleDeleteLike = () => {
-  //     const loggedInUsername = this.client.getUsername();
-  //     const userHasLiked = this.props.likes.find(
-  //         (likeObject) => likeObject.like === loggedInUsername
-  //     )
-  // const doomedLike = this.props.likes.find(
-  //     (likeObject) => likeObject.username === loggedInUsername
-  // )
-  // if (userHasLiked) {
-  //     return
-  //     this.client.deleteLike(this.props.id).then((like) => {
-  //         this.setState((latestState) => ({
-  //             likeCount: latestState.likeCount - 1,
-  //         }))
-  //     })
 
-  // this.client.deleteLike(this.props.id).then((response) => {
-  // if (response.data.statusCode !== 200) return; 
-  // }
-  //         )
-  //         );
-  // });
-  // };
-  //    this.client.deleteLike(this.props.id).then((response) => {
-  //     if (response.data.statusCode !== 200) return;
+  handleDeleteLike = () => {
+    const loggedInUsername = this.client.getUserName();
+    const userHasLiked = this.props.likes.find(
+      (likeObject) => likeObject.like === loggedInUsername)
 
-  //     this.setState((latestState) => ({
-  //       likeCount: latestState.likeCount - 1,
-  //     }));
-  //   });
-  // };
+    if (userHasLiked) {
+
+      this.client.deleteLike(userHasLiked.id).then((like) => {
+        this.setState((latestState) => ({
+          likeCount: latestState.likeCount - 1,
+        }))
+      })
+    }
+  }
   render() {
     return (
       <li className="message">
@@ -82,7 +63,7 @@ class Message extends React.Component {
   }
 }
 
-export default Message;
+export default withAsyncAction("auth", "login")(Message);
 
 //   .then(response => response.data.like)
 //   }

@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, Comment, Form } from "semantic-ui-react";
-import Message from "../../components/message/message";
+import Message from "../message/Message";
 import socialAppService from "../../socialAppService";
 
 
