@@ -22,15 +22,6 @@ class MessageFeed2 extends React.Component {
             this.setState({ messages })
         })
     }
-
-    componentDidUpdate(prevProps, prevState){
-        if (prevState.messages !== this.state.messages){
-            new QuestboardService().GetMessageList().then(messages => {
-                this.setState({ messages })
-            })
-        }
-      
-      }
   
       componentWillUnmount() {
         clearInterval(this.interval)
@@ -41,7 +32,7 @@ class MessageFeed2 extends React.Component {
             return (
                 <div id="feedBackground">
                     <div className="messageFeed">
-                        {/* <Menu /> */}
+                        
                         <h1>Message Feed</h1>
                         <h3>loading...</h3>
                     </div>

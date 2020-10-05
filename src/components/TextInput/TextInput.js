@@ -13,25 +13,15 @@ class TextInput extends React.Component {
         super(props)
         this.state = {
             text: ""
-
         }
         this.client = new QuestboardService();
         let text = this.state.text
     }
-    
-    
         textStateChange = (event) => {
         this.setState({text: event.target.value});
         console.log(this.state.text)
-
         }
-    
-
-        
-        
-        
         textInputClick = (event) => {
-            // const token = getState().auth.login.result.token;
             let url = "https://socialapp-api.herokuapp.com/messages"
             let text = this.state
             const loginData = JSON.parse(localStorage.getItem("login"));
@@ -44,12 +34,8 @@ class TextInput extends React.Component {
             .then(result => {
                 this.setState({ text: "" })
                 return result
-            })
-
-            
+            })   
         }
-        
-
         render() {
             const { TextArea } = Input;
             console.log(loginData)
@@ -81,7 +67,4 @@ class TextInput extends React.Component {
         
     }
 }
-
-
-
 export default TextInput

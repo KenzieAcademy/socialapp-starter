@@ -1,26 +1,20 @@
 import React from "react";
-
+import Goofy from "../../media/Goofy.jpg"
 import { Carousel, } from 'antd';
 import { createFromIconfontCN, } from '@ant-design/icons';
 
 class Foot extends React.Component {
-
     state = {
         dotPosition: 'top',
     }
-
     render() {
-
         // for the icons
         const IconFont = createFromIconfontCN({
             scriptUrl: '//at.alicdn.com/t/font_8d5l8fzk5b87iudi.js',
         });
-
         const { dotPosition } = this.state;
-
         return (
             <div>
-
                 {/* take to make one for yourself */}
                 <Carousel autoplay dotPosition={dotPosition}>
                     {/* start of the dev card  */}
@@ -70,7 +64,7 @@ class Foot extends React.Component {
 
                         <img
                             class="Dev"
-                            src="https://files.slack.com/files-pri/TCNHBFEG3-F01CMPFADSL/fb_img_1601856169359.jpg"
+                            src={Goofy}
                             alt="user"
                         />
 
@@ -111,11 +105,10 @@ class Foot extends React.Component {
                     {/* end of the dev card */}
                     {/* start of the dev card  */}
                     <div class="card-container">
-                        
-                       
+
                         <img
                             class="Dev"
-                            url="https://randomuser.me/api/portraits/women/79.jpg"
+                            src="https://randomuser.me/api/portraits/women/79.jpg"
                             alt="user"
                         />
 
@@ -205,7 +198,6 @@ class Foot extends React.Component {
                             Love to read books and eat sweet treats
                         </p>
 
-
                         <div class="media links">
                             <a href="https://www.twitter.com/" target="_blank"><IconFont type="icon-twitter" style={{ fontSize: '40px', color: '#067c89' }} />  </a>
                             <a href="https://www.facebook.com/tim.terry.99" target="_blank"><IconFont type="icon-facebook" style={{ fontSize: '40px', color: 'blue' }} />  </a>
@@ -226,6 +218,7 @@ class Foot extends React.Component {
                     
 
                 </Carousel>
+
             </div>
         );
     }

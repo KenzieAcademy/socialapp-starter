@@ -14,10 +14,8 @@ class RegistrationForm extends React.Component {
       displayName: "",
     };
     this.client = new QuestboardService();
-  
     ;
   }
-
   handleRegistration = e => {
     e.preventDefault();
     this.client.Register(this.state).then(result => {
@@ -38,8 +36,6 @@ class RegistrationForm extends React.Component {
   };
 
   render() {
-    
-
     const { loading, error } = this.props;
 
     return (
