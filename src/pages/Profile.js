@@ -1,6 +1,7 @@
 import React from "react";
 import Menu from "../components/menu/Menu";
 import UpdateUser from "../components/updateUser/UpdateUser";
+import UserMessages from "../components/userMessages/UserMessages";
 import AboutUser from "../components/About/About";
 import UpdateAbout from "../components/updateAbout/updateAbout";
 import { userIsAuthenticated } from "../redux/HOCs";
@@ -18,15 +19,16 @@ class Profile extends React.Component {
           <Sider style={{ padding: "15px" }}>
             <UploadPicture />
           </Sider>
-          <Layout>
-            <Content style={{ height: "500vh" }}>
+          <Layout style={{ background: "#94b1af" }}>
+            <Content style={{ height: "100vh" }}>
               <AboutUser />
               <UpdateAbout />
               <UpdateUser />
+              <UserMessages />
             </Content>
-            <Footer>Footer</Footer>
           </Layout>
         </Layout>
+        <Footer>Footer</Footer>
       </div>
     );
   }

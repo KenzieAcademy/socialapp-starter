@@ -2,8 +2,6 @@ import React from "react";
 
 import DataService from "../../DataService";
 
-import { Button } from "antd";
-
 class UpdateAbout extends React.Component {
   constructor(props) {
     super(props);
