@@ -9,6 +9,10 @@ class FileUploader extends React.Component {
         imageURL: `https://socialapp-api.herokuapp.com/users/${dataService.getUsername()}/picture`,
         formData: null
     }
+
+    pageRefresh() {
+        window.location.reload()
+    }
     
     setFallbackImage = event => {
         event.target.src = "https://iupac.org/wp-content/uploads/2018/05/default-avatar.png"
@@ -30,6 +34,7 @@ class FileUploader extends React.Component {
             if (response.data.stateCode === 200) {
                 this.updatePicture()
             }
+            this.pageRefresh()
         })
     }
 
