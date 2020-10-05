@@ -58,8 +58,8 @@ class DataService {
     return this.client.get(this.url + "users/" + username);
   }
 
-  getUserPhoto(username) {
-    return this.client.get(this.url + "users/" + username + "/picture");
+  getUserPhoto(username, t) {
+    return this.client.get(this.url + "users/" + username + "/picture?t=" + t);
   }
 
   deleteUser(username) {
@@ -76,6 +76,16 @@ class DataService {
     return this.client.patch(this.url + "users/" + username, about, {
       headers: { Authorization: `Bearer ${loginData.result.token}` },
     });
+  }
+  uploadPhoto(username, formdata) {
+    let loginData = JSON.parse(localStorage.getItem("login"));
+    return this.client.put(
+      this.url + "users/" + username + "/picture",
+      formdata,
+      {
+        headers: { Authorization: `Bearer ${loginData.result.token}` },
+      }
+    );
   }
 }
 
