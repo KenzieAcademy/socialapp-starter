@@ -21,10 +21,10 @@ class MessagePage extends React.Component {
     if (this.state.message.length < 256) {
       this.client.postMessages({ text: this.state.message }).then(response => {
         this.setState(currentState => ({
-          messages: [response.data.message, ...currentState.messages] 
+          messages: [response.data.message, ...currentState.messages]
         }))
       })
-      this.setState( {
+      this.setState({
         message: "",
       })
     } else {
@@ -52,14 +52,20 @@ class MessagePage extends React.Component {
     })
   }
 
-  handleDelete = e => {
+  handleDelete = messageId => e => {
     e.preventDefault();
-    this.client.deleteMessage(this.props.message.id).then(result => {
-        if (result.data.statusCode === 200) {
-            alert("You have successfully deleted your message")
-        }
+    this.client.deleteMessage(messageId).then(result => {
+      if (result.data.statusCode === 200) {
+        let index = this.state.messages.findIndex(message => message.id === result.data.id)
+        let copyMessages = [...this.state.message]
+        copyMessages.splice(index, 1)
+        this.setState({
+          messages: copyMessages
+        })
+        alert("You have successfully deleted your message")
+      }
     })
-}
+  }
 
   render() {
     return (
@@ -73,9 +79,9 @@ class MessagePage extends React.Component {
           isAuthenticated={this.props.isAuthenticated}
         />
 
-        <MessageList className="message-list" handleDelete={this.handleDelete()} messages={this.state.messages} loadMoreMessages={this.loadMoreMessages} />
+        <MessageList className="message-list" handleDelete={this.handleDelete} messages={this.state.messages} loadMoreMessages={this.loadMoreMessages} />
 
-       
+
 
         <ul></ul>
 

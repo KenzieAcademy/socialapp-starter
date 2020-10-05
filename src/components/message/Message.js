@@ -37,7 +37,7 @@ class Message extends React.Component {
         const username = JSON.parse(localStorage.getItem("login")).result.username
         let deleteButton
         if (username === this.props.message.username) {
-            deleteButton = (<button className="deleteButton" onClick={this.props.handleDelete}>
+            deleteButton = (<button className="deleteButton" onClick={this.props.handleDelete(this.props.message.id)}>
                 Delete Message?</button>)
         }
         return (

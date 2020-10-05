@@ -2,6 +2,7 @@ import React from "react";
 import Spinner from "react-spinkit";
 import "./RegistrationForm.css";
 import DataService from "../../DataService";
+import { withAsyncAction } from "../../redux/HOCs";
 
 class RegistrationForm extends React.Component {
   constructor(props) {
@@ -19,6 +20,7 @@ class RegistrationForm extends React.Component {
     this.client.registerUser(this.state).then(result => {
       if (result.data.statusCode === 200) {
         alert("You have successfully registered with Convo-Looters!")
+        this.handleLogin()
         this.setState({username: "", password: "", displayName: ""})
       }
     }
@@ -29,7 +31,10 @@ class RegistrationForm extends React.Component {
     this.setState({ [e.target.name]: e.target.value });
   }
 
-
+  handleLogin = e => {
+    // e.preventDefault();
+    this.props.login({username: this.state.username, password:this.state.password});
+  };
 
   render() {
     const { loading, error } = this.props;
@@ -78,4 +83,4 @@ class RegistrationForm extends React.Component {
   }
 }
 
-export default RegistrationForm;
+export default withAsyncAction("auth", "login")(RegistrationForm);
