@@ -14,16 +14,8 @@ class RegistrationForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-<<<<<<< HEAD
-      
-      
-      username: "",
-      password: "",
-      displayName: "",
-=======
       userData: { username: "", password: "", displayName: "" },
       isSubmitted: false,
->>>>>>> 1febe8c4029cb35d688e3074e69142dc49fe5e31
     };
 
     this.client = new DataService();

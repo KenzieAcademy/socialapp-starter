@@ -4,11 +4,7 @@ import { userIsAuthenticated } from "../redux/HOCs";
 import Menu from "../components/menu/Menu";
 import DeleteUserButton from "../components/deleteUserButton/DeleteUserButton";
 import UpdateAbout from "../components/updateAbout/UpdateAbout";
-<<<<<<< HEAD
-import PhotoUpload from "../components/photoUpload/PhotoUpload"
-=======
 import PhotoUpload from "../components/photoUpload/PhotoUpload";
->>>>>>> 1febe8c4029cb35d688e3074e69142dc49fe5e31
 import { Card } from "antd";
 import "./PageStyles.css";
 
@@ -16,19 +12,12 @@ class ProfileOptions extends React.Component {
   constructor(props) {
     super(props);
     let loginData = JSON.parse(localStorage.getItem("login"));
-<<<<<<< HEAD
-    
-    this.state = {
-      username: loginData.result.username,
-      userData: [],
-=======
 
     this.state = {
       isDeleted: false,
       username: loginData.result.username,
       loading: false,
 
->>>>>>> 1febe8c4029cb35d688e3074e69142dc49fe5e31
     };
   }
 
@@ -62,17 +51,11 @@ class ProfileOptions extends React.Component {
         ></Card>
 
         <h3>Update Picture :</h3>
-<<<<<<< HEAD
-        <PhotoUpload username={this.state.username}/>
-
-        
-=======
         <PhotoUpload
           username={this.state.username}
           loading={this.state.loading}
         />
 
->>>>>>> 1febe8c4029cb35d688e3074e69142dc49fe5e31
         <br />
         <br />
 
