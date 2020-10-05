@@ -124,9 +124,12 @@ class DataService {
         Authorization: `Bearer ${token}`,
       },
     };
-    return this.client
-      .delete(this.url + "/users/" + username, requestBody, config)
-      .then(console.log("deleted"));
+    return this.client.delete(
+      this.url + "/users/" + username,
+      requestBody,
+      config
+    );
+    // .then(console.log("deleted"));
   }
 
   uploadPicture(formData) {

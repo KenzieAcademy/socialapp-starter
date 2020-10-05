@@ -18,13 +18,13 @@ class RegistrationForm extends React.Component {
 
   handleRegistration = (e) => {
     e.preventDefault();
-    console.log("user register");
     this.client.registerUser(this.state).then((result) => {
       console.log(result.data);
     });
   };
 
   handleChange = (e) => {
+    console.log(e);
     this.setState({ [e.target.name]: e.target.value });
   };
 
@@ -34,7 +34,6 @@ class RegistrationForm extends React.Component {
       <div className="RegistrationForm">
         <form id="registration-form" onSubmit={this.handleRegistration}>
           <label htmlFor="username">Username</label>
-
           <input
             type="text"
             name="username"
@@ -56,6 +55,7 @@ class RegistrationForm extends React.Component {
             required
             onChange={this.handleChange}
           />
+
           <Button type="submit" disabled={loading}>
             Sign Up
           </Button>

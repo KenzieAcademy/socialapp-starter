@@ -58,7 +58,7 @@ class SideBar extends React.Component {
                     </Route>
                   </Menu.Item>
                   <Menu.Item key="location5">
-                    <Link to="/Delete" onClick={this.handleChange}>
+                    <Link to="/deleteprofile" onClick={this.handleChange}>
                       {" "}
                       ❎ Delete Profile
                     </Link>
