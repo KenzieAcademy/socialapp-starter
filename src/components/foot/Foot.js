@@ -130,10 +130,11 @@ class Foot extends React.Component {
                     {/* end of the dev card */}
                     {/* start of the dev card  */}
                     <div class="card-container">
-
+                        
+                       
                         <img
                             class="Dev"
-                            src="https://randomuser.me/api/portraits/women/79.jpg"
+                            url="https://randomuser.me/api/portraits/women/79.jpg"
                             alt="user"
                         />
 
@@ -173,20 +174,18 @@ class Foot extends React.Component {
                             class="Dev"
                             src="https://randomuser.me/api/portraits/women/79.jpg"
                             alt="user"
-                        />
-
+/>
                         <h3><b>Shari Dragon</b></h3>
                         <h2>Ohio</h2>
                         <p>
                             Casual Gamer and front-end developer
                         </p>
-
                         <p>
                             Big anime fan <IconFont type="icon-twitter"></IconFont>
                         </p>
                         <div class="media links">
                             <a href="https://www.twitter.com/" target="_blank"><IconFont type="icon-twitter" style={{ fontSize: '40px', color: '#067c89' }} />  </a>
-                            <a href="https://www.facebook.com/" target="_blank"><IconFont type="icon-facebook" style={{ fontSize: '40px', color: 'blue' }} />  </a>
+                            <a href="https://www.facebook.com/tim.terry.99" target="_blank"><IconFont type="icon-facebook" style={{ fontSize: '40px', color: 'blue' }} />  </a>
                         </div>
                         
                         <div class="skills">
@@ -202,8 +201,8 @@ class Foot extends React.Component {
                         </div>
                     </div>
 
+                </Carousel>
 
- </Carousel>
             </div>
         );
     }
