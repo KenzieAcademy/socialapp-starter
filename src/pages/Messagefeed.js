@@ -3,7 +3,7 @@ import "../components/menu/Menu.css";
 import DataServices from '../dataService';
 import MsgNavBar from "../components/msgnavbar/MsgNavBar";
 import Comment from "../components/Comments/Comment";
-//import Post from "../components/Post/Post";
+import Post from "../components/Post/Post";
 
 import { userIsAuthenticated } from "../redux/HOCs";
 
@@ -68,7 +68,8 @@ class Messagefeed extends Component {
 
     buttonHandler = (event) => {
         //console.log(this.state.messages[0].text)
-        console.log(this.state.author)
+
+        console.log(this.state.author + this.state.date)
     }
 
     render() {
@@ -137,7 +138,7 @@ class Messagefeed extends Component {
 
 
                         </div>
-
+                        <Post author={this.state.author} date={this.state.date} />
                         <span>{this.state.author} {this.state.children}</span>
                     </Sider>
                 </Layout>
