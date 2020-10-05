@@ -1,6 +1,5 @@
 import React from 'react';
 import { userIsAuthenticated } from "../../redux/HOCs";
-import './Style.css';
 import Menu from "../../components/menu/Menu";
 import FootNavBar from "../../components/footNavBar/FootNavBar"
 

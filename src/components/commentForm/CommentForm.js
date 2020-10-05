@@ -1,20 +1,19 @@
 import React from "react";
 import { Button, Comment, Form } from "semantic-ui-react";
-import Message from "../message/Message";
+import Message from "../../components/message/Message";
 import socialAppService from "../../socialAppService";
+
 
 
 class CommentForm extends React.Component {
   constructor(props) {
     super(props);
-
-    this.client = new socialAppService();
     this.state = {
-
       lastRefresh: Date(Date.now()).toString(),
       messages: [],
       formData: {},
-    };
+    }
+    this.client = new socialAppService()
     this.refreshScreen = this.refreshScreen.bind(this)
   }
 

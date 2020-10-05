@@ -6,9 +6,12 @@ import UploadImage from "../addPhoto/AddPhoto";
 import EditProfile from "../editProfile/EditProfile";
 import SocialAppService from "../../socialAppService";
 import "./SideBar.css";
+<<<<<<< HEAD
 import socialAppService from '../../socialAppService';
 
 
+=======
+>>>>>>> bc3fe92bc55cef3bdee0053de423364c7d8d9bcb
 
 class SideBar extends React.Component {
     constructor(props) {
