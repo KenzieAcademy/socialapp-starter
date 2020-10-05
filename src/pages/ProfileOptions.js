@@ -41,28 +41,25 @@ class ProfileOptions extends React.Component {
       <div className="ProfileOptions">
         <Menu isAuthenticated={this.props.isAuthenticated} />
         <h2>Settings</h2>
-        <br />
-        <h3>Update About :</h3>
-        <UpdateAbout />
-        <br />
-        <Card
-          style={{ textAlign: "left", width: "50%", margin: "left" }}
-        ></Card>
+        <div className="SettingsBody">
+          <br />
 
-        <h3>Update Picture :</h3>
-        <PhotoUpload
-          username={this.state.username}
-          loading={this.state.loading}
-        />
+          <h3>Update Picture :</h3>
+          <PhotoUpload
+            username={this.state.username}
+            loading={this.state.loading}
+          />
 
-        <br />
-        <br />
-
+          <br />
+          <h3>Update About :</h3>
+          <UpdateAbout />
+          <br />
+          <br />
+        </div>
         <h3>Delete User: </h3>
         <DeleteUserButton
           handleDeleteUserUpdate={this.handleDeleteUserUpdate}
         />
-        <Card />
       </div>
     );
   }

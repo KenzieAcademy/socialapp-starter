@@ -63,16 +63,18 @@ class MessageList extends React.Component {
             handleSubmit={this.handleSubmit}
           />
           <h1>Message Feed</h1>
-          <div className="MessageList-messages" scrollHeight="300">
-            <ul>
-              {this.state.messages.map((msgObj) => (
-                <Message
-                  keyId={msgObj.id}
-                  {...msgObj}
-                  handleRefresh={this.handleRefresh}
-                />
-              ))}
-            </ul>
+          <div className="MessageList-body">
+            <div className="MessageList-messages">
+              <ul>
+                {this.state.messages.map((msgObj) => (
+                  <Message
+                    keyId={msgObj.id}
+                    {...msgObj}
+                    handleRefresh={this.handleRefresh}
+                  />
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       );
@@ -85,15 +87,17 @@ class MessageList extends React.Component {
             handleRefresh={this.handleRefresh}
           />
           <h1>Message Feed</h1>
-          <ul>
-            {this.state.messages.map((msgObj) => (
-              <Message
-                keyId={msgObj.id}
-                {...msgObj}
-                handleRefresh={this.handleRefresh}
-              />
-            ))}
-          </ul>
+          <div className="MessageList-body">
+            <ul>
+              {this.state.messages.map((msgObj) => (
+                <Message
+                  keyId={msgObj.id}
+                  {...msgObj}
+                  handleRefresh={this.handleRefresh}
+                />
+              ))}
+            </ul>
+          </div>
         </div>
       );
   }

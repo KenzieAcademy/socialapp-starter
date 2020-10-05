@@ -13,10 +13,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-left: 5%;
-  padding-right: 5%;
 }
 
 .ProfileBody {
+  display: flex;
+}
+
+.SettingsBody {
   display: flex;
 }
