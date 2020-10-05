@@ -3,6 +3,7 @@ import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import { userIsAuthenticated } from "../../redux/HOCs";
 import "../../components/profileContent/ProfileContent.css";
+import "../../components/profileContent/ProfileContEdit.css";
 import MiniProfileIMG from "../../assets/images/Placeholder_Image.png";
 import Form from "react-bootstrap/Form";
 
@@ -70,74 +71,108 @@ const ProfileContent = (props) => {
       </Form>
       {props.checked && (
         <div className="EditInfoBody">
-          <div className="EditInfoBox">
-            <Form.Group>
+          <Form.Group>
+            <div className="EditFormBox">
               <Form.Row>
-                <Form.Label className="EditDisplayHeader">
-                  Display Name:{" "}
-                </Form.Label>
-                <Col xs="auto">
-                  <Form.Control
-                    onChange={props.change}
-                    name="displayName"
-                    inline="true"
-                  ></Form.Control>
-                </Col>
+                <div className="EditDisplayBox">
+                  <Form.Label className="EditDisplayHeader">
+                    Change Display Name To:{" "}
+                  </Form.Label>
+                  <div className="EditDisplayInput">
+                    <Col xs="auto">
+                      <Form.Control
+                        onChange={props.change}
+                        name="displayName"
+                        inline="true"
+                      ></Form.Control>
+                    </Col>
+                  </div>
+                </div>
               </Form.Row>
               <Form.Row>
                 <div className="EditPassBox">
-                  <Form.Label className="EditPassHeader">Password: </Form.Label>
-                  <Col xs="auto">
-                    <Form.Control
-                      onChange={props.change}
-                      name="password"
-                      type="password"
-                      inline="true"
-                    ></Form.Control>
-                  </Col>
+                  <Form.Label className="EditPassHeader">
+                    Change Password To:{" "}
+                  </Form.Label>
+                  <div className="EditPassInput">
+                    <Col xs="auto">
+                      <Form.Control
+                        onChange={props.change}
+                        name="password"
+                        type="password"
+                        inline="true"
+                      ></Form.Control>
+                    </Col>
+                  </div>
                 </div>
               </Form.Row>
               <Form.Row>
                 <div className="EditAboutBox">
                   <Form.Label className="EditAboutHeader">
-                    About Me:{" "}
+                    Change About Me To:{" "}
                   </Form.Label>
-                  <Col xs="auto">
-                    <Form.Control
-                      onChange={props.change}
-                      name="about"
-                      as="textarea"
-                      inline="true"
-                    ></Form.Control>
-                  </Col>
+                  <div className="EditAboutInput">
+                    <Col xs="auto">
+                      <Form.Control
+                        onChange={props.change}
+                        name="about"
+                        as="textarea"
+                        inline="true"
+                      ></Form.Control>
+                    </Col>
+                  </div>
                 </div>
               </Form.Row>
+            </div>
+            <div className="EditPicBox">
+              <div className="CurrentPicBox">
+                <img
+                  alt="Profile Pic"
+                  src={picture}
+                  style={styles.paperContainer}
+                  class="img-fluid"
+                  variant="dark"
+                  title="Profile Pic"
+                />
+              </div>
               <Form.Row>
-                <div className="EditPicBox">
-                  <Col>
-                    <Form.File
-                      className="EditProfPic"
-                      id="profileImg"
-                      label="Upload/Update Your Profile Image"
-                      name="image"
-                      onChange={props.changePic}
-                      accept="image/*"
-                    />
-                    <Button type="primary" onClick={props.upload}>
+                <Col>
+                  <Form.File
+                    className="EditPicHeader"
+                    id="profileImg"
+                    label="◄Your Current Profile Picture"
+                    name="image"
+                    onChange={props.changePic}
+                    accept="image/*"
+                  />
+                  <div className="UpdateButtonBox">
+                    <Button
+                      className="UpdateButton"
+                      variant="dark"
+                      size="lg"
+                      type="primary"
+                      onClick={props.upload}
+                    >
                       Update Profile Picture
                     </Button>
-                  </Col>
-                </div>
+                  </div>
+                </Col>
               </Form.Row>
-              <Form.Row>
-                <div className="EditSaveBox">
-                  <Button type="primary" onClick={props.submitButton}>
-                    Save Changes
-                  </Button>
-                </div>
-              </Form.Row>
-            </Form.Group>
-          </div>
+            </div>
+            <Form.Row>
+              <div className="SaveButtonBox">
+                <Button
+                  className="SaveButton"
+                  variant="dark"
+                  size="lg"
+                  type="primary"
+                  onClick={props.submitButton}
+                >
+                  Save Changes
+                </Button>
+              </div>
+            </Form.Row>
+          </Form.Group>
         </div>
       )}
     </div>

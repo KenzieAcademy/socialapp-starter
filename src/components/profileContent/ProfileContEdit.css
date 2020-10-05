@@ -1,0 +1,177 @@
+* {
+  box-sizing: border-box;
+}
+
+.EditInfoBody {
+  height: 700px;
+  border: black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  background-image: url(../../assets/images/Clear_Red.png);
+  margin-top: 10px;
+}
+
+.EditFormBox {
+  display: flex;
+  flex-direction: column;
+  border: black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  background-image: url(../../assets/images/Coupon_Background_Dark.png);
+  position: relative;
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+}
+
+.EditDisplayBox {
+  background-image: url(../../assets/images/Clear_Red.png);
+  border: black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  width: 350px;
+  position: relative;
+  margin: auto;
+  color: black;
+  font: italic small-caps bolder 30px/35px Impact;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  -webkit-text-stroke: 0.25px white;
+}
+
+.EditDisplayHeader {
+  position: relative;
+  padding: 10px;
+}
+
+.EditDisplayInput {
+  position: relative;
+  padding: 10px;
+}
+
+.EditPassBox {
+  background-image: url(../../assets/images/Clear_Red.png);
+  border: black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  width: 350px;
+  position: relative;
+  margin: auto;
+  margin-top: 10px;
+  color: black;
+  font: italic small-caps bolder 30px/35px Impact;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  -webkit-text-stroke: 0.25px white;
+}
+
+.EditPassHeader {
+  position: relative;
+  padding: 10px;
+}
+
+.EditPassInput {
+  position: relative;
+  padding: 10px;
+}
+
+.EditAboutBox {
+  background-image: url(../../assets/images/Clear_Red.png);
+  border: black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  width: 350px;
+  position: relative;
+  margin: auto;
+  margin-top: 10px;
+  color: black;
+  font: italic small-caps bolder 30px/35px Impact;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  -webkit-text-stroke: 0.25px white;
+}
+
+.EditAboutHeader {
+  position: relative;
+  padding: 10px;
+}
+
+.EditAboutInput {
+  position: relative;
+  padding: 10px;
+}
+
+.EditPicBox {
+  width: 825px;
+  height: 220px;
+  margin: auto;
+  position: relative;
+  font: italic small-caps bolder 30px/35px Impact;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  -webkit-text-stroke: 0.25px white;
+}
+
+.EditPicHeader {
+  left: 133px;
+  top: -131px;
+  background-image: url(../../assets/images/Coupon_Background_Dark.png);
+  position: relative;
+  width: 675px;
+  margin-top: 10px;
+  padding: 10px;
+  font: italic small-caps bolder 25px/38px Impact;
+  border: black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  color: black;
+}
+
+.CurrentPicBox {
+  width: 112px;
+  height: 112px;
+  left: 0px;
+  /* top: 110px; */
+  border: black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  position: relative;
+  margin: 10px;
+  /* margin: auto; */
+  color: black;
+  font: italic small-caps bolder 30px/35px Impact;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  -webkit-text-stroke: 0.25px white;
+}
+
+.UpdateButtonBox {
+  top: -235px;
+  left: 550px;
+  position: relative;
+  margin: 10px;
+}
+
+.UpdateButton {
+  position: relative;
+  margin: 10px;
+}
+
+.SaveButtonBox {
+  left: 325px;
+  top: -90px;
+  position: relative;
+  margin: 10px;
+}
+
+.SaveButton {
+  top: -17px;
+  border: black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  position: relative;
+  margin: 10px;
+}
