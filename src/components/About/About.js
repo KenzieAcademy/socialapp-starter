@@ -6,13 +6,9 @@ class About extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: {
-        user: {
-          userName: "",
-          displayName: "",
-          about: "",
-        },
-      },
+      userName: "",
+      displayName: "",
+      about: "",
     };
     this.client = new DataService();
   }
@@ -24,37 +20,20 @@ class About extends React.Component {
   //   componentDidMount() {
   //     // this.getUserInfo();
   //   }
-  getUserInfo() {
-    return this.client
-      .getUser(this.client.getUser(this.client.getUserName()))
-      .then((result) => {
-        // this.setState({
-        //   data: {
-        //     user: {
-        //       userName: "",
-        //       displayName: "",
-        //       about: "",
-        //     },
-        //   },
-        // });
-        console.log(result);
-      });
+  componentDidMount() {
+    return this.client.getUser(this.client.getUserName()).then((result) => {
+      this.setState({ about: result.data.user.about });
+      console.log(result);
+    });
   }
   render() {
+    console.log(this.state);
     return (
       <div>
         <p>
           <strong>About User</strong>
         </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </p>
+        <p>{this.state.about}</p>
       </div>
     );
   }

@@ -14,6 +14,10 @@ class DataService {
     return username;
   }
 
+  getUser(username) {
+    return this.client.get(this.url + "/users/" + username);
+  }
+
   registerUser(userData) {
     return this.client.post(this.url + "/users", userData);
   }
@@ -55,9 +59,6 @@ class DataService {
     return this.client.post(this.url + "/messages", message, {
       headers: { Authorization: `Bearer ${loginData.result.token} ` },
     });
-  }
-  getUser(username) {
-    return this.client.get(this.url + "/users/" + { username });
   }
 
   updateUser(userData) {

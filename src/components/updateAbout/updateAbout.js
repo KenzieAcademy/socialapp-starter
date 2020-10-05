@@ -21,9 +21,9 @@ class UpdateAbout extends React.Component {
     e.preventDefault();
     this.client.updateUser(this.state).then((result) => {
       console.log(result);
-      //   this.setState({
-      //     userData: result.data,
-      //   });
+      this.setState({
+        about: result.data.about,
+      });
     });
   };
   render() {
