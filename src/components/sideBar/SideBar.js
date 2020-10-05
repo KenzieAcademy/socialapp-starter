@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Clock from "../clock/Clock";
 import UploadImage from "../addPhoto/AddPhoto";
 import EditProfile from "../editProfile/EditProfile";
-import SocialAppService from "../../SocialAppService";
+import SocialAppService from "../../socialAppService";
 import "./SideBar.css";
 
 class SideBar extends React.Component {
