@@ -61,6 +61,8 @@ class UpdateUser extends React.Component {
                     description="Upload a photo to use as your Dragon's Den avatar." 
                     closePopup={this.toggleAvatarPopup.bind(this)} 
                 /> : null }
+                
+                <br />
 
                 <button className="button-link" onClick={this.toggleBioPopup.bind(this)}>Update bio</button>
                 {this.state.showBioPopup ? <UpdateBio 
@@ -79,6 +81,8 @@ class UpdateUser extends React.Component {
                     description={`Your current display name is: ${this.props.user.displayName}`}
                     closePopup={this.toggleDisplayNamePopup.bind(this)} 
                 /> : null }
+
+                <br />
 
                 <button className="button-link" onClick={this.togglePasswordPopup.bind(this)}>Change password</button>
                 {this.state.showPasswordPopup ? <UpdatePassword 
