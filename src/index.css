@@ -68,3 +68,11 @@ a {
 a:hover {
   color: rgb(255, 134, 64);
 }
+
+p {
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;;
+  color: black;
+  font-style: bold;
+  font-size: larger;
+  text-shadow: 1px 1px 1px orangered;
+}

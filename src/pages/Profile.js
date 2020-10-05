@@ -8,7 +8,7 @@ import DataService from "../dataService"
 import Messagefeed from "./Messagefeed";
 
 class Profile extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {
       user: {}
@@ -19,11 +19,11 @@ class Profile extends React.Component {
   componentDidMount() {
     this.client.getUser(this.props.username)
       .then(response => {
-        this.setState({user: response.data.user})
+        this.setState({ user: response.data.user })
         //console.log(response)
       })
   }
-  
+
   render() {
     if (this.state.user.about === "") {
       this.state.user.about = "No information given."
@@ -33,7 +33,7 @@ class Profile extends React.Component {
       <div className="Profile" id="profile">
         <Menu isAuthenticated={this.props.isAuthenticated} />
         <div id="left-column">
-        <h2>{this.state.user.displayName}</h2>
+          <h2>{this.state.user.displayName}</h2>
           <UpdateUser user={this.state.user} />
         </div>
         <div id="right-column">

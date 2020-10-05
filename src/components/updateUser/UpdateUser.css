@@ -7,12 +7,20 @@
   vertical-align: top;
   width: 20%;
   padding: 15px;
+  background-color: white;
+    border: 1px solid white;
+    border-radius: 1em;
+    background: linear-gradient(110deg, rgb(109, 22, 22, 0.73) 40%, rgba(201, 92, 19, 0.73) 60%);
 }
 #right-column {
   display: inline-block;
   vertical-align: top;
-  width: 80%;
-  padding: 15px;
+  width: 45%;
+  padding: 20px;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 1em;
+  background: linear-gradient(110deg, rgb(109, 22, 22, 0.73) 40%, rgba(201, 92, 19, 0.73) 60%);
 }
 .popup {
   position: fixed;
@@ -52,7 +60,9 @@
   border-radius: 8px;
 }
 .button-link {
-  color: red;
+  color: darkred;
+  font-size: larger;
+  text-shadow: 1px 1px 1px black;
   background: none;
   width: auto;
   height: auto;
