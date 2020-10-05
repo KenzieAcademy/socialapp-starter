@@ -44,12 +44,12 @@ class MessageFeed extends React.Component {
               <MenuAuthenticated isAuthenticated={this.props.isAuthenticated} />
               <div id="feedAndInput">
                 <MessageFeed2 />
-                <UserList className="UserList"/>
+                <UserList className="UserList" />
                 <TextInput />
               </div>
-              
+
             </div>
-            
+
           </Content>
           <Foot />
 
