@@ -17,7 +17,7 @@ class MsgNavBar extends React.Component {
 
         {this.props.isAuthenticated && (
           <div id="menu-links">
-            <Link to="/profile/:username">Profile</Link>
+            <Link to="/">Profile</Link>
             <Link to="/messagefeed">Message Feed</Link>
             <Link to="/" onClick={this.handleLogout}>
               Logout

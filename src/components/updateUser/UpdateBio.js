@@ -40,7 +40,7 @@ class UpdateBio extends React.Component {
                     </div>
                     <button onClick={this.handleSubmit}>Submit Changes</button>
                     <button onClick={this.props.closePopup}>Back to Profile</button>
-                    <br />
+                    <br /><br />
                 </div>
             </div>
         );
