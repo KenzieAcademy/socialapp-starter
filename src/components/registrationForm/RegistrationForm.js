@@ -3,8 +3,9 @@ import Spinner from "react-spinkit";
 import { Button, Input } from "antd"
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import { withAsyncAction } from "../../redux/HOCs";
-import "./registrationForm.css";
+import "./RegistrationForm.css";
 import DataService from '../../dataService';
+
 
 class RegistrationForm extends React.Component {
     constructor(props) {

@@ -50,13 +50,8 @@ class LoginForm extends React.Component {
             addonBefore="Password"
             name="password"
             placeholder="Enter password here..."
-<<<<<<< HEAD
-            minLength=""
-            autoFocus
-=======
             minLength="9"
             
->>>>>>> 5f809ffa4dd19f953c2fa5559a9468af3edcebe5
             required
             onChange={this.handleChange}
           />

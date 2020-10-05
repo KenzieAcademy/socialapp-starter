@@ -3,7 +3,7 @@ import DataService from "../../dataService";
 import "./GetMessages.css";
 import Message from "../message/Message";
 import { userIsAuthenticated } from '../../redux/HOCs';
-import InfiniteScroll from "react-infinite-scroll-component"
+// import InfiniteScroll from "react-infinite-scroll-component"
 
 class GetMessages extends React.Component {
   constructor(props) {
@@ -33,13 +33,13 @@ class GetMessages extends React.Component {
       )
     }
     return (
-      <InfiniteScroll dataLength={this.state.messages.length} next={this.getRecentMessages} hasMore={true}>
+      // <InfiniteScroll dataLength={this.state.messages.length} next={this.getRecentMessages} hasMore={true}>
         <div className="MessageFeed">
           <ul>
             {this.state.messages.map(msg => <Message key={msg.id} {...msg} />)}
           </ul>
         </div>
-      </InfiniteScroll>
+      // {/* </InfiniteScroll> */}
     )
   }
 }
