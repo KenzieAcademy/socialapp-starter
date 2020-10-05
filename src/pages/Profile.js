@@ -39,9 +39,6 @@ class Profile extends React.Component {
         <div id="right-column">
           <h2>About Me</h2>
           <p>{this.state.user.about}</p>
-          <h2>Messages</h2>
-          <p>Message component goes here.</p>
-          <Messagefeed />
         </div>
       </div>
     );

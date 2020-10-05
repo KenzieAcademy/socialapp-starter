@@ -167,19 +167,6 @@ class Messagefeed extends Component {
         );
     }
 
-=======
-  constructor(props) {
-    super(props);
-    this.client = new DataServices();
-    this.state = {
-      messages: [],
-      data: {},
-      submitted: false,
-      author: "",
-      children: "",
-    };
-  }
-
   //Below here, the(function), will reflect a change to the VALUE inside, or of an element
   //onChange attribute should contain this
   componentDidMount = () => {
