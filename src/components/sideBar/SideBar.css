@@ -1,4 +1,16 @@
-.SideBar {
+.edit-profile {
+    background-image: url("../../components/assets/images/backgrounds/Downside_up.jpg");
+   padding-left: 10px;
+      
+}
+
+h3 {
+  font-family: Kufam !important;
+    color: white !important;
+}
+
+
+ /* .SideBar {
   font-family: Kufam;
   background-color: black;
   display: flex;
@@ -7,7 +19,7 @@
   padding: 1em 1em;
   border-radius: 1em;
   border: 5em, solid, magenta;
-}
+} */
 
 /* #menu-links {
   font-family: Kufam;

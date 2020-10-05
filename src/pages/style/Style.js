@@ -1,9 +1,7 @@
 import React from 'react';
 import { userIsAuthenticated } from "../../redux/HOCs";
 import Menu from "../../components/menu/Menu";
-import StylePageCards from '../../components/stylePageCards/StylePageCards';
-
-import './Style.css';
+import FootNavBar from "../../components/footNavBar/FootNavBar"
 
 class Style extends React.Component {
     render() {
@@ -12,7 +10,9 @@ class Style extends React.Component {
                 <div className="Style">
                     <Menu isAuthenticated={this.props.isAuthenticated} />
                     <h1>This is the "Show us Your Style" page.</h1>
-                    <StylePageCards />
+                    <iframe height="500" width="800" frameBorder='0' scrolling='0' src='https://www.photofunny.net/tag/astronaut,70'
+                    ></iframe>
+                    <FootNavBar isAuthenticated={this.props.isAuthenticated} />
                 </div>
             </div>
         )

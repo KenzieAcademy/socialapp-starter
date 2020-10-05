@@ -7,3 +7,13 @@
   color: white;
   font-family: Kufam;
 }
+
+.Gamebox {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  height: auto;
+  margin: auto;
+  align-self: center;
+  
+}

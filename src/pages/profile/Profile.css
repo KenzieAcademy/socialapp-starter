@@ -1,4 +1,11 @@
-.Profile {
+ /* .pusher { 
+  background-image: url("../../components/assets/images/backgrounds/Downside_up.jpg");
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}  */
+
+/* .Profile {
   background-image: url("../../components/assets/images/backgrounds/Downside_up.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -6,4 +13,8 @@
   width: 100vw;
   color: white;
   font-family: Kufam;
+  padding: 15px;
+} */
+.text {
+  color: white;
 }
