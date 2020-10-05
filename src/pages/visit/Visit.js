@@ -2,14 +2,10 @@ import React from 'react';
 import { Grid} from 'semantic-ui-react'
 import { userIsAuthenticated } from "../../redux/HOCs";
 import Menu from "../../components/menu/Menu";
-
-import CommentForm from '../../components/commentForm/CommentForm';
-
-
-// import FlexContainer from "../../components/flexContainer/FlexContainer";
-// import Scroll from "../../components/scroll/Scroll";
+import FootNavBar from "../../components/footNavBar/FootNavBar"
+import FlexContainer from "../../components/flexContainer/FlexContainer";
 import './Visit.css';
-// import FlexContainer from "../../components/flexContainer/FlexContainer";
+
 
 
 class Visit extends React.Component {
@@ -24,11 +20,13 @@ class Visit extends React.Component {
                     </div>
                 <div className="Visit">
                     <Menu isAuthenticated={this.props.isAuthenticated} />
+
                     <br />
                     <Grid.Row className="VisitHeader">
                         <h1>Visit the Planets</h1>
-                        {/* <Scroll /> */}
-                        {/* <FlexContainer /> */}
+                        <FlexContainer />
+                        <FootNavBar isAuthenticated={this.props.isAuthenticated} />
+
                     </Grid.Row>
 
                 </div>
