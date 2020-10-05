@@ -1,9 +1,15 @@
 import React from "react";
+<<<<<<< HEAD
+
+
+import { Carousel } from 'antd';
+=======
 import Goofy from "../../media/Goofy.jpg"
 import Sam from "../../media/sam.jpg"
 import Tim from "../../media/tim.jpg"
 import Shari from "../../media/shari.png"
 import { Carousel, } from 'antd';
+>>>>>>> a6a018c3b74f50dad30418d92edbee0d1e4a0aad
 import { createFromIconfontCN, } from '@ant-design/icons';
 
 class Foot extends React.Component {
@@ -15,6 +21,23 @@ class Foot extends React.Component {
         const IconFont = createFromIconfontCN({
             scriptUrl: '//at.alicdn.com/t/font_8d5l8fzk5b87iudi.js',
         });
+<<<<<<< HEAD
+
+        const { dotPosition } = this.state;
+
+        return (
+            <div>
+ 
+                {/* take to make one for yourself */}
+                <Carousel autoplay dotPosition={dotPosition}>
+                    {/* start of the dev card  */}
+                    <div class="card-container">
+                    
+                       
+                        <img
+                            class="Dev"
+                            scr="https://randomuser.me/api/portraits/women/79.jpg"
+=======
         const { dotPosition } = this.state;
         return (
             <div>
@@ -26,6 +49,7 @@ class Foot extends React.Component {
                         <img
                             className="Dev"
                             src={Tim}
+>>>>>>> a6a018c3b74f50dad30418d92edbee0d1e4a0aad
                             alt="user"
                         />
 
@@ -187,6 +211,12 @@ class Foot extends React.Component {
                     {/* start of the dev card  */}
                     <div className="card-container">
 
+<<<<<<< HEAD
+                    <div class="card-container">
+                        
+                       
+=======
+>>>>>>> a6a018c3b74f50dad30418d92edbee0d1e4a0aad
                         <img
                             className="Dev"
                             src={Shari}
@@ -218,8 +248,12 @@ class Foot extends React.Component {
                             </ul>
                         </div>
                     </div>
+<<<<<<< HEAD
+                    
+=======
 
 
+>>>>>>> a6a018c3b74f50dad30418d92edbee0d1e4a0aad
                 </Carousel>
 
             </div>

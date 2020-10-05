@@ -6,8 +6,12 @@ import theQuestBoardHeader from '../media/theQuestBoardHeader.png';
 import Foot from "../components/foot/Foot";
 import { userIsAuthenticated } from "../redux/HOCs";
 import { Layout } from 'antd';
+<<<<<<< HEAD
+import ProfileImage from '../components/ProfileImage'
+=======
 import ProfileImage from '../components/UpdatePicture/ProfileImage'
 import QuestboardService from "../components/servicesPage/ServicePage"
+>>>>>>> a6a018c3b74f50dad30418d92edbee0d1e4a0aad
 
 class Profile extends React.Component {
 
