@@ -1,5 +1,5 @@
 import React from "react";
-
+import Goofy from "../../media/Goofy.jpg"
 import { Carousel, } from 'antd';
 import { createFromIconfontCN, } from '@ant-design/icons';
 
@@ -64,7 +64,7 @@ class Foot extends React.Component {
 
                         <img
                             class="Dev"
-                            src="https://files.slack.com/files-pri/TCNHBFEG3-F01CMPFADSL/fb_img_1601856169359.jpg"
+                            src={Goofy}
                             alt="user"
                         />
 
