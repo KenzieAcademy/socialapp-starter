@@ -56,7 +56,11 @@ class RegistrationForm extends React.Component {
             onChange={this.handleChange}
           />
 
-          <Button type="submit" disabled={loading}>
+          <Button
+            type="submit"
+            disabled={loading}
+            onClick={this.handleRegistration}
+          >
             Sign Up
           </Button>
         </form>

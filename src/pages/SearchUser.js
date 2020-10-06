@@ -3,7 +3,8 @@ import React from "react";
 import DataService from "../dataService";
 import "./searchUser.css";
 import profilepic from "../components/defualtpicture/freeiconlibrary.jpg";
-import MessageFeed from "./MessageFeed";
+// import MessageFeed from "./MessageFeed";
+import USM from "../components/message/UserSearchMessages/USM";
 
 class SearchUser extends React.Component {
   constructor(props) {
@@ -105,18 +106,18 @@ class SearchUser extends React.Component {
         {this.state.userdisplayName}
         <br></br>
         <div className="serchuserfeed">
-          {this.state.username}
+          User Name: {this.state.username}
           <br></br>
-          {this.state.about}
+          About me: {this.state.about}
           <br></br>
-
-          {console.log(this.state.userdata.showMessageFeed)}
+          {/* {console.log(this.state.userdata.showMessageFeed)} */}
           <img alt="userimage" width={200} src={this.state.picture} />
           {/* <messagefeed limit="10" mesasgeid={this.state.userdata.username} /> */}
           {/* <MessageFeed limit={5} username={this.state.userdata.username} /> */}
           {/* {this.state.showMessageFeed ? (
             <MessageFeed limit={5} username={this.state.userdata.username} />
           ) : null} */}
+          <USM name={this.username} />
         </div>
       </div>
     );
