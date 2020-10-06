@@ -1,15 +1,12 @@
 import React from "react"
 import { userIsAuthenticated } from "../redux/HOCs"
-// import PostMessageService from "../services/PostMessageService"
-
 
 class PostMessage extends React.Component {
-   
+    
     render() {
         return (
             <div className="Message">
-
-
+                
                 <div className="postMessageForm">
                     <form className="postMessageFormForm" onSubmit={this.props.handleMessagePost}>
                         <input

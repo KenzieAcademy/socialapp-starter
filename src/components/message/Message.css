@@ -1,4 +1,5 @@
-/* .card {
-    margin: auto;
-    width: 30%;
-/* }  
+.delete-message {
+    position: relative;
+    left: 10px;
+}
+.card {}
