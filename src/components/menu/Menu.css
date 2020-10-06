@@ -24,7 +24,7 @@
 
 .MenuLinks a {
   padding-right: 0.5em;
-  -webkit-text-stroke: 0.75px #d2be1a;
+  -webkit-text-stroke: 0.25px #d2be1a;
   color: black;
   font-size: 20px;
   padding: 5px;

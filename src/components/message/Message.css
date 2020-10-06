@@ -10,7 +10,7 @@
 
 .Message {
   background-image: url(../../assets/images/Clear_Red_Dark.png);
-  width: 611px;
+  width: 550px;
   height: 240px;
   border: black;
   border-radius: 5px;
@@ -43,7 +43,7 @@
   color: white;
   -webkit-text-stroke: 0.25px black;
   font-size: 25px;
-  width: 453px;
+  width: 350px;
   height: 185px;
   top: -140px;
   left: 66px;

@@ -3,8 +3,10 @@
 }
 
 .MessageFeedPageBody {
+  display: flex;
+  flex-direction: column;
   background-image: url(../assets/images/Coupon_Background_Dark.png);
-  border: black;
+  border: #d2be1a;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
@@ -13,14 +15,13 @@
   position: relative;
   margin: auto;
   font: italic small-caps 12px/30px Impact;
-  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
 }
 
 .MessageLoading {
   color: #b80c12;
   font: italic small-caps bolder 60px/65px Impact;
-  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
-  -webkit-text-stroke: 0.25px black;
+  -webkit-text-stroke: 1px black;
+  color: #d2be1a;
   text-align: center;
   position: relative;
   top: 75px;
@@ -48,20 +49,27 @@
 
 .MessageFeedHeaderText {
   font: italic small-caps bolder 45px/50px Impact;
-  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
-  -webkit-text-stroke: 0.25px white;
+  -webkit-text-stroke: 0.75px #d2be1a;
   color: black;
   text-align: center;
   top: -11px;
   position: relative;
 }
 
-.MiniProfileBox-PostButtonBox {
-  left: 873px;
+.FeedBody {
+  display: flex;
+  flex-direction: row;
   position: relative;
+  width: 550px;
+}
+
+.MiniProfileBox-PostButtonBox {
+  justify-content: start;
+  /* left: 73px; */
   margin: auto;
-  position: fixed;
-  z-index: 1;
+  /* position: fixed; */
+  position: relative;
+  /* z-index: 1; */
 }
 
 .MiniProfileBox {
@@ -76,14 +84,14 @@
 .PostButton {
   width: 125px;
   height: 55px;
-  left: 35px;
-  top: -425px;
+  /* left: 35px; */
+  /* top: -425px; */
   background: none;
   border: none;
   background-image: url(../assets/images/Post_Button.png);
   position: relative;
   cursor: pointer;
-  z-index: 2;
+  /* z-index: 2; */
 }
 
 .PostButton:hover {
@@ -93,11 +101,11 @@
 }
 
 .PostFeedBody {
-  /* width: 675px; */
-  left: -40px;
+  display: flex;
+  flex-direction: column;
+  /* left: -40px; */
   position: relative;
-  margin: auto;
+  /* margin: auto; */
   font: italic small-caps bold 27px/45px Impact;
-  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
   -webkit-text-stroke: 0.25px white;
 }

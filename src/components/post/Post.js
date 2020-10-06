@@ -8,12 +8,11 @@ import "./Post.css";
 
 const Post = (props) => {
   return (
-    <div className="PostFormBody">
       <div className="PostBody">
         <Card>
           <Card.Body>
             <Form>
-              <div className="PostBox">
+              <div className="PostInputBox">
                 <Form.Control
                   type="text"
                   name="text"
@@ -49,7 +48,6 @@ const Post = (props) => {
             </div>
           </Card.Body>
         </Card>
-      </div>
     </div>
   );
 };

@@ -95,6 +95,15 @@ class MessageFeed extends React.Component {
         <div className="MessageHeaderBox">
           <div className="MessageFeedHeaderText">Message Feed</div>
         </div>
+        <div className="FeedBody">
+          <div className="PostFeedBody">
+            <ul>
+              {this.state.messages.map((messageObject) => {
+                return <Message {...messageObject} />;
+              })}
+            </ul>
+          </div>
+        </div>
         <OverlayTrigger
           trigger="click"
           placement="bottom"
@@ -115,13 +124,6 @@ class MessageFeed extends React.Component {
             </div>
           </div>
         </OverlayTrigger>
-        <div className="PostFeedBody">
-          <ul>
-            {this.state.messages.map((messageObject) => {
-              return <Message {...messageObject} />;
-            })}
-          </ul>
-        </div>
       </div>
     );
   }
