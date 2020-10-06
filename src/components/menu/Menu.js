@@ -16,9 +16,8 @@ class Menu extends React.Component {
           <Layout className="layout">
             <div className="logo" />
             <Layout.Header>
-              <Menu2 theme="dark" mode="horizontal">
+              <Menu2 style={{ float: "right" }} theme="dark" mode="horizontal">
                 <Menu2.Item className="home-button">
-                  {" "}
                   <Link to="/">Home</Link>
                 </Menu2.Item>
                 <Menu2.Item>

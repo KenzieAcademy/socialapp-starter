@@ -14,6 +14,10 @@ class DataService {
     return username;
   }
 
+  getUser(username) {
+    return this.client.get(this.url + "/users/" + username);
+  }
+
   registerUser(userData) {
     return this.client.post(this.url + "/users", userData);
   }
@@ -56,11 +60,6 @@ class DataService {
       headers: { Authorization: `Bearer ${loginData.result.token} ` },
     });
   }
-  getUser(username) {
-    return this.client
-      .get(this.url + "/users/" + { username })
-      .then((response) => console.log(response.data));
-  }
 
   updateUser(userData) {
     let loginData = JSON.parse(localStorage.getItem("login")).result;
@@ -86,8 +85,8 @@ class DataService {
       headers: { Authorization: `Bearer ${token}` },
     });
   }
-  
-    deleteLike(likeId) {
+
+  deleteLike(likeId) {
     let loginData = JSON.parse(localStorage.getItem("login")).result;
     let token = loginData.token;
     return this.client.delete(this.url + "/likes/" + likeId, {

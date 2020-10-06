@@ -50,9 +50,9 @@ class MessageList extends React.Component {
     this.client.postMessage({ text: this.state.text }).then((result) => {
       this.setState((state) => ({
         messages: [result.data.message, ...state.messages],
+        text: "",
       }));
     });
-    e.target.reset();
   };
 
   handleChange = (e) => {
@@ -69,6 +69,7 @@ class MessageList extends React.Component {
         <PostMessage
           handleChange={this.handleChange}
           handlePostMessage={this.handlePostMessage}
+          text={this.state.text}
         />
         <br />
         <div>
