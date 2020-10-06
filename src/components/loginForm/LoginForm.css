@@ -1,5 +1,21 @@
+* {
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
 #login-form {
   display: flex;
   flex-direction: column;
   max-width: 20em;
+}
+.Inputs {
+  display: flex;
+  height: 200px;
+  width: 400px;
+  float: right;
+  background-color: aquamarine;
+  padding: 50px;
+}
+.logo {
+  float: right;
 }

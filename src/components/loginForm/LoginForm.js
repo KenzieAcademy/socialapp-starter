@@ -25,28 +25,32 @@ class LoginForm extends React.Component {
     const { loading, error } = this.props;
     return (
       <div className="LoginForm">
-        <form id="login-form" onSubmit={this.handleLogin}>
-          <label htmlFor="username">Username</label>
-          <input
-            type="text"
-            name="username"
-            autoFocus
-            required
-            onChange={this.handleChange}
-          />
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            name="password"
-            required
-            onChange={this.handleChange}
-          />
-          <button type="submit" disabled={loading}>
-            Login
-          </button>
-        </form>
-        {loading && <Spinner name="circle" color="blue" />}
-        {error && <p style={{ color: "red" }}>{error.message}</p>}
+        <div className="Inputs">
+          <div className="logo">OBSERVIT</div>
+
+          <form id="login-form" onSubmit={this.handleLogin}>
+            <label htmlFor="username">Username</label>
+            <input
+              type="text"
+              name="username"
+              autoFocus
+              required
+              onChange={this.handleChange}
+            />
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              name="password"
+              required
+              onChange={this.handleChange}
+            />
+            <button type="submit" disabled={loading}>
+              Login
+            </button>
+          </form>
+          {loading && <Spinner name="circle" color="blue" />}
+          {error && <p style={{ color: "red" }}>{error.message}</p>}
+        </div>
       </div>
     );
   }

@@ -8,7 +8,7 @@ class Home extends React.Component {
   render() {
     return (
       <div className="Home">
-        <Menu />
+        {/* <Menu /> */}
         <h2>You ain't seen nothin' till you Observit!</h2>
         <LoginForm />
         <hr />

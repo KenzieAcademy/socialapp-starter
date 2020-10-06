@@ -2,7 +2,7 @@ import React from "react";
 import DataService from "../../DataService";
 import { Avatar } from "antd";
 import "./Message.css";
-
+import profile_pic from "../../ProfilePic.jpeg";
 class Message extends React.Component {
   constructor(props) {
     super(props);
@@ -39,11 +39,16 @@ class Message extends React.Component {
       });
     }
   };
+  // handlePictureError = (event) => {
+  //   event.target.src = profile_pic;
+  // };
 
   render() {
     //Here we're just using conditional rendering to make sure this delete message button appears on our messages.
+
     let deleteMessageButton = null;
     let userName = JSON.parse(localStorage.getItem("login")).result;
+
     if (this.props.username === userName.username) {
       deleteMessageButton = (
         <button
@@ -58,9 +63,10 @@ class Message extends React.Component {
       <div className="message-feed">
         <Avatar
           className="avatar"
-          size={100}
+          size={120}
           src={`https://socialapp-api.herokuapp.com/users/${this.props.username}/picture`}
           alt="user"
+          // onError={}
         />
         <br />
         {this.props.username} posted: <br />
