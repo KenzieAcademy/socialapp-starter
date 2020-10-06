@@ -87,7 +87,7 @@ class UpdateAbout extends React.Component {
 
     return (
       <div className="UpdateAbout">
-        <Card style={{ textAlign: "left", width: "50%", margin: "left" }}>
+        <Card>
           <form
             id="updateAbout-form-passord"
             className="password"
