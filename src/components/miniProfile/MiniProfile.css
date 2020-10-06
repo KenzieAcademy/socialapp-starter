@@ -4,7 +4,8 @@
 
 .MiniProfileBody {
   position: relative;
-  margin: auto;
+  /* margin: auto; */
+  /* margin: 10px; */
   font: italic small-caps bold 27px/45px Impact;
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
   -webkit-text-stroke: 0.25px white;

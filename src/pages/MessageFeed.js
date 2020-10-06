@@ -87,43 +87,45 @@ class MessageFeed extends React.Component {
     }
     return (
       <div className="MessageFeedPageBody">
-        <div className="MessageMenuBox">
-          <div className="MessageMenuText">
-            <Menu isAuthenticated={this.props.isAuthenticated} />
-          </div>
-        </div>
-        <div className="MessageHeaderBox">
-          <div className="MessageFeedHeaderText">Message Feed</div>
-        </div>
-        <div className="FeedBody">
-          <div className="PostFeedBody">
-            <ul>
-              {this.state.messages.map((messageObject) => {
-                return <Message {...messageObject} />;
-              })}
-            </ul>
-          </div>
-        </div>
-        <OverlayTrigger
-          trigger="click"
-          placement="bottom"
-          overlay={this.popover}
-          rootClose={true}
-        >
-          <div className="MiniProfileBox-PostButtonBox">
-            <div className="MiniProfileBox">
-              <MiniProfile user={this.state.currentUser} />
-              <div className="PostButtonBox">
-                <Button
-                  className="PostButton"
-                  variant="dark"
-                  size="lg"
-                  title="Post A Message"
-                ></Button>
-              </div>
+        <div className="MessageFeedPageHeaderBox">
+          <div className="MessageMenuBox">
+            <div className="MessageMenuText">
+              <Menu isAuthenticated={this.props.isAuthenticated} />
             </div>
           </div>
-        </OverlayTrigger>
+          <div className="MessageHeaderBox">
+            <div className="MessageFeedHeaderText">Message Feed</div>
+          </div>
+          <div className="FeedBody">
+            <div className="MiniProfileBox-PostButtonBox">
+              <div className="MiniProfileBox">
+                <MiniProfile user={this.state.currentUser} />
+                <div className="PostButtonBox">
+                  <OverlayTrigger
+                    trigger="click"
+                    placement="bottom"
+                    overlay={this.popover}
+                    rootClose={true}
+                  >
+                    <Button
+                      className="PostButton"
+                      variant="dark"
+                      size="lg"
+                      title="Post A Message"
+                    ></Button>
+                  </OverlayTrigger>
+                </div>
+              </div>
+            </div>
+            <div className="PostFeedBody">
+              <ul>
+                {this.state.messages.map((messageObject) => {
+                  return <Message {...messageObject} />;
+                })}
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

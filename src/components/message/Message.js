@@ -55,7 +55,10 @@ class Message extends React.Component {
     return (
       <div className="MessageBody">
         <div className="MessageCardBody">
-          <Card className="MessageCard" /*style={{ width: "550px" }}*/>
+          <Card
+            className="MessageCard"
+            style={{ width: "613px", height: "240px" }}
+          >
             <Card.Body className="Message">
               <div className="MessProfPicBox">
                 <img

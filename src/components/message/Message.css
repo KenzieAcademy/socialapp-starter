@@ -3,31 +3,37 @@
 }
 
 .MessageBody {
-  width: 550px;
-  height: 240px;
+  width: 613px;
+  background-image: url(../../assets/images/Clear_Red.png);
   border: black;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
-  /* padding: 10px; */
   position: relative;
   margin: 10px;
 }
 
 .Message {
+  width: 606px;
   position: relative;
-  margin: auto;
+  /* margin: auto; */
+  /* margin: 10px; */
+  /* border: 3px solid#00ff00; */
 }
 
 .MessageCardBody {
+  width: 613px;
   position: relative;
   /* margin: auto; */
+  /* margin: 10px; */
+  /* border: 3px solid#00ff00; */
 }
 
 .MessageCard {
   background: none;
   position: relative;
-  /* margin: auto; */
+  margin: auto;
+  /* border: 3px solid#00ff00; */
 }
 
 .MessageTextBox {
@@ -38,8 +44,7 @@
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
-  /* background-color: white; */
-  /* background-image: url(../../assets/images/Coupon_Background_Dark.png); */
+  background-image: url(../../assets/images/Coupon_Background_Dark.png);
   color: white;
   -webkit-text-stroke: 0.25px black;
   font-size: 25px;
@@ -61,7 +66,6 @@
   border-style: dashed;
   width: 125px;
   height: 53px;
-  left: -12px;
   top: -218px;
   background: none;
   background-image: url(../../assets/images/Thumgs_Up.png);
@@ -131,7 +135,7 @@
   top: -355px;
   /* left: 475px; */
   width: 150px;
-  border: 1px solid #00ff00;
+  /* border: 1px solid #00ff00; */
 }
 
 .MessThumbsUpNumber {

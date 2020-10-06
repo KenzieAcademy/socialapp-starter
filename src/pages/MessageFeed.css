@@ -3,15 +3,12 @@
 }
 
 .MessageFeedPageBody {
-  display: flex;
-  flex-direction: column;
   background-image: url(../assets/images/Coupon_Background_Dark.png);
   border: #d2be1a;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
   width: 850px;
-  /* height: 452px; */
   position: relative;
   margin: auto;
   font: italic small-caps 12px/30px Impact;
@@ -26,6 +23,11 @@
   position: relative;
   top: 75px;
   left: 20px;
+}
+
+.MessageFeedPageHeaderBox {
+  width: 825px;
+  position: relative;
 }
 
 .MessageMenuBox {
@@ -44,6 +46,7 @@
   border-style: dashed;
   width: 825px;
   height: 55px;
+  left: 10px;
   background-image: url(../assets/images/Clear_Red.png);
 }
 
@@ -57,57 +60,55 @@
 }
 
 .FeedBody {
-  display: flex;
-  /* justify-content: space-evenly; */
-  flex-direction: row;
-  /* position: relative; */
+  margin-top: auto;
+  position: relative;
   margin: auto;
+  margin: 10px;
+  /* padding: 10px; */
   width: 825px;
-  border: 3px solid#00ff00;
+  /* border: 3px solid#00ff00; */
 }
 
 .PostFeedBody {
-  display: flex;
-  align-self: flex-start;
-  /* flex-direction: column; */
-  /* left: -40px; */
-  /* position: relative; */
-  /* margin: auto; */
+  top: -368px;
+  left: -50px;
+  position: relative;
+  margin: auto;
   font: italic small-caps bold 27px/45px Impact;
   -webkit-text-stroke: 0.25px white;
 }
 
 .MiniProfileBox-PostButtonBox {
-  /* left: 73px; */
-  /* margin: auto; */
-  /* position: fixed; */
-  /* position: relative; */
-  /* z-index: 1; */
+  width: 200px;
+  height: 360px;
+  left: 884px;
+  top: 125px;
+  position: sticky;
+  z-index: 1;
+  /* border: 3px solid#00ff00; */
 }
 
 .MiniProfileBox {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: relative;
-  margin: 10px;
+  /* margin: 10px; */
 }
 
 .PostButtonBox {
   position: relative;
+  /* margin: 10px; */
 }
 
 .PostButton {
   width: 125px;
   height: 55px;
-  /* left: 35px; */
-  /* top: -425px; */
+  left: 40px;
+  top: -425px;
   background: none;
   border: none;
   background-image: url(../assets/images/Post_Button.png);
   position: relative;
   cursor: pointer;
-  /* z-index: 2; */
+  /* z-index: 1; */
 }
 
 .PostButton:hover {
