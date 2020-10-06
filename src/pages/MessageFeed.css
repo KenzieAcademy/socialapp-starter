@@ -9,9 +9,10 @@
   border-width: 3px;
   border-style: dashed;
   width: 850px;
+  /* height: 452px; */
   position: relative;
   margin: auto;
-  font: italic small-caps 25px/30px Impact;
+  font: italic small-caps 12px/30px Impact;
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
 }
 
@@ -29,6 +30,7 @@
 .MessageMenuBox {
   position: relative;
   margin: auto;
+  padding: 10px;
 }
 
 .MessageHeaderBox {
@@ -55,34 +57,33 @@
 }
 
 .MiniProfileBox-PostButtonBox {
-  left: 540px;
-  top: 14px;
+  left: 873px;
   position: relative;
+  margin: auto;
+  position: fixed;
+  z-index: 1;
 }
 
 .MiniProfileBox {
-  border: 3px solid black;
   position: relative;
+  margin: 10px;
 }
 
 .PostButtonBox {
-  left: 850px;
-  top: 150px;
-  position: fixed;
-  z-index: 1;
+  position: relative;
 }
 
 .PostButton {
   width: 125px;
   height: 55px;
-  left: 4px;
-  top: 3auto;
-  left: 250px;
+  left: 35px;
+  top: -425px;
   background: none;
   border: none;
   background-image: url(../assets/images/Post_Button.png);
   position: relative;
   cursor: pointer;
+  z-index: 2;
 }
 
 .PostButton:hover {
@@ -92,12 +93,11 @@
 }
 
 .PostFeedBody {
-  /* width: 850px; */
-  top: -14px;
+  /* width: 675px; */
+  left: -40px;
   position: relative;
   margin: auto;
   font: italic small-caps bold 27px/45px Impact;
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
   -webkit-text-stroke: 0.25px white;
-  /* border: 3px solid black; */
 }

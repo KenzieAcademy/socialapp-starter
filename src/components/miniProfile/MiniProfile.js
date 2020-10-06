@@ -48,25 +48,19 @@ const MiniProfile = (props) => {
 
   return (
     <div className="MiniProfileBody">
-      <Card>
-        <Card-Body>
-          <div
-            className="ProfilePicThumb"
-            alt="Profile Pic"
-            title="Go To Profile"
-          >
-            {profileImage}
-          </div>
-          <Card.Subtitle>
-            <div className="MiniMemberInfoBox">
-              <div className="MemberNameBox">
-                <div className="MemberNameHeader">Logged In As:</div>
-                <div className="MemberNameText">{props.user.displayName}</div>
+      <Card className="Miniprofile">
+        <Card-Body className="MiniProfCardBody">
+          <div className="ProfilePicThumb">{profileImage}</div>
+          <Card.Subtitle className="card-Subtitle">
+            <div className="MiniMemberInfo">
+              <div className="MemberName">
+                Logged In As: <div></div>
+                {props.user.displayName}
               </div>
               <br></br>
-              <div className="MemberSinceBox">
-                <div className="">Member Since:</div>
-                <div className="MemberSinceText">{joined.toUTCString()}</div>
+              <div className="MemberSince">
+                Member Since: <div></div>
+                {joined.toUTCString()}
               </div>
             </div>
           </Card.Subtitle>

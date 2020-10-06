@@ -3,62 +3,50 @@
 }
 
 .MessageBody {
-  width: 830px;
-  left: -75px;
+  /* padding: 10px; */
   position: relative;
-  margin: auto;
-  /* border: 3px solid black; */
+  margin: 10px;
 }
 
-.ProfilePic {
+.Message {
+  background-image: url(../../assets/images/Clear_Red_Dark.png);
+  width: 611px;
+  height: 240px;
   border: black;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
-  top: 14px;
-  left: -11px;
-  width: 125px;
-  height: 125px;
-  position: relative;
+  text-align: left;
 }
 
-.MessMembHeader {
-  color: black;
-  top: -140px;
-  left: -3px;
+.MessageCardBody {
   position: relative;
+  /* margin: auto; */
 }
 
-.MessSinceHeader {
+.MessageCard {
+  background: none;
   position: relative;
+  /* margin: auto; */
 }
 
-.MessTextBox {
+.MessageTextBox {
   position: relative;
+  margin: auto;
   padding: 5px;
   border: black;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
   background-color: white;
-  background-image: url(../../assets/images/Coupon_Background_Light.png);
-  color: black;
-  -webkit-text-stroke: 0.25px white;
+  background-image: url(../../assets/images/Coupon_Background_Dark.png);
+  color: white;
+  -webkit-text-stroke: 0.25px black;
   font-size: 25px;
-  width: 468px;
+  width: 453px;
   height: 185px;
   top: -140px;
-  left: 68px;
-}
-
-.ThumbsUp {
-  font: italic small-caps 20px/25px Impact;
-  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
-  -webkit-text-stroke: 0.25px white;
-  color: black;
-  position: relative;
-  top: -355px;
-  left: 475px;
+  left: 66px;
 }
 
 .ThumbsUpButton {
@@ -74,6 +62,7 @@
   background-image: url(../../assets/images/Thumgs_Up.png);
   background-repeat: no-repeat;
   position: relative;
+  margin: auto;
   font: italic small-caps bold 22px/40px Impact;
   -webkit-text-stroke: rgba(0, 0, 0, 0);
   color: rgba(0, 0, 0, 0);
@@ -89,4 +78,41 @@
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
   -webkit-text-stroke: 0.25px black;
   color: white;
+}
+
+.ProfilePic {
+  border: black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  top: 14px;
+  left: -11px;
+  width: 125px;
+  height: 125px;
+  position: relative;
+  margin: auto;
+}
+
+.MessageMemberTitle {
+  color: black;
+  top: -140px;
+  left: -3px;
+  position: relative;
+  margin: auto;
+}
+
+.PostTimeStamp {
+  position: relative;
+  margin: auto;
+}
+
+.ThumbsUpNumber {
+  font: italic small-caps 20px/25px Impact;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  -webkit-text-stroke: 0.25px white;
+  color: black;
+  position: relative;
+  margin: auto;
+  top: -355px;
+  left: 475px;
 }
