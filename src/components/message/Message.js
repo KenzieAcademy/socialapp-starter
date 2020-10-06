@@ -55,9 +55,15 @@ class Message extends React.Component {
     return (
       <div className="MessageBody">
         <div className="MessageCardBody">
-          <Card className="MessageCard" style={{ width: "620px" }}>
+          <Card className="MessageCard" /*style={{ width: "550px" }}*/>
             <Card.Body className="Message">
-              <img className="ProfilePic" src={ProfilePic} alt="Profile Pic" />
+              <div className="MessProfPicBox">
+                <img
+                  className="MessProfilePic"
+                  src={ProfilePic}
+                  alt="Profile Pic"
+                />
+              </div>
               <div className="MessageMemberTitle">
                 <Card.Title> Member: {this.props.username}</Card.Title>
               </div>
@@ -67,17 +73,21 @@ class Message extends React.Component {
               <Card.Text className="MessageTextBox">
                 {this.props.text}
               </Card.Text>
-              <footer>
-                {" "}
-                <div className="ThumbsUpNumber">
-                  <div className="ThumbsUp">
-                    Thumbs Up: {this.props.likes.length}
-                  </div>{" "}
-                </div>
-                <button className="ThumbsUpButton" onClick={this.LikeFunction}>
+              {/* <footer> */}{" "}
+              <div className="MessThumbsUpNumberBox">
+                <div className="MessThumbsUpNumber">
+                  Thumbs Up: {this.props.likes.length}
+                </div>{" "}
+              </div>
+              <div className="MessThumbsUpButtonBox">
+                <button
+                  className="MessThumbsUpButton"
+                  onClick={this.LikeFunction}
+                >
                   Thumbs Up!
                 </button>{" "}
-              </footer>
+              </div>
+              {/* </footer> */}
             </Card.Body>
           </Card>
         </div>

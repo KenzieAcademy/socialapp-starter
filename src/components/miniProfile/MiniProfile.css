@@ -23,6 +23,10 @@
 }
 
 .ProfilePicThumb {
+  background-image: url(../../assets/images/Coupon_Background_Dark.png);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   /* left: -90px; */
   /* top: 5px; */
   width: 175px;

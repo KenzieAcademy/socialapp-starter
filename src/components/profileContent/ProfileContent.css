@@ -15,6 +15,10 @@
 }
 
 .ProfilePicBox {
+  background-image: url(../../assets/images/Coupon_Background_Dark.png);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: black;
   border-radius: 5px;
   border-width: 3px;

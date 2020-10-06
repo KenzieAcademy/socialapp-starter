@@ -127,6 +127,10 @@
 }
 
 .CurrentPicBox {
+  background-image: url(../../assets/images/Coupon_Background_Dark.png);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 112px;
   height: 112px;
   left: 0px;

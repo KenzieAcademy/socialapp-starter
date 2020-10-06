@@ -3,20 +3,20 @@
 }
 
 .MessageBody {
-  /* padding: 10px; */
-  position: relative;
-  margin: 10px;
-}
-
-.Message {
-  background-image: url(../../assets/images/Clear_Red_Dark.png);
   width: 550px;
   height: 240px;
   border: black;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
-  text-align: left;
+  /* padding: 10px; */
+  position: relative;
+  margin: 10px;
+}
+
+.Message {
+  position: relative;
+  margin: auto;
 }
 
 .MessageCardBody {
@@ -38,8 +38,8 @@
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
-  background-color: white;
-  background-image: url(../../assets/images/Coupon_Background_Dark.png);
+  /* background-color: white; */
+  /* background-image: url(../../assets/images/Coupon_Background_Dark.png); */
   color: white;
   -webkit-text-stroke: 0.25px black;
   font-size: 25px;
@@ -47,9 +47,14 @@
   height: 185px;
   top: -140px;
   left: 66px;
+  overflow: auto;
 }
 
-.ThumbsUpButton {
+.MessThumbsUpButtonBox {
+  position: relative;
+}
+
+.MessThumbsUpButton {
   border: black;
   border-radius: 5px;
   border-width: 3px;
@@ -62,14 +67,14 @@
   background-image: url(../../assets/images/Thumgs_Up.png);
   background-repeat: no-repeat;
   position: relative;
-  margin: auto;
+  /* margin: auto; */
   font: italic small-caps bold 22px/40px Impact;
   -webkit-text-stroke: rgba(0, 0, 0, 0);
   color: rgba(0, 0, 0, 0);
   cursor: pointer;
 }
 
-.ThumbsUpButton:hover {
+.MessThumbsUpButton:hover {
   border: white;
   border-radius: 5px;
   border-width: 3px;
@@ -80,15 +85,24 @@
   color: white;
 }
 
-.ProfilePic {
+.MessProfPicBox {
+  /* background-image: url(../../assets/images/Coupon_Background_Dark.png); */
   border: black;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
-  top: 14px;
-  left: -11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 125px;
   height: 125px;
+}
+
+.MessProfilePic {
+  /* top: 14px; */
+  /* left: -11px; */
+  /* width: 125px; */
+  /* height: 125px; */
   position: relative;
   margin: auto;
 }
@@ -106,13 +120,20 @@
   margin: auto;
 }
 
-.ThumbsUpNumber {
+.MessThumbsUpNumberBox {
   font: italic small-caps 20px/25px Impact;
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
   -webkit-text-stroke: 0.25px white;
   color: black;
   position: relative;
   margin: auto;
+  /* padding: 10px; */
   top: -355px;
-  left: 475px;
+  /* left: 475px; */
+  width: 150px;
+  border: 1px solid #00ff00;
+}
+
+.MessThumbsUpNumber {
+  position: relative;
 }
