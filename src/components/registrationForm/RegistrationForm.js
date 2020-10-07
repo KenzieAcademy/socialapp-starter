@@ -51,7 +51,7 @@ class RegistrationForm extends React.Component {
         return (
         <div className = "successReg">
         <h1>You're IN!</h1>
-        <img src = "https://media4.giphy.com/media/1bnecJczhD5gk/giphy.gif?cid=ecf05e47pb7smfl08cxxuhcia8oz703lvjtwa5resovj5a72&rid=giphy.gif" alt = "spinning Lovecraft head" class = "reg-image"/>
+        <img src = "https://bloody-disgusting.com/wp-content/uploads/2020/08/shoggoth.jpg" alt = "spinning Lovecraft head" class = "reg-image"/>
         <Link to = "/"> Home </Link>
         </div>)
 
