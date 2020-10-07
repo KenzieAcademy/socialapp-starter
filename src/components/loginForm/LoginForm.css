@@ -3,3 +3,8 @@
   flex-direction: column;
   max-width: 20em;
 }
+.Reg-button{
+background-color:whitesmoke;
+height: 25px;
+text-align: center;
+}
