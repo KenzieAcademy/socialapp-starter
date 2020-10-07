@@ -84,6 +84,7 @@ const ProfileContent = (props) => {
                         onChange={props.change}
                         name="displayName"
                         inline="true"
+                        placeholder="New Display Name Here"
                       ></Form.Control>
                     </Col>
                   </div>
@@ -100,6 +101,7 @@ const ProfileContent = (props) => {
                         onChange={props.change}
                         name="password"
                         type="password"
+                        placeholder="New Password Here"
                         inline="true"
                       ></Form.Control>
                     </Col>
@@ -118,6 +120,7 @@ const ProfileContent = (props) => {
                         name="about"
                         as="textarea"
                         inline="true"
+                        placeholder="New About Me Here"
                       ></Form.Control>
                     </Col>
                   </div>

@@ -8,46 +8,46 @@ import "./Post.css";
 
 const Post = (props) => {
   return (
-      <div className="PostBody">
-        <Card>
-          <Card.Body>
-            <Form>
-              <div className="PostInputBox">
-                <Form.Control
-                  type="text"
-                  name="text"
-                  as="textarea"
-                  rows="3"
-                  placeholder="Your Amazing Post Here:"
-                  onChange={props.change}
-                />
-              </div>
-              <br></br>
-              <div className="PhotoUpload">
-                <OverlayTrigger
-                  placement="right"
-                  overlay={
-                    <Tooltip id="tooltip-proof-of-concept">
-                      This API cannot post images along with messages, however
-                      we wanted to include it as proof of concept for what the
-                      real site would be like.
-                    </Tooltip>
-                  }
-                >
-                  <Form.File
-                    id="uploadImage"
-                    label="Upload Your Image"
-                    disabled
-                  />
-                </OverlayTrigger>
-              </div>
-            </Form>
-            <br></br>
-            <div className="PostAwayButton">
-              <input type="submit" value="Post" onClick={props.post}></input>
+    <div className="PostBody" style={{ width: "0px", height: "0px" }}>
+      <Card className="PostCardBody">
+        <Card.Body>
+          <Form>
+            <div className="PostInputBox">
+              <Form.Control
+                type="text"
+                name="text"
+                as="textarea"
+                rows="3"
+                placeholder="Your Amazing Post Here:"
+                onChange={props.change}
+              />
             </div>
-          </Card.Body>
-        </Card>
+            <br></br>
+            <div className="PhotoUpload">
+              <OverlayTrigger
+                placement="right"
+                overlay={
+                  <Tooltip id="tooltip-proof-of-concept">
+                    This API cannot post images along with messages, however we
+                    wanted to include it as proof of concept for what the real
+                    site would be like.
+                  </Tooltip>
+                }
+              >
+                <Form.File
+                  id="uploadImage"
+                  label="Upload Your Image"
+                  disabled
+                />
+              </OverlayTrigger>
+            </div>
+          </Form>
+          <br></br>
+          <div className="PostAwayButton">
+            <input type="submit" value="Post" onClick={props.post}></input>
+          </div>
+        </Card.Body>
+      </Card>
     </div>
   );
 };

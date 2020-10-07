@@ -109,7 +109,7 @@ class MessageFeed extends React.Component {
                   >
                     <Button
                       className="PostButton"
-                      variant="dark"
+                      variant="outline_dark"
                       size="lg"
                       title="Post A Message"
                     ></Button>

@@ -19,6 +19,17 @@
   font-size: 20px;
 }
 
+.PostCardBody {
+  background-image: url(../../assets/images/Clear_Red_Dark.png);
+  width: 825px;
+  left: -727px;
+  top: -7px;
+  border: black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+}
+
 .PostInputBox {
   border: black;
   border-radius: 5px;
