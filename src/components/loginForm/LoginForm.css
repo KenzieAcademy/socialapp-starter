@@ -1,7 +1,7 @@
-* {
+/* * {
   box-sizing: border-box;
   margin: 0 auto;
-}
+} */
 
 /* .LoginForm {
   height: 125vh;
@@ -20,19 +20,20 @@
   display: flex;
   flex-direction: column;
   max-width: 20em;
-  /* height: 400px; */
-  /* width: 100%; */
+  height: 420px;
+  width: 100%;
   padding: 30px;
   background-color: #e6e6ea;
 }
 .logo {
   display: flex;
-
-  background-color: rgb(71, 192, 49);
+  height: 40px;
+  background-color: white;
+  margin-bottom: 30px;
 }
 .form {
-  /* display: flex;
-  float: right; */
-  background-color: #94b1af;
+  display: flex;
+  float: right;
+  /* background-color: #94b1af; */
   box-shadow: 1px 1.3px 8px 2px #0a3051;
 }

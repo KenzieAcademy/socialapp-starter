@@ -38,6 +38,12 @@ class LoginForm extends React.Component {
           </Header>
           <Content>
             <div className="form">
+              <img
+                src="https://lh3.googleusercontent.com/proxy/oiPMUPydSIwKgdqiXmu67D2b9bBmuYFltHSuzLGUSOowXij5aQeLvdOBds1D0cFKPlVwcmvEvgs_g6W9UFnO6UViCqr99vean6fU2l3pZ8blCZ0JbJtwnsTNyfGxksT2lSt7MwPBtDG4"
+                alt="DINO-WALLPAPER"
+                width="800vh"
+                transform="scaleX(-1)"
+              />
               <form id="login-form" onSubmit={this.handleLogin}>
                 <div className="logo">
                   <img src={DINO} alt="DINO" height="40px" />
@@ -63,6 +69,7 @@ class LoginForm extends React.Component {
                   <button type="submit" disabled={loading}>
                     Login
                   </button>
+                  <hr />
                   <RegistrationFormButton />
                   {loading && <Spinner name="circle" color="blue" />}
                   {error && <p style={{ color: "red" }}>{error.message}</p>}
