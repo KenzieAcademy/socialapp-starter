@@ -1,6 +1,7 @@
 import { Modal, Button } from "antd";
 import React from "react";
 import RegistrationForm from "./registrationForm";
+import RegistrationFormButton from "./registrationFormButton.css";
 import DataService from "../../DataService";
 class App extends React.Component {
   constructor(props) {

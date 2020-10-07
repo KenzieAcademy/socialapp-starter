@@ -8,12 +8,12 @@ class Home extends React.Component {
   render() {
     return (
       <div className="Home">
-        <Menu />
-        <h2>You ain't seen nothin' till you Observit!</h2>
+        {/* <Menu /> */}
+
         <LoginForm />
-        <hr />
-        {/* <RegistrationForm /> */}
-        <RegistrationFormButton />
+        {/* <hr />
+        <RegistrationForm /> */}
+        {/* <RegistrationFormButton /> */}
       </div>
     );
   }
