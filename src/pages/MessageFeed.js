@@ -1,7 +1,13 @@
 import React from "react";
 import BackEndServices from "../BackEndServices";
+import DeleteMessage from "../components/messages/DeleteMessage";
 import Message from "../components/messages/Message";
+import PostMessage from "../components/messages/PostMessage";
+import GetMessage from "../components/messages/GetMessage"
 import UserList from "../components/users/UserList"
+import { userIsAuthenticated } from "../redux/HOCs";
+import Container from '@material-ui/core/Container';
+
 
 class MessageFeed extends React.Component {
   state = { messages: [] };
@@ -23,7 +29,12 @@ class MessageFeed extends React.Component {
 
     return (
       <div className="messageFeed">
-        <h1>Our MessageFeed goes on this page</h1>
+        <Container maxWidth="sm">
+        <h1>Notes from Below</h1>
+        </Container>
+        <PostMessage login={this.props.login} isAuthenticated={this.props.isAuthenticated} />
+        <GetMessage />
+        <DeleteMessage />
         <ul>
        {this.state.messages.map(
          messageObject => (
@@ -37,4 +48,4 @@ class MessageFeed extends React.Component {
   }
 }
 
-export default MessageFeed;
+export default userIsAuthenticated(MessageFeed);
