@@ -13,18 +13,23 @@ class RegistrationForm extends React.Component {
     };
     this.client = new DataService();
   }
+
+  handleChange = (e) => {
+    this.setState({ [e.target.name]: e.target.value });
+    console.log(e.target.value);
+  };
+
   handleRegistration = (e) => {
     e.preventDefault();
     this.client.registerUser(this.state).then((result) => {
       console.log(result.data);
     });
+    console.log(this.state);
   };
 
-  handleChange = (e) => {
-    this.setState({ [e.target.name]: e.target.value });
-  };
   render() {
     const { loading, error } = this.props;
+
     return (
       <div className="RegistrationForm">
         <form id="registration-form" onSubmit={this.handleRegistration}>

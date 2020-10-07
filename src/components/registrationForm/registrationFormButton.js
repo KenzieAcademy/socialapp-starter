@@ -1,17 +1,13 @@
 import { Modal, Button } from "antd";
 import React from "react";
 import RegistrationForm from "./registrationForm";
-import DataService from "../../DataService";
+
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       visible: false,
-      username: "",
-      password: "",
-      displayName: "",
     };
-    this.client = new DataService();
   }
 
   showModal = () => {
@@ -22,17 +18,10 @@ class App extends React.Component {
 
   handleOk = (e) => {
     console.log(e);
+    e.preventDefault();
     this.setState({
       visible: false,
     });
-    e.preventDefault();
-    this.client.registerUser(this.state).then((result) => {
-      console.log(result.data);
-    });
-  };
-
-  handleChange = (e) => {
-    this.setState({ [e.target.name]: e.target.value });
   };
 
   handleCancel = (e) => {
@@ -55,7 +44,7 @@ class App extends React.Component {
           onCancel={this.handleCancel}
         >
           <div>
-            <RegistrationForm onOk={this.state.onSubmit} />
+            <RegistrationForm />
           </div>
         </Modal>
       </>
