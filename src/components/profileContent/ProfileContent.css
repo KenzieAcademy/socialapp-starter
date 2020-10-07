@@ -61,8 +61,7 @@
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
-  background-color: white;
-  background-image: url(../../assets/images/Coupon_Background_Light.png);
+  background-image: url(../../assets/images/Coupon_Background_Dark.png);
   font: italic small-caps bolder 25px/30px Impact;
   -webkit-text-stroke: 0.75px #d2be1a;
 }
@@ -74,7 +73,7 @@
   border-width: 3px;
   border-style: dashed;
   background-color: white;
-  background-image: url(../../assets/images/Coupon_Background_Light.png);
+  background-image: url(../../assets/images/Coupon_Background_Dark.png);
   position: relative;
   margin: auto;
   padding: 10px;

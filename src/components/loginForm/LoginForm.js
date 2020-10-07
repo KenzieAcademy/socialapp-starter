@@ -37,7 +37,7 @@ class LoginForm extends React.Component {
                 <input
                   type="text"
                   name="username"
-                  placeholder="Username Here"
+                  placeholder="Enter Username"
                   value={this.props.username}
                   autoFocus
                   required
@@ -53,7 +53,7 @@ class LoginForm extends React.Component {
                 <input
                   type="password"
                   name="password"
-                  placeholder="Password Here"
+                  placeholder="Enter Password"
                   value={this.props.password}
                   required
                   onChange={this.handleChange}

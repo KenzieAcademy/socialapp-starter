@@ -3,9 +3,7 @@
 }
 
 .LoginFormBody {
-  text-align: center;
   position: relative;
-  border: black;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
@@ -15,18 +13,19 @@
   background-image: url(../../assets/images/Coupon_Background_Dark.png);
   margin: 10px;
   position: relative;
-  border: black;
+  border: #d2be1a;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
   color: black;
-  text-align: center;
-  font: italic small-caps bold 30px/35px Impact;
-  -webkit-text-stroke: 0.75px #d2be1a;
+  font: italic small-caps bold 30px Impact;
+  -webkit-text-stroke: 0.5px #d2be1a;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
 }
 
 .LogUserHeader {
   position: relative;
+  text-align: center;
 }
 
 .LogUserBox input[type="text"] {
@@ -34,42 +33,47 @@
   margin: 10px;
   position: relative;
   margin: 10px;
+  border: #d2be1a;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  background: none;
+  background-image: url(../../assets/images/Clear_Red.png);
+  color: black;
+  text-align: left;
+  font: italic small-caps bold 25px Impact;
+  -webkit-text-stroke: 0.5px #d2be1a;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+}
+
+.LogUserBox input[type="text"]:hover {
   border: black;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
-  background-image: url(../../assets/images/Coupon_Background_Light.png);
   color: #d2be1a;
-  text-align: center;
-  font: italic small-caps bold 30px/35px Impact;
-  -webkit-text-stroke: 0.75px black;
-}
-
-.LogUserBox input[type="text"]:hover {
-  border: #b80c12;
-  border-radius: 5px;
-  border-width: 3px;
-  border-style: dashed;
-  color: black;
-  -webkit-text-stroke: 0.75px #d2be1a;
+  -webkit-text-stroke: 0.5px black;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
 }
 
 .LogPassBox {
   background-image: url(../../assets/images/Coupon_Background_Dark.png);
   margin: 10px;
   position: relative;
-  border: black;
+  border: #d2be1a;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
   text-align: center;
   color: black;
-  font: italic small-caps bold 30px/35px Impact;
-  -webkit-text-stroke: 0.75px #d2be1a;
+  font: italic small-caps bold 30px Impact;
+  -webkit-text-stroke: 0.5px #d2be1a;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
 }
 
 .LogPassHeader {
   position: relative;
+  text-align: center;
 }
 
 .LogPassBox input[type="password"] {
@@ -77,24 +81,27 @@
   margin: 10px;
   position: relative;
   margin: 10px;
+  border: #d2be1a;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  background: none;
+  background-image: url(../../assets/images/Clear_Red.png);
+  text-align: left;
+  color: black;
+  font: italic small-caps bold 25px Impact;
+  -webkit-text-stroke: 0.5px #d2be1a;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+}
+
+.LogPassBox input[type="password"]:hover {
   border: black;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
-  background-image: url(../../assets/images/Coupon_Background_Light.png);
   color: #d2be1a;
-  text-align: center;
-  font: italic small-caps bold 30px/35px Impact;
-  -webkit-text-stroke: 0.75px black;
-}
-
-.LogPassBox input[type="password"]:hover {
-  border: #b80c12;
-  border-radius: 5px;
-  border-width: 3px;
-  border-style: dashed;
-  color: black;
-  -webkit-text-stroke: 0.75px #d2be1a;
+  -webkit-text-stroke: 0.5px black;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
 }
 
 .LogEnterButton {

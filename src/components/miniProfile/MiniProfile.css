@@ -15,7 +15,8 @@
   border-style: dashed;
   position: relative;
   margin: auto;
-  background-image: url(../../assets/images/Clear_Red_Dark.png);
+  background: none;
+  background-image: url(../../assets/images/Clear_Red.png);
 }
 
 .ProfilePicThumb {

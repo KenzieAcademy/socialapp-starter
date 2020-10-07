@@ -58,7 +58,7 @@ class RegistrationForm extends React.Component {
               <input
                 type="text"
                 name="username"
-                placeholder="Username Here"
+                placeholder="Enter Username"
                 autoFocus
                 required
                 onChange={this.handleChange}
@@ -73,7 +73,7 @@ class RegistrationForm extends React.Component {
               <input
                 type="password"
                 name="password"
-                placeholder="Password Here"
+                placeholder="Enter Password"
                 required
                 onChange={this.handleChange}
               />
@@ -87,7 +87,7 @@ class RegistrationForm extends React.Component {
               <input
                 type="text"
                 name="displayName"
-                placeholder="Display Name Here"
+                placeholder="Enter Display Name"
                 required
                 onChange={this.handleChange}
               />
