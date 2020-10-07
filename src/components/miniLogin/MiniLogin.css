@@ -4,12 +4,24 @@
 
 .MiniLoginBody {
   position: relative;
-  margin: auto;
 }
 
-.MiniLoginButton {
+.MiniLoginButtonBox {
   position: relative;
-  margin: auto;
-  text-align: center;
   cursor: pointer;
+}
+
+.MiniLoginButton input[type="submit"] {
+  position: relative;
+  background: none;
+  border: none;
+  background-image: url(../../assets/images/Enter_Button.png);
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 60px;
+  cursor: pointer;
+}
+
+.MiniLoginButton input[type="submit"]:hover {
+  background-image: url(../../assets/images/Enter_Button_Hover.gif);
 }

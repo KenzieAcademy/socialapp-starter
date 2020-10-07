@@ -112,4 +112,5 @@
   font: italic small-caps bold 25px Impact;
   -webkit-text-stroke: 0.5px #d2be1a;
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  cursor: pointer;
 }

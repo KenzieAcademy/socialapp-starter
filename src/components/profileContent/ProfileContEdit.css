@@ -180,4 +180,5 @@
   border-style: dashed;
   position: relative;
   margin: 10px;
+  cursor: pointer;
 }

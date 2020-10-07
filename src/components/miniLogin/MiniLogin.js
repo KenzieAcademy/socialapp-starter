@@ -21,11 +21,14 @@ class MiniLogin extends React.Component {
   render() {
     const { loading, error } = this.props;
     return (
-      <div className="MiniLoginBody">
+      <div className="MiniLoginBodyBox">
         <div className="MiniLoginButton">
           <input
+            className="MiniLoginButton"
             type="submit"
-            value="Login"
+            value=""
+            title="Enter"
+            alt="Enter Button"
             onClick={this.handleLogin}
             disabled={loading}
           ></input>

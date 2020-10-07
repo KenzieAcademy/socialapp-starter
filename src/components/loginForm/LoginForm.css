@@ -120,6 +120,7 @@
   border: none;
   width: 150px;
   height: 60px;
+  cursor: pointer;
 }
 
 .LogEnterButton input[type="submit"]:hover {
