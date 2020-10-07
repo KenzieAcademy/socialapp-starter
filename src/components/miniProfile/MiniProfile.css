@@ -4,11 +4,6 @@
 
 .MiniProfileBody {
   position: relative;
-  /* margin: auto; */
-  /* margin: 10px; */
-  font: italic small-caps bold 27px/45px Impact;
-  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
-  -webkit-text-stroke: 0.25px white;
 }
 
 .Miniprofile {
@@ -28,8 +23,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* left: -90px; */
-  /* top: 5px; */
   width: 175px;
   height: 175px;
   position: relative;
@@ -48,10 +41,12 @@
   position: relative;
   margin: 10px;
   padding: 10px;
+  color: black;
+  font: italic small-caps bold 25px Impact;
+  -webkit-text-stroke: 0.5px #d2be1a;
 }
 
 .MemberName {
-  font-size: 22px;
   color: black;
   top: -49px;
   left: 75px;
@@ -62,9 +57,8 @@
 }
 
 .MemberSince {
-  font-size: 22px;
   color: black;
-  top: -49px;
+  top: -44px;
   left: 75px;
   text-align: left;
   position: relative;

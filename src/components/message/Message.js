@@ -67,10 +67,11 @@ class Message extends React.Component {
                   alt="Profile Pic"
                 />
               </div>
-              <div className="MessageMemberTitle">
-                <Card.Title> Member: {this.props.username}</Card.Title>
-              </div>
-              <Card.Subtitle className="mb-2 text-muted">
+              <Card.Title className="MessMemberTitle">
+                {" "}
+                Member: {this.props.username}
+              </Card.Title>
+              <Card.Subtitle>
                 {new Date(this.props.createdAt).toDateString}{" "}
               </Card.Subtitle>
               <Card.Text className="MessageTextBox">

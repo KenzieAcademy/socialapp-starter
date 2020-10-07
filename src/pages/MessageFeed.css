@@ -4,7 +4,7 @@
 
 .MessageFeedPageBody {
   background-image: url(../assets/images/Coupon_Background_Dark.png);
-  border: #d2be1a;
+  border: black;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
@@ -47,7 +47,7 @@
   width: 825px;
   height: 55px;
   left: 10px;
-  background-image: url(../assets/images/Clear_Red.png);
+  background-image: url(../assets/images/Clear_Red_Dark.png);
 }
 
 .MessageFeedHeaderText {

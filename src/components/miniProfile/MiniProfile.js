@@ -57,7 +57,6 @@ const MiniProfile = (props) => {
                 Logged In As: <div></div>
                 {props.user.displayName}
               </div>
-              <br></br>
               <div className="MemberSince">
                 Member Since: <div></div>
                 {joined.toUTCString()}
