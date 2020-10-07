@@ -68,7 +68,7 @@ class Message extends React.Component {
           </Link>
         </Route>
         {/* <img className="userprofile" alt="user-pic" src={this.state.pic} /> */}
-        Posted by: {this.props.username}
+         Posted By: {this.props.username}
         {/* {console.log(this.prop)} */}
         <br />
         {this.props.text}
@@ -77,7 +77,7 @@ class Message extends React.Component {
           style={{ fontSize: "30px", textAlign: "right" }}
           className="like-counter"
         >
-          😊{this.props.likes.length}
+          😊  {this.props.likes.length}
         </div>{" "}
         {/* <form> */}
         <button
