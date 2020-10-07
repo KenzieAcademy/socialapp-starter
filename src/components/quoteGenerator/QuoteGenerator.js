@@ -1,5 +1,5 @@
 import React from "react";
-import QuoteData from "../quoteGenerator/Quote.json";
+import QuoteData from "./Quote.json";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
@@ -45,11 +45,7 @@ export default function OutlinedCard() {
           Proper noun
         </Typography>
         <Typography variant="body2" component="p">
-          <div>
-            {QuoteData.map((quoteDetail, index) => (
-              <p>Quote: {quoteDetail.quote}</p>
-            ))}
-          </div>
+          Quote Here
         </Typography>
       </CardContent>
       <CardActions>
