@@ -2,7 +2,7 @@ import React from "react";
 import DataService from "../../DataService";
 import { Avatar, Button } from "antd";
 import "./Message.css";
-import profile_pic from "../../ProfilePic.jpeg";
+
 class Message extends React.Component {
   constructor(props) {
     super(props);

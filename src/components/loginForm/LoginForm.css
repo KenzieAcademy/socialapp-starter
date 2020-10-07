@@ -3,19 +3,36 @@
   margin: 0 auto;
 }
 
+/* .LoginForm {
+  height: 125vh;
+  width: 100%;
+  padding: 20px 75px;
+} */
+
+.slogan {
+  /* width: 100vh; */
+  /* float: left; */
+  /* padding: 0px; */
+  color: azure;
+}
+
 #login-form {
   display: flex;
   flex-direction: column;
   max-width: 20em;
-}
-.Inputs {
-  display: flex;
-  height: 200px;
-  width: 400px;
-  float: right;
-  background-color: aquamarine;
-  padding: 50px;
+  /* height: 400px; */
+  /* width: 100%; */
+  padding: 30px;
+  background-color: #e6e6ea;
 }
 .logo {
-  float: right;
+  display: flex;
+
+  background-color: rgb(71, 192, 49);
+}
+.form {
+  /* display: flex;
+  float: right; */
+  background-color: #94b1af;
+  box-shadow: 1px 1.3px 8px 2px #0a3051;
 }
