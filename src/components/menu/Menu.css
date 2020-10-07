@@ -4,7 +4,7 @@
 
 .MenuBody {
   position: relative;
-  border: black;
+  border: #d2be1a;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;

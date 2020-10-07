@@ -19,7 +19,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: black;
+  border: #d2be1a;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
@@ -33,7 +33,7 @@
   display: flex;
   flex-direction: column;
   background-image: url(../../assets/images/Clear_Red_Dark.png);
-  border: black;
+  border: #d2be1a;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
@@ -57,18 +57,20 @@
   margin: auto;
   padding: 10px;
   color: black;
-  border: black;
+  border: #d2be1a;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
   background-image: url(../../assets/images/Coupon_Background_Dark.png);
-  font: italic small-caps bolder 25px/30px Impact;
-  -webkit-text-stroke: 0.75px #d2be1a;
+  color: black;
+  font: italic small-caps bold 25px Impact;
+  -webkit-text-stroke: 0.5px #d2be1a;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
 }
 
 .AboutMeBox {
   width: 800px;
-  border: black;
+  border: #d2be1a;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
@@ -81,22 +83,25 @@
 
 .AboutMeHeader {
   position: relative;
-  font: italic small-caps bolder 25px/30px Impact;
   color: black;
-  -webkit-text-stroke: 0.75px #d2be1a;
+  font: italic small-caps bold 25px Impact;
+  -webkit-text-stroke: 0.5px #d2be1a;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
 }
 
 .AboutMeText {
   position: relative;
-  font: italic small-caps bolder 25px/30px Impact;
-  -webkit-text-stroke: 0.75px #d2be1a;
+  color: black;
+  font: italic small-caps bold 25px Impact;
+  -webkit-text-stroke: 0.5px #d2be1a;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
 }
 
 .UpdateSwitch {
   padding: 5px;
   width: 131px;
   height: 50px;
-  border: black;
+  border: #d2be1a;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
@@ -104,6 +109,7 @@
   position: relative;
   margin: 10px;
   color: black;
-  font: italic small-caps bolder 25px/30px Impact;
-  -webkit-text-stroke: 0.75px #d2be1a;
+  font: italic small-caps bold 25px Impact;
+  -webkit-text-stroke: 0.5px #d2be1a;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
 }

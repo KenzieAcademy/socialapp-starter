@@ -44,7 +44,7 @@ const Post = (props) => {
           </Form>
           <br></br>
           <div className="PostAwayButton">
-            <input type="submit" value="Post" onClick={props.post}></input>
+            <input type="submit" value="" onClick={props.post}></input>
           </div>
         </Card.Body>
       </Card>

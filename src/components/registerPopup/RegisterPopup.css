@@ -4,4 +4,12 @@
 
 .RegisterPopupBody {
   position: relative;
+  color: black;
+  border: #d2be1a;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  font: italic small-caps bold 25px Impact;
+  -webkit-text-stroke: 0.5px #d2be1a;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
 }

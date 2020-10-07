@@ -6,7 +6,7 @@
   position: relative;
   margin: auto;
   background-image: url(../assets/images/Coupon_Background_Dark.png);
-  border: black;
+  border: #d2be1a;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
@@ -81,7 +81,7 @@
   left: 330px;
   color: black;
   font: italic small-caps bold 45px Impact;
-  -webkit-text-stroke: 0.5px #d2be1a;
+  -webkit-text-stroke: 1px #d2be1a;
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
 }
 

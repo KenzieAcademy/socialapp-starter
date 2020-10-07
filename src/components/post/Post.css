@@ -3,7 +3,7 @@
 }
 
 .PostFormBody {
-  border: black;
+  border: #d2be1a;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
@@ -14,9 +14,10 @@
   width: 830px;
   height: 384px;
   text-align: center;
-  font-size: 25px;
-  color: white;
-  font-size: 20px;
+  color: black;
+  font: italic small-caps bold 25px Impact;
+  -webkit-text-stroke: 0.5px #d2be1a;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
 }
 
 .PostCardBody {
@@ -24,58 +25,64 @@
   width: 825px;
   left: -727px;
   top: -7px;
-  border: black;
+  border: #d2be1a;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
 }
 
 .PostInputBox {
-  border: black;
+  border: #d2be1a;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
   position: relative;
   margin: auto;
-  font: italic small-caps bold 22px/40px Impact;
-  -webkit-text-stroke: 0.25px black;
+  color: black;
+  font: italic small-caps bold 25px Impact;
+  -webkit-text-stroke: 0.5px #d2be1a;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
 }
 
 .PhotoUpload {
   background-image: url(../../assets/images/Coupon_Background_Dark.png);
-  border: black;
+  border: #d2be1a;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
   border-radius: 5px;
   padding: 10px;
-  font: italic small-caps bold 30px/30px Impact;
+  color: black;
+  font: italic small-caps bold 25px Impact;
+  -webkit-text-stroke: 0.5px #d2be1a;
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
-  -webkit-text-stroke: 0.5px black;
 }
 
 .PostAwayButton input[type="submit"] {
   width: 160px;
   height: 50;
   position: relative;
-  background-image: url(../../assets/images/Coupon_Background_Dark.png);
-  border: black;
+  background-image: url(../../assets/images/Post_Button.png);
+  border: #d2be1a;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
   padding: 5px;
   color: black;
-  font: italic small-caps bold 27px/45px Impact;
-  -webkit-text-stroke: 0.25px white;
+  font: italic small-caps bold 25px Impact;
+  -webkit-text-stroke: 0.5px #d2be1a;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
   cursor: pointer;
 }
 
 .PostAwayButton input[type="submit"]:hover {
-  background-image: url(../../assets/images/Clear_Red_Dark.png);
+  background-image: url(../../assets/images/Post_Button_Hover.gif);
   border: white;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
-  color: white;
-  -webkit-text-stroke: 0.25px black;
+  color: black;
+  font: italic small-caps bold 25px Impact;
+  -webkit-text-stroke: 0.5px #d2be1a;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
 }

@@ -71,7 +71,7 @@ class Message extends React.Component {
                 {" "}
                 Member: {this.props.username}
               </Card.Title>
-              <Card.Subtitle>
+              <Card.Subtitle className="PostTimeStamp">
                 {new Date(this.props.createdAt).toDateString}{" "}
               </Card.Subtitle>
               <Card.Text className="MessageTextBox">

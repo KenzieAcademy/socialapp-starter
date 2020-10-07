@@ -5,7 +5,7 @@
 .MessageBody {
   width: 613px;
   background-image: url(../../assets/images/Clear_Red.png);
-  border: black;
+  border: #d2be1a;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
@@ -35,7 +35,7 @@
   position: relative;
   margin: auto;
   padding: 5px;
-  border: black;
+  border: #d2be1a;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
@@ -43,6 +43,7 @@
   color: black;
   font: italic small-caps bold 25px Impact;
   -webkit-text-stroke: 0.5px #d2be1a;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
   width: 444px;
   height: 191px;
   top: -135px;
@@ -55,7 +56,7 @@
 }
 
 .MessThumbsUpButton {
-  border: black;
+  border: #d2be1a;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
@@ -87,7 +88,7 @@
 
 .MessProfPicBox {
   background-image: url(../../assets/images/Coupon_Background_Dark.png);
-  border: black;
+  border: #d2be1a;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
@@ -114,17 +115,23 @@
   color: black;
   font: italic small-caps bold 25px Impact;
   -webkit-text-stroke: 0.5px #d2be1a;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
 }
 
 .PostTimeStamp {
   position: relative;
   margin: auto;
+  color: black;
+  font: italic small-caps bold 25px Impact;
+  -webkit-text-stroke: 0.5px #d2be1a;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
 }
 
 .MessThumbsUpNumberBox {
   color: black;
   font: italic small-caps bold 25px Impact;
   -webkit-text-stroke: 0.5px #d2be1a;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
   position: relative;
   margin: auto;
   left: 234px;
