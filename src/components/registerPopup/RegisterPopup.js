@@ -18,11 +18,14 @@ class RegisterPopup extends React.Component {
           <Modal.Header closeButton>
             <Modal.Title>Thank You For Registering!</Modal.Title>
           </Modal.Header>
-          <Modal.Body>
-            <MiniLogin
-              username={this.props.username}
-              password={this.props.password}
-            />
+          <Modal.Body className="MiniRegPopBody">
+            <div className="MiniRegButtonBox">
+              <MiniLogin
+                className="MiniRegButton"
+                username={this.props.username}
+                password={this.props.password}
+              />
+            </div>
           </Modal.Body>
         </Modal>
       </div>

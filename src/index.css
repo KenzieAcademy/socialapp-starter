@@ -2,9 +2,7 @@ body {
   position: relative;
   margin: auto;
   background-image: url(../src/assets/images/Coupon_Background.png);
-  margin: 0.5em;
-  padding: 0;
-  font: italic small-caps bold 12px/30px Georgia, serif;
+  padding-bottom: 20px;
 }
 
 code {
@@ -12,8 +10,7 @@ code {
     monospace;
 }
 
-#HeaderLogo {
-  background-image: url(../src/assets/images/Header_Logo.png);
+.HeaderLogo {
   position: relative;
   margin: auto;
   width: 850px;

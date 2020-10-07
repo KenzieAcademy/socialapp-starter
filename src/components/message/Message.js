@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import "../message/Message.css";
-import ProfilePic from "../../assets/images/Placeholder_Image.gif";
+import ProfilePic from "../../assets/images/Placeholder_Image.png";
 import SocialappService from "../../socialappService";
 
 class Message extends React.Component {
@@ -55,29 +55,43 @@ class Message extends React.Component {
     return (
       <div className="MessageBody">
         <div className="MessageCardBody">
-          <Card className="MessageCard" style={{ width: "620px" }}>
+          <Card
+            className="MessageCard"
+            style={{ width: "613px", height: "240px" }}
+          >
             <Card.Body className="Message">
-              <img className="ProfilePic" src={ProfilePic} alt="Profile Pic" />
-              <div className="MessageMemberTitle">
-                <Card.Title> Member: {this.props.username}</Card.Title>
+              <div className="MessProfPicBox">
+                <img
+                  className="MessProfilePic"
+                  src={ProfilePic}
+                  alt="Profile Pic"
+                />
               </div>
-              <Card.Subtitle className="mb-2 text-muted">
+              <Card.Title className="MessMemberTitle">
+                {" "}
+                Member: {this.props.username}
+              </Card.Title>
+              <Card.Subtitle className="PostTimeStamp">
                 {new Date(this.props.createdAt).toDateString}{" "}
               </Card.Subtitle>
               <Card.Text className="MessageTextBox">
                 {this.props.text}
               </Card.Text>
-              <footer>
-                {" "}
-                <div className="ThumbsUpNumber">
-                  <div className="ThumbsUp">
-                    Thumbs Up: {this.props.likes.length}
-                  </div>{" "}
-                </div>
-                <button className="ThumbsUpButton" onClick={this.LikeFunction}>
+              {/* <footer> */}{" "}
+              <div className="MessThumbsUpNumberBox">
+                <div className="MessThumbsUpNumber">
+                  Thumbs Up: {this.props.likes.length}
+                </div>{" "}
+              </div>
+              <div className="MessThumbsUpButtonBox">
+                <button
+                  className="MessThumbsUpButton"
+                  onClick={this.LikeFunction}
+                >
                   Thumbs Up!
                 </button>{" "}
-              </footer>
+              </div>
+              {/* </footer> */}
             </Card.Body>
           </Card>
         </div>

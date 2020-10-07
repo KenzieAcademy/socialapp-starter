@@ -1,15 +1,15 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import "../miniProfile/MiniProfile.css";
-import MiniProfileIMG from "../../assets/images/Placeholder_Image_Thumb.gif";
+import MiniProfileIMG from "../../assets/images/Placeholder_Image.png";
 import { Link } from "react-router-dom";
 
 const styles = {
   paperContainer: {
-    height: 120,
-    width: 120,
-    maxwidth: 20,
-    maxheight: 20,
+    // height: 120,
+    // width: 120,
+    maxwidth: 125,
+    maxheight: 125,
   },
 };
 
@@ -23,20 +23,24 @@ const MiniProfile = (props) => {
 
   let profileImage = (
     <img
-      alt="profile"
+      alt="Profile Pic"
       src={image}
       style={styles.paperContainer}
-      class="btn btn-primary"
+      class="img-fluid"
+      variant="dark"
+      title="Profile Pic"
     />
   );
   if (props.user.username === localStorage.getItem("user")) {
     profileImage = (
       <a href={"profile/" + localStorage.getItem("user")}>
         <img
-          alt="profile"
+          alt="Profile Pic"
           src={image}
           style={styles.paperContainer}
-          class="btn btn-primary"
+          class="img-fluid"
+          variant="dark"
+          title="Profile Pic"
         />
       </a>
     );
@@ -50,10 +54,12 @@ const MiniProfile = (props) => {
           <Card.Subtitle className="card-Subtitle">
             <div className="MiniMemberInfo">
               <div className="MemberName">
-                Logged In As: {props.user.displayName}
+                Logged In As: <div></div>
+                {props.user.displayName}
               </div>
               <div className="MemberSince">
-                Member Since: {joined.toUTCString()}
+                Member Since: <div></div>
+                {joined.toUTCString()}
               </div>
             </div>
           </Card.Subtitle>

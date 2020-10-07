@@ -26,15 +26,18 @@ class LoginForm extends React.Component {
   render() {
     const { loading, error } = this.props;
     return (
-      <div className="LoginFormBody">
-        <div className="LoginForm">
-          <form id="login-form" onSubmit={this.handleLogin}>
-            <div className="LogUserNameInput">
-              <label htmlFor="username">Username</label>
-              <div className="LogUserNameInputBox">
+      <div className="LogFormBody">
+        <div className="LogForm">
+          <form onSubmit={this.handleLogin}>
+            <div className="LogUserBox">
+              <div className="LogUserHeader">
+                <label htmlFor="username">Username</label>
+              </div>
+              <div className="LogUserInput">
                 <input
                   type="text"
                   name="username"
+                  placeholder="Enter Username"
                   value={this.props.username}
                   autoFocus
                   required
@@ -42,32 +45,34 @@ class LoginForm extends React.Component {
                 />
               </div>
             </div>
-            <div className="LogPasswordInput">
-              <label htmlFor="password">Password</label>
-              <div className="LogPasswordInputBox">
+            <div className="LogPassBox">
+              <div className="LogPassHeader">
+                <label htmlFor="password">Password</label>
+              </div>
+              <div className="LogPassInput">
                 <input
                   type="password"
                   name="password"
+                  placeholder="Enter Password"
                   value={this.props.password}
                   required
                   onChange={this.handleChange}
                 />
               </div>
             </div>
-            <div className="LogEnterButtonBox">
-              <div className="LogEnterButton">
-                <input
-                  type="submit"
-                  value="Enter"
-                  onClick={this.handleLogin}
-                  disabled={loading}
-                ></input>
-              </div>
+            <div className="LogEnterButton">
+              <input
+                type="submit"
+                value=""
+                title="Enter"
+                onClick={this.handleLogin}
+                disabled={loading}
+              ></input>
             </div>
           </form>
-          {loading && <Spinner name="circle" color="red" />}
-          {error && <p style={{ color: "red" }}>{error.message}</p>}
         </div>
+        {loading && <Spinner name="circle" color="red" />}
+        {error && <p style={{ color: "red" }}>{error.message}</p>}
       </div>
     );
   }

@@ -86,64 +86,45 @@ class MessageFeed extends React.Component {
       popupProfile = <MiniProfile user={this.state.selectedUser} />;
     }
     return (
-      <div className="Body">
-        <div className="leftColumn">
-          <MiniProfile user={this.state.currentUser} />
-        </div>
-        <div className="rightColumn">{popupProfile}</div>
-        <div className="MessageList">
-          <Menu isAuthenticated={this.props.isAuthenticated} />
-          <div className="MessageHeader">Message Feed</div>
-          <br></br>
-          <OverlayTrigger
-            trigger="click"
-            placement="bottom"
-            overlay={this.popover}
-            rootClose={true}
-          >
-            <Button className="PostButton" variant="dark" size="lg">
-              POST A MESSAGE
-            </Button>
-          </OverlayTrigger>
-          <div className="TheFeed">
-            <ul>
-              {this.state.messages.map((messageObject) => {
-                return (
-                  <Message
-                    {...messageObject}
-                    selectUserToDisplay={this.handleSelectUser}
-                  />
-                );
-              })}
-            </ul>
-          </div>
-        </div>
-        <div className="MessageHeaderBox">
-          <div className="MessageFeedHeaderText">Message Feed</div>
-        </div>
-        <OverlayTrigger
-          trigger="click"
-          placement="bottom"
-          overlay={this.popover}
-          rootClose={true}
-        >
-          <div className="MiniProfile-PostButtonBox">
-            <div className="MiniProfileFeed">
-              <MiniProfile user={this.state.currentUser} />
-            </div>
-            <div className="PostButtonBox">
-              <Button className="PostAMessageButton" variant="dark" size="lg">
-                Post A Message
-              </Button>
+      <div className="MessageFeedPageBody">
+        <div className="MessageFeedPageHeaderBox">
+          <div className="MessageMenuBox">
+            <div className="MessageMenuText">
+              <Menu isAuthenticated={this.props.isAuthenticated} />
             </div>
           </div>
-        </OverlayTrigger>
-        <div className="TheFeed">
-          <ul>
-            {this.state.messages.map((messageObject) => {
-              return <Message {...messageObject} />;
-            })}
-          </ul>
+          <div className="MessageHeaderBox">
+            <div className="MessageFeedHeaderText">Message Feed</div>
+          </div>
+          <div className="FeedBody">
+            <div className="MiniProfileBox-PostButtonBox">
+              <div className="MiniProfileBox">
+                <MiniProfile user={this.state.currentUser} />
+                <div className="PostButtonBox">
+                  <OverlayTrigger
+                    trigger="click"
+                    placement="bottom"
+                    overlay={this.popover}
+                    rootClose={true}
+                  >
+                    <Button
+                      className="PostButton"
+                      variant="outline_dark"
+                      size="lg"
+                      title="Post A Message"
+                    ></Button>
+                  </OverlayTrigger>
+                </div>
+              </div>
+            </div>
+            <div className="PostFeedBody">
+              <ul>
+                {this.state.messages.map((messageObject) => {
+                  return <Message {...messageObject} />;
+                })}
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     );
