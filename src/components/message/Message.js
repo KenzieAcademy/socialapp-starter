@@ -1,6 +1,6 @@
 import React from "react";
 import DataService from "../../DataService";
-import { Avatar, Button } from "antd";
+import { Avatar, Button, Comment } from "antd";
 import "./Message.css";
 
 class Message extends React.Component {

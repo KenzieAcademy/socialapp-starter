@@ -16,11 +16,16 @@ class Profile extends React.Component {
       <div className="Profile">
         <Menu isAuthenticated={this.props.isAuthenticated} />
         <Layout>
-          <Sider style={{ padding: "15px" }}>
+          <Sider style={{ padding: "15px", background: "#0a3051" }}>
             <UploadPicture />
           </Sider>
           <Layout style={{ background: "#94b1af" }}>
-            <Content style={{ height: "100vh" }}>
+            <Content
+              style={{
+                height: "100vh",
+                margin: "0 auto",
+              }}
+            >
               <AboutUser />
               <UpdateAbout />
               <UpdateUser />
@@ -28,7 +33,16 @@ class Profile extends React.Component {
             </Content>
           </Layout>
         </Layout>
-        <Footer>Footer</Footer>
+        <Footer
+          style={{
+            background: "#0a3051",
+            color: "#e6e6ea",
+            textAlign: "center",
+          }}
+        >
+          {" "}
+          Observit ©2020 Created by Team 404
+        </Footer>
       </div>
     );
   }
