@@ -11,5 +11,4 @@ class NotFound extends React.Component {
     );
   }
 }
-
 export default NotFound;

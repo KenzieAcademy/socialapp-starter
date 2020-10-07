@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Menu.css";
 import { withAsyncAction } from "../../redux/HOCs";
+import "./Menu.css";
 
 class Menu extends React.Component {
+  
   handleLogout = event => {
     event.preventDefault();
     this.props.logout();
@@ -12,15 +13,14 @@ class Menu extends React.Component {
   render() {
     return (
       <div className="Menu">
-        <h1>Kwitter</h1>
-        {this.props.isAuthenticated && (
-          <div id="menu-links">
-            <Link to="/messagefeed">Message Feed</Link>
-            <Link to="/" onClick={this.handleLogout}>
-              Logout
-            </Link>
-          </div>
-        )}
+        <h1 className = "kwitter" >Kwitter</h1>
+        <div id="menu-links">
+          <Link to="/profile/:username">Profile</Link>
+          <Link to="/messagefeed">Message Feed</Link>
+          <Link to="/" onClick={this.handleLogout}>
+            Logout
+          </Link>
+        </div>
       </div>
     );
   }
