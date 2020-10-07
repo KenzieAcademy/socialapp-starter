@@ -4,6 +4,7 @@ import { withAsyncAction } from "../../redux/HOCs";
 import "./LoginForm.css";
 import RegistrationFormButton from "../registrationForm/registrationFormButton";
 import DINO from "../../images/Dino-PIC.png";
+import LoginDINO from "../../images/login-dino-pic.png";
 import { Layout } from "antd";
 
 const { Header, Footer, Content } = Layout;
@@ -39,7 +40,7 @@ class LoginForm extends React.Component {
           <Content>
             <div className="form">
               <img
-                src="https://lh3.googleusercontent.com/proxy/oiPMUPydSIwKgdqiXmu67D2b9bBmuYFltHSuzLGUSOowXij5aQeLvdOBds1D0cFKPlVwcmvEvgs_g6W9UFnO6UViCqr99vean6fU2l3pZ8blCZ0JbJtwnsTNyfGxksT2lSt7MwPBtDG4"
+                src={LoginDINO}
                 alt="DINO-WALLPAPER"
                 width="800vh"
                 transform="scaleX(-1)"
@@ -77,7 +78,7 @@ class LoginForm extends React.Component {
               </form>
             </div>
           </Content>
-          <Footer>Site Created By: Team 404</Footer>
+          <Footer>Observit ©2020 Created by Team 404</Footer>
         </Layout>
 
         {/* <div className="form">

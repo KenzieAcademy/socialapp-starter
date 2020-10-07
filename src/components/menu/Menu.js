@@ -14,7 +14,6 @@ class Menu extends React.Component {
       <div className="Menu">
         {this.props.isAuthenticated && (
           <Layout className="layout">
-            <div className="logo" />
             <Layout.Header>
               <Menu2 style={{ float: "right" }} theme="dark" mode="horizontal">
                 <Menu2.Item className="home-button">

@@ -70,7 +70,7 @@ class DataService {
     });
   }
 
-  getMessageList(limit = 20) {
+  getMessageList(limit = 50) {
     return this.client.get(`${this.url}/messages?limit=${limit}`);
   }
 
