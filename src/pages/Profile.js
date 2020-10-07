@@ -31,7 +31,6 @@ class Profile extends React.Component {
           <UploadPhoto />
           <br></br>
           <AboutMe />
-          <br></br>
           <DeleteAcctButton />
         </center>
       </div>
