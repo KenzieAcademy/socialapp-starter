@@ -81,10 +81,6 @@ class MessageFeed extends React.Component {
         </div>
       );
     }
-    let popupProfile = <div></div>;
-    if (this.state.selectedUser !== "") {
-      popupProfile = <MiniProfile user={this.state.selectedUser} />;
-    }
     return (
       <div className="MessageFeedPageBody">
         <div className="MessageFeedPageHeaderBox">
