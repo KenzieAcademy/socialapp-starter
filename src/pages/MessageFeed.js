@@ -24,7 +24,7 @@ class MessageFeed extends React.Component {
       );
     } else
       this.interval = setInterval(() => {
-        this.client.getMessages().then((response) =>
+        this.client.getMessages(10).then((response) =>
           this.setState({
             messages: response.data.messages,
           })
