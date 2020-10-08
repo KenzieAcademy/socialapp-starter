@@ -1,0 +1,9 @@
+.aboutMeDiv {
+  padding: 20px;
+  margin-top: 80px;
+  background-color: #e6e6ea;
+  height: 200px;
+  width: 600px;
+  text-align-last: left;
+  word-break: break-word;
+}
