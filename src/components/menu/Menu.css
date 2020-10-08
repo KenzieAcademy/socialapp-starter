@@ -1,4 +1,4 @@
-.Menu {
+/* .Menu {
   background-color: lightskyblue;
   display: flex;
   justify-content: space-between;
@@ -10,6 +10,11 @@
 #menu-links {
   display: flex;
   padding-left: 1em;
+} */
+
+#menu-links {
+  display: flex;
+  flex-direction: row-reverse;
 }
 
 #menu-links a {
@@ -17,4 +22,26 @@
   color: darkblue;
   text-decoration: underline;
   cursor: pointer;
+}
+
+.site-layout-content {
+  background: #ecf3ff;
+  padding: 24px;
+  min-height: 280px;
+}
+#components-layout-demo-top .logo {
+  width: 120px;
+  height: 31px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 16px 24px 16px 0;
+  float: right;
+}
+/* .home-button {
+  display: block;
+  align-items: center;
+  background-color: aqua;
+} */
+
+.Style {
+  background-color: "red";
 }

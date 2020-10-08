@@ -1,5 +1,39 @@
+/* * {
+  box-sizing: border-box;
+  margin: 0 auto;
+} */
+
+/* .LoginForm {
+  height: 125vh;
+  width: 100%;
+  padding: 20px 75px;
+} */
+
+.slogan {
+  /* width: 100vh; */
+  /* float: left; */
+  /* padding: 0px; */
+  color: azure;
+}
+
 #login-form {
   display: flex;
   flex-direction: column;
   max-width: 20em;
+  height: 420px;
+  width: 100%;
+  padding: 30px;
+  background-color: #e6e6ea;
+}
+.logo {
+  display: flex;
+  height: 40px;
+  background-color: white;
+  margin-bottom: 30px;
+}
+.form {
+  display: flex;
+  float: right;
+  /* background-color: #94b1af; */
+  box-shadow: 1px 1.3px 8px 2px #0a3051;
 }
