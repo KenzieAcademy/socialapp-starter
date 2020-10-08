@@ -10,17 +10,26 @@ class RegistrationForm extends React.Component {
     super(props);
     this.state = {
       username: "",
-      password: "",
       displayName: "",
+      password: "",
     };
     this.client = new DataService();
   }
 
   handleRegistration = (e) => {
     e.preventDefault();
-    this.client.registerUser(this.state).then((result) => {
-      console.log(result.data);
-    });
+    console.log(this.state.users);
+    console.log(this.state);
+    this.client
+      .registerUser(this.state)
+      .then((result) => {
+        // this.setState({ Successcode: "User registered" });
+        console.log(result.data);
+        alert("Success");
+      })
+      .catch(() => {
+        alert("Error Try Registering Again");
+      });
   };
 
   handleChange = (e) => {

@@ -3,7 +3,7 @@ import { userIsAuthenticated } from "../redux/HOCs";
 // import { domain, jsonHeaders, handleJsonResponse } from "./constants";
 import DataService from "../dataService";
 import profilepic from "../components/defualtpicture/freeiconlibrary.jpg";
-import PSM from "../components/message/UserSearchMessages/PSM";
+// import PSM from "../components/message/UserSearchMessages/PSM";
 import "./Profile.css";
 
 class Profile extends React.Component {
@@ -16,7 +16,7 @@ class Profile extends React.Component {
         username: "",
         displayname: "",
         aboutme: "",
-        picture: "",
+        picture: profilepic,
       },
     };
   }
@@ -28,12 +28,21 @@ class Profile extends React.Component {
   getuserdata() {
     this.client.getUser(this.props.match.params.username).then((result) => {
       console.log(this.client.getUsername());
+      console.log(result.data.user.pictureLocation);
       this.setState({
         username: result.data.user.username,
         displayname: result.data.user.displayName,
         aboutme: result.data.user.aboutme,
         picture: `https://socialapp-api.herokuapp.com/users/${this.client.getUsername()}/picture`,
       });
+      if (result.data.user.pictureLocation === null) {
+        this.setState({
+          picture: profilepic,
+        });
+      } else
+        this.setState({
+          picture: `https://socialapp-api.herokuapp.com/users/${this.client.getUsername()}/picture`,
+        });
     });
   }
 
@@ -74,7 +83,7 @@ class Profile extends React.Component {
           width={250}
           className="center"
         />
-        <PSM />
+        {/* <PSM /> */}
         {/* <p> {this.state.aboutme}</p>
         <input style={{ fontFamily: "serif" }} type="file" onChange={this.profilePicHandler} /> */}
       </div>
