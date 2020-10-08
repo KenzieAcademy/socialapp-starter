@@ -3,12 +3,10 @@
   background-image: url("../images/welcome.jpg");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 100% 50%;
+  background-size: 100% 70%;
   height: 100vh;
 }
 
 :link {
   text-decoration-line: none;
-}
-.NotFound {
 }

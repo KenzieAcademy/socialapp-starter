@@ -3,18 +3,18 @@ import BackEndServices from "../BackEndServices";
 import DeleteMessage from "../components/messages/DeleteMessage";
 import Message from "../components/messages/Message";
 import PostMessage from "../components/messages/PostMessage";
-import GetMessage from "../components/messages/GetMessage"
-import UserList from "../components/users/UserList"
+import GetMessage from "../components/messages/GetMessage";
+import UserList from "../components/users/UserList";
 import { userIsAuthenticated } from "../redux/HOCs";
-import Container from '@material-ui/core/Container';
-
+import Container from "@material-ui/core/Container";
+import "../components/assets/stylesheets/Messages.css";
 
 class MessageFeed extends React.Component {
   state = { messages: [] };
 
   componentDidMount() {
     BackEndServices.getMessages().then((response) => {
-      this.setState({ messages: response.data.messages })
+      this.setState({ messages: response.data.messages });
     });
   }
 
@@ -30,19 +30,21 @@ class MessageFeed extends React.Component {
     return (
       <div className="messageFeed">
         <Container maxWidth="sm">
-        <h1>Notes from Below</h1>
-        </Container>
-        <PostMessage login={this.props.login} isAuthenticated={this.props.isAuthenticated} />
-        <GetMessage />
-        <DeleteMessage />
-        <ul>
-       {this.state.messages.map(
-         messageObject => (
-           <Message key={messageObject.id} {...messageObject} />
-         )
-       )}
-        </ul>
+          <h1>Notes from Below</h1>
+
+          <PostMessage
+            login={this.props.login}
+            isAuthenticated={this.props.isAuthenticated}
+          />
+          <GetMessage />
+          <DeleteMessage />
+          <ul className="MessageBoard">
+            {this.state.messages.map((messageObject) => (
+              <Message key={messageObject.id} {...messageObject} />
+            ))}
+          </ul>
           <UserList />
+        </Container>
       </div>
     );
   }

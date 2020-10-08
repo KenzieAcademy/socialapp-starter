@@ -1,18 +1,38 @@
-.messages-bg {
+a:link {
+  color: white;
+}
+
+/* visited link */
+a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+  color: hotpink;
+  text-decoration: overline;
+}
+
+/* selected link */
+a:active {
+  color: red;
+  text-decoration: none;
+}
+
+.messageFeed {
   display: flex;
+  flex-direction: column;
   background-image: url("../images/chatbg.jpg");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 100% 50%;
+  background-size: contain;
   height: 100vh;
 }
-.MessagesDiv {
-  padding: 3em;
-}
+
 .MessageBoard {
-  background-color: rgba(90, 89, 89, 0.5);
+  background-color: rgba(90, 89, 89, 0.3);
   padding: 3em;
   flex-basis: 450px;
   border-radius: 15px;
 }
-

@@ -1,43 +1,28 @@
 import React from "react";
 import { withAsyncAction } from "../../redux/HOCs";
 import "./RegistrationForm.css";
-import RegistrationService from "./registrationService"
-import { Button } from '@material-ui/core';
-import Container from '@material-ui/core/Container';
+import RegistrationService from "./registrationService";
+import { Button } from "@material-ui/core";
+import Container from "@material-ui/core/Container";
 import { Link } from "react-router-dom";
-
-
-
-
-
-
-
 
 class RegistrationForm extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      formData: {username: "",
-      displayName: "",
-      password: ""},
-      boolean : false
+      formData: { username: "", displayName: "", password: "" },
+      boolean: false,
     };
-    
-    this.client = new RegistrationService()
+
+    this.client = new RegistrationService();
   }
-  
-  
-  
-  handleRegistration = e => {
+
+  handleRegistration = (e) => {
     e.preventDefault();
     this.client.registerUser(this.state.formData).then((result) => {
-      console.log(result.data.statusCode)
-        this.setState({boolean : true})
-      
-      }
-      
-      
-    )
+      console.log(result.data.statusCode);
+      this.setState({ boolean: true });
+    });
   };
 
   handleChange = (event) => {
@@ -47,63 +32,58 @@ class RegistrationForm extends React.Component {
   };
 
   render() {
-      if (this.state.boolean === true){
-        return (
-        <div className = "successReg">
-        <h1>You're IN!</h1>
-        <img src = "https://media4.giphy.com/media/1bnecJczhD5gk/giphy.gif?cid=ecf05e47pb7smfl08cxxuhcia8oz703lvjtwa5resovj5a72&rid=giphy.gif" alt = "spinning Lovecraft head" class = "reg-image"/>
-        <Link to = "/"> Home </Link>
-        </div>)
+    if (this.state.boolean === true) {
+      return (
+        <div className="successReg">
+          <h1>You're IN!</h1>
+          <img
+            src="https://media4.giphy.com/media/1bnecJczhD5gk/giphy.gif?cid=ecf05e47pb7smfl08cxxuhcia8oz703lvjtwa5resovj5a72&rid=giphy.gif"
+            alt="spinning Lovecraft head"
+            class="reg-image"
+          />
+          <Link to="/"> Home </Link>
+        </div>
+      );
+    } else {
+      return (
+        <div className="RegistrationForm">
+          <Container maxWidth="sm">
+            <form id="registration-form" onSubmit={this.handleRegistration}>
+              <label htmlFor="username">Username</label>
+              <input
+                type="text"
+                name="username"
+                autoFocus
+                required
+                onChange={this.handleChange}
+              />
+              <label htmlFor="displayName">Display Name</label>
+              <input
+                type="text"
+                name="displayName"
+                required
+                onChange={this.handleChange}
+              />
+              <label htmlFor="password">Password</label>
+              <input
+                type="password"
+                name="password"
+                required
+                onChange={this.handleChange}
+              />
+              <Button color="secondary" type="submit">
+                Register
+              </Button>
+            </form>
 
-      }
-      else{
-    return (
-             
-      <div className="RegistrationForm">
-      
-        <Container maxWidth = "sm">
-        <form id="registration-form" onSubmit={this.handleRegistration}>
-          <label htmlFor="username">Username</label>
-          <input
-            type="text"
-            name="username"
-            autoFocus
-            required
-            onChange={this.handleChange}
-            />
-          <label htmlFor="displayName">Display Name</label>
-          <input
-            type="text"
-            name="displayName"
-            required
-            onChange={this.handleChange}
-            />
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            name="password"
-            required
-            onChange={this.handleChange}
-            />
-           <Button color = "secondary" type="submit">
-            Register
-          </Button>
-          
-          
-          
-          
-        </form>
-        
-{/* 
+            {/* 
         {loading && <Spinner name="circle" color="blue" />}
         {error && <p style={{ color: "red" }}>{error.message}</p>} */}
-
-
-        </Container>
-      </div>
-    );}
+          </Container>
+        </div>
+      );
+    }
   }
 }
 
 export default withAsyncAction("auth", "login")(RegistrationForm);
-

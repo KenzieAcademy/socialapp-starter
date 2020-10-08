@@ -1,0 +1,10 @@
+.QuoteGenerator {
+  text-align: center;
+}
+.posts {
+  text-align: left;
+}
+
+.post {
+  border-bottom: 1px solid red;
+}
