@@ -2,25 +2,37 @@ import { Input } from "antd";
 import React from "react";
 import Dataservice from "../../pages/dataService";
 
-const MessageInbox = (props) => {
-  const onChange = (e) => {
-    console.log(e);
+class MessageInbox extends React.Component {
+  constructor(props) {
+    super(props);
 
+    this.state = {
+      message: { text: "" },
+    };
+
+    this.writeMessage = this.writeMessage.bind(this);
     this.client = new Dataservice();
+  }
+  writeMessage = () => {
+    this.client.createMessage(this.props.messageId).then((response) => {
+      console.log(response.data);
+    });
   };
 
-  return (
-    <div>
-      <p className="messinbox">Message</p>
-      <Input
-        size="large"
-        className="mess"
-        placeholder="message here"
-        allowClear
-        onChange={onChange}
-      />
-      <br />
-    </div>
-  );
-};
+  render() {
+    return (
+      <div>
+        <p className="messinbox">Message</p>
+        <Input
+          size="large"
+          className="mess"
+          placeholder="message here"
+          allowClear
+          onClick={this.writeMessage}
+        />
+        <br />
+      </div>
+    );
+  }
+}
 export default MessageInbox;
