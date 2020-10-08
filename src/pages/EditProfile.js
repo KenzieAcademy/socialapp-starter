@@ -45,18 +45,18 @@ class EditProfile extends React.Component {
     this.setState({ displayName: e.target.value });
   };
 
-  componentDidMount() {
-    let temp = this.client.getUsername();
-    this.setState({ username: temp });
-    this.client.getUser(temp).then((response) => {
-      this.setState({
-        username: response.data.user.username,
-        displayname: response.data.user.displayName,
-        aboutme: response.data.user.about,
-        picture: response.data.user.pictureLocation,
-      });
-    });
-  }
+  // componentDidMount() {
+  //   let temp = this.client.getUsername();
+  //   this.setState({ username: temp });
+  //   this.client.getUser(temp).then((response) => {
+  //     this.setState({
+  //       username: response.data.user.username,
+  //       displayname: response.data.user.displayName,
+  //       aboutme: response.data.user.about,
+  //       picture: response.data.user.pictureLocation,
+  //     });
+  //   });
+  // }
 
   handlefile = (e) => {
     const file = e.target.files[0];
@@ -77,7 +77,6 @@ class EditProfile extends React.Component {
     const timestamp = Date.now();
     const newpic = `https://socialapp-api.herokuapp.com/users/${this.client.getUsername()}/picture?t=${timestamp}`;
     this.setState({ imageURL: newpic, counter: this.state.counter + 1 });
-    console.log("asdasd");
   };
 
   render() {

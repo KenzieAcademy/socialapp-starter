@@ -17,50 +17,59 @@ class SideBar extends React.Component {
   };
   render() {
     return (
-      <Sider style={{ backgroundColor: "dark", }}>
+      <Sider style={{ backgroundColor: "dark" }}>
         <Menu defaultSelectedKeys={["Dashboard"]} mode="inline">
           <Menu.Item key="Dashboard">
             <Route>
-              <Link to="/"> 🎭 Profile</Link>
+              <Link to="/">
+                {" "}
+                <span role={"img"}>🎭 Profile </span>
+              </Link>
             </Route>
           </Menu.Item>
           <SubMenu
             title={
               <span>
                 <Icon type="mail" />
-                <span>👇 User Info</span>
+                <span role={"img"}>👇 User Info</span>
               </span>
             }
           >
             <Menu.ItemGroup key="AboutUS">
               <Menu.Item key="location1">
                 <Route>
-                  <Link to="/messagefeed">📩 MessageFeed</Link>
+                  <Link to="/messagefeed">
+                    <span role={"img"}>📩 MessageFeed>/</span>
+                  </Link>
                 </Route>
               </Menu.Item>
               <Menu.Item key="location2">
                 <Route>
-                  <Link to="/createmessage">✍ Create Message</Link>
+                  <Link to="/createmessage">
+                    <span role={"img"}>✍</span>Create Message
+                  </Link>
                 </Route>
               </Menu.Item>
               <SubMenu
                 title={
                   <span>
                     <Icon type="mail1" />
-                    <span > 👇 More Options</span>
+                    <span role={"img"}> 👇 More Options</span>
                   </span>
                 }
               >
                 <Menu.ItemGroup key="AboutUS1" title="More Options">
                   <Menu.Item key="location3">
                     <Route>
-                      <Link to="/editprofile"> 🎭 Edit Profile</Link>
+                      <Link to="/editprofile">
+                        <span role={"img"}> 🎭</span> Edit Profile
+                      </Link>
                     </Route>
                   </Menu.Item>
                   <Menu.Item key="location5">
                     <Link to="/deleteprofile" onClick={this.handleChange}>
                       {" "}
-                      ❎ Delete Profile
+                      <span role={"img"}>❎</span> Delete Profile
                     </Link>
                   </Menu.Item>
 
@@ -71,46 +80,22 @@ class SideBar extends React.Component {
                   </Menu.Item> */}
                 </Menu.ItemGroup>
               </SubMenu>
-
-              {/* <Menu.Item key="location4">
-                <Route>
-                  <Link to="/searchuser">⌛ Search User</Link>
-                </Route>
-              </Menu.Item>
-              <Menu.Item key="DeleteUser">
-                <Route>
-                  <Link to="/deleteprofile"> ❎ Delete profile</Link>
-                </Route>
-              </Menu.Item> */}
-              {/* <Menu.Item
-                id="menu-links"
-                style={{ backgroundColor: "red", borderRadius: "50px" }}
-              >
-                <Link to="/" onClick={this.handleLogout}>
-                  <SettingOutlined /> LOGOUT
-                </Link>
-              </Menu.Item> */}
-              {/* <div className="Menu">
-                {this.props.isAuthenticated && (
-                  <div id="menu-links">
-                    <Link to="/" onClick={this.handleLogout}>
-                      Logout
-                    </Link>
-                  </div>
-                )}
-              </div> */}
             </Menu.ItemGroup>
           </SubMenu>
           <Menu.Item key="location4">
             <Route>
-              <Link to="/searchuser">⌛ Search User</Link>
+              <Link to="/searchuser">
+                <span role={"img"}>⌛</span> Search User
+              </Link>
             </Route>
           </Menu.Item>
-
-
           <Menu.Item
             id="menu-links"
-            style={{ backgroundColor: "red", borderRadius: "50px", textAlign: "center", }}
+            style={{
+              backgroundColor: "red",
+              borderRadius: "50px",
+              textAlign: "center",
+            }}
           >
             <Link to="/" onClick={this.handleLogout}>
               <SettingOutlined /> LOGOUT
