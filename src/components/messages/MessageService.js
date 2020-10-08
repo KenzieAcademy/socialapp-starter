@@ -69,8 +69,8 @@ removeLike(likeId){
   }
 
   getMessage(messageId) {
-    console.log(messageId);
-    return this.client.get(this.url + `/messages/${messageId}`);
+    
+    return this.client.get(this.url + `/messages?limit=20/${messageId}`);
   }
 }
 

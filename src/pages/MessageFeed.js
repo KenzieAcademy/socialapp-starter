@@ -7,7 +7,7 @@ import GetMessage from "../components/messages/GetMessage";
 import UserList from "../components/users/UserList";
 import { userIsAuthenticated } from "../redux/HOCs";
 import Container from "@material-ui/core/Container";
-import "../components/assets/stylesheets/Messages.css";
+import { Link } from "react-router-dom";
 
 class MessageFeed extends React.Component {
   state = { messages: [] };
@@ -29,6 +29,9 @@ class MessageFeed extends React.Component {
 
     return (
       <div className="messageFeed">
+        <div className="home">
+          <Link to="/">Home</Link>
+        </div>
         <Container maxWidth="sm">
           <h1>Notes from Below</h1>
 

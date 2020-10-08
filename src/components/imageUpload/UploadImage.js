@@ -1,5 +1,6 @@
 import React from "react";
 import MessageService from "../messages/MessageService";
+import { Button } from '@material-ui/core';
 
 class UploadImage extends React.Component {
   client = new MessageService();
@@ -40,7 +41,7 @@ class UploadImage extends React.Component {
     return (
       <div className="uploadImage">
         <input type="file" accept="image/*" name="picture" onChange={this.createFormData} />
-        <button onClick={this.handleUpload}>Upload</button>
+        <Button variant="contained" color="primary" onClick={this.handleUpload}>Upload</Button>
         <div className="profileImage">
           <img
             alt="user"
