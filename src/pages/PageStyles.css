@@ -20,3 +20,8 @@
 .ProfileBody {
   display: flex;
 }
+
+.Users-List {
+  overflow-y: scroll;
+  height: 550px;
+}

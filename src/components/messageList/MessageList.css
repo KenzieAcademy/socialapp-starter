@@ -1,3 +1,4 @@
 .MessageListMessages {
-  scroll-behavior: auto;
+  overflow-y: scroll;
+  height: 550px;
 }
