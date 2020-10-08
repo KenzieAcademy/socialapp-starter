@@ -88,6 +88,7 @@ class Message extends React.Component {
           </Link>
         </Route>
         {/* <img className="userprofile" alt="user-pic" src={this.state.pic} /> */}
+        Posted by: {this.props.username}
         <br />
         {this.props.text}
         <br />

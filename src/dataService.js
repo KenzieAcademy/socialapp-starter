@@ -44,9 +44,9 @@ class DataService {
         Authorization: `Bearer ${token}`,
       },
     };
-    console.log(requestBody);
-    console.log(token);
-    console.log(config);
+    // console.log(requestBody);
+    // console.log(token);
+    // console.log(config);
     return this.client
       .patch(this.url + "/users/" + username, requestBody, config)
       .then((response) => response.data);
@@ -60,9 +60,9 @@ class DataService {
         Authorization: `Bearer ${token}`,
       },
     };
-    console.log(requestBody);
-    console.log(token);
-    console.log(config);
+    // console.log(requestBody);
+    // console.log(token);
+    // console.log(config);
     return this.client
       .post(this.url + "/messages", requestBody, config)
       .then((response) => response.data.message);
@@ -87,7 +87,7 @@ class DataService {
         Authorization: `Bearer ${token}`,
       },
     };
-    console.log(config);
+    // console.log(config);
     return this.client
       .post(this.url + "/likes", requestBody, config)
       .then((response) => response.data.like);

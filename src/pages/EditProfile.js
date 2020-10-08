@@ -7,6 +7,7 @@ class EditProfile extends React.Component {
     this.client = new DataService();
 
     this.state = {
+      counter: 0,
       formData: null,
       imageURL: `https://socialapp-api.herokuapp.com/users/${this.client.getUsername()}/picture`,
       userdata: {
@@ -21,14 +22,12 @@ class EditProfile extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.client
-      .patchuser(
-        this.state.password,
-        this.state.about,
-        this.state.displayName,
-        this.state.username
-      )
-      .then(console.log("sucessful"));
+    this.client.patchuser(
+      this.state.password,
+      this.state.about,
+      this.state.displayName,
+      this.state.username
+    );
   };
 
   handleChange = (e) => {
@@ -74,11 +73,12 @@ class EditProfile extends React.Component {
     });
   };
 
-  updatePicture() {
+  updatePicture = () => {
     const timestamp = Date.now();
     const newpic = `https://socialapp-api.herokuapp.com/users/${this.client.getUsername()}/picture?t=${timestamp}`;
-    this.setState({ imageURL: newpic });
-  }
+    this.setState({ imageURL: newpic, counter: this.state.counter + 1 });
+    console.log("asdasd");
+  };
 
   render() {
     return (
@@ -145,12 +145,12 @@ class EditProfile extends React.Component {
           <br></br>
           <br></br>
           <img
-            className="Current profilepic"
+            // className="Current profilepic"
             src={`https://socialapp-api.herokuapp.com/users/${this.client.getUsername()}/picture`}
             alt="profile pic"
             height={250}
             width={250}
-            class="center"
+            className="center"
           />
           <br></br>
           <div className="Fileupload">
@@ -188,9 +188,9 @@ class EditProfile extends React.Component {
           </div>
           ;
         </form>
-        {this.state.about}
+        {/* {this.state.about}
         {this.state.displayName}
-        {this.state.password}
+        {this.state.password} */}
       </div>
     );
   }

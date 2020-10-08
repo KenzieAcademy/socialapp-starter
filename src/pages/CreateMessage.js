@@ -30,7 +30,7 @@ class CreateMessage extends React.Component {
   // }
   handleSubmit = (event) => {
     event.preventDefault();
-    const data = this.state;
+    // const data = this.state;
     // console.log(data)
     this.client.postMessages(this.state.messageInput).then((response) => {
       console.log("message sent");
@@ -51,16 +51,41 @@ class CreateMessage extends React.Component {
     //event syntax for onClick and handleCHange
     return (
       <div style={{ textAlign: "center" }} className="CreateMessage">
-        <h1 style={{ textAlign: "center", fontSize: "30px", fontFamily: "fantasy" }}>🆆🅷🅰🆃❜🆂 🅾🅽 🆈🅾🆄🆁 🅼🅸🅽🅳❓</h1>
+        <h1
+          style={{
+            textAlign: "center",
+            fontSize: "30px",
+            fontFamily: "fantasy",
+          }}
+        >
+          🆆🅷🅰🆃❜🆂 🅾🅽 🆈🅾🆄🆁 🅼🅸🅽🅳❓
+        </h1>
         <form onSubmit={this.handleSubmit}>
-          <input style={{ textAlign: "center", fontSize: "30px", fontFamily: "normal", WebkitBorderRadius: "10px", paddingBottom: "10px" }}
+          <input
+            style={{
+              textAlign: "center",
+              fontSize: "30px",
+              fontFamily: "normal",
+              WebkitBorderRadius: "10px",
+              paddingBottom: "10px",
+            }}
             type="text"
             name="messageInput"
             placeholder="Write what's on your mind"
             // value={this.state.messageInput}
             onChange={this.handleChange}
           />
-          <button style={{ background: "blue", fontFamily: "fantasy", border: "none", fontSize: "17px", borderRadius: "20px" }}>Tweet</button>
+          <button
+            style={{
+              background: "blue",
+              fontFamily: "fantasy",
+              border: "none",
+              fontSize: "17px",
+              borderRadius: "20px",
+            }}
+          >
+            Tweet
+          </button>
         </form>
         {/* <button onClick={handleSubmit}>Submit</button> */}
       </div>

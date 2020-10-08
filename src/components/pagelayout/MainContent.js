@@ -10,7 +10,7 @@ import NotFound from "../../pages/NotFound";
 
 import { Layout, Breadcrumb } from "antd";
 import EditProfile from "../../pages/EditProfile";
-import Search from "antd/lib/input/Search";
+// import Search from "antd/lib/input/Search";
 
 const { Footer, Content } = Layout;
 class MainContent extends React.Component {
