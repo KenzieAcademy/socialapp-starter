@@ -18,14 +18,14 @@ class MainContent extends React.Component {
     return (
       <Layout>
         <Content style={{ padding: "0px 35px" }}>
-          <Breadcrumb style={{ margin: "10px 0" }}>
+          <Breadcrumb style={{ margin: "5px 0" }}>
             <Breadcrumb.Item>Dashboard</Breadcrumb.Item>
           </Breadcrumb>
           <div
             style={{
               // background: "#fff",
               padding: "30px",
-              minHeight: 350,
+              minHeight: 250,
               borderRadius: "20px",
               // MozBackgroundSize: "no-repeat",
               // backgroundColor: "lightblue",
@@ -55,7 +55,7 @@ class MainContent extends React.Component {
           style={{
             textAlign: "center",
             fontFamily: "Brush Script MT",
-            fontSize: "30px",
+            fontSize: "20px",
           }}
         >
           Ant Design Layout Created By Adam Amadi

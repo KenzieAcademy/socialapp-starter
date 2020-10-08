@@ -17,7 +17,7 @@ class SideBar extends React.Component {
   };
   render() {
     return (
-      <Sider style={{ backgroundColor: "dark" }}>
+      <Sider style={{ backgroundColor: "dark", }}>
         <Menu defaultSelectedKeys={["Dashboard"]} mode="inline">
           <Menu.Item key="Dashboard">
             <Route>
@@ -47,7 +47,7 @@ class SideBar extends React.Component {
                 title={
                   <span>
                     <Icon type="mail1" />
-                    <span> 👇 More Options</span>
+                    <span > 👇 More Options</span>
                   </span>
                 }
               >
@@ -101,16 +101,16 @@ class SideBar extends React.Component {
               </div> */}
             </Menu.ItemGroup>
           </SubMenu>
-
           <Menu.Item key="location4">
             <Route>
               <Link to="/searchuser">⌛ Search User</Link>
             </Route>
           </Menu.Item>
 
+
           <Menu.Item
             id="menu-links"
-            style={{ backgroundColor: "red", borderRadius: "50px" }}
+            style={{ backgroundColor: "red", borderRadius: "50px", textAlign: "center", }}
           >
             <Link to="/" onClick={this.handleLogout}>
               <SettingOutlined /> LOGOUT
