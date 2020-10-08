@@ -15,6 +15,7 @@ class Profile extends React.Component {
       about: "loading",
       displayName: "loading",
       checked: false,
+      selectedPic: null,
     };
   }
 
@@ -46,6 +47,24 @@ class Profile extends React.Component {
     }, 500);
   };
 
+  createFormData = (e) => {
+    const file = e.target.files[0];
+    const formData = new FormData();
+    formData.append("picture", file);
+
+    this.setState({ selectedPic: formData });
+  };
+
+  handleUpdatePicture = () => {
+    this.api
+      .setProfilePic(this.state.user.username, this.state.selectedPic)
+      .then(() => {
+        setTimeout(() => {
+          this.getUser();
+        }, 250);
+      });
+  };
+
   handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };
@@ -70,6 +89,8 @@ class Profile extends React.Component {
             checked={this.state.checked}
             clickSwitch={this.handleSwitch}
             submitButton={this.handleUpdateUser}
+            selectPic={this.createFormData}
+            uploadPic={this.handleUpdatePicture}
           />
         </div>
       </div>

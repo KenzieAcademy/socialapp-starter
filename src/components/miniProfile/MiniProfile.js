@@ -2,7 +2,6 @@ import React from "react";
 import Card from "react-bootstrap/Card";
 import "../miniProfile/MiniProfile.css";
 import MiniProfileIMG from "../../assets/images/Placeholder_Image.png";
-import { Link } from "react-router-dom";
 
 const styles = {
   paperContainer: {
@@ -26,7 +25,7 @@ const MiniProfile = (props) => {
       alt="Profile Pic"
       src={image}
       style={styles.paperContainer}
-      class="img-fluid"
+      className="img-fluid"
       variant="dark"
       title="Profile Pic"
     />
@@ -38,7 +37,7 @@ const MiniProfile = (props) => {
           alt="Profile Pic"
           src={image}
           style={styles.paperContainer}
-          class="img-fluid"
+          className="img-fluid"
           variant="dark"
           title="Profile Pic"
         />

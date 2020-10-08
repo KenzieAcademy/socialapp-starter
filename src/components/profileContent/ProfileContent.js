@@ -33,7 +33,7 @@ const ProfileContent = (props) => {
                   alt="Profile Pic"
                   src={picture}
                   style={styles.paperContainer}
-                  class="img-fluid"
+                  className="img-fluid"
                   variant="dark"
                   title="Profile Pic"
                 />
@@ -133,7 +133,7 @@ const ProfileContent = (props) => {
                   alt="Profile Pic"
                   src={picture}
                   style={styles.paperContainer}
-                  class="img-fluid"
+                  className="img-fluid"
                   variant="dark"
                   title="Profile Pic"
                 />
@@ -144,8 +144,8 @@ const ProfileContent = (props) => {
                     className="EditPicHeader"
                     id="profileImg"
                     label="◄Your Current Profile Picture"
-                    name="image"
-                    onChange={props.changePic}
+                    name="selectedPic"
+                    onChange={props.selectPic}
                     accept="image/*"
                   />
                   <div className="UpdateButtonBox">
@@ -154,7 +154,7 @@ const ProfileContent = (props) => {
                       variant="dark"
                       size="lg"
                       type="primary"
-                      onClick={props.upload}
+                      onClick={props.uploadPic}
                     >
                       Update Profile Picture
                     </Button>

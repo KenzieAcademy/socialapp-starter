@@ -31,7 +31,10 @@ class SocialappService {
   }
 
   setProfilePic(user, picture) {
-    return this.client.put(this.url + "users/" + user + "/picture", picture);
+    let loginData = JSON.parse(localStorage.getItem("login"));
+    return this.client.put(this.url + "users/" + user + "/picture", picture, {
+      headers: { Authorization: `Bearer ${loginData.result.token}` },
+    });
   }
 
   updateUser(user, updateData) {

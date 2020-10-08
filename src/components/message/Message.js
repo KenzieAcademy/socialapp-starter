@@ -47,18 +47,19 @@ class Message extends React.Component {
 
   LikeFunction = () => {
     let messageID = { messageId: this.props.id };
-    this.props.api
+    this.api
       .addLike(messageID)
       .then(this.setState({ likes: this.state.likes + 1 }));
   };
 
   render() {
-    let postedAt = new Date(this.props.createdAt);
-    postedAt = postedAt.toUTCString();
     let picture = ProfilePic;
     if (this.state.profilePic !== null) {
       picture = `https://socialapp-api.herokuapp.com${this.state.profilePic}`;
     }
+
+    let date = new Date(this.props.createdAt);
+    date = date.toUTCString();
 
     return (
       <div className="MessageBody">
@@ -71,26 +72,22 @@ class Message extends React.Component {
               <div className="MessProfPicBox">
                 <img
                   className="MessProfilePic"
-                  src={ProfilePic}
+                  src={picture}
                   alt="Profile Pic"
                   style={styles.paperContainer}
                 />
               </div>
               <Card.Title className="MessMemberTitle">
-                {" "}
                 Member: {this.props.username}
               </Card.Title>
-              <Card.Subtitle className="PostTimeStamp">
-                {new Date(this.props.createdAt).toDateString}{" "}
-              </Card.Subtitle>
+              <Card.Subtitle className="PostTimeStamp">{date}</Card.Subtitle>
               <Card.Text className="MessageTextBox">
                 {this.props.text}
               </Card.Text>
-              {/* <footer> */}{" "}
               <div className="MessThumbsUpNumberBox">
                 <div className="MessThumbsUpNumber">
-                  Thumbs Up: {this.props.likes.length}
-                </div>{" "}
+                  Thumbs Up: {this.state.likes}
+                </div>
               </div>
               <div className="MessThumbsUpButtonBox">
                 <button
@@ -98,9 +95,8 @@ class Message extends React.Component {
                   onClick={this.LikeFunction}
                 >
                   Thumbs Up!
-                </button>{" "}
+                </button>
               </div>
-              {/* </footer> */}
             </Card.Body>
           </Card>
         </div>
