@@ -3,16 +3,20 @@
 }
 
 .EditInfoBody {
-  height: 700px;
+  /* height: 830px; */
   border: #d2be1a;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
   background-image: url(../../assets/images/Clear_Red.png);
   margin-top: 10px;
+  /* padding: 10px; */
+  margin: 10px;
 }
 
 .EditFormBox {
+  /* height: 830px; */
+  width: 325px;
   border: #d2be1a;
   border-radius: 5px;
   border-width: 3px;
@@ -25,14 +29,16 @@
 }
 
 .EditDisplayBox {
+  width: 300px;
   background-image: url(../../assets/images/Clear_Red.png);
   border: #d2be1a;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
-  width: 350px;
   position: relative;
   margin: auto;
+  /* margin: 10px; */
+  padding: 10px;
   color: black;
   font: italic small-caps bold 25px Impact;
   -webkit-text-stroke: 0.5px #d2be1a;
@@ -41,26 +47,28 @@
 
 .EditDisplayHeader {
   position: relative;
-  padding: 10px;
+  /* padding: 10px; */
 }
 
 .EditDisplayInput {
   position: relative;
-  padding: 10px;
-  margin: auto;
+  /* margin: auto; */
   margin: 10px;
+  padding: 10px;
 }
 
 .EditPassBox {
+  width: 300px;
   background-image: url(../../assets/images/Clear_Red.png);
   border: #d2be1a;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
-  width: 350px;
   position: relative;
   margin: auto;
   margin-top: 10px;
+  /* margin: 10px; */
+  padding: 10px;
   color: black;
   font: italic small-caps bold 25px Impact;
   -webkit-text-stroke: 0.5px #d2be1a;
@@ -69,24 +77,26 @@
 
 .EditPassHeader {
   position: relative;
-  padding: 10px;
+  margin: 10px;
 }
 
 .EditPassInput {
   position: relative;
-  padding: 10px;
+  margin: 10px;
 }
 
 .EditAboutBox {
+  width: 300px;
   background-image: url(../../assets/images/Clear_Red.png);
   border: #d2be1a;
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
-  width: 350px;
+  overflow: auto;
   position: relative;
   margin: auto;
   margin-top: 10px;
+  padding: 10px;
   color: black;
   font: italic small-caps bold 25px Impact;
   -webkit-text-stroke: 0.5px #d2be1a;
@@ -138,11 +148,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
   width: 112px;
   height: 112px;
   max-width: 112px;
   max-height: 112px;
-  overflow: hidden;
   border: #d2be1a;
   border-radius: 5px;
   border-width: 3px;
@@ -155,16 +165,25 @@
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
 }
 
-.UpdateButtonBox {
-  top: -235px;
-  left: 550px;
+.UploadButtonBox {
   position: relative;
-  margin: 10px;
+  width: 125px;
+  height: 55px;
 }
 
-.UpdateButton {
-  position: relative;
-  margin: 10px;
+.UploadButton {
+  top: -235px;
+  left: 550px;
+  width: 125px;
+  height: 55px;
+  background: none;
+  border: none;
+  background-image: url(../../assets/images/Upload_Button.png);
+}
+
+.UploadButton:hover {
+  background: none;
+  background-image: url(../../assets/images/Upload_Button_Hover.gif);
 }
 
 .SaveButtonBox {
@@ -175,12 +194,16 @@
 }
 
 .SaveButton {
-  top: -17px;
-  border: #d2be1a;
-  border-radius: 5px;
-  border-width: 3px;
-  border-style: dashed;
-  position: relative;
-  margin: 10px;
-  cursor: pointer;
+  top: -235px;
+  left: 550px;
+  width: 125px;
+  height: 55px;
+  background: none;
+  border: none;
+  background-image: url(../../assets/images/Save_Button.png);
+}
+
+.SaveButton:hover {
+  background: none;
+  background-image: url(../../assets/images/Save_Button_Hover.gif);
 }
