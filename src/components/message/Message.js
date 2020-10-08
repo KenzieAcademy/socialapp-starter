@@ -4,6 +4,14 @@ import "../message/Message.css";
 import ProfilePic from "../../assets/images/Placeholder_Image.png";
 import SocialappService from "../../socialappService";
 
+const styles = {
+  paperContainer: {
+    maxwidth: 125,
+    maxheight: 125,
+    backgroundImage: `url(${"static/src/img/main.jpg"})`,
+  },
+};
+
 class Message extends React.Component {
   constructor(props) {
     super(props);
@@ -65,6 +73,7 @@ class Message extends React.Component {
                   className="MessProfilePic"
                   src={ProfilePic}
                   alt="Profile Pic"
+                  style={styles.paperContainer}
                 />
               </div>
               <Card.Title className="MessMemberTitle">

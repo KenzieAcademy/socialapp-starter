@@ -95,6 +95,7 @@
 }
 
 .LogPassBox input[type="password"]:hover {
+  background-image: url(../../assets/images/Clear_Red_Dark.png);
   border: black;
   border-radius: 5px;
   border-width: 3px;
