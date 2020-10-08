@@ -25,6 +25,9 @@
   border-style: dashed;
   width: 105px;
   height: 105px;
+  max-width: 105px;
+  max-height: 105px;
+  overflow: hidden;
   position: relative;
   margin: 10px;
 }

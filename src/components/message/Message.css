@@ -108,12 +108,20 @@
 .MessProfilePic {
   position: relative;
   margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 125px;
+  height: 125px;
+  max-width: 125px;
+  max-height: 125px;
+  overflow: hidden;
 }
 
 .PosterInfoBox {
   position: relative;
   margin: 10px;
-  top: -147px;
+  top: -145px;
   left: 125px;
 }
 
@@ -129,12 +137,11 @@
 }
 
 .TimeStamp {
-  /* top: -144px;
-  left: 126px; */
+  left: 60px;
   position: relative;
   margin: auto;
   color: black;
-  font: italic small-caps bold 20px Impact;
+  font: italic small-caps bold 17px Impact;
   -webkit-text-stroke: 0.5px #d2be1a;
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
 }
@@ -147,7 +154,7 @@
   position: relative;
   margin: auto;
   left: 455px;
-  top: -347px;
+  top: -341px;
   /* width: 150px; */
   z-index: 1;
 }
