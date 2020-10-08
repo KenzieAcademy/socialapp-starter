@@ -13,7 +13,7 @@ class Menu extends React.Component {
   render() {
     return (
       <div className="Menu">
-        <h1>Kwitter</h1>
+        <h1 className = "kwitter" >Kwitter</h1>
         <div id="menu-links">
           <Link to="/profile/:username">Profile</Link>
           <Link to="/messagefeed">Message Feed</Link>

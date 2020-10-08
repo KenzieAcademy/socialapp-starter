@@ -1,6 +1,7 @@
 import React from "react";
 import { userIsAuthenticated } from "../../redux/HOCs";
 import {Container, Form, Button } from "react-bootstrap"
+import "./PostMessage.css"
 
 class PostMessage extends React.Component {
   render() {
@@ -18,7 +19,7 @@ class PostMessage extends React.Component {
                 value = {this.props.text}
               />
             </Form.Group>
-            <Button variant="dark" type="submit">
+            <Button className = "post-button" variant="dark" type="submit">
               Post Message
             </Button>
           </Form>
