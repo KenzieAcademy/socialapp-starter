@@ -164,6 +164,7 @@ const ProfileContent = (props) => {
             </div>
             <Form.Row>
               <div className="SaveButtonBox">
+                <div className="SaveChangeText">Save Changes</div>
                 <button
                   // src={SaveImage}
                   className="SaveButton"

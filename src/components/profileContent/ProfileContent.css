@@ -19,6 +19,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
   border: #d2be1a;
   border-radius: 5px;
   border-width: 3px;
@@ -54,7 +55,8 @@
 .MemberInfoText {
   display: flex;
   flex-direction: column;
-  width: 684px;
+  width: 660px;
+  height: 125px;
   left: -5px;
   position: relative;
   margin: auto;
