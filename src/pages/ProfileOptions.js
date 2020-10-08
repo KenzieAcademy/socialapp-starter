@@ -1,11 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { userIsAuthenticated } from "../redux/HOCs";
 import Menu from "../components/menu/Menu";
 import DeleteUserButton from "../components/deleteUserButton/DeleteUserButton";
 import UpdateAbout from "../components/updateAbout/UpdateAbout";
 import PhotoUpload from "../components/photoUpload/PhotoUpload";
-import { Card } from "antd";
 import "./PageStyles.css";
 
 class ProfileOptions extends React.Component {

@@ -1,11 +1,7 @@
 import React from "react";
-import Spinner from "react-spinkit";
 import "./RegistrationForm.css";
 import DataService from "../../DataService";
-import { withAsyncAction } from "../../redux/HOCs";
 import { Link } from "react-router-dom";
-
-import { Button } from "antd";
 class RegistrationForm extends React.Component {
   constructor(props) {
     super(props);

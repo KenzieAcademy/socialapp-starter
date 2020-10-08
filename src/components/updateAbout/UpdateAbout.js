@@ -1,8 +1,6 @@
 import React from "react";
 import DataService from "../../DataService";
-import { Card, Form, Input, Button } from "antd";
-
-const FormItem = Form.item;
+import { Card, Form } from "antd";
 
 class UpdateAbout extends React.Component {
   constructor(props) {
@@ -83,8 +81,6 @@ class UpdateAbout extends React.Component {
   };
 
   render() {
-    const FormItem = Form.item;
-
     return (
       <div className="UpdateAbout">
         <Card>

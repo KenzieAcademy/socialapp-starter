@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Menu.css";
 import { withAsyncAction } from "../../redux/HOCs";
-import ProfileOptions from "../../pages/ProfileOptions";
 
 class Menu extends React.Component {
   handleLogout = (event) => {
