@@ -4,6 +4,14 @@ import "../message/Message.css";
 import ProfilePic from "../../assets/images/Placeholder_Image.png";
 import SocialappService from "../../socialappService";
 
+const styles = {
+  paperContainer: {
+    maxwidth: 125,
+    maxheight: 125,
+    backgroundImage: `url(${"static/src/img/main.jpg"})`,
+  },
+};
+
 class Message extends React.Component {
   constructor(props) {
     super(props);
@@ -58,7 +66,7 @@ class Message extends React.Component {
         <div className="MessageCardBody">
           <Card
             className="MessageCard"
-            style={{ width: "613px", height: "240px" }}
+            style={{ width: "613px", height: "220px" }}
           >
             <Card.Body className="Message">
               <div className="MessProfPicBox">
@@ -66,12 +74,17 @@ class Message extends React.Component {
                   className="MessProfilePic"
                   src={picture}
                   alt="Profile Pic"
+                  style={styles.paperContainer}
                 />
               </div>
-              <Card.Title className="MessMemberTitle">
-                Member: {this.props.username}
-              </Card.Title>
-              <Card.Subtitle className="PostTimeStamp">{date}</Card.Subtitle>
+              <div className="PosterInfoBox">
+                <Card.Title className="MessMemberTitle">
+                  Posted By: {this.props.username}
+                </Card.Title>
+                <Card.Subtitle className="TimeStamp">
+                  Member Since: {date}
+                </Card.Subtitle>
+              </div>
               <Card.Text className="MessageTextBox">
                 {this.props.text}
               </Card.Text>

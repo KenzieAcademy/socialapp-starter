@@ -13,8 +13,6 @@
 }
 
 .EditFormBox {
-  display: flex;
-  flex-direction: column;
   border: #d2be1a;
   border-radius: 5px;
   border-width: 3px;
@@ -49,6 +47,8 @@
 .EditDisplayInput {
   position: relative;
   padding: 10px;
+  margin: auto;
+  margin: 10px;
 }
 
 .EditPassBox {
@@ -140,7 +140,9 @@
   justify-content: center;
   width: 112px;
   height: 112px;
-  left: 0px;
+  max-width: 112px;
+  max-height: 112px;
+  overflow: hidden;
   border: #d2be1a;
   border-radius: 5px;
   border-width: 3px;

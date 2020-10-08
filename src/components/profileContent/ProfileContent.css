@@ -25,6 +25,9 @@
   border-style: dashed;
   width: 105px;
   height: 105px;
+  max-width: 105px;
+  max-height: 105px;
+  overflow: hidden;
   position: relative;
   margin: 10px;
 }
@@ -61,7 +64,7 @@
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
-  background-image: url(../../assets/images/Coupon_Background_Dark.png);
+  background-image: url(../../assets/images/Coupon_Background_Lighter.png);
   color: black;
   font: italic small-caps bold 25px Impact;
   -webkit-text-stroke: 0.5px #d2be1a;
@@ -75,7 +78,7 @@
   border-width: 3px;
   border-style: dashed;
   background-color: white;
-  background-image: url(../../assets/images/Coupon_Background_Dark.png);
+  background-image: url(../../assets/images/Coupon_Background_Lighter.png);
   position: relative;
   margin: auto;
   padding: 10px;
