@@ -18,6 +18,7 @@ class PostMessage extends React.Component {
                         />
 
                         <button type="submit">Post Message</button>
+                      
                     </form>
                 </div>
             </div>
