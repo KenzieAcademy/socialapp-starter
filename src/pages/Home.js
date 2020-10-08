@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 import { userIsNotAuthenticated } from "../redux/HOCs";
 import LoginForm from "../components/loginForm/LoginForm";
 import RegistrationForm from "../components/RegisterForm/RegisterForm";

@@ -4,19 +4,21 @@ import API from "../services/BackendService";
 import Message from "../components/message/Message";
 import PostMessage from "../components/postMessage/PostMessage";
 import GetUsersService from "../services/GetUsersService";
-import Service from "../services/DataService"
-import {userIsAuthenticated} from "../redux/HOCs"
+import Service from "../services/DeleteMessageService";
+import { userIsAuthenticated } from "../redux/HOCs";
+import DataService from "../services/DataService"
 import "./MessageList.css";
 
 class MessageList extends React.Component {
-    client = new Service()
+  client = new Service();
+  messageService = new DataService();
 
-    state = { message: [], users: [], text: "" };
+  state = { message: [], users: [], text: "" };
 
   componentDidMount() {
     API.getAllMessages().then((response) => {
       this.setState({ message: response.data.messages });
-      console.log(response.data)
+      console.log(response.data);
     });
     new GetUsersService().getUsers().then((response) => {
       this.setState({ users: response.data.users });
@@ -25,7 +27,7 @@ class MessageList extends React.Component {
   }
   handleMessagePost = (event) => {
     event.preventDefault();
-    this.client.postMessage({ text: this.state.text }).then((result) => {
+    this.messageService.postMessage({ text: this.state.text }).then((result) => {
       this.setState((currentState) => {
         return {
           message: [result.data.message, ...currentState.message],
@@ -40,6 +42,14 @@ class MessageList extends React.Component {
       [event.target.name]: event.target.value,
     });
   };
+  handleDelete = (messageId) => (event) => {
+    this.client.createDelete(messageId).then((response) => {
+      this.setState((currentState) => {
+        const message = currentState.message.filter(messageItem => messageItem.id !== response.data.id )
+        return {message};
+      });
+    });
+  };
   render() {
     if (this.state.message.length === 0 || this.state.users.length === 0) {
       return (
@@ -51,8 +61,8 @@ class MessageList extends React.Component {
     }
     return (
       <div className="MessageList">
-        <Menu isAuthenticated = {this.props.isAuthenticated} />
-        
+        <Menu isAuthenticated={this.props.isAuthenticated} />
+
         <PostMessage
           handleChange={this.handleChange}
           handleMessagePost={this.handleMessagePost}
@@ -61,13 +71,13 @@ class MessageList extends React.Component {
         <div className="messageContainer">
           <ul className="messageList">
             {this.state.message.map((messageObject) => (
-              <Message key={messageObject.id} {...messageObject} />
+              <Message key={messageObject.id} {...messageObject} handleDelete = {this.handleDelete} />
             ))}
           </ul>
           <ul className="usersList">
-            <h1 className = "kwitter" >Other Users</h1>
+            <h1 className="kwitter">Other Users</h1>
             {this.state.users.map((userObject) => (
-              <li>{userObject.username}</li>
+              <li key = {userObject.username} >{userObject.username}</li>
             ))}
           </ul>
         </div>
