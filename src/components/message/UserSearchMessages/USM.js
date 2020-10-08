@@ -16,12 +16,23 @@ class MessageFeed extends React.Component {
   state = { messages: [], usermessages: [] };
 
   componentDidMount() {
-    this.client.getMessages(1000).then((response) =>
+    this.client.getMessages(1500).then((response) =>
       this.setState({
         messages: response.data.messages,
       })
     );
+    console.log(this.state.messages.username);
+
+    //  this.setState(() => {
+    //    this.usermessages = state.messages.filter(() => this.state.message !== );
+    //   });
+
+    // console.log(this.state.usermessages);
   }
+  //};
+  // this.usermessages = this.messages.filter(
+  //   this.state.username === this.props.username
+  // );
 
   // this.client
   // .getMessages()
@@ -30,22 +41,10 @@ class MessageFeed extends React.Component {
 
   // setInterval(componentDidMount(), 5000);
   render() {
-    // if (this.state.usermessages.length === 0) {
-    //   return (
-    //     <div className="loading">
-    //       <h3>No Messages</h3>
-    //     </div>
-    //   );
-    // }
-
-    // return (
-    //   <div style={{ fontSize: "25px", fontStyle: "inherit", fontFamily: "revert" }} className="messagefeed" >
-    //     {/* <Menu isAuthenticated={this.props.isAuthenticated} /> */}
-    //     {/* messages go here test */}
-
     return (
       <div className="messagefeed">
-        {this.props.name}
+        {/* {this.props.name} */}
+        {/* {JSON.stringify(this.state.messages)} */}
         <ul>
           {this.state.usermessages.map((messageObject) => (
             <Message key={messageObject.id} {...messageObject} />

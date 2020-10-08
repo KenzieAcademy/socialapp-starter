@@ -72,6 +72,9 @@ class DataService {
     return this.client.get(this.url + "/messages?limit=" + limit);
   }
 
+  getMessage(messageId) {
+    return this.client.get(this.url + "/messages/" + messageId);
+  }
   // updateUser(username) {
   //   return this.client.patch(this.url + "/users/" + username);
   // }
@@ -87,6 +90,19 @@ class DataService {
     console.log(config);
     return this.client
       .post(this.url + "/likes", requestBody, config)
+      .then((response) => response.data.like);
+  }
+
+  removeLike(messageId) {
+    const requestBody = { messageId };
+    let token = this.getToken();
+    const config = {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    };
+    return this.client
+      .delete(this.url + "/likes/" + messageId, config)
       .then((response) => response.data.like);
   }
 
@@ -124,11 +140,7 @@ class DataService {
         Authorization: `Bearer ${token}`,
       },
     };
-    return this.client.delete(
-      this.url + "/users/" + username,
-      requestBody,
-      config
-    );
+    return this.client.delete(this.url + "/users/" + username, config);
     // .then(console.log("deleted"));
   }
 

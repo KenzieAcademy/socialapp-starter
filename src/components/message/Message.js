@@ -13,6 +13,7 @@ class Message extends React.Component {
     this.state = {
       likeCount: this.props.likes.length,
       picture: null,
+      userlikes: [],
       // username: this.props.username,
       // picture: "",
     };
@@ -33,6 +34,18 @@ class Message extends React.Component {
     // });
   };
 
+  handlediLike = () => {
+    // const client = new DataService();
+    const username = this.client.getUsername();
+    this.client.removeLike(this.props.id).then(() => {
+      console.log("dislike");
+      this.setState((newState) => ({ likeCount: newState.likeCount - 1 }));
+    });
+    // .catch(() => {
+    //   alert("Already liked");
+    // });
+  };
+
   componentDidMount() {
     const usrnme = this.props.username;
     // console.log(usrnme);
@@ -40,16 +53,22 @@ class Message extends React.Component {
     this.client
       .getPicture(usrnme)
       .then((result) => {
-        console.log(result);
+        // console.log(result);
         this.setState({
           picture: `https://socialapp-api.herokuapp.com/users/${usrnme}/picture`,
         });
       })
-      .catch((result) => {
+      .catch(() => {
         this.setState({
           picture: profilepic,
         });
       });
+
+    this.client.getMessage(this.props.id).then((response) => {
+      this.setState({
+        userlikes: response.data.likes,
+      });
+    });
   }
 
   render() {
@@ -58,6 +77,7 @@ class Message extends React.Component {
         style={{ paddingTop: "20px", fontSize: "20px", fontFamily: "serif" }}
         className="Message"
       >
+        {/* {console.log(this.state.likes)} */}
         <Route>
           <Link to="/SearchUser">
             <img
@@ -70,7 +90,6 @@ class Message extends React.Component {
         </Route>
         {/* <img className="userprofile" alt="user-pic" src={this.state.pic} /> */}
         Posted by: {this.props.username}
-        {/* {console.log(this.prop)} */}
         <br />
         {this.props.text}
         <br />
@@ -92,6 +111,17 @@ class Message extends React.Component {
         >
           👍
         </button>
+        {/* <button
+          style={{
+            background: "transparent",
+            border: "none",
+            fontSize: "30px",
+            textAlign: "right",
+          }}
+          onClick={this.handlediLike}
+        >
+          👎
+        </button> */}
         {/* </form> */}
       </li>
     );

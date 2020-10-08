@@ -7,6 +7,7 @@ import { userIsAuthenticated } from "../../../redux/HOCs";
 import Message from "../../../components/message/Message";
 import CreateMessage from "../../../pages/CreateMessage";
 import { message } from "antd";
+import { List } from "antd/lib/form/Form";
 
 class PSM extends React.Component {
   constructor(props) {
@@ -14,7 +15,7 @@ class PSM extends React.Component {
     this.client = new DataService();
   }
 
-  state = { messages: [], usersmessages: [] };
+  state = { messages: [], usermessages: [] };
 
   componentDidMount() {
     this.client.getMessages().then((response) =>
@@ -22,6 +23,18 @@ class PSM extends React.Component {
         messages: response.data.messages,
       })
     );
+    console.log(this.state.messages);
+
+    const newArray = this.state.messages.filter(
+      () => this.state.messages != this.client.getUsername()
+    );
+    console.log(newArray);
+    // this.setState(() => {
+    //   this.usermessages = this.state.messages.filter(
+    //     () => this.state.message.username !== this.getusername()
+    //   );
+    // });
+    console.log(this.state.messages);
   }
 
   //   shouldComponentUpdate(){
@@ -39,7 +52,18 @@ class PSM extends React.Component {
 
   // setInterval(componentDidMount(), 5000);
   render() {
-    if (this.state.messages.length === 0) {
+    console.log(this.state.messages);
+    console.log(this.client.getUsername());
+    // this.setState(() => {
+    //   this.state.usermessages = this.state.messages.filter(
+    //     () => this.state.message === this.client.getUsername()
+    //   );
+    // });
+
+    console.log(this.state.usermessages);
+
+    console.log(this.state.messages);
+    if (this.state.usermessages.length === 0) {
       return (
         <div className="loading">
           <h3>loading</h3>
@@ -53,10 +77,10 @@ class PSM extends React.Component {
 
     return (
       <div className="messagefeed">
-        {console.log(this.props)}
+        {/* {console.log(this.props)} */}
         {/* <CreateMessage /> */}
         <ul>
-          {this.state.usersmessages.map((messageObject) => (
+          {this.state.usermessages.map((messageObject) => (
             <Message key={messageObject.id} {...messageObject} />
           ))}
           {/* {console.log(this.props)} */}
