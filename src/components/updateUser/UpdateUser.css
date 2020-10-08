@@ -1,3 +1,8 @@
+.UpdateUserForm,
+h2 {
+  color: #e6e6ea;
+}
+
 #update-form {
   display: flex;
   flex-direction: column;

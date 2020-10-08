@@ -75,9 +75,9 @@ class UpdateUser extends React.Component {
             required
             onChange={this.handleChange}
           />
-          <button type="submit" disabled={loading}>
+          <Button type="submit" disabled={loading}>
             Update
-          </button>
+          </Button>
         </form>
         <Button type="primary" danger onClick={this.handleDelete}>
           Delete User

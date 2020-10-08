@@ -1,8 +1,8 @@
 import React from "react";
 import DataService from "../../DataService";
-import { Avatar } from "antd";
-import { UserOutlined } from "@ant-design/icons";
-import { Upload, message } from "antd";
+import { Avatar, Button, Upload } from "antd";
+
+import { UserOutlined, UploadOutlined } from "@ant-design/icons";
 
 // const username = JSON.parse(localStorage.getItem("login")).result.username;
 const client = new DataService();
@@ -27,13 +27,11 @@ class UploadPicture extends React.Component {
       }
     });
   };
-
   updatePicture() {
     const timeStamp = Date.now();
     const image = `https://socialapp-api.herokuapp.com/users/${client.getUserName()}/picture?t=${timeStamp}`;
     this.setState({ imageURL: image });
   }
-
   render() {
     return (
       <div className="FileUploader">
@@ -45,10 +43,12 @@ class UploadPicture extends React.Component {
           accept="image/jpeg, image/png,image/gif"
           onChange={this.createFormData}
         />
-        <button onClick={this.HandleUpload}>Upload</button>
+        <br />
+        <Button icon={<UploadOutlined />} onClick={this.HandleUpload}>
+          Upload
+        </Button>
       </div>
     );
   }
 }
-
 export default UploadPicture;

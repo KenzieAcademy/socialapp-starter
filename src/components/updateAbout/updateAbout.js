@@ -1,14 +1,25 @@
 import React from "react";
-
+import { Button, Input } from "antd";
 import DataService from "../../DataService";
+import "./UpdateAbout.css";
+const { TextArea } = Input;
 
 class UpdateAbout extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       about: "",
+      displayAbout: "",
+      text: "",
     };
     this.client = new DataService();
+  }
+
+  componentDidMount() {
+    return this.client.getUser(this.client.getUserName()).then((result) => {
+      this.setState({ displayAbout: result.data.user.about });
+      console.log(result);
+    });
   }
 
   handleChange = (e) => {
@@ -17,21 +28,43 @@ class UpdateAbout extends React.Component {
 
   handleUpdate = (e) => {
     e.preventDefault();
-    this.client.updateUser(this.state).then((result) => {
+    let aboutData = {
+      about: this.state.text,
+    };
+
+    this.client.updateUser(aboutData).then((result) => {
       console.log(result);
-      this.setState({
-        about: result.data.about,
-      });
+      this.setState((latestAbout) => ({
+        displayAbout: latestAbout.text,
+        text: "",
+      }));
     });
   };
+
   render() {
-    // console.log(data.user);
     return (
-      <form id="udate-about-form" onSubmit={this.handleUpdate}>
-        <label htmlFor="about">About</label>
-        <input type="text" name="about" required onChange={this.handleChange} />
-        <button>update about me</button>
-      </form>
+      <div>
+        <div>
+          <div className="aboutMeDiv">
+            <p>{this.state.displayAbout}</p>
+          </div>
+        </div>
+        <form id="update-about-form" onSubmit={this.handleUpdate}>
+          <TextArea
+            style={{ background: "#e6e6ea", marginTop: "20px" }}
+            rows={4}
+            maxLength={255}
+            onPressEnter={this.handleUpdate}
+            type="text"
+            name="text"
+            value={this.state.text}
+            placeholder="Tell us about yourself!"
+            required
+            onChange={this.handleChange}
+          />
+          <Button htmlType="submit">update about me</Button>
+        </form>
+      </div>
     );
   }
 }
