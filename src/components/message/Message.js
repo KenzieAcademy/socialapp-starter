@@ -39,7 +39,7 @@ class Message extends React.Component {
 
   LikeFunction = () => {
     let messageID = { messageId: this.props.id };
-    this.props.api
+    this.api
       .addLike(messageID)
       .then(this.setState({ likes: this.state.likes + 1 }));
   };
@@ -77,7 +77,7 @@ class Message extends React.Component {
               </Card.Text>
               <div className="MessThumbsUpNumberBox">
                 <div className="MessThumbsUpNumber">
-                  Thumbs Up: {this.props.likes.length}
+                  Thumbs Up: {this.state.likes}
                 </div>
               </div>
               <div className="MessThumbsUpButtonBox">
