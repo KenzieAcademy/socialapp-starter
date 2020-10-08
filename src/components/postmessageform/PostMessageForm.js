@@ -17,6 +17,7 @@
 //         });
 //     };
 
+<<<<<<< HEAD
 //     handleMessagePost = (event) => {
 //         event.preventDefault();
 //         this.PostMessageService.postMessage(this.state).then((result) => {
@@ -24,6 +25,16 @@
 //         });
 //         console.log("Post Button Pressed")
 //     };
+=======
+    handleMessagePost = (event) => {
+        event.preventDefault();
+        this.PostMessageService.postMessage(this.state).then((result) => {
+            
+            console.log(result.data);
+        });
+        console.log("Post Button Pressed")
+    };
+>>>>>>> master
 
 //     render() {
 //         return (

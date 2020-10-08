@@ -10,7 +10,7 @@ class BackendService {
     getAllMessages(limit = 20) {
         return this.client.get(`/messages?limit=${limit}`)
     }
-    getUserMessages(username, limit = 20) {
+    getUserMessages(username, limit = 10) {
         return this.client.get(`/messages?username=${username}limit=${limit}`)
     }
 }

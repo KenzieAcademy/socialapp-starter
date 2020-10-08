@@ -2,13 +2,12 @@
 
 import React from "react";
 import { userIsAuthenticated } from "../redux/HOCs";
+import { Button, Card } from "react-bootstrap";
 import DataService from "../services/DataService";
 import Menu from "../components/menu/Menu";
 import ProfileContent from "../components/profileContent/ProfileContent";
-import { Button, Card } from "react-bootstrap";
-import "./Profile.css";
 import UserInfo from "../components/userInfo/UserInfo";
-
+import "./Profile.css";
 
 
 class Profile extends React.Component {
@@ -67,6 +66,14 @@ class Profile extends React.Component {
           <h3>My Profile</h3>
           <Card style={{ height: "70rem" }}>
             <ProfileContent />
+            <Button
+              variant="dark"
+              className="DeleteUser"
+              onClick={this.handleDelete}
+            >
+              {" "}
+              Delete User
+            </Button>
             <UserInfo
               username={Username}
               displayName={DisplayName}
@@ -74,14 +81,6 @@ class Profile extends React.Component {
             />
           </Card>
         </div>
-        <Button
-          variant="dark"
-          className="DeleteUser"
-          onClick={this.handleDelete}
-        >
-          {" "}
-          Delete User
-        </Button>
       </div>
     );
   }

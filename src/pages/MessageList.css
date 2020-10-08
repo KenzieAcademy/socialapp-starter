@@ -5,3 +5,7 @@
   max-width: 60%;
 }
 
+.usersList {
+  position: relative;
+  left: 550px;
+}
