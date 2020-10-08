@@ -1,5 +1,5 @@
 .Menu {
-  background-color: lightskyblue;
+  background-color: rgb(85, 102, 114);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -12,9 +12,13 @@
   padding-left: 1em;
 }
 
+.kwitter {
+  background-color: rgb(85, 102, 114);
+}
+
 #menu-links a {
   padding-right: 0.5em;
-  color: darkblue;
+  color: rgb(0, 0, 0);
   text-decoration: underline;
   cursor: pointer;
 }

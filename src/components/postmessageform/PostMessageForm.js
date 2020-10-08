@@ -43,4 +43,4 @@ class PostMessageForm extends React.Component {
     }
 }
 
-export default PostMessageForm;
+export default  PostMessageForm;

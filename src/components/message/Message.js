@@ -1,23 +1,43 @@
 import React from "react";
+import { Button } from "react-bootstrap";
 import LikeService from "../../services/LikeService";
 import DeleteMessageService from "../../services/DeleteMessageService";
+import DataService from "../../services/DataService"
+import "./Message.css"
+
 class Message extends React.Component {
+
   constructor(props) {
     super(props);
+
+    this.state = {
+      likes: props.likes
+    }
+
     this.client = new DeleteMessageService();
+
+    this.service = new DataService();
   }
-  likeHandler = (e) => {
+
+  likeHandler = (event) => {
+    if (this.state.likes.some((likeObject) => this.service.getUsername() === likeObject.username)) return
     new LikeService().createLike(this.props.id).then((response) => {
-      console.log(response);
+      this.setState(currentState => {
+        return { likes: [response.data.like, ...currentState.likes] }
+      })
     });
     console.log("like");
   };
 
-  handleDelete = (e) => {
-    this.client.createDelete(this.props.id).then((response) => {
-      console.log(response);
-    });
-  };
+  // handleDelete = messageId => (event) => {
+  //   this.client.createDelete(messageId).then((response) => {
+  //      this.setState((currentState) => {
+  //       return {
+  //         message: this.props.message
+  //       }
+  //     })
+  //   });
+  // };
 
   handleError = (event) => {
     event.target.src =
@@ -26,7 +46,7 @@ class Message extends React.Component {
   render() {
     let deleteButton;
     if (this.props.username === this.client.getUserName()) {
-      deleteButton = <button onClick={this.handleDelete}>delete</button>;
+      deleteButton = <Button className="delete-message" onClick={this.props.handleDelete(this.props.id)}>Delete</Button>;
     }
     return (
       <li className="Message">

@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 import { Switch, Route } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from "./pages/Home";
@@ -9,14 +9,17 @@ import MessageList from "./pages/MessageList"
 
 
 class App extends React.Component {
-  handleLogout = (event) => {
+
+  handleLogout = event => {
     event.preventDefault();
     this.props.logout();
-  };
+  }
 
   render() {
+
     return (
-      <div className="root">
+      <div className="root" >
+
         <Switch>
           <Route
             exact
@@ -33,7 +36,10 @@ class App extends React.Component {
             path="/messagefeed"
             component={MessageList}
           />
-
+          {/* <Route exact
+            path="messagefeed"
+            component={MessageList}
+          /> */}
           <Route
             exact
             path="/signup"
@@ -45,9 +51,12 @@ class App extends React.Component {
             component={NotFound}
           />
         </Switch>
+
       </div>
-    );
+
+    )
+
   }
 }
 
-export default App;
+export default App

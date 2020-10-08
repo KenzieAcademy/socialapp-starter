@@ -1,12 +1,13 @@
 import axios from "axios";
 
 class DataService {
-  constructor(url = "https://socialapp-api.herokuapp.com", client = axios.create()) {
+  constructor(
+    url = "https://socialapp-api.herokuapp.com",
+    client = axios.create()
+  ) {
     this.url = url;
     this.client = client;
   }
-
-
 
   registerUser(userData) {
     return this.client.post(this.url + "/users", userData);
@@ -28,11 +29,11 @@ class DataService {
       },
     });
   }
-  getAllMessages(limit = 10) {
-    return this.client.get(this.url + `/messages?limit=${limit}`)
+  getAllMessages(limit = 1000) {
+    return this.client.get(this.url + `/messages?limit=${limit}`);
   }
-  getUserMessages(username, limit = 10) {
-    return this.client.get(`/messages?username=${username}limit=${limit}`)
+  getUserMessages(username, limit = 20) {
+    return this.client.get(`/messages?username=${username}limit=${limit}`);
   }
 
   getToken() {
@@ -58,6 +59,5 @@ class DataService {
     };
     return this.client.put(url, formData, config);
   }
-
 }
 export default DataService;

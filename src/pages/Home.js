@@ -1,14 +1,13 @@
-import React from "react";
-import "./Home.css";
-import LoginForm from "../components/loginForm/LoginForm";
-
+import React from "react"
 import { userIsNotAuthenticated } from "../redux/HOCs";
+import LoginForm from "../components/loginForm/LoginForm";
 import RegistrationForm from "../components/RegisterForm/RegisterForm";
+import "./Home.css";
 
 class Home extends React.Component {
   constructor(props) {
     super(props);
-
+    
     this.state = {
       showLogin: true,
     };
@@ -17,7 +16,7 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-        <h1>Kwitter</h1>
+        <h1 className = "kwitter" >Kwitter</h1>
         <h2>Blog Away</h2>
         <br />
         <LoginForm />
