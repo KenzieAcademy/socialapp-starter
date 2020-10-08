@@ -22,17 +22,19 @@ class AboutMe extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
-                <label>
-                    About Me:
+            <div className="AboutMe">
+                <form onSubmit={this.handleSubmit}>
+                    <label>
+                        About Me:
           <textarea
-                        type="text"
-                        value={this.state.about}
-                        onChange={this.handleChange}
-                    />
-                </label>
-                <input type="submit" value="Submit" />
-            </form>
+                            type="text"
+                            value={this.state.about}
+                            onChange={this.handleChange}
+                        />
+                    </label>
+                    <input type="submit" value="Submit" />
+                </form>
+            </div>
         );
     }
 }
