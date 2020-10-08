@@ -1,8 +1,4 @@
-.MessageList {
-  width: 450px;
-}
-
-.MessageList-body {
+.MessageList-messages {
   overflow-y: scroll;
-  height: 500px;
+  height: 550px;
 }

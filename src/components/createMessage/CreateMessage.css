@@ -1,19 +1,19 @@
 #CreateMessage-form {
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-}
-
-label {
-  width: 175px;
-  font-weight: 600;
-}
-
-.CreateMessage-button {
-  font-weight: 700;
-}
-
-.CreateMessage-success {
-  display: flex;
-  flex-direction: column;
-}
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+  
+  label {
+    width: 175px;
+    font-weight: 600;
+  }
+  
+  .CreateMessage-button {
+    font-weight: 700;
+  }
+  
+  .CreateMessage-success {
+    display: flex;
+    flex-direction: column;
+  }
