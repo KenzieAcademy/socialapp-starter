@@ -6,6 +6,10 @@ import "../../components/profileContent/ProfileContent.css";
 import "../../components/profileContent/ProfileContEdit.css";
 import MiniProfileIMG from "../../assets/images/Placeholder_Image.png";
 import Form from "react-bootstrap/Form";
+// import UploadImage from "../../assets/images/Upload_Button.png";
+// import UploadImageHover from "../../assets/images/Upload_Button_Hover.gif";
+// import SaveImage from "../../assets/images/Save_Button.png";
+// import SaveImageHover from "../../assets/images/Save_Button_Hover.gif";
 
 const styles = {
   paperContainer: {
@@ -71,7 +75,7 @@ const ProfileContent = (props) => {
       </Form>
       {props.checked && (
         <div className="EditInfoBody">
-          <Form.Group>
+          <Form.Group style={{ width: "335px", height: "520px" }}>
             <div className="EditFormBox">
               <Form.Row>
                 <div className="EditDisplayBox">
@@ -148,31 +152,23 @@ const ProfileContent = (props) => {
                     onChange={props.selectPic}
                     accept="image/*"
                   />
-                  <div className="UpdateButtonBox">
-                    <Button
-                      className="UpdateButton"
-                      variant="dark"
-                      size="lg"
-                      type="primary"
+                  <div className="UploadButtonBox">
+                    <button
+                      // src={UploadImage}
+                      className="UploadButton"
                       onClick={props.uploadPic}
-                    >
-                      Update Profile Picture
-                    </Button>
+                    ></button>
                   </div>
                 </Col>
               </Form.Row>
             </div>
             <Form.Row>
               <div className="SaveButtonBox">
-                <Button
+                <button
+                  // src={SaveImage}
                   className="SaveButton"
-                  variant="dark"
-                  size="lg"
-                  type="primary"
                   onClick={props.submitButton}
-                >
-                  Save Changes
-                </Button>
+                ></button>
               </div>
             </Form.Row>
           </Form.Group>
