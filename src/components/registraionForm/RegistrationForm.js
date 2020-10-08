@@ -23,10 +23,15 @@ class RegistrationForm extends React.Component {
 
   handleRegistration = (e) => {
     e.preventDefault();
-    this.client.registerUser(this.state.userData).then((result) => {
-      console.log(result.data);
-      this.setState({ isSubmitted: true });
-    });
+    this.client.registerUser(this.state.userData).then(
+      (result) => {
+        console.log(result.data);
+        this.setState({ isSubmitted: true });
+      },
+      (res) => {
+        console.log(res);
+      }
+    );
   };
 
   handleChange = (e) => {
