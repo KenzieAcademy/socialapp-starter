@@ -3,6 +3,7 @@ import Message from "../message/Message";
 import DataService from "../../DataService";
 import CreateMessage from "../createMessage/CreateMessage";
 import "./MessageList.css";
+import { ReloadOutlined } from "@ant-design/icons";
 
 class MessageList extends React.Component {
   constructor(props) {
@@ -11,17 +12,19 @@ class MessageList extends React.Component {
       messages: [],
       isSubmitted: false,
       refresh: false,
+      offset: 0,
     };
     this.client = new DataService();
   }
 
   componentDidMount() {
-    this.client.getAllMessagesData().then((response) => {
+    this.client.getAllMessagesData(this.state.offset).then((response) => {
       console.log(response);
       this.setState({
         messages: response.data.messages,
       });
     });
+    this.setState({ loading: false });
   }
 
   handleSubmit = () => {
@@ -63,6 +66,9 @@ class MessageList extends React.Component {
             handleSubmit={this.handleSubmit}
           />
           <h1>Message Feed</h1>
+          <button onClick={this.handleRefresh}>
+            <ReloadOutlined />
+          </button>
           <div className="MessageList-messages" scrollHeight="300">
             <ul>
               {this.state.messages.map((msgObj) => (
@@ -85,6 +91,9 @@ class MessageList extends React.Component {
             handleRefresh={this.handleRefresh}
           />
           <h1>Message Feed</h1>
+          <button onClick={this.handleRefresh}>
+            <ReloadOutlined />
+          </button>
           <ul>
             {this.state.messages.map((msgObj) => (
               <Message
