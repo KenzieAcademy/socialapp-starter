@@ -1,9 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Menu.css";
 import { withAsyncAction } from "../../redux/HOCs";
 
-class Menu extends React.Component {
+class MsgNavBar extends React.Component {
   handleLogout = (event) => {
     event.preventDefault();
     this.props.logout();
@@ -11,14 +10,15 @@ class Menu extends React.Component {
 
   render() {
     return (
-      <div className="Menu">
-        <h1 id="h1-title">
+      <div className="MsgNavBar">
+        <h1>
           <span>The Dragon's Den</span>
         </h1>
 
         {this.props.isAuthenticated && (
           <div id="menu-links">
-            <Link to="/Messagefeed">Message Feed</Link>
+            <Link to="/">Profile</Link>
+            <Link to="/messagefeed">Message Feed</Link>
             <Link to="/" onClick={this.handleLogout}>
               Logout
             </Link>
@@ -29,4 +29,4 @@ class Menu extends React.Component {
   }
 }
 
-export default withAsyncAction("auth", "logout")(Menu);
+export default withAsyncAction("auth", "logout")(MsgNavBar);
