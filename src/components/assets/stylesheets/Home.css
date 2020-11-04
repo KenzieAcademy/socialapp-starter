@@ -1,0 +1,23 @@
+.main {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+  background-image: url("../images/welcome.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 50%;
+  flex-basis: 800px;
+  height: 100vh;
+}
+.Container {
+  padding: 0;
+  margin: 0;
+  width: 400px;
+  height: 400px;
+}
+.Home {
+  background-color: rgba(90, 89, 89, 0.5);
+  padding: 1em;
+}

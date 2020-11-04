@@ -1,0 +1,7 @@
+.profile-bg {
+  background-image: url("../images/profilebg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 70%;
+  height: 150vh;
+}
