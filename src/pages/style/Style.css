@@ -1,0 +1,9 @@
+.Style {
+  background-image: url("../../components/assets/images/backgrounds/Twin_Jet_nebula.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 2000vh;
+  width: 100vw;
+  color: white;
+  font-family: Kufam;
+}

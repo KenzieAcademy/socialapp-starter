@@ -1,0 +1,13 @@
+#registration-form {
+  font-family: Kufam;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  max-width: 20em;
+  background-color: magenta;
+  border-style: groove;
+  border: 10px, black;
+  align-items: center;
+  padding: 1em 1em;
+  border-radius: 1em;
+}
