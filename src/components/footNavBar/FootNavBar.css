@@ -1,0 +1,22 @@
+.footer-menu {
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: space-between;
+  align-self: baseline;
+  padding: 0 1em;
+  border-radius: 1em;
+  
+}
+
+#footer-links {
+  display: flex;
+  padding-left: 15em;
+}
+
+#footer-links a {
+  font-family: Kufam;
+  padding-right: 5em;
+  color: rgb(125, 226, 125);
+  text-decoration: underline;
+  cursor: pointer;
+}
