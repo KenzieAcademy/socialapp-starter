@@ -1,22 +1,18 @@
 import React from "react";
 import Menu from "../components/menu/Menu";
-import GetUsers from "../components/getUsers/GetUsers";
+import UpdateUser from "../components/UpdateUser/UpdateUser";
 import { userIsAuthenticated } from "../redux/HOCs";
 
-
-class Profile extends React.Component {
+class EditUser extends React.Component {
   render() {
-    let user = this.props.match.params.username
     return (
-      <div className="Profile">
+      <div className="Profile-editable">
         <Menu loggedIn={true} isAuthenticated={this.props.isAuthenticated} />
         <h2>Profile</h2>
-
-        <GetUsers all={false} username={user}/>
-
+        <UpdateUser />
       </div>
     );
   }
 }
 
-export default userIsAuthenticated(Profile);
+export default userIsAuthenticated(EditUser);

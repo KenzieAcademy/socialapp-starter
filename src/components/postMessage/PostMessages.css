@@ -1,0 +1,11 @@
+button, a:hover {
+  /* background-color: red; */
+}
+
+button:hover{
+  background-color: lightcyan;
+}
+/* a:hover, button{
+  background-color: red;
+
+} */

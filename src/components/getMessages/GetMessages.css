@@ -14,21 +14,24 @@ code {
     monospace;
 }
 
-img, #profile-pic {
-  max-height: 200px;
-  max-width: 200px;
-  border-radius: 30%;
-  padding: 10px 20px;
-   display: block;
-   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
-
+div.jerry {
+  border: 5px dotted rgb(207, 243, 255);
+  border-width: 3px;
+  border-top-width: 7px;
+  column-span: inherit 30px;
+  width: 15em;
+  margin: 4em;
+  padding: 0.75em;
+  background-color: #ABBAEA;
+  box-shadow: 5px 8px 3px rgb(255, 194, 140);
+  border-radius: 56px;
 }
 
-a:link, #profile-pic {
-  color: rgb(108, 193, 227);
+button.submit {
+  background-color: red;
 }
 
-a:hover, #user-profile  {
-  color: rgb(36, 81, 140);
-}
+/* a:hover, button{
+  background-color: red;
+
+} */
