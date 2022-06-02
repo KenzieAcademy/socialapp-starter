@@ -1,0 +1,20 @@
+.StylePageCards {
+  font-family: Kufam;
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 1em;
+  border-radius: 1em;
+  border: 5em, solid, magenta;
+}
+
+.LemAndChuck {
+  width: 250px;
+  height: 350px;
+}
+
+.LemAndChuckCard {
+  width: 250px;
+  height: 350px;
+}

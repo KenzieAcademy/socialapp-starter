@@ -1,0 +1,9 @@
+.Profile {
+  background-image: url("../../components/assets/images/backgrounds/Downside_up.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 200vh;
+  width: 100vw;
+  color: white;
+  font-family: Kufam;
+}
