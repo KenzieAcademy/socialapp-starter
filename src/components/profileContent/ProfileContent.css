@@ -1,0 +1,121 @@
+* {
+  box-sizing: border-box;
+}
+
+.ProfileContentBody {
+  width: 825px;
+  position: relative;
+  margin: auto;
+}
+
+.ProfileContent {
+  position: relative;
+  margin: auto;
+  padding: 10px;
+}
+
+.ProfilePicBox {
+  background-image: url(../../assets/images/Coupon_Background_Dark.png);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: #d2be1a;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  width: 125px;
+  height: 125px;
+  max-width: 125px;
+  max-height: 125px;
+  overflow: hidden;
+  position: relative;
+  margin: 10px;
+}
+
+.MemberInfoBody {
+  display: flex;
+  flex-direction: column;
+  background-image: url(../../assets/images/Clear_Red_Dark.png);
+  border: #d2be1a;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  position: relative;
+  margin: auto;
+}
+
+.MemberInfo-PicBox {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  margin: auto;
+}
+
+.MemberInfoText {
+  display: flex;
+  flex-direction: column;
+  width: 660px;
+  height: 125px;
+  left: -5px;
+  position: relative;
+  margin: auto;
+  padding: 10px;
+  color: black;
+  border: #d2be1a;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  background-image: url(../../assets/images/Coupon_Background_Lighter.png);
+  color: black;
+  font: italic small-caps bold 25px Impact;
+  -webkit-text-stroke: 0.5px #d2be1a;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+}
+
+.AboutMeBox {
+  width: 800px;
+  border: #d2be1a;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  background-color: white;
+  background-image: url(../../assets/images/Coupon_Background_Lighter.png);
+  position: relative;
+  margin: auto;
+  padding: 10px;
+}
+
+.AboutMeHeader {
+  position: relative;
+  color: black;
+  font: italic small-caps bold 25px Impact;
+  -webkit-text-stroke: 0.5px #d2be1a;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+}
+
+.AboutMeText {
+  position: relative;
+  color: black;
+  font: italic small-caps bold 25px Impact;
+  -webkit-text-stroke: 0.5px #d2be1a;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+}
+
+.UpdateSwitch {
+  padding: 5px;
+  width: 131px;
+  height: 50px;
+  border: #d2be1a;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  background-image: url(../../assets/images/Coupon_Background_Dark.png);
+  position: relative;
+  margin: 10px;
+  color: black;
+  font: italic small-caps bold 25px Impact;
+  -webkit-text-stroke: 0.5px #d2be1a;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  cursor: pointer;
+}

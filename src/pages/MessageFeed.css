@@ -1,0 +1,112 @@
+* {
+  box-sizing: border-box;
+}
+
+.MessageFeedPageBody {
+  background-image: url(../assets/images/Coupon_Background_Dark.png);
+  border: #d2be1a;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  width: 850px;
+  position: relative;
+  margin: auto;
+  font: italic small-caps 12px/30px Impact;
+}
+
+.MessageLoading {
+  color: #b80c12;
+  font: italic small-caps bold 75px Impact;
+  -webkit-text-stroke: 2px #d2be1a;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  text-align: center;
+  position: relative;
+  top: 75px;
+  left: 20px;
+}
+
+.MessageFeedPageHeaderBox {
+  width: 825px;
+  position: relative;
+}
+
+.MessageMenuBox {
+  position: relative;
+  margin: auto;
+  padding: 10px;
+}
+
+.MessageHeaderBox {
+  padding: 10px;
+  position: relative;
+  margin: auto;
+  border: #d2be1a;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  width: 825px;
+  height: 55px;
+  left: 10px;
+  background-image: url(../assets/images/Clear_Red.png);
+}
+
+.MessageFeedHeaderText {
+  font: italic small-caps bolder 45px/50px Impact;
+  -webkit-text-stroke: 1px #d2be1a;
+  color: black;
+  text-align: center;
+  top: -11px;
+  position: relative;
+}
+
+.FeedBody {
+  margin-top: auto;
+  position: relative;
+  margin: auto;
+  margin: 10px;
+  width: 825px;
+}
+
+.PostFeedBody {
+  top: -369px;
+  left: -50px;
+  position: relative;
+  margin: auto;
+  font: italic small-caps bold 27px/45px Impact;
+  -webkit-text-stroke: 0.25px white;
+}
+
+.MiniProfileBox-PostButtonBox {
+  width: 200px;
+  height: 360px;
+  left: 883px;
+  top: 125px;
+  position: sticky;
+  z-index: 1;
+}
+
+.MiniProfileBox {
+  position: relative;
+}
+
+.PostButtonBox {
+  position: relative;
+}
+
+.PostButton {
+  width: 125px;
+  height: 55px;
+  left: 40px;
+  top: -425px;
+  background: none;
+  border: none;
+  background-image: url(../assets/images/Post_Button.png);
+  position: relative;
+  cursor: pointer;
+}
+
+.PostButton:hover {
+  background: none;
+  border: none;
+  background-image: url(../assets/images/Post_Button_Hover.gif);
+}

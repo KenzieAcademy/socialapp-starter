@@ -1,0 +1,237 @@
+* {
+  box-sizing: border-box;
+}
+
+.EditInfoBody {
+  height: 592px;
+  border: #d2be1a;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  background-image: url(../../assets/images/Clear_Red.png);
+  margin-top: 10px;
+  padding: 10px;
+  /* margin: 10px; */
+  /* margin: auto; */
+}
+
+.EditFormBox {
+  height: 560px;
+  width: 325px;
+  left: -7px;
+  top: -7px;
+  border: #d2be1a;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  background-image: url(../../assets/images/Coupon_Background_Dark.png);
+  position: relative;
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+}
+
+.EditDisplayBox {
+  width: 300px;
+  height: 150px;
+  background-image: url(../../assets/images/Clear_Red.png);
+  border: #d2be1a;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  position: relative;
+  margin: auto;
+  /* margin: 10px; */
+  padding: 10px;
+  color: black;
+  font: italic small-caps bold 25px Impact;
+  -webkit-text-stroke: 0.5px #d2be1a;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+}
+
+.EditDisplayHeader {
+  left: -5px;
+  position: relative;
+  /* padding: 10px; */
+}
+
+.EditDisplayInput {
+  left: -10px;
+  position: relative;
+  /* margin: auto; */
+  margin: 10px;
+  padding: 10px;
+}
+
+.EditPassBox {
+  width: 300px;
+  background-image: url(../../assets/images/Clear_Red.png);
+  border: #d2be1a;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  position: relative;
+  margin: auto;
+  margin-top: 10px;
+  /* margin: 10px; */
+  padding: 10px;
+  color: black;
+  font: italic small-caps bold 25px Impact;
+  -webkit-text-stroke: 0.5px #d2be1a;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+}
+
+.EditPassHeader {
+  left: -5px;
+  position: relative;
+  margin: 10px;
+}
+
+.EditPassInput {
+  left: -10px;
+  position: relative;
+  margin: 10px;
+}
+
+.EditAboutBox {
+  width: 300px;
+  /* height: 150px; */
+  background-image: url(../../assets/images/Clear_Red.png);
+  border: #d2be1a;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  overflow: auto;
+  position: relative;
+  margin: auto;
+  margin-top: 10px;
+  padding: 10px;
+  color: black;
+  font: italic small-caps bold 25px Impact;
+  -webkit-text-stroke: 0.5px #d2be1a;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+}
+
+.EditAboutHeader {
+  left: -5px;
+  position: relative;
+  padding: 10px;
+}
+
+.EditAboutInput {
+  left: -10px;
+  position: relative;
+  padding: 10px;
+}
+
+.EditPicBox {
+  left: 210px;
+  top: -592px;
+  width: 455px;
+  height: 220px;
+  margin: auto;
+  position: relative;
+  color: black;
+  font: italic small-caps bold 25px Impact;
+  -webkit-text-stroke: 0.5px #d2be1a;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+}
+
+.EditPicHeader {
+  left: 133px;
+  top: -131px;
+  background-image: url(../../assets/images/Coupon_Background_Dark.png);
+  position: relative;
+  /* width: 675px; */
+  margin-top: 10px;
+  padding: 10px;
+  color: black;
+  font: italic small-caps bold 25px Impact;
+  -webkit-text-stroke: 0.5px #d2be1a;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  border: #d2be1a;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  color: black;
+}
+
+.CurrentPicBox {
+  left: 250px;
+  top: 210px;
+  background-image: url(../../assets/images/Coupon_Background_Dark.png);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 200px;
+  height: 200px;
+  max-width: 200px;
+  max-height: 200px;
+  border: #d2be1a;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  position: relative;
+  margin: 10px;
+}
+
+.UploadButtonBox {
+  top: -207px;
+  left: 455px;
+  position: relative;
+  width: 125px;
+  height: 55px;
+}
+
+.UploadButton {
+  width: 125px;
+  height: 55px;
+  background: none;
+  border: none;
+  background-image: url(../../assets/images/Upload_Button.png);
+}
+
+.UploadButton:hover {
+  background: none;
+  background-image: url(../../assets/images/Upload_Button_Hover.gif);
+}
+
+.SaveButtonBox {
+  left: 337px;
+  top: -385px;
+  position: relative;
+  margin: 10px;
+}
+
+.SaveChangeText {
+  border: #d2be1a;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  background-image: url(../../assets/images/Coupon_Background_Dark_Small.png);
+  width: 455px;
+  height: 75px;
+  position: relative;
+  margin: auto;
+  color: black;
+  font: italic small-caps bold 30px Impact;
+  -webkit-text-stroke: 0.5px #d2be1a;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+}
+
+.SaveButton {
+  top: -65px;
+  left: 310px;
+  position: relative;
+  width: 125px;
+  height: 55px;
+  background: none;
+  border: none;
+  background-image: url(../../assets/images/Save_Button.png);
+}
+
+.SaveButton:hover {
+  background: none;
+  background-image: url(../../assets/images/Save_Button_Hover.gif);
+}

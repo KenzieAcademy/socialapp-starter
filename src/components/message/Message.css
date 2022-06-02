@@ -1,0 +1,165 @@
+* {
+  box-sizing: border-box;
+}
+
+.MessageBody {
+  width: 613px;
+  background-image: url(../../assets/images/Clear_Red.png);
+  border: #d2be1a;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  position: relative;
+  margin: 10px;
+}
+
+.Message {
+  width: 606px;
+  position: relative;
+  margin: auto;
+}
+
+.MessageCardBody {
+  width: 613px;
+  position: relative;
+  margin: auto;
+}
+
+.MessageCard {
+  background: none;
+  position: relative;
+  margin: auto;
+}
+
+.MessageTextBox {
+  position: relative;
+  margin: auto;
+  padding: 5px;
+  border: #d2be1a;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  background-image: url(../../assets/images/Coupon_Background_Lighter.png);
+  color: black;
+  font: italic small-caps bold 25px Impact;
+  -webkit-text-stroke: 0.5px #d2be1a;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  width: 444px;
+  height: 139px;
+  top: -147px;
+  left: 66px;
+  overflow: auto;
+}
+
+.MessThumbsUpButtonBox {
+  position: relative;
+  top: -224px;
+  left: -11px;
+}
+
+.MessThumbsUpButton {
+  width: 125px;
+  height: 53px;
+  border: #d2be1a;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  background: none;
+  background-image: url(../../assets/images/Thumgs_Up.png);
+  background-repeat: no-repeat;
+  position: relative;
+  margin: auto;
+  font: italic small-caps bold 22px/40px Impact;
+  -webkit-text-stroke: rgba(0, 0, 0, 0);
+  color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+}
+
+.MessThumbsUpButton:hover {
+  border: white;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  background-image: url(../../assets/images/Thumgs_Up.png);
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  -webkit-text-stroke: 0.25px black;
+  color: white;
+}
+
+.MessProfPicBox {
+  background-image: url(../../assets/images/Coupon_Background_Dark.png);
+  border: #d2be1a;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  top: -8px;
+  left: -11px;
+  width: 125px;
+  height: 125px;
+  max-width: 125px;
+  max-height: 125px;
+  overflow: hidden;
+}
+
+.MessProfilePic {
+  position: relative;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 125px;
+  height: 125px;
+  max-width: 125px;
+  max-height: 125px;
+  overflow: hidden;
+}
+
+.PosterInfoBox {
+  position: relative;
+  margin: 10px;
+  top: -145px;
+  left: 125px;
+}
+
+.MessMemberTitle {
+  /* top: -144px;
+  left: 126px; */
+  position: relative;
+  margin: auto;
+  color: black;
+  font: italic small-caps bold 20px Impact;
+  -webkit-text-stroke: 0.5px #d2be1a;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+}
+
+.TimeStamp {
+  left: 60px;
+  position: relative;
+  margin: auto;
+  color: black;
+  font: italic small-caps bold 17px Impact;
+  -webkit-text-stroke: 0.5px #d2be1a;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+}
+
+.MessThumbsUpNumberBox {
+  color: black;
+  font: italic small-caps bold 20px Impact;
+  -webkit-text-stroke: 0.5px #d2be1a;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  position: relative;
+  margin: auto;
+  left: 455px;
+  top: -341px;
+  /* width: 150px; */
+  z-index: 1;
+}
+
+.MessThumbsUpNumber {
+  position: relative;
+}

@@ -1,0 +1,52 @@
+* {
+  box-sizing: border-box;
+}
+
+.ProfilePageBody {
+  background-image: url(../assets/images/Coupon_Background_Dark.png);
+  border: #d2be1a;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  width: 850px;
+  position: relative;
+  margin: auto;
+  font: italic small-caps 12px/30px Impact;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+}
+
+.ProfileMenuBox {
+  position: relative;
+  margin: auto;
+  padding: 10px;
+}
+
+.ProfileHeaderBox {
+  padding: 10px;
+  position: relative;
+  margin: auto;
+  border: #d2be1a;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  width: 825px;
+  height: 55px;
+  background-image: url(../assets/images/Clear_Red.png);
+}
+
+.ProfileHeaderText {
+  font: italic small-caps bold 45px Impact;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  -webkit-text-stroke: 1px #d2be1a;
+  color: black;
+  text-align: center;
+  top: -12px;
+  position: relative;
+  margin: auto;
+}
+
+.ProfPageContent {
+  position: relative;
+  margin: auto;
+  padding: 10px;
+}

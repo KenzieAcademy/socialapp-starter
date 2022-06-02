@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box;
+}
+
+.RegisterPopupBody {
+  position: relative;
+}
+
+.modal {
+  background-image: url(../../assets/images/Coupon_Background_Dark_Large.png);
+}
+
+.modal-content {
+  top: 75px;
+  background-image: url(../../assets/images/Clear_Red_Dark.png);
+  border: #d2be1a;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  font: italic small-caps bold 25px Impact;
+  color: black;
+  -webkit-text-stroke: 0.5px #d2be1a;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+}
+
+.modal-content button {
+  background: none;
+  color: black;
+}
+
+.MiniRegPopBody {
+  position: relative;
+}
+
+.MiniRegButtonBox {
+  left: 15px;
+  position: relative;
+  margin: auto;
+  text-align: center;
+  cursor: pointer;
+}

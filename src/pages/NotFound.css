@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box;
+}
+
+.NotFoundPageBody {
+  top: 75px;
+  position: relative;
+  margin: auto;
+  width: 850px;
+  height: 250px;
+  text-align: center;
+}
+
+.NotFound {
+  top: 100px;
+  position: relative;
+  margin: auto;
+  color: #b80c12;
+  font: italic small-caps bold 65px Impact;
+  -webkit-text-stroke: 2px #d2be1a;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  text-align: center;
+}
+
+.Link a {
+  top: 75px;
+  text-decoration: none;
+  position: relative;
+  margin: auto;
+  color: #b80c12;
+  font: italic small-caps bold 65px Impact;
+  -webkit-text-stroke: 2px #d2be1a;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.Link a:hover {
+  color: #d2be1a;
+  -webkit-text-stroke: 0.5px #b80c12;
+}

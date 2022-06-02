@@ -2,14 +2,12 @@
   box-sizing: border-box;
 }
 
-.LoginFormBody {
+.RegistrationFormBody {
+  text-align: center;
   position: relative;
-  border-radius: 5px;
-  border-width: 3px;
-  border-style: dashed;
 }
 
-.LogUserBox {
+.RegUserBox {
   background-image: url(../../assets/images/Coupon_Background_Dark.png);
   margin: 10px;
   position: relative;
@@ -23,12 +21,11 @@
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
 }
 
-.LogUserHeader {
+.RegUserHeader {
   position: relative;
-  text-align: center;
 }
 
-.LogUserBox input[type="text"] {
+.RegUserInput input[type="text"] {
   width: 350px;
   margin: 10px;
   position: relative;
@@ -46,7 +43,7 @@
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
 }
 
-.LogUserBox input[type="text"]:hover {
+.RegUserInput input[type="text"]:hover {
   border: black;
   border-radius: 5px;
   border-width: 3px;
@@ -56,7 +53,7 @@
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
 }
 
-.LogPassBox {
+.RegPassBox {
   background-image: url(../../assets/images/Coupon_Background_Dark.png);
   margin: 10px;
   position: relative;
@@ -64,19 +61,17 @@
   border-radius: 5px;
   border-width: 3px;
   border-style: dashed;
-  text-align: center;
   color: black;
   font: italic small-caps bold 30px Impact;
   -webkit-text-stroke: 0.5px #d2be1a;
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
 }
 
-.LogPassHeader {
+.RegPassHeader {
   position: relative;
-  text-align: center;
 }
 
-.LogPassBox input[type="password"] {
+.RegPassBox input[type="password"] {
   width: 350px;
   margin: 10px;
   position: relative;
@@ -87,15 +82,68 @@
   border-style: dashed;
   background: none;
   background-image: url(../../assets/images/Clear_Red.png);
-  text-align: left;
   color: black;
+  text-align: left;
   font: italic small-caps bold 25px Impact;
   -webkit-text-stroke: 0.5px #d2be1a;
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
 }
 
-.LogPassBox input[type="password"]:hover {
-  background-image: url(../../assets/images/Clear_Red_Dark.png);
+.RegPassBox input[type="password"]:hover {
+  width: 350px;
+  margin: 10px;
+  position: relative;
+  margin: 10px;
+  border: black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  background: none;
+  background-image: url(../../assets/images/Clear_Red.png);
+  text-align: left;
+  font: italic small-caps bold 25px Impact;
+  color: #d2be1a;
+  -webkit-text-stroke: 0.5px black;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+}
+
+.RegDisplayBox {
+  background-image: url(../../assets/images/Coupon_Background_Dark.png);
+  margin: 10px;
+  position: relative;
+  border: #d2be1a;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  color: black;
+  font: italic small-caps bold 30px Impact;
+  -webkit-text-stroke: 0.5px #d2be1a;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+}
+
+.RegDisplayHeader {
+  position: relative;
+}
+
+.RegDisplayBox input[type="text"] {
+  width: 350px;
+  margin: 10px;
+  position: relative;
+  margin: 10px;
+  border: #d2be1a;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  background: none;
+  background-image: url(../../assets/images/Clear_Red.png);
+  color: black;
+  text-align: left;
+  font: italic small-caps bold 25px Impact;
+  -webkit-text-stroke: 0.5px #d2be1a;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+}
+
+.RegDisplayBox input[type="text"]:hover {
   border: black;
   border-radius: 5px;
   border-width: 3px;
@@ -105,18 +153,17 @@
   text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
 }
 
-.LogEnterButton {
+.RegButtonBox {
   margin: 10px;
   position: relative;
 }
 
-.LogEnterButton input[type="submit"] {
+.RegButtonBox input[type="submit"] {
   padding: 10px;
-  left: 125px;
-  top: 5px;
+  left: 15px;
   position: relative;
   background: none;
-  background-image: url(../../assets/images/Enter_Button.png);
+  background-image: url(../../assets/images/Register_Button.png);
   background-repeat: no-repeat;
   border: none;
   width: 150px;
@@ -124,6 +171,6 @@
   cursor: pointer;
 }
 
-.LogEnterButton input[type="submit"]:hover {
-  background-image: url(../../assets/images/Enter_Button_Hover.gif);
+.RegButtonBox input[type="submit"]:hover {
+  background-image: url(../../assets/images/Register_Button_Hover.gif);
 }

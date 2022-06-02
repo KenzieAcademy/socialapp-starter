@@ -1,0 +1,125 @@
+* {
+  box-sizing: border-box;
+}
+
+.PostFormBody {
+  position: relative;
+}
+
+.PostCardBody {
+  background-image: url(../../assets/images/Clear_Red_Dark.png);
+  width: 825px;
+  height: 335px;
+  left: -727px;
+  top: -72px;
+  position: relative;
+  /* padding: 10px; */
+  border: #d2be1a;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+}
+
+.PostInputBox {
+  width: 800px;
+  left: -30px;
+  top: -20px;
+  margin: 10px;
+  border: #d2be1a;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  position: relative;
+  border: none;
+}
+
+.form-control:active,
+.form-control:focus,
+.form-control:focus:active {
+  border-color: #d2be1a;
+  color: black;
+  text-align: left;
+}
+
+.form-control {
+  position: relative;
+  margin: 10px;
+  border: #d2be1a;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  background: none;
+  background-image: url(../../assets/images/Coupon_Background_Lighter.png) !important;
+  font: italic small-caps bold 25px Impact;
+  -webkit-text-stroke: 0.5px #d2be1a;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+}
+
+.form-control:hover {
+  position: relative;
+  margin: 10px;
+  border: black;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  background: none;
+  background-color: white;
+  background-image: url(../../assets/images/Coupon_Background_Light.png) !important;
+}
+
+.PhotoUploadBox {
+  background-image: url(../../assets/images/Coupon_Background_Dark.png);
+  width: 800px;
+  height: 100px;
+  left: -20px;
+  top: -50px;
+  position: relative;
+  margin: 10px;
+  border: #d2be1a;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: dashed;
+  border-radius: 5px;
+  padding: 10px;
+  color: black;
+  font: italic small-caps bold 25px Impact;
+  -webkit-text-stroke: 0.5px #d2be1a;
+  text-shadow: -1px -1px 1px rgb(151, 148, 148), 1px 1px 1px #000;
+}
+
+.UploadHeaderText {
+  position: relative;
+  /* left: 650px; */
+  top: -3px;
+}
+
+.FakeButtonBox {
+  position: relative;
+  left: 650px;
+  top: -135px;
+}
+
+.FaeButton {
+  position: relative;
+}
+
+.PostAwayButtonBox {
+  position: relative;
+  left: 320px;
+  top: -110px;
+}
+
+.PostAwayButtonBox input[type="submit"] {
+  width: 125px;
+  height: 55px;
+  position: relative;
+  margin: 10px;
+  background: none;
+  border: none;
+  background-image: url(../../assets/images/Post_Button.png);
+  cursor: pointer;
+}
+
+.PostAwayButtonBox input[type="submit"]:hover {
+  background-image: url(../../assets/images/Post_Button_Hover.gif);
+}
