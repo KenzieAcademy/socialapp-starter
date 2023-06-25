@@ -10,7 +10,7 @@
     "react-redux": "^7.2.1",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "^3.4.3",
+    "react-scripts": "^5.0.1",
     "react-spinkit": "^3.0.0",
     "redux": "^4.0.5",
     "redux-auth-wrapper": "^2.1.0",
@@ -34,6 +34,6 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "dependency-cruiser": "^5.5.0"
+    "dependency-cruiser": "^13.0.4"
   }
 }
